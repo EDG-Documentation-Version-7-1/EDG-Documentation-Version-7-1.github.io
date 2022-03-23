@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDAP Configuration &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SAML Authentication" href="saml_authentication.html" />
+    <link rel="prev" title="Authentication for TopBraid EDG" href="authentication_edg_background.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="edg_server_platform_considerations.html">EDG Server Platform Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication_edg_background.html">Authentication for TopBraid EDG</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">LDAP Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#integration-instructions">Integration Instructions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ldap-servers-service-providers">LDAP Servers (Service Providers)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oauth_authentication.html">OAuth Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_type_app_data_storage.html">Database Type: Application data storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure_logging.html">Configure Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="accessing_edg_application.html">Accessing the EDG Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>LDAP Configuration</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ldap-configuration">
+<span id="id1"></span><h1>LDAP Configuration<a class="headerlink" href="#ldap-configuration" title="Permalink to this headline"></a></h1>
+<p>This section describes how to use the EDG server with LDAP authentication.</p>
+<section id="integration-instructions">
+<h2>Integration Instructions<a class="headerlink" href="#integration-instructions" title="Permalink to this headline"></a></h2>
+<p>Authentication is the process by which users log on to EDG.
+It is possible, but not advised, to run EDG without authentication.
+In this case, all users get full administrative privileges.</p>
+<p>EDG uses the Tomcat web-app server for authentication.
+This is intended to help implementation of policies such as single sign-on.
+EDG provides no further features for single sign-on.
+If this is a policy mandated for your environment, first find some other Java EE based service and understand which Web Application Server they are using, and how they authenticate users in accordance with the single sign-on policy.
+Then contact TopQuadrant with this information for advice as to how to configure EDG in a similar way.</p>
+<p>This section provides instructions for integrating EDG with LDAP in Linux and Active Directory in Windows Server.</p>
+<section id="ldap-configuration-within-tomcat">
+<h3>LDAP Configuration within Tomcat<a class="headerlink" href="#ldap-configuration-within-tomcat" title="Permalink to this headline"></a></h3>
+<p>These instructions cover the configuration of LDAP within Tomcat.
+For any other web application server, there could be some differences.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The exact formats used will depend on your LDAP configuration.
+Also, although the description below has a step to initiate an LDAP service, normally this is not required because you will be using a pre-existing LDAP service for configuring Tomcat and EDG.</p>
+</div>
+<section id="identifying-creating-a-group-and-at-least-one-user-in-that-group">
+<h4>Identifying/Creating a Group and at Least One User in That Group<a class="headerlink" href="#identifying-creating-a-group-and-at-least-one-user-in-that-group" title="Permalink to this headline"></a></h4>
+<p>In the sample configuration routine shown below, we will set the security to permit a specific group to access EDG.
+This group needs a name, which is configured within LDAP.
+You may already have an appropriate group.</p>
+</section>
+<section id="configuring-tomcat-to-use-ldap">
+<span id="index-0"></span><h4>Configuring Tomcat to Use LDAP<a class="headerlink" href="#configuring-tomcat-to-use-ldap" title="Permalink to this headline"></a></h4>
+<p>Next, we need to configure tomcat to connect to LDAP.
+This is specified in this document: <a class="reference external" href="https://tomcat.apache.org/tomcat-8.5-doc/realm-howto.html#JNDIRealm">https://tomcat.apache.org/tomcat-8.5-doc/realm-howto.html#JNDIRealm</a></p>
+<p>This step requires adding an entry to <code class="docutils literal notranslate"><span class="pre">server.xml</span></code>, found in the <code class="docutils literal notranslate"><span class="pre">conf</span></code> folder for Tomcat.
+For our example, the entry is as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Realm</span>   <span class="na">className=</span><span class="s">&quot;org.apache.catalina.realm.JNDIRealm&quot;</span> <span class="na">debug=</span><span class="s">&quot;99&quot;</span>
+   <span class="na">connectionURL=</span><span class="s">&quot;ldap://localhost:389&quot;</span>
+   <span class="na">userPattern=</span><span class="s">&quot;uid={0},ou=people,dc=tqinc,dc=info&quot;</span>
+   <span class="na">roleBase=</span><span class="s">&quot;ou=groups,dc=tqinc,dc=info&quot;</span>
+   <span class="na">roleName=</span><span class="s">&quot;cn&quot;</span>
+   <span class="na">roleSearch=</span><span class="s">&quot;(memberUid={1})&quot;</span>
+   <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this expression, <code class="docutils literal notranslate"><span class="pre">{0}</span></code> and <code class="docutils literal notranslate"><span class="pre">{1}</span></code> both stand in for the username, but the actual expressions such as <code class="docutils literal notranslate"><span class="pre">uid={0},ou=people,dc=tqinc,dc=info</span></code> will be different depending on your LDAP service.</p>
+</div>
+<p>For reference, this is for group configuration that looks like this in LDAP:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>keefe@keefetq:~$ ldapsearch -xLLL -b &quot;dc=tqinc,dc=info&quot; -s sub &quot;(memberUid=keefe)&quot;
+dn: cn=acme,ou=groups,dc=tqinc,dc=info
+objectClass: posixGroup
+cn: acme
+gidNumber: 10001
+description: Group account
+memberUid: keefe
+</pre></div>
+</div>
+<p>If your LDAP directory is setup in a straightforward way, it should be easy to modify the search expression appropriately.
+However, you may need assistance from someone who knows your LDAP system.</p>
+<p>Three pieces of information are needed:</p>
+<ol class="arabic simple">
+<li><p>A base pattern to identify groups in LDAP, (in this case: <code class="docutils literal notranslate"><span class="pre">ou=groups,dc=tqinc,dc=info</span></code>).</p></li>
+<li><p>A property at which the rolename we will use in securing EDG may be found, in this case: <code class="docutils literal notranslate"><span class="pre">cn</span></code></p></li>
+<li><p>A search filter that indicates role membership, in this case : <code class="docutils literal notranslate"><span class="pre">(memberUid={1})</span></code> where <code class="docutils literal notranslate"><span class="pre">{1}</span></code> is the username.</p></li>
+</ol>
+</section>
+</section>
+<section id="active-directory-integration-within-tomcat">
+<span id="index-1"></span><h3>Active Directory Integration within Tomcat<a class="headerlink" href="#active-directory-integration-within-tomcat" title="Permalink to this headline"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The exact format depends on your LDAP configuration.</p>
+</div>
+<section id="populate-ldap">
+<h4>Populate LDAP<a class="headerlink" href="#populate-ldap" title="Permalink to this headline"></a></h4>
+<p>The security to permit a specific group of users to must be set to access EDG.
+This group needs a name, which is configured within LDAP. You may already have an appropriate group.</p>
+<ol class="arabic simple">
+<li><p>Create TopBraid EDG group(s) and associate users with this group in Active Directory using the wizard.
+You will need at least one for administrators and one for non-administrators.
+You can have more if needed.</p></li>
+</ol>
+</section>
+<section id="configuring-tomcat-to-use-ldap-for-active-directory">
+<h4>Configuring Tomcat to Use LDAP for Active Directory<a class="headerlink" href="#configuring-tomcat-to-use-ldap-for-active-directory" title="Permalink to this headline"></a></h4>
+<p>Next, configure tomcat to connect to LDAP.
+This is specified in this document: <a class="reference external" href="https://tomcat.apache.org/tomcat-8.5-doc/realm-howto.html#JNDIRealm">https://tomcat.apache.org/tomcat-8.5-doc/realm-howto.html#JNDIRealm</a></p>
+<p>It requires adding an entry to <code class="docutils literal notranslate"><span class="pre">server.xml</span></code>, found in the <code class="docutils literal notranslate"><span class="pre">conf</span></code> folder for Tomcat.
+For our example, the entry is as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Realm</span> <span class="na">className=</span><span class="s">&quot;org.apache.catalina.realm.JNDIRealm&quot;</span>
+
+                <span class="na">connectionURL=</span><span class="s">&quot;ldap://localhost:3268&quot;</span>
+                <span class="na">authentication=</span><span class="s">&quot;simple&quot;</span>
+                <span class="na">referrals=</span><span class="s">&quot;follow&quot;</span>
+
+                <span class="na">connectionName=</span><span class="s">&quot;jeremy@tblive.tqinc.info&quot;</span>
+                <span class="na">connectionPassword=</span><span class="s">&quot;enter password here&quot;</span>
+
+                <span class="na">userSearch=</span><span class="s">&quot;(sAMAccountName={0})&quot;</span>
+                <span class="na">userBase=</span><span class="s">&quot;CN=Users,DC=tblive,DC=tqinc,DC=info&quot;</span>
+                <span class="na">userSubtree=</span><span class="s">&quot;true&quot;</span>
+
+                <span class="na">roleSearch=</span><span class="s">&quot;(member={0})&quot;</span>
+                <span class="na">roleName=</span><span class="s">&quot;cn&quot;</span>
+                <span class="na">roleSubtree=</span><span class="s">&quot;true&quot;</span>
+                <span class="na">roleBase=</span><span class="s">&quot;CN=Users,DC=tblive,DC=tqinc,DC=info&quot;</span>
+
+                <span class="na">debug=</span><span class="s">&quot;99&quot;</span>
+        <span class="nt">/&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="inside-of-the-ldap-engine-element">
+<h4>Inside of the LDAP Engine element<a class="headerlink" href="#inside-of-the-ldap-engine-element" title="Permalink to this headline"></a></h4>
+<p>This section provides a background and overview of LDAP in case you are unfamiliar.
+Use this as reference when working with your LDAP team at your organization.
+Typically this will all be configured and you will only need to request new groups are created for TopBraid EDG users.</p>
+<p>In the <em>userSearch</em> expression, <code class="docutils literal notranslate"><span class="pre">{0}</span></code> stands for the username as typed by the end-user, whereas in the <em>roleSearch</em> expression, <code class="docutils literal notranslate"><span class="pre">{0}</span></code> stands for the distinguished name found from the user look up.
+(These are written literally as <code class="docutils literal notranslate"><span class="pre">{0}</span></code> in the server.xml file), but the actual expressions such as <code class="docutils literal notranslate"><span class="pre">(sAMAccountName={0})</span></code> and <code class="docutils literal notranslate"><span class="pre">CN=Users,DC=tblive,DC=tqinc,DC=info</span></code> will be different depending on your LDAP service.
+With Active Directory, <code class="docutils literal notranslate"><span class="pre">(sAMAccountName={0})</span></code> and <code class="docutils literal notranslate"><span class="pre">roleSearch=&quot;(member={0})&quot;</span></code> should generally be correct.</p>
+<p>If your LDAP directory is setup in a straightforward way, it should be easy to modify the search expression appropriately.
+However, you may need assistance from someone who knows your LDAP system.</p>
+<p>Three pieces of information are needed:</p>
+<ol class="arabic simple">
+<li><p>A base pattern to identify groups in ldap, (example: <code class="docutils literal notranslate"><span class="pre">CN=Users,DC=tblive,DC=tqinc,DC=info</span></code>).</p></li>
+<li><p>A property at which the rolename we will use in securing EDG may be found, in this case:cn</p></li>
+<li><p>A search filter that indicates role membership, in this case : <code class="docutils literal notranslate"><span class="pre">(member={0})</span></code> where <code class="docutils literal notranslate"><span class="pre">{0}</span></code> is the distinguishedName (and <code class="docutils literal notranslate"><span class="pre">{1}</span></code> is the username).</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="ldap-servers-service-providers">
+<h2>LDAP Servers (Service Providers)<a class="headerlink" href="#ldap-servers-service-providers" title="Permalink to this headline"></a></h2>
+<p>The preceding LDAP sections configure EDG to use of LDAP for authentication: user login identity and roles.
+To further configure EDG for using additional LDAP information, e.g., email, see <a class="reference external" href="https://doc.topquadrant.com/7.0/server-administration/#setup">Server Administration – Server Configuration – LDAP Parameters</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="authentication_edg_background.html" class="btn btn-neutral float-left" title="Authentication for TopBraid EDG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="saml_authentication.html" class="btn btn-neutral float-right" title="SAML Authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

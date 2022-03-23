@@ -1,0 +1,41 @@
+# baseURI: http://extensionsamples.topbraid.org/functions/hellofunctionexample.api.ttl
+# imports: http://datashapes.org/dash
+# prefix: exfun
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix exfun: <http://extensionsamples.topbraid.org/functions/hellofunctionexample.api.ttl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/functions/hellofunctionexample.api.ttl>
+  a owl:Ontology ;
+  dash:generatePrefixConstants "exfun" ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/functions/hellofunctionexample.api.ttl#" ;
+  rdfs:label "HelloFunctionExample.api.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+exfun:hello
+  a dash:ScriptFunction ;
+  dash:apiStatus dash:Stable ;
+  dash:js "return `Hello, ${name}!`" ;
+  rdfs:comment """An example function that accepts a name (string) as parameter and returns a string "Hello, ...!" using that name.
+
+You can call the function from SPARQL using exfun:hello('World').
+
+Since the function declares an dash:apiStatus, you can also call it from from ADS scripts using exfun.hello('World') and as a web service using /tbl/service/_/exfun/hello?name=World.
+
+Note that the file itself contains a value for dash:generatePrefixConstants "exfun" from the Home resource to make sure the exfun constants are known to the API.""" ;
+  rdfs:label "Hello Function" ;
+  sh:parameter exfun:hello-name ;
+  sh:returnType xsd:string ;
+.
+exfun:hello-name
+  a sh:Parameter ;
+  sh:path exfun:name ;
+  sh:datatype xsd:string ;
+  sh:description "The name of the person to say hello to." ;
+  sh:name "name" ;
+.

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Operationalizing Data Governance &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Viewing Metrics Dashboards" href="../metrics_dashboards/index.html" />
+    <link rel="prev" title="Collaboration in EDG" href="../collaboration/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guidance_specific_to_asset_collection_type/index.html">Guidance Specific to an Asset Collection Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Operationalizing Data Governance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview-operationalizing-data-governance">Overview: Operationalizing Data Governance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-governance-model-and-workflows">The Governance Model and Workflows</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#users-and-access-control">Users and Access Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#governance-areas-and-roles">Governance Areas (and Roles)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#organizational-structure">Organizational Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metrics-dashboards">Metrics Dashboards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#policies">Policies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#issues">Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-governance-assets">Other Governance Assets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content_classification/index.html">Content Classification in EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">User Guide</a> &raquo;</li>
+      <li>Operationalizing Data Governance</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="operationalizing-data-governance">
+<span id="id1"></span><h1>Operationalizing Data Governance<a class="headerlink" href="#operationalizing-data-governance" title="Permalink to this headline"></a></h1>
+<p>The Governance Model consists of governance areas, organizational structure, metrics, issues, policies and other governance assets.</p>
+<section id="overview-operationalizing-data-governance">
+<span id="overview-operationalizing-data-governance-target"></span><h2>Overview: Operationalizing Data Governance<a class="headerlink" href="#overview-operationalizing-data-governance" title="Permalink to this headline"></a></h2>
+<p>The Governance model in EDG lets you operationalize the governance structures and institutionalize the governance principles you have adopted.
+It let’s you:</p>
+<ul class="simple">
+<li><p>Bring your organization’s governance framework down to the level of roles, responsibilities, reporting lines, and communications</p></li>
+<li><p>Organize operational, risk management, and reporting processes to ensure adherence to governance practices necessary for the business units to conduct their activities in ways that comply with regulations and serve strategic ends</p></li>
+<li><p>Help all stakeholders to answer questions such as, “Why are we doing this?” “Is this okay?” “Whose call is this?” and “Who do we need to tell about this?” and to know when to ask such questions</p></li>
+<li><p>Sustain governance by creating a feedback loop in which the governance board and management can identify and respond to new business, operational, competitive, and regulatory needs</p></li>
+</ul>
+</section>
+<section id="the-governance-model-and-workflows">
+<span id="the-governance-model-and-workflows-target"></span><span id="edg-governance-model"></span><h2>The Governance Model and Workflows<a class="headerlink" href="#the-governance-model-and-workflows" title="Permalink to this headline"></a></h2>
+<p>The Governance Model is a special EDG asset collection that uniquely captures enterprise contexts for other asset collections.
+It groups all collections governed by EDG into enterprise <em>governance areas</em> for which users can be given various governance roles.
+Users can also be grouped according to <em>organizational structures</em>.
+These dual settings bring together collections and users through :ref:’workflows_target’, which orchestrate teams of users, via their roles, in the development and maintenance of the assets.</p>
+<p>Governance model is also used to define metrics for governance areas and to manage organization’s governance policies, issues and other relevant items.</p>
+<p>Unlike other asset collection types, governance is a singleton.
+There is only one instance of the governance asset collection and it is pre-built.
+It offers specialized pages for managing governance assets.
+These are displayed in bold on the horizontal bar at the top of any of the pages that let you work with the governance framework.</p>
+<figure class="align-center" id="id63">
+<img alt="TopBraid Other Governance Assets Tab" class="edg-figure" src="../../_images/edg_other_governance_assets_tab.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid Other Governance Assets Tab</strong></span><a class="headerlink" href="#id63" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Other tabs in this menu bar (e.g., Import, Export, Users, Settings etc.) work the same as they do for all asset collections in EDG.</p>
+<span class="target" id="edg-governance-model-users-and-access"></span><section id="users-and-access-control">
+<span id="index-0"></span><h3>Users and Access Control<a class="headerlink" href="#users-and-access-control" title="Permalink to this headline"></a></h3>
+<p>EDG offers three categories of access controls.</p>
+<ul class="simple">
+<li><p><em>Governance roles</em> provide business control over assets and associated workflows (business processes).</p></li>
+</ul>
+<ul class="simple" id="index-1">
+<li><p><em>Permission profiles</em> (viewer, editor, power user and manager) provide direct authorizations for asset collection functions.</p></li>
+<li><p><em>Rights groups</em> control access to system-level application resources (e.g., directories, files).</p></li>
+</ul>
+<section id="governance-roles">
+<h4>Governance roles<a class="headerlink" href="#governance-roles" title="Permalink to this headline"></a></h4>
+<p>Governance roles represent rights and responsibilities of stakeholders engaged in various aspects of data governance processes.
+The roles can be associated with a subject area, individual collection or an individual asset.</p>
+<p>The governance roles can convey both permission-profile access to the collections as well workflow permissions for the governance processes that maintain the collections.</p>
+<p>While the use of governance areas and roles is optional in EDG, using them provides a lot of flexibility and unlocks additional functionality such as asset-level roles.</p>
+</section>
+<section id="permission-profiles">
+<span id="index-2"></span><h4>Permission profiles<a class="headerlink" href="#permission-profiles" title="Permalink to this headline"></a></h4>
+<p>Users access to each asset collection and available functions is controlled via <em>permission profiles</em>, which comprise three nested access levels: <em>viewer</em>, <em>editor</em>, and <em>manager</em>.
+Each level contains the permissions of the preceding level and more.
+The permission profiles assigned to users for each collection determine what each user can see or do with assets in the collection.</p>
+</section>
+<section id="rights-groups">
+<h4>Rights groups<a class="headerlink" href="#rights-groups" title="Permalink to this headline"></a></h4>
+<p>Rights groups convey low-level EDG file system access to users.
+These settings are largely separate from permission profiles and governance roles, except that users require a <code class="docutils literal notranslate"><span class="pre">Create</span></code> right to create new asset collections, and administrators/power users (users in the <em>AdministratorGroup</em>, <em>PowerUserGroup</em>) have full manager permissions for all collections.</p>
+<p>Upon installation of EDG the following rights can be assigned through rights management:</p>
+<ul class="simple">
+<li><p><strong>AdministratorGroup</strong>. Users is this group have full manager access to all collections as well as full access to all server administrator features.
+This group does not apply to SaaS installations hosted by TopQuadrant.</p></li>
+<li><p><strong>PowerUserGroup</strong>. Users is this group have full manager access to all collections and a limited subset of server administrator features.
+These include: EDG Configuration Parameters, Default Namespaces and Prefixes, EDG Permission Management, Layouts, View EDG Log, Process Management, Scheduled Jobs, Count Triples, and Query TopBraid Platform API using GraphQL.</p></li>
+<li><p><strong>ManagerGroup</strong>. Users in this group have the ability to create new collections</p></li>
+<li><p><strong>ExplorerGroup</strong>. When applicable for setup of Explorer server, these users have permission to all published collections and will count as Explorer users for licensing purposes.</p></li>
+</ul>
+</section>
+<section id="users">
+<h4>Users<a class="headerlink" href="#users" title="Permalink to this headline"></a></h4>
+<p>You can see all users defined in the EDG system (e.g., via LDAP) by clicking on the <strong>Users</strong> link in the left hand side Navigation Bar.
+Each user listed can be clicked on to see user details.
+For each user, the details presented consist of:</p>
+<ul class="simple">
+<li><p><strong>Settings (Tomcat users only)</strong>: Non-LDAP users can define the email address that receives notifications.
+Users with administrator privileges can edit the email addresses of all users.</p></li>
+<li><p><strong>Governance Roles</strong>: Lists the governance roles of the selected user, if any.
+The list displays the name of the area or asset collection (including a link to the details page) and the governance role of the user.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is also <strong>Users</strong> tab in the horizontal menu at the top of the page.
+This works the same way as Users page for any collection.
+It supports defining permissions and roles for the governance model itself.</p>
+</div>
+<p>Managers of a collection can assign users various permission profiles and governance roles.
+Managers can assign roles to individual users or to <em>security roles</em>, which represent groups of users.
+Individual users and their security roles are defined externally to the EDG application, during Tomcat configuration for the EDG installation.
+Typically, individuals and their security roles come into EDG (via Tomcat) from LDAP, but they can also be defined within Tomcat itself, via the <code class="docutils literal notranslate"><span class="pre">conf/tomcat-users.xml</span></code> file.</p>
+<p>EDG administrators can assign security roles (but not individuals) to rights groups, and they can define custom rights groups.
+Rights management also provides a pre-defined users role, <em>ANY_ROLE</em>, which automatically includes any EDG user (for assigning rights groups universally).</p>
+<p>Finally, the governance model lets you define <em>organizations (see below)</em>.
+Organizations can then also be assigned governance roles.</p>
+</section>
+<section id="summary-of-resources-and-access-type-assignments">
+<h4>Summary of Resources and Access Type Assignments<a class="headerlink" href="#summary-of-resources-and-access-type-assignments" title="Permalink to this headline"></a></h4>
+<table class="tight-table docutils align-default" id="id64">
+<caption><span class="caption-text">Frozen Delights!</span><a class="headerlink" href="#id64" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Resources</p></th>
+<th class="head"><p>Access Control Type</p></th>
+<th class="head"><p>Levels</p></th>
+<th class="head"><p>Assignment to Users</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Asset collections (production &amp; workflow versions)</p></td>
+<td><p>Permission profile</p></td>
+<td><p>1. viewer
+1. editor (incl. viewer)
+2. manager (incl. editor)</p></td>
+<td><dl class="simple">
+<dt>Can be assigned to:</dt><dd><ul class="simple">
+<li><p>individual users</p></li>
+<li><p>security roles</p></li>
+<li><p>governance roles</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+<td><p>See <a class="reference internal" href="../workflows/workflows.html#rights-entailed-by-permission-profiles"><span class="std std-ref">Rights Entailed by Permission Profiles</span></a> and <em>Access Control &gt; EDG Permissions Management</em> in the <a class="reference internal" href="../../administrator_guide/index.html#administrator-quide"><span class="std std-ref">Administrator Guide</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Governance role</p></td>
+<td><ul class="simple">
+<li><p>Data Steward</p></li>
+<li><p>Business Steward</p></li>
+<li><p>Subject Matter Expert</p></li>
+<li><p><em>…, etc. (customizable)</em></p></li>
+</ul>
+</td>
+<td><p>Can be assigned to:
+* individual users
+* security roles
+* organizations</p></td>
+<td><p>See <a class="reference internal" href="overview_operationalizing_data_governance.html#overview-operationalizing-data-governance-target"><span class="std std-ref">Overview: Operationalizing Data Governance</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p>EDG workspace contents (application file system)</p></td>
+<td><p>Rights group</p></td>
+<td><ul class="simple">
+<li><p>AdministratorGroup</p></li>
+<li><p>readAnyGraphGrp</p></li>
+<li><p><em>…, etc. (customizable)</em></p></li>
+</ul>
+</td>
+<td><p>Can be assigned to:
+* security roles</p></td>
+<td><p>See <em>Access Control &gt; Rights Management</em> in the <a class="reference internal" href="../../administrator_guide/index.html#administrator-quide"><span class="std std-ref">Administrator Guide</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Users:</strong> To configure individual users and their security roles, see <a class="reference internal" href="../../administrator_guide/edg_installation_and_authentication/authentication_edg_background.html#authentication-edg-background"><span class="std std-ref">Authentication for TopBraid EDG</span></a>.
+To customize user organizations for governance roles, see Organization Structure – below.</p>
+</div>
+</section>
+</section>
+<section id="governance-areas-and-roles">
+<span id="id60"></span><h3>Governance Areas (and Roles)<a class="headerlink" href="#governance-areas-and-roles" title="Permalink to this headline"></a></h3>
+<p>Governance subject areas group asset collections according to an organization’s <em>business or data subject</em> concerns.
+Governance areas are used to define a delineated part of stewardship.
+They partition and delegate ownership of assets, and define a meaningful context for assets that are associated with a governance area.</p>
+<p>A business area may have subareas that are either the business or data subject areas.
+Any data subject area may have only data subject subareas.</p>
+<p>There are two ways to connect an asset collection with a governance area:</p>
+<ul class="simple">
+<li><p>by selecting a governance area and either creating a new asset collection or adding existing collection; thereby, automatically associating it with the selected area, or</p></li>
+<li><p>by updating collection’s Metadata using <strong>Settings &gt; Metadata &gt; Edit &gt; subject area</strong>.</p></li>
+</ul>
+<section id="creating-governance-areas">
+<h4>Creating governance areas<a class="headerlink" href="#creating-governance-areas" title="Permalink to this headline"></a></h4>
+<p>To create a governance area, click on the <strong>Business and Data Subject Area</strong> root or on one of already existing areas and select either <strong>Add Business Sub-Area</strong> or <strong>Add Data Subject Sub-Area</strong>.</p>
+<p>After creation, you can add governance roles to the area by selecting the area and clicking on <strong>Add governance role</strong>. Clicking on the <strong>Details</strong> button will let you work with the full information about a governance area.</p>
+<p>If you select one of the roles assigned to a governance area you will be able to:</p>
+<ul class="simple">
+<li><p>Set a permission profile for the role</p></li>
+<li><p>Assign roles to users of EDG – either directly or indirectly through security oles and organizations</p></li>
+<li><p>Disable the role</p></li>
+</ul>
+<figure class="align-center" id="id65">
+<img alt="TopBraid EDG Manage Your Governance Areas and Roles Page" class="edg-figure" src="../../_images/edg_manage_governance_areas_roles.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Manage Your Governance Areas and Roles Page</strong></span><a class="headerlink" href="#id65" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id61">
+<span id="id62"></span><h4>Governance roles<a class="headerlink" href="#id61" title="Permalink to this headline"></a></h4>
+<p>Each governance area may have associated <em>governance roles</em>, where each role represents a business-oriented set of user rights and responsibilities pertaining to managing assets associate with a given area.
+Governance roles can be used in various <a class="reference internal" href="../workflows/workflows.html#workflows-target"><span class="std std-ref">Workflows</span></a>, which orchestrate users in the governance processes that create and maintain the area’s assets.</p>
+<p>TopBraid EDG ships with a pre-built set of governance roles commonly used by organizations, but customers can modify this set.
+Pre-defined roles can be disabled and new ones can be added.
+This is accomplished by modifying EDG ontology that describes governance assets.
+Pre-built governance roles are properties with associated property shapes defined in the <em>EDG Shapes – Governance Assets</em>.</p>
+<p>Governance roles are assigned to users by specifying, for a governance role:</p>
+<ul class="simple">
+<li><p>individual users or</p></li>
+<li><p>user <em>security roles</em> (e.g., from LDAP) or</p></li>
+<li><p><em>organizations</em>, which are defined in the Governance Model’s Organizational Structure (see below).</p></li>
+</ul>
+<p>Role assignments specified for an area apply to all of the area’s own asset collections and to all of its descendant-areas’ collections.</p>
+<p>Each asset collection can also have its own additional governance role assignments, made via its <strong>User Roles &gt; Governance Roles</strong> settings.
+Such collection-specific assignments are shown in a governance area’s listing of associated <em>Asset Collections</em>.
+If a collection has its own governance role assignments (i.e., in addition to its area’s) it will be indicated by showing the assigned roles’ initials in the <strong>+Roles</strong> column.
+A governance role applicable to an asset collection is applicable to all assets in this collection.</p>
+<p>Finally, governance roles can be assigned on an asset level.
+This feature is enabled as a choice on the <strong>Manage</strong> tab of a collection.</p>
+<p>In order to <strong>customize the available governance roles</strong> follow this process:</p>
+<ol class="arabic simple">
+<li><p>Create a new Ontology asset collection</p></li>
+<li><p>Use <em>Settings-&gt;Includes</em> to include <em>EDG Schema – Governance Assets</em></p></li>
+<li><p>In the users tab for this collection, give read permission to all users or security roles for EDG.
+If you don’t do this step, users without permission will be unable to access many features of EDG.</p></li>
+<li><p>Navigate to the Settings tab of the Governance Model asset collection, include the Ontology containing your customizations.</p></li>
+</ol>
+<p>Using this ontology, to disable existing governance roles:</p>
+<ol class="arabic simple">
+<li><p>Navigate to the class Stewardship</p></li>
+<li><p>In the Properties Group panel select the role to be disabled, e.g., application steward</p></li>
+<li><p>Edit and set deactivated to true</p></li>
+</ol>
+<p>To add a new governance role:</p>
+<ol class="arabic simple">
+<li><p>Add RDF/OWL Properties List panel to your editor layout</p></li>
+<li><p>Use New button in this panel to create a new property.
+Provide the label for your new role.
+Select property type as Workflow property.
+Provide a value for abbreviation for the role.
+You will see a warning about needing a shape for this property.
+Click “Submit Anyway”.</p></li>
+<li><p>Add comment to provide a description of the responsibilities of the new governance role</p></li>
+<li><p>Navigate to the class Stewardship</p></li>
+<li><p>For this class, create a new Relationship using the new property as the path.
+In the Create dialog’s label, type the label exactly the same as the label you provided for the new property.
+This will ensure that the right ID (URI) is used.
+Make sure that the Property Group is <em>Governance Roles</em>.</p></li>
+<li><p>Edit the new relationship to set the value of editor to Workflow participant editor and value of viewer to Workflow participant viewer.
+Optionally, adjust the order in which the governance roles will appear in the EDG user interface.</p></li>
+</ol>
+</section>
+<section id="governance-roles-vs-permission-profiles">
+<span id="index-3"></span><h4>Governance roles vs. permission profiles<a class="headerlink" href="#governance-roles-vs-permission-profiles" title="Permalink to this headline"></a></h4>
+<p>Asset collections use three standard permission profiles: <em>viewer</em>, <em>editor</em>, and <em>manager</em>.
+(See: <a class="reference internal" href="../workflows/workflows.html#rights-entailed-by-permission-profiles"><span class="std std-ref">Rights Entailed by Permission Profiles</span></a> for details.)
+Compared to the v/e/m profiles, which focus on read and write permissions, governance roles are more abstract and more representative of an enterprise’s business processes for data governance.</p>
+<p><em>Comparison details</em>:</p>
+<ul class="simple">
+<li><p>Governance roles represent how a team of business users relate to a governance area’s business and technical assets.
+In contrast, the v/e/m levels represent only permissions for given asset collection and its workflows.</p></li>
+<li><p>Governance roles can be defined for governance areas or an individual collection or an individual asset, whereas the v/e/m permissions must be specified at the collection level.</p></li>
+<li><p>The set of governance roles available in EDG is customizable, but the three v/e/m permission levels are neither customizable nor extensible.</p></li>
+<li><p>Custom workflows (via <em>templates</em>, see below) can generally be defined in terms of either governance roles or the v/e/m permissions. (The provided Basic workflow uses v/e/m only. <em>Voting</em> steps pertain to governance roles only.)</p></li>
+<li><p>Any user that has a governance role for a collection is automatically granted a view permission profile for that collection and for any workflow on the collection.</p></li>
+<li><p>Further, each governance role can be given specific permissions.
+For example, you can say that a data steward always has editor permissions.
+You can also say that for Change Approval workflows, data steward has manager permissions.</p></li>
+</ul>
+</section>
+</section>
+<section id="organizational-structure">
+<h3>Organizational Structure<a class="headerlink" href="#organizational-structure" title="Permalink to this headline"></a></h3>
+<p>EDG lets you describe and document an organizational breakdown to capture social units of people that participate in the governance process.
+Organizations can have sub organizations.
+This structure often corresponds to functional divisions in an enterprise.</p>
+<p>EDG organizations are groupings of users specified either individually or via their security roles (e.g., from LDAP).
+Each organization instance can have various associated metadata.
+Organizations represent users abstractly, which provides various benefits such as:</p>
+<ul class="simple">
+<li><p>documenting governance responsibility at an organizational level instead of a user account level, and</p></li>
+<li><p>representing users before having to identify and onboard specific individuals, and</p></li>
+<li><p>facilitating reassignment of responsibilities when personnel change.</p></li>
+</ul>
+<p>Typically, when you start your governance initiative, your organizational breakdown and your governance area breakdown may be very similar or even identical.
+However, as your governance processes mature, these breakdowns often diverge.</p>
+<p>You can create different types of organizations such as departments, committees, boards and working groups – as shown below:</p>
+<figure class="align-center" id="id66">
+<img alt="TopBraid EDG Manage Your Organizational Structure View" class="edg-figure" src="../../_images/edg_manage_your_org_structure.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Manage Your Organizational Structure View</strong></span><a class="headerlink" href="#id66" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When you click on an organization in the organizational breakdown, you can describe it in more detail including assigning it governance roles and associating users with it.</p>
+<figure class="align-center" id="id67">
+<img alt="TopBraid EDG Governance Roles and Associating Users" class="edg-figure" src="../../_images/edg_governance_roles_and_associating_users.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Governance Roles and Associating Users</strong></span><a class="headerlink" href="#id67" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Clicking on the <strong>Details</strong> button will let you work with the full information about an organization.
+The type of information you will want to capture is fully customizable through modifying governance ontology.</p>
+<figure class="align-center" id="id68">
+<img alt="TopBraid EDG Architecture Board" class="edg-figure" src="../../_images/edg_architecture_board.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Architecture Board</strong></span><a class="headerlink" href="#id68" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="metrics-dashboards">
+<h3>Metrics Dashboards<a class="headerlink" href="#metrics-dashboards" title="Permalink to this headline"></a></h3>
+<p>EDG administrators can activate metrics dashboards, see <a class="reference internal" href="../metrics_dashboards/index.html#metrics-dashboards-target"><span class="std std-ref">Viewing Metrics Dashboards</span></a>.
+And they can also edit the resulting <strong>GOVERNANCE MODEL &gt; Dashboards</strong> item.
+To activate each dashboard in the governance model, use the link in the Metrics page to enable individual dashboard widgets.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Creating new Metrics Dashboards requires advanced TopBraid developer knowledge in order to generate the scripts needed to supply data and add visualizations.
+Upcoming releases will include additional scripts for a variety of metrics.
+If you are interested in the possibilities for tailoring TopBraid EDG Metrics Dashboards to better suit your needs, please contact TopQuadrant to explore the following options:</p>
+</div>
+<ul class="simple">
+<li><p>Have TopQuadrant quickly configure a customized EDG solution to meet your detailed requirements.
+We will be pleased to quote and provide affordable customization and tailoring services.</p></li>
+<li><p>Enable your organization to develop and maintain customizations for EDG by guiding and training your selected personnel to perform the variety of customization capabilities.</p></li>
+</ul>
+</section>
+<section id="policies">
+<h3>Policies<a class="headerlink" href="#policies" title="Permalink to this headline"></a></h3>
+<p>TopBraid EDG lets you capture policies relevant to the data governance.</p>
+</section>
+<section id="issues">
+<h3>Issues<a class="headerlink" href="#issues" title="Permalink to this headline"></a></h3>
+<p>TopBraid EDG lets you create a work with issues.
+Typically, this will be issues related to establishing and operating your governance processes.</p>
+</section>
+<section id="other-governance-assets">
+<h3>Other Governance Assets<a class="headerlink" href="#other-governance-assets" title="Permalink to this headline"></a></h3>
+<p>This page gives you access to other types of governance assets that are not explicitly linked in the Navigation Bar such as risks, reports, etc.
+In fact, it will show all governance assets including those that have a dedicated page linked from the navigation menu.
+The page provides functions to view, edit, create, delete and perform other actions.</p>
+<figure class="align-center" id="id69">
+<img alt="TopBraid EDG Other Governance Assets Page" class="edg-figure" src="../../_images/edg_other_governance_assets_page.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Other Governance Assets Page</strong></span><a class="headerlink" href="#id69" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To focus on a specific sub type of governance assets, click on Asset Type Selector <a class="reference internal" href="../../_images/asset_type_selector_icon.png"><img alt="asset type" src="../../_images/asset_type_selector_icon.png" style="width: 25px;" /></a> icon and make selections.</p>
+<figure class="align-center" id="id70">
+<img alt="TopBraid EDG Asset Type Selector Dropdown" class="edg-figure" src="../../_images/edg_asset_type_selector.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Asset Type Selector Dropdown</strong></span><a class="headerlink" href="#id70" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../collaboration/index.html" class="btn btn-neutral float-left" title="Collaboration in EDG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../metrics_dashboards/index.html" class="btn btn-neutral float-right" title="Viewing Metrics Dashboards" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

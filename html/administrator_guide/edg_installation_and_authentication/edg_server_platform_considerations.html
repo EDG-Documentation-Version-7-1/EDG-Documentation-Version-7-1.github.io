@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDG Server Platform Considerations &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Authentication for TopBraid EDG" href="authentication_edg_background.html" />
+    <link rel="prev" title="EDG Installation and Authentication" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">EDG Server Platform Considerations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#application-server-and-supported-platforms">Application Server and Supported Platforms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operating-systems">Operating Systems</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="authentication_edg_background.html">Authentication for TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_configuration.html">LDAP Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oauth_authentication.html">OAuth Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_type_app_data_storage.html">Database Type: Application data storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure_logging.html">Configure Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="accessing_edg_application.html">Accessing the EDG Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>EDG Server Platform Considerations</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="edg-server-platform-considerations">
+<span id="id1"></span><h1>EDG Server Platform Considerations<a class="headerlink" href="#edg-server-platform-considerations" title="Permalink to this headline"></a></h1>
+<p>These sections describe some aspects of the server platform to consider prior to installing the EDG server.</p>
+<section id="application-server-and-supported-platforms">
+<h2>Application Server and Supported Platforms<a class="headerlink" href="#application-server-and-supported-platforms" title="Permalink to this headline"></a></h2>
+<p>The EDG server uses Apache Tomcat running on Java.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For the details of your EDG server version, see the <a class="reference external" href="https://www.topquadrant.com/supported-platforms/">Supported Platforms</a> page for compatible platform components (e.g., Java, database, etc.).
+This also includes sections with details and suggested configurations for installing on Linux or Windows Server.</p>
+</div>
+<section id="suggested-java-configuration">
+<h3>Suggested Java Configuration<a class="headerlink" href="#suggested-java-configuration" title="Permalink to this headline"></a></h3>
+<p>If you are using both TopBraid EDG and another TopBraid server application such as Explorer on the same machine, we recommend that you run each in a separate JVM by running them with separate instances of Tomcat.</p>
+<p>It is necessary to ensure that you have adequate physical memory to run EDG and that you have configured your Web Application Server to use it.
+During the purchasing process you should have received a guide to Server Sizing Specifications.
+Please set these appropriate to your data and users.
+If you did not receive this, please contact TopQuadrant support.</p>
+<p>See the installation instructions below for your operating system for more details concerning how to set the parameters.</p>
+</section>
+</section>
+<section id="operating-systems">
+<h2>Operating Systems<a class="headerlink" href="#operating-systems" title="Permalink to this headline"></a></h2>
+<section id="installation-on-linux">
+<h3>Installation on Linux<a class="headerlink" href="#installation-on-linux" title="Permalink to this headline"></a></h3>
+<p>This section describes details and suggested configurations when using Linux as the base operating system and Tomcat as the Web Application Server.</p>
+<p>A suggested configuration for Enterprise Data Governance is as follows:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Operating Systems</p></th>
+<th class="head"><p>Current version of Linux with 2.6 or higher kernel</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Java Runtime Environment</p></td>
+<td><p>Java 11</p></td>
+</tr>
+<tr class="row-odd"><td><p>Web Application Server</p></td>
+<td><ul class="simple">
+<li><p>Apache Tomcat 9 latest (For Debian based Linux distributions, see the notes for using Tomcat 9: <a class="reference external" href="https://salsa.debian.org/java-team/tomcat9/blob/master/debian/README.Debian">https://salsa.debian.org/java-team/tomcat9/blob/master/debian/README.Debian</a>)</p></li>
+<li><p>Apache Tomcat 8.5 latest: see <a class="reference external" href="https://www.topquadrant.com/supported-platforms/">Supported Platforms</a> for specific versions</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Permissions</p></td>
+<td><p>Full access to the Tomcat configuration area is required.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Enterprise Data Governance also requires that the <code class="docutils literal notranslate"><span class="pre">nofile</span></code> limit be increased as it opens a large number of JAR files, and each TDB database also has a large number of files.
+The default is 1024 open files and sockets.
+Reset this by adding the following two lines to the /etc/security/limits.conf configuration file:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>tomcat8         soft    nofile          2048
+tomcat8         hard    nofile          8192
+</pre></div>
+</div>
+</section>
+<section id="installation-on-windows-server">
+<h3>Installation on Windows Server<a class="headerlink" href="#installation-on-windows-server" title="Permalink to this headline"></a></h3>
+<p>This section describes details and suggested configurations when using Windows Server as the base operating system and Tomcat as the Web Application Server.</p>
+<p>A suggested configuration for Enterprise Data Governance is as follows:</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Operating Systems</p></td>
+<td><ul class="simple">
+<li><p>Windows Server, (e.g. 2008, 2012, 2016)</p></li>
+<li><p>Administrator access is required for installation</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Java Runtime Environment</p></td>
+<td><p>Java 11</p></td>
+</tr>
+<tr class="row-odd"><td><p>Web Application Server</p></td>
+<td><ul class="simple">
+<li><p>Apache Tomcat 9 latest</p></li>
+<li><p>Apache Tomcat 8.5 latest</p></li>
+</ul>
+<p>See <a class="reference external" href="https://www.topquadrant.com/supported-platforms/">Supported Platforms</a> for specific versions</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="EDG Installation and Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="authentication_edg_background.html" class="btn btn-neutral float-right" title="Authentication for TopBraid EDG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

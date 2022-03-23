@@ -1,0 +1,66 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. _searching_target:
+
+Searching in EDG
+================
+
+
+Search the EDG searches across all EDG resources that EDG administrator and/or manager of a specific collection elected to include in the index.
+This decision can be made upon creation of a collection and can also be made later on the Manage tab of the collection or through Governance Model.
+An entire subject area or business area can be included in Search the EDG by checking the box as shown below.
+
+Submitting a search from the home page opens a page with the search results summary.
+Your search key words will be matched against text in any of the properties of the collections that are managed by Search the EDG.
+
+.. note:: You may have fields that contain text tagged with different languages, note that search will be performed across all values, irrespective of the language.
+
+In the search results page, you can:
+
+* refine or completely change the search terms and re-execute the search,
+
+* filter results via facets,
+
+* click on any of the result results to see more information about it,
+
+* make comments about any of the found resources and see comments made by other users,
+
+* endorse any of the found resources and see endorsements made my others,
+
+* access interactive visual views and diagrams for a found resource – what is available depends on a type of the item,
+
+* access results and facets via API’s (see below),
+
+* search using Lucene query expression.
+
+.. figure:: _images/edg_search.jpeg
+  :alt: TopBraid Search the EDG Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid Search the EDG Page**
+
+All properties of the collection will be indexed for search as well as applicable facets.
+The results of search are sorted by score, then alphabetically.
+The facet results list shows the top 10 facets for the results.
+The score is calculated based on the number of matches to the term within the document.
+Lucene also offers query boosting per field (be sure to check use advanced syntax).
+
+For example searching:
+
+::
+
+ *id^3 -will find anything that ends in "id" and assign it a weight of 3, boosting those results
+
+.. include:: ./lucene_integration_and_query_language.rst
+.. include:: ./search_results_via_api.rst
+.. include:: ./global_lookup.rst

@@ -1,0 +1,175 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _files_target:
+
+
+Working with Files
+==================
+
+
+For users with *administrator* privileges, **Files** appears in the left navigation menu as an asset collection type.
+It enables users to open and modify files, linked to the EDG workspace, using an EDG user interface.
+Before any editing, EDG makes a copy of the file content in its database and the EDG user edits that copy.
+This supports a process similar to how Workflows support editing a "Working Copy" that is separate from the "Production Copy" of a collecion.
+
+The following figure shows the basic editing process for *Files*.
+
+.. figure:: _images/file_in_workspace_editing_process.png
+  :alt: TopBraid EDG Files Collection Type Editing Process
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Files Collection Type Editing Process**
+
+.. index:: pair: Editing ; Files
+
+Workspace Structure
+-------------------
+
+The Files Explorer shows the projects, folders and files from the EDG workspace.
+Projects are the top level folders directly under the *Workspace*.
+Users can create new projects in the workspace.
+By selecting the *Workspace* and using the *Link to Folder* button, users can also designate folders located outside the workspace as being projects.
+Within a project, users can create new folders and files.
+
+The following figure shows the *New Project* button appearing when the top-level *Workspace* is selected as the target location.
+
+.. figure:: _images/files_new_project_button.png
+  :alt: TopBraid EDG Files New Project Button
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Files New Project Button**
+
+How to Edit RDF Files
+---------------------
+
+The files and folder in normal font (i.e. not light grey) are editable by selecting the file and clicking on the Edit button or picking Edit from the right click menu.
+
+The way a file is displayed in the explorer indicates its status.
+
+* If EDG has a copy of a file in the database for editing, the file is shown as black in color and is bold.
+* When there are unsaved changes in the database, the file is shown as blue in color and is bold with an asterisk.
+* If the file on disk is newer than the database content, the file is shown as red in color .
+* After finishing, the file returns to being shown in normal font.
+
+
+.. figure:: _images/files_colors_meaning.png
+  :alt: TopBraid EDG Files File Status Colors
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Files File Status Colors**
+
+
+
+When a file is edited for the first time, EDG creates a *File Asset Collection* backed by the EDG database and copies the content of the file into the EDG database.
+The following figure shows the user interface when creating a new instance of a class.
+
+.. figure:: _images/files_create_new_instance.png
+  :alt: TopBraid EDG Files Edtior Create New Instance
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Files Edtior Create New Instance**
+
+
+
+
+
+The database version of the file can be viewed, queried and changed and either saved back into its original file on disk or discarded without save.
+
+
+
+The :ref:`change_history_panel` shows changes made in the current editing session.
+*Compare with File on Disk* is a diff-like utility that displays a comparison of the opened, edited version of the file and the file as stored on disk.
+
+.. figure:: _images/files_comparison_result_bloggs.png
+  :alt: TopBraid EDG Files Comparison Result
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Files Comparison Result**
+
+
+
+
+Once a file editing session is finished, the content stored in the EDG database is deleted and the change history is cleared.
+Finishing the editing of a file without saving means changes are lost.
+Refreshing the database from file will re-copy the content of the file from disk into the database.
+All unsaved changes will be lost.
+Only the saved changes will be visible to other graphs that include (owl:import) the file's graph.
+The following figure shows the *File* button options when editing a file.
+
+.. figure:: _images/files_file_button_options.png
+  :alt: TopBraid EDG Files File Button Options
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Files File Button Options**
+
+  .. attention:: It is possible for multiple users to edit the same EDG asset collection copy of a file.
+     If multiple editing sesssions are in process, then one user cannot End editing because EDG knows that there is another active session.
+     Both sessions must be completed by the users or become expired in order to End editing.
+
+
+
+
+
+Technical Details
+-----------------
+
+The editor for Files has the following differences compared to other EDG asset collection types:
+
+* There are no limits on the type of resources that can be edited, i.e. classes, shapes, and instances
+* There is a File drop down menu in the top, with features to move data between file and database
+* The Source Code panel has an option to view and edit the Whole Graph
+* The Home button takes you to the owl:Ontology of the file, not the URN resource of the asset collection
+* Files cannot owl:import EDG asset collections - only their file representations
+* New Explore action Find Usages in Other Files
+* New Modify action Replace URI across Graphs
+* New Batch action Replace Namespace (across Graphs)
+
+
+Many other EDG features are available when using Files.
+The following figures shows *Problems and Suggestions* usage.
+
+.. figure:: _images/files_problems_and_suggestions.png
+  :alt: TopBraid EDG Files Problems and Suggestions
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Files Problems and Suggestions**
+
+
+As editing files is only available for the administrator (of which there should only be one), there is no tab to edit users.
+Also, most settings from the Settings and Manage tabs as well as Comments and Tasks would be lost when editing is finished, so some of those features are intentionally hidden.
+Tasks remain available in case you want to locally track your progress.
+
+When a file-based graph is copied into the database, the owl:imports of the file will be copied into the URN resource of the asset collection.
+Use the Edit Includes link from the Settings tab to edit them.
+
+.. figure:: _images/files_includes.png
+  :alt: TopBraid EDG Files Includes
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Files Includes**
+
+There will also be an additional owl:import to a graph called 'filesimport' that owl:imports some further sub-graphs that are needed to drive the user interface.
+This temporary owl:import will be removed when the database is saved back into the original file. All other triples associated with the temporary URN resource will also be deleted on save.
+While you will see those extra triples in the Source Code panel - please leave them unchanged.
+
+The database graph that is used to edit files is a distinct graph from the file itself.
+For example it would have a graph URI such as urn:x-evn-master:myfile_ttl, while the original file would have the URI http://example.org/myfile.
+Other graphs that owl:import the file will not use the URN-based database graph, but only the file-based graph.

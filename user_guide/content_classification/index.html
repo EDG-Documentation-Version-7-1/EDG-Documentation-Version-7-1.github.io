@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2021-12-02T09:02:56-05:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Classification in EDG &mdash; edg-documentation 7.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Upgrading TopBraid EDG" href="../../upgrading_topbraid_edg/index.html" />
+    <link rel="prev" title="Customizing EDG Using Server-side Scripting" href="../server_side_scripting/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG 7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guidance_specific_to_asset_collection_type/index.html">Guidance Specific to an Asset Collection Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Content Classification in EDG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#content-classification-with-topbraid-edg">Content Classification with TopBraid EDG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#licensing-and-enablement">Licensing and Enablement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-new-content-tag-set">Create New Content Tag Set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#managing-tag-sets">Managing Tag Sets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tagging-documents">Tagging Documents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-content-graphs">Configuring Content Graphs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#using-autoclassifier">Using AutoClassifier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-a-content-tag-set-for-automated-tagging">Setting up a Content Tag Set for Automated Tagging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#training-the-autoclassifier">Training the AutoClassifier</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrading TopBraid EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intray/index.html">Candidate Content</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">User Guide</a> &raquo;</li>
+      <li>Content Classification in EDG</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/user_guide/content_classification/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="content-classification-in-edg">
+<span id="content-classification-target"></span><h1>Content Classification in EDG<a class="headerlink" href="#content-classification-in-edg" title="Permalink to this headline"></a></h1>
+<span class="target" id="index-0"></span><section id="content-classification-with-topbraid-edg">
+<span id="index-1"></span><h2>Content Classification with TopBraid EDG<a class="headerlink" href="#content-classification-with-topbraid-edg" title="Permalink to this headline"></a></h2>
+<section id="licensing-and-enablement">
+<h3>Licensing and Enablement<a class="headerlink" href="#licensing-and-enablement" title="Permalink to this headline"></a></h3>
+<p>The availability of any asset collection is determined by what is (a) licensed and (b) configured under <em>Server Administration</em>.
+To install a license or to view the currently licensed features, see <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/product_registration.html#product-registration"><span class="std std-ref">Product Registration</span></a>.
+To configure which licensed collection types are currently enabled or disabled, see <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a>.
+For general licensing information and available asset collections and packages, see TopQuadrant.com.</p>
+<p><a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a></p>
+</section>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<p>This document describes TopBraid Tagger and AutoClassifier, an add-on TopBraid EDG module designed to help you analyze your information assets –web pages and documents in many formats – to identify the context and meaning of each asset.
+This module can catalog your content, automatically extracting available metadata and help you add new metadata.</p>
+<p>TopBraid Tagger and AutoClassifier uses state-of-the art AI to automatically enrich the content by assigning to them the most relevant tags from your controlled vocabularies (Taxonomies and Ontologies).
+Auto-classifying your content resources by connecting them to relevant vocabulary terms, delivers improved search, navigation and automates lifecycle management of content.</p>
+<p>In addition to automatically assigning relevant terms to content, users can also manually tag or annotate content resources.
+In both cases, the result of tagging is a set of connections between the content and a vocabulary.
+For example, a resource representing a news story can be linked to vocabulary terms of Election and Weather through a property named “has subject”, stating that a given news story has topics of Election and Weather.</p>
+<p>These relationships—tags—can be used to enrich search, browsing, and other applications by managing metadata on concept-to-vocabulary relationships.
+The role of Tagger is to make it easy to manage and create these relationships. Asset collections that store these relationships are called Content Tag Sets.
+This guide focuses on working with Content Tag Sets.
+Corpora is the second type of asset collection that is enabled when you add the TopBraid Tagger and AutoClassifier module.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_corpora/index.html#working-with-corpora-target"><span class="std std-ref">Working with Corpora</span></a> for working with this type of collections.</p>
+</div>
+<p>Content Tag Sets could also be used to create mappings between two taxonomies or two ontologies.
+However, if you do need to build a mapping between two vocabularies, please see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_crosswalks/index.html#working-with-crosswalks-target"><span class="std std-ref">Working with Crosswalks</span></a>.
+It is likely to be a better fit for your use case.</p>
+<p>Just like Crosswalks, Content Tag Sets only store relationships. For example, information in a Content Tag Set from the example above would have the general form:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>{  <span class="nt">&lt;story&gt;</span> <span class="nt">&lt;hasSubject&gt;</span> <span class="nt">&lt;Election&gt;</span> .
+   <span class="nt">&lt;story&gt;</span> <span class="nt">&lt;hasSubject&gt;</span> <span class="nt">&lt;Weather&gt;</span> .
+}
+</pre></div>
+</div>
+<p>Information about the news story and about the vocabulary terms (or tags) is stored in the asset collections that are connected using the Content Tagset.
+The first collection (containing information about the story) is called <em>content graph</em>.
+Typically, it is a Corpus.
+The second collection (containing information about tagging terms) is called <em>tagging vocabulary</em>.
+Typically, it is a Taxonomy, although it could also be an Ontology.</p>
+</section>
+<section id="create-new-content-tag-set">
+<h3>Create New Content Tag Set<a class="headerlink" href="#create-new-content-tag-set" title="Permalink to this headline"></a></h3>
+<p>When a new Content Tag Set is created, EDG requires the user to select a <strong>Content Graph</strong> and a <strong>Tagging Vocabulary</strong>.</p>
+<p>The drop-down for the selection of the content graph will show all corpora, data graphs, taxonomies and ontologies.
+Typically, you would select a Corpus.</p>
+<p>As mentioned above you could use Content Tag Sets to connect two taxonomies or two ontologies.
+However, Crosswalks are a better option for this.
+The capability to select a taxonomy and/or an ontology remains available to support compatibility with versions that did not offer Crosswalks.
+This may be changed in the future versions.</p>
+<p>Additionally, the role of a content graph may be played by a file in EDG’s workspace.
+EDG Administrators can identify files that are to be used as content graphs.
+They would then also show up in the drop-down selection for a content graph.</p>
+<p>Tagging vocabulary is either a taxonomy or an ontology.
+The drop-down selection will show available ontologies and taxonomies.</p>
+<p>User will also be asked to:</p>
+<ul class="simple">
+<li><p>Select a <strong>Default Tag Property</strong> – a property that will, by default, be used to connect assets in the content graph with the vocabulary terms.
+Auto-tagging will always use the default property.
+When tagging manually, users can select among other properties.
+After creation, the <strong>Manage</strong> tab will let you select other properties that may be used for tagging.</p></li>
+<li><p>Optionally, select a <strong>Root Class</strong> for the content types tree – this is similar to selecting a Main Entity for other asset collections.
+By default, if your content graph is a Corpus, the root will be <strong>Document</strong>.</p></li>
+</ul>
+<p>Please see the <a class="reference internal" href="../working_with_asset_collections/index.html#asset-collections"><span class="std std-ref">Working with Asset Collections</span></a> for all the general features of asset collections such as import/export, user permissions, reports and settings.
+Specific Content Tag Set only information is contained within this page.</p>
+</section>
+<section id="managing-tag-sets">
+<h3>Managing Tag Sets<a class="headerlink" href="#managing-tag-sets" title="Permalink to this headline"></a></h3>
+<p>The <strong>Manage</strong> tab for Content Tag Sets contains an additional feature:</p>
+<ul class="simple">
+<li><p><strong>Select Tag Properties</strong> lets you modify, by checking or unchecking checkboxes, the list of which properties from the property graphs should be available on the Tagger drop-down property list.</p></li>
+</ul>
+<p>The <strong>Export</strong> tab for Content Tag Sets contains this additional feature:</p>
+<ul class="simple">
+<li><p><strong>Normalized Concepts (Troubleshooting)</strong> Generates a normalized version of the Tagging Vocabulary used in this Content Tag Set, as it would be seen by AutoClassifier, and returns it in the Turtle format.
+This can be used to check, for example, if desired language-specific labels are selected over other languages when dealing with multilingual vocabularies.</p></li>
+</ul>
+</section>
+<section id="tagging-documents">
+<h3>Tagging Documents<a class="headerlink" href="#tagging-documents" title="Permalink to this headline"></a></h3>
+<p>To manually tag documents click on the <strong>Taggings</strong> tab at the top of the page.
+This will take you to the editor application.
+This guide describes the new editor released as part of TopBraid EDG 6.3.
+Please refer to doc.topquadrant.com for the “old” editors.</p>
+<figure class="align-center" id="id47">
+<img alt="TopBraid EDG Taggings Tab" class="edg-figure" src="../../_images/edg_taggings_tab.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Taggings Tab</strong></span><a class="headerlink" href="#id47" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Tagging editor has very similar features to the other collection editors for searching, panel and layout options.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Please see <a class="reference internal" href="../working_with_asset_collections/viewing_and_editing_asset_information.html#viewing-and-editing-asset-information-target"><span class="std std-ref">Viewing and Editing Asset Information</span></a> to learn more about using the features of the EDG editor.</p>
+</div>
+<p>To add a tag, use the Tags panel located in the bottom right by default.
+Shown above for “Campbell’s Soup”. You can delete tags through this panel as well.</p>
+<p>The Add Tags button brings up a new dialog.
+Here you can search for your concept with a hierarchy tree view or switch to the search view by using the magnifying glass icon.
+Continue to add tags here until you are finished and then select close button.
+You can add one to many.</p>
+<figure class="align-center" id="id48">
+<img alt="TopBraid EDG Tags Panel" class="edg-figure" src="../../_images/edg_tags_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Tags Panel</strong></span><a class="headerlink" href="#id48" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="configuring-content-graphs">
+<span id="index-2"></span><h3>Configuring Content Graphs<a class="headerlink" href="#configuring-content-graphs" title="Permalink to this headline"></a></h3>
+<p>Typically, you will use a Corpus as a content graph and you will either use a connector or enter/upload/import, documents. Corpora asset collections in EDG are based on a model that is called TopBraid Simple Corpus and Document Schema.</p>
+<p>If you need to configure this model, you can create an ontology and, using <strong>Settings&gt;Includes</strong> include TopBraid Simple Corpus and Document Schema.
+Then, you can extend it if needed.
+If you plan on using a Data Graph as your content graph, then you would need to create an ontology for it.
+This ontology may be, but not necessarily have to be, an extension of the TopBraid Simple Corpus and Document Schema.</p>
+<p>If you are creating a file that will be used as a content graph (e.g., a file obtained from some third party), there are a few notes to keep in mind:</p>
+<ul class="simple">
+<li><p>For the Content Types hierarchy to display properly in a Content Tag Set, the root classes must be subclasses of rdfs:Resource.</p></li>
+<li><p>The Content Tag Set editor displays titles of resources in the content graph using the rdfs:label property, or any subproperty of rdfs:label.
+If the title (label) uses a property other than rdfs:label, such as dc:title, define dc:title as a subproperty of rdfs:label.
+The title will then display properly.
+Additional properties about each content resource will be displayed on the form when the resource is selected.
+The form (and AutoClassifier result reports) will display any <code class="docutils literal notranslate"><span class="pre">dc:source</span></code> properties of those graphs as hypertext links to the URLs provided as values, so these are useful for providing easy access to such a resource for the users tagging them.</p></li>
+<li><p>The documents should all be typed with some class (or one if its subclasses), and that class should then later be used as the <strong>Root Content Type</strong> when creating a Content Tag Set.</p></li>
+<li><p>All properties that occur on any document resource (for example, date or author) should have an rdfs:label, or a subclass of rdfs:label, so that they can be displayed better.
+This can be achieved by importing an ontology that defines such labels into the content graph.</p></li>
+<li><p>Content graphs and tag property graphs should have rdfs:labels for the graph URI so that they are displayed nicely in the dropdowns when creating new Content Tag Sets.</p></li>
+</ul>
+<p>Ensuring these conditions may require slight customization of the graphs obtained from third parties.
+This is usually achieved most easily by creating a new graph, importing the the third party graph, adding customizations to this new one, and then selecting that one on this configuration screen.</p>
+<p>For content graphs that will be used by Tagger’s AutoClassifier feature, also keep that the actual text content of the documents should be kept in the content graph, in a property of the document resource such as “fullText” or “content”.
+The text in this property, possibly along with other text-containing properties such as title or abstract, will be analyzed by the AutoClassifier, both in training and when generating tag recommendations for documents.</p>
+<p>If you are planning to auto-create files, the TopBraid platform used to develop EDG provides tools such as SPARQLMotion for automating conversion of the documents.
+However, this can also be done using a programming language of the user’s choice.
+Typically, a conversion script runs on a scheduled basis (for example, nightly) or on demand.
+After the initial run, a conversion script can process only newly added or changed documents.
+Once the documents are tagged, information about tags can be provided to the content management and enterprise search systems through export or, in real time, through web services and queries.</p>
+<span class="target" id="index-3"></span></section>
+</section>
+<section id="using-autoclassifier">
+<span id="index-4"></span><h2>Using AutoClassifier<a class="headerlink" href="#using-autoclassifier" title="Permalink to this headline"></a></h2>
+<p>See <a class="reference internal" href="#running-the-autoclassifier">Running the AutoClassifier</a> .</p>
+<p>Tagger’s AutoClassifier feature can tag a set of documents to a specified taxonomy after you train it with an appropriate set of tagged sample documents.
+It stores the automatically added tags in a working copy of a tag set where you can review the tags before committing them to production.</p>
+<p>This section assumes that AutoClassifier’s indexing server is installed.
+If a <em>Content Tag Set’s</em> <strong>&gt; Manage &gt; Configure AutoClassifier</strong> is missing, then contact your EDG administrator regarding both (1) the licensing and installation of the Maui Indexer server and (2) the EDG administrative configuration of the AutoClassifier parameters for Maui Server.</p>
+<section id="setting-up-a-content-tag-set-for-automated-tagging">
+<h3>Setting up a Content Tag Set for Automated Tagging<a class="headerlink" href="#setting-up-a-content-tag-set-for-automated-tagging" title="Permalink to this headline"></a></h3>
+<p>The steps of creating a Content Tag Set for automated tagging are the same as for manual tagging: create a Content Tag Set, specify the content graph and tagging vocabulary, and then select a default tag property as described above.
+The default tag property is the one that AutoClassifier will use when tagging content items with vocabulary terms.</p>
+<p>If instances in the content graph include <code class="docutils literal notranslate"><span class="pre">dc:source</span></code> values with URLs pointing to actual documents, Tagger will use these URLs to turn content titles in reports on AutoClassifier activity into hypertext links.</p>
+<p>There are a few things to keep in mind about the vocabulary that you use for automated tagging:</p>
+<ul class="simple">
+<li><p>Large taxonomies that cover the domain of interest in detail are good, as they give AutoClassifier more terms to choose from.</p></li>
+<li><p>Smaller, shallow taxonomies with general concepts work less well, as the concepts are less likely to directly appear as keywords in the text.</p></li>
+<li><p>Taxonomies that have rich skos:altLabel and skos:hiddenLabel values will work best.</p></li>
+<li><p>Taxonomies can be improved to work better with AutoClassifier by adding more specific sub-concepts and by adding alternate labels to existing concepts.
+The goal is to have keywords or phrases that occur in the document corpus appear as labels in the taxonomy.</p></li>
+<li><p>Some special considerations apply when using EDG-managed ontologies (as opposed to EDG-managed taxonomies) as concept vocabularies.</p></li>
+</ul>
+</section>
+<section id="training-the-autoclassifier">
+<h3>Training the AutoClassifier<a class="headerlink" href="#training-the-autoclassifier" title="Permalink to this headline"></a></h3>
+<p>After either manually tagging some of the content with the configured default tag property, or after importing a set of tags from a file, the next step is to have the AutoClassifier analyze this set of tags to identify patterns that it can use when tagging additional content.
+To configure this, first ensure (per above) that the AutoClassifier server (Maui) is both installed and configured, then select <strong>Configure AutoClassifier</strong> from the content tag set’s <strong>Manage</strong> tab.</p>
+<figure class="align-center" id="id49">
+<img alt="TopBraid EDG Configure AutoClassifier Example" class="edg-figure-l" src="../../_images/edg_configure_autoclassifier.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Configure AutoClassifier Example</strong></span><a class="headerlink" href="#id49" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>As shown above, the configuration screen includes descriptions of the properties that you can set.</p>
+<p>The <strong>Content language</strong> offers a choice of English, French, German, or Spanish parsing of the content.
+This setting also affects the handling of <em>language-tagged literals</em> in the content graph and concept vocabulary graph.
+If a language is chosen here, non-matching language-tagged literals will be ignored during auto-classification.
+Leaving the setting on <em>(default)</em> will use the system language (as configured in Maui Server) and is not recommended for multi-lingual content graphs.</p>
+<p><strong>Amount of training data:</strong> As a guideline, we recommend having at least 100 tagged content resources as training data.
+AutoClassifier will work with lower numbers, but the quality of recommended tags will be lower.
+Adding more training data is good, but there are diminishing returns.
+If 1000 tagged content resources are available as training data, adding more may make little difference to the quality of results, but will still increase the amount of computing resources required for training.
+If you wish to limit the training set to a random sample, you may specify a <strong>Training sample size</strong> and enter the desired number of content resources.</p>
+<p>Only taggings that use the default tag property will be used as training data.</p>
+<p>After choosing appropriate options, click <strong>Save Changes</strong> and then the <strong>Start Training</strong> button.
+Training may take a while. After training is complete, the AutoClassifier is ready to recommend tags, as described in the next chapter.</p>
+<p><strong>Re-training</strong>: The training process can be repeated at any time.
+Re-training is recommended in the following situations:</p>
+<ol class="arabic simple">
+<li><p>After the taxonomy has changed.</p></li>
+<li><p>When the nature of the content resources changes significantly, e.g., many new content resources that differ in length or in used properties are being added since the last training.</p></li>
+<li><p>If the amount of available training data has increased significantly since the last training, but is still below the numbers where we see diminishing returns.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Re-training is not necessary when only a few content resources were added, or when incremental changes were made to content resources.</p>
+</div>
+<p><strong>Evaluation</strong>: AutoClassifier works by using the training data to train a machine learning model.
+AutoClassifier analyses each document in the training data and its associated training tags.
+If the learning process works well, AutoClassifier is then able to predict similar tags for any other input document.
+AutoClassifier has an evaluation function that can be used to quantify how well this training process works, by computing precision and recall scores.
+These scores can be helpful to understand the effect of activities such as adding more training data, adding more skos:altLabels, or adding more concepts to the taxonomy.</p>
+<p>Click <strong>Calculate</strong> to compute precision and recall.
+This calculation is done using 10-fold cross-validation, in other words, the collection of training documents is split into 10 parts, and then 9 parts are used for training, and AutoClassifier is run with the resulting training model on the documents in the 10th part (the test set).
+This is repeated ten times, with a different part as test set each time.
+The results are averaged.
+This process means that the training process never sees the documents that are used for calculating the scores.</p>
+<p><strong>Keeping training data separate from AutoClassifier results</strong>: The recommended workflow for AutoClassifier is to keep training data in one content tag set (the <em>training tag set</em>), and AutoClassifier results in a different content tag set (the <em>target tag set</em>).
+This ensures that manually created training tags are not mixed with lower-quality auto-generated tags.
+This setup also makes it possible to do training on one set of documents, and auto-classification on a different (larger) set of documents.</p>
+<p>In this scenario, the AutoClassifier configuration and training described above would only be done within the training tag set.
+After this has been done, navigate to the AutoClassifier configuration screen of the target tag set, and select the training tag set from the <em>AutoClassifier Training Model</em> dropdown.
+This will enable AutoClassifier on the target tag set, using the training result from the training tag set.</p>
+<p>It is recommended that training tag set and target tag set should share the same concept vocabulary.
+If they use different concept vocabularies, then only terms that are shared between the two vocabularies will be found by the AutoClassifier.
+If they don’t share any terms, AutoClassifier will be unable to generate any recommendations.</p>
+<p>The Manage Tab also has the option to run AutoClassifier automatically when any content changes on the Content Tag Set.
+Check the box in the item as shown here:</p>
+<figure class="align-center" id="id50">
+<img alt="TopBraid EDG Run AutoClassifier Automatically on Content Changes Option" class="edg-figure" src="../../_images/edg_run_autoclassifier_content_changes.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Run AutoClassifier Automatically on Content Changes Option</strong></span><a class="headerlink" href="#id50" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="running-the-autoclassifier">
+<h4>Running the AutoClassifier<a class="headerlink" href="#running-the-autoclassifier" title="Permalink to this headline"></a></h4>
+<p>Once you’ve done your training, you can return to the <strong>AutoClassifier</strong> tab and click the <strong>Run AutoClassifier</strong> button.
+You will see a new row added to the table on that page, showing that your job is running and giving you the opportunity to cancel the job if you wish, as shown in the “Running” row of the table below:</p>
+<figure class="align-center" id="id51">
+<img alt="TopBraid EDG AutoClassifier Jobs" class="edg-figure" src="../../_images/edg_autoclassifier_jobs.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG AutoClassifier Jobs</strong></span><a class="headerlink" href="#id51" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If you refresh your browser before the job is completed, you will see the Duration value for the running job updated in the table.
+The next time that you refresh your browser after the job is finished, you will see that the status has changed from “Running” to “Completed,” and a “Results” link will appear in the final column.
+This link leads to a report similar to the following:</p>
+<figure class="align-center" id="id52">
+<img alt="TopBraid EDG AutoClassifier Results" class="edg-figure" src="../../_images/edg_autoclassifier_results.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG AutoClassifier Results</strong></span><a class="headerlink" href="#id52" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Clicking the little triangle to the left of any Tag (as someone has done with the “Refibrillation managed by” one above) expands in the second column the list of tags proposed for assignment to those documents, along with tags already in the production copy (if this is the first time AutoClassifier runs on this Content Tag Set, it is likely that tags already in production copy are part of the training data).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From the header of this report that the new tags have not been applied to the production tag set, but are instead stored in a working copy named “AutoClassifier Results” plus a date and time stamp.</p>
+</div>
+<p>In the last two columns of the report, each proposed tag can be approved, which commits it to the production tag set, or rejected, which removes it from the working copy. Links in the lower-right do these for all the generated tags.</p>
+<p>You can also edit the tags added by the AutoClassifier in the regular Tagger interface.
+You can delete, add, and otherwise edit these tags as you normally would in a tag set working copy.</p>
+<figure class="align-center" id="id53">
+<img alt="TopBraid EDG Regular Tagger Interface" class="edg-figure" src="../../_images/edg_regular_tagger_interface.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Regular Tagger Interface</strong></span><a class="headerlink" href="#id53" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="recommended-concepts-panel">
+<h4>Recommended Concepts Panel<a class="headerlink" href="#recommended-concepts-panel" title="Permalink to this headline"></a></h4>
+<p>After AutoClassifier has been trained, editors can see the recommended concepts for each document on the “Recommended Concepts” panel.
+Here users can see a list of AC’s candidate tags, along with each candidate’s confidence score.
+Adding a tag here will be the same behavior as the Auto Classifier Results Report, it will immediately add the tag to the production copy.
+Users can also refresh the recommendations.</p>
+<p>If you don’t see this panel in your view, pull it down from the Panels menu at the top.</p>
+<figure class="align-center" id="id54">
+<img alt="TopBraid EDG Recommended Concepts Panel" class="edg-figure" src="../../_images/edg_recommended_concepts_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Recommended Concepts Panel</strong></span><a class="headerlink" href="#id54" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="autoclassifier-integration-points">
+<h4>AutoClassifier Integration Points<a class="headerlink" href="#autoclassifier-integration-points" title="Permalink to this headline"></a></h4>
+<p>While several entry points are provided to make use of AutoClassifier with different scopes across Tagger, its further integration with external systems extending EDG is possible with two options: a web service and a SPARQL property function.</p>
+<section id="autoclassifier-web-services">
+<h5>AutoClassifier Web Services<a class="headerlink" href="#autoclassifier-web-services" title="Permalink to this headline"></a></h5>
+<p>AutoClassifier can be controlled and invoked through a collection of web APIs.
+This includes an API function that recommends tags for a submitted text snippet and returns JSON results. Documentation for the AutoClassifier web services is available in the EDG Server Administration area, under <em>Available Web Services</em>.</p>
+</section>
+<section id="autoclassifying-sparql-property-function">
+<h5>Autoclassifying SPARQL property function<a class="headerlink" href="#autoclassifying-sparql-property-function" title="Permalink to this headline"></a></h5>
+<p>Auto-classification can also be triggered from within a SPARQL query with the property function autotagger:autoClassify, which enables further customization of its behaviour.
+The example below does showcase it:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>PREFIX autotagger: &lt;http://evn.topbraidlive.org/autotagger#&gt;
+SELECT * WHERE {
+    GRAPH ?contentGraph {
+        ?cts autotagger:autoClassify (?doc ?concept ?probability)
+    }
+    GRAPH ?taxon {
+        OPTIONAL { ?concept skos:prefLabel ?label }
+    }
+}
+</pre></div>
+</div>
+<p>Values shall be bound (either hardcoded or in other parts of the query) to the following variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">?contentGraph</span></code> is the content graph where unstructured text resides in documents;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?cts</span></code> is the EDG Content Tag Set project URI, e.g. &lt;<a class="reference external" href="urn:x-evn-master:DocsSet">urn:x-evn-master:DocsSet</a>&gt;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?doc</span></code> is an instance of document, e.g. &lt;<a class="reference external" href="http://example.org/trec/doc/87049087">http://example.org/trec/doc/87049087</a>&gt;. These instances <strong>must</strong> have triples for properties configured as content properties in the Content Tag Set’s AutoClassifier configuration</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?taxon</span></code> is the EDG Taxonomy project URI, e.g. &lt;<a class="reference external" href="urn:x-evn-master:MyTaxonomy">urn:x-evn-master:MyTaxonomy</a>&gt;</p></li>
+</ul>
+</section>
+</section>
+<section id="preparing-ontologies-and-taxonomies-for-use-as-tagging-vocabularies-with-autoclassifier">
+<h4>Preparing Ontologies and Taxonomies for use as Tagging Vocabularies with AutoClassifier<a class="headerlink" href="#preparing-ontologies-and-taxonomies-for-use-as-tagging-vocabularies-with-autoclassifier" title="Permalink to this headline"></a></h4>
+<p>AutoClassifier automatically assigns tags to documents. The tags are chosen from the pool of concepts in a tagging vocabulary.
+The tagging vocabulary can be a taxonomy expressed in SKOS.
+In this case, instances of skos:Concept form the pool of possible concepts.
+A taxonomy can also be based on a model that extends SKOS with some subclasses of skos:Concept.
+Or alternatively, the tagging vocabulary can be some an ontology.
+In such cases, the modeler has some control over the pool of resources that are used as tags.</p>
+<p>The rules used by AutoClassifier to determine the pool of resources to be used as tags are as follows:</p>
+<ol class="arabic simple">
+<li><p>If a tagging vocabulary contains any instances of skos:Concept or any of its subclasses, then these <em>concept instances</em> become the pool of potential tags.</p></li>
+<li><p>If the ontology’s root class is owl:Thing (this is the default), then the <em>classes</em> defined in the ontology will become the pool of potential tags.
+Otherwise, any subclasses of the root class will become the pool of potential tags.</p></li>
+</ol>
+<p>You may have a candidate for a tagging vocabulary that does not use either direct instances of skos:Concept nor a class hierarchy to capture the concepts to be used as tags by AutoClassifier.
+Instead, it may contain instances of some other class, such as Topic or Location.
+In this case, you should make this other class a subclass of skos:Concept.
+This will tell AutoClassifier to include the instances of that class in the pool of tags.</p>
+<p>AutoClassifier makes use of preferred and alternate labels as well as concept relationships in the tagging vocabulary. It will consider the following properties:</p>
+<ul class="simple">
+<li><p><strong>Preferred label</strong>: skos:prefLabel and sub-properties, or if that property is not defined, rdfs:label and sub properties</p></li>
+<li><p><strong>Alternate label</strong>: skos:altLabel and skos:hiddenLabel</p></li>
+<li><p><strong>Hierarchy</strong>: skos:broader, skos:narrower, rdfs:subClassOf</p></li>
+<li><p><strong>General relationships</strong>: skos:related, skos:hasTopConcept, owl:sameAs, owl:equivalentClass</p></li>
+</ul>
+<p>Other properties in the ontology can be added to these lists of considered properties by declaring them as subproperties of skos:prefLabel, skos:altLabel, skos:broader and skos:related.
+For more information, see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a>.</p>
+<p>Additionally, follow the advice provided in the  Setting up a Content Tag Set for Automated Tagging section of this document.</p>
+</section>
+<section id="providing-training-tag-set-data">
+<h4>Providing Training Tag Set Data<a class="headerlink" href="#providing-training-tag-set-data" title="Permalink to this headline"></a></h4>
+<p>To train AutoClassifier, you will need a set of sample tags.
+You can create them by using the Content Tag Set editor and manually adding tags.
+Alternatively, you may already have some tags established for a curated body of content.
+If so, you can prepare a file for import.</p>
+<p>You can import and export tag set RDF data in standard serialization formats.
+When you use Tagger to tag content with a concept, it is stored in the tag set as actual triples, which are statements expressed using the W3C standard RDF.
+RDF uses URIs to represent resources such as content resources, tag properties, and the concepts.</p>
+<p>For example, if the URI associated with the news story “‘Gangnam Style’ becomes most watched YouTube video ever” is <a class="reference external" href="http://en.wikinews.org/w/index.php?&amp;oldid=1711859">http://en.wikinews.org/w/index.php?&amp;oldid=1711859</a>, and you use Tagger to tag it as having a Dublin Core subject of “dance” from the IPTC set of news codes, the triple created by Tagger is:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>{ &lt;http://en.wikinews.org/w/index.php?&amp;oldid=1711859&gt;
+  &lt;http://purl.org/dc/elements/1.1/subject&gt;
+  &lt;http://cv.iptc.org/newscodes/subjectcode/01006000&gt; }
+</pre></div>
+</div>
+<p>The RDF file you prepare for import of tags, should follow this format.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../server_side_scripting/index.html" class="btn btn-neutral float-left" title="Customizing EDG Using Server-side Scripting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../upgrading_topbraid_edg/index.html" class="btn btn-neutral float-right" title="Upgrading TopBraid EDG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.
+      <span class="lastupdated">Last updated on Dec 02, 2021.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

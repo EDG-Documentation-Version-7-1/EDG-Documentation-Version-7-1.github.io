@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resource Actions &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ADS-based Web Services" href="services.html" />
+    <link rel="prev" title="Working with Relational Databases via SQL" href="sql.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">The Scripting User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">Working with Relational Databases via SQL</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Resource Actions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#process-to-define-explore-and-modify-actions">Process to Define Explore and Modify Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-explore-action-example">Custom Explore Action Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-import-script-example">Custom Import Script Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ADS-based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shacl.html">Using ADS with SHACL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodejs.html">Using ADS from Node.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web.html">Using ADS from Web Applications and React</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>Resource Actions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="resource-actions">
+<span id="scripting-actions"></span><h1>Resource Actions<a class="headerlink" href="#resource-actions" title="Permalink to this headline"></a></h1>
+<p>ADS enables power users to create extra UI functionality for end-users on top of the core EDG product via the <em>Explore</em> and <em>Modify</em> drop-down buttons in the editor form.</p>
+<section id="process-to-define-explore-and-modify-actions">
+<h2>Process to Define Explore and Modify Actions<a class="headerlink" href="#process-to-define-explore-and-modify-actions" title="Permalink to this headline"></a></h2>
+<p>An <em>Explore</em> action (<code class="code docutils literal notranslate"><span class="pre">dash:ExploreAction</span></code>) allows for the definition of viewer functionality for a selected resource, meaning that no changes to the graph can be made.
+On the other hand the <em>Modify</em> actions (<code class="code docutils literal notranslate"><span class="pre">dash:ModifyAction</span></code>) allow the data to be changed.
+Such new functionality is defined in an ontology and attached to a node shape via the <code class="code docutils literal notranslate"><span class="pre">dash:resourceAction</span></code> predicate.</p>
+<p>Parameters can be defined for these custom resource actions.
+EDG automatically renders the right UX input components based on the parameter’s type.
+For example, if the data type is a string, then a standard input text box is provided.
+If on the other hand, the parameter is defined to be a type of a particular class, then EDG provides a select drop-down box that is automatically populated with instances of that class.
+Other customisations include the possibility of grouping different resource actions together (<code class="code docutils literal notranslate"><span class="pre">dash:actionGroup</span></code>), and to provide an icon (<code class="code docutils literal notranslate"><span class="pre">dash:actionIconClass</span></code>) to the newly defined function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These Modify and Explore actions can be used instead of custom plugins for the Import, Export and Transform tabs of TopBraid.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>In order to have custom actions that apply to a whole asset collection, the defined action can be attached using <code class="code docutils literal notranslate"><span class="pre">dash:resourceAction</span></code> to the class <code class="code docutils literal notranslate"><span class="pre">owl:Ontology</span></code> so that it will show up in Explore or Modify menus of the “Home” asset of the collection.</p>
+</div>
+<p>The following subsections show example resource actions.
+More examples can be found in <a class="reference internal" href="../ext/points.html#ext-actions"><span class="std std-ref">Resource Actions</span></a>.</p>
+</section>
+<section id="custom-explore-action-example">
+<h2>Custom Explore Action Example<a class="headerlink" href="#custom-explore-action-example" title="Permalink to this headline"></a></h2>
+<p>The following example shows how the custom shape scripts defined earlier on the <code class="code docutils literal notranslate"><span class="pre">g:City</span></code> node shape can be encapsulated within an explore action and become available in the form’s <em>Explore</em> drop-down.
+The image below shows the definition of the explore action in the TopBraid Examples Geo Ontology.</p>
+<figure class="align-center" id="id1">
+<img alt="EDG Custom Resource Explore Action" class="edg-figure-l" src="../_images/edg_custom_resource_explore_action.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Creating an Explore Action</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The JavaScript code is simply <code class="code docutils literal notranslate"><span class="pre">focusNode.toJSON(lang)</span></code>, where <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> is the selected resource, <code class="code docutils literal notranslate"><span class="pre">lang</span></code> is the parameter defined for the explore action, whilst <code class="code docutils literal notranslate"><span class="pre">toJSON(...)</span></code> is the defined shape script on the <code class="code docutils literal notranslate"><span class="pre">City</span></code> class.
+Back in the Geography Taxonomy, once a city is selected, EDG will render the new custom resource action in the Explore drop-down.</p>
+<figure class="align-center" id="id2">
+<img alt="EDG Custom Resource Explore Action Menu" class="edg-figure-l" src="../_images/edg_custom_resource_explore_action_menu.png" />
+<figcaption>
+<p><span class="caption-text"><strong>JSON Viewer (custom explore action) rendered in the Explore Drop-down</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Selecting the new Explore option, EDG renders any parameters first in a dialog box, in this case a text box where the language tag can be entered:</p>
+<figure class="align-center" id="id3">
+<img alt="EDG Custom Resource Explore Action Parameter" class="edg-figure-l" src="../_images/edg_custom_resource_explore_action_parameter.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Language parameter input in dialog box</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Finally, EDG renders the result in a dialog box.
+The rendering can be in the form of a text box (similar to the image below), or tabular.
+This depends on the type of results the explore function returns.</p>
+<figure class="align-center" id="id4">
+<img alt="EDG Custom Resource Explore Action Result" class="edg-figure-l" src="../_images/edg_custom_resource_explore_action_result.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Rendering results for the defined JSON viewer</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="custom-import-script-example">
+<span id="scripting-actions-import"></span><h2>Custom Import Script Example<a class="headerlink" href="#custom-import-script-example" title="Permalink to this headline"></a></h2>
+<p>Here we cover the topic of resource actions that allow users to upload and process files.</p>
+<p>You can attach such resource actions to any class where it makes sense.
+For example if your importer is aimed at defining instances of <code class="code docutils literal notranslate"><span class="pre">g:City</span></code> which then become narrower concepts of a parent <code class="code docutils literal notranslate"><span class="pre">g:Country</span></code> then you may want to attach your resource action to the <code class="code docutils literal notranslate"><span class="pre">g:Country</span></code> class.
+The variable <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> can in that case be used to access the currently selected <code class="code docutils literal notranslate"><span class="pre">g:Country</span></code>.
+If you don’t really need a focus node, you could decide to attach the resource action to the class <code class="code docutils literal notranslate"><span class="pre">owl:Ontology</span></code>, which would make it show up for the Home resource of your asset collection.</p>
+<p>Resource actions that perform a file import should be instances of <code class="code docutils literal notranslate"><span class="pre">dash:ModifyAction</span></code>, because they require write access to the data.
+Other actions that accept an uploaded file, for example just to produce a report or HTML page, may be <code class="code docutils literal notranslate"><span class="pre">dash:ExploreActions</span></code>.</p>
+<p>In order to enable file uploads, use the property <code class="code docutils literal notranslate"><span class="pre">dash:mimeTypes</span></code> at one or more <code class="code docutils literal notranslate"><span class="pre">sh:Parameter</span></code> declarations.
+The value of that property must be a single comma-separated string of well-known mime types.
+The following table summarizes the most common file types:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>File Type</p></th>
+<th class="head"><p>Mime Types string</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JSON Files</p></td>
+<td><p>application/json</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spreadsheets</p></td>
+<td><p>.csv,.tsv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</p></td>
+</tr>
+<tr class="row-even"><td><p>XML Files</p></td>
+<td><p>application/xml</p></td>
+</tr>
+</tbody>
+</table>
+<p>The wizard to create parameters has a built-in convenience for these types:</p>
+<figure class="align-center" id="id5">
+<img alt="The dialog to create file-based parameters" class="edg-figure" src="../_images/CreateFileParameter.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The dialog to define parameters that represent uploaded files</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>A complete example is shown below:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">g</span><span class="p">:</span><span class="nt">Country</span>
+<span class="linenos"> 2</span>	<span class="p">...</span>
+<span class="linenos"> 3</span>	<span class="nn">dash</span><span class="p">:</span><span class="nt">resourceAction</span> <span class="nn">g</span><span class="p">:</span><span class="nt">ImportCitiesAction</span> <span class="p">.</span>			
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nn">g</span><span class="p">:</span><span class="nt">ImportCitiesAction</span>
+<span class="linenos"> 6</span>	<span class="kt">a</span> <span class="nn">dash</span><span class="p">:</span><span class="nt">ModifyAction</span> <span class="p">;</span>
+<span class="linenos"> 7</span>  	<span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Import cities...&quot;</span> <span class="p">;</span>
+<span class="linenos"> 8</span>	<span class="nn">dash</span><span class="p">:</span><span class="nt">actionGroup</span> <span class="nn">g</span><span class="p">:</span><span class="nt">ActionGroup</span> <span class="p">;</span>
+<span class="linenos"> 9</span>	<span class="nn">sh</span><span class="p">:</span><span class="nt">parameter</span> <span class="p">[</span>
+<span class="linenos">10</span>		<span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">Parameter</span> <span class="p">;</span>
+<span class="linenos">11</span>		<span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">g</span><span class="p">:</span><span class="nt">file</span> <span class="p">;</span>
+<span class="linenos">12</span>		<span class="nn">dash</span><span class="p">:</span><span class="nt">mimeTypes</span> <span class="s">&quot;.csv,.tsv&quot;</span> <span class="p">;</span>
+<span class="linenos">13</span>		<span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<span class="linenos">14</span>		<span class="nn">sh</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;The spreadsheet to upload.&quot;</span> <span class="p">;</span>
+<span class="linenos">15</span>		<span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;file&quot;</span> <span class="p">;</span>
+<span class="linenos">16</span>	<span class="p">]</span> <span class="p">;</span>
+<span class="linenos">17</span>	<span class="nn">dash</span><span class="p">:</span><span class="nt">js</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="linenos">18</span><span class="s">let s = graph.uploadedFile(file).asSpreadsheet();</span>
+<span class="linenos">19</span><span class="s">for(let i = 0; i &lt; s.rowCount(); i++) {</span>
+<span class="linenos">20</span><span class="s">    let row = s.row(i);</span>
+<span class="linenos">21</span><span class="s">    let city = g.createCity({</span>
+<span class="linenos">22</span><span class="s">        uri: &#39;http://topquadrant.com/ns/examples/geography#&#39; + encodeURIComponent(row.City),</span>
+<span class="linenos">23</span><span class="s">        prefLabel: row.City,</span>
+<span class="linenos">24</span><span class="s">        broader: focusNode,</span>
+<span class="linenos">25</span><span class="s">        population: row.Population,</span>
+<span class="linenos">26</span><span class="s">        lat: parseFloat(row.LatLong.split(&#39; &#39;)[0]),</span>
+<span class="linenos">27</span><span class="s">        long: parseFloat(row.LatLong.split(&#39; &#39;)[1]),</span>
+<span class="linenos">28</span><span class="s">    })</span>
+<span class="linenos">29</span><span class="s">    let maoriName = row[&#39;Maori Name&#39;];</span>
+<span class="linenos">30</span><span class="s">    if(maoriName) {</span>
+<span class="linenos">31</span><span class="s">        city.altLabel = skosxl.createLabel({</span>
+<span class="linenos">32</span><span class="s">            literalForm: graph.langString(maoriName, &#39;mi&#39;)</span>
+<span class="linenos">33</span><span class="s">        })</span>
+<span class="linenos">34</span><span class="s">    }</span>
+<span class="linenos">35</span><span class="s">}&quot;&quot;&quot; .</span>
+</pre></div>
+</div>
+<p>This action will show up in the Modify menu of a selected <code class="code docutils literal notranslate"><span class="pre">g:Country</span></code> and would open a dialog as shown:</p>
+<figure class="align-center" id="id6">
+<img alt="The dialog to upload a file for an import script" class="edg-figure" src="../_images/ImportCitiesDialog.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The dialog to upload a file for an import script</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sql.html" class="btn btn-neutral float-left" title="Working with Relational Databases via SQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="services.html" class="btn btn-neutral float-right" title="ADS-based Web Services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

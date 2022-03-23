@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How-to Guidance &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="SHACL Enablement" href="shacl_enablement.html" />
+    <link rel="prev" title="Customizing Ontologies Provided with EDG" href="working_with_ontologies.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guidance Specific to an Asset Collection Type</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Working with Ontologies</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="working_with_ontologies.html">Customizing Ontologies Provided with EDG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="working_with_ontologies.html#classes-vs-instances">Classes vs. Instances</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">How-to Guidance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shacl_enablement.html">SHACL Enablement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ontology_editor_panels.html">Panels for Editing Ontologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="managing_ontologies.html">Managing Ontologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exporting_ontologies.html">Exporting Ontologies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_taxonomies/index.html">Working with Taxonomies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_crosswalks/index.html">Working with Crosswalks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_corpora/index.html">Working with Corpora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_graphs/index.html">Working with Data Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_enumerations/index.html">Working with Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_lineage/index.html">Working with Data Lineage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content_classification/index.html">Content Classification in EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">User Guide</a> &raquo;</li>
+          <li><a href="../index.html">Guidance Specific to an Asset Collection Type</a> &raquo;</li>
+          <li><a href="index.html">Working with Ontologies</a> &raquo;</li>
+      <li>How-to Guidance</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-guidance">
+<span id="ontology-how-to-guidance-target"></span><h1>How-to Guidance<a class="headerlink" href="#how-to-guidance" title="Permalink to this headline"></a></h1>
+<section id="refactoring-ontologies">
+<h2>Refactoring Ontologies<a class="headerlink" href="#refactoring-ontologies" title="Permalink to this headline"></a></h2>
+<p>If you have an ontology that contains both schema and instances or a file that contains both and you want to separate them, the option on the <strong>Transform</strong> tab <strong>&gt; Copy or Move Instances from Other Asset Collection</strong> lets you separate instances from schema definitions.</p>
+<p>Create an asset collection that should contain the instances if one does not exist already.
+Navigate to its <strong>Transform</strong> tab and select <strong>Copy or Move Instances from Other Asset Collection</strong>.
+In the displayed dialog, select the ontology that currently contains instances.
+Then, select classes which instances you want to move.</p>
+<p>Example: You may have RDF file that contains classes, properties as well as instances and you want to separate them. Create an ontology in EDG and load RDF file.
+Create another asset collection such as Taxonomy, Reference Dataset or Data Graph.
+Base it on your ontology.
+Use <strong>Copy or Move Instances from Other Asset Collection</strong> to move instances to it from the ontology.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For additional discussion on the use of Node Shapes that are not classes see <a class="reference external" href="https://www.topquadrant.com/classes-and-node-shapes-when-to-separate/">https://www.topquadrant.com/classes-and-node-shapes-when-to-separate/</a>.</p>
+</div>
+</section>
+<section id="converting-owl-ontologies">
+<h2>Converting OWL ontologies<a class="headerlink" href="#converting-owl-ontologies" title="Permalink to this headline"></a></h2>
+<p>To Transform OWL to SHACL see <span class="xref std std-ref">shacl_enablement_target</span>.</p>
+<p>To add SHACL declarations to a class that is not yet defined to be a Node Shape, select it and then use <strong>Modify &gt; Enable SHACL constraints for this class</strong>.</p>
+</section>
+<section id="working-with-rdfs-owl">
+<h2>Working with RDFS/OWL<a class="headerlink" href="#working-with-rdfs-owl" title="Permalink to this headline"></a></h2>
+<p>EDG is optimized for using SHACL to describe characteristics of class instances.
+You can export an ontology in either RDFS or OWL using <strong>Export &gt; Export Ontology as RDFS file</strong> or <strong>Export &gt; Export Ontology as OWL file</strong>.
+It will translate SHACL expressions in to either RDFS domain/range statements or into OWL restrictions.</p>
+<p>You can also create RDFS/OWL expressions directly in EDG.
+Besides using the Source Code panel and typing in Turtle, you can also use forms and OWL Manchester syntax in the fields for rdfs:subClassOf and/or owl:equivalentClass and/or disjointWith values.
+If you decide to use this option, make sure to turn on <strong>Manage &gt; Also create global OWL Properties</strong>.
+You may also want to:</p>
+<ol class="arabic simple">
+<li><p>Make the RDFS/OWL view of the class Form a default.
+This can be done by selecting <em>RDFS/OWL class view</em> Node Shape in the Node Shapes panel and making this shape a default for some or all governance roles – Edit the node shape to see this option.
+In this view, you will not see any properties declared using SHACL, but you will see some additional OWL fields e.g.,owl:equivalentClass and fields to select properties a class is in rdfs:domain and rdfs:range of.
+In this view, the class form is shown in the figure below.</p></li>
+<li><p>Add <a class="reference internal" href="ontology_editor_panels.html#rdfowl-properties-list-panel"><span class="std std-ref">RDF/OWL Properties List Panel</span></a> to your default layout and, possibly, remove the Node Shapes and Property Groups panels from it</p></li>
+</ol>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG RDFS/OWL Class View" class="edg-figure-vl" src="../../../_images/edg_rdfs_owl_class_view.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG RDFS/OWL Class View</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="working-with-classes">
+<h2>Working with Classes<a class="headerlink" href="#working-with-classes" title="Permalink to this headline"></a></h2>
+<p>Classes describe characteristics (properties) of class members or instances.
+For example, a class Person is used to describe what properties a person may have e.g., first name, last name, data of birth, etc.
+Properties defined for a class are shown in the form displaying class information.</p>
+<p>In EDG, classes are typically created in the Classes panel using either “<strong>Add</strong> (create) <strong>New</strong>” icon at the upper left of the panel or <strong>Modify &gt; Create</strong> subclass menu option.
+Also see information in Creating New Assets and Classes Panel.</p>
+<p>Classes are organized in hierarchies.
+Each class will have a parent or superclass.
+Relationship between a child and a parent class is <em>rdfs:subClassOf</em>.
+These relationships by editing information in the class’s form to change a class’s parent:</p>
+<ul class="simple">
+<li><p>Select a class in the Classes panel.</p></li>
+<li><p>Once it is displayed on the form, change the “superclass” value by entering a new one.</p></li>
+</ul>
+<p>You can also change a class’s parent by dragging it in the hierarchy displayed in Classes panel.
+A class can have multiple parent classes.
+Any property defined for a parent class appears on the form for the child class as “inherited” property.</p>
+</section>
+<section id="classes-vs-node-shapes">
+<h2>Classes vs. Node Shapes<a class="headerlink" href="#classes-vs-node-shapes" title="Permalink to this headline"></a></h2>
+<p>When you create a new class in TopBraid EDG, it will always be also typed as a Node Shape.
+This is because you typically create classes in EDG in order to describe instance of the classes – also known as class members.
+Instance data needs shape definitions and Node Shapes provide such definitions.</p>
+<p>You can also create Node Shapes that are not classes.
+This is possible in the Node Shapes panel.
+Node Shapes define the shape of data, but, unless they are also classes, they can’t have instances or class members.
+If you create a Node Shape that is not a class you will need to target it to connect it to instances that the shape is defining.</p>
+</section>
+<section id="creating-abstract-classes">
+<h2>Creating Abstract Classes<a class="headerlink" href="#creating-abstract-classes" title="Permalink to this headline"></a></h2>
+<p>Sometime, you may need to define classes that have no direct instances.
+Instead, their instances are always members of  subclasses.
+For example, in EDG ontology for data assets, there is a class Data Asset.
+It is an abstract class with many subclasses such as Database, Dataset and numerous others.
+When creating instances, EDG will not let you create an instances of an abstract class and, instead, will make you select one of its subclasses.</p>
+<p>To define your class as abstract, set the value of <strong>abstract</strong> to true.
+Internally, this is stored using <em>dash:abstract</em> property.</p>
+</section>
+<section id="creating-node-shapes">
+<h2>Creating Node Shapes<a class="headerlink" href="#creating-node-shapes" title="Permalink to this headline"></a></h2>
+<p>Node shapes are used to describe characteristics (properties) of other resources.
+This sounds similar to classes and, indeed, a class created in EDG will also be a node shape.
+However, there are also node shapes that are not classes.
+Unlike classes, these node shapes do not have any members.
+Such shapes define characteristics of resources that are “targeted” by a shape.
+There are various ways to specify shape’s target.
+Targets of a node shape that is also a class are always members of the class.</p>
+<p>To create node shapes that are not classes, use either <strong>Add</strong> (create) <strong>New</strong> icon at the upper left of the Node Shapes panel or right click and use <strong>Modify &gt; Create subshape menu option</strong>.</p>
+<p>Also see information in Creating New Assets and Node Shapes Panel.</p>
+</section>
+<section id="working-with-properties-and-property-groups">
+<h2>Working with properties and property groups<a class="headerlink" href="#working-with-properties-and-property-groups" title="Permalink to this headline"></a></h2>
+<p>The starting point for creating properties is selecting a class/node shape.
+With a class/node shape selected you can:</p>
+<ul class="simple">
+<li><p>Create a property by using <a class="reference internal" href="ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a>. This panel also lets you create new property groups that will organize properties into form sections.</p></li>
+<li><p>Create a property directly from the form displaying a class or a node shape – as described under <a class="reference internal" href="ontology_editor_panels.html#form-panel-schema-assets"><span class="std std-ref">Form Panel (schema assets)</span></a>.</p></li>
+</ul>
+<p>When you use either of these options, EDG will create a new property shape associating it with a class. By default, EDG will simply reference the property by using <em>sh:path</em> in the property shape.
+No other statements will be created for the property itself.
+This is done to ensure that when a property shape is deleted, no unused property declarations remain.
+And to ensure that there is no discrepancy between a property and property shape in terms of its display name and description.</p>
+<p>When creating a property shape, EDG will generate its URI by combining QName of the selected class/node shape with the property name you enter in the create dialog e.g., if you select a class with the Qname <em>example:Country</em> and enter <em>population</em> as the property name, TopBraid EDG will create a property shape with the Qname <em>example:Country-population</em> and will set the value of its sh:path property to <em>example:population</em>.
+Thus, we get a property shape <em>example:Country</em> connecting a class <em>example:Country</em> with a property <em>example:population</em>.</p>
+<p>This means that the property shapes created using these methods can be fully referenced and re-used in the ontology they are created in or in other ontologies.
+If you want a property shape to be created as a blank node, you can press None button to the right of the <em>ID of Definition</em> field in the Create dialog.</p>
+<p>The Create dialog will let you select the most commonly used constraints for the values of the property (e.g., cardinality and type of values).
+After the property shape is created, you can add more information as described under <span class="xref std std-ref">property_shape_forms</span>.
+This information will guide how values of a property are displayed on a form, how they are available for query and how they will be validated.</p>
+<p>The default mode of property creation can be modified in the <strong>Manage</strong> tab by checking <strong>Also create global OWL Properties</strong> option.
+If this option is activated, EDG will also  produce an owl:DatatypeProperty or owl:ObjectProperty for a property when creating a new SHACL property shape.
+If you delete all property shapes referencing a property and want to remove all statements about the property, navigate to the property (e.g., by using <a class="reference internal" href="ontology_editor_panels.html#rdfowl-properties-list-panel"><span class="std std-ref">RDF/OWL Properties List Panel</span></a> or by looking up the property by QName or URI) and delete it as explained under <a class="reference internal" href="#deleting-properties"><span class="std std-ref">Deleting Properties</span></a>.</p>
+<p>Finally, you can create a property by clicking <strong>New</strong> on the <a class="reference internal" href="ontology_editor_panels.html#rdfowl-properties-list-panel"><span class="std std-ref">RDF/OWL Properties List Panel</span></a>.
+This action will not create a property shape.</p>
+</section>
+<section id="creating-property-shapes-for-already-existing-properties">
+<h2>Creating Property Shapes for already Existing Properties<a class="headerlink" href="#creating-property-shapes-for-already-existing-properties" title="Permalink to this headline"></a></h2>
+<p>There are several options for accomplishing this.</p>
+<p>One option is to first, identify the URI of the property you want to create a shape for.
+It is best to copy it into the copy buffer.
+Then:</p>
+<ul class="simple">
+<li><p>Click on Create Attribute or Create Relationship – as appropriate.</p></li>
+<li><p>In the create dialog, make sure that <strong>Show Identifiers</strong> is checked.
+In the <strong>ID/Path of Property</strong> field, copy the URL or the Qname of the property.
+You could also see CTRL-Space to auto-complete existing property identifiers.</p></li>
+<li><p>Enter any display characteristics (name, description, group, order) and constraints.</p></li>
+</ul>
+<p>If the property has a type statement i.e., it would show up in the <a class="reference internal" href="ontology_editor_panels.html#rdfowl-properties-list-panel"><span class="std std-ref">RDF/OWL Properties List Panel</span></a>, you can also click on the button to the right of the <strong>ID/Path of Property field</strong>  – it will let you look up the property by name.</p>
+<p>Another option is to re-use an already existing property shape.
+This can be done by using <strong>Add existing property definition</strong> … option in the <a class="reference internal" href="ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a>.
+You will need to start typing the Qname of an existing property shape and then pick it from the list – as shown below.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Add Existing Property Definition Dialog" class="edg-figure" src="../../../_images/edg_add_exsisting_property_def.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Add Existing Property Definition Dialog</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This action will associate your selected class/node-shape with an already existing property shape.
+In other words, the same property shape will be used in two places and any modifications you make to it would be effective in two places.</p>
+<p>Yet another option is to copy a property shape and modify the copy.</p>
+<p>For example, you could select a property shape, clone it and then associate the clone with a class different from the class associated with the original shape (this will require you updating two classes: the class that the original shape was connected to and the class that a clone should be connected to).</p>
+<p>Or you could select a class/node-shape and then select <strong>Modify&gt;Clone property shapes from …</strong></p>
+<p>See <a class="reference internal" href="ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a> and Classes Panel for more information.</p>
+</section>
+<section id="creating-property-shapes-from-spreadsheet-columns">
+<span id="creating-ps-from-ss-columns"></span><h2>Creating Property Shapes from Spreadsheet Columns<a class="headerlink" href="#creating-property-shapes-from-spreadsheet-columns" title="Permalink to this headline"></a></h2>
+<p>Select a class/node shape for which you want to import property definitions.
+Then select <strong>Modify&gt;Add property shapes from Spreadsheet columns …</strong> .</p>
+<p>The input spreadsheet must have at least two rows.
+The top row must list properties.
+Other rows should contain data.</p>
+<p>Select a file and click on <strong>Upload</strong>.
+You will see mapping options as shown below.</p>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG Adding Property Shapes from Spreadsheet Columns Example" class="edg-figure" src="../../../_images/edg_add_property_shapes_from_spreadsheet.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Adding Property Shapes from Spreadsheet Columns Example</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Deselect any column for which you do not want to create property definitions</p></li>
+<li><p>Optionally, change Property IDs – they will be pre-filled from the column names</p></li>
+<li><p>Optionally, adjust Property Type.
+EDG will guess the type based on the data in the spreadsheet.
+Adjust to indicate that a column represents a relationship.
+You will then need to select a class of the related resources.
+Your target class must already exist.
+Also adjust the property type to Label if a column contains names of your resources.</p></li>
+</ul>
+<p>After mapping you can click on <strong>Preview</strong> to examine property definitions that will be created and or click on <strong>OK</strong> to execute.</p>
+</section>
+<section id="creating-classes-and-property-shapes-from-data">
+<h2>Creating Classes and Property Shapes from Data<a class="headerlink" href="#creating-classes-and-property-shapes-from-data" title="Permalink to this headline"></a></h2>
+<p>If you have data that contains property values for which no property shapes exist in an ontology, TopBraid EDG can auto-generate property definitions.
+Data that will be analyzed must be located in one of the asset collections.</p>
+<p>Select a class for which you want to import property definitions.
+Then select <strong>Modify&gt;Derive property shapes from instances …</strong> .</p>
+<p>EDG will display a dialog where you will:</p>
+<ul class="simple">
+<li><p>Identify an asset collection containing data</p></li>
+<li><p>Specify the max number of instances to analyze – default is 1,000</p></li>
+<li><p>Optionally, specify a Property Group for the newly created properties</p></li>
+</ul>
+<p>You can also create missing classes and property shapes for multiple classes at once by clicking on the <strong>Home</strong> icon for an ontology and using <strong>Modify&gt;Derive missing classes …</strong>
+This operation will create a SHACL class for each type used in the data.
+It will then create property shapes for each class.</p>
+</section>
+<section id="creating-inverse-relationships">
+<span id="id1"></span><h2>Creating Inverse Relationships<a class="headerlink" href="#creating-inverse-relationships" title="Permalink to this headline"></a></h2>
+<p>Relationships are always directional.
+For example, the <em>column of</em> relationship goes from a <em>Column</em> to a <em>Table</em> that contains a column.
+Using it, you can, for example, say that <em>Customer ID</em> is a column of <em>Customer Master Table</em>.</p>
+<p>Sometimes, you may want to name (give a label) to a relationship that goes into another, inverse direction.
+You may want to display on the form showing information about Customer Master Table all its columns.
+Strictly speaking you do not need to do anything to see this information in the EDG UI as you can use the <strong>References</strong> panel to show all incoming links for any asset.
+Nevertheless, there are situations where you may want this info to be displayed in line with other data and/or want to search on this information.</p>
+<p>To give a name to the inverse connection, click on the property shape for which you want to create an inverse, then select <strong>Modify&gt;Declare inverse property …</strong> .
+You will get a dialog where you can specify a name for the inverse e.g,  “columns”.
+Now, you will see that there is <em>columns</em> relationship from a <em>Table to Column</em> and if you go to, for example, <em>Customer Master Table</em>, you will see <em>columns:  customer ID</em>.</p>
+<p>The data is stored in only one direction but you will be able to see and edit it in both.</p>
+<p>You can also create an inverse property by following the approach specified in the Creating Property Shapes for Complex Paths and enter “^” plus a Qname of a property e.g., <em>^edg:columnsOf</em>.</p>
+<p>This process does not create a new property, it only gives a human readable name to the inverse.</p>
+<p>There are cases where you already have an inverse property with its own URI and you want to use it.
+In this case:</p>
+<ul class="simple">
+<li><p>Click on Create Relationship</p></li>
+<li><p>In the <em>ID</em> field provide the URI of the inverse property</p></li>
+<li><p>Type the name of the relationship e.g., <em>columns</em></p></li>
+<li><p>Provide a description, display and constraint information just as you would normally do</p></li>
+</ul>
+<p>In this case, EDG will create a property shape, but there will be no connection between let’s say <em>edg:columnsOf</em> and <em>edg:columns</em>.
+When editing, you will be able to populate links in both direction, but they will not be synchronized.</p>
+<p>To define a connection, create a Property Value Rule that will calculate values for let’s say <em>edg:columns</em> based on the values for <em>edg:columnsOf</em>.
+The underlying SHACL expression will look as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>sh:values [
+              sh:path [
+                          sh:inversePath edg:columnOf ;
+                      ]
+          ]
+</pre></div>
+</div>
+<p>When you define a rule, the inverse (e.g., <em>edg:columns</em>) becomes a calculated or inferred property.
+You will not be able to enter its values nor will EDG store values for the <em>edg:columns</em> property.
+Instead, it will generate them on demand at query time.
+You can query for them and, if necessary for external systems, you can run the rule (use <strong>Transform</strong> tab) to populate these values for export.</p>
+</section>
+<section id="setting-a-primary-key-for-a-class">
+<span id="primary-key-constraint"></span><h2>Setting a Primary Key for a Class<a class="headerlink" href="#setting-a-primary-key-for-a-class" title="Permalink to this headline"></a></h2>
+<p>Primary key constraint tells EDG how to generate URIs for class members.
+EDG will use values of a property selected in the constraint and pre-pend to them a string you specify as the “URI start”.
+This constraint takes priority over the URI construction method set for an asset collection.</p>
+<p>A property that has a primary key constraint is expected to have unique values across all instances of the class.
+When you create a new member of a class, if it has a primary key constraint, EDG will always ask you to provide a value for the primary key.</p>
+<p>To set a primary key constraint on a property, select the appropriate class in the Class Panel, then select the property in the <a class="reference internal" href="ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a>.
+The Form Panel will refresh allowing you to edit constraints for the property.
+Find URI start on the form, enter the beginning of the URI pattern that will be used to construct the individual URIs e.g., <a class="reference external" href="http://example.org/MyClass">http://example.org/MyClass</a>-.
+Click Save Changes.
+URI start value must be such that combining it with the values of the property you selected will generate valid URIs.</p>
+<p>To use a class as the <em>main entity</em> of any reference dataset, the class must have exactly one property designated with the <em>primary key</em> constraint, which may be specified either on the class itself or on one of its superclasses.</p>
+</section>
+<section id="creating-property-shapes-for-complex-property-paths">
+<h2>Creating Property Shapes for Complex Property Paths<a class="headerlink" href="#creating-property-shapes-for-complex-property-paths" title="Permalink to this headline"></a></h2>
+<p>Sometimes, you may want to define a connection between an asset and another asset or a literal (e.g., a string or an integer) value using a complex set of connections.
+Property paths support retrieval of information that is connected to a given asset through a chain of relationships.</p>
+<p>For example, a grandparent is a parent of a parent. Country of birth, can be thought of as a relationship that traverses a connection between a person, a city/town they are born in and a country the birth city belongs to.
+Financial applications often ask applicant to provide a maiden name of their mother.
+“Mother’s maiden name” can be reached by first going to person’s mother and then to mother’s maiden name.</p>
+<p>To create a property shape for a complex property path:</p>
+<ul class="simple">
+<li><p>Click on Create Attribute or Create Relationship depending on whether the final value in the path is a literal or another resource</p></li>
+<li><p>In the create dialog, check Show Identifiers.</p></li>
+<li><p>In the ID/Path of Property field, enter a path. You can use URIs or qname and enter property path expressions in SPARQL syntax. For example:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Enter <em>ex:parent/ex:parent</em> for a path expression to reach the grandparents of a person or <em>ex:parent/ex:maidenName</em> to reach a maiden name of a parent – this will deliver a value only for a parent that has a maiden name.</p></li>
+<li><p>For inverse links use “^” e.g., <em>^ex:parent</em>.
+This will deliver children of a person.</p></li>
+<li><p>To say that a a given relationship may occur one or more times in a path use “+” e.g., <em>ex:parent+</em>.
+This will deliver all ancestors of a person.</p></li>
+<li><p>To say that a a given relationship may occur zero or more times in a path use “*” e.g., rdf:type/rdfs:subClassOf*.
+This will deliver a class that a given asset belongs to and, if this class has parent classes, will deliver all the parent classes.</p></li>
+<li><p>To specify alternative paths use “|” e.g., <em>skos:broader|^skos:hasTopConcept</em>.
+This will deliver, for a concept, either a broader concept or, if it is a top concept of a concept scheme, a concept scheme.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Use CTRL-Space to auto-complete existing property identifiers.</p></li>
+<li><p>Enter the rest of the information as usual (e.g., name, datatype)</p></li>
+</ul>
+</section>
+<section id="enabling-indexing-of-property-values">
+<h2>Enabling Indexing of Property Values<a class="headerlink" href="#enabling-indexing-of-property-values" title="Permalink to this headline"></a></h2>
+<p>Users can specify that property values should be ordered.
+To do so, edit a property shape and scroll down to the <strong>Reification (Statements about Statements)</strong> section and set its <strong>indexed</strong> constraint value to <em>true</em>.</p>
+<p>The index starts with 0.
+This should be set only for properties with stored, not calculated or inferred, values.</p>
+</section>
+<section id="working-with-rules">
+<span id="id2"></span><h2>Working with Rules<a class="headerlink" href="#working-with-rules" title="Permalink to this headline"></a></h2>
+<p>SHACL Triple and SPARQL Rules can be created using the Source Code panel. For more on SHACL Rules, see W3C SHACL Advanced Features Specification.</p>
+<p>You will also be able to create a Property Value Rule from a template or by editing the source code and you will be able to set default values for a property.</p>
+<p>Property Value rules are used by EDG to dynamically calculate (infer) values for the selected property.</p>
+<p>With a property shape selected, click on Modify and pick the option to create property value rule from template:</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Create Property Value Rule from Template" class="edg-figure-l" src="../../../_images/edg_create_property_value_rule_from_template.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Property Value Rule from Template</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When you select a template, you will be able to enter additional parameters. For example, if you want to populate a number of related concepts for a selected taxonomy concept:</p>
+<ul class="simple">
+<li><p>Create a new attribute e.g., “number of related concepts”</p></li>
+<li><p>Select it and using Modify&gt;Create property value rule …</p></li>
+<li><p>Select Count number of properties template</p></li>
+<li><p>Type “related concept” in the template field or pick it from the dropdown</p></li>
+<li><p>Press OK</p></li>
+</ul>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Count Number of Property Values" class="edg-figure-l" src="../../../_images/edg_count_property_values_related_concept.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Count Number of Property Values</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You will see the following rule in the Inferences section.</p>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG Property Value Inferences" class="edg-figure-l" src="../../../_images/edg_inferences_values.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Property Value Inferences</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The source code will show the following.</p>
+<figure class="align-center" id="id12">
+<img alt="TopBraid EDG Property Value Source Code View" class="edg-figure-m" src="../../../_images/edg_source_code_view.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Property Value Source Code View</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can edit the source code to create more complex rules than those covered by available templates. Power users can also define additional templates to cover your most common rule patterns.</p>
+<p>Now, if you navigate to a taxonomy based on this ontology, you will see a number of related concepts – as shown below.</p>
+<figure class="align-center" id="id13">
+<img alt="TopBraid EDG Number of Related Concepts Example" class="edg-figure-l" src="../../../_images/edg_taxonomy_soviet_union.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Number of Related Concepts Example</strong></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Calculated (inferred) fields are not editable.</p>
+<p>You can set a default value using a similar approach. Default value can be a constant or an expression such as ones using for sh:values field. There is no form-based UI for entering default values. Use source code and sh:defaultValue. For more information see https://www.topquadrant.com/graphql/values.html</p>
+</section>
+<section id="working-with-wikidata-and-other-external-knowledge-graphs">
+<span id="wikidata-and-other-external-graphs"></span><h2>Working with Wikidata and other external Knowledge Graphs<a class="headerlink" href="#working-with-wikidata-and-other-external-knowledge-graphs" title="Permalink to this headline"></a></h2>
+<p>For <strong>classes and node shapes</strong>, EDG can auto-create property shapes using Wikidata resource as an example.</p>
+<p>To do this, use an option in the <em>Modify</em> menu and provide an ID (e.g. Q84) of a wikidata.org resource.
+EDG will return its properties for selection by the user.</p>
+<figure class="align-center" id="id14">
+<img alt="TopBraid EDG Add Property Shapes from Wikidata Sample" class="edg-figure-m" src="../../../_images/edg_add_property_shapes_wiki_sample.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Add Property Shapes from Wikidata Sample</strong></span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For <strong>property shapes</strong>, you can create a Wikidata link (or a link to another SPARQL endpoint) by selecting an option in the <em>Modify</em> menu.
+The form panel will not change, but in the <em>Source Code</em> panel you will see <code class="docutils literal notranslate"><span class="pre">dash:detailsEndpoint</span> <span class="pre">https://query.wikidata.org/sparql</span></code>.
+You can use <em>Source Code</em> panel edit the detailsEndpoint link to refer to another endpoint.</p>
+<p>Whenever a property shape carries a value for dash:detailsEndpoint, TopBraid EDG will understand that the values of the property are URIs and that more statements for these URIs can be queried from the given SPARQL endpoint.
+If the endpoint happens to be exactly the <code class="docutils literal notranslate"><span class="pre">https://query.wikidata.org/sparql</span></code> URL, then additional features for Wikidata get activated.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more on how to use this feature, see the <a class="reference external" href="https://www.topquadrant.com/technology/shacl/wikidata/">EDG and Wikidata Tutorial</a> .</p>
+</div>
+</section>
+<section id="deactivating-property-shapes">
+<span id="id3"></span><h2>Deactivating Property Shapes<a class="headerlink" href="#deactivating-property-shapes" title="Permalink to this headline"></a></h2>
+<p>Click on the property shape you want to deactivate, then click <strong>Edit</strong>.
+Select “true” in the deactivated dropdown.
+Internally, this is stored using <em>sh:deactivated</em> property.</p>
+<p>After you do this, you will no longer see this property and its values on the instances forms.
+If you still want to use the property and only wanted to deactivate some specific constraints, create another property shape using the same property and specify constraints you want to keep.</p>
+</section>
+<section id="creating-alternative-views">
+<h2>Creating Alternative Views<a class="headerlink" href="#creating-alternative-views" title="Permalink to this headline"></a></h2>
+<p>There might be situations were the quantity of properties on a class are overwhelming and it might be beneficial to create alternate ‘views’ that can be defined with a subset of properties.
+This is especially useful when different groups of users only need a portion of all available properties for their work functions.
+TopBraid EDG allows you create multiple views into assets to facilitate this and other similar needs through the creation of a Node Shape ‘view’ that is not a class.</p>
+<p>To get started, open the Node Shapes tab inside the Ontology editor, then create a new Node Shape.</p>
+<figure class="align-center" id="id15">
+<img alt="TopBraid EDG Ontology Node Shape Tab" class="edg-figure-m" src="../../../_images/edg_ontology_node_shapes_tab.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Ontology Node Shape Tab</strong></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Give the new view a name and make sure ‘Node Shape’ is selected as the type, then confirm by pressing ‘Ok’.</p>
+<figure class="align-center" id="id16">
+<img alt="TopBraid EDG Create Node Shape Page" class="edg-figure-l" src="../../../_images/edg_create_node_shape.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Node Shape Page</strong></span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To make the new Node Shape view target members of the desired class, set the target for the <em>dash:applicableToClass</em> property by selecting the custom view in the Node Names panel.
+You might have to make sure properties with no value are shown to see this property.</p>
+<figure class="align-center" id="id17">
+<img alt="TopBraid EDG Properties with No Value Selection" class="edg-figure-m" src="../../../_images/edg_properties_with_no_value.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Properties with No Value Selection</strong></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id18">
+<img alt="TopBraid EDG Custom Painting View" class="edg-figure-s" src="../../../_images/edg_custom_painting_view.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Custom Painting View</strong></span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To quickly build the new view, clone property shapes from the ‘base class’.
+To do this, press the + by ‘declared properties’ and select ‘Add existing Property Definition (Shape)…’.</p>
+<figure class="align-center" id="id19">
+<img alt="TopBraid EDG Properties Section" class="edg-figure-m" src="../../../_images/edg_properties_section.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Properties Section</strong></span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the dialog that pops up, search for the properties.</p>
+<figure class="align-center" id="id20">
+<img alt="TopBraid EDG Add Existing Property to Painting View" class="edg-figure-m" src="../../../_images/edg_add_existing_property_to_painting.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Add Existing Property to Painting View</strong></span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Repeat the process for each property from the ‘base class’ you want to appear in the view.</p>
+<figure class="align-center" id="id21">
+<img alt="TopBraid EDG Custom Painting View Properties Section" class="edg-figure-m" src="../../../_images/edg_custom_painting_view_properties.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Custom Painting View Properties Section</strong></span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can also add new properties, but typically, these should be inferred properties backed by rules.
+This is because the base class should normally already have all the applicable properties.
+Start with creating a new Property Shape from the same ‘declared properties’ + drop down menu.</p>
+<figure class="align-center" id="id22">
+<img alt="TopBraid EDG Create Attribute Page" class="edg-figure-vl" src="../../../_images/edg_create_attribute.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Attribute Page</strong></span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Then in the Property Groups panel, select the new property.</p>
+<figure class="align-center" id="id23">
+<img alt="TopBraid EDG Property Groups Panel" class="edg-figure-s" src="../../../_images/edg_property_groups_panel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Property Groups Panel</strong></span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the Inferences group, add a ‘values’ inference using ADS syntax.</p>
+<figure class="align-center" id="id24">
+<img alt="TopBraid EDG Add Values to Inferences Section" class="edg-figure-l" src="../../../_images/edg_add_values_to_inference.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Add Values to Inferences Section</strong></span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can set the alternative view as the default one for all users or you can specify it as a default for users in certain roles.</p>
+<figure class="align-center" id="id25">
+<img alt="TopBraid EDG Set Default View for Certain Roles" class="edg-figure-m" src="../../../_images/edg_set_default_view_for_role.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Set Default View for Certain Roles</strong></span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Then you can navigate to the data asset view for the target class and you can see the new view in the views drop down in the upper right.
+With the new view selected, you will see only the properties assigned to the view.</p>
+<figure class="align-center" id="id26">
+<img alt="TopBraid EDG Painting Properties View" class="edg-figure-m" src="../../../_images/edg_painting_properties.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Painting Properties View</strong></span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="deleting-classes-and-node-shapes">
+<h2>Deleting Classes and Node Shapes<a class="headerlink" href="#deleting-classes-and-node-shapes" title="Permalink to this headline"></a></h2>
+<p>Deleting a class does not remove its subclasses.
+If a child does not have any parents it will no longer appear in the Classes panel, but you will be able to find it in the Search panel and/or navigate to it using <strong>Navigate to…</strong> .</p>
+<p>Deleting a class or a node shape does not delete associated property shapes if they are defined as independent resources with their own URIs.
+It will remove property shapes that are blank nodes.</p>
+</section>
+<section id="deleting-property-groups">
+<h2>Deleting Property Groups<a class="headerlink" href="#deleting-property-groups" title="Permalink to this headline"></a></h2>
+<p>Deleting a property group does not remove any property shapes associated with the group.</p>
+<p>Properties that used to be grouped under the deleted group will now appear under “catch all” Other Properties group.</p>
+</section>
+<section id="deleting-property-shapes">
+<h2>Deleting Property Shapes<a class="headerlink" href="#deleting-property-shapes" title="Permalink to this headline"></a></h2>
+<p>A property shape can be deleted using <strong>Delete</strong> action in the <strong>Modify</strong> menu.</p>
+<p>If multiple property shapes are defined for the same property, deleting one property shape does not impact any other property shapes.
+Nor does such delete operation remove any data that may be using a property.
+If you know that a property has been used to store some data, prior to deleting a property shape use either <strong>Modify&gt;Delete all Property Values across Graphs…</strong> or <strong>Modify&gt;Replace Property Values across Graphs.</strong></p>
+</section>
+<section id="deleting-properties">
+<span id="id4"></span><h2>Deleting Properties<a class="headerlink" href="#deleting-properties" title="Permalink to this headline"></a></h2>
+<p>Typically, it is sufficient to delete property shapes.
+If a property has any information associated directly with it (outside of what is in a property shape), it can be deleted by displaying it on a form and then selecting Modify&gt;Delete.</p>
+<p>Deleting a property does it remove any data that is using it.</p>
+</section>
+<section id="enabling-reification-of-property-values">
+<span id="enabling-reification"></span><h2>Enabling Reification of Property Values<a class="headerlink" href="#enabling-reification-of-property-values" title="Permalink to this headline"></a></h2>
+<p>There are situations where an organization may need to capture facts about a specific thing having a specific property value - i.e. make statements about statements.
+A common approach/modeling pattern that supports that need is called <em>reification</em>.
+For example, it may be useful to add facts about a statement such as <em>Joe has job title Software Developer</em>.
+In order to do record those facts, <em>Joe has job title Software Developer</em> needs to have an identity.
+Giving statements identity is the meaning of <em>reification</em>.
+An organization may need to reify people’s job titles in order to capture the source of the statement about Joe’s job title or specify its effectivity date.</p>
+<p>To specify this in an ontology:</p>
+<ul>
+<li><p>Create a Node Shape (e.g. <em>Effectivity Shape</em>)</p></li>
+<li><p>Add properties to store the facts to capture (e.g <em>effective start</em> and <em>effective end</em> dates) to the node shape</p></li>
+<li><p>Navigate to a class having properties to be annotated with these facts (e.g. class <em>Person</em>)</p></li>
+<li><p>Select a property to which the facts are applicable (e.g. <em>effective start and end</em> are applicable to the <em>job title</em> property).
+Edit it and scroll down to the <strong>Reification (Statements about Statements)</strong> section to add the node shape (e.g., <em>Effectivity Shape</em>) as a value of the <em>reifiable by</em> property.
+Internally, this is stored using an EDG <em>dash:reifiableBy</em> property.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more technical details and RDF syntax for reified values see <a class="reference external" href="https://datashapes.org/reification.html">DASH Reification</a>.</p>
+</div>
+</li>
+</ul>
+<p>Now, when using the ontology as the basis of another asset collection (such as a data graph, taxonomy or reference dataset), users will be able to add effective dates to statements that store job titles of people.</p>
+<p>Most constraint components now have the ability to reify triples as shown in following example.
+These local message and severity will override the message and severity defined at shape level.</p>
+<figure class="align-center" id="id27">
+<img alt="TopBraid EDG Number of Values View" class="edg-figure" src="../../../_images/edg_num_of_values.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Number of Values View</strong></span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="index-0">
+<span id="id5"></span><h2>Working with Rules<a class="headerlink" href="#index-0" title="Permalink to this headline"></a></h2>
+<p>SHACL Triple and SPARQL Rules can be created using the Source Code panel.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more on SHACL Rules, see <a class="reference external" href="https://w3c.github.io/shacl/shacl-af/">SHACL AF</a>.</p>
+</div>
+<p>You will also be able to create a Property Value Rule from a template or by editing the source code and you will be able to set default values for a property.</p>
+<p>Property Value rules are used by EDG to dynamically calculate (infer) values for the selected property.</p>
+<p>With a property shape selected, click on Modify and pick the option to create property value rule from template:</p>
+<p>You will also be able to create a Property Value Rule from a template or by editing the source code and you will be able to set default values for a property.</p>
+<p>Property Value rules are used by EDG to dynamically calculate (infer) values for the selected property.</p>
+<p>With a property shape selected, click on Modify and pick the option to create property value rule from template:</p>
+<figure class="align-center" id="id28">
+<img alt="TopBraid EDG Creating Property Value from Template Dialog" class="edg-figure" src="../../../_images/edg_create_property_value_rule_from_template.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Creating Property Value from Template Dialog</strong></span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When you select a template, you will be able to enter additional parameters.
+For example, if you want to populate a number of related concepts for a selected taxonomy concept:</p>
+<ul class="simple">
+<li><p>Create a new attribute e.g., “number of related concepts”</p></li>
+<li><p>Select it and using <strong>Modify&gt;Create</strong> property value rule …</p></li>
+<li><p>Select Count number of properties template</p></li>
+<li><p>Type “related concept” in the template field or pick it from the dropdown</p></li>
+<li><p>Press <strong>OK</strong></p></li>
+</ul>
+<figure class="align-center" id="id29">
+<img alt="TopBraid EDG Count Number of Property Values using Related Concept" class="edg-figure" src="../../../_images/edg_count_property_values_related_concept.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Count Number of Property Values using Related Concept</strong></span><a class="headerlink" href="#id29" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You will see the following rule in the Inferences section.</p>
+<figure class="align-center" id="id30">
+<img alt="TopBraid EDG Inferences Values Section" class="edg-figure" src="../../../_images/edg_inferences_values.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Inferences Values Section</strong></span><a class="headerlink" href="#id30" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The source code will show the following.</p>
+<figure class="align-center" id="id31">
+<img alt="TopBraid EDG Source Code View" class="edg-figure-m" src="../../../_images/edg_source_code_view.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Source Code View</strong></span><a class="headerlink" href="#id31" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can edit the source code to create more complex rules than those covered by available templates.
+Power users can also define additional templates to cover your most common rule patterns.</p>
+<p>Now, if you navigate to a taxonomy based on this ontology, you will see a number of related concepts – as shown below.</p>
+<figure class="align-center" id="id32">
+<img alt="TopBraid EDG Taxonomy - Soviet Union" class="edg-figure" src="../../../_images/edg_taxonomy_soviet_union.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Taxonomy - Soviet Union</strong></span><a class="headerlink" href="#id32" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Calculated (inferred) fields are not editable.</p>
+<p>You can set a default value using a similar approach.
+Default value can be a constant or an expression such as ones using for sh:values field.
+There is no form-based UI for entering default values.
+Use source code and sh:defaultValue.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information see <a class="reference external" href="https://www.topquadrant.com/graphql/values.html">https://www.topquadrant.com/graphql/values.html</a></p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="working_with_ontologies.html" class="btn btn-neutral float-left" title="Customizing Ontologies Provided with EDG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shacl_enablement.html" class="btn btn-neutral float-right" title="SHACL Enablement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

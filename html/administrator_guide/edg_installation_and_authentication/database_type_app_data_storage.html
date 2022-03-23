@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Database Type: Application data storage &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Configure Logging" href="configure_logging.html" />
+    <link rel="prev" title="EDG Server Installation" href="edg_server_installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="edg_server_platform_considerations.html">EDG Server Platform Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication_edg_background.html">Authentication for TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_configuration.html">LDAP Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oauth_authentication.html">OAuth Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Database Type: Application data storage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rdbms-configuration-parameters">RDBMS Configuration Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="configure_logging.html">Configure Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="accessing_edg_application.html">Accessing the EDG Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>Database Type: Application data storage</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="database-type-application-data-storage">
+<span id="database-type-app-data-storage"></span><h1>Database Type: Application data storage<a class="headerlink" href="#database-type-application-data-storage" title="Permalink to this headline"></a></h1>
+<p>The Database Type parameter is the application storage for your data.
+When using RDBMS or Data Platform, you will have additional information to configure.</p>
+<p>EDG offers three types of persistence technology: (1) relational database, (2) Jena TDB files, or (3) Data Platform.</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 70%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>App data storage type</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>File Extension</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>In-memory + RDBMS persistence</em></p></td>
+<td><p>Choice of relational DB: Oracle, Microsoft SQL Server, or MySQL, which requires further RDBMS Configuration as noted below.</p></td>
+<td><p>.sdb</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>TDB (One database per graph)</em></p></td>
+<td><p><a class="reference external" href="https://jena.apache.org/documentation/tdb/">Apache Jena TDB</a>, configured for each graph to use its own TDB database.
+For EDG instances with application storage type of TDB (Each graph stored in its own, separate database), setting ulimit to unlimited is recommended.
+This will prevent EDG from reaching too many open files on your instance.</p></td>
+<td><p>.tdb</p></td>
+</tr>
+<tr class="row-even"><td><p><em>TDB (Shared graph database)</em></p></td>
+<td><p>Apache Jena TDB, configured for all graphs to share a single TDB database, data will be stored in the _Data folder at the root of the workspace.</p></td>
+<td><p>.xdb</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Data Platform</em></p></td>
+<td><p>Data Platform as a data store.
+This will enable all EDG collections to be synced between EDG nodes.
+See <a class="reference internal" href="../topbraid_data_platform/index.html#topbraid-data-platform"><span class="std std-ref">TopBraid Data Platform</span></a> for specific instructions on setting up Data Platform.</p></td>
+<td><p>.dpc</p></td>
+</tr>
+</tbody>
+</table>
+<p>Because EDG’s own system graphs also depend on the data storage type, changing the <em>Application data storage</em> should be considered as tantamount to a new installation.
+The database storage type cannot be changed once selected. If the need arises to change datastores, a new EDG workspace will need to be created and the data imported again.</p>
+<p>The TDB options require no additional setup or parameters.
+RDBMS each have additional required configuration, as described below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The choice of back-end storage is mainly a customer preference until you are getting into large scale data of over 30 million triples.</p>
+<ul class="simple">
+<li><p>With the TDB options, the database lives in the workspace file system on the server. You will see the extensions in the connector files in your Base URI Management page as “graph name”.tdb and .xdb.</p></li>
+<li><p>With TDB – one database per graph (gTDB), each graph will have it’s own database.</p></li>
+<li><p>With TDB – shared graph database (xTDB), one database contains all the graphs.</p></li>
+<li><p>With RDBMS you will have the data residing in a database on another server and the connector files in the workspace. This extension will be .sdb.</p></li>
+</ul>
+<p>Either TDB does not use as much memory as a RDBMS option.  It also does not load all the data into cache at server startup.
+You will notice significantly quicker startup times with TDB.</p>
+<p>The difference between Oracle, MySQL and SQL Server is minimal as far as EDG is concerned.
+They have different ways of processing the reads/writes so performance may differ slightly with large amounts of data.
+If choosing RDBMS, you should choose what your DBA’s are most comfortable maintaining and tuning.</p>
+</div>
+<p>Even organizations that are expecting to have a relatively small number of triples will often choose a TDB option over RDBMS in order to get up and running quicker and have less moving parts.</p>
+<p>With any option you choose, it’s important to keep your workspace regularly backed up or use server snapshots.</p>
+<section id="rdbms-configuration-parameters">
+<h2>RDBMS Configuration Parameters<a class="headerlink" href="#rdbms-configuration-parameters" title="Permalink to this headline"></a></h2>
+<p>For relational RDBMS parameters, the corresponding database must already exist before a user can use the web-based EDG interface to create a new vocabulary in that database.</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RDBMS URL</p></td>
+<td><p>The URL of the relational database. For example, <code class="code docutils literal notranslate"><span class="pre">jdbc:oracle:thin:&#64;localhost:1521:delphi</span></code>, where delphi is the name of the instance, or <code class="code docutils literal notranslate"><span class="pre">jdbc:mysql://localhost:3306/myDatabase</span></code>.
+The database with that name must already exist on the database server. (In the latter case, the myDatabase database must already exist on the MySQL system.)
+Common formats for the RDBMS URL include:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">jdbc:mysql://&lt;server&gt;/&lt;database&gt;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">jdbc:oracle:thin:&#64;//&lt;server&gt;:&lt;port&gt;/&lt;service&gt;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">jdbc:oracle:thin:&#64;&lt;server&gt;:&lt;port&gt;:&lt;SID&gt;</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">jdbc:sqlserver://&lt;server&gt;[:&lt;port&gt;][/database][;property=value]</span></code></p></li>
+</ul>
+<p>NOTE: for SQL Server: A single backslash “” in the URL string may cause a problem in the vault storage file for the password.
+Alternatives are (1) to use double-backslashes “\” or (2) store the password using Password Management or (3) replace the backslash “”
+element by a keyword assignment, e.g., “…;instanceName=myInstance;…” instead of “…myInstance;…”.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>RDBMS database type</p></td>
+<td><p>The supported type of relational database being used</p></td>
+</tr>
+<tr class="row-odd"><td><p>RDBMS user name</p></td>
+<td><p>Service account with appropriate permissions to the database</p></td>
+</tr>
+<tr class="row-even"><td><p>RDBMS Update Batch Size</p></td>
+<td><p>OPTIONAL: This is the number of rows written to the SQL database in each batch. If unset, then 1000 is used. Adjusting it might improve bulk insert performance.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RDBMS Update Fetch Size</p></td>
+<td><p>OPTIONAL: The number of rows returned from the SQL database on each network round trip. Certain values have certain meaning to difference database types. Not all databases use this value.
+NOTE: Leaving the Batch and Fetch sizes unset should generally yield acceptable loading/caching performance. Each can be fine-tuned for a particular application by adjusting it up or down and observing the performance changes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="edg_server_installation.html" class="btn btn-neutral float-left" title="EDG Server Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configure_logging.html" class="btn btn-neutral float-right" title="Configure Logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

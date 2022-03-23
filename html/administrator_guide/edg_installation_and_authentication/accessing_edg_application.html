@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessing the EDG Application &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EDG Administration and Configuration" href="../edg_administration_and_configuration/index.html" />
+    <link rel="prev" title="Configure Logging" href="configure_logging.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="edg_server_platform_considerations.html">EDG Server Platform Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication_edg_background.html">Authentication for TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_configuration.html">LDAP Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oauth_authentication.html">OAuth Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_type_app_data_storage.html">Database Type: Application data storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure_logging.html">Configure Logging</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Accessing the EDG Application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#license-registration">License Registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>Accessing the EDG Application</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="accessing-the-edg-application">
+<span id="accessing-edg-application"></span><h1>Accessing the EDG Application<a class="headerlink" href="#accessing-the-edg-application" title="Permalink to this headline"></a></h1>
+<p>For access to the EDG Console, send your browser to the URL <a class="reference external" href="http://[Web-application-server-host]:[Web-application-server-port]/edg/tbl/">http://[Web-application-server-host]:[Web-application-server-port]/edg/tbl/</a></p>
+<p>The project <code class="docutils literal notranslate"><span class="pre">server.topbraidlive.org</span></code> and several others will be created in the workspace.
+If not, there were initialization problems and the TopBraid server will not work properly.
+The most common source of problems are folder permissions for the process running the Web Application Server.
+Try removing the workspace folder and restarting tomcat, making sure that the user running the process has write access to the parent folder of the workspace location.</p>
+<section id="license-registration">
+<h2>License Registration<a class="headerlink" href="#license-registration" title="Permalink to this headline"></a></h2>
+<p>As part of the deployment/setup wizard, the license file will be added to EDG.
+If this is incorrect, expired or missing, a message will appear that points to the registration page, as shown in the following screen shot:</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG expired or missing license file message" class="edg-figure" src="../../_images/edg_license_registration.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG expired or missing license file message</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Click on the link.
+A page will appear stating that there are “No currently registered products!”</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">or</span> <span class="pre">Update</span> <span class="pre">Registration</span> <span class="pre">Information</span></code> link.
+Use the <code class="docutils literal notranslate"><span class="pre">Choose</span> <span class="pre">File</span></code> button to choose the license file (.lic file) sent by TopBraid support when the license was issued.</p></li>
+</ol>
+<p>A dialog will appear, verifying that the license was updated.
+The licenses and their expiration date will be displayed.
+This page is always available through the Server Administration tab and choosing the Server Administration then the Product Registration links.</p>
+<p>The TopBraid EDG license will control the number of concurrent users, human and API, that can be using EDG at any one time.
+License seats are counted as unique requests meaning many tabs in one browser are all counted in the same user session/license seat but unique browsers by the same user are counted as different sessions using their own license seat. API calls authenticate into EDG as well using a license seat during processing.</p>
+<p>For APIs, if using form authentication, be sure to log out after completion or for all other authentication you can drop requests and release license by calling “server”/edg/tbl/purgeuser.
+For form authentication, sessions expire upon timeout (set in web.xml in Tomcat), which releases the license seat held by the session.</p>
+<p>If users for Basic or SAML SSO wish to close the application, please use logoff and then close the browser immediately before navigating back to EDG.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="configure_logging.html" class="btn btn-neutral float-left" title="Configure Logging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../edg_administration_and_configuration/index.html" class="btn btn-neutral float-right" title="EDG Administration and Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

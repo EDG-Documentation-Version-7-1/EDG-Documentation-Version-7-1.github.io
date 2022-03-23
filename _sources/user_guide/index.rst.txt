@@ -1,0 +1,40 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. _user_guide:
+
+**********
+User Guide
+**********
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   home_page_and_navigation/index
+   working_with_asset_collections/index
+   workflows/index
+   guidance_specific_to_asset_collection_type/index
+   files/index
+   searching/index
+   collaboration/index
+   data_governance/index
+   metrics_dashboards/index
+   server_side_scripting/index
+   content_classification/index
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OAuth Authentication &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tomcat Users Authentication" href="tomcat_users_authentication.html" />
+    <link rel="prev" title="SAML Authentication" href="saml_authentication.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="edg_server_platform_considerations.html">EDG Server Platform Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication_edg_background.html">Authentication for TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_configuration.html">LDAP Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">OAuth Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#integrating-apis-with-edg-using-oauth">Integrating APIs with EDG using OAuth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#add-oauth-config-to-edg-context-xml">Add Oauth config to EDG context.xml</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oauth-workflows">OAuth workflows</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_type_app_data_storage.html">Database Type: Application data storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure_logging.html">Configure Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="accessing_edg_application.html">Accessing the EDG Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>OAuth Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="oauth-authentication">
+<span id="id1"></span><h1>OAuth Authentication<a class="headerlink" href="#oauth-authentication" title="Permalink to this headline"></a></h1>
+<section id="integrating-apis-with-edg-using-oauth">
+<h2>Integrating APIs with EDG using OAuth<a class="headerlink" href="#integrating-apis-with-edg-using-oauth" title="Permalink to this headline"></a></h2>
+<p>TopBraid EDG supports OAuth for client APIs. Interactive users will need to use another authentication method (SAML, Basic, or Forms).
+Unzip TopBraid-Auth.zip into the /lib directory of your Tomcat installation.
+E.g. /var/lib/tomcat8.5/lib</p>
+<ul class="simple">
+<li><p>cd /var/lib/tomcat8.5</p></li>
+<li><p>unzip TopBraid-Auth.zip -d lib</p></li>
+<li><p>If you had TopBraid SAML or OAuth from a previous version of EDG, you will need to remove the old jars</p></li>
+</ul>
+</section>
+<section id="add-oauth-config-to-edg-context-xml">
+<h2>Add Oauth config to EDG context.xml<a class="headerlink" href="#add-oauth-config-to-edg-context-xml" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Edit webapps/edg/META-INF/context.xml</p></li>
+<li><p>If you previously had TopBraid SAML from a version of EDG prior to 6.4.2, then you need to adjust the className for SAML to  org.topbraidlive.auth.adapters.saml.tomcat.SamlValve</p></li>
+<li><p>Make sure the OAuth valve comes before the SAML valve</p></li>
+</ul>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=’1.0′ encoding=’utf-8′?&gt;</span>
+
+<span class="cp">&lt;!– Copyright (c) 2016 TopQuadrant, Inc. All rights reserved. –&gt;</span>
+
+<span class="nt">&lt;Context</span> <span class="na">path=</span><span class="s">”/edg”</span><span class="nt">&gt;</span>
+
+    <span class="cp">&lt;!–</span>
+
+<span class="cp">      By default, Tomcat 8 tries to scan our jars for tag library</span>
+
+<span class="cp">      definitions.  We don’t have any, so skipping these jars will</span>
+
+<span class="cp">      improve startup and JSP compile times.</span>
+
+<span class="cp">    –&gt;</span>
+
+    <span class="nt">&lt;JarScanner&gt;</span>
+
+        <span class="nt">&lt;JarScanFilter</span> <span class="na">defaultTldScan=</span><span class="s">”false”/</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;/JarScanner&gt;</span>
+
+
+
+    <span class="nt">&lt;Resources</span> <span class="na">cacheMaxSize=</span><span class="s">”40960″/</span><span class="nt">&gt;</span>
+
+        <span class="cp">&lt;!–  Disable session persistence per PLAT-769 because Java8/Mars seems to have broken it.  –&gt;</span>
+
+        <span class="nt">&lt;Manager</span> <span class="na">pathname=</span><span class="s">””</span> <span class="nt">/&gt;</span>
+
+
+
+  <span class="cp">&lt;!–</span>
+
+<span class="cp">   TopBraid adapter for OAuth</span>
+
+<span class="cp">  –&gt;</span>
+
+  <span class="nt">&lt;Valve</span> <span class="na">className=</span><span class="s">”org.topbraidlive.auth.adapters.oauth.tomcat.OAuthValve”</span>
+
+      <span class="na">attributeMappings=</span><span class="s">”sub=</span><span class="nt">&gt;</span>name;appid=&gt;name;role=&gt;role;apptype=&gt;role”
+
+      authorizationServer=”https://oauth-idp.topquadrant.com/adfs”
+
+      resourceURI=”https://oauth-edg.topquadrant.com/edg/”
+
+      tokenRedirectURI=”https://oauth-edg.topquadrant.com/edg/oauth/getTokens”
+
+      tokenRequestURI=”/oauth/getTokens”/&gt;
+
+
+
+  <span class="cp">&lt;!–</span>
+
+<span class="cp">   TopBraid adapter for SAML</span>
+
+<span class="cp">  –&gt;</span>
+
+  <span class="nt">&lt;Valve</span> <span class="na">className=</span><span class="s">”org.topbraidlive.auth.adapters.saml.tomcat.SamlValve”</span>
+
+           <span class="na">assertionConsumerService=</span><span class="s">”/saml”</span>           <span class="na">attributeMappings=</span><span class="s">”http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress=</span><span class="nt">&gt;</span>name;http://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname=&gt;role”           federationMetadata=”https://saml-idp.topquadrant.com/FederationMetadata/2007-06/FederationMetadata.xml”
+
+           serviceProvider=”https://saml-edg.topquadrant.com/edg/saml”/&gt;
+
+<span class="nt">&lt;/Context&gt;</span>
+</pre></div>
+</div>
+<p>Browse to your EDG webapp UI.  Navigate to Server Administration -&gt; Server Configuration</p>
+<p>Under the OAuth Parameters, fill in the following:</p>
+<ul class="simple">
+<li><p><strong>Authorization server URL</strong>  (eg, ADFS <a class="reference external" href="https://server/adfs/oauth2/token">https://server/adfs/oauth2/token</a>)</p></li>
+<li><p><strong>Client ID</strong> obtained by your SSO administrator for this Application</p></li>
+<li><p><strong>Client secret</strong> obtained by your SSO administrator for this Application</p></li>
+</ul>
+</section>
+<section id="oauth-workflows">
+<h2>OAuth workflows<a class="headerlink" href="#oauth-workflows" title="Permalink to this headline"></a></h2>
+<p>The <strong>authorization code workflow</strong> involves the following steps:</p>
+<p>The OAuth client initiates the flow when it directs the user agent of the resource owner to the authorization endpoint.
+The OAuth client requests an access token from the authorization server through the token endpoint.
+This is likely where you will utilize internal scripts/apis to access EDG.</p>
+<p>The <strong>client credentials workflow</strong> involves EDG-to-EDG applications, such as Publishing to Explorer, Send Projects or Federated Sparql queries.
+The system authenticates and authorizes the app (EDG) rather than a user.
+For this scenario, typical authentication schemes like username + password or social logins don’t make sense.
+Instead, uses the Client Credentials Flow in which they pass along their Client ID and Client Secret to authenticate themselves and get a token.</p>
+<ol class="arabic simple">
+<li><p>Your app authenticates with the Authorization Server using its Client ID and Client Secret (<strong>/https://server/adfs/oauth2/token endpoint</strong>).</p></li>
+<li><p>Your Authorization Server validates the Client ID and Client Secret.</p></li>
+<li><p>Your Authorization Server responds with an Access Token.</p></li>
+<li><p>Your application can use the Access Token to call an API on behalf of itself.</p></li>
+<li><p>The API responds with requested data.</p></li>
+</ol>
+<p>The <strong>Password grant workflow</strong> is a way to exchange a user’s credentials for an access token.
+Because the client application has to collect the user’s password and send it to the authorization server, it is not recommended that this grant be used at all anymore.</p>
+<p>This flow provides no mechanism for things like multifactor authentication or delegated accounts, so is quite limiting in practice.</p>
+<p><strong>The latest OAuth 2.0 Security Best Current Practice disallows the password grant entirely.</strong></p>
+<p>These 4 attributes are needed to fulfil OAuth authorization requirements in EDG.</p>
+<ul class="simple">
+<li><p>appid</p></li>
+<li><p>sub</p></li>
+<li><p>role</p></li>
+<li><p>apptype</p></li>
+</ul>
+<blockquote>
+<div><p><em>A role of Confidential must be placed in web.xml for ADFS OAuth</em></p>
+</div></blockquote>
+<p>If you need to test programs against EDG, you can do so with the tool included at <a class="reference external" href="https://yourserver/edg/oauth/getTokens">https://yourserver/edg/oauth/getTokens</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="saml_authentication.html" class="btn btn-neutral float-left" title="SAML Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tomcat_users_authentication.html" class="btn btn-neutral float-right" title="Tomcat Users Authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

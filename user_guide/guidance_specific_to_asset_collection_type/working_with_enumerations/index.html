@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2021-12-02T09:02:56-05:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Enumerations &mdash; edg-documentation 7.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Working with Data Lineage" href="../working_with_data_lineage/index.html" />
+    <link rel="prev" title="Working with Data Graphs" href="../working_with_data_graphs/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG 7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guidance Specific to an Asset Collection Type</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html">Working with Ontologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_taxonomies/index.html">Working with Taxonomies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_crosswalks/index.html">Working with Crosswalks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_corpora/index.html">Working with Corpora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_graphs/index.html">Working with Data Graphs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with Enumerations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#licensing-and-enablement">Licensing and Enablement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enumeration-asset-collection">Enumeration Asset Collection</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_lineage/index.html">Working with Data Lineage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content_classification/index.html">Content Classification in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrading TopBraid EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intray/index.html">Candidate Content</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">User Guide</a> &raquo;</li>
+          <li><a href="../index.html">Guidance Specific to an Asset Collection Type</a> &raquo;</li>
+      <li>Working with Enumerations</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/user_guide/guidance_specific_to_asset_collection_type/working_with_enumerations/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-enumerations">
+<span id="working-with-enumerations-target"></span><h1>Working with Enumerations<a class="headerlink" href="#working-with-enumerations" title="Permalink to this headline"></a></h1>
+<section id="licensing-and-enablement">
+<span id="licensing-and-enablement-target"></span><h2>Licensing and Enablement<a class="headerlink" href="#licensing-and-enablement" title="Permalink to this headline"></a></h2>
+<p>The availability of any asset collection is determined by what is (a) licensed and (b) configured under <em>Server Administration</em>.
+To install a license or to view the currently licensed features, see Administrator Guide section on Product Registration` .
+To configure which licensed collection types are currently enabled or disabled, see Administrator Guide section on EDG Configuration Parameters.</p>
+<p>For general licensing information and available asset collections and packages, see the TopQuadrant website.</p>
+<p><a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a></p>
+</section>
+<section id="enumeration-asset-collection">
+<span id="enumeration-asset-collection-target"></span><h2>Enumeration Asset Collection<a class="headerlink" href="#enumeration-asset-collection" title="Permalink to this headline"></a></h2>
+<p>TopBraid EDG offers two types of asset collections for storing reference data or codes – Reference Datasets and Enumerations.</p>
+<p>Enumerations are suitable for storing multiple, relatively small and simple codesets in a single asset collection.
+An example may be gender codes or age group codes.
+For larger and richer sets of codes, use reference datasets.</p>
+<p>With enumerations, you do not need to define an entity type in a separate ontology.
+You can simply:</p>
+<ul class="simple">
+<li><p>Create an Enumeration asset collection</p></li>
+<li><p>Define Codesets e.g., Gender, Age Group, etc., as Enumeration classes</p></li>
+<li><p>Create enumerated values or codes for each Codeset</p></li>
+</ul>
+<p>Example is shown in the screenshot below.</p>
+<figure class="align-center" id="id47">
+<img alt="TopBraid EDG Enumeration Page" class="edg-figure" src="../../../_images/edg_enumeration_example.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Enumeration Page</strong></span><a class="headerlink" href="#id47" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To add a new Enumeration, select New in the Enumerations List Panel.</p>
+<p>Enumerated values or codes are added to an enumeration by selecting it in the upper left panel and then clicking New button in the lower left panel which displays enumerated values.
+In the screenshot above you see two enumerated values for Gender: Female and Male.</p>
+<p>The panel on the right displays the asset you select from the left side panels – either an enumeration or an enumerated value.
+This is the default layout for enumerations.
+You can also switch to one of alternative layouts.</p>
+<p>For each enumeration you will be able to enter its description using a “comments” field.
+For a value in the enumeration set, you will be able to capture information described in the table below:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property Name</p></th>
+<th class="head"><p>Type of Values</p></th>
+<th class="head"><p>Number of Possible Values for a Property</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Enumerated Value Properties</strong></p></td>
+<td><p>This is the main group of property values</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>code</p></td>
+<td><p>string</p></td>
+<td><p>[1..1]</p></td>
+<td><p>Value of the code for a given enumerated value AKA member of an enumeration.
+For example, M can be a code for Male, 1 can be a code value for January.
+Since it uniquely identifies an enumerated value within a given enumeration, we will typically refer to an enumerated value as the code.</p></td>
+</tr>
+<tr class="row-even"><td><p>definition</p></td>
+<td><p>HTML or string or language string</p></td>
+<td><p>[0..1]</p></td>
+<td><p>Optional verbal definition.</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>string or language string</p></td>
+<td><p>[1..*]</p></td>
+<td><p>This is a label for a code. For example, a code may be M for Male.
+The label would be ‘Male’.</p></td>
+</tr>
+<tr class="row-even"><td><p>literal</p></td>
+<td><p>string or language string</p></td>
+<td><p>[0..*]</p></td>
+<td><p>Optional machine-readable string for how the enumerated value can be referred to.
+This can be used when the code value is numeric – as an alternative to using a code.
+Literal is not the same as label which is intended for human readable display.
+For example, a code for January may be 1, literal may be ‘J’ or ‘Jan’ and label is ‘January’.</p></td>
+</tr>
+<tr class="row-odd"><td><p>order</p></td>
+<td><p>integer</p></td>
+<td><p>[0..1]</p></td>
+<td><p>Optional value.
+Enumerations are often application-specific and this field can capture an order of display of enumerated value in a context of an application.
+It can also be used to capture ordinality to support comparison and calculations needed to answer requests like “all results for age groups higher than teenagers”.
+Even when an enumerated value has a numeric code, an order may still be needed because a code number does not necessarily imply natural order or ranking that could be used in calculations.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Status</strong></p></td>
+<td><p>All fields in this section are optional.</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>Asset Status</p></td>
+<td><p>[0..1]</p></td>
+<td><p>Optional status value for a code.
+Selection comes from the EDG Enumeration called Asset Status.</p></td>
+</tr>
+<tr class="row-even"><td><p>superseded by</p></td>
+<td><p>Asset</p></td>
+<td><p>[0..1]</p></td>
+<td><p>Optionally, lets you link to the previously used code.</p></td>
+</tr>
+<tr class="row-odd"><td><p>effective end date</p></td>
+<td><p>date</p></td>
+<td><p>[0..1]</p></td>
+<td><p>Optionally, specifies a date after which a code should no longer be used.</p></td>
+</tr>
+<tr class="row-even"><td><p>effective start date</p></td>
+<td><p>date</p></td>
+<td><p>[0..1]</p></td>
+<td><p>Optionally, specifies a date when one can start to use a code.</p></td>
+</tr>
+<tr class="row-odd"><td><p>issue</p></td>
+<td><p>Issue</p></td>
+<td><p>[0..*]</p></td>
+<td><p>An optional link to issues.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In addition to the enumerations users define as assets they manage, there are also built-in EDG enumerations such as Asset Status or Confidentiality Level.
+Values for these enumerations are managed by your EDG Administrator using a special EDG Enumerations asset collection.
+Values of these enumerations are available for selection within any EDG asset collection.</p>
+</div>
+<p>When should you use an enumeration asset collection versus a reference dataset? The decision is up to you, but here are some best practices:</p>
+<ul class="simple">
+<li><p>If you have a large number of codes in a specific enumeration, use a reference dataset.
+Enumeration collection is designed to store relatively small codesets – typically less than 20 per enumeration and often less than 10.</p></li>
+<li><p>If you need to have custom properties for your code values that differ between enumerations, use reference dataset.
+An example, may want to have Location Codes that will have latitude and longitude values while Gender Codes will not have them.
+Enumeration collection is designed to store simple, generic codesets that typically a) share the same properties across all enumerations and b) only have pre-defined properties listed above.</p></li>
+<li><p>If you want to define definitive enterprise-wide set of codes for a specific entity such as Gender, you may want to create a separate reference dataset for this purpose.
+Enumeration collection is better aligned with storing application specific set of codes.
+For example:</p>
+<ul>
+<li><p>You may have application A that uses gender codes, age group codes, marital status codes, etc.
+Application B also has codes for some or all of these entities.</p></li>
+<li><p>You may create two enumeration collections – enumerations for A and enumerations for B.</p></li>
+<li><p>You may also create an enterprise-wide reference datasets for genders and marital statuses and map application specific codes to the enterprise codes.</p></li>
+<li><p>Alternatively, you could also create an enumeration collection for enterprise-wide codesets.
+Typically, enterprise-wide codesets tend to be larger than an application specific set of codes for the same entity because they need to align and accommodate a broader range of use cases.</p></li>
+</ul>
+</li>
+</ul>
+<p>The primarily advantage of using enumeration collection is that all the properties are predefined.
+You do not need to create and use an ontology for a reference dataset.
+On the other hand, all the enumerations in a single collection share the same life cycle for updates, publishing and permissions.
+Thus, reference datasets provide more flexibility for definition and management of codesets.</p>
+<p>Enumerations such as Gender and Age Group are classes.
+While it is possible to add properties for these classes directly in an enumeration collection, we advise against using this practice.
+A recommended practice is for all enumerations to have the same set of properties.
+While EDG pre-defines properties you will likely need, you can extend them.
+If you need to modify common properties for enumerations, we recommend creating an ontology, customizing Enumeration class ( edg:CustomEnumeratedValue class) and including this customization by default in all enumeration collections.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../working_with_data_graphs/index.html" class="btn btn-neutral float-left" title="Working with Data Graphs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../working_with_data_lineage/index.html" class="btn btn-neutral float-right" title="Working with Data Lineage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.
+      <span class="lastupdated">Last updated on Dec 02, 2021.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

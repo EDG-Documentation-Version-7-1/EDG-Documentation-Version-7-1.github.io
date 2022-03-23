@@ -1,0 +1,39 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. _working_with_corpora_target:
+
+
+Working with Corpora
+--------------------
+
+.. include:: ../licensing_and_enablement.rst
+
+Overview of Corpora
+^^^^^^^^^^^^^^^^^^^
+
+A Corpus is a collection of textual assets, such as documents, excerpts, web pages, etc..
+The original items are typically imported from external sources, such as content management systems or web sites and **typically are not created nor edited** within EDG.
+The textual content of Corpus assets provides the foundation for manual or automated tagging and annotation using Content Tag Sets.
+Corpora serve as the content graphs for Content Tag Sets.
+
+Selecting the **Corpora** link in the left-navigation pane of TopBraid EDG lists all of the Corpus collections currently available to the user and allows authorized users to create new ones.
+
+When working with Corpus collections users will have access to the same functionality as the functionality available for other asset collections e.g., ability to search, import, export, etc.
+If a Corpus is created without specifying a connector to some content repository, users will be able to use EDG editor to create and edit documents in the Corpus.
+Otherwise, the documents will come from an external repository and users will not be able to modify them.
+
+.. seealso:: Please see the :ref:`asset_collections` for all the general features of asset collections such as import/export, editing, user permissions, reports and settings.
+
+.. include:: ./create_new_corpus.rst
+.. include:: ./importing_for_a_corpus.rst
+.. include:: ./corpus_manage_tab.rst
+.. include:: ./corpus_contents_report.rst

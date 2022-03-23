@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using SPARQL to Query and Modify Data &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using SPARQL to Query and Modify Data</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-sparql-to-query-and-modify-data">
+<span id="sparql-target"></span><h1>Using SPARQL to Query and Modify Data<a class="headerlink" href="#using-sparql-to-query-and-modify-data" title="Permalink to this headline"></a></h1>
+<section id="sparql-query-panel">
+<span id="id1"></span><h2>SPARQL Query Panel<a class="headerlink" href="#sparql-query-panel" title="Permalink to this headline"></a></h2>
+<p>This panel lets you compose, run and save SPARQL queries. For example, a query shown below will identify assets that do not have a preferred label in Russian, effectively providing a translation list.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG SPARQL Query Panel" class="edg-figure-l" src="../../_images/edg_sparql_query_panel.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG SPARQL Query Panel</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can use either URIs or Qnames.
+The panel will automatically resolve prefixes and put out PREFIX statements.
+The panel will detect and report query syntax errors.
+Query parts can be collapsed and expanded for readability.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>To see results of query execution, use <a class="reference internal" href="#id2">SPARQL Results Panel</a>.</p>
+</div>
+<p>You can use SPARQL Layout which already integrates SPARQL Query and SPARQL Results panels as well as SPARQL Library panel.</p>
+<p>To save a query for re-use, use Save icon.
+You will be able to name the query and decide the scope of its sharing. Your query can be parametrized.
+This will let users enter a parameter when they run saved query.
+To indicate that a variable is a parameter, replace “J” with “$” e.g., use $label instead of ?label.</p>
+<p>Use the algebra button to see the SPARQL algebra associated with the query for advanced debugging.
+This will show how the SPARQL engine is executing the query allowing optimizations to be discovered.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Save SPARQL Query to Library Dialog" class="edg-figure-l" src="../../_images/edg_save_sparql_query_to_library.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Save SPARQL Query to Library Dialog</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>TopBraid EDG supports SPARQL 1.1, including SPARQL Update.
+If the EDG server has been configured (see Administrator Guide, Server Configuration Parameters) to allow SPARQL <strong>updates</strong>, editors (and managers) can run them, but viewers cannot.</p>
+<p>GeoSPARQL is also supported.
+To enable your asset collection for Geospatial queries, use the <strong>Manage</strong> tab to enable GeoSPARQL.
+This will create and maintain the geo spatial index.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>Pivot Table</em> and <em>Geo</em> functions can be slow on some platforms and are not supported for Internet Explorer.</p>
+</div>
+</section>
+<section id="sparql-results-panel">
+<span id="id2"></span><h2>SPARQL Results Panel<a class="headerlink" href="#sparql-results-panel" title="Permalink to this headline"></a></h2>
+<p>This panel shows results of SPARQL query execution from the <a class="reference internal" href="#id1">SPARQL Query Panel</a> in a tabular format and lets you export them.
+Table columns are sortable and rows are clickable so that you could see more information about returned resource on, let’s say, a form.</p>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG SPARQL Results Panel" class="edg-figure-l" src="../../_images/edg_sparql_results_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG SPARQL Results Panel</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>By default, returned resources are displayed using their labels.
+Settings menu lets you request that IDs (QNames) are displayed instead of labels.
+Export menu lets you export query results in a variety of formats.
+Results of SPARQL SELECT queries can be exported in any of the standard export formats as defined by the W3C specifications: TSV and CSV, JSON and XML.
+Results of SPARQL CONSTRUCT and DESCRIBE queries can be exported in one of the standard RDF serializations: Turtle, JSON-LD, RDF/XML.</p>
+</section>
+<section id="sparql-library-panel">
+<span id="id3"></span><h2>SPARQL Library Panel<a class="headerlink" href="#sparql-library-panel" title="Permalink to this headline"></a></h2>
+<p>This panel will show the list of queries saved using the SPARQL query panel.
+What it shows is determined by the scope of the saved queries and the asset collection you are currently in.</p>
+<p>You will be able to select and run a query.
+You will also be able to delete saved queries.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG SPARQL Library Panel" class="edg-figure-l" src="../../_images/edg_sparql_library_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG SPARQL Library Panel</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The settings menu lets you configure how much information about a query should be displayed.</p>
+<p>The following buttons can be used to show the query and to copy the URL for the query results.</p>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Show Query and Copy URL Buttons" class="edg-figure-s" src="../../_images/edg_query_and__copy_url_buttons.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Show Query and Copy URL Buttons</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG SPARQL Library Query Example" class="edg-figure-l" src="../../_images/edg_sparql_library_query_example.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>The SPARQL Library panel</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="sparql-endpoint">
+<span id="id4"></span><h2>SPARQL Endpoint<a class="headerlink" href="#sparql-endpoint" title="Permalink to this headline"></a></h2>
+<p>In addition to the built-in panels of the main application, TopBraid EDG includes a general SPARQL endpoint at <code class="code docutils literal notranslate"><span class="pre">/tbl/sparql</span></code>.</p>
+<section id="sparql-endpoint-page">
+<span id="id5"></span><h3>SPARQL Endpoint Page<a class="headerlink" href="#sparql-endpoint-page" title="Permalink to this headline"></a></h3>
+<p>When called from a browser, <code class="code docutils literal notranslate"><span class="pre">/tbl/sparql</span></code> opens an interactive editor for entering and executing SPARQL queries.</p>
+<figure class="align-center" id="id12">
+<img alt="Screenshot of TopBraid's SPARQL endpoint page" class="edg-figure-l" src="../../_images/sparql_endpoint.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid’s SPARQL Endpoint page</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only use the SPARQL endpoint if you need to make arbitrary SPARQL queries that are not only about a specific asset collection.
+Or if you need to query other graphs such as the change history data as shown in the screenshot above.
+For most users, the <a class="reference internal" href="#sparql-query-panel"><span class="std std-ref">SPARQL Query Panel</span></a> is typically a more user-friendly choice.</p>
+</div>
+</section>
+<section id="sparql-endpoint-web-service">
+<h3>SPARQL Endpoint Web Service<a class="headerlink" href="#sparql-endpoint-web-service" title="Permalink to this headline"></a></h3>
+<p>The SPARQL endpoint can also be called programmatically from external systems, for example to query terms from a Taxonomy.</p>
+<p>Using SPARQL is similar to using a public endpoint of a database where you can perform your own queries instead of having to learn and use the (often restrictive) web service APIs.
+All you need to know is the query language (SPARQL).
+Results of SELECT SPARQL queries are tabular structures that are delivered in standardized formats as described in the <a class="reference external" href="https://www.w3.org/TR/sparql11-protocol/">SPARQL 1.1 Protocol</a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>An alternative to using SPARQL is <a class="reference internal" href="../../graphql/index.html#graphql-target"><span class="std std-ref">GraphQL</span></a>, which is suitable for use cases such as fetching an array of instances with certain characteristics.
+An even more flexible alternative is using <a class="reference internal" href="../../scripting/index.html#scripting"><span class="std std-ref">Scripting with JavaScript and ADS</span></a>, which offers the ultimate flexibility to produce any type of output.</p>
+</div>
+<p>If you want to query a TopBraid server from arbitrary SPARQL 1.1 processors, you can use the <a class="reference external" href="https://www.w3.org/TR/sparql11-federated-query/">SERVICE</a> keyword.
+To make this work, you just need to know the URL of the TopBraid server and the name/URI of the graph that you want to query.
+The general pattern of the graphs representing the EDG asset collections is <code class="code docutils literal notranslate"><span class="pre">urn:x-evn-master:XY</span></code> where you substitute XY with the identifier that you see before <code class="code docutils literal notranslate"><span class="pre">.editor</span></code> in the URL of the main editor of your asset collection.</p>
+<p>For example, if you have EDG installed at the domain name ourserver.com on port 8080, use the following query to send a query to that endpoint requesting a list of Continent resources in the Geography vocabulary:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">SELECT</span> <span class="nv">?continent</span>
+<span class="linenos">2</span><span class="k">WHERE</span> <span class="p">{</span>
+<span class="linenos">3</span>   <span class="k">SERVICE</span> <span class="nl">&lt;http://ourserver.com:8080/edg/tbl/sparql&gt;</span> <span class="p">{</span>
+<span class="linenos">4</span>      <span class="k">GRAPH</span> <span class="nl">&lt;urn:x-evn-master:geo&gt;</span> <span class="p">{</span>
+<span class="linenos">5</span>          <span class="nv">?continent</span> <span class="k">a</span> <span class="nl">&lt;http://topquadrant.com/ns/examples/geography#Continent&gt;</span>
+<span class="linenos">6</span>      <span class="p">}</span>
+<span class="linenos">7</span>   <span class="p">}</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>If you do not want to use the SERVICE keyword, you can invoke the SPARQL endpoint service directly.
+For example, let’s say you wanted to send the following query to the endpoint <code class="code docutils literal notranslate"><span class="pre">http://ourserver.com:8080/EDG/tbl/sparql</span></code>:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">SELECT</span> <span class="nv">?continent</span>
+<span class="linenos">2</span><span class="k">WHERE</span> <span class="p">{</span>
+<span class="linenos">3</span>   <span class="k">GRAPH</span> <span class="nl">&lt;urn:x-evn-master:geo&gt;</span> <span class="p">{</span>
+<span class="linenos">4</span>      <span class="nv">?continent</span> <span class="k">a</span> <span class="nl">&lt;http://topquadrant.com/ns/examples/geography#Continent&gt;</span>
+<span class="linenos">5</span>   <span class="p">}</span>
+<span class="linenos">6</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>You can add an escaped version as a query parameter value to the endpoint URL shown above, resulting in the following URL.
+The best practice is to use a URL encoding function to properly format the query for HTTP:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">http://ourserver.com:8080/edg/tbl/sparql?query=SELECT+?continent+WHERE+{GRAPH+&lt;urn:x-evn-master:geo&gt;+{?continent+a+&lt;http://topquadrant.com/ns/examples/geography%23Continent&gt;}}</span></code></p>
+<p>An option to specifying the named graph with the GRAPH keyword, you can use an endpoint specific to the asset collection you want to query.</p>
+<p>To do so, name the graph in a <code class="code docutils literal notranslate"><span class="pre">default-graph-uri</span></code> parameter added to the URL.
+For example, let’s look at this simpler query that does not mention the graph to query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">SELECT</span> <span class="nv">?continent</span>
+<span class="linenos">2</span><span class="k">WHERE</span> <span class="p">{</span>
+<span class="linenos">3</span>   <span class="nv">?continent</span> <span class="k">a</span> <span class="nl">&lt;http://topquadrant.com/ns/examples/geography#Continent&gt;</span>
+<span class="linenos">4</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Escaping this and adding it to the SPARQL endpoint URL with the named graph specified using the <code class="code docutils literal notranslate"><span class="pre">default-graph-uri</span></code> parameter gives us the following URL (split here for display, but to be treated as one line):</p>
+<p><code class="code docutils literal notranslate"><span class="pre">http://ourserver.com:8080/edg/tbl/sparql?default-graph-uri=urn:x-evn-master:geo&amp;query=SELECT+?continent+WHERE+{?continent+a+&lt;http://topquadrant.com/ns/examples/geography%23Continent&gt;}</span></code></p>
+<p>As an alternative to those GET-style requests you may send a POST request with the query string in the request body and the optional <code class="code docutils literal notranslate"><span class="pre">default-graph-uri</span></code> parameter.</p>
+<p>Assuming that SPARQL UPDATEs have been enabled in the server administration pages, you can also use the <code class="code docutils literal notranslate"><span class="pre">tbl/sparql</span></code> endpoint for UPDATE requests.</p>
+<p>SPARQL Update statements use the sparql servlet with the <code class="code docutils literal notranslate"><span class="pre">update</span></code> parameter for specifying the SPARQL Update query.
+Note that the query must therefore explicitly specify a graph context to execute the update in using the <code class="code docutils literal notranslate"><span class="pre">GRAPH</span> <span class="pre">&lt;...&gt;</span></code> syntax.
+An example update call is shown in the following URL:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">tbl/sparql?update=INSERT{GRAPH</span> <span class="pre">&lt;urn:x-evn-master:schemaexample&gt;{&lt;http://topbraid.org/examples/topquadrant%23TBEVN&gt;</span> <span class="pre">&lt;http://www.w3.org/2000/01/rdf-schema%23comment&gt;</span> <span class="pre">&quot;a</span> <span class="pre">comment&quot;}}WHERE</span> <span class="pre">{}</span></code></p>
+<p>Note this assumes a user is logged in, either via a browser or a basic authentication request.
+SPARQL Updates can be included in the change history by appending the user name to the end of the graph name as in the following example.
+The change will be added to the change graph with the currently logged in user as the creator of the change.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">tbl/sparql?update=INSERT{GRAPH</span> <span class="pre">&lt;urn:x-evn-master:schemaexample:Administrator&gt;{&lt;http://topbraid.org/examples/topquadrant%23TBEVN&gt;</span> <span class="pre">&lt;http://www.w3.org/2000/01/rdf-schema%23comment&gt;</span> <span class="pre">&quot;a</span> <span class="pre">second</span> <span class="pre">comment&quot;}}WHERE</span> <span class="pre">{}</span></code></p>
+<p>Access controls can also be defined for SPARQL Update using the Rights Management page and the SPARQLUpdateAllowGrp and SPARQLUpdateDenyGrp groups.
+For more information see the Rights Management document.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>A good way of learning the details of the SPARQL endpoint syntax is by using the interactive <a class="reference internal" href="#sparql-endpoint-page"><span class="std std-ref">SPARQL Endpoint Page</span></a> and look at the Network tab of your browser’s inspection tool.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

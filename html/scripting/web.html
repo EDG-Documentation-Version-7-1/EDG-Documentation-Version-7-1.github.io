@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using ADS from Web Applications and React &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extension Development" href="../ext/index.html" />
+    <link rel="prev" title="Using ADS from Node.js" href="nodejs.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">The Scripting User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">Working with Relational Databases via SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Resource Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ADS-based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shacl.html">Using ADS with SHACL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodejs.html">Using ADS from Node.js</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using ADS from Web Applications and React</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-example">Simple Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-ads-file">The ADS File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-react-component">The React Component</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#complex-example">Complex Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scripting-web-complex-example-ads">The ADS File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scripting-web-complex-example-react">The React Component</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#variables-and-scope">Variables and Scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>Using ADS from Web Applications and React</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="using-ads-from-web-applications-and-react">
+<span id="scripting-web"></span><h1>Using ADS from Web Applications and React<a class="headerlink" href="#using-ads-from-web-applications-and-react" title="Permalink to this headline"></a></h1>
+<p>This section explains how the APIs of Active Data Shapes (ADS) can be used in client-side code of Web Applications.
+While ADS scripts typically execute on the TopBraid server (using the GraalVM engine), TopBraid can also generate stand-alone JavaScript/TypeScript files of the ADS APIs, including features like ontology-specific JavaScript classes and the generic graph object.
+These libraries can then be used by JavaScript apps running in the browser, for example embedded in the React source code.
+Such apps can utilize the full flexibility of ADS which goes way beyond what could be expressed using SPARQL or GraphQL.
+The functions containing the queries and mutations are sent from the web client to the TopBraid server for execution.
+All this is enabled because both the TopBraid server and the Web applications can share the same APIs to declare ADS scripts.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<p>An important design question for interactive web applications is how to best communicate with the server.
+Modern web applications make “Ajax” requests based on languages like GraphQL to fetch JSON responses from the server.
+Against the TopBraid server, many requests also use SPARQL.
+Common to all these is that the client code needs to construct query strings (e.g., in GraphQL) based on the current state of the user interface, make the asynchronous call, and finally process the (JSON) result into the format that is really needed to update the user interface component.</p>
+<p>This section introduces a different way for web applications to interact with the TopBraid server.
+Instead of sending query strings, the client can send arbitrary JavaScript functions to the server.
+The server will use its embedded GraalVM engine to execute those functions and then return the results to the client.
+The API behind those functions is automatically created from the data models/ontologies using the Active Data Shapes API generator.
+So for example you can write code such as <code class="code docutils literal notranslate"><span class="pre">skos.everyConcept()</span></code> if you need an array of all instances of <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code> from the current asset collection.
+This is typically a very convenient and powerful API to query or update TopBraid graphs.</p>
+<p>One “business benefit” of this design is that client-side code can contain functions that would otherwise have to be defined on the server and thus would need to live in separate parts of a system under different maintenance procedures using different tools.
+With ADS, web application code can benefit from compile-time checking, a rich editing experience using auto-complete etc.
+Furthermore, the client code can directly produce the exact JavaScript data structures that are needed by the component, without first having to go through the generic JSON formats produced by GraphQL or SPARQL.</p>
+<p>The following diagram illustrates the overall architecture of Active Data Shapes, when executed on the TopBraid EDG server versus from Web Browsers versus from Node.js.</p>
+<figure class="align-center">
+<img alt="ADS architecture diagram" class="edg-figure" src="../_images/ADS-Architecture-Tree.png" />
+</figure>
+<p>All this is best explained using examples, so let’s dive straight in.</p>
+</section>
+<section id="simple-example">
+<span id="scripting-web-simple-example"></span><h2>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this headline"></a></h2>
+<p>This example simply prints the number of triples in the current asset collection.
+The code is divided into two files:</p>
+<ul class="simple">
+<li><p>A JavaScript file containing the ADS code with a function that implements the query logic</p></li>
+<li><p>A React component for the rendering, importing the ADS file</p></li>
+</ul>
+<section id="the-ads-file">
+<span id="scripting-web-simple-example-ads"></span><h3>The ADS File<a class="headerlink" href="#the-ads-file" title="Permalink to this headline"></a></h3>
+<p>The file <code class="code docutils literal notranslate"><span class="pre">HelloComponent.ads.js</span></code> declares the query function(s) that will be executed on the server.
+It also exports a dedicated function that serves as proxy for the remote function call.
+The code of that proxy function is basically always the same, calling a function <code class="code docutils literal notranslate"><span class="pre">TopBraid.asyncFunction</span></code>, and mirrors the parameter passing of the remote function:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">//@ts-check</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">import</span> <span class="p">{</span> <span class="nx">graph</span><span class="p">,</span> <span class="nx">TopBraid</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./geography_ontology_ADS_generated_web&#39;</span><span class="p">;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="cm">/**</span>
+<span class="linenos"> 6</span><span class="cm"> * This function executes on the server to count the total number of triples.</span>
+<span class="linenos"> 7</span><span class="cm"> * @returns {number} the number of triples</span>
+<span class="linenos"> 8</span><span class="cm"> */</span>
+<span class="linenos"> 9</span><span class="kd">const</span> <span class="nx">triplesCount</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">10</span>    <span class="c1">// This here could be literally any ADS algorithm...</span>
+<span class="linenos">11</span>    <span class="k">return</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">triples</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="linenos">12</span><span class="p">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="cm">/**</span>
+<span class="linenos">15</span><span class="cm"> * This executes on the client and serves as proxy for the server-side function above.</span>
+<span class="linenos">16</span><span class="cm"> * @returns {Promise&lt;number&gt;} the number of triples, but wrapped into a Promise</span>
+<span class="linenos">17</span><span class="cm"> */</span>
+<span class="linenos">18</span><span class="k">export</span> <span class="kd">const</span> <span class="nx">loadTriplesCount</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">19</span>    <span class="k">return</span> <span class="nx">TopBraid</span><span class="p">.</span><span class="nx">asyncFunction</span><span class="p">(</span><span class="nx">triplesCount</span><span class="p">);</span>
+<span class="linenos">20</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-react-component">
+<span id="scripting-web-simple-example-react"></span><h3>The React Component<a class="headerlink" href="#the-react-component" title="Permalink to this headline"></a></h3>
+<p>The file <code class="code docutils literal notranslate"><span class="pre">HelloComponent.jsx</span></code> defines the rendering only, and delegates the data loading to the ADS file:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>import React from &#39;react&#39;;
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>import { loadTriplesCount } from &#39;./HelloComponent.ads&#39;;
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>/**
+<span class="linenos"> 6</span> * A test component that displays the number of triples in the current data graph.
+<span class="linenos"> 7</span> */
+<span class="linenos"> 8</span>export default class HelloComponent extends React.Component {
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>    async componentDidMount() {
+<span class="linenos">11</span>        this.setState({
+<span class="linenos">12</span>            count: await loadTriplesCount()
+<span class="linenos">13</span>        })
+<span class="linenos">14</span>    }
+<span class="linenos">15</span>
+<span class="linenos">16</span>    render() {
+<span class="linenos">17</span>        if(!this.state) {
+<span class="linenos">18</span>            return &lt;div&gt;Loading...&lt;/div&gt;;
+<span class="linenos">19</span>        }
+<span class="linenos">20</span>        return (
+<span class="linenos">21</span>            &lt;div&gt;
+<span class="linenos">22</span>                &lt;h3&gt;Triples: {this.state.count}&lt;/h3&gt;
+<span class="linenos">23</span>            &lt;/div&gt;
+<span class="linenos">24</span>        );
+<span class="linenos">25</span>    }
+<span class="linenos">26</span>}
+</pre></div>
+</div>
+<p>The JavaScript module <code class="code docutils literal notranslate"><span class="pre">geography_ontology_ADS_generated_web.js</span></code> has been automatically generated by TopBraid.
+To produce such a file, use the Export tab of your Ontology (here, the Geography Ontology) and select <em>Generate API for External Scripts &gt; JavaScript API for Web Applications</em>.
+Alternatively, you may want to rely on one of the standard ADS libraries, for example for SKOS, that can be generated in the same Export feature.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">.ads.js</span></code> file defines all helper functions of the component that may execute on the server.
+These functions must only use the generated ADS APIs, because that very same API will also exist on the TopBraid server at execution time.
+The client code base has a copy of that API, but that is only used for compilation and syntax checking, while the execution happens against the identical ADS API on the server.</p>
+<p>Given that the source code of the JavaScript functions is sent to the server, it will execute in a different environment from the client.
+These functions may therefore not call the React API or other client-side features, nor can they access variables from surrounding scopes on the client, unless they are passed into the function as parameters.
+In other words, the script functions need to be stateless, self-contained and rely on ECMAScript only.
+See <a class="reference internal" href="#scripting-web-scope"><span class="std std-ref">Variables and Scope</span></a> for details.</p>
+<p>In the example above, only the <code class="code docutils literal notranslate"><span class="pre">triplesCount</span></code> function will be sent to the server for execution.
+The function <code class="code docutils literal notranslate"><span class="pre">loadTriplesCount</span></code> serves as a wrapper or proxy to expose this function to the client code from the React source file.
+<code class="code docutils literal notranslate"><span class="pre">TopBraid.asyncFunction</span></code> returns a JavaScript <code class="code docutils literal notranslate"><span class="pre">Promise</span></code> object, i.e. it will start an asynchronous call and return instantly.
+The <code class="code docutils literal notranslate"><span class="pre">await</span></code> keyword may be used to process the result of the <code class="code docutils literal notranslate"><span class="pre">Promise</span></code> in the most readable syntax.
+As shown in the HelloComponent source code, the function surrounding the await must be declared <code class="code docutils literal notranslate"><span class="pre">async</span></code>.
+Alternatively, use the conventional <code class="code docutils literal notranslate"><span class="pre">Promise</span></code> syntax such as <code class="code docutils literal notranslate"><span class="pre">loadTriplesCount().then((data)</span> <span class="pre">=&gt;</span> <span class="pre">...</span> <span class="pre">)</span></code>.</p>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">TopBraid.asyncFunction</span></code> for any read-only operation, and <code class="code docutils literal notranslate"><span class="pre">TopBraid.asyncMutation</span></code> for operations that may also modify the graph.</p>
+</section>
+</section>
+<section id="complex-example">
+<span id="scripting-web-complex-example"></span><h2>Complex Example<a class="headerlink" href="#complex-example" title="Permalink to this headline"></a></h2>
+<p>For this example we want to render a <code class="code docutils literal notranslate"><span class="pre">skos:ConceptScheme</span></code> together with a list of its top concepts and the number of their children each.
+Embedded into an EDG Panel it will look as shown:</p>
+<figure class="align-center" id="id3">
+<img alt="A screenshot of the panel produced by this example" class="edg-figure" src="../_images/Web-TestPanel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Test panel created by this example</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="scripting-web-complex-example-ads">
+<span id="id1"></span><h3>The ADS File<a class="headerlink" href="#scripting-web-complex-example-ads" title="Permalink to this headline"></a></h3>
+<p>The query logic here requires a helper function that recursively walks down the hierarchy of narrower concepts.
+Furthermore, this example is complicated by the fact that we want to pass an argument from the client (the selected concept scheme) into the ADS code, and the ADS code represents this concept scheme as instance of the JavaScript class <code class="code docutils literal notranslate"><span class="pre">skos_ConceptScheme</span></code> while the client simple uses an instance of <code class="code docutils literal notranslate"><span class="pre">RDFValue</span></code> or any other object that has a uri field.
+This complicates the invocation a little bit, because the URI needs to be cast into the correct ADS API class.</p>
+<p>The file is also quite bloated because it has been littered with JSDocs comments that help with type-safety and documentation.
+This can of course be achieved in more compact form in TypeScript, or simply removed.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">//@ts-check</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">import</span> <span class="p">{</span> <span class="nx">skos_Concept</span><span class="p">,</span> <span class="nx">skos_ConceptScheme</span><span class="p">,</span> <span class="nx">TopBraid</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./geography_ontology_ADS_generated_web&#39;</span><span class="p">;</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">RDFValue</span> <span class="kr">from</span> <span class="s1">&#39;../../model/RDFValue&#39;</span><span class="p">;</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="cm">/**</span>
+<span class="linenos"> 8</span><span class="cm"> * This function executes on the server to recursively sum up the number of children.</span>
+<span class="linenos"> 9</span><span class="cm"> * @param {skos_Concept} concept - the skos:Concept to count the children of</span>
+<span class="linenos">10</span><span class="cm"> * @returns {number}</span>
+<span class="linenos">11</span><span class="cm"> */</span>
+<span class="linenos">12</span><span class="kd">const</span> <span class="nx">countChildren</span> <span class="o">=</span> <span class="p">(</span><span class="nx">concept</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">13</span>    <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos">14</span>    <span class="nx">concept</span><span class="p">.</span><span class="nx">narrower</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">child</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">15</span>        <span class="nx">count</span> <span class="o">+=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1</span>
+<span class="linenos">16</span>    <span class="p">})</span>
+<span class="linenos">17</span>    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="linenos">18</span><span class="p">}</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="cm">/**</span>
+<span class="linenos">21</span><span class="cm"> * This function executes on the server to collect the info objects for the top concepts.</span>
+<span class="linenos">22</span><span class="cm"> * @param {skos_ConceptScheme} scheme - the skos:ConceptScheme instance</span>
+<span class="linenos">23</span><span class="cm"> * @returns {Object[]} an array of { resource: skos_Concept, childCount: number } objects</span>
+<span class="linenos">24</span><span class="cm"> */</span>
+<span class="linenos">25</span><span class="kd">const</span> <span class="nx">getChildInfo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">scheme</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">26</span>    <span class="k">return</span> <span class="nx">scheme</span><span class="p">.</span><span class="nx">hasTopConcept</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">topConcept</span> <span class="p">=&gt;</span> <span class="p">({</span>
+<span class="linenos">27</span>        <span class="nx">resource</span><span class="o">:</span> <span class="nx">topConcept</span><span class="p">,</span>
+<span class="linenos">28</span>        <span class="nx">childCount</span><span class="o">:</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">topConcept</span><span class="p">),</span>
+<span class="linenos">29</span>    <span class="p">}))</span>
+<span class="linenos">30</span><span class="p">}</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="cm">/**</span>
+<span class="linenos">33</span><span class="cm"> * @typedef {Object} ChildInfo</span>
+<span class="linenos">34</span><span class="cm"> * @property {Object} resource - the resource, with { uri: string, label: string }</span>
+<span class="linenos">35</span><span class="cm"> * @property {number} childCount - the total number of children</span>
+<span class="linenos">36</span><span class="cm"> */</span>
+<span class="linenos">37</span>
+<span class="linenos">38</span><span class="cm">/**</span>
+<span class="linenos">39</span><span class="cm"> * Fetches the info objects for the top concepts of a given concept scheme from the server.</span>
+<span class="linenos">40</span><span class="cm"> * Note that the argument type (RDFValue) is different from what getChildInfo expects, so</span>
+<span class="linenos">41</span><span class="cm"> * these will be typecast on the fly.</span>
+<span class="linenos">42</span><span class="cm"> * @function</span>
+<span class="linenos">43</span><span class="cm"> * @param {RDFValue} scheme - the skos:ConceptScheme instance</span>
+<span class="linenos">44</span><span class="cm"> * @returns {Promise&lt;ChildInfo[]&gt;} an array of { resource: RDFValue, childCount: number } objects</span>
+<span class="linenos">45</span><span class="cm"> */</span>
+<span class="linenos">46</span><span class="k">export</span> <span class="kd">const</span> <span class="nx">loadChildInfo</span> <span class="o">=</span> <span class="p">(</span><span class="nx">scheme</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">47</span>    <span class="k">return</span> <span class="nx">TopBraid</span><span class="p">.</span><span class="nx">asyncFunction</span><span class="p">(</span><span class="nx">getChildInfo</span><span class="p">,</span> <span class="p">[</span><span class="nx">scheme</span><span class="p">],</span> <span class="p">[</span><span class="nx">skos_ConceptScheme</span><span class="p">],</span> <span class="p">[</span><span class="nx">countChildren</span><span class="p">]);</span>
+<span class="linenos">48</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Note the additional arguments of the <code class="code docutils literal notranslate"><span class="pre">TopBraid.asyncFunction</span></code> call:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">[scheme]</span></code> is the list of parameter values, as an array in the same order as expected by <code class="code docutils literal notranslate"><span class="pre">getChildInfo</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">[skos_ConceptScheme]</span></code> tells the engine that it needs to type-cast the first argument scheme into an instance of the ADS class <code class="code docutils literal notranslate"><span class="pre">skos_ConceptScheme</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">[countChildren]</span></code> is an array of any helper functions that also need to be sent to the server for the execution</p></li>
+<li><p>The template for those load functions is however always the same and quite trivial to derive with a bit of practice.
+What matters is that the actual business logic can be written down as part of the component’s JavaScript source code, and not as some string.</p></li>
+</ul>
+</section>
+<section id="scripting-web-complex-example-react">
+<span id="id2"></span><h3>The React Component<a class="headerlink" href="#scripting-web-complex-example-react" title="Permalink to this headline"></a></h3>
+<p>The file <code class="code docutils literal notranslate"><span class="pre">TestComponent.jsx</span></code> defines the rendering only, and delegates the data loading to the ADS file:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>import React from &#39;react&#39;;
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>import { loadChildInfo } from &#39;./TestComponent.ads&#39;;
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>/**
+<span class="linenos"> 6</span> * A component that displays info about the top concepts of a provided concept scheme
+<span class="linenos"> 7</span> * (props.scheme)
+<span class="linenos"> 8</span> */
+<span class="linenos"> 9</span>export default class TestComponent extends React.Component {
+<span class="linenos">10</span>
+<span class="linenos">11</span>    constructor(props) {
+<span class="linenos">12</span>        super(props);
+<span class="linenos">13</span>        this.state = {
+<span class="linenos">14</span>            items: []
+<span class="linenos">15</span>        };
+<span class="linenos">16</span>    }
+<span class="linenos">17</span>
+<span class="linenos">18</span>    componentDidMount() {
+<span class="linenos">19</span>        if(this.props.scheme) {
+<span class="linenos">20</span>            this.loadData();
+<span class="linenos">21</span>        }
+<span class="linenos">22</span>    }
+<span class="linenos">23</span>
+<span class="linenos">24</span>    componentDidUpdate(oldProps) {
+<span class="linenos">25</span>        if(oldProps.scheme != this.props.scheme) {
+<span class="linenos">26</span>            this.loadData();
+<span class="linenos">27</span>        }
+<span class="linenos">28</span>    }
+<span class="linenos">29</span>
+<span class="linenos">30</span>    async loadData() {
+<span class="linenos">31</span>        this.setState({
+<span class="linenos">32</span>        	items: await loadChildInfo(this.props.scheme)
+<span class="linenos">33</span>        });
+<span class="linenos">34</span>    }
+<span class="linenos">35</span>
+<span class="linenos">36</span>    render() {
+<span class="linenos">37</span>        if(!this.props.scheme) {
+<span class="linenos">38</span>            return &lt;div&gt;Please select a Concept Scheme&lt;/div&gt;;
+<span class="linenos">39</span>        }
+<span class="linenos">40</span>        return (
+<span class="linenos">41</span>            &lt;div className=&quot;TestComponent&quot; style={{padding: &#39;8px&#39;}}&gt;
+<span class="linenos">42</span>                &lt;h1&gt;Top Concepts of {this.props.scheme.label}&lt;/h1&gt;
+<span class="linenos">43</span>                &lt;ul&gt;
+<span class="linenos">44</span>                    {this.state.items.map(item =&gt; (
+<span class="linenos">45</span>                        &lt;li&gt;{item.resource.label} has {item.childCount} narrower concepts&lt;/li&gt;
+<span class="linenos">46</span>                    ))}
+<span class="linenos">47</span>                &lt;/ul&gt;
+<span class="linenos">48</span>            &lt;/div&gt;
+<span class="linenos">49</span>        );
+<span class="linenos">50</span>    }
+<span class="linenos">51</span>}
+</pre></div>
+</div>
+</section>
+</section>
+<section id="variables-and-scope">
+<span id="scripting-web-scope"></span><h2>Variables and Scope<a class="headerlink" href="#variables-and-scope" title="Permalink to this headline"></a></h2>
+<p>When JavaScript functions are sent to the server for execution using <code class="code docutils literal notranslate"><span class="pre">TopBraid.asyncFunction</span></code> they operate in a very different environment from the (Web) client.
+In particular the scoping of variables is different and requires attention to detail.
+As a general rule, any function that gets sent to the server can only process its direct arguments and can not rely on any variables outside of the scope.
+So if your web component keeps its own data structure and you want the ADS function to use that structure, you need to explicitly pass this data to the function.</p>
+<p>Let’s look at an example in which the client has a state object such as</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;John Doe&#39;</span><span class="p">,</span>
+<span class="linenos">3</span>    <span class="nx">address</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos">4</span>        <span class="nx">street</span><span class="o">:</span> <span class="s1">&#39;Teewah Close&#39;</span><span class="p">,</span>
+<span class="linenos">5</span>        <span class="nx">postalCode</span><span class="o">:</span> <span class="mf">4879</span><span class="p">,</span>
+<span class="linenos">6</span>    <span class="p">}</span>
+<span class="linenos">7</span><span class="p">};</span>
+<span class="linenos">8</span><span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">loadSomething</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="linenos">9</span><span class="c1">// result.name is now &#39;Jane Doe&#39; and data remains unchanged</span>
+</pre></div>
+</div>
+<p>And <code class="code docutils literal notranslate"><span class="pre">loadSomething</span></code> is a proxy function from an <code class="code docutils literal notranslate"><span class="pre">.ads.js</span></code> file:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">import</span> <span class="p">{</span> <span class="nx">TopBraid</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./geography_ontology_ADS_generated_web&#39;</span><span class="p">;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kd">const</span> <span class="nx">something</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 4</span>	<span class="nx">data</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="s1">&#39;Jane Doe&#39;</span><span class="p">;</span>
+<span class="linenos"> 5</span>	<span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="p">}</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="k">export</span> <span class="kd">const</span> <span class="nx">loadSomething</span> <span class="o">=</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 9</span>    <span class="k">return</span> <span class="nx">TopBraid</span><span class="p">.</span><span class="nx">asyncFunction</span><span class="p">(</span><span class="nx">something</span><span class="p">,</span> <span class="p">[</span><span class="nx">data</span><span class="p">]);</span>
+<span class="linenos">10</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>At execution time, the <code class="code docutils literal notranslate"><span class="pre">something</span></code> function will run within the server sandbox environment.
+There, the data argument will be a deep copy of the original data object from the client.
+It will be passed into the function through generated JavaScript code using its JSON serialization.
+(This means that any such argument must be serializable into self-contained JSON - make sure it does not contain cycles and also make sure you don’t pass huge objects over the wire).
+In this case, the something function may modify its own local copy of the data object, yet the client’s copy will of course remain unchanged.
+Later, when the data object gets returned from the server-side function, the client will again receive a new clone and TopBraid uses serialization via JSON to exchange the data between client and server.
+As a result, modifications to the object on the server will not affect the client-side object.</p>
+<p>Since we use JSON serialization to transport objects between client and server, extra care needs to be taken if the JavaScript objects are typed as <code class="code docutils literal notranslate"><span class="pre">LiteralNode</span></code> or <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> or a subclass of that.
+By default, the type/class information will get lost.
+However, you can use the third argument of <code class="code docutils literal notranslate"><span class="pre">TopBraid.asyncFunction</span></code> to specify the type(s) that each argument should have on the server.
+This approach had been illustrated in the <a class="reference internal" href="#scripting-web-complex-example"><span class="std std-ref">Complex Example</span></a>, where the server-side function expects the argument to be an instance of the JavaScript class <code class="code docutils literal notranslate"><span class="pre">skos_ConceptScheme</span></code>.
+For this mechanism to work, the argument values simply need to be objects with a <code class="code docutils literal notranslate"><span class="pre">uri</span></code> field.
+In cases where the expected type is <code class="code docutils literal notranslate"><span class="pre">LiteralNode</span></code>, the values may be simple JavaScript values of type boolean, number or string, or be objects with a <code class="code docutils literal notranslate"><span class="pre">lex</span></code> field and an optional <code class="code docutils literal notranslate"><span class="pre">lang</span></code> field and optional <code class="code docutils literal notranslate"><span class="pre">datatype</span></code> (full datatype URI) or <code class="code docutils literal notranslate"><span class="pre">dt</span></code> (local name of the datatype).
+This is the same format that is used by ADS literal nodes, but should also work for the literal representation within the TopBraid EDG user interface code.</p>
+<p>If the client-side code expects the result object of the async call to be of a certain JavaScript class, it needs to perform the appropriate type casting itself.
+The <code class="code docutils literal notranslate"><span class="pre">async</span></code> function will only ever return plain JavaScript values or objects that fit into JSON serialization.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nodejs.html" class="btn btn-neutral float-left" title="Using ADS from Node.js" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ext/index.html" class="btn btn-neutral float-right" title="Extension Development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

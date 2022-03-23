@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKOS-XL Taxonomies &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>SKOS-XL Taxonomies</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="skos-xl-taxonomies">
+<span id="skos-xl-target"></span><h1>SKOS-XL Taxonomies<a class="headerlink" href="#skos-xl-taxonomies" title="Permalink to this headline"></a></h1>
+<p>SKOS-XL (SKOS eXtension for Labels) is a part of the W3C SKOS standard that lets you treat labels as resources in their own right, with their own metadata.
+This may be useful for adding provenance data or information for text mining tools about how to use specific labels.
+TopBraid EDG lets you use SKOS-XL to add any metadata you like to alternative and hidden labels.
+Starting with release 6.3, EDG also lets you add metadata directly to links between a concept and its textual labels as detailed in <a class="reference internal" href="../working_with_ontologies/ontology_how_to_guidance.html#enabling-reification"><span class="std std-ref">Enabling Reification of Property Values</span></a> .
+This may serve as an alternative to SKOS-XL – an alternative that supports capture of label metadata without the added complexity of managing labels as independent resources.</p>
+<p>To activate the SKOS-XL support for a particular taxonomy, select Settings &gt; Includes and check SKOS XL SHACL Shapes to include SKOS-XL.
+Then, when you edit concepts in that taxonomy, the edit forms will let you add existing label resources as the values of alternative and hidden labels.
+Once a label’s data has been entered, it will appear like any other relationship property value on the relevant form: as a hypertext link.
+You will be able create new labels using “Create New” as part of the editing concept information.
+Or, alternatively, you can create and work with label resources independently from concepts.
+To do so, switch to the Search panel (or Search layout) and select Label from the asset type navigator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>SKOS-XL SHACL Shapes only provide skosXL:altLabel and skosXL:hiddenLabel relationships so that you can create separate label resources for them.</p></li>
+<li><p>A concept still needs to have a textual label.
+This means that even with SKOS-XL, TopBraid EDG will continue to use skos:prefLabel as a direct label of a concept.</p></li>
+<li><p>EDG uses resource’s textual label (either skos:prefLabel or rdfs:label) as a display name consistently across all the UI.
+Further, TopBraid EDG creates text indexes of concepts (and other resources) to facilitate auto-complete and search.
+The indexing process uses resource’s label.</p></li>
+</ul>
+</div>
+<p>SKOS-XL defines only one property for the Label class – literal form.
+As previously mentioned, EDG uses either skos:prefLabel or rdfs:label as resource names.
+There is a special “hard coded exception” from this rule for the SKOS-XL Label resources.
+Even-though the create dialog for them says “label”, the value entered as a label is stored in the skosXL:literalForm property.
+EDG will understand that for Label resources this property is used as their name.
+To associate a new property with a SKOS-XL label use the same Ontology customization capabilities as you would use to create new properties for concepts.</p>
+<section id="transform-skos-xl">
+<h2>Transform SKOS-XL<a class="headerlink" href="#transform-skos-xl" title="Permalink to this headline"></a></h2>
+<p>On the Transform tab of Taxonomies you will find an option to convert SKOS-XL labels to reified values.
+This feature will convert any instances of <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> to values of their corresponding <em>direct</em> SKOS properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:prefLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:altLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:altLabel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:hiddenLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:hiddenLabel</span></code></p></li>
+</ul>
+<p>If the <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> has other properties than <code class="docutils literal notranslate"><span class="pre">skosxl:literalForm</span></code> and <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code> then these values will be converted into reified statements.
+For example, if your <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances have values for <code class="docutils literal notranslate"><span class="pre">ex:isAbbreviation</span></code> and <code class="docutils literal notranslate"><span class="pre">skosxl:prefLabel</span></code> was used to point to the label, then there will be a reified triple attached to the <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code> statement to store these additional values.
+The ontology should define suitable node shapes that define the properties such as <code class="docutils literal notranslate"><span class="pre">ex:isAbbreviation</span></code> for display and editing purposes, and attach them to the property shapes of properties such as <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code> using <code class="docutils literal notranslate"><span class="pre">dash:reifiableBy</span></code></p>
+<p>Optionally, the original URIs of the <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances will be stored as reified triples and the property <code class="docutils literal notranslate"><span class="pre">dash:uri</span></code> which can then be used to restore the original <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances as part of an exporter.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

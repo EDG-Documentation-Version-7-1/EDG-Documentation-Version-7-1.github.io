@@ -1,0 +1,73 @@
+# baseURI: http://extensionsamples.topbraid.org/changescripts/changescriptexample
+# imports: http://datashapes.org/dash
+# imports: http://topbraid.org/skos.shapes
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/changescripts/changescriptexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosccr: <http://tests.script.topbraid.org/changescripts/conceptcreationrecorder#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/changescripts/changescriptexample>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/changescripts/changescriptexample#" ;
+  rdfs:label "ChangeScriptExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <http://topbraid.org/skos.shapes> ;
+.
+skosccr:ConceptProvenance
+  a sh:PropertyGroup ;
+  rdfs:label "Concept Provenance" ;
+  sh:order "1"^^xsd:decimal ;
+.
+skosccr:RecordConceptCreation
+  a dash:ChangeScript ;
+  dash:js """graph.update(`
+    INSERT {
+        ?concept skosccr:creationTime ?time .
+        ?concept skosccr:creator ?userName .
+    }
+    WHERE {
+        BIND (NOW() AS ?time) .
+        BIND (smf:currentUserName() AS ?userName) .
+        GRAPH <${dataset.addedGraphURI}> {
+            ?concept a skos:Concept .
+        }
+    }
+`)""" ;
+  rdfs:comment """For every new skos:Concept, this adds the creation time stamp and the creator.
+
+New concepts are recognized as subjects in the graph of added triples where the predicate is rdf:type and the object is skos:Concept.
+
+To try this out, include (owl:import) this script into a Taxonomy and create new (direct) instances of skos:Concept.""" ;
+  rdfs:label "Record concept creation" ;
+.
+skos:Concept
+  sh:property skos:Concept-creationTime ;
+  sh:property skos:Concept-creator ;
+.
+skos:Concept-creationTime
+  a sh:PropertyShape ;
+  sh:path skosccr:creationTime ;
+  sh:datatype xsd:dateTime ;
+  sh:description "The time stamp when a concept has been created." ;
+  sh:group skosccr:ConceptProvenance ;
+  sh:maxCount 1 ;
+  sh:name "creation time" ;
+  sh:order "0"^^xsd:decimal ;
+.
+skos:Concept-creator
+  a sh:PropertyShape ;
+  sh:path skosccr:creator ;
+  sh:datatype xsd:string ;
+  sh:description "The name of the user that created the concept." ;
+  sh:group skosccr:ConceptProvenance ;
+  sh:maxCount 1 ;
+  sh:name "creator" ;
+  sh:order "1"^^xsd:decimal ;
+.

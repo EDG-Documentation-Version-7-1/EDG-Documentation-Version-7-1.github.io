@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GraphQL Mutations &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SHACL and the GraphQL Schema" href="schema.html" />
+    <link rel="prev" title="GraphQL Queries" href="queries.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">GraphQL</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="queries.html">GraphQL Queries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">GraphQL Mutations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-operations">Create operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#addto-operations">AddTo operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-operations">Update operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-operations">Delete operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#result-reports">Result reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commits-and-dry-runs">Commits and dry runs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read-only-fields">Read-only fields</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="schema.html">SHACL and the GraphQL Schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">GraphQL</a> &raquo;</li>
+      <li>GraphQL Mutations</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="graphql-mutations">
+<span id="id1"></span><h1>GraphQL Mutations<a class="headerlink" href="#graphql-mutations" title="Permalink to this headline"></a></h1>
+<p>This section describes the features supported by TopBraid to perform updates (aka mutations) on RDF databases.
+In a nutshell, the system uses SHACL shape definitions to automatically generate suitable GraphQL mutations to create, update or delete objects.
+When changes are submitted, they are validated against the constraints defined by the shape definitions and a report with violations and suggested fixes can be returned.</p>
+<p>TopBraid takes SHACL shape definitions or GraphQL schemas as input and automatically generates an enhanced GraphQL schema that includes mutations that can be used to create, update or delete data from an underlying RDF graph database.</p>
+<p>In the following example, we assume that the type <code class="code docutils literal notranslate"><span class="pre">Human</span></code> is used as input schema to the system:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>type Human {
+<span class="linenos">2</span>	id: ID!
+<span class="linenos">3</span>	name: String!
+<span class="linenos">4</span>	height: Float
+<span class="linenos">5</span>	friends: [Human]
+<span class="linenos">6</span>}
+</pre></div>
+</div>
+<p>The system internally converts this schema to SHACL and produces an enhanced GraphQL schema with the following mutations:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>schema {
+<span class="linenos"> 2</span>	...
+<span class="linenos"> 3</span>	mutation: RootRDFMutation
+<span class="linenos"> 4</span>}
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>type RootRDFMutation {
+<span class="linenos"> 7</span>	createHuman (input: Human_Input!): Boolean
+<span class="linenos"> 8</span>	addToHuman (input: Human_Input!): Boolean    # (addTo requires TopBraid 6.2 onwards)
+<span class="linenos"> 9</span>	updateHuman (input: Human_Input!): Boolean
+<span class="linenos">10</span>	delete (uri: ID, uris: [ID]): Boolean
+<span class="linenos">11</span>	report: _MutationReport
+<span class="linenos">12</span>	commit (ignoreViolations: Boolean, message: String): String
+<span class="linenos">13</span>}
+<span class="linenos">14</span>
+<span class="linenos">15</span>type _MutationReport {
+<span class="linenos">16</span>	addedCount: Int
+<span class="linenos">17</span>	deletedCount: Int
+<span class="linenos">18</span>	conforms: Boolean!
+<span class="linenos">19</span>	results: [_MutationResult]
+<span class="linenos">20</span>}
+<span class="linenos">21</span>
+<span class="linenos">22</span>type _MutationResult {
+<span class="linenos">23</span>	message: String
+<span class="linenos">24</span>	severity: String!
+<span class="linenos">25</span>	focusNode: _RDFNode!
+<span class="linenos">26</span>	path: String
+<span class="linenos">27</span>	value: _RDFNode
+<span class="linenos">28</span>	suggestions: [_MutationResultSuggestion]
+<span class="linenos">29</span>}
+<span class="linenos">30</span>
+<span class="linenos">31</span>type _RDFNode {
+<span class="linenos">32</span>	label: String!
+<span class="linenos">33</span>	uri: ID
+<span class="linenos">34</span>}
+<span class="linenos">35</span>
+<span class="linenos">36</span>type _MutationResultSuggestion {
+<span class="linenos">37</span>	message: String!
+<span class="linenos">38</span>	confidence: Float
+<span class="linenos">39</span>	applyData: String
+<span class="linenos">40</span>}
+<span class="linenos">41</span>
+<span class="linenos">42</span>input Human_Input {
+<span class="linenos">43</span>	uri: ID!
+<span class="linenos">44</span>	label: String
+<span class="linenos">45</span>	id: ID
+<span class="linenos">46</span>	name: String
+<span class="linenos">47</span>	height: Float
+<span class="linenos">48</span>	friends: [Human_Input]
+<span class="linenos">49</span>}
+</pre></div>
+</div>
+<p>An example mutation request may look as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>mutation {
+<span class="linenos"> 2</span>	createHuman (input: {
+<span class="linenos"> 3</span>		uri: &quot;http://example.org/Humans/123&quot;,
+<span class="linenos"> 4</span>		id: &quot;123&quot;,
+<span class="linenos"> 5</span>		name: &quot;Darth Vader&quot;
+<span class="linenos"> 6</span>	})
+<span class="linenos"> 7</span>	updateHuman (input: {
+<span class="linenos"> 8</span>		uri: &quot;http://example.org/Humans/456&quot;,
+<span class="linenos"> 9</span>		father: {
+<span class="linenos">10</span>			uri: &quot;http://example.org/Humans/123&quot;
+<span class="linenos">11</span>		}
+<span class="linenos">12</span>	})
+<span class="linenos">13</span>	report {
+<span class="linenos">14</span>		addedCount
+<span class="linenos">15</span>		deletedCount
+<span class="linenos">16</span>	}
+<span class="linenos">17</span>	commit (message: &quot;Added Luke&#39;s dad&quot;)
+<span class="linenos">18</span>}
+</pre></div>
+</div>
+<p>The above request will produce the JSON result below and, as a side effect, create one instance of Human in the database, and make it the father of an existing instance.
+The number of RDF triples that were added or deleted are reported as part of the report object.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 3</span>        <span class="nt">&quot;createHuman&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos"> 4</span>        <span class="nt">&quot;updateHuman&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos"> 5</span>        <span class="nt">&quot;report&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 6</span>            <span class="nt">&quot;addedCount&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+<span class="linenos"> 7</span>            <span class="nt">&quot;deletedCount&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="linenos"> 8</span>        <span class="p">},</span>
+<span class="linenos"> 9</span>        <span class="nt">&quot;commit&quot;</span><span class="p">:</span> <span class="s2">&quot;Added Luke&#39;s dad&quot;</span>
+<span class="linenos">10</span>    <span class="p">}</span>
+<span class="linenos">11</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>For those familiar with RDF, the new triples would be:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nv">&lt;http://example.org/Humans/123&gt;</span>
+<span class="linenos">2</span>	<span class="kt">a</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Human</span> <span class="p">;</span>
+<span class="linenos">3</span>	<span class="nn">ex</span><span class="p">:</span><span class="nt">id</span> <span class="s">&quot;123&quot;</span> <span class="p">;</span>
+<span class="linenos">4</span>	<span class="nn">ex</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;Darth Vader&quot;</span> <span class="p">.</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="nv">&lt;http://example.org/Humans/456&gt;</span>
+<span class="linenos">7</span>	<span class="nn">ex</span><span class="p">:</span><span class="nt">father</span> <span class="nv">&lt;http://example.org/Humans/123&gt;</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>The mutations include the following fields:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">createXY</span></code> operations to create a new instance, for each published data shape</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">addToXY</span></code> operations that add values to an instance, for each published data shape</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">updateXY</span></code> operations to modify an existing instance, for each published data shape</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">delete</span></code> operation to delete one or more instances</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">results</span></code> to produce information about the operations</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">commit</span></code> to trigger the actual commit of the changes, instead of doing just a “dry run”</p></li>
+</ul>
+<section id="create-operations">
+<span id="graphql-mutations-create"></span><h2>Create operations<a class="headerlink" href="#create-operations" title="Permalink to this headline"></a></h2>
+<p>For each published data shape in a schema, TopBraid generates a <code class="code docutils literal notranslate"><span class="pre">createXY</span></code> mutation.
+These mutations take a mandatory input object that has one field for each property shape declared at the shape, and which must also have a <code class="code docutils literal notranslate"><span class="pre">uri</span></code>.</p>
+<p>An optional parameter is <code class="code docutils literal notranslate"><span class="pre">graph</span></code>, which can be the URI of a named graph in which the new instance shall be created in.
+The system will pick a suitable default if no such graph is specified.</p>
+<p>When executed, the create mutation produces the RDF triples mentioned in the input object, including an <code class="code docutils literal notranslate"><span class="pre">rdf:type</span></code> triple if the shape is also a class.
+The value of the <code class="code docutils literal notranslate"><span class="pre">uri</span></code> field is used to select the newly created instance.</p>
+<p>Create operations only ever add new triples, while update operations may also remove triples (if fields are null).
+Note that the <code class="code docutils literal notranslate"><span class="pre">uri</span></code> may refer to an object that is already in the database, for example because it does have other shapes (for example, an object may be both Writer and Human).</p>
+<p>While SHACL property shapes may use path expressions of almost arbitrary complexity, the only property paths that can be used in create and update operations are one-step inverse paths.
+For other paths, it would be too difficult and ambiguous to fill in the intermediate triples.</p>
+</section>
+<section id="addto-operations">
+<span id="graphql-mutations-addto"></span><h2>AddTo operations<a class="headerlink" href="#addto-operations" title="Permalink to this headline"></a></h2>
+<p>Similar to create operations, TopBraid generates a <code class="code docutils literal notranslate"><span class="pre">addToXY</span></code> mutation for each published shape in a schema.
+This takes a single mandatory <code class="code docutils literal notranslate"><span class="pre">input</span></code> parameter, which must specify a <code class="code docutils literal notranslate"><span class="pre">uri</span></code> to identify the object that is being modified.</p>
+<p>Only the values of the properties represented by the given fields are modified.
+So for example when a multi-valued property <code class="code docutils literal notranslate"><span class="pre">friends</span></code> has 3 values then the object will have at least those three values after the modification.
+Existing values for these properties will remain unchanged, in contrast to the update operation.</p>
+</section>
+<section id="update-operations">
+<span id="graphql-mutations-update"></span><h2>Update operations<a class="headerlink" href="#update-operations" title="Permalink to this headline"></a></h2>
+<p>TopBraid generates an <code class="code docutils literal notranslate"><span class="pre">updateXY</span></code> mutation for each published shape in a schema.
+This takes a single mandatory <code class="code docutils literal notranslate"><span class="pre">input</span></code> parameter, which must specify a <code class="code docutils literal notranslate"><span class="pre">uri</span></code> to identify the object that is being modified.</p>
+<p>Only the values of the properties represented by the given fields are modified.
+So for example when a multi-valued property <code class="code docutils literal notranslate"><span class="pre">friends</span></code> has 3 values then the object will have exactly those three values after the modification.
+If the value is given as null or the empty array [] then all values of the corresponding property will be deleted.</p>
+<p>The main difference between <code class="code docutils literal notranslate"><span class="pre">addTo</span></code> and <code class="code docutils literal notranslate"><span class="pre">update</span></code> are that in order to add values using update you also need to include all old values, because otherwise these would be overwritten.</p>
+</section>
+<section id="delete-operations">
+<span id="graphql-mutations-delete"></span><h2>Delete operations<a class="headerlink" href="#delete-operations" title="Permalink to this headline"></a></h2>
+<p>Use the <code class="code docutils literal notranslate"><span class="pre">delete</span></code> mutation, providing one or more URIs of the RDF resources that shall be deleted.
+Clients must specify <code class="code docutils literal notranslate"><span class="pre">uri</span></code> (a single ID) or <code class="code docutils literal notranslate"><span class="pre">uris</span></code> (an array of IDs).</p>
+<p>The following example deletes the resource with URI <code class="code docutils literal notranslate"><span class="pre">http://example.org/myObject</span></code>, assuming it was mentioned in three triples.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>mutation {
+<span class="linenos">2</span>	delete (uri: &quot;http://example.org/myObject&quot;)
+<span class="linenos">3</span>	report {
+<span class="linenos">4</span>		deletedCount
+<span class="linenos">5</span>	}
+<span class="linenos">6</span>}
+</pre></div>
+</div>
+<p>The output of the operation would be:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span>    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">3</span>        <span class="nt">&quot;delete&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos">4</span>        <span class="nt">&quot;report&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">5</span>            <span class="nt">&quot;deletedCount&quot;</span><span class="p">:</span> <span class="mi">3</span>
+<span class="linenos">6</span>        <span class="p">}</span>
+<span class="linenos">7</span>    <span class="p">}</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that in contrast to the other operations, deleting a resource is independent of any give shape.
+All triples that have the resource as subject, predicate or object will be deleted.</p>
+<p>If a deleted object is used in an RDF triple involving blank nodes (as RDF subject or object) then these blank nodes are considered to depend on the deleted object.
+Any depending triples, including their (possibly recursive) further dependents, will be deleted alongside of the originally deleted URI resources.</p>
+</section>
+<section id="result-reports">
+<span id="graphql-mutations-result"></span><h2>Result reports<a class="headerlink" href="#result-reports" title="Permalink to this headline"></a></h2>
+<p>The report field SHOULD be present in every mutation request, and must be used after any create, update or delete fields.
+It produces a <code class="code docutils literal notranslate"><span class="pre">result</span></code> object with fields that contain details about the changes that were requested.</p>
+<p>The fields <code class="code docutils literal notranslate"><span class="pre">addedCount</span></code> and <code class="code docutils literal notranslate"><span class="pre">deletedCount</span></code> return the number of triples that have been added and deleted, respectively.</p>
+<p>The field <code class="code docutils literal notranslate"><span class="pre">conforms</span></code> returns true if no constraint violations have been found.
+Any modified RDF node will be validated.
+For example, if a resource is being deleted, this may cause violations in objects that are pointing at this resource (for example, violating a <code class="code docutils literal notranslate"><span class="pre">sh:minCount</span></code> constraint).
+The operation will only be performed if no violations have been reported or <code class="code docutils literal notranslate"><span class="pre">ignoreViolations</span></code> has been set true in the <code class="code docutils literal notranslate"><span class="pre">commit</span></code> field, as mentioned later.</p>
+<p>The field results returns an array of objects with details about any constraint violations produced by the SHACL engine.
+This array is empty if conforms is true.
+Further details will be provided later.</p>
+</section>
+<section id="commits-and-dry-runs">
+<span id="graphql-mutations-commit"></span><h2>Commits and dry runs<a class="headerlink" href="#commits-and-dry-runs" title="Permalink to this headline"></a></h2>
+<p>If a mutation request does not have a <code class="code docutils literal notranslate"><span class="pre">commit</span></code> field, it will only be performed as a “dry run”, without causing the changes to be written to the actual database.
+In that case, clients would merely request the report field to learn about whether the change would cause any constraint violations.
+This can be used to validate an input form before it is being sent to the real database.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">commit</span></code> field can only be used as the last field of a mutation request.
+If present, the system triggers a write of the actual changes to the database.
+The client has the option to pass in a <code class="code docutils literal notranslate"><span class="pre">message</span></code> parameter, which may be used to record the change in a change history.
+If no <code class="code docutils literal notranslate"><span class="pre">message</span></code> is provided, the system will auto-generate a suitable message by looking at the changes that were submitted.
+That message is also the result value of the field.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">commit</span></code> field may have the value true for the parameter <code class="code docutils literal notranslate"><span class="pre">ignoreViolations</span></code>.
+In this mode, the validation of the data against the shapes will not happen (unless explicitly requested in the <code class="code docutils literal notranslate"><span class="pre">report</span></code> object.
+This allows updates that are known to violate constraints, for example because they are required as part of a larger set of changes, or because the user has confirmed that the updates should go ahead regardless.
+This flag should be used sparingly because it risks follow-up problems.
+For example, if a <code class="code docutils literal notranslate"><span class="pre">sh:maxCount</span> <span class="pre">1</span></code> violation is ignored and an object has two values, the engine would deliver a random value in queries.
+In some configurations, such modifications will still be rejected.</p>
+</section>
+<section id="read-only-fields">
+<span id="graphql-mutations-read-only"></span><h2>Read-only fields<a class="headerlink" href="#read-only-fields" title="Permalink to this headline"></a></h2>
+<p>Some fields are read-only and cannot be directly updated using GraphQL.
+If a read-only field is part of an input object, then the values of these fields are ignored.</p>
+<p>The built-in field label is read-only because label is dynamically derived from other property values such as <code class="code docutils literal notranslate"><span class="pre">rdfs:label</span></code> and may produce different results per user language in each request.
+To modify the values of label, mutate the underlying properties directly, e.g. using the field <code class="code docutils literal notranslate"><span class="pre">rdfs_label</span></code> or <code class="code docutils literal notranslate"><span class="pre">prefLabel</span></code> for instances of <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="queries.html" class="btn btn-neutral float-left" title="GraphQL Queries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="schema.html" class="btn btn-neutral float-right" title="SHACL and the GraphQL Schema" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

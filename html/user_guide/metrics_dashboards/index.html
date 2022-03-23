@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viewing Metrics Dashboards &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Customizing EDG Using Server-side Scripting" href="../server_side_scripting/index.html" />
+    <link rel="prev" title="Operationalizing Data Governance" href="../data_governance/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guidance_specific_to_asset_collection_type/index.html">Guidance Specific to an Asset Collection Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content_classification/index.html">Content Classification in EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">User Guide</a> &raquo;</li>
+      <li>Viewing Metrics Dashboards</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="viewing-metrics-dashboards">
+<span id="metrics-dashboards-target"></span><span id="index-0"></span><h1>Viewing Metrics Dashboards<a class="headerlink" href="#viewing-metrics-dashboards" title="Permalink to this headline"></a></h1>
+<p>Metrics Dashboards available from the left navigation menu of EDG, are used for visual representations of data in your EDG application.
+Pre-built dashboards are available for workflows, governance subject areas and data elements.
+Additional dashboards can be built as a customization to your EDG platform.</p>
+<p>EDG administrators can activate metrics dashboards, using <em>EDG Configuration Parameters &gt; Teamwork Platform Parameters &gt; Metrics dashboards activated</em> (see <a class="reference internal" href="../../administrator_guide/index.html#administrator-quide"><span class="std std-ref">Administrator Guide</span></a>).
+And they can also edit the resulting <strong>GOVERNANCE MODEL &gt; Dashboards</strong> item.
+To activate each dashboard in the governance model, you will need to modify the Governance Model Collection.
+The Default Dashboard contains each dashboard gadget such as Data Elements and Governance Roles.
+Select “activate” to true.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Creating new Metrics Dashboards requires advanced TopBraid developer knowledge in order to generate the scripts needed to supply data and add visualizations.
+Upcoming releases will include additional scripts for a variety of metrics.</p>
+</div>
+<p>If you are interested in the possibilities for tailoring TopBraid EDG Metrics Dashboards to better suit your needs, please contact TopQuadrant to explore the following options:</p>
+<ul class="simple">
+<li><p>Have TopQuadrant quickly configure a customized EDG solution to meet your detailed requirements.
+We will be pleased to quote and provide affordable customization and tailoring services.</p></li>
+<li><p>Enable your organization to develop and maintain customizations for EDG by guiding and training your selected personnel to perform the variety of customization capabilities.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../data_governance/index.html" class="btn btn-neutral float-left" title="Operationalizing Data Governance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../server_side_scripting/index.html" class="btn btn-neutral float-right" title="Customizing EDG Using Server-side Scripting" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

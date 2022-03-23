@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create New Corpus &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Create New Corpus</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="create-new-corpus">
+<span id="create-new-corpus-target"></span><h1>Create New Corpus<a class="headerlink" href="#create-new-corpus" title="Permalink to this headline"></a></h1>
+<p>When a new Corpus is created, EDG requires the user to select its <em>data source</em>, as Corpora can be configured to connect to an external source.
+EDG will then harvest content from that external source and store it in the project graph.
+Harvesting can be repeated later on demand, and changes to the external source’s documents will be picked up.
+Harvesting needs to be triggered manually in the Corpora management UI.
+A Corpus does not synchronize automatically with its external source, but only when requested.</p>
+<p>Six types of connectors to such sources are currently offered, their respective creation wizard pages showing different forms depending on parameters that must me indicated for the connector to operate.
+These parameters can be adjusted later on by accessing the Manage Tab -&gt; Corpus-Connector-Type Configuration.</p>
+<ul class="simple">
+<li><p><strong>No connector</strong> if content documents are available as RDF already, these can be imported into the Corpus with the usual RDF import function.
+Similarly, raw documents can be imported singly from local files as described in Import Single Document. No external source will be configured with this connector type.
+Users will also be able to use the editor app to create new documents.</p></li>
+<li><p><strong>sitemap.xml</strong> If a website supports the <em>sitemaps</em> protocol, a configured sitemap.xml connector will harvest its content accordingly.</p></li>
+<li><p><strong>URL list</strong> This connector will simply fetch content from all of the URLs listed in its configuration.</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The site must not block crawlers or they will be skipped.</p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>CMIS If a website is an interface to a Content Management System and offers a <a class="reference external" href="http://docs.oasis-open.org/cmis/CMIS/v1.1/CMIS-v1.1.html">Content Management Interoperability Services</a> (CMIS) service endpoint as defined by the standard, a configured CMIS connector will harvest its content accordingly.</p></li>
+<li><p><strong>Amazon S3</strong> Creates a new Corpus and imports documents from a(n) S3 bucket(s).
+(Make sure you have pre-configured S3 integration from <a class="reference internal" href="../../../administrator_guide/edg_administration_and_configuration/external_systems_integration.html#external-systems-integration"><span class="std std-ref">External Systems Integration</span></a>)</p></li>
+<li><p><strong>SharePoint</strong> Creates a new Corpus and imports documents from SharePoint Document Libraries.
+(Make sure you have configured your Microsoft 365 tenent from <a class="reference internal" href="../../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#ms365-auth-params"><span class="std std-ref">Microsoft 365 Authentication Parameters</span></a>)</p></li>
+<li><p><strong>Local directory</strong> Creates a new Corpus from a directory of files in the local files system.
+Can only be created by system administrators.</p></li>
+</ul>
+<p>Depending on the connector type, you will be asked to provide different settings as required to connect to the source.</p>
+<p>Using <strong>Manage</strong> tab of a Corpus, you could later modify connector parameters specified during the creation process – as external data sources can be on remote networks not necessarily under the creator’s control and connectors should reflect these changes.
+Connector-specific configuration panel is not available for Corpora configured with No Connector.
+While the connector’s parameters can be edited post creation, the type of data source (one of the six options above) cannot be changed after creation.</p>
+<p>If you will be using this Corpus for Auto Classification, you will need to keep the box checked for <strong>Store copy of all documents in EDG</strong>.
+The documents are stored in a “Corpora” folder in the workspace for EDG.
+Be sure your server has enough disk space for this storage.</p>
+<p>Once you have finished configuring your new Corpus, it will appear on the page listing all Corpora.
+This is the page displayed when you click on the Corpora link in the blue left-navigation pane in EDG.
+Clicking on an individual Corpus will display its content in the Corpus editor.
+The first tab for Corpus (the tab that gives you access to the editor) is called Documents.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

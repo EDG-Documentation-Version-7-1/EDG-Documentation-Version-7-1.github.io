@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2021-12-02T09:02:56-05:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Files &mdash; edg-documentation 7.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Searching in EDG" href="../searching/index.html" />
+    <link rel="prev" title="Working with Data Lineage" href="../guidance_specific_to_asset_collection_type/working_with_data_lineage/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG 7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guidance_specific_to_asset_collection_type/index.html">Guidance Specific to an Asset Collection Type</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Working with Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#workspace-structure">Workspace Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-edit-rdf-files">How to Edit RDF Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#technical-details">Technical Details</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content_classification/index.html">Content Classification in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrading TopBraid EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intray/index.html">Candidate Content</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">User Guide</a> &raquo;</li>
+      <li>Working with Files</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/user_guide/files/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-files">
+<span id="files-target"></span><h1>Working with Files<a class="headerlink" href="#working-with-files" title="Permalink to this headline"></a></h1>
+<p>For users with <em>administrator</em> privileges, <strong>Files</strong> appears in the left navigation menu as an asset collection type.
+It enables users to open and modify files, linked to the EDG workspace, using an EDG user interface.
+Before any editing, EDG makes a copy of the file content in its database and the EDG user edits that copy.
+This supports a process similar to how Workflows support editing a “Working Copy” that is separate from the “Production Copy” of a collecion.</p>
+<p>The following figure shows the basic editing process for <em>Files</em>.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Files Collection Type Editing Process" class="edg-figure-l" src="../../_images/file_in_workspace_editing_process.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Files Collection Type Editing Process</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="how-to-edit-rdf-files">
+<span id="index-0"></span><h2>How to Edit RDF Files<a class="headerlink" href="#how-to-edit-rdf-files" title="Permalink to this headline"></a></h2>
+<p>The Files explorer shows the files and folders from the EDG workspace.
+The files and folder in normal font (i.e. not light grey) are editable by selecting the file and clicking on the Edit button or picking Edit from the right click menu.</p>
+<p>The way a file is displayed in the explorer indicates its status.</p>
+<ul class="simple">
+<li><p>If EDG has a copy of a file in the database for editing, the file is shown as black in color and is bold.</p></li>
+<li><p>When there are unsaved changes in the database, the file is shown as blue in color and is bold with an asterisk.</p></li>
+<li><p>If the file on disk is newer than the database content, the file is shown as red in color .</p></li>
+<li><p>After finishing, the file returns to being shown in normal font.</p></li>
+</ul>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Files File Status Colors" class="edg-figure-l" src="../../_images/files_colors_meaning.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Files File Status Colors</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When a file is edited for the first time, EDG creates a <em>File Asset Collection</em> backed by the EDG database and copies the content of the file into the EDG database.
+The following figure shows the user interface when creating a new instance of a class.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Files Edtior Create New Instance" class="edg-figure-l" src="../../_images/files_create_new_instance.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Files Edtior Create New Instance</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Many other EDG features are available when using Files.
+The following figures shows <em>Problems and Suggestions</em> usage.</p>
+<blockquote>
+<div><figure class="align-center" id="id4">
+<img alt="TopBraid EDG Files Problems and Suggestions" class="edg-figure-l" src="../../_images/files_problems_and_suggestions.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Files Problems and Suggestions</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<p>The database version of the file can be viewed, queried and changed and either saved back into its original file on disk or discarded without save.
+The <a class="reference internal" href="../working_with_asset_collections/viewing_and_editing_asset_information.html#change-history-panel"><span class="std std-ref">Change History Panel</span></a> shows changes made in the current editing session.
+<em>Compare with File on Disk</em> is a diff-like utility that displays a comparison of the opened, edited version of the file and the file as stored on disk.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Files Comparison Result" class="edg-figure-l" src="../../_images/files_comparison_result_bloggs.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Files Comparison Result</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once a file editing session is finished, the content stored in the EDG database is deleted and the change history is cleared.
+Finishing the editing of a file without saving means changes are lost.
+Refreshing the database from file will re-copy the content of the file from disk into the database.
+All unsaved changes will be lost.
+Only the saved changes will be visible to other graphs that include (owl:import) the file’s graph.
+The following figure shows the <em>File</em> button options when editing a file.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Files File Button Options" class="edg-figure-m" src="../../_images/files_file_button_options.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Files File Button Options</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="technical-details">
+<h2>Technical Details<a class="headerlink" href="#technical-details" title="Permalink to this headline"></a></h2>
+<p>The editor for Files has the following differences compared to (other) EDG asset collection types:</p>
+<ul class="simple">
+<li><p>There are no limits on the type of resources that can be edited, i.e. classes, shapes, and instances</p></li>
+<li><p>There is a File drop down menu in the top, with features to move data between file and database</p></li>
+<li><p>The Source Code panel has an option to view and edit the Whole Graph</p></li>
+<li><p>The Home button takes you to the owl:Ontology of the file, not the URN resource of the asset collection</p></li>
+<li><p>Files cannot owl:import EDG asset collections - only their file representations</p></li>
+<li><p>New Explore action Find Usages in Other Files</p></li>
+<li><p>New Modify action Replace URI across Graphs</p></li>
+<li><p>New Batch action Replace Namespace (across Graphs)</p></li>
+</ul>
+<p>As editing files is only available for the administrator (of which there should only be one), there is no tab to edit users.
+Also, most settings from the Settings and Manage tabs as well as Comments and Tasks would be lost when editing is finished, so some of those features are intentionally hidden.
+Tasks remain available in case you want to locally track your progress.</p>
+<p>When a file-based graph is copied into the database, the owl:imports of the file will be copied into the URN resource of the asset collection.
+Use the Edit Includes link from the Settings tab to edit them.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Files Includes" class="edg-figure-l" src="../../_images/files_includes.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Files Includes</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>There will also be an additional owl:import to a graph called ‘filesimport’ that owl:imports some further sub-graphs that are needed to drive the user interface.
+This temporary owl:import will be removed when the database is saved back into the original file. All other triples associated with the temporary URN resource will also be deleted on save.
+While you will see those extra triples in the Source Code panel - please leave them unchanged.</p>
+<p>The database graph that is used to edit files is a distinct graph from the file itself.
+For example it would have a graph URI such as <a class="reference external" href="urn:x-evn-master:myfile_ttl">urn:x-evn-master:myfile_ttl</a>, while the original file would have the URI <a class="reference external" href="http://example.org/myfile">http://example.org/myfile</a>.
+Other graphs that owl:import the file will not use the URN-based database graph, but only the file-based graph.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../guidance_specific_to_asset_collection_type/working_with_data_lineage/index.html" class="btn btn-neutral float-left" title="Working with Data Lineage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../searching/index.html" class="btn btn-neutral float-right" title="Searching in EDG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.
+      <span class="lastupdated">Last updated on Dec 02, 2021.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

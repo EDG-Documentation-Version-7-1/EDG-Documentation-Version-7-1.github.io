@@ -1,0 +1,42 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. _asset_collections:
+
+Working with Asset Collections
+==============================
+
+.. include:: ./creating_new_asset_collection.rst
+.. include:: ./opening_existing_asset_collection.rst
+.. include:: ./cloning_and_versioning_asset_collection.rst
+.. include:: ./deleting_asset_collection.rst
+.. include:: ./assigning_users_to_asset_collection.rst
+.. include:: ./changing_asset_collection_metadata.rst
+.. include:: ./bookmarking_asset_collections_and_assets.rst
+.. include:: ./importing_data_into_asset_collections.rst
+.. include:: ./viewing_and_editing_asset_information.rst
+.. include:: ./using_edg_diagrams.rst
+.. include:: ./using_sparql_to_query_and_modify_data.rst
+.. include:: ./transforming_data.rst
+.. include:: ./exporting_data.rst
+.. include:: ./comparing_asset_collections.rst
+.. include:: ./combining_asset_collections.rst
+.. include:: ./configuring_asset_uris.rst
+.. include:: ./viewing_and_creating_comments.rst
+.. include:: ./tasks_page.rst
+.. include:: ./using_jira_tasks.rst
+.. include:: ./working_with_geo_spatial_data.rst
+.. include:: ./working_with_document_attachments.rst
+.. include:: ./synchronizing_data_with_git.rst
+.. include:: ./controlling_change_history.rst
+.. include:: ./viewing_asset_collection_statistics.rst
+.. include:: ./viewing_configured_inferences.rst
+.. include:: ./advanced_settings.rst

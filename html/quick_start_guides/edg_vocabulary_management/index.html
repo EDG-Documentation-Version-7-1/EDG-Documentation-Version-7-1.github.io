@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDG Vocabulary Management &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EDG Business Glossaries" href="../edg_business_glossaries/index.html" />
+    <link rel="prev" title="Quick Start Guides" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Start Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EDG Vocabulary Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-this-guide">About This Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-navigation-and-editing-features">General Navigation and Editing Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-taxonomies">Working with Taxonomies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-ontologies">Working with Ontologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workflows-collaboration-and-audit-trail">Workflows, Collaboration and Audit Trail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search">Search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-import">Data Import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-information-governance-framework">Setting up Information Governance Framework</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crosswalks">Crosswalks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#classifying-documents">Classifying Documents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#about-vocabulary-management-with-topbraid-edg">About Vocabulary Management with TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-the-edg-application">Access the EDG Application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#topbraid-edg-user-interface">TopBraid EDG User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vocabulary-management-with-taxonomies">Vocabulary Management with Taxonomies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-a-taxonomy">Selecting a Taxonomy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#home-page-of-an-asset-collection">Home Page of an Asset Collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workflows-and-working-copies">Workflows and Working Copies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Working with Ontologies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#including-custom-ontologies">Including Custom Ontologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exploring-classes-and-properties-in-an-ontology">Exploring Classes and Properties in an Ontology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disabling-skos-attributes-and-relationships">Disabling SKOS Attributes and Relationships</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-an-inferred-or-calculated-property">Creating an inferred or calculated property</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#learning-more">Learning More</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_business_glossaries/index.html">EDG Business Glossaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_reference_data_management/index.html">EDG Reference Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer/index.html">TopBraid Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_geo_spatial_capabilities/index.html">Geo-spatial capabilities in TopBraid EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Quick Start Guides</a> &raquo;</li>
+      <li>EDG Vocabulary Management</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="edg-vocabulary-management">
+<span id="id1"></span><h1>EDG Vocabulary Management<a class="headerlink" href="#edg-vocabulary-management" title="Permalink to this headline"></a></h1>
+<section id="about-this-guide">
+<h2>About This Guide<a class="headerlink" href="#about-this-guide" title="Permalink to this headline"></a></h2>
+<p>This guide provides a hands-on tutorial for working with the TopBraid EDG Vocabulary Management package.
+It walks you through a series of day to day tasks you may perform using TopBraid EDG.
+Throughout this journey, the guide offers background information and instructions on each topic.</p>
+<p>In addition to following this guide, you may also want to watch a set of complimentary videos.
+You can watch some of these videos before doing the hands-on exercises described in the tutorial and/or come back to them at any point.</p>
+<p>We have assembled the following list of short videos for you, organizing them into topics.
+The duration of the videos varies depending on a topic, but, on average, it takes between 5 and 20 minutes to watch a video.</p>
+<section id="general-navigation-and-editing-features">
+<h3>General Navigation and Editing Features<a class="headerlink" href="#general-navigation-and-editing-features" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/navigating_in_edg/">Home Page and Navigation</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/resource_form_options/">Asset Menus and Settings</a> (uses a Reference Dataset, but Taxonomies offer the same options)</p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/panels-and-layouts-in-topbraid-edg/">Panels and Layouts</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/resource_forms_edg/">Editing Asset Information</a> (uses a Business Glossary, but Taxonomies offer the same options)</p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/data_validation_edg/">Data Validation</a></p>
+</section>
+<section id="working-with-taxonomies">
+<h3>Working with Taxonomies<a class="headerlink" href="#working-with-taxonomies" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/creating_taxonomy/">Creating a Taxonomy</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/modular_taxonomies/">Working with Modular Taxonomies</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/skos_taxonomies/">Using SKOS Extension for Labels (SKOS-XL)</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/sparql-queries-in-topbraid-edg/">Building and Using SPARQL Queries and Reports</a></p>
+</section>
+<section id="working-with-ontologies">
+<h3>Working with Ontologies<a class="headerlink" href="#working-with-ontologies" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/customize_taxonomy_skos/">Customizing Taxonomies</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/ontology_modeling_overview/">Ontology Modeling</a></p>
+</section>
+<section id="workflows-collaboration-and-audit-trail">
+<h3>Workflows, Collaboration and Audit Trail<a class="headerlink" href="#workflows-collaboration-and-audit-trail" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/change_management_workflows/">Introduction to Workflows</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/using_tasks_edg/">Working with Tasks</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/asset-lists-in-topbraid-edg/">Asset Lists</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/change-history-in-topbraid-edg/">Change History</a></p>
+</section>
+<section id="search">
+<h3>Search<a class="headerlink" href="#search" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/advanced_search_taxonomies/">Searching within a Taxonomy</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/search_the_edg/">Using Search the EDG</a></p>
+</section>
+<section id="data-import">
+<h3>Data Import<a class="headerlink" href="#data-import" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/import_tab_data_sheets/">Importing Tabular Spreadsheets</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/importing_hierarchies/">Importing Hierarchical Spreadsheets</a></p>
+</section>
+<section id="setting-up-information-governance-framework">
+<h3>Setting up Information Governance Framework<a class="headerlink" href="#setting-up-information-governance-framework" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/governance-areas-in-topbraid-edg/">Governance Areas</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/stewardship-as-part-of-the-governance-model-in-topbraid-edg/">Governance Roles and Stewardship</a></p>
+</section>
+<section id="crosswalks">
+<h3>Crosswalks<a class="headerlink" href="#crosswalks" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/creating_crosswalk_in_topbraid_edg/">Creating a Crosswalk</a></p>
+</section>
+<section id="classifying-documents">
+<h3>Classifying Documents<a class="headerlink" href="#classifying-documents" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/using_topbraid_corpora_for_autoclassification/">Using Corpora for Documents</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/using_topbraid_tagger_and_autoclassifier/">Auto-tagging Documents</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/topbraid_tagger_faceted_search/">Creating Faceted Search over Documents</a></p>
+</section>
+</section>
+<section id="about-vocabulary-management-with-topbraid-edg">
+<h2>About Vocabulary Management with TopBraid EDG<a class="headerlink" href="#about-vocabulary-management-with-topbraid-edg" title="Permalink to this headline"></a></h2>
+<p>The <em>TopBraid EDG Vocabulary Management</em> package lets you work with the Taxonomies, Ontologies, and Crosswalks asset collection types.
+The <em>Tagger and AutoClassifier</em> add-on module adds the ability to work with Corpora (document collections that reside in content management systems) and content tag sets (data-sets that tag documents using terms defined in your vocabularies).
+Actual taxonomies, ontologies, crosswalks, corpora and content tag sets are collectively called asset collections in EDG terms.</p>
+<p>A taxonomy in EDG is an asset collection based on <a class="reference external" href="https://www.w3.org/TR/skos-reference/">SKOS</a>, the W3C standard ontology designed for managing taxonomies, thesauruses, and subject headings.
+This guide shows you how to edit a taxonomy, manage a set of edits, and review the history of changes.
+It also provides some information on how to work with ontologies in order to add custom metadata.</p>
+<p>The taxonomy editor in EDG offers a user interface and features designed to work with SKOS.
+An example feature is displaying a <em>Concept Hierarchy</em>, where concepts are connected with each other by SKOS <em>broader</em> statements, starting with the defined <em>Concept Schemes</em> as hierarchy roots.
+Every taxonomy must have at least one concept scheme that identifies “top concepts” in a scheme.
+Although a taxonomy can have multiple concept schemes, a recommended practice is to use a single scheme per taxonomy.
+Like all asset collections, taxonomies can be included into other collections, which means that a taxonomy with multiple concept schemes can be assembled through the inclusion of several single-scheme taxonomies.</p>
+<p>SKOS defines a number of standard attributes and relationships related to a concept.
+Users can customize taxonomies by adding their own attributes and relationships, defining subclasses of SKOS Concept and even deactivating some of the standard properties.
+These customizations can apply to a single taxonomy, a subset of taxonomies, or to all new taxonomies created in EDG.</p>
+</section>
+<section id="access-the-edg-application">
+<h2>Access the EDG Application<a class="headerlink" href="#access-the-edg-application" title="Permalink to this headline"></a></h2>
+<p>To follow this guide, use a browser to access the EDG running in one of the following environments.</p>
+<ol class="arabic simple">
+<li><p>Create an EDG trial evaluation at TopQuadrant, and run EDG from the TopQuadrant servers.
+Submit an <a class="reference external" href="https://www.topquadrant.com/products/topbraid-enterprise-data-governance/request-edg-evaluation-account/">EDG evaluation request</a> or <a class="reference external" href="https://www.topquadrant.com/get-started-data-governance/">contact TopQuadrant</a>.</p></li>
+<li><p>Use TopBraid Studio and run its demonstration version of EDG.
+Submit an <a class="reference external" href="https://www.topquadrant.com/products/topbraid-enterprise-data-governance/request-edg-evaluation-account/">EDG evaluation request</a> or <a class="reference external" href="https://www.topquadrant.com/get-started-data-governance/">contact TopQuadrant</a>.</p></li>
+<li><p>Install EDG on a server accessible to your network (which could also be a local Tomcat server, via localhost).
+For a custom install, contact TopQuadrant and see EDG Server Installation and Integration.</p></li>
+</ol>
+<p>The EDG sample data is used in this tutorial, however if you have other collections they could be used instead.
+If using the EDG sample data, you will need to download and install the EDG samples project from the <a class="reference external" href="http://www.topquadrant.com">TopQuadrant Website</a> Downloads page under Asset Collection Samples.</p>
+<p>For the TopBraid Studio option, launch TopBraid Studio and EDG will open in your default browser.
+If you use the Studio startup <em>-B</em> option to not use the default browser then open <a class="reference external" href="http://localhost:8083/">http://localhost:8083/</a>
+Logging in as Administrator requires no password for the demo version.
+All asset collection types are available in the demo version.</p>
+<p>For the other two options, the system administrator or TopQuadrant will provide you with a URL, a username, and a password.
+Browse to the URL and log in.
+Server licensing will determine the availability of the various asset collection types.</p>
+<section id="topbraid-edg-user-interface">
+<h3>TopBraid EDG User Interface<a class="headerlink" href="#topbraid-edg-user-interface" title="Permalink to this headline"></a></h3>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For a basic orientation to the user interface, see <a class="reference internal" href="../../user_guide/working_with_asset_collections/viewing_and_editing_asset_information.html#viewing-and-editing-asset-information-target"><span class="std std-ref">Using Forms to View and Edit Asset Information</span></a> and <a class="reference internal" href="../../user_guide/home_page_and_navigation/index.html#home-page-and-navigation-target"><span class="std std-ref">EDG Home Page and Navigation</span></a>.</p>
+</div>
+<p>You will always see the collapsable left hand side Navigator that will help you navigate between asset collections and pages of interest.
+Menu sections in the Navigator are also collapsable and expandable.
+A “hamburger” menu button in the header offer an alternative approach to quick navigation between different collections.</p>
+</section>
+</section>
+<section id="vocabulary-management-with-taxonomies">
+<h2>Vocabulary Management with Taxonomies<a class="headerlink" href="#vocabulary-management-with-taxonomies" title="Permalink to this headline"></a></h2>
+<section id="selecting-a-taxonomy">
+<h3>Selecting a Taxonomy<a class="headerlink" href="#selecting-a-taxonomy" title="Permalink to this headline"></a></h3>
+<p>After logging in, the EDG home page will appear.</p>
+<p>To see a taxonomy we will work with in this tutorial, click on Taxonomies link in the left hand side navigation menu.
+It shows the list of taxonomies available to the logged-in user and some metadata about each one.
+This page also lets you create new taxonomies.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Taxonomies" class="edg-figure" src="../../_images/edg_taxonomies.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Taxonomies</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This tutorial uses the <em>Geography Taxonomy</em> sample.
+If your server does not have it, an EDG administrator can upload it from topquadrant.com.
+Metadata about each taxonomy (or any asset collection) that is displayed in the list includes the user name of the person who created it, the date and time of its creation, its short descriptions and some information about the workflows in progress for that asset collection.
+Taxonomy titles are displayed as a hypertext link.
+Click on this link to go to the Geography Taxonomy.</p>
+<p>If you do not see an asset collection that is known to exist in your system, you might not have the appropriate viewing or editing privileges for it.
+To gain access, a manager for that vocabulary must assign you viewer or higher permission.
+Alternatively, if your organization uses governance roles you can be give a governance role for a business area or data subject area.
+You will the automatically get viewer permission to all collections in the area.</p>
+</section>
+<section id="home-page-of-an-asset-collection">
+<h3>Home Page of an Asset Collection<a class="headerlink" href="#home-page-of-an-asset-collection" title="Permalink to this headline"></a></h3>
+<p>A home or landing page of a taxonomy lets you see and modify taxonomy content (i.e,. concepts in a taxonomy) and perform other operations.</p>
+<p>The tabs acrpss the top of the page provide access to various operations such as importing data, exporting data, collaborating with other users through tasks and comments, running certain pre-build reports and more.
+There is also a configurable dashboard that summarizes the overall status of an asset collection.</p>
+<p>When you click on a taxonomy, the first tab (aka Taxonomy Editor) will be automatically displayed.
+The default editor layout has Taxonomy Concepts Panel (a tree view) on the left and the Form Panel on the right.
+Concept Search panel is stacked behind the tree view.</p>
+<p>Just like the other asset collection editors, the UI for the Taxonomy Editor can be customized and re-arranged.
+It comes with many panels and layouts.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on using EDG editors please see <a class="reference internal" href="../../user_guide/working_with_asset_collections/viewing_and_editing_asset_information.html#viewing-and-editing-asset-information-target"><span class="std std-ref">Using Forms to View and Edit Asset Information</span></a>.</p>
+</div>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Geography Taxonomy Home Page" class="edg-figure" src="../../_images/edg_geography_taxonomy_home.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Geography Taxonomy Home Page</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Given the right permissions, you can edit the taxonomy directly.
+In this guide, however, instead of editing the taxonomy directly, we will walk you through the steps for changing taxonomy content through a workflow.</p>
+<p>A workflow isolates the set of changes we will be making, keeping them in a working copy until the workflow completes and changes are committed to the production copy.
+While we will be using a workflow, all edit and search user interfaces you will learn how to use in the context of a working copy operate exactly the same way on the production copy.</p>
+<p>We will conclude the tutorial by walking you through instructions for customizing the ontology that describes schema (types and properties) of the concepts in the Geography Taxonomy.
+You will learn how to deactivate pre-built properties and add your own properties.</p>
+</section>
+<section id="workflows-and-working-copies">
+<h3>Workflows and Working Copies<a class="headerlink" href="#workflows-and-working-copies" title="Permalink to this headline"></a></h3>
+<p>TopBraid EDG defines the <strong>production copy</strong> of a vocabulary as the version of the vocabulary currently in use.
+For example, an online store that organizes menus of product categories based on a managed vocabulary would use the production vocabulary when it builds the menus used on their website.
+In this case, the production copy is a Geography Taxonomy.</p>
+<p>EDG supports making changes through <a class="reference internal" href="../../user_guide/workflows/index.html#understanding-and-using-workflows-target"><span class="std std-ref">Understanding and Using Workflows</span></a>.
+When you start a workflow, an associated working copy is created to hold the changes that will go through the workflow process and, eventually, may get committed to the production version at the discretion of the users who have permission to make and execute such decisions.
+A <strong>working copy</strong> is a virtual copy of the production vocabulary created for editing purposes.</p>
+<p>It is possible that several “in progress” workflows exist at the same time, each with its own set of working copy changes.
+These workflows are shown in Workflows tab.
+Workflows are based on templates to support different types of workflows.</p>
+<p>Out of the box, EDG has a built-in review and approval workflow called “Basic”.
+Users can define custom workflow templates to support their specific vocabulary management processes.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>More workflow templates are available from the <a class="reference external" href="http://www.topquadrant.com">TopQuadrant Website</a> Downloads page under under Workflow Templates.</p>
+</div>
+<p>When you edit a taxonomy production copy, changes will be visible to everyone using it.
+They will also show up in any working copy created for this taxonomy.
+When you edit a working copy, changes will only be visible in that working copy.
+EDG users with the appropriate permissions can choose between making changes directly to an asset collection and using workflows and associated working copies to change, review and publish new versions.</p>
+<section id="basic-workflow-template">
+<h4>Basic Workflow Template<a class="headerlink" href="#basic-workflow-template" title="Permalink to this headline"></a></h4>
+<p>TopBraid EDG comes with the prebuilt Basic workflow template.
+Working copies managed by the Basic workflow can be in the following stages aligned with the states of the workflow:</p>
+<ul class="simple">
+<li><p><strong>Uncommitted</strong> working copies are copies of the production vocabulary that people are currently changing.
+Changes are not reflected in the production vocabulary until the changes are committed, or published, to the production copy.
+An uncommitted working copy can be cancelled, frozen for review or directly committed to production without a review step by users with appropriate permissions.</p></li>
+<li><p><strong>Frozen for Review</strong> working copies are working copies that are going through a review during which no one has permission to modify them.
+This is useful to allow people to review changes while knowing that no further edits can be made during the review period.
+Users can enter their review comments.
+Frozen for review working copy can be cancelled, rejected, approved or requested further changes (i.e. unfrozen to status uncommitted).</p></li>
+<li><p><strong>Rejected</strong> working copies are working copies that cannot be edited or published.
+A rejected working copy can be cancelled or opened for further changes, changing its state back to Uncommitted.
+When a workflow is cancelled, all changes in a working copy are permanently deleted.</p></li>
+<li><p><strong>Approved</strong> working copies have been approved but have not yet been committed to the production copy.
+No one has permission to edit them and the only possible next step is to cancel or commit them.
+This is useful as a final review stage late in the editing workflow to explicitly record that the approval was granted and by whom.</p></li>
+<li><p><strong>Committed</strong> is the final state of a working copy whose changes have been accepted into the production copy.
+No further actions are possible other than to archive the working copy.</p></li>
+</ul>
+<p>If any workflows were in progress for the Geography Taxonomy, you would see them by clicking on the <strong>Workflows</strong> tab.
+You can also start a workflow from this tab.
+Alternatively, you can start a workflow directly from the page that lists all taxonomies.
+Finally, you can start a workflow for a specific concept in a taxonomy directly in the editor.
+We do not have any workflows yet, but we will start one shortly.</p>
+</section>
+<section id="permission-profiles">
+<h4>Permission Profiles<a class="headerlink" href="#permission-profiles" title="Permalink to this headline"></a></h4>
+<p>On the vocabulary’s <strong>Users</strong> tab you can see a list of users and their permissions.
+EDG supports permission profiles and governance roles.
+EDG has the following permission profiles users: <em>viewer</em>, <em>editor</em>, <em>manager</em> and <em>admin</em> (for system support staff, not normal EDG users).
+EDG also provides a set of governance roles, which is open to customization.</p>
+<p>A user can have one of the following permission profiles for a vocabulary (production copy):</p>
+<ul class="simple">
+<li><p><strong>Viewer</strong> can browse a production copy, viewing the concepts and their metadata as well as any change history associated with that data.
+A viewer can also generate reports about the vocabulary, export it in other formats, and start workflows.</p></li>
+<li><p><strong>Editor</strong> has all viewer permissions plus can make changes to the content.</p></li>
+<li><p><strong>Manager</strong> has the most capabilities.
+In addition to the editor permissions, a manager controls access for other users.
+Manager can also perform actions in the Manage tab – including ability to delete a vocabulary.
+A user that creates a vocabulary automatically gets  manager permissions for it.</p></li>
+</ul>
+<p>A user can have one of the following permission profiles for a working copy of a vocabulary:</p>
+<ul class="simple">
+<li><p><strong>viewer</strong> can do the same things with a working copy that a production copy viewer can do with a production vocabulary: view its data, view its change history, generate reports, and export the data.</p></li>
+<li><p><strong>editor</strong> has working copy viewer permissions and can also edit a working copy.</p></li>
+<li><p><strong>manager</strong> has working copy editor permissions and controls access to the working copy for other users.
+A user that starts a workflow automatically gets <em>manager</em> permissions for the associated working copy.</p></li>
+</ul>
+<p>When you are logged in with <em>admin</em> profile, you have manager permissions for all asset collections.
+Users assigned less powerful permissions for the Geography Taxonomy will not see the complete set of EDG tabs in the header.
+For example, someone with editor permissions for the Geography Vocabulary would not see the  Manage tab at the top and, thus, will not be able to perform any operations available on the Manage page.
+A user with viewer permissions for the Geography can click on the <strong>Taxonomy</strong> tab and see contents of the taxonomy, but they will not be able to change it.</p>
+<p>Who can do what in a basic workflow is defined in terms of permissions.
+For example, a basic workflow allows a working copy manager to freeze a working copy for review and revert a frozen copy back to uncommitted status so that those with the appropriate permissions can continue to edit it.
+A user that only has <em>editor</em> permissions for a working copy will not be able to freeze it for review.</p>
+</section>
+<section id="starting-a-workflow">
+<h4>Starting a Workflow<a class="headerlink" href="#starting-a-workflow" title="Permalink to this headline"></a></h4>
+<p>Click on the Workflows tab.
+Then, click the <strong>Start new Workflow</strong> link to start your first workflow, automatically creating an associated working copy.
+If your server environment has multiple applicable workflow templates, you will be asked to select the workflow that corresponds to your change process.
+For example, changes to existing concepts may follow a different process from the process that proposes new concepts.
+TopBraid EDG includes one pre-built basic workflow template.
+Thus, unless others have been installed, you will not be offered a selection.</p>
+<p>You can start a workflow for the taxonomy as a whole, when you expect to be making changes to several concepts, or you can start it for a specific concept, if your changes will be only for one concept.
+In the latter case, you start a workflow from the editor by selecting <strong>Start Workflow</strong> from the <strong>Available actions</strong> button.</p>
+<p>In our example, we will be changing information about an existing concept (South Korea) as well as creating a new concept, so we will elect to start a workflow at the taxonomy level.
+Although, arguably, since all these changes will be scoped to South Korea, we could have navigated to South Korea and started the workflow there.</p>
+<p>On the <strong>Start new Workflow on Geography Taxonomy</strong> screen, enter “South Korea Updates” as the workflow’s name.
+In the Description window enter “Fix country name and add Busan”.
+Click the Submit button.
+After creating the new workflow EDG will send you to the newly created workflow’s management screen where you’ll see the current status, Uncommitted, of the workflow and the next steps that can be undertaken.
+At this point, you can Make Changes, Refresh Working Copy, Return to Production Copy or Cancel this Workflow.
+The user would select Make Changes or select the Taxonomies tab directly to start work.
+From the Uncommitted state, possible next steps for the basic workflow are: <strong>Freeze for review</strong> (of the working copy) or <strong>Commit changes to production</strong>.
+However, you will not be able to move the workflow into the next state yet.
+This is because right now there are no changes to review or commit.
+You will see this situation change after you make your first edit.</p>
+<p>The workflow diagram shows you all workflow actions and the resulting state of the workflow after an action is performed.
+Users who are authorized to perform the action (transition the workflow) are displayed under the action name.
+You can switch from textual view or diagram view depending on the users preference, they have the same actions.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Textual View and Diagram View Tabs" class="edg-figure" src="../../_images/edg_workflow_textual_view.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Textual View and Diagram View Tabs</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Geography Taxonomy South Korean Updates" class="edg-figure" src="../../_images/edg_workflow_diagram_view.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Geography Taxonomy South Korean Updates</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Basic workflow combines two possible approaches to promoting changes:</p>
+<ul class="simple">
+<li><p>It lets users make changes and directly commit them to production without any review and approval cycle.</p></li>
+<li><p>It also supports a process where changes are made, then the working copy is “frozen” to allow a review cycle during which changes can be approved, rejected or a working copy can be re-open for changes without recording an explicit approval or rejection.</p></li>
+</ul>
+<p>When changes are approved, then next step is to commit them by explicitly accepting them to production.
+If they are rejected, manager of the workflow can decide to re-open working copy for re-work or they can cancel the workflow.</p>
+<p>Your organization may want to separate these two different way of working into two workflows i.e., with approval cycle and without approval cycle.
+Users can design custom workflows to support different processes including voting, timed escalations, the use of governance roles instead of permission roles, performing automated steps, etc.</p>
+<p>The <em>Basic workflow</em> template is defined in terms of permission roles.
+For example, only a user with the manager permission role for the workflow can freeze it for review.
+Workflow templates can also be defined in terms of governance roles.
+Governance roles are business roles like data steward or taxonomist.
+They are configurable for your organization.
+Workflow templates can specify what permission is given to a governance roles.
+If you use governance roles, you do not need to define permission roles for each instance of a workflow.
+This can be handled in a template.</p>
+</section>
+<section id="editing-a-working-copy">
+<h4>Editing a Working Copy<a class="headerlink" href="#editing-a-working-copy" title="Permalink to this headline"></a></h4>
+<p>To make changes, from the workflow’s home page, click the Taxonomy tab in the header, and you’ll see the same editing screen that you experienced when you originally clicked on the taxonomy.</p>
+<p>Apart from seeing the workflow name and the header being yellow, the editor user interface in the workflow looks the same and has the same functionality as the user interface for making changes directly to the production copy.
+In either case, you will see the same panels and will have the same options for navigation, editing and searching.</p>
+<p>In the Taxonomy Concepts tree, clicking the little arrows will expand and close up sub-trees of concepts.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SKOS organizes concepts into concept schemes.
+So, the root of the tree will always be a concept scheme.
+It is differentiated by the blue icon while concepts have manila folder icons.</p>
+</div>
+<p>Click directly on a concept’s name to see data about it in the <strong>Form</strong> panel on the right.
+For example, click on the arrow next to “Europe”, and then click on “Belarus”, and you will see information about this term on the right of your screen.
+This includes information that is part of the W3C SKOS standard for vocabulary management, such as an alternative label for the concept and a history note about it.
+It also includes custom properties added to extend the SKOS standard for this vocabulary, such as the area figure for the country and its calling code.</p>
+<p>Alternative label and history note are both attribute properties.
+Relationship properties such as Belaurus’s “has broader” and “has related” values describe relationships to other concepts, which may or may not be in the same vocabulary.
+Relationship properties are hypertext links; double-click Belaurus’ “has related” value of “Soviet Union” and the same panel will display data about that concept.
+(Use your browser’s Back button to return to the Belarus screen.)</p>
+<p>In addition to navigating the concept hierarchy, another way to find specific concepts is to use the quick search.</p>
+<p>To quickly locate specific concepts in the tree use the lookup field in the upper-left of your screen, under the <strong>Taxonomy Concepts</strong> heading.
+Type the word “South” there, and a list will show you the concepts beginning with these letters.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Geography Taxonomy Search Options" class="edg-figure" src="../../_images/edg_geography_taxonomy_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Geography Taxonomy Search Options</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Select “South Korea” from the list, and EDG will take you to that concept in the Taxonomy tree and will also display it on the form.
+We’re going to change its preferred label value to the country’s official name of Republic of Korea and make South Korea the alternative label.
+We will also enter an alternative label in Spanish and we’ll add the city of Busan as a new concept that appears as a child node of Republic of Korea in the Taxonomy tree.</p>
+<p>Even if you have the appropriate rights to edit a given vocabulary, if that vocabulary includes data from other sources, you will not be able to edit or delete the included data.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../../user_guide/working_with_asset_collections/index.html#advanced-settings-target"><span class="std std-ref">Advanced Settings</span></a> in the User Guide for more information.</p>
+</div>
+<p>Once you have the South Korea data displayed, you can click on the settings icon and select <strong>Also show properties that have no values</strong> to see all available fields appear on the form.
+Before you clicked the <strong>Also show properties that have no values</strong> button, the form only displayed the concept properties that had values assigned to them.
+You can then mouse-over the page area where the name of the property is displayed and click on the pencil icon.
+This will let you in-line edit each field.</p>
+<p>Alternatively, click on the <strong>Edit</strong> button at the top of the screen to open editable form for this concept and edit several properties at once.</p>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG Edit Geography Taxonomy" class="edg-figure" src="../../_images/edg_edit_geography_taxonomy.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Edit Geography Taxonomy</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Replace the preferred label value of “South Korea” with “Republic of Korea”.</p>
+<p>By default, one can add multiple values for a single property unless its underlying ontology explicitly limits the property’s number of values (its <em>cardinality</em>).
+We’re going to add the Spanish term for “South Korea” to this concept.
+Click the plus sign next to <em>preferred label</em> and a new blank section appears.
+Enter “Corea del Sur” there. Choose the <em>Lang</em> setting and pick “es” from the drop-down list that will appear to the right.
+Your EDG administrator can customize the list of language code choices offered on this list.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Taxonomy Labels and Description" class="edg-figure" src="../../_images/edg_taxonomy_labels_description.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Taxonomy Labels and Description</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click <strong>Save Changes</strong>.</p>
+<p>You’ll be returned to the concept display screen, where you’ll see your new values; also note that the node of the Concept Hierarchy tree on the left that had been labeled “South Korea” is now called “Republic of Korea”.</p>
+<p>EDG has a built-in set of rules to implement constraints defined as part of the SKOS standard, such as the rule that says that you shouldn’t have two different preferred labels for the same concept in the same language.
+(Your EDG administrator can customize these rules for each vocabulary and add new ones depending on your vocabulary management requirements).</p>
+<p>Another SKOS rule says that you can’t have an alternative label that is the same as the preferred label in a given language.
+Let’s break this rule and see what happens.
+Enter “Republic of Korea” as the alternative label for this concept, with a language code of “en”, and click <strong>Save Changes</strong>.
+A message box will tell you about the problem, and the label for the property with the problem is displayed in red behind the message box:</p>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Taxonomy Preferred Labels" class="edg-figure" src="../../_images/edg_geography_taxonomy_preferred_label.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Taxonomy Preferred Labels</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click this message box’s Cancel button, set the alternative label to “South Korea” with a language code of “en”, and click the Save Changes button again.</p>
+<p>Next, we’re going to add a new concept.
+First, click the arrow next to your “Republic of Korea” node in the Taxonomy Panel to see its children.
+It only has one: the city of Seoul.</p>
+<p>To add a new child node, right click on the “Republic of Korea” in the tree and select “Create narrower concept of Republic of Korea”.</p>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG Create Narrower Concept Menu" class="edg-figure" src="../../_images/edg_create_narrower_concept_menu.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Narrower Concept Menu</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can also select the “Republic of Korea” node and click on the + button at the top of the panel to create a new concept.</p>
+<figure class="align-center" id="id12">
+<img alt="TopBraid EDG Create Concept Menu" class="edg-figure" src="../../_images/edg_taxonomy_create_concept.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Concept Menu</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>EDG will display a <strong>Create Concept</strong> dialog to ask you for some information about the new concept.</p>
+<figure class="align-center" id="id13">
+<img alt="TopBraid EDG Create Subconcept Menu" class="edg-figure" src="../../_images/edg_taxonomy_create_subconcept.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Subconcept Menu</strong></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <strong>Label</strong> is the preferred label for the new concept.
+Enter “Busan” here.
+As we saw when we edited the “South Korea” preferred label, we can always change a label later.</p>
+<p>The <strong>Type</strong> identifies whether the new Concept is a regular concept or a specialized sub-class of the Concept.
+EDG lets you create such classes in an ontology that your taxonomy is based on so that specialized properties can be stored for some concepts but not others—for example, so that forms for editing or searching countries include the calling code, but forms for editing and searching continents do not.
+By default, every taxonomy is based on the <a class="reference external" href="https://www.w3.org/TR/skos-reference/">SKOS</a> ontology.
+However, as described later, you can extend SKOS and include your specialized ontology after you create a taxonomy.</p>
+<p>Our Geography taxonomy includes Geo Ontology which defines additional classes and properties useful in describing geopolitical concepts.
+If you are working with a taxonomy where no special classes were defined, you would leave the default value for type as “Concept”.
+In our example, there are specialized subclasses of Concept.
+Click on the Geo Concept in the type tree to expand it and see additional types (classes) available to you.
+These classes have been defined in the Geo Ontology used by this taxonomy, because you’re adding a city, pick City from the type tree.</p>
+<p>The <strong>ID</strong> is the internal identifier used by EDG to track the concept.
+Because SKOS is based on the W3C RDF standard, this ID is a URI.
+Advanced users sometimes have reasons to customize this, but you can’t go wrong by just leaving the default value that appears.
+Click the OK button to create the new concept.</p>
+<p>EDG will add Busan as a new child of Republic of Korea on the <strong>Taxonomy Concepts</strong> Panel.</p>
+<p>For more descriptive properties, EDG includes rich text formatting controls.
+Give Busan a definition of “Largest city after Seoul”, then select the word “Largest” with your cursor and click the <strong>I</strong> button to set it in italics.
+You can also create a link to the concept representing Seoul.
+Just select the text you want to become a hyperlink and click on <a class="reference internal" href="../../_images/link_concept.png"><img alt="Link to concept" src="../../_images/link_concept.png" style="width: 30px;" /></a> icon and start typing “Seoul”, then pick the concept from the drop down.
+This will insert a link to Seoul.</p>
+<figure class="align-center" id="id14">
+<img alt="TopBraid EDG Definition - Insert Link" class="edg-figure" src="../../_images/edg_definition_insert_link.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Definition - Insert Link</strong></span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click the <strong>Save Changes</strong> button at the top of your screen, and you’ll see the note you added on the display screen for your new Busan concept.</p>
+<p>To insert hyperlinks to web pages outside of TopBraid EDG, use <a class="reference internal" href="../../_images/insertedit_link.png"><img alt="Insert/edit link" src="../../_images/insertedit_link.png" style="width: 30px;" /></a> icon and type or paste the URL.
+You can also use this method to link to resources in EDG.
+You just need to navigate to their display in EDG and copy the URL shown in the upper right corner of the form.
+This approach will let you hyperlink to EDG managed assets that are not necessarily members of the Concept class.</p>
+<p>Try following similar steps to create a new concept as a child of Busan.
+Give it a label of “Test”, and leave the Type value at Concept.
+On the editing form for this new concept, just click the <strong>Save Changes</strong> button without adding any new data.</p>
+<p>We don’t really want this test node, so we’re going to delete it.
+At the top of the form, to the left of the <strong>Edit</strong> button, there is <strong>Modify</strong> menu.
+Click on it to select <strong>Delete</strong>.
+A message box will ask you whether you’re sure that you want to delete the selected node and its associated information.
+Click OK to complete the operation.
+Since Test was selected in the form, the form will still display its ID, but no other information.
+This means that the concept was deleted.</p>
+<figure class="align-center" id="id15">
+<img alt="TopBraid EDG Delete Concept Example" class="edg-figure" src="../../_images/edg_taxonomy_delete_concept.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Delete Concept Example</strong></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can also delete a concept without selecting it.
+Simply right click on it in the Taxonomy tree and select <strong>Modify&gt;Delete</strong>.</p>
+<section id="history-of-edits">
+<h5>History of Edits<a class="headerlink" href="#history-of-edits" title="Permalink to this headline"></a></h5>
+<p>Select “Republic of Korea” on the <strong>Taxonomy Concepts</strong> panel and add the <strong>Change History</strong> panel (displayed in the Panel menu under Reports) to your layout by dragging it onto your page from the panels menu at the top of the screen.
+Click the refresh icon in the <strong>Change History</strong> panel.
+This shows who made what changes when for this resource:</p>
+<figure class="align-center" id="id16">
+<img alt="TopBraid EDG Change History Panel" class="edg-figure" src="../../_images/edg_change_history.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Change History Panel</strong></span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To revert the change, use the check box and the revert button as shown above.</p>
+</section>
+</section>
+<section id="using-the-search-panel">
+<h4>Using the Search Panel<a class="headerlink" href="#using-the-search-panel" title="Permalink to this headline"></a></h4>
+<p>The default layout for Taxonomies includes the <strong>Concept Search</strong> panel.
+It is stacked behind the <strong>Taxonomy Concepts</strong> panel.
+If you don’t have it anymore, select Search from the panels meny and drag it into place.
+Here you can use free text searching across all properties or add filters for more specific searches.
+These panel has a lot of rich features to explore.</p>
+<figure class="align-center" id="id17">
+<img alt="TopBraid EDG Concept Search Panel" class="edg-figure" src="../../_images/edg_concept_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Concept Search Panel</strong></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Use free text search for “land”.
+The Search Results table shows the first 100 results of this query.
+In order to see more results use <strong>Next</strong> button in the bottom-right corner of the results table.
+You can also change how many results are shown in each table page.
+For this query we don’t have 100 results so no paging is shown.</p>
+<p>Let’s change the search to only search for the “land” string in the preferred label.
+Click on the <strong>Filters</strong> button and select “preferred label” in the drop down.
+Clear the <strong>Free Text</strong> field.
+In order to see the column corresponding to the filter, you can select the column icon and choose it or change the settings to display the column with every chosen filter.</p>
+<p>You will get a smaller set of results.
+For example, the first search returns Micronesia and the second does not.
+Micronesia is returned in the first search because its history note includes “land” string.
+It says: “Formerly part of the Trust Territory of the Pacific Islands.”.</p>
+<figure class="align-center" id="id18">
+<img alt="TopBraid EDG Concept Search Results" class="edg-figure" src="../../_images/edg_concept_search_results.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Concept Search Results</strong></span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can add any column to the table at any time.
+Let’s modify search results to show “broader concept” value.
+Click on Columns button, add “broader concept” to selections.</p>
+<p>Each filter field also has menu, accessible by clicking the drop-down on its right, that gives you additional ways to specify the search criteria.</p>
+<p>The Asset Type drop-down and Asset Type Selector at the top of the search panel let you restrict search to specialized classes and lets you select any custom properties for those types.
+For example, if you search among the Geography Taxonomy’s Country concepts, you will see the calling code, capital, and language properties available for selection in <strong>Filters</strong> and <strong>Columns</strong> drop downs along with the standard SKOS ones such as preferred label and has broader.</p>
+<p>In search results table, concept’s preferred labels will be included by default as the resource name, so there is no need to select “preferred label” in the Columns.</p>
+<p>Next to the <strong>Filters</strong> and <strong>Columns</strong> buttons you also have batch actions and export options.
+Export the search results to JSON or to a comma or tab-separated value files suitable for importing into a spreadsheet program like Excel.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../../user_guide/guidance_specific_to_asset_collection_type/working_with_taxonomies/index.html#working-with-taxonomies-target"><span class="std std-ref">Working with Taxonomies</span></a> for more details on these possibilities.</p>
+</div>
+</section>
+<section id="navigating-back-to-production-copy">
+<h4>Navigating Back to Production Copy<a class="headerlink" href="#navigating-back-to-production-copy" title="Permalink to this headline"></a></h4>
+<p>You can exit the working copy and return to the production copy of the Geography Taxonomy by clicking on the <img alt="cross" src="../../_images/cross.png" /> button next to the workflow name.</p>
+<p>You will see that the preferred label of South Korea is still there, with that name and no Busan child.
+You’ve been editing a working copy, so the official production version has remained unchanged.
+We’ll see shortly see how to complete your workflow and update the taxonomy with your working copy’s edits.</p>
+</section>
+<section id="reviewing-and-committing-workflow-changes">
+<h4>Reviewing and Committing Workflow Changes<a class="headerlink" href="#reviewing-and-committing-workflow-changes" title="Permalink to this headline"></a></h4>
+<p>First, imagine that you’re part of a taxonomy management staff and that it’s time to review the changes you’ve made before accepting them into your taxonomy.
+Click the <strong>Workflows</strong> tab at the top of the screen to go to the workflow.
+Select your workflow from the table.
+Currently, there is only one workflow in progress, but there can be multiple workflows.
+Click on the <strong>Go To Workflow</strong> button at the top of the table.</p>
+<figure class="align-center" id="id19">
+<img alt="TopBraid EDG Workflows in Progress View" class="edg-figure" src="../../_images/edg_workflows_in_progress.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Workflows in Progress View</strong></span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You will see the page that shows workflow status and possible next actions.</p>
+<p>There is another way to navigate to a workflow and associated working copy.
+The blue left hand side navigator menu has <strong>My Workflows</strong> link.
+If you click on this link, you will see all workflows for which you have actions – meaning workflows that you can move to the next state.
+This page will show all workflows you have actions for across all asset collections.</p>
+<p>The <strong>Workflows</strong> tab for a specific asset collection shows only its workflows.
+And you will see all asset collection’s workflows – whether or not you have an action.
+You will also see completed workflows.</p>
+<p>Click Freeze for Review.
+Now, everyone—including yourself, the Administrator—only has read access to the the changes in the working copy.
+Three new links —<strong>Approve changes, Reject changes</strong> and <strong>Request further changes</strong> which replace the <strong>Commit changes to production</strong> and <strong>Freeze for review</strong> links.
+Now, no one can edit the working copy associated with the workflow, regardless of their roles, until an administrator like yourself clicks <strong>Request further changes</strong> which opens working copy for additional changes.</p>
+<p>When you click on <strong>Taxonomy</strong> tab at the top of the screen and you’ll see that the interface for working with the data is pretty much the same as before except that, when you have a resource selected on the concept hierarchy, there is no Edit button at the top of the screen so that you can’t edit the data.
+(This is the same interface that users who only have Viewer privileges see.)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>In a typical production cycle, you would let anyone interested in updates to the vocabulary know that you were finished creating your South Korea Updates working copy and that they should review the changes before you published the changes to the production version of the vocabulary.</p></li>
+<li><p>In a large metadata management environment, you might have one person creating the working copy, several others editing it, additional people reviewing the changes, and another person publishing the changes to the production copy, but for this tutorial, you’re doing all of these yourself.</p></li>
+</ul>
+</div>
+<p>Click the <strong>Reports</strong> tab at the top of the screen, and then click the Comparison Report link.
+This displays a report that shows where this working copy differs from the production copy—a handy report to run during the final review cycle for a working copy:</p>
+<figure class="align-center" id="id20">
+<img alt="TopBraid EDG Comparison Report View" class="edg-figure" src="../../_images/edg_comparison_report.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Comparison Report View</strong></span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Note that the <em>See Changes</em> selection on the main workflow page shows the same report.</p>
+<p>Let’s say that everyone who needed to review these changes has done so, everyone approves, and you’re ready to make the changes official.
+On the Textual View in the Update Workflow Status heading, select <strong>Approve changes</strong> and then <strong>Accept changes to production</strong>.
+To perform these steps using the Diagram View,  select the icon at the end of the <em>Approve changes</em> arrow and then the icon at the end of the <em>Accept changes to production</em> arrow.
+After a message box requests you confirm that you want to commit, you’ll see a message that this working copy has been committed.
+You will be forwarded to the <strong>Workflows</strong> tab for the Geography Taxonomy where you will see your workflow listed under <strong>Completed Workflows</strong>.</p>
+<p>Click the Taxonomy tab and check Asia’s child concepts again.
+You will see that the Republic of Korea is there instead of South Korea, and it will have Busan as its child along with Seoul.</p>
+</section>
+</section>
+</section>
+<section id="id2">
+<h2>Working with Ontologies<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<p>When you create a new taxonomy in EDG, it will automatically include the SKOS ontology.
+SKOS (Simple Knowledge Organization System) is W3C standard for expressing taxonomies and thesauri.</p>
+<p>SKOS defines a class (entity type) Concept together with a number of properties (attributes and relationships) that describe concepts.
+You already seen them when you worked with Geography Taxonomy.
+For example, preferred and alternative labels and broader relationship between concepts.</p>
+<p>Every taxonomy you create in EDG will be based on SKOS.
+If SKOS does not support all your needs, it is also possible to extend SKOS using a custom ontology.
+In our case, an example is the TopBraid Examples Geo Ontology.
+TopBraid Examples Geo Ontology extends SKOS, defining custom classes and properties designed specifically to support geographical concepts.
+This ontology is provided as a sample.</p>
+<section id="including-custom-ontologies">
+<h3>Including Custom Ontologies<a class="headerlink" href="#including-custom-ontologies" title="Permalink to this headline"></a></h3>
+<p>When creating taxonomies, one may want to use custom properties that are specific to the concepts they are working with.
+In the Geography Taxonomy examples of custom properties are <em>calling code</em>, <em>language</em> and <em>capital</em>.
+Since these custom properties may not be applicable to all taxonomy concepts, one may want to create custom classes and define some of the properties only for certain classes.
+In our example, we have custom classes such as <em>Country</em>, <em>City</em> and <em>Continent</em>.
+Countries can have capitals, but cities do not have capitals.
+These are the properties and classes that are the custom extensions to SKOS defined in the Geo Ontology.</p>
+<p>Click on Africa and mouse over its type – Continent.
+As shown below, this lets you know where it is defined.</p>
+<figure class="align-center" id="id21">
+<img alt="TopBraid EDG Custom Ontology" class="edg-figure" src="../../_images/edg_custom_ontologies.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Custom Ontology</strong></span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can also click on the class name and see it displayed on the form.
+If a resource being displayed is defined in a different asset collection, you will see a clickable link on top of the form e.g., <em>Defined in TopBraid Examples Geo Ontology</em>.</p>
+<p>The form shows information about the class including its properties.
+Classes and properties can only be modified in an ontology so the form will be not editable as long as you remain in a taxonomy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>Modify</strong> menu and the <strong>Edit</strong> button are not shown.</p>
+</div>
+<figure class="align-center" id="id22">
+<img alt="TopBraid EDG Class Informtation View" class="edg-figure" src="../../_images/edg_class_info.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Class Informtation View</strong></span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If you click on the blue <em>Defined in TopBraid Examples Geo Ontology</em> link, TopBraid EDG will take you to the Geo Ontology.</p>
+<p>To include a custom ontology in to your taxonomy, go to the <strong>Settings</strong> tab of Geography Taxonomy.
+Take a look at the information listed under <strong>Includes</strong> heading: Geography Taxonomy includes TopBraid Examples Geo Ontology.</p>
+<p>In TopBraid EDG, includes are used to combine asset collections.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Geography Taxonomy also has a “system includes”.
+Click to see what it is.
+It is the SKOS model which is automatically included when a new taxonomy is created.</p>
+</div>
+<figure class="align-center" id="id23">
+<img alt="TopBraid EDG Geography Taxonomy Includes" class="edg-figure" src="../../_images/edg_geography_taxonomy_includes.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Geography Taxonomy Includes</strong></span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If you click on the <strong>Includes</strong> link, you will get a dialog that lets you add and remove included asset collections.
+You can use it to add a custom ontology to your taxonomy – in order to use custom classes and property.
+You can also use it to combine other taxonomies with the Geography Taxonomy.</p>
+<p>A “system include” is always there.
+It does not need to be added and can’t be removed.</p>
+<p>Should you want to combine two taxonomies, you would do this by either including one of taxonomies into another or by creating a third taxonomy and including two taxonomies into it.
+You will not be able to delete any content from an included taxonomy because it is included by reference.
+You can only add to it.
+For example, if you include another taxonomy, you will not be able to remove any of its concepts nor change pre-existing concept descriptions, However, you can add additional descriptions and build new links between your concepts and the concepts in the included taxonomy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need to have some common inclusions apply automatically to <em>all</em> taxonomies created in EDG, an administrator can set them via <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a> section <em>Configure Asset Collection Types</em>.</p>
+</div>
+<p>We are now ready to go to the Geo Ontology.
+You can click on its name in the <strong>Includes</strong> section.
+You can also use the hamburger menu button <a class="reference internal" href="../../_images/hamburger_menu.png"><img alt="hamburger menu" src="../../_images/hamburger_menu.png" style="width: 30px;" /></a> to left of the taxonomy’s name in the header.
+This menu lets you navigate quickly to any asset collection.</p>
+</section>
+<section id="exploring-classes-and-properties-in-an-ontology">
+<h3>Exploring Classes and Properties in an Ontology<a class="headerlink" href="#exploring-classes-and-properties-in-an-ontology" title="Permalink to this headline"></a></h3>
+<p>When you navigate to an Ontology, you will see the <strong>Class Hierarchy</strong> panel.
+As with the <strong>Taxonomy Concepts</strong> panel that displays a hierarchy of concepts, you can expand the Class Hierarchy by clicking the arrows next to each class (concept type) name.
+You see in the <strong>Class Hierarchy</strong> panel that some classes are displayed with a lighter icon.
+These classes are pre-build and come from SKOS which we have included in the Geo Ontology so that we could define specialized classes under the SKOS Concept class.</p>
+<p>Selecting a class will display it on the form on the right.
+And the <strong>Property Groups</strong> panel below the <strong>Class Hierarchy</strong> panel will show properties defined for a class.
+This panel organizes properties into groups representing sections that will appear on the concept’s forms.
+All properties are also displayed on the class form.
+Most of the properties come from SKOS.
+They are displayed using lighter colored icons.</p>
+<p>Below we see that the Country has several custom properties that are specific to it.
+On the form, they are shown as <strong>declared properties</strong> e.g., <em>calling code, language and capital</em>.
+Other properties are inherited from the parent classes – the Geo concept (e.g., <em>altitude</em>)  and Concept (e.g., <em>alternative label</em>).</p>
+<figure class="align-center" id="id24">
+<img alt="TopBraid EDG Geo Ontology - Declared Properties" class="edg-figure" src="../../_images/edg_geo_ontology_declared_prop.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Geo Ontology - Declared Properties</strong></span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can add new classes and new properties.
+You can also delete classes and properties – unless they come from SKOS.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You need to be very careful about deleting classes or properties from ontologies that are already in use because there may be data that is using these classes or properties.
+For example, if you delete the class Country, all countries in the Geography Taxonomy will loose information associated with their type.
+Countries will still be there, but without type information, you will not get useful forms to edit data and to create new countries.
+Also, the names of the fields such as “capital” will disappear since they are defined in the ontology.
+You will still see the capitals, but instead of the human readable field name “capital”, you will see a long URI – id of the “capital” property used in the taxonomy.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more details on using ontologies, please see the user guide page for <a class="reference internal" href="../../user_guide/guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a>.</p>
+</div>
+</section>
+<section id="disabling-skos-attributes-and-relationships">
+<h3>Disabling SKOS Attributes and Relationships<a class="headerlink" href="#disabling-skos-attributes-and-relationships" title="Permalink to this headline"></a></h3>
+<p>While editing, you may have noticed that there are a lot of fields (properties) available for concepts.
+Many of these come from SKOS.
+You may not want to use all of these properties in your taxonomy.
+While you can’t delete SKOS properties, you can disable them.
+To remove (disable) some of the fields for Geography Taxonomy or any other taxonomy that uses Geography Ontology, click on a property you want to disable e.g., <strong>editorial note</strong>.</p>
+<figure class="align-center" id="id25">
+<img alt="TopBraid EDG Disable SKOS" class="edg-figure" src="../../_images/edg_disable_skos.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Disable SKOS</strong></span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Information describing values of a property for a specific class is called a “property shape”.
+When you click on the property, the form will display its shape information – as shown above.</p>
+<p>Click on the <strong>Edit</strong> button and set <strong>deactivated</strong> to ‘true’.
+This will disable the field for all instances of Concept.</p>
+<p>If you do not see <strong>deactivated</strong> field, click on the Settings icon at the top of the form and make sure that <strong>Also show properties that have no values</strong> option is on.</p>
+<p>If you later decide to enable this property again, simply remove “true” from <strong>deactivated</strong>.</p>
+</section>
+<section id="creating-an-inferred-or-calculated-property">
+<h3>Creating an inferred or calculated property<a class="headerlink" href="#creating-an-inferred-or-calculated-property" title="Permalink to this headline"></a></h3>
+<p>You can define additional classes as sub classes of Concept.
+You can also define new properties by clicking on the + icon in the <strong>Property Group</strong> panel.
+The new classes and properties will be available to you in a taxonomy as long as your taxonomy includes the ontology defining these schema elements.</p>
+<p>Some of the properties you define can be inferred or calculated from the values of other properties.
+Let’s create such property now.</p>
+<p>Select Concept class to refresh the properties panel.
+Click the plus to add an attribute.
+Call it “number of parents”.</p>
+<figure class="align-center" id="id26">
+<img alt="TopBraid EDG Create Attribute Menu" class="edg-figure" src="../../_images/edg_create_attribute_menu.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Attribute Menu</strong></span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Selected integer as the <strong>datatype</strong>. Click <strong>Save Changes</strong>.</p>
+<figure class="align-center" id="id27">
+<img alt="TopBraid EDG Create Attribute Form" class="edg-figure" src="../../_images/edg_create_attribute_form.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Attribute Form</strong></span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click on the newly created property to refresh the form panel.</p>
+<p>Click the Modify Menu – <strong>Create property value rule from template ….</strong></p>
+<figure class="align-center" id="id28">
+<img alt="TopBraid EDG Create property value rule from template Option" class="edg-figure" src="../../_images/edg_modify_create_property.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create property value rule from template Option</strong></span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Select <strong>Number of property values</strong> template and then select a property to count the values of – “broader concept”.</p>
+<figure class="align-center" id="id29">
+<img alt="TopBraid EDG Create Property Value Rule View" class="edg-figure" src="../../_images/edg_create_property_value_rule.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Property Value Rule View</strong></span><a class="headerlink" href="#id29" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click <strong>Finish</strong>.
+Your inference rule is complete and will be displayed pictorially in the form for the property.</p>
+<figure class="align-center" id="id30">
+<img alt="TopBraid EDG Inferences Section" class="edg-figure" src="../../_images/edg_inferences.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Inferences Section</strong></span><a class="headerlink" href="#id30" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Mouse over the values label to see the textual definition of the rule.
+It is defined using W3C standard <a class="reference external" href="https://www.w3.org/TR/shacl/">SHACL</a>.
+We will not be making any changes, but any user that knows SHACL can make updates to the rule.
+Further, power users can define additional templates for the rules your organization will commonly need.</p>
+<p>Navigate to the Geography Taxonomy.
+Click on any concept.
+You should now see a new property.
+Because you have not associated it with any of the group, you will see it added at the bottom of the concept’s form in the section called <strong>Other Properties</strong>.
+If desired, you could go back to the Geo Ontology and associate the new property with one of the pre-defined groups/sections and you can even create a new group for it.
+This is done property panel.</p>
+<p>For most of the concepts, the value of the property will be “1”.
+The very top concepts like Africa will have the value “0” since they do not have any broader parents.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will not be able to edit this value since it is calculated.</p>
+</div>
+<p>You will be able to search on it – just like on any other value.
+Open the search pane, select the property from the <strong>Filters</strong> drop down and search for concepts with at least two parents.
+You will see that there are a few concepts with multiple parents.</p>
+<p>For example, Belfast appears under both, Ireland and Northern Ireland.</p>
+</section>
+<section id="learning-more">
+<h3>Learning More<a class="headerlink" href="#learning-more" title="Permalink to this headline"></a></h3>
+<p>You’re now ready to explore the <a class="reference internal" href="../../user_guide/index.html#user-guide"><span class="std std-ref">User Guide</span></a> to learn about all the other features available as you use TopBraid EDG – Vocabulary Management package.
+You’ll find out how to view reports on vocabularies, how to export them to and import them from spreadsheets and other formats, how to perform batch operations on them, and more.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="Quick Start Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../edg_business_glossaries/index.html" class="btn btn-neutral float-right" title="EDG Business Glossaries" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

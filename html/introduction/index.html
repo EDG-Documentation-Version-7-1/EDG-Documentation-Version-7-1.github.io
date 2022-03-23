@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to EDG &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quick Start Guides" href="../quick_start_guides/index.html" />
+    <link rel="prev" title="TopBraid EDG 7.2 Documentation" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to EDG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features-of-topbraid-edg">Features of TopBraid EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#available-asset-collection-types">Available Asset Collection Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edg-packages">EDG Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#licensing-and-enablement">Licensing and Enablement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edg-terminology">EDG Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#edg-assets-and-asset-collections">EDG Assets and Asset Collections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edg-general">EDG General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edg-modeling">EDG Modeling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edg-taxonomy">EDG Taxonomy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edg-teamwork">EDG Teamwork</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Introduction to EDG</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction-to-edg">
+<span id="introduction"></span><h1>Introduction to EDG<a class="headerlink" href="#introduction-to-edg" title="Permalink to this headline"></a></h1>
+<p>TopQuadrant’s TopBraid Enterprise Data Governance™ (EDG) is a flexible, Web-based solution that addresses data governance needs in
+enterprise environments with heterogeneous data stores, data processing, and applications.</p>
+<p>TopBraid EDG supports integrated data governance across the ever growing number and type of data assets
+and governance needs.
+It lets you capture business glossaries, data sources, conceptual models or ontologies, reference data,
+business applications, policies and more. Further, it lets you build relationships across all of these items –
+because connections are key to data governance.</p>
+<p>TopBraid EDG is based on a rich set of interconnected knowledge graphs expressing knowledge about how data
+is used and managed in the enterprise ecosystem.
+These integrated knowledge graphs are ready to be enriched with your enterprise specific knowledge.
+When this enrichment takes place, your enterprise is ready for implementing comprehensive data governance.</p>
+<p>TopBraid EDG is highly configurable.
+EDG defines a variety of asset types that it can govern, such as Business Term and Database Table.
+Assets based on those asset types are organized into asset collections that are also of different types,
+such as Reference Datasets and Taxonomies.
+EDG support of those asset collections is model-driven.
+When deploying EDG in your organization, the models defining asset types can easily be changed or extended.
+Additional asset collection types can also be defined.</p>
+<section id="features-of-topbraid-edg">
+<h2>Features of TopBraid EDG<a class="headerlink" href="#features-of-topbraid-edg" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p><strong>Intuitive Graphical User Interface</strong> – with auto-completion, drag and drop, rich text editing, search
+and filtering; accessibility across popular browsers –
+providing an easy-to-use environment for both business and technical stakeholders</p></li>
+<li><p><strong>Flexible data and relationship modeling</strong> – handles both simple and complex data models and their
+relationships across domains; allows modeling,
+storing and using not only identifiers, labels and codes, but all relevant associated information</p></li>
+<li><p><strong>Auditability</strong> – every change is logged and time stamped, change history can be searched, usage records
+captured where reference data is used</p></li>
+<li><p><strong>Control over versions</strong> – virtual work-in-progress copies of asset collections allow parallel development
+of versions and enable controlled publishing, review and approval workflow</p></li>
+<li><p><strong>Collaboration</strong> – through access and accountability based on roles, support for task assignments, statuses
+and issues</p></li>
+<li><p><strong>Shared semantics</strong> – providing the ability to define and share meaning of all information elements globally
+and in the context of specific use</p></li>
+<li><p><strong>Repeatability of on-boarding</strong> – capturing processes and best practices for on-boarding of external
+reference data</p></li>
+<li><p><strong>Wide and diverse distribution</strong> – support for a variety of interaction patterns (for example, batch or real-time)
+and integration approaches</p></li>
+<li><p><strong>Data quality</strong> – offering intuitive forms for creating data validation rules, but also enabling complex data
+validation rules development by expert users</p></li>
+<li><p><strong>Integration</strong> – with third party systems and <a class="reference external" href="http://www.w3.org/standards/semanticweb/data">Linked Data</a> clouds via Web Services interfaces and APIs;
+support for <a class="reference external" href="https://graphql.org/">GRAPHQL</a> making RDF data easily available to the JSON and browser ecosystems</p></li>
+<li><p><strong>Easy extensibility</strong> – configurable user interfaces, reports, meta-model, import, export, Web Services;
+add executable actions to data shapes using <span class="xref std std-ref">active_data_shapes</span> ; and more including deep customizations
+using TopQuadrant’s TopBraid platform</p></li>
+<li><p><strong>Standards</strong> – interoperability through a standards-based data representation instead of a vendor-specific
+representation with proprietary data formats; built-in support for <a class="reference external" href="http://www.w3.org/">W3C</a> (World Wide Web Consortium) standards
+for data and data model interchange using Web/Linked Data technology, such as <a class="reference external" href="http://www.w3.org/RDF/">RDF</a> , <a class="reference external" href="https://www.w3.org/TR/owl2-overview/">OWL</a>, <a class="reference external" href="http://www.w3.org/2001/sw/wiki/SPARQL">SPARQL</a>, and <a class="reference external" href="https://www.w3.org/TR/shacl/">SHACL</a>.
+See <a class="reference external" href="https://www.topquadrant.com/technology/shacl/">What is SHACL</a></p></li>
+<li><p><strong>Enterprise-readiness</strong> – scalable and robust architecture with <a class="reference internal" href="../administrator_guide/edg_installation_and_authentication/ldap_configuration.html#ldap-configuration"><span class="std std-ref">LDAP Configuration</span></a> and JMS integration</p></li>
+</ul>
+</section>
+<section id="available-asset-collection-types">
+<span id="index-0"></span><h2>Available Asset Collection Types<a class="headerlink" href="#available-asset-collection-types" title="Permalink to this headline"></a></h2>
+<p>A variety of asset collection types are available in EDG.
+They determine what kind of assets can be stored in the asset collection, what kind of metadata is captured about a collection and what functionality such as imports, exports, reports, editing applications, etc., are available for it.
+It is also possible to extend EDG by creating bespoke asset collection types.</p>
+<div class="admonition-doc-icon-topbraid-edg-assets-and-asset-collection-types admonition">
+<p class="admonition-title"><img alt="doc_icon" src="../_images/doc_icon.png" /> TopBraid EDG Assets and Asset Collection Types</p>
+<p>A brief explanation of key TopBraid EDG asset collection types is available at <a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/asset-collections/">Assets and Asset Collection Types</a></p>
+</div>
+</section>
+<section id="edg-packages">
+<h2>EDG Packages<a class="headerlink" href="#edg-packages" title="Permalink to this headline"></a></h2>
+<p>TopQuadrant recognizes that when ramping up a data governance program, different organizations may have different priorities and starting points.
+With TopBraid EDG, the organization can start incrementally.</p>
+<p>For example, an organization might start using EDG for just business glossaries or reference data or might focus on
+metadata management first.
+After the initial capability is operational, the organization can extend its data governance scope to governing
+other assets when ready to do so.</p>
+<p>To support this comprehensive but staged approach, TopBraid EDG provides focused packages, available for use as
+an initial configuration of EDG.
+Each package can be used on its own or in any combination with the other packages toward the targeted scope of
+information governance in an organization.
+Further, several add-on modules are available to extend the use of TopBraid EDG even more.</p>
+<div class="admonition-doc-icon-topbraid-edg-data-governance-packages admonition">
+<p class="admonition-title"><img alt="doc_icon" src="../_images/doc_icon.png" /> TopBraid EDG Data Governance packages</p>
+<p>Details of TopBraid EDG Data Governance packages is available at <a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a></p>
+</div>
+</section>
+<section id="licensing-and-enablement">
+<span id="index-1"></span><h2>Licensing and Enablement<a class="headerlink" href="#licensing-and-enablement" title="Permalink to this headline"></a></h2>
+<p>The availability of any asset collection is determined by what is (a) licensed and (b) configured under
+Server Administration.
+To install a license or to view the currently licensed features, see <a class="reference internal" href="../administrator_guide/edg_administration_and_configuration/product_registration.html#product-registration"><span class="std std-ref">Product Registration</span></a>.
+To configure which licensed collection types are currently enabled or disabled, see <a class="reference internal" href="../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a>.</p>
+<p>For general licensing information and available asset collections and packages, see the <a class="reference external" href="http://www.topquadrant.com">TopQuadrant Website</a>.</p>
+</section>
+<section id="edg-terminology">
+<span id="id30"></span><h2>EDG Terminology<a class="headerlink" href="#edg-terminology" title="Permalink to this headline"></a></h2>
+<section id="edg-assets-and-asset-collections">
+<h3>EDG Assets and Asset Collections<a class="headerlink" href="#edg-assets-and-asset-collections" title="Permalink to this headline"></a></h3>
+<dl>
+<dt>Asset</dt><dd><p>An asset is a technical, business, or operational resource governed by an organization using TopBraid EDG.
+Examples of assets could include databases, business applications, vocabulary terms, reference data, requirements, and other technical or enterprise resources.</p>
+</dd>
+<dt>Asset collection</dt><dd><p>Assets are organized into collections, which are stored technically as named graphs.
+You can think of collections as datasets.
+Each asset collection must have at least one manager as well as, optionally, any number of users with the edit and view privileges.
+See <span class="xref std std-ref">edg_governance_model_users_and_access</span> to understand EDG permissions system.</p>
+<p>In addition to permissions, Asset collections have a variety of other metadata such as description, subject area they belong to, etc.
+This metadata can be viewed and edited by going to the Settings tab of an asset collection or by clicking on the “home” icon in the Editor application.</p>
+<p>Collections can include each other by reference.
+When editing information in one collection, users can see and link to any information in the included collection.
+They cannot, however, delete or change any information stored in the included collection.
+Most asset collections are based on some ontology that defines schema for the data (assets) they hold.</p>
+<p>Each asset collection has exactly one type.
+It determines what kind of assets are stored in the asset collection, what kind of metadata is captured about a collection and what functionality such as imports, exports, reports, editing applications, etc., are available for it.
+TopBraid EDG includes many project types such as Glossary, Reference Dataset, Lineage Model, Ontology, etc.</p>
+<p>For a full list of asset collection types with their descriptions see <a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a>.
+Users can also create their own asset collection (project) types.</p>
+<p>Collection types available in a given installation of EDG are determined by the license and, optionally, any additional exclusions made by the EDG administrator.
+You will see all collection types available in your installation in the Navigation Bar on the left hand side of EDG pages.</p>
+</dd>
+<dt>Platform asset collections</dt><dd><p>When users start using EDG, they create their own asset collections to describe assets they want to govern with EDG.
+Platform asset collections, on the other hand, are already pre-created when EDG is installed.
+There are two platform asset collections:</p>
+<ul class="simple">
+<li><p>EDG Enumerations – stores controlled lists of values used across all asset collections e.g., a value list for statuses.
+EDG Administrators can set up these lists by going to <strong>Server Administration &gt; EDG Configuration Parameters &gt; Setup EDG Enumerations</strong>.
+For user convenience, TopBraid EDG ships with some pre-built value lists.
+These are organized into codelists stored as files in the EDG workspace.
+As par of enumerations setup, administrators can load the pre-built codes from EDG codelists or create their own preferred values.</p></li>
+<li><p>EDG Governance Model – stores information about organizational structure, roles, responsibilities and process for data governance.
+Any user with permissions to see this asset collection can access it by clicking on one of the links under the Governance Model heading in the left hand-side Navigation Bar on EDG pages.</p></li>
+</ul>
+<p>These are so-<em>singleton collections</em>.
+In a given EDG installation, there can be only one EDG Governance Model and one EDG Enumerations collection.</p>
+</dd>
+</dl>
+</section>
+<section id="edg-general">
+<h3>EDG General<a class="headerlink" href="#edg-general" title="Permalink to this headline"></a></h3>
+<dl>
+<dt>Clone</dt><dd><p>A copy of a resource with all its metadata.
+Creating and editing clones can be a useful way to create new resources with minimal data entry.</p>
+</dd>
+<dt>Dynamic Inferencing</dt><dd><p>A process by which EDG calculates “just in time” property values for properties that contain a rule as part of their property shape definition. (cf. property shape).
+If a property value is inferred, it is not editable in EDG, unless a rule only specifies a default value.
+In a latter case, the property value remains editable in EDG so that a user could replace a default.</p>
+</dd>
+<dt>EDG ontologies</dt><dd><p>Pre-built ontology models (cf. ontology) shipped with EDG that define over 100 asset types (cf. asset type) relevant to data governance.
+There is a model corresponding to nearly every asset collection type (cf. asset collection type).
+These models are stored as files in EDG workspace.
+They are customizable.
+To customize one of EDG ontologies, create an ontology in EDG; include (cf. includes) the model you want to customize; make changes and extensions.
+See Getting Started with Business Glossaries for an example of how this process works.</p>
+<p>In the Includes dialog, EDG ontologies show up with the name “EDG Shapes – &lt;asset collection name&gt;”.</p>
+</dd>
+<dt>Event</dt><dd><p>A change in data stored in TopBraid EDG that EDG is watching for and is prepared to act upon.</p>
+</dd>
+<dt>Event type</dt><dd><p>Each event has exactly one Event Type.
+Event Type formally describes what data change indicates that event has occurred and what action TopBraid EDG should take when it happens e.g., send a notification e-mail.
+TopBraid EDG pre-defines several event types. For example, a change in a working copy status.
+Users can create additional event types.</p>
+</dd>
+<dt>Impact</dt><dd><p>Impact is a reverse of Lineage (cf. lineage).
+It shows the flow of data from a data element or a dataset user is focused on to its destination in other assets in the enterprise.
+Just as lineage, impact information is presented in an interactive diagram.
+To access it, click on the asset of interest and then click on the Visualization Actions menu icon and pick Impact from the available options.</p>
+</dd>
+<dt>Includes</dt><dd><p>Asset collections can be included into each other.</p>
+<p>When collection A includes collection B (or file B), users working with A get access to all assets in B.
+However, information stored in collection B can not be modified – access to them is view-only.
+In some cases, icons displayed in the EDG UI for included resources are shaded to indicate that they are included.
+For example, when ontology A includes ontology B, classes from B are displayed with shaded icons.
+When searching within an asset collection, users can limit search to only “local assets” i.e., those that do not come from the included collections.</p>
+<p>Inclusion is accomplished by going into Settings &gt; Includes from a collection’s home page. EDG has some (configurable) rules about the types of collections that could be included into each other. Includes dialog also lets user include files that are either in RDF format or can be auto-converted by EDG on the fly e.g., spreadsheet.</p>
+</dd>
+<dt>Lineage</dt><dd><p>Data lineage of a particular data element or a dataset identifies the data’s origins and what happens to it as it goes through diverse processes from its origin to the element/dataset of interest.
+Data lineage can be captured and presented by EDG at the lowest level of data flows details – actual tables, scripts and statements.
+It can also be captured and presented at the higher, business level, connected to business terms and processes.
+And it can be rolled up and drilled down as necessarily for the different stakeholders and use cases.</p>
+<p>The simplest form of lineage information can be captured in the Data Asset Collections using “maps to” relationship.
+A more comprehensive treatment of lineage is supported by the Lineage Model asset collections.
+Lineage information is presented in an interactive diagram called LineageGram.
+To access it, click on the asset of interest and then click on the Visualization Actions menu icon and pick Lineage from the available options. Or, if your starting point is Search the EDG search results, LineageGram icon is shown next to each search result that has lineage information.</p>
+</dd>
+</dl>
+</section>
+<section id="edg-modeling">
+<h3>EDG Modeling<a class="headerlink" href="#edg-modeling" title="Permalink to this headline"></a></h3>
+<dl>
+<dt>Attribute (aka datatype property)</dt><dd><p>An attribute is a specific piece of information that you capture for an asset, such as a name or a short textual description.
+Each attribute has a range of values of some literal type (e.g., text, numbers, etc.) (cf. property, relationship).</p>
+</dd>
+<dt>Class</dt><dd><p>A resource that identifies and formally describes a set of resources that have some property characteristics in common e.g., class of databases, database tables, organizations, etc.
+The description is typically done in terms of possible properties and property values e.g., an organization may have a contact e-mail address, a database table belongs (is a table of) some database), etc.
+Resources described by a class are called class members or class instances.
+A class can also be a shape (cf. shape).</p>
+</dd>
+<dt>Constraint (aka SHACL constraint)</dt><dd><p>Part of a shape (cf. shape) that constraints what values are valid for a specific property of a given set of resource e.g., min and number of values, their type, their relationship with other values.</p>
+</dd>
+<dt>Instance (aka class instance, class member, individual)</dt><dd><p>Typically, these terms are used to refer to resources that are not part of the data schema e.g., are not classes or properties.
+While classes, properties and shapes define data schema, instances are data.</p>
+</dd>
+<dt>Node shape</dt><dd><p>A shape (cf. shape) that describes information about target resources themselves (e.g., shape of the URI) and groups together all applicable property shapes.</p>
+</dd>
+<dt>Ontology</dt><dd><p>A description of entities in some area of interest, captured using RDFS, OWL or SHACL.
+An ontology is an information model and an asset collection type in EDG.
+It contains schema elements – classes, properties, shapes and rules.
+May also contain some instances.</p>
+</dd>
+<dt>Property</dt><dd><p>An attribute or relationship associated with a given class (cf. attribute, relationship).</p>
+</dd>
+<dt>Property shape</dt><dd><p>A shape (cf. shape) that describes information about values of a specific property.
+A property shape contains one or more constraints.
+It can also contain “non constraining” information e.g., display name or calculation/inferencing rule for property values.</p>
+</dd>
+<dt>Range (of values)</dt><dd><p>A range defines what values are possible for a specific attribute or a specific relationship.
+Ranges for attributes are mainly standard XML datatypes such as string, integer and date.
+HTML datatype is also supported for storing rich text.
+Ranges for relationships are classes.
+For example, in case of the “column of” relationship between a Database Column and a Database Table, the range of relationship is the class Database Table.
+Range of values for attributes is typically specified using “datatype” constraint.
+Range of values for relationships is typically specified using “class” constraint.</p>
+</dd>
+<dt>Relationship (aka object property)</dt><dd><p>This is a directional link between exactly two resources.
+It captures how they are related to each other.
+Each relationship has a range of values (cf. property, attribute).</p>
+</dd>
+<dt>Resource</dt><dd><p>This is anything you want to capture information about using TopBraid EDG.
+Asset is a resource.
+Asset collection is a resource.
+Properties (attributes and relationships) are resources, etc.
+Each resource has a globally unique URI.
+Formally speaking, a resource is any object that is uniquely identifiable by a URI, a uniform resource identifier.
+It is used by the web infrastructure you are familiar with.
+URLs are URIs, as are e-mail addresses.</p>
+</dd>
+<dt>Shape (aka SHACL shape)</dt><dd><p>Shape describes characteristics of target resources e.g., what property (cf. property) values they may have, how their URIs may look like, etc.
+Target of a shape may be defined as all members of some class (cf. class) or as an individual resource (cf. instance) or as all resources that have any value for some specified property, etc.</p>
+<p>In EDG, classes are typically also shapes which provide a complete definition of all class properties.
+Additional shapes targeting a class are defined to provide alternative, role-specific views on data.
+For example, generally speaking, organizations can have descriptions, addresses, phone numbers, sub-organizations, organization members, etc.
+Organization class/shape will describe all these properties.
+An alternative shape may only include name, description and web address property – to provide an abridged view into the available information about an organization.</p>
+</dd>
+</dl>
+</section>
+<section id="edg-taxonomy">
+<h3>EDG Taxonomy<a class="headerlink" href="#edg-taxonomy" title="Permalink to this headline"></a></h3>
+<dl class="simple">
+<dt>Concept</dt><dd><p>The basic asset in EDG Taxonomy.
+A concept is usually known by its preferred label, and can have various kinds of metadata assigned to it.</p>
+</dd>
+<dt>Scheme</dt><dd><p>This is a set of concepts grouped together into a list or hierarchy.
+It might represent a taxonomy, a thesaurus, a code list, or any other controlled vocabulary.
+A vocabulary may be a single scheme, but because of EVN’s ability to group several vocabularies together, some may appear as multiple schemes.
+For example, you might have a taxonomy of apparel products and another of colors in which the clothing was available both displayed at the same time.</p>
+</dd>
+<dt>Taxonomy</dt><dd><p>An asset collection storing a set of business concepts described using <a class="reference external" href="https://www.w3.org/TR/skos-reference/">SKOS</a> (and optionally SKOS-XL).
+These are typically used for taxonomies, vocabularies, or subject headings that are hierarchical in nature.</p>
+</dd>
+</dl>
+</section>
+<section id="edg-teamwork">
+<h3>EDG Teamwork<a class="headerlink" href="#edg-teamwork" title="Permalink to this headline"></a></h3>
+<p>The teamwork system maintains workflows and associated working copies of asset collections, along with change history, comments and tasks.</p>
+<dl class="simple">
+<dt>Comment</dt><dd><p>An object that can be created by a user to capture input, question or an issue with an asset, an asset collection or a task.
+Even if a user doesn’t have edit privileges for an asset collection, they can still create comments about assets described in the collection.
+Comments can have statuses.</p>
+</dd>
+<dt>Teamwork permission profiles: viewer, editor, manager</dt><dd><p>Teamwork is an EDG framework that controls the access and life-cycles of its asset collections.
+The three Teamwork permission profiles: viewer, editor, and manager, provide nested levels of collection and asset functions to users (assigned as individuals or as security roles).
+For each asset collection or working copy, a user’s access is determined by the permission profile (V/E./M) assigned to them or their security role(s).
+For example, users will not see any asset collection for which they lack at least a viewer level permission.
+Editors (including managers) are able to create and modify the assets in a collection.
+Only managers will see as collection’s Manage view or be able to change permission profiles of other users.</p>
+</dd>
+<dt>Production copy</dt><dd><p>The official version of an asset collection that is currently in use (cf. working copy).</p>
+</dd>
+<dt>Task</dt><dd><p>An object that is created to capture a work item associated with an asset or an asset collection.
+A task has to have an assignee and a status.
+It may have a due date.
+It may also have comments.</p>
+</dd>
+<dt>Workflow</dt><dd><p>A process for making changes to asset information in a sandboxed environment (cf. working copy), taking these changes through any necessary review, approval and disposition.
+Workflow is defined as a set of states with actions and roles that can modify a state.</p>
+</dd>
+<dt>Workflow template</dt><dd><p>A workflow template defines a workflow, what asset collections it can be used with, what states it can go through, etc.
+EDG is shipped with a pre-built “default” workflow template.
+Users can create additional templates.</p>
+</dd>
+<dt>Working copy</dt><dd><p>This is a branched copy of a production asset collection, which isolates its editing, review, and approval activities.
+A working copy may go through a workflow approval process, after which its changes may or may not be committed back into the official production version.
+There may be multiple simultaneous working-copy instances as users in various profiles make and review changes in parallel.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="TopBraid EDG 7.2 Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../quick_start_guides/index.html" class="btn btn-neutral float-right" title="Quick Start Guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

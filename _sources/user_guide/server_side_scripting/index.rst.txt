@@ -1,0 +1,21 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _server_side_scripting_target:
+
+
+Customizing EDG Using Server-side Scripting
+===========================================
+
+
+.. include:: ./ads_scripting.rst
+.. include:: ./editor_panels_ads_scripts.rst

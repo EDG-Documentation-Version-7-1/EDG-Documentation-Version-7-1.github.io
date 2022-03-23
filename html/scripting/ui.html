@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Scripting User Interface &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Importing Data with ADS" href="importing.html" />
+    <link rel="prev" title="Introduction to ADS" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to ADS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Scripting User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#script-editor-panel">Script Editor Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#executing-scripts">Executing Scripts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#read-only-mode-versus-read-write-mode">Read-only mode versus Read/write mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#refreshing-the-api">Refreshing the API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-focusnode-variable">The focusNode variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-dash-js-scripts-from-the-form-panel">Editing dash:js scripts from the Form panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-upload-file-button">The Upload File button</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#script-results-panel">Script Results Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script-console-panel">Script Console Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script-debugger-panel">Script Debugger Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#script-api-viewer-panel">Script API Viewer Panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shape-scripts-panel">Shape Scripts Panel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">Working with Relational Databases via SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Resource Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ADS-based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shacl.html">Using ADS with SHACL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodejs.html">Using ADS from Node.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web.html">Using ADS from Web Applications and React</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>The Scripting User Interface</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="the-scripting-user-interface">
+<span id="scripting-ui"></span><h1>The Scripting User Interface<a class="headerlink" href="#the-scripting-user-interface" title="Permalink to this headline"></a></h1>
+<p>The following sections describe the ADS-related user interface components of TopBraid EDG.</p>
+<p>These script-related panels can be opened from the <em>Panels</em> button in the header of TopBraid EDG.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Over time, you may want to define and save your own layout for script development to match your typical script development workflows.</p>
+</div>
+<section id="script-editor-panel">
+<span id="scripting-script-editor-panel"></span><h2>Script Editor Panel<a class="headerlink" href="#script-editor-panel" title="Permalink to this headline"></a></h2>
+<p>The Script Editor panel is the primary place to write and execute scripts.
+It contains a powerful JavaScript editor (using Microsoft’s Monaco editor) with full syntax highlighting and similar auto-complete features that professional development tools such as VS Code have.</p>
+<figure class="align-center" id="id1">
+<img alt="Screenshot of the Script Editor panel" class="edg-figure" src="../_images/ScriptEditorPanel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script Editor panel</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In case you would like to try out the script above, open the Geography Taxonomy from the TopBraid EDG Samples and copy and paste this:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">const</span> <span class="nx">countChildren</span> <span class="o">=</span> <span class="p">(</span><span class="nx">concept</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nx">concept</span><span class="p">.</span><span class="nx">narrower</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">child</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 4</span>        <span class="nx">count</span> <span class="o">+=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1</span>
+<span class="linenos"> 5</span>    <span class="p">})</span>
+<span class="linenos"> 6</span>    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="p">}</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="kd">let</span> <span class="nx">start</span> <span class="o">=</span> <span class="ow">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">();</span>
+<span class="linenos">10</span><span class="kd">let</span> <span class="nx">html</span> <span class="o">=</span> <span class="sb">`&lt;ul&gt;`</span><span class="p">;</span>
+<span class="linenos">11</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Counting all children...&#39;</span><span class="p">);</span>
+<span class="linenos">12</span><span class="nx">skos</span><span class="p">.</span><span class="nx">everyConceptScheme</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">scheme</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">13</span>    <span class="nx">scheme</span><span class="p">.</span><span class="nx">hasTopConcept</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">root</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">14</span>        <span class="kd">let</span> <span class="nx">childCount</span> <span class="o">=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span>
+<span class="linenos">15</span>        <span class="nx">html</span> <span class="o">+=</span> <span class="sb">`&lt;li&gt;</span><span class="si">${</span><span class="nx">root</span><span class="si">}</span><span class="sb"> has </span><span class="si">${</span><span class="nx">childCount</span><span class="si">}</span><span class="sb"> narrower concepts&lt;/li&gt;`</span><span class="p">;</span>
+<span class="linenos">16</span>    <span class="p">})</span>
+<span class="linenos">17</span><span class="p">})</span>
+<span class="linenos">18</span><span class="nx">html</span> <span class="o">+=</span> <span class="sb">`&lt;/ul&gt;`</span><span class="p">;</span>
+<span class="linenos">19</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Duration: &#39;</span> <span class="o">+</span> <span class="p">(</span><span class="ow">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">getTime</span><span class="p">()</span> <span class="o">-</span> <span class="nx">start</span><span class="p">));</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="nx">graph</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">html</span><span class="p">);</span>
+</pre></div>
+</div>
+<section id="executing-scripts">
+<h3>Executing Scripts<a class="headerlink" href="#executing-scripts" title="Permalink to this headline"></a></h3>
+<p>Use the <em>Execute</em> button to run this script.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use Ctrl-Enter as a keyboard alternative for the Execute button.</p>
+</div>
+<p>If successful, this will open the <a class="reference internal" href="#scripting-script-results-panel"><span class="std std-ref">Script Results Panel</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you cannot edit the script, the administrator may have disabled using ADS for the governance role of your user account.
+On TopBraid EDG Studio, <em>you</em> are the administrator.</p>
+</div>
+<p>Alternatively, you can execute the script in debug mode, which would open the <a class="reference internal" href="#scripting-script-debugger-panel"><span class="std std-ref">Script Debugger Panel</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The button <em>Run script in debugger</em> is currently only available in TopBraid EDG Studio.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you accidentally launch a script that does not seem to terminate, try to stop it from the <em>Process Management</em> page that can be reached from the <em>Administration</em> page.
+In the worst case, restart TopBraid EDG Studio.</p>
+</div>
+</section>
+<section id="read-only-mode-versus-read-write-mode">
+<span id="scripting-readonlymode"></span><h3>Read-only mode versus Read/write mode<a class="headerlink" href="#read-only-mode-versus-read-write-mode" title="Permalink to this headline"></a></h3>
+<p>By default, the Script Editor panel will operate in read-only mode.
+In this mode the API will not support operations that would modify the data, allowing you to safely query the data without accidental damage.
+Use the <em>Allow script to make changes to the data</em> “unlock” button to switch to read/write mode.</p>
+<figure class="align-center" id="id2">
+<img alt="Switching between read-only and read/write mode" class="edg-figure" src="../_images/ScriptEditorLockButton.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Use the Unlock button to allow the script to make changes to the data</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In that mode additional functions will become available and the <em>Preview</em> button will appear, allowing you to perform a dry-run of the changes before applying them for real.</p>
+</section>
+<section id="refreshing-the-api">
+<h3>Refreshing the API<a class="headerlink" href="#refreshing-the-api" title="Permalink to this headline"></a></h3>
+<p>If someone has made changes to an Ontology, the generated ADS APIs may become out of date.
+The system does not invalidate and re-generate those APIs after each change, as this may keep the system too busy.
+Instead, use the <em>Refresh</em> button to make sure that all APIs are up to date.
+This will not immediately re-generate all APIs but reset all APIs so that they will get re-generated the next time they are requested.</p>
+<p>For typical ontologies, re-generating an API will only take in the 100s of milliseconds.</p>
+</section>
+<section id="the-focusnode-variable">
+<h3>The focusNode variable<a class="headerlink" href="#the-focusnode-variable" title="Permalink to this headline"></a></h3>
+<p>In the Script Editor panel, the special variable <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> will be pre-assigned to the asset (resource) that is currently selected on the Form panel.
+The system will try to use the best suitable JavaScript class as type for the <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> variable.
+For example, when you select <code class="code docutils literal notranslate"><span class="pre">g:Africa</span></code> (which is an RDF instance of <code class="code docutils literal notranslate"><span class="pre">g:Continent</span></code> which is a subclass of <code class="code docutils literal notranslate"><span class="pre">g:GeoConcept</span></code> which is a subclass of <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code>)
+then the variable <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> will be an instance of the JavaScript class <code class="code docutils literal notranslate"><span class="pre">g_GeoConcept</span></code> which is a subclass of <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code>:</p>
+<figure class="align-center" id="id3">
+<img alt="Illustration of how focusNode is pre-assigned in the Script Panel" class="edg-figure" src="../_images/focusNode.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The special variable focusNode will point at the currently selected asset</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The variable <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> is also used by ADS in several other places such as node expressions.
+Having it readily available in the Script Editor panel makes the testing of such ADS scripts easier.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>To bind other variables with specific RDF nodes, use something like</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">let</span> <span class="pre">myNode</span> <span class="pre">=</span> <span class="pre">graph.namedNode('http://example.org/myNode');</span></code> for a generic <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> instance</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">let</span> <span class="pre">concept</span> <span class="pre">=</span> <span class="pre">skos.asConcept('http://example.org/myConcept');</span></code> for a specific <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> instance</p></li>
+</ul>
+</div>
+</section>
+<section id="editing-dash-js-scripts-from-the-form-panel">
+<h3>Editing dash:js scripts from the Form panel<a class="headerlink" href="#editing-dash-js-scripts-from-the-form-panel" title="Permalink to this headline"></a></h3>
+<p>Many ADS scripts end up being stored as value of <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> of resources such as <a class="reference internal" href="actions.html#scripting-actions"><span class="std std-ref">Resource Actions</span></a>.
+Editing such <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> scripts on the Form panel is often not ideal because the Form panel is limited in size and cannot be used to execute scripts for testing purposes.
+To improve those editing cycles, the Script Editor panel can be used to edit such <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> scripts.</p>
+<p>Whenever the selected resource of the Form panel has a <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code>, the Script Editor panel will offer a button to edit that script.
+Once clicked, the <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> script will be copied into the Script Editor panel, where you can edit it.
+When done, you can elect to save your changes back as value of <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> of the selected resource:</p>
+<figure class="align-center" id="id4">
+<img alt="Illustration of how the Script Editor panel can be used to edit dash:js scripts of the Form panel" class="edg-figure" src="../_images/ScriptEditorLinkage.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script Editor panel is often a good place to edit `dash:js` scripts from the Form panel</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-upload-file-button">
+<h3>The Upload File button<a class="headerlink" href="#the-upload-file-button" title="Permalink to this headline"></a></h3>
+<p>The button to upload files for the Script Editor panel is described in <a class="reference internal" href="importing.html#scripting-uploaded-files"><span class="std std-ref">Working with Uploaded Files</span></a>.</p>
+</section>
+</section>
+<section id="script-results-panel">
+<span id="scripting-script-results-panel"></span><h2>Script Results Panel<a class="headerlink" href="#script-results-panel" title="Permalink to this headline"></a></h2>
+<p>The Script Results panel will automatically open when you execute a script.
+It will attempt to display a suitable rendering of the result of your script, which is usually the last JavaScript expression of your program.</p>
+<p>In the Script Editor example at the beginning of this page, the script has returned an <code class="code docutils literal notranslate"><span class="pre">rdf:HTML</span></code> literal using the function <code class="code docutils literal notranslate"><span class="pre">graph.html()</span></code>.
+For such literals, the Script Results panel will render the HTML as it would appear to end users in a web browser.</p>
+<figure class="align-center" id="id5">
+<img alt="Screenshot of the Script Results Panel" class="edg-figure" src="../_images/ScriptResultsPanel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script Results Panel displaying an HTML snippet</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Script Results panel has dedicated modes depending on what result the script returns:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">rdf:HTML</span></code> literals are rendered as HTML in the web browser</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">rdf:XMLLiteral</span></code> literals are rendered as XML source code</p></li>
+<li><p>JavaScript objects are rendered using a JSON viewer</p></li>
+<li><p>All other results are displayed using a tabular viewer, including results of SPARQL queries through <code class="code docutils literal notranslate"><span class="pre">graph.select()</span></code></p></li>
+</ul>
+<p>Alternatively, you can switch to showing the actual source code of the result with the button <em>Show raw results</em>.</p>
+<figure class="align-center" id="id6">
+<img alt="The Script Results panel showing raw results" class="edg-figure" src="../_images/ScriptResultsPanelRawResults.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script Results panel displaying the raw result of a script</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="script-console-panel">
+<span id="scripting-script-console-panel"></span><h2>Script Console Panel<a class="headerlink" href="#script-console-panel" title="Permalink to this headline"></a></h2>
+<p>The Script Console panel can be opened using the <em>Panels</em> button.
+It displays the output of calls such as <code class="code docutils literal notranslate"><span class="pre">console.log(...)</span></code> and <code class="code docutils literal notranslate"><span class="pre">console.err(...)</span></code>.
+The Script Console will accummulate all output from all scripts until the <em>Clear Console</em> button is pressed.</p>
+<figure class="align-center" id="id7">
+<img alt="A screenshot of the Script Console panel" class="edg-figure" src="../_images/ScriptConsolePanel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script Console panel can be used to inspect the output of console.log()</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The Script Console is great for debugging scripts where the <a class="reference internal" href="#scripting-script-debugger-panel"><span class="std std-ref">Script Debugger Panel</span></a> cannot be used.
+This included scripts that are executed automatically from outside of the Script Editor such as <a class="reference internal" href="../ext/points.html#ext-change-scripts"><span class="std std-ref">Change and Commit Scripts</span></a>, and outside of TopBraid EDG Studio.</p>
+</div>
+</section>
+<section id="script-debugger-panel">
+<span id="scripting-script-debugger-panel"></span><h2>Script Debugger Panel<a class="headerlink" href="#script-debugger-panel" title="Permalink to this headline"></a></h2>
+<p>The Script Debugger panel can be launched from the <a class="reference internal" href="#scripting-script-editor-panel"><span class="std std-ref">Script Editor Panel</span></a>.
+It is currently available in TopBraid Studio only because it installs some low level hooks into the GraalVM engine that may affect other scripts, and because we don’t want to have to deal with stale debugging sessions on a live production server.</p>
+<figure class="align-center" id="id8">
+<img alt="A screenshot of the Script Debugger panel" class="edg-figure" src="../_images/ScriptDebuggerPanel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script Debugger panel can be used walk through an executing script and inspect intermediate variable values</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can set and remove <em>break points</em> by clicking on the line numbers of either the Script Editor or the Script Debugger panels.</p>
+<figure class="align-center" id="id9">
+<img alt="How to set break points" class="edg-figure" src="../_images/ScriptDebuggerBreakPoint.png" />
+<figcaption>
+<p><span class="caption-text"><strong>You can set and remove break points for individual lines</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When you press the <em>Debug</em> button without setting a breakpoint first, the script will execute the first line and then stop immediately.
+Otherwise, it will execute until it reaches the first breakpoint.</p>
+<p>Whenever the script is interrupted, you can use the explorer tree on the right to inspect the current values of variables.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Variables defined through <code class="code docutils literal notranslate"><span class="pre">let</span></code> assignments on the top scope of your script will appear under <em>Global variables</em>.</p>
+</div>
+<p>The debugger has the “usual” buttons to resume, step over, step into, step out and terminate, that most developers will be familiar with.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The <em>Generated API Objects</em> and <em>System API Objects</em> sections may be useful to learn which API features are available for your current script.</p>
+</div>
+</section>
+<section id="script-api-viewer-panel">
+<span id="scripting-script-api-viewer-panel"></span><h2>Script API Viewer Panel<a class="headerlink" href="#script-api-viewer-panel" title="Permalink to this headline"></a></h2>
+<p>Like most other panels, the Script API Viewer panel can be opened from the <em>Panels</em> button.
+It shows the whole ADS API for the current asset collection, including the <a class="reference internal" href="introduction.html#scripting-core-api"><span class="std std-ref">Core API</span></a> and the <a class="reference internal" href="introduction.html#scripting-auto-generated-api"><span class="std std-ref">Auto-Generated API</span></a>.</p>
+<figure class="align-center" id="id10">
+<img alt="A screenshot of the Script API Viewer panel" class="edg-figure" src="../_images/ScriptAPIViewerPanel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script API Viewer can be used to see the whole ADS API for the current asset collection</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="shape-scripts-panel">
+<span id="scripting-shape-scripts-panel"></span><h2>Shape Scripts Panel<a class="headerlink" href="#shape-scripts-panel" title="Permalink to this headline"></a></h2>
+<p>The Shape Scripts panel has been described in <a class="reference internal" href="introduction.html#scripting-shape-scripts"><span class="std std-ref">Shape Scripts</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction to ADS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="importing.html" class="btn btn-neutral float-right" title="Importing Data with ADS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: User Directory
+
+.. _user_directory_target:
+
+User Directory
+==============
+
+The list of all users defined in the EDG system can be shown by clicking on the **Users** link in the left navigation menu.
+Each user listed can be clicked on to see their details.
+Only users that have previously logged in to EDG are listed on this page, unless LDAP is configured in Server Administration.
+For each user, the details are as listed in the following figure.
+
+.. figure:: _images/edg_user_settings_page.jpeg
+  :alt: TopBraid EDG User Settings Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG User Settings Page**
+
+* **Settings**: Non-LDAP users can define the email address that receives notifications, their name and phone number.
+  Users with Administrator privileges can edit this information for all users.
+  Language Preference is displayed based on the browser settings of the current user.
+
+* **Governance Roles**: Lists the governance roles of the selected user, if any.
+  The list displays the name of the area or asset collection (including a link to the details page) and the governance role of the user.
+
+* **Landing Page Gadget Settings**: Users can personalize their view of the EDG Home (landing) page.
+  Administrators cannot edit this for individual users, only globally through Server Administration.
+
+* **Avatar**: Clicking on the person icon in the top right will allow users (or administrators) to set a photo for the user to be used on the home page, user page, and comments.
+
+ .. note:: Due to a bug in Jena 3.15.0, EDG cannot save avatars when TopBraid EDG with Data Platform is in use.
+* **Landing Page Gadget Settings**: Users can personalize their view of the EDG landing (home) page.
+  Administrators cannot edit this for individuals, only globally through server administration.
+
+* **Avatar**: Clicking on the person icon in the top right will allow users (or administrators) to set a photo for the user.
+  This will be used on the home page, user page, and comments.
+
+ .. note:: Due to a bug in Jena 3.15.0, we are unable to save avatars if you are using TopBraid EDG with Data Platform.

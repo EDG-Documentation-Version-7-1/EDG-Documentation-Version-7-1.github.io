@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Relational Databases via SQL &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Resource Actions" href="actions.html" />
+    <link rel="prev" title="Importing Data with ADS" href="importing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">The Scripting User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Working with Relational Databases via SQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#querying-sql-databases-from-ads">Querying SQL Databases from ADS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updating-sql-databases-with-ads">Updating SQL Databases with ADS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Resource Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ADS-based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shacl.html">Using ADS with SHACL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodejs.html">Using ADS from Node.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web.html">Using ADS from Web Applications and React</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>Working with Relational Databases via SQL</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="working-with-relational-databases-via-sql">
+<span id="scripting-sql"></span><h1>Working with Relational Databases via SQL<a class="headerlink" href="#working-with-relational-databases-via-sql" title="Permalink to this headline"></a></h1>
+<p>From ADS scripts, the built-in object <code class="code docutils literal notranslate"><span class="pre">SQL</span></code> can be used to connect to relational databases through SQL.
+This may be used to implement batch importers or update scripts.
+Two functions are provided right now</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">SQL.query</span></code> for <a class="reference internal" href="#scripting-sql-query"><span class="std std-ref">Querying SQL Databases from ADS</span></a></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SQL.update</span></code> for <a class="reference internal" href="#scripting-sql-update"><span class="std std-ref">Updating SQL Databases with ADS</span></a></p></li>
+</ul>
+<section id="querying-sql-databases-from-ads">
+<span id="scripting-sql-query"></span><h2>Querying SQL Databases from ADS<a class="headerlink" href="#querying-sql-databases-from-ads" title="Permalink to this headline"></a></h2>
+<p>The following example walks through all rows of the table called <code class="code docutils literal notranslate"><span class="pre">country</span></code> in the database called <code class="code docutils literal notranslate"><span class="pre">world</span></code> and creates one instance of the RDFS class <code class="code docutils literal notranslate"><span class="pre">g:Country</span></code> for each, based on the values of the <code class="code docutils literal notranslate"><span class="pre">Code</span></code> and <code class="code docutils literal notranslate"><span class="pre">Name</span></code> columns.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">let</span> <span class="nx">conn</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;jdbc:mysql://localhost:3306/world&#39;</span><span class="p">,</span> 
+<span class="linenos"> 3</span>    <span class="nx">user</span><span class="o">:</span> <span class="s1">&#39;newuser&#39;</span><span class="p">,</span>
+<span class="linenos"> 4</span>    <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span>
+<span class="linenos"> 5</span><span class="p">}</span>
+<span class="linenos"> 6</span><span class="kd">let</span> <span class="nx">sql</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="linenos"> 7</span><span class="sb">    SELECT Code, Name</span>
+<span class="linenos"> 8</span><span class="sb">    FROM country;</span>
+<span class="linenos"> 9</span><span class="sb">`</span>
+<span class="linenos">10</span><span class="kd">let</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">SQL</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">sql</span><span class="p">);</span>
+<span class="linenos">11</span><span class="nx">results</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">row</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">12</span>    <span class="nx">g</span><span class="p">.</span><span class="nx">createCountry</span><span class="p">({</span>
+<span class="linenos">13</span>        <span class="nx">isoCountryCode3</span><span class="o">:</span> <span class="nx">row</span><span class="p">.</span><span class="nx">Code</span><span class="p">,</span>
+<span class="linenos">14</span>        <span class="nx">prefLabel</span><span class="o">:</span> <span class="nx">row</span><span class="p">.</span><span class="nx">Name</span>
+<span class="linenos">15</span>    <span class="p">})</span>
+<span class="linenos">16</span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="updating-sql-databases-with-ads">
+<span id="scripting-sql-update"></span><h2>Updating SQL Databases with ADS<a class="headerlink" href="#updating-sql-databases-with-ads" title="Permalink to this headline"></a></h2>
+<p>The following example shows the syntax of SQL update commands.
+As usual, you may want to use JavaScript string substitution to produce a suitable SQL string from your data.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">let</span> <span class="nx">conn</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;jdbc:mysql://localhost:3306/world&#39;</span><span class="p">,</span> 
+<span class="linenos">3</span>    <span class="nx">user</span><span class="o">:</span> <span class="s1">&#39;newuser&#39;</span><span class="p">,</span>
+<span class="linenos">4</span>    <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span>
+<span class="linenos">5</span><span class="p">}</span>
+<span class="linenos">6</span><span class="kd">let</span> <span class="nx">sql</span> <span class="o">=</span> <span class="sb">`</span>
+<span class="linenos">7</span><span class="sb">	DROP TABLE country;</span>
+<span class="linenos">8</span><span class="sb">`</span>
+<span class="linenos">9</span><span class="nx">SQL</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">sql</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="importing.html" class="btn btn-neutral float-left" title="Importing Data with ADS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="actions.html" class="btn btn-neutral float-right" title="Resource Actions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

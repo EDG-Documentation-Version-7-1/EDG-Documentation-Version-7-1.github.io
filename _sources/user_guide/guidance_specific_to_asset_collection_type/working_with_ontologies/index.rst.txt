@@ -1,0 +1,32 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. _working_with_ontologies_target:
+
+Working with Ontologies
+=======================
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   working_with_ontologies
+   ontology_how_to_guidance
+   shacl_enablement
+   ontology_editor_panels
+   managing_ontologies
+   exporting_ontologies
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`

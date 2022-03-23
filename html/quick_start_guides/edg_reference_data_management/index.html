@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDG Reference Data Management &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TopBraid Explorer" href="../topbraid_explorer/index.html" />
+    <link rel="prev" title="EDG Business Glossaries" href="../edg_business_glossaries/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Start Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../edg_vocabulary_management/index.html">EDG Vocabulary Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_business_glossaries/index.html">EDG Business Glossaries</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EDG Reference Data Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-this-guide">About This Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-navigation-and-editing-features">General Navigation and Editing Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-reference-data">Working with Reference Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-ontologies">Working with Ontologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workflows-collaboration-and-audit-trail">Workflows, Collaboration and Audit Trail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#search-and-query">Search and Query</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-import">Data Import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-information-governance-framework">Setting up Information Governance Framework</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#about-reference-data">About Reference Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-topbraid-edg-application">Access TopBraid EDG Application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#topbraid-edg-user-interface">TopBraid EDG User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-data-management">Reference Data Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-started-for-the-reference-data-steward">Getting Started for the Reference Data Steward</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-started-for-the-data-manager">Getting Started for the Data Manager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#getting-started-for-the-business-analyst">Getting Started for the Business Analyst</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer/index.html">TopBraid Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_geo_spatial_capabilities/index.html">Geo-spatial capabilities in TopBraid EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Quick Start Guides</a> &raquo;</li>
+      <li>EDG Reference Data Management</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="edg-reference-data-management">
+<span id="id1"></span><h1>EDG Reference Data Management<a class="headerlink" href="#edg-reference-data-management" title="Permalink to this headline"></a></h1>
+<section id="about-this-guide">
+<h2>About This Guide<a class="headerlink" href="#about-this-guide" title="Permalink to this headline"></a></h2>
+<p>This guide provides a hands-on tutorial for working with the <em>TopBraid EDG Reference Data Management</em> package.
+It walks you through a series of day to day tasks you may perform using TopBraid EDG.
+Throughout this journey, the guide offers background information and instructions on each topic.</p>
+<p>This document is organized by roles showing how:</p>
+<ul class="simple">
+<li><p>Reference Data Stewards can create and modify enterprise reference datasets and and <a class="reference external" href="https://doc.topquadrant.com/7.0/ontologies/">ontologies</a>, import reference data and manage information about it.</p></li>
+<li><p>Data Stewards can create reference datasets that reflect reference data in sources they are responsible for.
+They can then use crosswalks to align these with the enterprise reference datasets for the same entity.</p></li>
+<li><p>Data Managers can export and provision reference data for use in their applications.</p></li>
+<li><p>Business Analysts and other users can consult EDG to learn more about codes and code sets important to their work.</p></li>
+</ul>
+<p>In addition to following this guide, you may also want to watch a set of complimentary videos.
+You can watch some of these videos before doing the hands-on exercises described in the tutorial and/or come back to them at any point.</p>
+<p>We have assembled the following list of short videos for you, organizing them into topics.
+The duration of the videos varies depending on a topic, but, on average, it takes between 5 and 20 minutes to watch a video.</p>
+<section id="general-navigation-and-editing-features">
+<h3>General Navigation and Editing Features<a class="headerlink" href="#general-navigation-and-editing-features" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/navigating_in_edg/">Home Page and Navigation</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/resource_form_options/">Asset Menus and Settings</a> (uses a Reference Dataset, but Taxonomies offer the same options)</p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/panels-and-layouts-in-topbraid-edg/">Panels and Layouts</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/resource_forms_edg/">Editing Asset Information</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/data_validation_edg/">Data Validation</a></p>
+</section>
+<section id="working-with-reference-data">
+<h3>Working with Reference Data<a class="headerlink" href="#working-with-reference-data" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/creating_reference_datasets/">Creating a Reference Dataset</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/creating_crosswalk_in_topbraid_edg/">Creating a Crosswalk</a></p>
+</section>
+<section id="working-with-ontologies">
+<h3>Working with Ontologies<a class="headerlink" href="#working-with-ontologies" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/ontology_modeling_overview/">Ontology Modeling</a></p>
+</section>
+<section id="workflows-collaboration-and-audit-trail">
+<h3>Workflows, Collaboration and Audit Trail<a class="headerlink" href="#workflows-collaboration-and-audit-trail" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/change_management_workflows/">Introduction to Workflows</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/using_tasks_edg/">Working with Tasks</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/asset-lists-in-topbraid-edg/">Asset Lists</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/change-history-in-topbraid-edg/">Change History</a></p>
+</section>
+<section id="search-and-query">
+<h3>Search and Query<a class="headerlink" href="#search-and-query" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/advanced_search_taxonomies/">Searching in an Asset Collection</a> (uses a Taxonomy, but Reference Datasets offer the same options)</p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/search_the_edg/">Using Search the EDG</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/sparql-queries-in-topbraid-edg/">Building and Using SPARQL Queries and Reports</a></p>
+</section>
+<section id="data-import">
+<h3>Data Import<a class="headerlink" href="#data-import" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/import_tab_data_sheets/">Importing Tabular Spreadsheets</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/importing_hierarchies/">Importing Hierarchical Spreadsheets</a></p>
+</section>
+<section id="setting-up-information-governance-framework">
+<h3>Setting up Information Governance Framework<a class="headerlink" href="#setting-up-information-governance-framework" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/governance-areas-in-topbraid-edg/">Governance Areas</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/stewardship-as-part-of-the-governance-model-in-topbraid-edg/">Governance Roles and Stewardship</a></p>
+</section>
+</section>
+<section id="about-reference-data">
+<h2>About Reference Data<a class="headerlink" href="#about-reference-data" title="Permalink to this headline"></a></h2>
+<p>Reference data are standardized codes or data entities that are typically used by multiple applications as lists or tables.
+In fact, they are often called “code tables.”
+An individual code table may seem like a simple thing, but a well-managed collection of code tables and related reference data spread across an enterprise is a resource that can bring great value to that enterprise — or cause significant data quality problems if it is not well maintained.</p>
+<p>EDG lets you control your reference data so that you can put it to work for your organization as efficiently as possible.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For additional information on reference datasets see:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.topquadrant.com/knowledge-assets/whitepapers/">TopQuadrant white papers</a> for perspectives and details on reference data management and related topics, or</p></li>
+<li><p><a class="reference external" href="https://doc.topquadrant.com/7.0/asset-collection-guides/">Asset Collection documentation</a>.</p></li>
+</ul>
+</div>
+</section>
+<section id="access-topbraid-edg-application">
+<h2>Access TopBraid EDG Application<a class="headerlink" href="#access-topbraid-edg-application" title="Permalink to this headline"></a></h2>
+<p>To work through this guide, use a browser to access the TopBraid EDG web-application running in one of the following environments.</p>
+<ol class="arabic simple">
+<li><p>Create an EDG trial evaluation at TopQuadrant, and run EDG from the TopQuadrant servers.
+Submit an EDG evaluation request or contact TopQuadrant.</p></li>
+<li><p>Use TopBraid Composer – Maestro Edition (TBC-ME), and run its demonstration version of EDG.
+Download and install TBC-ME. If using sample data then, this will also require separate installation of the EDG samples project.</p></li>
+<li><p>Install EDG on a server accessible to your network (which could also be a local Tomcat server, via localhost).
+For a custom install, contact TopQuadrant and see EDG Server Installation and Integration.
+If using sample data, this will also require separate installation of the EDG samples project.</p></li>
+</ol>
+<p>For the TBC-ME option, launch TBC-ME and then start the demo version of EDG via the top menu: TopBraid Applications &gt; Open TopBraid EDG. Browse to <a class="reference external" href="http://localhost:8083/tbl">http://localhost:8083/tbl</a>.
+Logging in as Administrator requires no password for the demo version.
+All asset collection types are available in the demo version.</p>
+<p>For the other two options, the system administrator or TopQuadrant will provide you with a URL, a username, and a password.
+Browse to the URL and log in.
+Server licensing will determine the availability of the various asset collection types.</p>
+<section id="topbraid-edg-user-interface">
+<h3>TopBraid EDG User Interface<a class="headerlink" href="#topbraid-edg-user-interface" title="Permalink to this headline"></a></h3>
+<p>For a basic orientation to the user interface, see <a class="reference external" href="https://doc.topquadrant.com/7.0/user-interface/">EDG User Guide - UI Overview</a>.</p>
+<p>You will always see the collapsable left hand side Navigator that will help you navigate between asset collections and pages of interest.
+Menu sections in the Navigator are also collapsable and expandable.
+A “hamburger” menu button in the header offer an alternative approach to quick navigation between different glossaries.</p>
+</section>
+</section>
+<section id="reference-data-management">
+<h2>Reference Data Management<a class="headerlink" href="#reference-data-management" title="Permalink to this headline"></a></h2>
+<section id="getting-started-for-the-reference-data-steward">
+<h3>Getting Started for the Reference Data Steward<a class="headerlink" href="#getting-started-for-the-reference-data-steward" title="Permalink to this headline"></a></h3>
+<section id="reference-dataset-vs-enumeration">
+<h4>Reference Dataset vs Enumeration<a class="headerlink" href="#reference-dataset-vs-enumeration" title="Permalink to this headline"></a></h4>
+<p>TopBraid EDG offers two types of asset collections for storing reference data or codes – Reference Datasets and Enumerations.</p>
+<p>Enumerations are suitable for storing multiple, relatively small and simple codesets in a single asset collection.
+An example may be gender codes or age group codes.
+For larger and richer sets of codes, use reference datasets.</p>
+<p>With enumerations, you do not need to define an entity type in a separate ontology.
+You can simply:</p>
+<ul class="simple">
+<li><p>Create an Enumeration asset collection</p></li>
+<li><p>Define Code Sets as Enumeration classes e.g., Gender, Age Group, etc.</p></li>
+<li><p>Create enumerated values or codes for each code set</p></li>
+</ul>
+<p>The primarily advantage of using enumeration collection is that all the properties of codes are already predefined in EDG.
+You do not need to create and use a custom ontology as you would with a reference dataset.
+However, if you need to have custom properties for your code values that differ between enumerations, you should use reference datasets.
+An example, may be you want to have Location Codes that will have latitude and longitude values while Gender Codes will not have them.
+Further, all enumerations stored in a single collection share the same life cycle and stakeholder roles for updates, publishing and permissions.
+Thus, reference datasets provide more flexibility for definition and management of code sets.</p>
+<p>This guide focuses on using Reference Datasets.
+<a class="reference external" href="https://doc.topquadrant.com/7.0/enumerations/">Enumerations Guide</a> provides you with information about using enumerations.</p>
+</section>
+<section id="defining-the-structure-for-reference-dataset">
+<h4>Defining the Structure for Reference Dataset<a class="headerlink" href="#defining-the-structure-for-reference-dataset" title="Permalink to this headline"></a></h4>
+<p>Each reference dataset designates some ontology class as the dataset’s main entity, which defines the type of the dataset’s reference instances, i.e., the individual code items.</p>
+<p>Ontologies describe business entities, including entities for which you will govern reference data (codes).
+Ontologies can be thought of as a powerful and flexible way to describe data that you will need to capture.
+An ontology may contain a class (entity) such as country, product category, industry and so on.
+Each of these entities can have different fields (properties) making it easy to support different types of reference data.
+Reference datasets in TopBraid EDG are not limited to having only a handful of predefined fields such as a code and a description.
+They can have any property you may need.
+For example, a reference dataset for country codes may have properties such as the various ISO codes, capital, gross national product, and language.
+Some of these properties (called attributes) may have literal values – strings, integers, etc.
+Other properties may hold relationships or links between different entities.
+Relationships may connect entities within a reference dataset e.g., a country may be connected to a neighboring country where both countries are stored in the same dataset.
+Relationships may also link entities across reference datasets e.g., a country may be connect to a currency where currencies are stored in a reference dataset of their own.</p>
+<p>In order to create reference data, we need to first define the corresponding entity and its properties in an ontology.</p>
+<p>Select the <strong>Ontologies</strong> in the left hand side navigation menu to see the list of ontologies you have access to.
+EDG lets you create a single shared enterprise ontology or multiple ontologies (for example, per department or business area) which can, if desired, be combined with one another using the “includes” mechanism.</p>
+<p>TopBraid <a class="reference external" href="https://doc.topquadrant.com/7.0/edg-samples/">EDG Samples</a> project includes a number of sample ontologies and datasets.</p>
+<p>This tutorial uses the ontology: <em>Enterprise Ontology – Example</em>.
+To obtain it please download the <a class="reference external" href="https://doc.topquadrant.com/7.0/edg-samples/">EDG samples</a>.</p>
+<p>In this tutorial, we will be extending <em>Enterprise Ontology</em> model with definitions necessary to support a new reference dataset.
+Alternatively, a new ontology can be created.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Ontologies Table" class="edg-figure" src="../../_images/edg_ontologies_table.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Ontologies Table</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Select <em>Enterprise Ontology</em> from the table to go to an Editor page where you can perform various operations with it – make changes, import data into it, export it, etc.</p>
+<p>Users that have edit privileges can make ad-hock changes to a given ontology or dataset.
+Otherwise, they must follow a more formal process of modifying an ontology by using <strong>Workflows</strong> which will sandbox all changes into an isolated working copy until they are reviewed and approved.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://doc.topquadrant.com/7.0/workflows/">Workflow Overview</a> for details.</p>
+</div>
+<p>In this tutorial we will make the change without using a workflow.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For details on search of the settings and menu’s in EDG’s editor pages, read the <a class="reference external" href="https://doc.topquadrant.com/6.2/editor">Asset Collection Guide – Editor</a> page.</p>
+</div>
+</section>
+<section id="ontology-editor">
+<h4>Ontology Editor<a class="headerlink" href="#ontology-editor" title="Permalink to this headline"></a></h4>
+<p>You will see several panels presenting ontology content.</p>
+<p>The <a class="reference external" href="https://doc.topquadrant.com/7.0/getting-started-edg-reference-data-management/6.4/editors#Editor-class-hierarchy-panel">Class Hierarchy Panel</a>, on the top left below, shows the classes in a tree structure.
+The <a class="reference external" href="https://doc.topquadrant.com/7.0/getting-started-edg-reference-data-management/6.4/editors#Editor-property-group-panel">Property Groups Panel</a> shows the selected class’ properties (both <em>attribute/datatype</em> and <em>relationship/object</em> properties) as nodes in a tree that organizes properties into groups.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Ontology Country Example" class="edg-figure" src="../../_images/edg_ontology_country_example.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Ontology Country Example</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The colored button at the top of the class hierarchy, next to the quick search field, will create a new class <img alt="create class" src="../../_images/create_class.png" />.</p>
+<p>As shown in the screenshot above, clicking on a node in the tree in the Class Hierarchy Panel (such as the class Country), displays information about it in the <strong>Form</strong> panel to the right of the tree.
+The <strong>Edit</strong> button at the top of the View/Edit form, switches the form into edit mode, making all fields on the form editable.
+It may also display and let you edit fields that currently have no data and, thus, you will not see them in the view mode.
+Alternatively, you can edit values for each field in-line by clicking on the pencil icon that will appear when you position your mouse to the right of the field’s name.</p>
+<p>The <a class="reference external" href="https://doc.topquadrant.com/7.0/ontologies#node-shape-panel">Node Shape Panel</a>, nested behind the Class Hierarchy Panel lets you view and create node shapes.
+These model elements support creating different role-specific views into reference data.
+We will not use this feature in this guide, but you can learn about it by looking at the user guide for <a class="reference external" href="https://doc.topquadrant.com/7.0/ontologies/">Ontologies</a>.</p>
+<p>Once a class is created, you will have a few options for defining its properties:</p>
+<ol class="arabic simple">
+<li><p>Click on <strong>Modify&gt;Add property shapes from Spreadsheet columns</strong>.
+This option relies on you having a spreadsheet with reference data.
+It will define a property for each column in a tabular spreadsheet you provide.</p></li>
+<li><p>Click  on <strong>Modify&gt;Derive property shapes from instances</strong>.
+This option relies on you having RDF file with reference data e.g., countries.
+It will define a property for each data value.</p></li>
+<li><p>You may also create a new property or associate pre-existing property with a class by clicking on the plus icon in the Property Groups panel or on the plus icon next to the <strong>declared properties</strong> field on the class form.
+The guide will walk you through this approach.</p></li>
+</ol>
+</section>
+<section id="creating-a-new-class">
+<h4>Creating a New Class<a class="headerlink" href="#creating-a-new-class" title="Permalink to this headline"></a></h4>
+<p>Later in this tutorial a reference dataset of airport codes will be created and populated with data from a spreadsheet.
+The following fragment shows data in this spreadsheet:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 19%" />
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Airport Name</p></th>
+<th class="head"><p>City</p></th>
+<th class="head"><p>Country</p></th>
+<th class="head"><p>Country Code</p></th>
+<th class="head"><p>IATA Code</p></th>
+<th class="head"><p>Latitude</p></th>
+<th class="head"><p>Longitude</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Keflavik International Airport</p></td>
+<td><p>Keflavik</p></td>
+<td><p>Iceland</p></td>
+<td><p>IS</p></td>
+<td><p>KEF</p></td>
+<td><p>63.985</p></td>
+<td><p>-22.605556</p></td>
+</tr>
+<tr class="row-odd"><td><p>Patreksfjordur</p></td>
+<td><p>Patreksfjordur</p></td>
+<td><p>Iceland</p></td>
+<td><p>IS</p></td>
+<td><p>PFJ</p></td>
+<td><p>65.55583</p></td>
+<td><p>-23.965</p></td>
+</tr>
+<tr class="row-even"><td><p>Reykjavik</p></td>
+<td><p>Reykjavik</p></td>
+<td><p>Iceland</p></td>
+<td><p>IS</p></td>
+<td><p>RKV</p></td>
+<td><p>64.13</p></td>
+<td><p>-21.940556</p></td>
+</tr>
+<tr class="row-odd"><td><p>Siglufjordur</p></td>
+<td><p>Siglufjordur</p></td>
+<td><p>Iceland</p></td>
+<td><p>IS</p></td>
+<td><p>SIJ</p></td>
+<td><p>66.13333</p></td>
+<td><p>-18.916667</p></td>
+</tr>
+<tr class="row-even"><td><p>Vestmannaeyjar</p></td>
+<td><p>Vestmannaeyjar</p></td>
+<td><p>Iceland</p></td>
+<td><p>IS</p></td>
+<td><p>VEY</p></td>
+<td><p>63.4243</p></td>
+<td><p>-20.278875</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sault Ste Marie</p></td>
+<td><p>Sault Sainte Marie</p></td>
+<td><p>Canada</p></td>
+<td><p>CA</p></td>
+<td><p>YAM</p></td>
+<td><p>46.485</p></td>
+<td><p>-84.509445</p></td>
+</tr>
+<tr class="row-even"><td><p>Winnipeg St Andrews</p></td>
+<td><p>Winnipeg</p></td>
+<td><p>Canada</p></td>
+<td><p>CA</p></td>
+<td><p>YAV</p></td>
+<td><p>50.05639</p></td>
+<td><p>-97.0325</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shearwater</p></td>
+<td><p>Halifax</p></td>
+<td><p>Canada</p></td>
+<td><p>CA</p></td>
+<td><p>YAW</p></td>
+<td><p>44.63972</p></td>
+<td><p>-63.499444</p></td>
+</tr>
+<tr class="row-even"><td><p>St Anthony</p></td>
+<td><p>St. Anthony</p></td>
+<td><p>Canada</p></td>
+<td><p>CA</p></td>
+<td><p>YAY</p></td>
+<td><p>51.39194</p></td>
+<td><p>-56.083056</p></td>
+</tr>
+</tbody>
+</table>
+<p>To add model support for this information, create a class named ‘Airport’ that will be used as the main entity in the reference dataset.
+To do this, select the top-level class named ‘Thing’ in the class hierarchy, click the yellow button in the header of the <strong>Class Hierarchy</strong> pane, enter the name “Airport” and click <strong>OK</strong>.</p>
+<p>You will see the newly created class displayed in the Edit/View pane.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Ontology Airport Example" class="edg-figure" src="../../_images/edg_ontology_airport_example.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Ontology Airport Example</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If desired, provide a description of your new class in the comment field.</p>
+<section id="creating-attributes">
+<h5>Creating Attributes<a class="headerlink" href="#creating-attributes" title="Permalink to this headline"></a></h5>
+<p>We will now create the following attributes for airports.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Name (Label)</p></th>
+<th class="head"><p>Description (Comment)</p></th>
+<th class="head"><p>Datatype</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>airport city</p></td>
+<td><p>Main city served by airport. May be spelled differently from the airport’s name.</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-odd"><td><p>IATA airport code</p></td>
+<td><p>An <strong>IATA airport code</strong>, also known an <strong>IATA location identifier</strong>, <strong>IATA station code</strong> or simply a <strong>location identifier</strong>, is a three-letter code designating many airports around the world, defined by the <a class="reference external" href="http://www.iata.org/">International Air Transport Association</a> (IATA).</p></td>
+<td><p>string</p></td>
+</tr>
+<tr class="row-even"><td><p>latitude</p></td>
+<td><p>A horizontal position of a location on the Earth according to a geographical coordinate system in decimal degrees, usually to six significant digits.
+Positive latitude is above the equator (North), and negative latitude is below the equator (South).</p></td>
+<td><p>decimal</p></td>
+</tr>
+<tr class="row-odd"><td><p>longitude</p></td>
+<td><p>A vertical position of a location on the Earth according to a geographical coordinate system in decimal degrees, usually to six significant digits.
+Positive longitude is East of the prime meridian, and negative latitude is West of the prime meridian.</p></td>
+<td><p>decimal</p></td>
+</tr>
+</tbody>
+</table>
+<p>Create attributes by selecting the Airport class and clicking on the plus icon in the <strong>Property Groups</strong> panel.
+Select the green icon labeled Create Attribute.
+Alternatively, you could use the plus icon next to the <strong>declared properties</strong> field on the class form.</p>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG Ontology - Create Attritube" class="edg-figure" src="../../_images/edg_ontology_create_attribute.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Ontology - Create Attritube</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>After entering the name of the attribute, add a description, select its datatype e.g., string or decimal and click OK.
+Repeat the steps above to add more attributes.
+After adding four attributes, you will see the data entry form shown below.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Ontology Airport Attritubes" class="edg-figure" src="../../_images/edg_ontology_airport_attributes.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Ontology Airport Attritubes</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Alternatively to manually entering classes and properties, you can use <strong>Modify&gt;Add property shapes from Spreadsheet columns</strong> to automatically generate them from the first row of a tabular spreadsheet with reference data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You could also create Property Groups if want to organize fields into sections.
+Otherwise, they will all appear under the default <strong>Other Properties</strong> group.</p>
+</div>
+</section>
+<section id="creating-the-label-attribute">
+<h5>Creating the Label Attribute<a class="headerlink" href="#creating-the-label-attribute" title="Permalink to this headline"></a></h5>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have not created an attribute for the airport name.
+This is because there is a built-in attribute “label” which is intended to hold names.
+Label is always asked for in the Create New dialog for reference data codes.</p>
+</div>
+<p>Since this is a special built-in field, EDG offers one-click approach for creating it.
+Click on the Airport class.
+On the <strong>Form</strong> panel, click <strong>Modify</strong>, then <strong>Add Label Property Declaration</strong>.</p>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Ontology - Add Label Property Declaration" class="edg-figure" src="../../_images/edg_ontology_add_label_property.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Ontology - Add Label Property Declaration</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="defining-an-attribute-to-be-used-as-a-primary-key">
+<h5>Defining an Attribute to be used as a Primary Key<a class="headerlink" href="#defining-an-attribute-to-be-used-as-a-primary-key" title="Permalink to this headline"></a></h5>
+<p>TopBraid EDG will always generate a globally unique resource identifier, a URI, for each resource you create.
+There are different options for how the URI may be constructed.
+These options are described in details in the User Guide and they apply to asset collections other than reference datasets.</p>
+<p>For reference datasets, each entry in a dataset gets a URI derived from the reference data code.
+You will need to identify the field which will contain code values.
+This field is declared a primary key for the entity.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The field used as a primary key must always have unique values for a given class of codes.</p>
+</div>
+<p>We will use <em>IATA airport code</em> as the primary key.
+Click on this property and click on <strong>Edit</strong> button.
+Scroll down to the <strong>String Constraints</strong> section and type in a namespace to prepend when creating the unique identifiers.
+For example, <a class="reference external" href="http://example.org/Airport">http://example.org/Airport</a>-.</p>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG String Constraints Form" class="edg-figure" src="../../_images/edg_string_constraints.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG String Constraints Form</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click on <strong>Save Changes</strong>.</p>
+<p>As previously noted, if you do not see some of the edit fields, click on the gear icon to the right of the <strong>Save Changes</strong> button and check <strong>Also show properties that have no values</strong>.
+This option lets you toggle on and of display of the fields that have no values.</p>
+</section>
+<section id="creating-relationships">
+<h5>Creating Relationships<a class="headerlink" href="#creating-relationships" title="Permalink to this headline"></a></h5>
+<p>Next, click Create Relationship option, similarly to how you created attributes, and name the new relationship “<strong>airport country</strong>”.</p>
+<figure class="align-center" id="id12">
+<img alt="TopBraid EDG Create Relationship Dropdown" class="edg-figure" src="../../_images/edg_create_relationship_dropdown.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Relationship Dropdown</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the <strong>Description</strong> field, describe it as “A country where an airport is located”.
+Set its <strong>Type/Class of Values</strong> to the Country class.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failing to do this can cause problems when it’s time to import data into the new reference dataset.</p>
+</div>
+<p>To do so, start typing “Count” in the class field in the <strong>Type/Class of Values</strong> section and pick “Country” as it appears in the autocomplete.</p>
+<figure class="align-center" id="id13">
+<img alt="TopBraid EDG Create Relationship Form" class="edg-figure" src="../../_images/edg_create_relationship_form.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Relationship Form</strong></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Since the primary key for ISO Country is its two-character ISO country code and the spreadsheet contains this information, EDG will be able to create a relationship between airports and countries as we import spreadsheet data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While our spreadsheet data included country names, we have not created a field for the country name.
+Names and other information about countries is already maintained as part of the country codes reference dataset, and therefore including country names as part of the information about airports will redundant.</p>
+</div>
+<p>In the next step we will create a reference dataset to store reference data for the airports.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on working with ontologies, and especially creating property shapes that will let you validate reference data, see <a class="reference external" href="https://doc.topquadrant.com/7.0/ontologies/">Working with Ontologies</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Instead of creating each airport property one by one, we could have used Modify&gt;Add property shapes from Spreadsheet columns.
+This function is used to automatically create a property for each column in a spreadsheet.</p>
+</div>
+<p>We have elected not to use it and, instead, walk you through the process of creating each property one by one.</p>
+</section>
+</section>
+<section id="declaring-a-new-class-to-be-public">
+<h4>Declaring a New Class to be Public<a class="headerlink" href="#declaring-a-new-class-to-be-public" title="Permalink to this headline"></a></h4>
+<p>Next, we need to add <strong>Airport</strong> as a public class of this ontology.
+Some ontologies contain classes for which users will never store instance data.
+This happens for different reasons specific to ontology design.
+There are various ways in EDG to “hide” such classes from view.
+Classes that you want to use for reference data need to be declared “public”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a parent class is already made public, you do not need to do this for subclasses.
+They will be public as well.</p>
+</div>
+<p>First, click <strong>Enterprise Ontology Example v1.1</strong> at the top of the page and then <strong>Edit</strong>.</p>
+<figure class="align-center" id="id14">
+<img alt="TopBraid EDG Enterprise Ontology Example v1.1 - Edit" class="edg-figure" src="../../_images/edg_edit_enterprise_ontology_example_v1.1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Enterprise Ontology Example v1.1 - Edit</strong></span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Use the dropdown in the upper right of the form to select <strong>GraphQL Schema</strong>.
+Edit the “public class” field in the <strong>Shapes in GraphQL Schema</strong> section, click the plus sign and start typing <strong>Airport</strong> in the field.
+After selecting <strong>Airport</strong>, click <strong>Save Changes</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If Merged View setting is on, you will not need to switch the dropdown.</p>
+</div>
+<figure class="align-center" id="id15">
+<img alt="TopBraid EDG Enterprise Ontology Example v1.1 - Save Changes" class="edg-figure" src="../../_images/edg_save_changes_enterprise_ontology_example_v1.1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Enterprise Ontology Example v1.1 - Save Changes</strong></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If you do not see some of the edit fields, click on the gear icon to the right of the <strong>Save Changes</strong> button and check <strong>Also show properties that have no values</strong>.</p>
+</section>
+<section id="creating-reference-datasets">
+<h4>Creating Reference Datasets<a class="headerlink" href="#creating-reference-datasets" title="Permalink to this headline"></a></h4>
+<p>You can click on the <strong>+</strong> icon and select <strong>Reference Datasets</strong> in the dropdown to create a new reference dataset.</p>
+<p>However, we want to automatically associate our reference dataset with a particular “governance area”.
+We can do this by creating the dataset directly from the <strong>Governance Areas</strong> page.</p>
+<p>Governance areas group asset collections according to organization’s <em>business</em> or <em>data subject</em> concerns.
+Governance areas define a meaningful context for associated assets and help organize communities of use.
+They partition and delegate ownership and other stakeholder roles.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on the use of Governance areas to organize asset collections, enable stakeholder communities and assign governance roles, see <a class="reference external" href="https://doc.topquadrant.com/7.0/governance-model/">Governance Model</a> guide.</p>
+</div>
+<p>Select the <strong>Governance Areas</strong> link located in the left menu under <strong>Governance Model</strong> section.
+First, create a new governance area.
+Click the <strong>Create Data Subject Area</strong> button, add a data subject area with the label <code class="docutils literal notranslate"><span class="pre">Logistics</span></code>.</p>
+<figure class="align-center" id="id16">
+<img alt="TopBraid EDG Governance Areas - Logistics" class="edg-figure" src="../../_images/edg_governance_areas_logistics.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Governance Areas - Logistics</strong></span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Not every user will have permissions necessary to modify governance areas.
+If you can’t create a new governance area, contact your TopBraid EDG Administrator.</p>
+<p>Now you’re ready to create the dataset.
+Choose <strong>Reference Dataset</strong> in the <strong>Choose type</strong> dropdown for <strong>Create new</strong>.</p>
+<p>You will see the following page:</p>
+<figure class="align-center" id="id17">
+<img alt="TopBraid EDG Create New Reference Dataset Form" class="edg-figure" src="../../_images/edg_create_new_reference_dataset.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create New Reference Dataset Form</strong></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">Airports</span></code> as the label (or name) of the dataset and for its description enter: <code class="docutils literal notranslate"><span class="pre">Reference</span> <span class="pre">dataset</span> <span class="pre">of</span> <span class="pre">airports</span> <span class="pre">with</span> <span class="pre">IATA</span> <span class="pre">codes</span></code>.
+The <strong>Ontology to Include</strong> option lists ontologies that are available to base your reference dataset on.</p>
+<p>In this case, select the <code class="docutils literal notranslate"><span class="pre">Enterprise</span> <span class="pre">Ontology</span> <span class="pre">Example</span> <span class="pre">v1.1</span></code> as the ontology to use.
+It contains <code class="docutils literal notranslate"><span class="pre">Airport</span></code> class that we have defined for our airports data.
+Click <strong>Create Reference Dataset</strong>.</p>
+<p>You will see a message that the dataset was created and you will be forwarded to the <strong>Import</strong> page where you can load data.</p>
+<p>However, before we can do this, we must finish setting up the new dataset by identifying its main entity.</p>
+<section id="setting-the-main-entity">
+<h5>Setting the Main Entity<a class="headerlink" href="#setting-the-main-entity" title="Permalink to this headline"></a></h5>
+<p>Ontology used for creating a reference dataset will typically contain several classes (entity types).
+After creating a reference dataset and before starting to work with data, you need to tell TopBraid EDG what type of reference data will be in the dataset.
+This is done by identifying the “main entity” for a dataset.
+In our example, it is <code class="docutils literal notranslate"><span class="pre">Airport</span></code> class.
+There are two ways to set the main entity initially.</p>
+<ul class="simple">
+<li><p>If the main entity is unset, clicking on Codes tab to access to edit application  will trigger TopBraid EDG to ask you for the main entity class.</p></li>
+<li><p>A reference dataset’s main entity class can also be set or changed by clicking on: <strong>Manage &gt; Main Entity (Class)</strong>.</p></li>
+</ul>
+<p>We will use the first method.
+Click on <strong>Codes</strong> tab, and select <code class="docutils literal notranslate"><span class="pre">Airport</span></code>, from the provided dropdown that lists classes available in the included ontology.</p>
+<p>You will now use the <strong>Import</strong> tab to import reference data from the spreadsheet you downloaded earlier.</p>
+</section>
+</section>
+<section id="importing-reference-data">
+<h4>Importing Reference Data<a class="headerlink" href="#importing-reference-data" title="Permalink to this headline"></a></h4>
+<p>Select <strong>Import &gt; Import Spreadsheet using Pattern</strong>.
+Then click <strong>Choose File</strong> to select the spreadsheet.
+(Download the <a class="reference external" href="http://download.topquadrant.com/rdm/46doc/airports.xlsx">airports.xlsx</a> spreadsheet to get a local copy to import.)
+This page has two more fields:</p>
+<ul class="simple">
+<li><p><strong>Sheet index</strong>:
+By default this is 1.
+This spreadsheet has only has one worksheet and therefore there is no need to edit it.</p></li>
+<li><p><strong>Entity type</strong>:
+A list of classes from the included ontology (the enterprise ontology) to indicate which one is being populated by the airport.
+Ensure that <code class="docutils literal notranslate"><span class="pre">Airport</span></code> is selected.</p></li>
+</ul>
+<p>Clicking <strong>Next</strong> shows several potential patterns for spreadsheet data.
+Select <strong>No Hierarchy</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reference data supports managing hierarchies as well as flat lists.
+However, the spreadsheet we are importing does not contain any hierarchical structures.</p>
+</div>
+<p>The next step is to map the spreadsheet columns to the properties of the <code class="docutils literal notranslate"><span class="pre">Airport</span></code> class as shown below, which maps the columns to the properties defined above and to the built-in “label” property.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the image below, Altitude column was not mapped by choice – to demonstrate that only mapped columns will be imported.
+The Country column was also not mapped because it contains country names that are already managed as part of the ISO Country Codes reference dataset – also included in the samples project.</p>
+</div>
+<figure class="align-center" id="id18">
+<img alt="TopBraid EDG Import Spreadsheet" class="edg-figure" src="../../_images/edg_import_spreadsheet1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Import Spreadsheet</strong></span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id19">
+<img alt="TopBraid EDG Unique Identifiers" class="edg-figure" src="../../_images/edg_unique_identifiers.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Unique Identifiers</strong></span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click the <strong>Finish</strong> button. After data is imported, click on <strong>Codes</strong> tab to view the reference dataset.</p>
+<p>You will now be directed to the Editor page with the default layout for Reference datasets.</p>
+<figure class="align-center" id="id20">
+<img alt="TopBraid EDG Reference Datasets - Airports" class="edg-figure" src="../../_images/edg_reference_datasets_airports.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - Airports</strong></span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the Search Panel, click on <strong>Columns</strong> icon to add more columns to the table.
+Available properties will be shown in the dropdown organized into sections.
+In our case, we only have a single section – Other Properties.
+To select a property to be added as a column, simply click on it.
+It will show under Selected.
+If you decide to remove it from the view later on, follow the same approach and click to unselect.</p>
+<figure class="align-center" id="id21">
+<img alt="TopBraid EDG Reference Datasets - Add Column" class="edg-figure" src="../../_images/edg_reference_dataset_add_column.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - Add Column</strong></span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You will now see a column with IATA codes added to the table.</p>
+<p>Click on any of the table rows to display information in the <strong>Form</strong> panel which is, by default, located to the right of the table.</p>
+<figure class="align-center" id="id22">
+<img alt="TopBraid EDG Reference Datasets - View Airport" class="edg-figure" src="../../_images/edg_reference_dataset_view_airport.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - View Airport</strong></span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The table displays 100 rows at a time by default.
+This default can be changed by selecting a different value in the <strong>Show</strong> dropdown located in the bottom of the table as shown above.</p>
+<p>To save the current configuration of columns as a default for all users, click the <strong>Save</strong> icon ensuring <strong>Default</strong> is set to <strong>true</strong>.</p>
+<figure class="align-center" id="id23">
+<img alt="TopBraid EDG Save Query" class="edg-figure" src="../../_images/edg_save_query.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Save Query</strong></span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="including-other-reference-datasets">
+<h4>Including other Reference Datasets<a class="headerlink" href="#including-other-reference-datasets" title="Permalink to this headline"></a></h4>
+<p>As shown in the first screen shot of the reference data, the Airport Country column contains URIs of the countries and not their names or the code values.
+It happens, because the reference dataset describing the country codes was not added to the Airports dataset (or not included in it).
+We can fix it by clicking on <strong>Settings</strong> tab and including the appropriate reference dataset.
+Click on <strong>Includes</strong>.</p>
+<figure class="align-center" id="id24">
+<img alt="TopBraid EDG Reference Datasets - Edit Includes" class="edg-figure" src="../../_images/edg_reference_dataset_edit_includes.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - Edit Includes</strong></span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In a pop-up window, select <strong>Country Codes</strong> to include it in the Airports.
+After selecting, click on <strong>Close</strong>.
+Instances of the Country class will now be included in the Airports dataset by reference, meaning the data is not copied, but included.</p>
+<p>Referencing other dataset in this manner ensures that reference data for countries is maintained in one place.
+If a country is renamed, for example, Cape Verde, an island country in West Africa, is renamed to the Republic of Cabo Verde, the update needs to occur in only one place, the ISO Country datasets.
+All datasets that include ISO Country will see this change immediately.
+At the same time, you will have access to country names and all other information from any reference dataset that includes country codes.
+The names and other reference data for countries is stored in the Country Codes dataset.</p>
+<p>Once the reference dataset for countries is included, EDG will automatically match countries to the values of the “airport country” property.
+Click on the <strong>Codes</strong> tab.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Country codes appear in the Airport Country column instead of URIs as before.
+These codes come directly from the ISO Country dataset.</p>
+</div>
+<p>Click on any of the rows to see a View/Edit form for the selected airport.</p>
+<figure class="align-center" id="id25">
+<img alt="TopBraid EDG Reference Datasets - View Airport with Country" class="edg-figure" src="../../_images/edg_reference_dataset_view_airport_with_country.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - View Airport with Country</strong></span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The “airport country” property is now populated with a country code from the ISO Country dataset.
+Clicking on a country code link will open up a form that will show you other information about the country directly from the ISO Country dataset.</p>
+<p>You can change the “focus” of the table from Airports to other data by using the dropdown field at the top of the table.
+Currently, ‘Airport’ is chosen.
+You can switch the focus to any other class related to the Airport.
+In our case, the only related class is Country.</p>
+<p>Included data, such as the Country Codes data referenced by the Airports dataset, can be viewed and searched, but modifications to included data is not permitted.
+Included data can only be modified by editing the included referenced dataset directly.
+You will only be able to edit only codes for the main entity – or one of its subclasses.</p>
+</section>
+<section id="managing-metadata-for-a-reference-dataset">
+<h4>Managing Metadata for a Reference Dataset<a class="headerlink" href="#managing-metadata-for-a-reference-dataset" title="Permalink to this headline"></a></h4>
+<p>Reference datasets (and, in general, any asset collection in EDG) can have metadata such as name, description, status, etc.
+The metadata associated with an asset collection can be viewed and modified on the <strong>Form</strong> panel.
+When you click on the <strong>Codes</strong> tab, EDG will always display information about the dataset on a form.
+Once you navigate away from it by, for example, clicking on various assets contained in a dataset, you can come back to this view by either clicking on the home button or by clicking on the name of a reference dataset in the header bar.</p>
+<p>Use one of these options.
+Scroll down and expand the <strong>Status</strong> sub-section to see available information about Airports dataset.</p>
+<figure class="align-center" id="id26">
+<img alt="TopBraid EDG Reference Datasets - Expanded Status Section" class="edg-figure" src="../../_images/edg_reference_dataset_status_expanded.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - Expanded Status Section</strong></span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When a dataset is first created, the status is automatically set to “Under development”.
+It can be updated to reflect the current status of a dataset.</p>
+<p>TopBraid EDG is shipped with some predefined status values.
+They are configurable if your organization needs a different set of values.</p>
+<p>Click the <strong>Edit</strong> button to see more available fields.
+You may want to differentiate private (internal) reference data from public (external) such as ISO country codes.
+Set <strong>is external dataset</strong> to “true” in the <strong>Status</strong> section of the form. IATA codes are maintained by the IATA Association, which publishes updates bi-annually.
+Change the <strong>status</strong> code to Approved.
+Click <strong>Save Changes</strong> at the top of the form.</p>
+<figure class="align-center" id="id27">
+<img alt="TopBraid EDG Reference Datasets - Is External Dataset" class="edg-figure" src="../../_images/edg_reference_dataset_is_external.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - Is External Dataset</strong></span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once the status of a reference dataset is approved for use, you will no longer be able to delete codes from the dataset, but you will be able to change information about them.</p>
+<section id="documenting-a-reference-dataset-as-an-enterprise-reference-dataset">
+<h5>Documenting a Reference Dataset as an Enterprise Reference Dataset<a class="headerlink" href="#documenting-a-reference-dataset-as-an-enterprise-reference-dataset" title="Permalink to this headline"></a></h5>
+<p>Your organization may have several reference datasets in EDG that contain codes for a given entity.
+For example, you may have different existing applications and corresponding sources that already store and use airport codes.
+The goal of standing up a system for managing reference data is to achieve alignment across your existing reference data and to streamline its management.
+This alignment takes time.
+At least initially, you may have in addition to a “master” reference dataset that you want to be a definitive source of reference data for a given entity across all system, reference datasets that capture what each of your systems is using.</p>
+<p>To differentiate between your master reference dataset for airport codes and others “in situ” reference datasets, in the <strong>Status</strong> section of the form, click on <strong>Edit</strong> and find <strong>is enterprise dataset</strong> field.
+Set this flag to true and click <strong>Save Changes</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As previously noted, if you do not see this field, this may happen because it current has no values and your form settings disable empty fields.
+Click on the gear (Settings) icon to the right of the <strong>Save Changes</strong> button and check <strong>Also show properties that have no values</strong>.
+This option lets you toggle on and of display of the fields that have no values.</p>
+</div>
+<p>If another reference dataset is created for the same entity, it could be mapped to the enterprise dataset using <a class="reference external" href="https://doc.topquadrant.com/7.0/crosswalks">Crosswalks</a>.
+TopBraid EDG can auto-create crosswalks between two datasets.
+It also offers crosswalk web services to translate between codes.</p>
+</section>
+<section id="creating-reference-data-facts">
+<h5>Creating Reference Data Facts<a class="headerlink" href="#creating-reference-data-facts" title="Permalink to this headline"></a></h5>
+<p>You may want to record some additional information about this reference dataset.
+This can go into the description field.
+You can also add new metadata fields.
+And you can use a pre-build property called fact.
+To enable this property, click on <strong>Settings</strong> tab and, in the <strong>Includes</strong> dialog look for <strong>Reference Data Fact properties</strong>.
+This is a small pre-built ontology that defines a property called <em>fact</em>.
+Include it.</p>
+<p>Click on Codes to go back to the editor.
+Click on the dropdown in the upper right conner of the Airports form and switch your view to Facts.
+Enter the following “fact”:</p>
+<blockquote>
+<div><p>IATA codes should not be confused with the <a class="reference external" href="http://en.wikipedia.org/wiki/Location_identifier#FAA_identifier">FAA identifiers</a> of US airports.
+Most FAA identifiers agree with the corresponding IATA codes, but some do not, such as Saipan whose FAA identifier is GSN and its IATA code SPN, and some coincide with IATA codes of non-US airports.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The text area displayed allows rich text, including hyperlinks.
+The links above can be replaced by choosing the text to be hyperlinked, such as “Saipan”, and click the chain link in the icon box.
+Add the hyperlink to the text box that appears.</p>
+</div>
+<p>Click on the plus + icon to the left of the <strong>fact</strong> field to add an additional entry and enter this additional fact there:</p>
+<blockquote>
+<div><p>Since “Q” is used for international communications, IATA airport codes never begin with “Q”.</p>
+</div></blockquote>
+<p>Save your changes.
+The facts are now part of the metadata for the dataset and can be referenced, searched, etc.</p>
+<figure class="align-center" id="id28">
+<img alt="TopBraid EDG Reference Data Facts" class="edg-figure" src="../../_images/edg_reference_dataset_facts.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Data Facts</strong></span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can define facts at a dataset level and you could also specify them for a given code in the reference dataset.
+If you want to do the latter, you need to include in the ontology defining your main entity class the pre-built <strong>Reference Data Facts</strong> ontology and associate <em>facts</em> property with that class.</p>
+</section>
+<section id="entering-subscription-information-for-external-public-reference-data">
+<h5>Entering Subscription Information for External (public) Reference Data<a class="headerlink" href="#entering-subscription-information-for-external-public-reference-data" title="Permalink to this headline"></a></h5>
+<p>In the editor <strong>Form</strong>, click the <strong>Edit</strong> button again.
+Set “is external dataset” to true and save.
+Edit again and you will see a new sub-section on the form called <strong>Subscription</strong>;
+this is used to capture subscription-related information for external reference datasets.
+Add “IATA Association” to the “sourced from” field.
+You will only need to type the first few letters of its name, because the reference data knows that only one defined organization begins with those letters.
+Click the <strong>Save Changes</strong> button.</p>
+<figure class="align-center" id="id29">
+<img alt="TopBraid EDG Reference Datasets - Sourced From" class="edg-figure" src="../../_images/edg_reference_dataset_sourced_from.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Reference Datasets - Sourced From</strong></span><a class="headerlink" href="#id29" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>TopBraid EDG is shipped with predefined metadata fields for reference datasets.
+They are configurable if your organization needs different metadata.
+EDG is a semantic, model-based solution.
+Configuration is done using steps similar to those used to modify ontology models to accommodate new reference data.</p>
+</section>
+</section>
+<section id="assigning-access-privileges-to-other-users">
+<h4>Assigning Access Privileges to other Users<a class="headerlink" href="#assigning-access-privileges-to-other-users" title="Permalink to this headline"></a></h4>
+<p>For any asset collection in EDG, including reference datasets, a user can have one of the following permission roles:</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>see <a class="reference external" href="https://doc.topquadrant.com/7.0/users/">User permissions</a> for more information</p>
+</div>
+<ul class="simple">
+<li><p><strong>Viewer</strong>
+A Viewer can browse a dataset, viewing all the reference data (as well as any change history associated with that data) and the metadata associated with a dataset.
+A Viewer can create saved searches and export data.
+They can create and view tasks, add comments and change status of a task assigned to them.
+A viewer can also start a workflow.
+The Viewer then becomes the Manager of the working copy that is associated with the workflow.
+However, these changes will not affect the reference dataset until they are approved and committed by a user that has Editor permission for the dataset.</p></li>
+<li><p><strong>Editor</strong>
+In addition to being able to perform all activities that a Viewer can perform, an Editor can make changes to the dataset’s metadata and to the reference data itself.</p></li>
+<li><p><strong>Manager</strong>
+A Manager has the most capabilities.
+In addition to all the activities that an Editor can perform, a Manager can delete an entire dataset, they can change the default columnar view for all users and they control the access privileges that other users have over a particular dataset by assigning Manager, Editor, or Viewer permission roles to them.
+They can also reassign and change the status of all tasks, even those that are not assigned to them.
+A person who creates a reference dataset automatically becomes its Manager.</p></li>
+</ul>
+<p>To give others access to the dataset, go to the <strong>Users</strong> tab on the dataset’s home page.</p>
+<figure class="align-center" id="id30">
+<img alt="TopBraid EDG Users Tab - Airport" class="edg-figure" src="../../_images/edg_users_tab_airport.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Users Tab - Airport</strong></span><a class="headerlink" href="#id30" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Permission levels can be set for (1) individual users, (2) user security roles (e.g., from Tomcat or LDAP).
+The list of users you will see on this tab can include individual users and LDAP roles.
+A Manager can assign Manager, Editor and Viewer privileges to each user or user group.
+<strong>Users</strong> page is also used to set up <a class="reference external" href="https://doc.topquadrant.com/7.0/governance-model/">governance roles</a> (as defined in the Governance model) for individual reference datasets.
+Governance roles can also be defined at business area or data subject area a reference dataset is associated with.</p>
+<p>Governance roles provide an alternative approach to assigning permissions.
+A user has any governance role for a reference dataset (or any other asset collection), specified either directly for a dataset or in directly for a subject area the dataset belongs to, will automatically get Viewer permission.
+And you can also assign Editor and Manager permissions to governance roles.</p>
+</section>
+<section id="modifying-reference-data">
+<h4>Modifying Reference Data<a class="headerlink" href="#modifying-reference-data" title="Permalink to this headline"></a></h4>
+<p>Dominica’s main airport, the Melville Hall Airport, was just renamed to the Douglas-Charles Airport in tribute to its late prime ministers, Rosie Douglas and Pierre Charles.
+While your next bi-annual update from the IATA Association will reflect this change, you need to make it ahead of receiving the update.</p>
+<p>Click on <strong>Codes</strong> tab.
+Search for airports in Dominica by clicking on <strong>Filters</strong> icon, then selecting “airport country” field.
+Start typing “Domi..” to get the match on the official country name – “Dominica”.</p>
+<figure class="align-center" id="id31">
+<img alt="TopBraid EDG Codes Tab - Edit Melville Hall" class="edg-figure" src="../../_images/edg_codes_tab_edit_airport_melville.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Codes Tab - Edit Melville Hall</strong></span><a class="headerlink" href="#id31" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To get back the unfiltered list of all airports, click the <strong>X</strong> next to the filter.</p>
+<p>You can now change the airport name by clicking on Melville Hall, then clicking on the <strong>Edit</strong> button.</p>
+<p>When you make the change to rename its label value to “Douglas-Charles Airport”, you can check the <strong>Enter log message when submitting edits</strong> before clicking the <strong>Save Changes</strong> button if you want to include a log message about your change.</p>
+<figure class="align-center" id="id32">
+<img alt="TopBraid EDG Codes Tab - Save Changes to Melville Hall" class="edg-figure" src="../../_images/edg_codes_tab_airport_save_changes_melville_hall.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Codes Tab - Save Changes to Melville Hall</strong></span><a class="headerlink" href="#id32" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Alternatively to clicking on the <strong>Edit</strong> button, you can inline edit one field at a time.
+Mouse over the field’s value and click on a pencil icon that will appear to the left of the value.
+This will open just that field for inline editing.</p>
+<figure class="align-center" id="id33">
+<img alt="TopBraid EDG Codes Tab - Inline Edit Melville Hall" class="edg-figure" src="../../_images/edg_code_tab_airport_edit_melville_hall_inline.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Codes Tab - Inline Edit Melville Hall</strong></span><a class="headerlink" href="#id33" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>TopBraid EDG keeps a complete audit trail of all changes.
+Click the <img alt="panels" src="../../_images/panels1.png" /> dropdown located on the right upper corner of the page and drag <strong>Change History</strong> somewhere on to the page.</p>
+<figure class="align-center" id="id34">
+<img alt="TopBraid EDG Codes Tab - View History" class="edg-figure" src="../../_images/edg_airport_melville_hall_view_history.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Codes Tab - View History</strong></span><a class="headerlink" href="#id34" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Instead of using <strong>Filters</strong>, you could have also clicked on <strong>Columns</strong> icon, added the “airport country” column to the table and typed Dominica in the <strong>Search</strong> field.</p>
+<figure class="align-center" id="id35">
+<img alt="TopBraid EDG Codes Tab - Search by Column" class="edg-figure" src="../../_images/edg_codes_tab_search_by_column.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Codes Tab - Search by Column</strong></span><a class="headerlink" href="#id35" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This approach, however, may not search across all reference data.
+It will only filter within the data that has been loaded into the table.
+Data loaded into the table could be be a subset of the codes in a reference dataset.
+By default, TopBraid EDG will load 1,000 rows.
+Our airports dataset has over 5,000 entries.
+Thus, using this approach, you may not find the result you are looking for even if data exists.
+Your EDG administrator can increase the default setting to make sure that all airport data is always loaded.
+However, if you are regularly working with very large datasets that have tens or hundreds of thousands entries, making this setting too high in order to force all data to always load into the table may impact performance for large datasets.
+Using search filters is always the most reliable approach for large datasets.</p>
+<section id="creating-new-codes">
+<h5>Creating New Codes<a class="headerlink" href="#creating-new-codes" title="Permalink to this headline"></a></h5>
+<p>To create a new airport, click on the <strong>New</strong> button in the button-row on the Search Panel.</p>
+</section>
+</section>
+<section id="export-collaboration-and-other-activities">
+<h4>Export, Collaboration, and other Activities<a class="headerlink" href="#export-collaboration-and-other-activities" title="Permalink to this headline"></a></h4>
+<p>Some of the data stewards’ tasks overlap with the tasks of other users.
+For example, stewards may build exports of reference data, but so do data managers.
+These overlapping activities, including assignment of tasks and exchange of comments between users working with reference data, are covered in the Data Manager and Business Analyst sections of this Getting Started guide.</p>
+<p>In this section, we want to introduce you to creating asset lists.
+<strong>Asset Lists</strong> panel lets you create ad hoc lists.
+This may be a list of codes you want to return to later.
+It could also be a convenient way to assemble a group of codes you want to batch edit together – as a group.
+And you can also share asset lists with other colleagues.
+For example, to ask them to review some items.
+To work with asset lists, drag and drop into the page Asset List panel.
+Then, drag and drop into it items you want to add to the list.</p>
+<p>For example, let’s select some London area airports and drag and drop them into the <strong>Asset List</strong> panel.
+Click on the pencil icon to name the asset list.
+Now click on the cloud icon to the right of the pencil to share the asset list.
+Shared lists are saved to the server.
+Other users can then download the list you created and shared.</p>
+<figure class="align-center" id="id36">
+<img alt="TopBraid EDG Codes Tab - Asset List" class="edg-figure" src="../../_images/edg_codes_tab_asset_list.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Codes Tab - Asset List</strong></span><a class="headerlink" href="#id36" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h4>Creating a Crosswalk<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h4>
+<p>Some systems may use a different local set of codes for the same entity – in our case, Airport.
+In these cases, you will want to map local, in-situ codes to the enterprise reference dataset for airports.</p>
+<p>First, let’s extend the ontology by creating a new class “Local Airport”.
+Define for it an attribute “local airport code” with the string datatype.
+Make it a primary key for the class.
+Specify start of the URI pattern of your choice.</p>
+<p>Now, create a new reference dataset. Let’s assume that it is a dataset used by a hypothetical Flight Tracker application and call it <strong>Flight Tracker Airport Codes</strong>.</p>
+<p>You can create a new reference dataset from the <strong>Governance Areas</strong> page as described previously.
+Or, alternatively, click on the <strong>+</strong> button in the header or click on the <strong>Reference Datasets</strong> in the left navigation menu under Asset Collections.
+In the latter case, you will see a page listing all <strong>Reference Datasets</strong> you have access to.
+This page offers a <strong>Create New Reference Dataset</strong> link.
+When dataset is created this way, it will not be associated with any governance area.
+As shown below, you can add association to a governance area later by updating dataset’s <strong>subject area</strong> in the editor <strong>Form</strong>.</p>
+<figure class="align-center" id="id37">
+<img alt="TopBraid EDG Codes Tab - Subject Area" class="edg-figure" src="../../_images/edg_reference_dataset_subject_area.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Codes Tab - Subject Area</strong></span><a class="headerlink" href="#id37" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>After creating the dataset, click on <strong>Codes</strong> tab.
+When asked, set main entity to Local Airport and click on <strong>Continue</strong>.
+Create a few New York area airports using data from the table below.</p>
+<table class="docutils align-center">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Local Airport</p></th>
+<th class="head"><p>Local Code</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>La Guardia</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>JFK</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>Westchester County</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Newark</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>Islip</p></td>
+<td><p>5</p></td>
+</tr>
+</tbody>
+</table>
+<p>Create a new Crosswalk from the Flight Tracker Airports to the enterprise reference dataset Airports.
+As with any asset collection creation, you have the option of using the <strong>+</strong> icon in the header or clicking on the <strong>Crosswalks</strong> in the left side Navigator panel and then using <strong>Create New Crosswalk</strong> link.</p>
+<p>There is also create option that is specific to crosswalks.
+Click on <strong>Available Crosswalks</strong> panel.
+If you do not see it, click on the <strong>Panels</strong> button and drag and drop it on the page.</p>
+<p>Now click on <strong>Create New Crosswalk</strong>.</p>
+<figure class="align-center" id="id38">
+<img alt="TopBraid EDG Available Crosswalks" class="edg-figure" src="../../_images/edg_available_crosswalks.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Available Crosswalks</strong></span><a class="headerlink" href="#id38" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Define the crosswalk as shown in the image below.
+Click <strong>Finish</strong>.</p>
+<figure class="align-center" id="id39">
+<img alt="TopBraid EDG Create New Crosswalk Form" class="edg-figure" src="../../_images/edg_create_new_crosswalk.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create New Crosswalk Form</strong></span><a class="headerlink" href="#id39" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can now map two sets of airport codes manually or automatically.
+TopBraid EDG supports many to many mappings.
+Click on <strong>Mappings</strong> to view the crosswalk.
+Initially, it has no mappings.
+To map manually, click on a row and start typing in the <strong>Match</strong> column in the form.</p>
+<figure class="align-center" id="id40">
+<img alt="TopBraid EDG Flight Tracker Mappings" class="edg-figure" src="../../_images/edg_flight_tracker_mappings.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Flight Tracker Mappings</strong></span><a class="headerlink" href="#id40" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Autocomplete list will appear.
+Select your choice from the dropdown and click on <strong>Add Match</strong>.</p>
+<figure class="align-center" id="id41">
+<img alt="TopBraid EDG Flight Tracker Mappings - JFK" class="edg-figure" src="../../_images/edg_flight_tracker_mappings_jfk.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Flight Tracker Mappings - JFK</strong></span><a class="headerlink" href="#id41" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To auto-map select <strong>Generate Mappings</strong> button.</p>
+<p>TopBraid EDG will generate some suggested mappings for you based on the airport names.
+Move the confidence level to 50% in the slider to filter out unlikely suggestions.</p>
+<figure class="align-center" id="id42">
+<img alt="TopBraid EDG Flight Tracker Generate Mappings" class="edg-figure" src="../../_images/edg_flight_tracker_generate_mappings.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Flight Tracker Generate Mappings</strong></span><a class="headerlink" href="#id42" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can now accept suggestions one by one or move the confidence level even higher to let’s say 70%, accept all top suggestions and then individually pick any lower confidence suggestions you want to apply.
+From the generated list, we want to accept La Guardia mapping, Newark Liberty mapping and Westchester Co mapping.
+The official name of the Islip airport on Long Island is Long Island MacArthur, so it was not found.
+Add this mapping manually.
+Your crosswalk should now look as follows:</p>
+<figure class="align-center" id="id43">
+<img alt="TopBraid EDG Flight Tracker Mapped" class="edg-figure" src="../../_images/edg_flight_tracker_mapped.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Flight Tracker Mapped</strong></span><a class="headerlink" href="#id43" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To see more information about the mapped airports including their IATA codes, you can click on a row.
+The form will open in the <strong>Form</strong> panel.
+Click on the arrow next to the airport.</p>
+<figure class="align-center" id="id44">
+<img alt="TopBraid EDG Flight Tracker Mapped - Airport Info" class="edg-figure" src="../../_images/edg_flight_tracker_mapped_airport_info.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Flight Tracker Mapped - Airport Info</strong></span><a class="headerlink" href="#id44" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more on working with crosswalks, see <a class="reference external" href="https://doc.topquadrant.com/7.0/crosswalks/">Crosswalk User Guide</a> pages.</p>
+</div>
+</section>
+<section id="documenting-the-use-of-a-reference-dataset">
+<h4>Documenting the Use of a Reference Dataset<a class="headerlink" href="#documenting-the-use-of-a-reference-dataset" title="Permalink to this headline"></a></h4>
+<p>If you are using TopBraid EDG for Metadata Management together with TopBraid EDG-RDM, you can document the use of a reference dataset in your applications catalog, data assets catalog and/or business glossary.
+See relevant User Guides for more details.</p>
+</section>
+</section>
+<section id="getting-started-for-the-data-manager">
+<h3>Getting Started for the Data Manager<a class="headerlink" href="#getting-started-for-the-data-manager" title="Permalink to this headline"></a></h3>
+<p>While this section can serve as a standalone tutorial, it assumes that all steps described in the Getting Started for the Data Steward section has already been completed.
+The Airports reference dataset has been created and populated with data and you have access to it.</p>
+<section id="defining-reference-data-export">
+<h4>Defining Reference Data Export<a class="headerlink" href="#defining-reference-data-export" title="Permalink to this headline"></a></h4>
+<p>As a data manager, you may need to distribute reference data for use in your data source.
+Export is one way of doing this.
+Reference data can be exported in full or as subsets of data.
+After finding the reference dataset you need, click the dataset’s <strong>Export</strong> tab to view the available export options:</p>
+<ul class="simple">
+<li><p>RDF export of the entire dataset – with a choice of serializations.
+Select a format and note the URL in the browser – this is the URL you will be able to use in a service call for executing this export programmatically</p></li>
+<li><p>GraphQL exports – users can specify GraphQL queries to get exactly the data they need.
+TopBraid EDG offers extended implementation of GraphQL to enable filtering of results.
+See TopQuadrant’s <a class="reference external" href="https://www.topquadrant.com/technology/graphql/">GraphQL web page</a> for links to detailed documentation.</p></li>
+</ul>
+<p>Click on the <strong>Codes</strong> tab.
+You will also see Export options in the Search panel.
+Different export formats can be chosen by clicking on the <strong>Export</strong> icon.
+Available formats include Excel, CSV, TSV, and JSON.</p>
+<figure class="align-center" id="id45">
+<img alt="TopBraid EDG Export Saved Search Results" class="edg-figure" src="../../_images/edg_export_saved_search_results.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export Saved Search Results</strong></span><a class="headerlink" href="#id45" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Add columns the following columns to the search results table: IATA code, airport city and country.
+Click on the <strong>Filter</strong> icon and select airport country column.
+Start typing “United” in the airport country field and pick “United States of America” from the autocomplete.
+Results will appear in the grid after the entry is picked.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://doc.topquadrant.com/7.0/editor/">Searching in the editor</a> for more information on specifying search criteria.</p>
+</div>
+<p>Save the search by clicking the <strong>Save</strong> icon above the filter and give your search a name such as “US airports”.</p>
+<p>Open the <strong>Search Library</strong> panel by clicking the <img alt="panels" src="../../_images/panels1.png" /> dropdown located on the right upper corner of the page and drag <strong>Search Library</strong> somewhere to the page.
+Selecting a saved search from the library populates your search criteria (filters) as specified by the selected search, and you can then click the <strong>Run</strong> button to re-run the saved search.</p>
+<p>Saved searches are web services that you can use to automate distribution of reference data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each saved search in the library has a <strong>Service URL</strong> column that can be used as a RESTful web service call to invoke the search.</p>
+</div>
+<figure class="align-center" id="id46">
+<img alt="TopBraid EDG Load Saved Search" class="edg-figure" src="../../_images/edg_load_saved_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Load Saved Search</strong></span><a class="headerlink" href="#id46" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Another option for defining exports is by using SPARQL.
+From the <strong>Layouts</strong> menu chose <strong>SPARQL</strong> layout.
+This will display a view that shows the SPARQL Query, SPARQL Library and SPARQL Results panels along with the Form panel.</p>
+<p>Creating SPARQL queries requires knowledge of the <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL query language</a>.
+If you are new to SPARQL, you may also want to check out this <a class="reference external" href="https://jena.apache.org/tutorials/sparql.html">tutorial</a>.
+You can use the SPARQL panel to define, test and save your queries.
+Export formats for these queries include CSV, TSV, JSON and XML.</p>
+<p>Queries can be saved by giving them a name.
+Just as with the saved searches, saved queries have a service URL. In addition to the regular queries, you can also create parametrized queries by using “$” instead of “?” in front of the parameter name.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://doc.topquadrant.com/7.0/editor/#SPARQL_Query_Panel">SPARQL Query Panel</a> for more information.</p>
+</div>
+</section>
+<section id="using-pre-built-topbraid-edg-rdm-web-services">
+<h4>Using Pre-built TopBraid EDG-RDM Web Services<a class="headerlink" href="#using-pre-built-topbraid-edg-rdm-web-services" title="Permalink to this headline"></a></h4>
+<p>TopBraid EDG includes pre-built services for validating your locally stored reference data against the datasets managed by EDG.
+It also includes crosswalk services for translating from one set of codes to another set of mapped (cross-walked codes).</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference external" href="https://doc.topquadrant.com/7.0/integrating-external-systems-with-edg/#Pre-built_RESTful_Web_Services">Development Guide</a> for more details on how to use these services.</p>
+</div>
+<p>Relevant services will be listed on the <strong>Server Administration -&gt; Available Web Services</strong> page.
+Select Compliance Services, Reference Datasets and/or Crosswalk Modules to see pre-built services that are likely to be useful for working with reference datasets.</p>
+</section>
+</section>
+<section id="getting-started-for-the-business-analyst">
+<h3>Getting Started for the Business Analyst<a class="headerlink" href="#getting-started-for-the-business-analyst" title="Permalink to this headline"></a></h3>
+<p>While this section can serve as a standalone tutorial, it assumes that all steps described in the Getting Started for the Data Steward section has already been completed.
+The Airports reference dataset has been created and populated with data and you have access to it.</p>
+<section id="finding-a-reference-dataset">
+<h4>Finding a Reference Dataset<a class="headerlink" href="#finding-a-reference-dataset" title="Permalink to this headline"></a></h4>
+<p>When you click on the <strong>Reference Datasets</strong> link in the left hand side navigator, you will see a table listing reference datasets you have access to.
+This list can be long, especially in large organizations with lots of different reference data.</p>
+<p>Table displaying datasets is sortable.
+Click on any of the columns to sort by the subject area a dataset belongs to, creator, date of creation, user that last updated it, update date, and main entity.</p>
+<p>Further, you can filter the table by typing in the <strong>Refine</strong> field.
+The text string entered will be matched against the information in all columns.</p>
+<p>If you know of the reference datasets in your TopBraid EDG system that do not appear, you might not have the appropriate viewing or editing privileges for them.
+Each asset collection in EDG requires a manager to provide access by setting you (or your security role) as a viewer, at least.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See the <a class="reference external" href="https://doc.topquadrant.com/7.0/users/">User Assignment</a> documentation for details.</p>
+</div>
+</section>
+<section id="finding-a-code">
+<h4>Finding a Code<a class="headerlink" href="#finding-a-code" title="Permalink to this headline"></a></h4>
+<p>To find a specific code, go to <a class="reference external" href="https://doc.topquadrant.com/7.0/find-code/">Find Code</a> in the left hand side navigator.</p>
+<p>You can also use Search the EDG facility as described in the <a class="reference external" href="https://doc.topquadrant.com/7.0/getting-started-edg-business-glossaries/">Getting Started with Business Glossaries</a>.</p>
+</section>
+<section id="viewing-datasets-metadata">
+<h4>Viewing Dataset’s Metadata<a class="headerlink" href="#viewing-datasets-metadata" title="Permalink to this headline"></a></h4>
+<p>The editor form contains descriptive and contextual information about the dataset, grouped into sub-sections.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The empty sub-sections might not be displayed until the form is placed into <strong>Edit</strong> mode.</p>
+</div>
+<p>Also, some “dependent” (variant) sections might not appear unless certain conditions apply, e.g., setting <strong>Status &gt; is external dataset &gt;</strong> <em>true</em>, identifies a reference dataset as external/public which makes available the <strong>Subscription</strong> section with associated fields describing the source of public reference data and how and when it gets updated.
+The Property Definition (Semantic Analysis) section has a field-by-field description of each field in the dataset’s <em>main entity</em> class.</p>
+</section>
+<section id="using-reference-dataset-and-data-facts">
+<h4>Using Reference Dataset and Data Facts<a class="headerlink" href="#using-reference-dataset-and-data-facts" title="Permalink to this headline"></a></h4>
+<p>As a Business Analyst you may have a report that needs to include a data feed that uses FAA airport identifiers.
+Reviewing the data, the FAA identifiers in the data seem to match the IATA codes, but you want to double-check that this would correctly integrate with the rest of your data which uses IATA codes.</p>
+<p>Expand Reference Dataset Facts sub-section of the <strong>Facts Shape</strong> section of the form.
+You will learn that while many FAA identifiers are identical with IATA codes, there are also differences.
+Assuming that these are the same codes would have let to errors in the integrated reports.
+To correctly integrate data, you should request a steward to build the crosswalk between the two sets of codes.</p>
+</section>
+<section id="creating-tasks-and-asking-questions-about-a-code">
+<h4>Creating Tasks and asking Questions about a Code<a class="headerlink" href="#creating-tasks-and-asking-questions-about-a-code" title="Permalink to this headline"></a></h4>
+<p>You may want to ask the reference data governance team to add FAA identifiers to the reference dataset because you believe this information will be useful not only for your immediate task, but for other applications and, should therefore be managed with the rest of the reference data.</p>
+<p>Reference datasets let you log requests and questions in a form of Tasks.
+Tasks can be associated with an individual code or with the entire dataset.
+To create a task for the entire dataset, go to the <strong>Tasks</strong> tab for a dataset, click the <strong>Create new task</strong> button and enter:</p>
+<blockquote>
+<div><p>“Most of my data is coded with IATA codes, but I am starting to integrate new data feeds that use FAA identifiers. Please expand the dataset to include FAA identifiers.”</p>
+</div></blockquote>
+<p>You can select which user to assign the task to. By default it will be assigned to the dataset’s manager.
+Click the <strong>Create Task</strong> button.</p>
+<p>The task is now displayed in the tab.
+Tasks can be filtered by assignee and by status.
+There is a <strong>Comments</strong> section below <strong>Summary</strong> that lets users post responses or ask for additional information.</p>
+<p>To create a task for a specific airport, click <strong>Codes</strong>, select the code you want to associate a task with and click on the <strong>Explore</strong> icon at the top of the form.</p>
+<figure class="align-center" id="id47">
+<img alt="TopBraid EDG Explore - Show Tasks" class="edg-figure" src="../../_images/edg_explore_show_tasks.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Explore - Show Tasks</strong></span><a class="headerlink" href="#id47" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="next-steps">
+<h3>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h3>
+<p>You are now ready to explore the <a class="reference external" href="https://doc.topquadrant.com/7.0/asset-collection-guides/">Asset Collection Guide</a> to learn more about the many capabilities of TopBraid EDG, including workflows for team collaboration, importing more complex spreadsheets, and more.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../edg_business_glossaries/index.html" class="btn btn-neutral float-left" title="EDG Business Glossaries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../topbraid_explorer/index.html" class="btn btn-neutral float-right" title="TopBraid Explorer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

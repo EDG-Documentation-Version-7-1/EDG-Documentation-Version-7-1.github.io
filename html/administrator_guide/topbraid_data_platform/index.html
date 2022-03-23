@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopBraid Data Platform &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Auto Classifier Installation" href="../auto_classifier_installation/index.html" />
+    <link rel="prev" title="Development and QA" href="../edg_administration_and_configuration/development_and_qa.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_installation_and_authentication/index.html">EDG Installation and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TopBraid Data Platform</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#obtaining-the-software">Obtaining the Software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-coordinator-requirements">Data Coordinator Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edg-failover-configuration">EDG Failover Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-rdf-patch">Example RDF Patch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-data-platform-connector-file">Example Data Platform connector file.</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#patches-in-edg">Patches in EDG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verify-log-operation">Verify Log Operation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-platform-setup">Data Platform Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#file-based-persistent-patch-storage">File-based persistent patch storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-platform-default-data-store-steps">Data Platform default data store steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#run-the-patch-log-server">Run the patch log server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-coordinator-outages">Data Coordinator Outages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-restore">Backup &amp; Restore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#overview">Overview</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+      <li>TopBraid Data Platform</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="topbraid-data-platform">
+<span id="index-0"></span><span id="id1"></span><h1>TopBraid Data Platform<a class="headerlink" href="#topbraid-data-platform" title="Permalink to this headline"></a></h1>
+<p>The TopBraid Data Platform is a high availability solution for TopBraid EDG servers.
+It enables continuous operation of business functions by replicating data across a cluster of EDG servers.
+Each EDG is kept up to date and server can respond to a client/application request.
+Together with a load balancer to direct requests, user and application access to the EDG data remains available even if some of the servers are offline.</p>
+<p>This availability is achieved by having a cluster of EDG servers communicating with a data coordinator (DC) server that receives changes from any clustered server whenever it has updates.
+The DC server propagates the changes to all other EDG servers, keeping them all up-to-date.
+Additionally, whenever a new EDG server joins the cluster, it is first brought up-to-date before it starts servicing user/application requests.
+Each EDG server keeps a local, persistent cache of application data so that start-up only involves applying changes missed by that server.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Data Coordinator Server Block Diagram" class="edg-figure-m" src="../../_images/edg_dc_server_block_diagram.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Data Coordinator Server Block Diagram</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p id="index-1">Each EDG or EDG Explorer server has its own copy of a database of all RDF graphs managed by the Data Platform.
+When changes to the data are made, the changes are recorded locally as <a class="reference external" href="https://afs.github.io/rdf-delta/rdf-patch.html">RDF Patches</a>.</p>
+<p>At the end of the operation (the end of the HTTP request), any changes are sent to the Data Coordinator and made safe.
+When the patches are confirmed to be safe, the EDG server triple store declares the request has committed and responds to the HTTP request.
+It is the state of the RDF Patch Log that determines the state of the EDG server for Data Platform backed graphs.</p>
+<p>When operations arrive at EDG server, the EDG server checks that its local database is up-to-date and, if it is not, fetched patched from the Data Coordinator and applies them to make sure it is at the latest version.</p>
+<p>The Data Coordinator can be a single machine, with file-backed persistence or a cluster of servers with storage in a cloud object store.
+There are tradeoffs in complexity of operation as discussed below.</p>
+<p>The TopBraid Data Platform is based on the open source (Apache License) <a class="reference external" href="https://afs.github.io/rdf-delta/">RDF Delta</a> system.</p>
+<section id="obtaining-the-software">
+<h2>Obtaining the Software<a class="headerlink" href="#obtaining-the-software" title="Permalink to this headline"></a></h2>
+<p>The Data Coordinator (the patch log server) can be downloaded from:</p>
+<p><a class="reference external" href="https://download.topquadrant.com/dp/">https://download.topquadrant.com/dp/</a></p>
+<p>EDG server and EDG explorer already have the data platform client software included and no extra software or is required for EDG.
+You must purchase a license to run Data Platform from TopQuadrant.
+You will then be sent the appropriate number of licenses for your EDG installations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The version corresponding to the EDG version as given in the table on the download page must be used.</p>
+</div>
+</section>
+<section id="data-coordinator-requirements">
+<h2>Data Coordinator Requirements<a class="headerlink" href="#data-coordinator-requirements" title="Permalink to this headline"></a></h2>
+<p>The DC server is a Java webserver process that coordinates changes across a cluster of EDG servers.
+For production use, it should be run on a machine separated from all of the clustered EDG machines.
+For development and experimentation, it can be run on a shared machine.</p>
+<p>The DC server stores patches on-disk.</p>
+<p>The disk storage must be backed-up, which can be done by file backup on a live server.</p>
+<p>The robustness of the system is determined by the robustness of the file storage so choosing local disk in the DC-server is limiting.</p>
+<p>A minimum of 8GB of RAM are required.</p>
+<p>It’s imperative that monitoring for low memory and disk space are implemented.</p>
+</section>
+<section id="edg-failover-configuration">
+<h2>EDG Failover Configuration<a class="headerlink" href="#edg-failover-configuration" title="Permalink to this headline"></a></h2>
+<p>In a high-availability configuration, two or more EDG servers provide the service.
+Each has a complete copy of the replicated graphs.</p>
+<p>Typically, a deployment will put a load balancer in front of the two servers so that the clients (web browsers or other applications) use the same URL to access either server.
+It also allows a deployment to move EDG servers between physical hardware for maintenance and system upgrade.</p>
+<p>There are two choices for Patch Log Server: either run with a file-backed single server or run with replicated servers for continuous operation.</p>
+<p>The file-based patch log server can use any OS-supported filesystem – local storage or remote disk-array and the reliability and durability of files written are determined by the choice of filesystem.
+If the single server style is used, then operation is interrupted if the patch log server is unavailable.
+The EDG servers keep running but will be unable to update data until the patch log server restarts.
+Patch log server startup is very fast.
+There is no need to restart EDG servers.</p>
+<p>The advantage is the simplicity of operation so there is a tradeoff for small deployments of simplicity and continuous operation.</p>
+<p>For continuous operation, three or more patch log servers run, on separate hardware; the system uses <a class="reference external" href="https://zookeeper.apache.org/">Apache Zookeeper</a> to manage a system wide database of the patch state of the deployment.
+Storage of patches is in an object store, Amazon S3.
+There are publicly available adapters to provide the Amazon S3 API over other storage choices such as Apache Cassandra.</p>
+</section>
+<section id="example-rdf-patch">
+<h2>Example RDF Patch<a class="headerlink" href="#example-rdf-patch" title="Permalink to this headline"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>H id &lt;uuid:6e0288f5-ed79-4ab7-b4cc-8386ee32fadf&gt; .
+H prev &lt;uuid:3e346531-777e-4169-abcd-284a7a5b22ac&gt; .
+TX .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/shacl#NodeShape&gt; .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2002/07/owl#Class&gt; .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf&gt; &lt;http://www.w3.org/2002/07/owl#Thing&gt; .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;SubClass&quot; .
+TC .
+</pre></div>
+</div>
+</section>
+<section id="example-data-platform-connector-file">
+<h2>Example Data Platform connector file.<a class="headerlink" href="#example-data-platform-connector-file" title="Permalink to this headline"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># baseURI: urn:x-evn-master:ontconfig
+# imports: http://topbraid.org/sparqlmotionlib
+@prefix dp: &lt;http://org.topbraid/dataplatform#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix sm: &lt;http://topbraid.org/sparqlmotion#&gt; .
+@prefix sml: &lt;http://topbraid.org/sparqlmotionlib#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+&lt;urn:x-evn-master:ont&gt; a dp:Graph ;
+    dp:coordinator &quot;http://localhost:1066/&quot; ;
+    dp:datasource &quot;ont&quot; ;
+    dp:localData &quot;ont/data&quot; ;
+    dp:localDataLocation &quot;/home/afs/TQ/EDG/TBS/build/workspaces/TBCME/Zone/ont/data&quot; ;
+    sml:baseURI &quot;urn:x-evn-master:ont&quot; ;
+    sml:graphName &quot;urn:x-evn-master:ont&quot; ;
+    sml:imports () ;
+    .
+
+&lt;urn:x-evn-master:ontconfig&gt; a owl:Ontology ;
+    owl:imports &lt;http://topbraid.org/sparqlmotionlib&gt; ;
+    .
+</pre></div>
+</div>
+<section id="patches-in-edg">
+<h3>Patches in EDG<a class="headerlink" href="#patches-in-edg" title="Permalink to this headline"></a></h3>
+<p>Once a collection is created in EDG, a set of patch files will be created in the Data Coordinator.</p>
+<p>Changes to the collection will be recorded in the patch log.
+<a class="reference external" href="https://afs.github.io/rdf-delta/rdf-patch.html">Patches</a> are handled by the system and not displayed to the user but here is an example patch creating a new subclass in an ontology:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>H id &lt;uuid:6e0288f5-ed79-4ab7-b4cc-8386ee32fadf&gt; .
+H prev &lt;uuid:3e346531-777e-4169-abcd-284a7a5b22ac&gt; .
+TX .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/ns/shacl#NodeShape&gt; .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&gt; &lt;http://www.w3.org/2002/07/owl#Class&gt; .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/2000/01/rdf-schema#subClassOf&gt; &lt;http://www.w3.org/2002/07/owl#Thing&gt; .
+A &lt;http://example.org/ontologies/ont#SubClass&gt; &lt;http://www.w3.org/2000/01/rdf-schema#label&gt; &quot;SubClass&quot; .
+TC .
+</pre></div>
+</div>
+</section>
+<section id="verify-log-operation">
+<h3>Verify Log Operation<a class="headerlink" href="#verify-log-operation" title="Permalink to this headline"></a></h3>
+<p>To illustrate that the EDG server is indeed running with the Data Platform, stop TopBraid Composer, restart with a clean workspace, and restart EDG “personal edition”.
+If running EDG in Tomcat, stop Tomcat, delete the following directories and files, or completely delete the EDG workspace as if reinstalled:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;Workspace&gt;/Zone/ont/
+&lt;Workspace&gt;/Zone/ont.tch/
+&lt;Workspace&gt;Repositories/ont.dpc
+&lt;Workspace&gt;Repositories/ont.tch.dpc
+</pre></div>
+</div>
+<p>When the EDG: server starts up, the log will show ontology (called “ont” below) restored from the patch log server.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[TopBraid Info] 2019-05-08T10:56:27+0100 - DataPlatform: New graph: [id:969bb7, ont.tch, &lt;urn:x-evn-master:ont.tch&gt;]
+[TopBraid Info] 2019-05-08T10:56:27+0100 - DataPlatform: Create DP Graph [id:969bb7] : datasource=ont.tch, baseURI=urn:x-evn-master:ont.tch, coordinator=http://localhost:1066/
+[TopBraid Info] 2019-05-08T10:56:27+0100 - DataPlatform: Attach graph ont.tch in 0.166s
+[TopBraid Info] 2019-05-08T10:56:27+0100 - DataPlatform: New graph: [id:84d7ff, ont, &lt;urn:x-evn-master:ont&gt;]
+[TopBraid Info] 2019-05-08T10:56:27+0100 - DataPlatform: Create DP Graph [id:84d7ff] : datasource=ont, baseURI=urn:x-evn-master:ont, coordinator=http://localhost:1066/
+[TopBraid Info] 2019-05-08T10:56:27+0100 - DataPlatform: Attach graph ont in 0.261s
+</pre></div>
+</div>
+<p>The graph has been created and rebuilt from the patch log.</p>
+</section>
+</section>
+<section id="data-platform-setup">
+<h2>Data Platform Setup<a class="headerlink" href="#data-platform-setup" title="Permalink to this headline"></a></h2>
+<p>Data Platform can be used as the default data store for all of the collections in the workspace or as the storage for nominated asset collections, with an option selected when the asset collection is created.</p>
+<p>Any projects uploaded to EDG that were created in TBCME or given to you by TopQuadrant professional services for customizations or sample data will not be synced between servers.
+These are uploaded individually to each server.
+EDG configuration files will also not be stored via Data Platform.
+Changes to configurations will need to be replicated on each EDG node.</p>
+<p>This section gives a short walkthrough for setting up a EDG system with the Data Platform.
+It covers the use of the TopBraid Data Platform with file-backed storage of patches.
+The Data Coordinator is the RDF Delta patch log server.</p>
+<p>A new workspace with Data Platform as the active data storage must be used.
+You cannot convert an existing workspace by changing the database storage option.</p>
+<section id="file-based-persistent-patch-storage">
+<h3>File-based persistent patch storage<a class="headerlink" href="#file-based-persistent-patch-storage" title="Permalink to this headline"></a></h3>
+<p>The simplest configuration of a patch log server uses the servers file system for patch storage.
+This is an OS-supported filesystem – local storage or remote disk-array and the reliability and durability of files written are determined by the choice of filesystem.</p>
+</section>
+<section id="data-platform-default-data-store-steps">
+<h3>Data Platform default data store steps<a class="headerlink" href="#data-platform-default-data-store-steps" title="Permalink to this headline"></a></h3>
+<p>Be sure to follow the steps in the following order. Details will be below. If you would like a sample docker image, please contact TopQuadrant support.</p>
+<ol class="arabic">
+<li><p>Download and run the patch log server.</p></li>
+<li><p>Enable logging for the patch log server.</p></li>
+<li><p>Install the first instance of EDG using the below database options.
+We recommend the file method of installation so the file will be copied to new nodes.
+This can be done using interactive setup or <code class="code docutils literal notranslate"><span class="pre">setup.properties</span></code> file for EDG installation <a class="reference internal" href="../edg_installation_and_authentication/edg_server_installation.html#edg-server-installation"><span class="std std-ref">EDG Server Installation</span></a>.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Database: Data Platform</p></li>
+<li><p>DP server URL: <code class="code docutils literal notranslate"><span class="pre">http://localhost:1066/</span></code>.
+DNS name or IP address of the patch log server machine.
+This should be a separate machine to the server running the TopBraid server.</p></li>
+<li><p>Is primary node: true</p></li>
+<li><p>The “Zone” is the place within the server workspace where the Data Platform software keeps the local state information.
+This does not usually needed to be changed.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>You can verify that your setup was successful by creating any collection.
+If this succeeds, you can check the Base URI Management page in the Server Administration area.
+Your Repositories folder collections should have an extension of .dpc.</p></li>
+<li><p>Now you can clone this EDG instance to set up multiple EDG nodes.
+Before doing so, you may want to change any other configuration settings that you will want on all the EDG servers: <a class="reference internal" href="../edg_administration_and_configuration/index.html#edg-administration-and-configuration"><span class="std std-ref">EDG Administration and Configuration</span></a>.
+Otherwise you will have to repeat the configurations.
+EDG configuration files are not synced via Data Platform.
+Be sure the EDG workspaces are different locations.
+You cannot use the same workspace on multiple EDG nodes.
+You will need to clone the entire directory containing the workspace, vault, setup file, and replace the license file.
+TopQuadrant support will provide a unique license for each EDG node.</p></li>
+<li><p>Update the additional nodes to have Is primary node: false.</p></li>
+<li><p>Last and most important step, set up a backup mechanism and server monitoring for memory and disk space at minimum.
+You will want to save regular back ups of the workspace for EDG as well as the Data Coordinator.
+Optionally, set up EDG Failover Configuration (instructions above for Zookeeper).</p></li>
+</ol>
+</section>
+<section id="run-the-patch-log-server">
+<h3>Run the patch log server<a class="headerlink" href="#run-the-patch-log-server" title="Permalink to this headline"></a></h3>
+<p>In production, the patch log server should be run on a separate machine to the server running the TopBraid server, not just a separate virtual machine.</p>
+<p>After obtaining the software, run the patch log server with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>java -jar rdf-delta-server-VERSION.jar –file –base DIRECTORY
+</pre></div>
+</div>
+<p>where VERSION is the version number of the RDF Delta software corresponding to the version of the EDG server in use and DIRECTORY is an initially empty, existing directory where the patch log server stores the patch logs in files.</p>
+<p>Example patch server output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[2019-05-08 10:46:59] Delta INFO Provider: file
+[2019-05-08 10:46:59] Config INFO Delta Server port=1066
+[2019-05-08 10:46:59] Delta INFO RDF Delta 0.7.0 2019-03-12T14:54:40+0000
+[2019-05-08 10:46:59] Delta INFO No data sources
+</pre></div>
+</div>
+<p>Be sure to start the Data Platform server with the storage option intended to be used or in the case of upgrade, used previously. Eg. –file</p>
+<p>By not specifying an option, Data Platform will default to RocksDB aka ‘Local’.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>- Delta INFO Provider: Local
+</pre></div>
+</div>
+<p>vs</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>- Delta     INFO Provider: file
+</pre></div>
+</div>
+<p>It is vital to ensure you don’t specify the wrong storage type.</p>
+</section>
+</section>
+<section id="data-coordinator-outages">
+<h2>Data Coordinator Outages<a class="headerlink" href="#data-coordinator-outages" title="Permalink to this headline"></a></h2>
+<p>If the Data Coordinator is not running then:</p>
+<ul class="simple">
+<li><p>shared collections can be read (viewed, queried)</p></li>
+<li><p>updates to shared collections are not possible</p></li>
+<li><p>new, shared collections cannot be created.</p></li>
+</ul>
+<p>Restarting the Data Coordinator re-enables the update and sharing features. Restarting EDG is not necessary.</p>
+<p>If the default storage is set to be “data platform” then the Data Coordinator server must be running and contactable when an EDG server is initially configured.</p>
+</section>
+<section id="backup-restore">
+<h2>Backup &amp; Restore<a class="headerlink" href="#backup-restore" title="Permalink to this headline"></a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h3>
+<p>There are 2 areas to consider when backing up a Data Platform enabled EDG environment</p>
+<ul class="simple">
+<li><p>Data Coordinator</p>
+<ul>
+<li><p>Filesystem snapshot of this server – while the Data Coordinator is shutdown</p></li>
+</ul>
+</li>
+<li><p>EDG</p>
+<ul>
+<li><p>The workspace, any files modified in Tomcat such as the setup.properties file, the Vault, context.xml, Tomcat users, logging configuration.</p></li>
+</ul>
+</li>
+</ul>
+<section id="backup">
+<h4>Backup<a class="headerlink" href="#backup" title="Permalink to this headline"></a></h4>
+<p><strong>Option 1</strong>: Use the Backup and Restore utility in EDG: <a class="reference internal" href="../edg_backup_and_restore/index.html#edg-backup-and-restore"><span class="std std-ref">EDG Backup and Restore</span></a>.</p>
+<p><strong>Option 2</strong>: Manual Backup</p>
+<p>The first step to perform a backup of Data Platform environment is to shutdown the Data Coordinator.
+Once shutdown, the EDG instance(s) will become read-only mode, preventing any changes to the system.</p>
+<p>Backup of the Data Coordinator can be done by snapshot of the system, or rsync of the files serving the patch store.
+These should only be performed while the Data Coordinator is shut down.</p>
+<p>Backup of the EDG server can also be done the same way, while Data Coordinator is shut down and EDG is in readonly mode, snapshot of the system or rsync of the workspace, web.xml and secure storage files.</p>
+<p><strong>Manual Restore</strong></p>
+<p>If restoring a Data Platform enabled EDG environment, first start by restoring the Data Coordinator files and bring the server online.</p>
+<p>Next, restore the backed up files of EDG and start that container.
+If EDG can communicate with the Data Coordinator server, the system should resume operation.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../edg_administration_and_configuration/development_and_qa.html" class="btn btn-neutral float-left" title="Development and QA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../auto_classifier_installation/index.html" class="btn btn-neutral float-right" title="Auto Classifier Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

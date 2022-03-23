@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopBraid EDG Studio &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GraphQL" href="../graphql/index.html" />
+    <link rel="prev" title="EDG Backup and Restore" href="../administrator_guide/edg_backup_and_restore/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">TopBraid EDG Studio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#downloading-and-installing-java">Downloading and installing Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ensuring-the-path-variable-is-set">Ensuring the PATH variable is set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#launching-edg-studio">Launching EDG Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shutting-down-edg-studio">Shutting down EDG Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#increasing-memory-settings">Increasing memory settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrading-edg-studio">Upgrading EDG Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>TopBraid EDG Studio</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="topbraid-edg-studio">
+<span id="id1"></span><h1>TopBraid EDG Studio<a class="headerlink" href="#topbraid-edg-studio" title="Permalink to this headline"></a></h1>
+<p>TopBraid EDG 7.1 also introduces a new development tool - TopBraid EDG Studio.
+EDG Studio replaces TopBraid Composer as an IDE for developers and power users of EDG. Learn more about EDG Studio in this video (<a class="reference external" href="https://www.youtube.com/watch?v=jZ2WWEqiwP8">https://www.youtube.com/watch?v=jZ2WWEqiwP8</a>)</p>
+<p>EDG Studio is available from the TopBraid EDG download page. Please extract the zip file to your local machine. EDG Studio will run on Mac, Windows and Linux.
+Windows users should download and unzip Studio outside of the Program Files directory as it may be protected and prevent EDG Studio from launching.</p>
+<p>If you are an EDG user, have a license for TBC-ME and would like an EDG Studio license, please contact TopQuadrant support.</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
+<p>EDG Studio requires Java 11.</p>
+<p>Running this version of EDG Studio on Java versions newer than 11 may or may not work, and is not recommended.</p>
+<p>Checking the installed Java version
+Open Command Prompt (Windows) or Terminal (macOS/Linux)
+Type java -version and hit Enter
+The output should look similar to this:</p>
+<p>openjdk version “11.0.11” 2021-04-20
+OpenJDK Runtime Environment (build 11.0.11+9-Ubuntu-0ubuntu2.20.04)
+OpenJDK 64-Bit Server VM (build 11.0.11+9-Ubuntu-0ubuntu2.20.04, mixed mode)
+If the command fails to return something similar, or shows you have an version of Java older than 11.0.0 installed, follow the steps below to install Java 11.</p>
+</section>
+<section id="downloading-and-installing-java">
+<h2>Downloading and installing Java<a class="headerlink" href="#downloading-and-installing-java" title="Permalink to this headline"></a></h2>
+<p>The recommended Java distribution for EDG Studio is OpenJDK from Adoptium. Installers for Windows and macOS, and archives for Linux, are available.</p>
+<p><a class="reference external" href="https://adoptium.net/?variant=openjdk11&amp;jvmVariant=hotspot">https://adoptium.net/?variant=openjdk11&amp;jvmVariant=hotspot</a></p>
+</section>
+<section id="ensuring-the-path-variable-is-set">
+<h2>Ensuring the PATH variable is set<a class="headerlink" href="#ensuring-the-path-variable-is-set" title="Permalink to this headline"></a></h2>
+<p>For EDG Studio to work correctly, the PATH environment variable must be configured to include the directory where the java executable is located.</p>
+<p>The Java installers from adoptium.org do this automatically. If Java is installed from another source, this may need to be done manually. Consult your operating system’s documentation.</p>
+</section>
+<section id="launching-edg-studio">
+<h2>Launching EDG Studio<a class="headerlink" href="#launching-edg-studio" title="Permalink to this headline"></a></h2>
+<p><strong>Windows</strong></p>
+<ol class="arabic simple">
+<li><p>Simple option: Double-click the edg Windows Batch File in the EDG Studio folder. If presented with a popup from Windows or Mac regarding unidentified application, run anyway.</p></li>
+<li><p>Advanced option:
+* Open the Command Prompt app (or PowerShell)
+* Navigate to the EDG Studio folder using the cd command
+* Type edg (or .edg in PowerShell) and hit Enter
+* SmartScreen Defender warning: A warning about running an unrecognized app can be safely ignored.</p></li>
+</ol>
+<p><strong>macOS</strong></p>
+<ol class="arabic simple">
+<li><p>Open the Terminal app and navigate to the EDG Studio folder (e.g., right-click the edg folder and select Services &gt; New Terminal at Folder)</p></li>
+<li><p>Type ./edg and hit Enter</p></li>
+</ol>
+<p><strong>Linux</strong></p>
+<ol class="arabic simple">
+<li><p>Open a Terminal window and navigate to the EDG Studio folder</p></li>
+<li><p>Ensure that the edg file has execute permissions (e.g., chmod u+x edg)</p></li>
+<li><p>Type ./edg and hit Enter</p></li>
+</ol>
+<dl class="simple">
+<dt>Example:</dt><dd><ul class="simple">
+<li><p>cd edg</p></li>
+<li><p>chmod u+x edg</p></li>
+<li><p>./edg</p></li>
+</ul>
+</dd>
+</dl>
+<p><strong>Launching with advanced options</strong></p>
+<p>Various configuration options can be provided as command-line arguments to the edg command. For a list of available options, run (on Windows):</p>
+<p>edg –help</p>
+<p>or (on macOS and Linux):</p>
+<p>./edg –help</p>
+</section>
+<section id="shutting-down-edg-studio">
+<h2>Shutting down EDG Studio<a class="headerlink" href="#shutting-down-edg-studio" title="Permalink to this headline"></a></h2>
+<p>With the Terminal window or Command Prompt in focus, press CTRL+c.
+On Windows: If prompted to “Terminate batch job (Y/N)?”, hit y and press Enter.
+Close the Terminal window or Command Prompt.</p>
+</section>
+<section id="increasing-memory-settings">
+<h2>Increasing memory settings<a class="headerlink" href="#increasing-memory-settings" title="Permalink to this headline"></a></h2>
+<p>By default, EDG Studio may use up to 25% of the available system memory. If the application becomes sluggish after importing large amounts of data, or OutOfMemoryError is reported in the terminal, then the memory available to the application may have to be increased.</p>
+<p>On Windows, edit edg.bat and insert the following line as the script’s second line (changing 8G to the desired amount of memory, in Gigabytes):</p>
+<p>set JAVA_OPTS=-Xmx8G
+On macOS or Linux, edit edg and insert the following line as the script’s second line (changing 8G to the desired amount of memory, in Gigabytes):</p>
+<p>JAVA_OPTS=-Xmx8G</p>
+<p>Note: Updated instructions can be found in the readme of EDG Studio download.</p>
+</section>
+<section id="upgrading-edg-studio">
+<h2>Upgrading EDG Studio<a class="headerlink" href="#upgrading-edg-studio" title="Permalink to this headline"></a></h2>
+<p>After downloading and unzipping the new version of EDG Studio, move the previous <code class="code docutils literal notranslate"><span class="pre">workspace</span></code> folder to the current <code class="code docutils literal notranslate"><span class="pre">edg</span></code> folder.
+Have your license file available, you will need to register it again after the application starts.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../administrator_guide/edg_backup_and_restore/index.html" class="btn btn-neutral float-left" title="EDG Backup and Restore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../graphql/index.html" class="btn btn-neutral float-right" title="GraphQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

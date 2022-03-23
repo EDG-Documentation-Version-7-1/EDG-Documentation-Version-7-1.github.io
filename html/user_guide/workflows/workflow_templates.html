@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workflow Templates &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Workflow Templates</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="workflow-templates">
+<span id="workflow-templates-target"></span><h1>Workflow Templates<a class="headerlink" href="#workflow-templates" title="Permalink to this headline"></a></h1>
+<p>The stages that a workflow goes through, and the transitions between them, are defined by in a so-called <em>workflow template</em>.
+Workflow templates are selected whenever a new workflow is started, and remain with that workflow for the rest of its life cycle.</p>
+<p>The <strong>Workflow Templates</strong> page, available from near the bottom of the main menu on the left, shows the templates that define the available workflow types, e.g., the Basic Workflow.
+Users with administration permission can customize these workflow types.</p>
+<p>The workflow templates are defined in TopBraid in a dedicated RDF graph.
+To access the workflow templates graph from SPARQL or ADS scripts, use the function <code class="code docutils literal notranslate"><span class="pre">teamwork:workflowsGraph()</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Editing workflow templates is a low-level operation that should be handled with care.
+It is technically possible to modify workflow templates that are already in use and, as a result of this, an existing working copy may be in a state that gets disconnected from the other states in the template, or its whole workflow template may get deleted.
+We therefore strongly recommend that the development and editing of workflow templates is performed by expert users only, and tested in a sandbox environment (such as a TopBraid EDG Studio) before deployment to a production server.
+Alternatively, consider having TopQuadrant services develop custom workflows for you.</p>
+</div>
+<p>EDG comes with a default workflow called Basic workflow.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>If you delete the basic workflow by accident you can bring it back via <strong>Install Default Workflow Templates</strong>.</p>
+</div>
+<p>The editing of workflow templates is currently best performed through source code editing.
+You may elect to use TopBraid EDG Studio but any other 3rd party source code editor is also suitable.
+For administrators, the basic mechanism is:</p>
+<ol class="arabic simple">
+<li><p>Go to the Workflow Templates on the production server</p></li>
+<li><p>Click <em>Download as Turtle File</em> to a local file</p></li>
+<li><p>Edit this file using an editor of your choice</p></li>
+<li><p>In a test environment such as TopBraid EDG Studrio, use <em>Upload Turtle File</em> to replace the current definitions and try them out</p></li>
+<li><p>If any syntactic or semantic errors are detected, the Upload feature present a report of all the errors found in the file.
+These errors must be addressed in order for the file to be successfully uploaded.</p></li>
+<li><p>Carefully test the workflows in your test environment.</p></li>
+<li><p>When satisfied, use <em>Upload Turtle File</em> to replace the definitions on the production server.</p></li>
+</ol>
+<section id="defining-a-workflow-template">
+<span id="teamwork-tagworkflowtemplate"></span><h2>Defining a Workflow Template<a class="headerlink" href="#defining-a-workflow-template" title="Permalink to this headline"></a></h2>
+<p>Workflow templates must be instances of one of the following classes:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:TagWorkflowTemplate</span></code> for general asset workflows
+<code class="code docutils literal notranslate"><span class="pre">teamwork:ExistingResourceTagWorkflowTemplate</span></code> for workflows that are specific to an existing asset)
+<code class="code docutils literal notranslate"><span class="pre">teamwork:NewResourceTagWorkflowTemplate</span></code> for workflows that create a new asset</p></li>
+</ul>
+<p>Each workflow template defines a start status (e.g. Uncommitted) and a set of transitions that specify which steps are possible and by whom, until the workflow is ended (e.g. by committing).
+The properties are typically used at workflow templates:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">rdfs:label</span></code>: a human-readable label that is used to name the workflow template in the user interface</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:initialStatus</span></code>: specifies the initial status of a Workflow.
+Example values include <code class="code docutils literal notranslate"><span class="pre">teamwork:Uncommitted</span></code> or <code class="code docutils literal notranslate"><span class="pre">teamwork:New</span></code>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:defaultTagWorkflowTemplateForProjectType</span></code>: enumerates the asset collection types for which the workflow template is the default.
+Asset collection types that don’t have any default workflow template fall back to the system-wide default workflow template.
+For example, use <code class="code docutils literal notranslate"><span class="pre">edg:GlossaryProjectType</span></code> as a value to make the workflow template the default for EDG Glossaries.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:suitableWorkflowForProjectType</span></code>: enumerates the asset collection types for which the workflow template is suitable for use.
+If left empty, it applies to all types.
+For example, use <code class="code docutils literal notranslate"><span class="pre">edg:GlossaryProjectType</span></code> as the value to make the workflow template only applicable to EDG Glossaries.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:suitableWorkflowForSubjectArea</span></code>: the subject areas that asset collection must have so that the workflow template is suitable for them.
+If left empty, then it applies to all subject areas.
+Details about defining subject areas can be found at <em>EDG Governance Model: Governance Areas</em>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:editorWorkflowParticipantProperty</span></code>: lists the workflow participant properties (e.g. <code class="code docutils literal notranslate"><span class="pre">edg:responsible</span></code>) whose users are automatically granted editing permission.
+By default, workflow participants only get viewer permission.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:managerWorkflowParticipantProperty</span></code>: lists the workflow participant properties (e.g. <code class="code docutils literal notranslate"><span class="pre">edg:responsible</span></code>) whose users are automatically granted manager permission.
+By default, workflow participants only get viewer permission.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:tagShape</span></code>: (advanced feature) SHACL shapes that the working copy needs to conform to before it can be committed.
+See <a class="reference internal" href="#teamwork-tagshape"><span class="std std-ref">Using SHACL Shapes to control Workflow Transitions</span></a>.</p></li>
+</ul>
+<p>An additional property for templates that have the type <code class="code docutils literal notranslate"><span class="pre">teamwork:ExistingResourceTagWorkflowTemplate</span></code>:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:editedResourceShape</span></code>: the shape that edited resources need to have.
+Used to filter applicable workflows for a given resource.
+If multiple values are present then they are interpreted as a union, i.e. a candidate resource must conform to any one of them.
+An example of this is <code class="code docutils literal notranslate"><span class="pre">teamwork:editedResourceShape</span> <span class="pre">[</span> <span class="pre">sh:class</span> <span class="pre">ex:Person</span> <span class="pre">]</span></code> to limit a workflow for instances of <code class="code docutils literal notranslate"><span class="pre">ex:Person</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="defining-workflow-statuses">
+<span id="teamwork-tagstatus"></span><h1>Defining Workflow Statuses<a class="headerlink" href="#defining-workflow-statuses" title="Permalink to this headline"></a></h1>
+<p>All individual statuses of a workflow are represented by instances of the class <code class="code docutils literal notranslate"><span class="pre">teamwork:TagStatus</span></code>.
+Often you would simply reuse existing instances in your workflow templates.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Copy and paste from existing workflow templates to get started with your own templates.</p>
+</div>
+<section id="defining-workflow-template-transitions">
+<span id="teamwork-tagstatustransition"></span><h2>Defining Workflow Template Transitions<a class="headerlink" href="#defining-workflow-template-transitions" title="Permalink to this headline"></a></h2>
+<p>A workflow is started in the status specified by <code class="code docutils literal notranslate"><span class="pre">teamwork:initialStatus</span></code> in the template.
+From there, the possible transitions are defined by the values of <code class="code docutils literal notranslate"><span class="pre">teamwork:transition</span></code>.
+These values must be URI or blank nodes of type <code class="code docutils literal notranslate"><span class="pre">teamwork:TagStatusTransition</span></code>, and can have the following properties:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:fromStatus</span></code>: the status that the workflow (working copy) must be in for the transition to be applied.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:toStatus</span></code>: the status that the workflow (working copy) will be in after the transition is applied.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:transitionLabel</span></code>: the display label of the transition, e.g. “Accept changes to production”.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">sh:order</span></code>: an optional number that is used to order the transitions in the Workflow tab.
+Transitions with smaller numbers show up higher, with 0 being the default.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:requiredGovernanceRole</span></code>: the minimum governance role (e.g. informed) that a user must have on an asset collection to perform the transition.
+For example, the required governance role can be an instance of <code class="code docutils literal notranslate"><span class="pre">edg:JobRole</span></code>, which means that any user who has <code class="code docutils literal notranslate"><span class="pre">edg:assignedJobRole</span> <span class="pre">edg:JobRole</span></code> is allowed to execute the transition.
+The user will in this case see a corresponding button in the UI, and under <em>My Workflows</em>.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:requiredProjectPermissionRole</span></code>: the minimum permission role (e.g. editor) that a user must have on an asset collection (master graph) to perform the transition.
+These are the roles defined on the <em>User Roles</em> tab of an asset collection.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:requiredTagPermissionRole</span></code>: the minimum permission role (e.g. editor) that a user must have on a working copy to perform the transition.
+These are the roles defined on the User Roles tab of a working copy/workflow.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:minVoteCount</span></code>: the minimum number of votes required before the transition can be performed.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:voteAutoTransitions</span></code>: if true then the transition will be performed automatically, as soon as sufficient votes have been registered.
+This property can only be used if <code class="code docutils literal notranslate"><span class="pre">teamwork:minVoteCount</span></code> is present.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">teamwork:autoTransitionHours</span></code>: the number of hours after which a working copy will automatically transition to another state.
+For example this can be used to give users a chance to comment without explicitly waiting on such feedback.</p></li>
+</ul>
+</section>
+<section id="sample-workflow-templates">
+<h2>Sample Workflow Templates<a class="headerlink" href="#sample-workflow-templates" title="Permalink to this headline"></a></h2>
+<p>Example workflow templates can be downloaded from <a class="reference external" href="https://www.topquadrant.com/topbraid-composer-install/">this page</a>.</p>
+<p>There is also a detailed training guide for workflow templates, custom governance roles and event condition actions.
+All of this content is also in the page above but without detailed screenshots.
+The screenshots may not be exact representations of the version you are on but should still be helpful in showing the process.
+This is meant to supplement what you have learned in the above sections of this guide.</p>
+<p>Download the guide <a class="reference external" href="https://doc.topquadrant.com/7.0/wp-content/uploads/2021/01/Teamworks-and-Workflow-Templates.pptx">Teamworks and Workflow Templates</a> for details on:</p>
+<ul class="simple">
+<li><p>Custom Governance Roles</p></li>
+<li><p>Teamworks and Technical Underpinnings of Working Copies</p></li>
+<li><p>Workflow Templates</p></li>
+<li><p>Notifications</p></li>
+<li><p>ECA Framework</p></li>
+</ul>
+</section>
+<section id="using-shacl-shapes-to-control-workflow-transitions">
+<span id="teamwork-tagshape"></span><h2>Using SHACL Shapes to control Workflow Transitions<a class="headerlink" href="#using-shacl-shapes-to-control-workflow-transitions" title="Permalink to this headline"></a></h2>
+<p>SHACL can be used to define constraints that must be satisfied before a workflow transition can be applied.
+The SHACL constraints are validated using the union of the working copy and the TCH graph as data graph, and the workflows definitions graph as shapes graph.
+The focus node is the <code class="code docutils literal notranslate"><span class="pre">teamwork:Tag</span> <span class="pre">instance</span></code>.</p>
+<p>The following example illustrates the use of <code class="code docutils literal notranslate"><span class="pre">teamwork:tagShape</span></code> to specify that a working copy can only be committed if it contains exactly one new instance of <code class="code docutils literal notranslate"><span class="pre">edg:GlossaryTerm</span></code> and no other subject.
+If <code class="code docutils literal notranslate"><span class="pre">teamwork:tagShape</span></code> statements are present for a workflow template, then the Commit button will force the user to first go through a dedicated page that checks whether the working copy conforms to the specified shapes.
+If violations are detected, the user may still proceed, yet he or she has been warned about the consequences.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">edg</span><span class="p">:</span><span class="nt">SimpleGlossaryTermWorkflowTemplate</span>
+<span class="linenos"> 2</span>    <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">teamwork</span><span class="p">:</span><span class="nt">NewResourceTagWorkflowTemplate</span> <span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nn">teamwork</span><span class="p">:</span><span class="nt">initialStatus</span> <span class="nn">teamwork</span><span class="p">:</span><span class="nt">Uncommitted</span> <span class="p">;</span>
+<span class="linenos"> 4</span>    <span class="nn">teamwork</span><span class="p">:</span><span class="nt">tagShape</span> <span class="nn">glossary-term-workflow</span><span class="p">:</span><span class="nt">TagHasExactlyOneGlossaryTermShape</span> <span class="p">;</span>
+<span class="linenos"> 5</span>    <span class="c"># ...</span>
+<span class="linenos"> 6</span>    <span class="p">.</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="nn">glossary-term-workflow</span><span class="p">:</span><span class="nt">TagHasExactlyOneGlossaryTermShape</span>
+<span class="linenos"> 9</span>    <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+<span class="linenos">10</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">sparql</span> <span class="p">[</span>
+<span class="linenos">11</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;Working copy contains changes about {?other} while it should only be about {?newTerm}&quot;</span> <span class="p">;</span>
+<span class="linenos">12</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">prefixes</span> <span class="nv">&lt;http://edg.topbraidlive.org/1.0/samples/workflows/glossary-term-workflow&gt;</span> <span class="p">;</span>
+<span class="linenos">13</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">select</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="linenos">14</span><span class="s">            SELECT DISTINCT $this ?other ?newTerm</span>
+<span class="linenos">15</span><span class="s">            WHERE {</span>
+<span class="linenos">16</span><span class="s">                ?change teamwork:tag $this .</span>
+<span class="linenos">17</span><span class="s">                ?change a teamwork:Change .</span>
+<span class="linenos">18</span><span class="s">                ?change teamwork:added ?added .</span>
+<span class="linenos">19</span><span class="s">                ?added teamwork:subject ?newTerm .</span>
+<span class="linenos">20</span><span class="s">                ?added teamwork:predicate rdf:type .</span>
+<span class="linenos">21</span><span class="s">                ?added teamwork:object edg:GlossaryTerm .</span>
+<span class="linenos">22</span><span class="s">                ?otherChange teamwork:tag $this .</span>
+<span class="linenos">23</span><span class="s">                ?otherChange a teamwork:Change .</span>
+<span class="linenos">24</span><span class="s">                ?otherChange teamwork:added|teamwork:deleted ?aod .</span>
+<span class="linenos">25</span><span class="s">                ?aod teamwork:subject ?other .</span>
+<span class="linenos">26</span><span class="s">                FILTER (?other != ?newTerm) .</span>
+<span class="linenos">27</span><span class="s">            }&quot;&quot;&quot; ;</span>
+<span class="linenos">28</span><span class="s">    ] ;</span>
+<span class="linenos">29</span><span class="s">    sh:sparql [</span>
+<span class="linenos">30</span><span class="s">        sh:message &quot;Working copy does not create a new instance of edg:GlossaryTerm.&quot; ;</span>
+<span class="linenos">31</span><span class="s">        sh:prefixes &lt;http://edg.topbraidlive.org/1.0/samples/workflows/glossary-term-workflow&gt; ;</span>
+<span class="linenos">32</span><span class="s">        sh:select &quot;&quot;&quot;</span>
+<span class="linenos">33</span><span class="s">            SELECT $this</span>
+<span class="linenos">34</span><span class="s">            WHERE {</span>
+<span class="linenos">35</span><span class="s">                FILTER NOT EXISTS {</span>
+<span class="linenos">36</span><span class="s">                    ?change teamwork:tag $this .</span>
+<span class="linenos">37</span><span class="s">                    ?change a teamwork:Change .</span>
+<span class="linenos">38</span><span class="s">                    ?change teamwork:added ?added .</span>
+<span class="linenos">39</span><span class="s">                    ?added teamwork:subject ?gt .</span>
+<span class="linenos">40</span><span class="s">                    ?added teamwork:predicate rdf:type .</span>
+<span class="linenos">41</span><span class="s">                    ?added teamwork:object edg:GlossaryTerm .</span>
+<span class="linenos">42</span><span class="s">                }</span>
+<span class="linenos">43</span><span class="s">            }&quot;&quot;&quot; ;</span>
+<span class="linenos">44</span><span class="s">    ] .</span>
+</pre></div>
+</div>
+</section>
+<section id="state-entry-actions">
+<span id="teamwork-stateentryaction"></span><h2>State Entry Actions<a class="headerlink" href="#state-entry-actions" title="Permalink to this headline"></a></h2>
+<p>Each workflow status may have a <code class="code docutils literal notranslate"><span class="pre">teamwork:stateEntryAction</span></code> pointing at a script that shall be executed whenever the status is reached.
+This can be used to implement side effects, such as sending a notification to 3rd party systems when a certain state has been entered.</p>
+<p>Although earlier examples may use SWP for this, we recommend using JavaScript/ADS to implement the business logic of those state entry actions.
+See <a class="reference internal" href="../../scripting/index.html#scripting"><span class="std std-ref">Scripting with JavaScript and ADS</span></a> if you are not yet familiar with ADS.</p>
+<p>To get started, create an instance of <code class="code docutils literal notranslate"><span class="pre">teamwork:WorkflowActionScript</span></code> and add a triple from a workflow status to the script using <code class="code docutils literal notranslate"><span class="pre">teamwork:stateEntryAction</span></code>.
+The script that is the value of <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> will be executed against the master graph (with imports) and can access the following JavaScript variables:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">newStatus</span></code> (<code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code>): the <code class="code docutils literal notranslate"><span class="pre">teamwork:TagStatus</span></code> that was just entered</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">oldStatus</span></code> (<code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code>): the previous <code class="code docutils literal notranslate"><span class="pre">teamwork:TagStatus</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">tag</span></code> (<code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code>): the <code class="code docutils literal notranslate"><span class="pre">teamwork:Tag</span></code> instance representing the workflow</p></li>
+</ul>
+<p>Instances of this class should be declared in the workflow templates graph.
+During development, you may want to use the Script Editor panel (with the master graph as active graph) to try your code and later assign it to <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code>.
+Simulate the values of the variables above through <code class="code docutils literal notranslate"><span class="pre">let</span></code> statements which you place before your actual code.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

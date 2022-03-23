@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2021-12-02T09:02:56-05:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Corpora &mdash; edg-documentation 7.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Working with Data Graphs" href="../working_with_data_graphs/index.html" />
+    <link rel="prev" title="Working with Crosswalks" href="../working_with_crosswalks/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG 7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guidance Specific to an Asset Collection Type</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html">Working with Ontologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_taxonomies/index.html">Working with Taxonomies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_crosswalks/index.html">Working with Crosswalks</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with Corpora</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#licensing-and-enablement">Licensing and Enablement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#overview-of-corpora">Overview of Corpora</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-new-corpus">Create New Corpus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#importing-for-a-corpus">Importing for a Corpus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#corpus-manage-tab">Corpus Manage Tab</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#corpus-contents-report">Corpus contents Report</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_graphs/index.html">Working with Data Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_enumerations/index.html">Working with Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_lineage/index.html">Working with Data Lineage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content_classification/index.html">Content Classification in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrading TopBraid EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intray/index.html">Candidate Content</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">User Guide</a> &raquo;</li>
+          <li><a href="../index.html">Guidance Specific to an Asset Collection Type</a> &raquo;</li>
+      <li>Working with Corpora</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/user_guide/guidance_specific_to_asset_collection_type/working_with_corpora/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-corpora">
+<span id="working-with-corpora-target"></span><h1>Working with Corpora<a class="headerlink" href="#working-with-corpora" title="Permalink to this headline"></a></h1>
+<section id="licensing-and-enablement">
+<span id="licensing-and-enablement-target"></span><h2>Licensing and Enablement<a class="headerlink" href="#licensing-and-enablement" title="Permalink to this headline"></a></h2>
+<p>The availability of any asset collection is determined by what is (a) licensed and (b) configured under <em>Server Administration</em>.
+To install a license or to view the currently licensed features, see Administrator Guide section on Product Registration` .
+To configure which licensed collection types are currently enabled or disabled, see Administrator Guide section on EDG Configuration Parameters.</p>
+<p>For general licensing information and available asset collections and packages, see the TopQuadrant website.</p>
+<p><a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a></p>
+</section>
+<section id="overview-of-corpora">
+<h2>Overview of Corpora<a class="headerlink" href="#overview-of-corpora" title="Permalink to this headline"></a></h2>
+<p>A Corpus is a collection of textual assets, such as documents, excerpts, web pages, etc..
+The original items are typically imported from external sources, such as content management systems or web sites and <strong>typically are not created nor edited</strong> within EDG.
+The textual content of Corpus assets provides the foundation for manual or automated tagging and annotation using Content Tag Sets.
+Corpora serve as the content graphs for Content Tag Sets.</p>
+<p>Selecting the <strong>Corpora</strong> link in the left-navigation pane of TopBraid EDG lists all of the Corpus collections currently available to the user and allows authorized users to create new ones.</p>
+<p>When working with Corpus collections users will have access to the same functionality as the functionality available for other asset collections e.g., ability to search, import, export, etc.
+If a Corpus is created without specifying a connector to some content repository, users will be able to use EDG editor to create and edit documents in the Corpus.
+Otherwise, the documents will come from an external repository and users will not be able to modify them.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Please see the <a class="reference internal" href="../../working_with_asset_collections/index.html#asset-collections"><span class="std std-ref">Working with Asset Collections</span></a> for all the general features of asset collections such as import/export, editing, user permissions, reports and settings.</p>
+</div>
+</section>
+<section id="create-new-corpus">
+<span id="create-new-corpus-target"></span><h2>Create New Corpus<a class="headerlink" href="#create-new-corpus" title="Permalink to this headline"></a></h2>
+<p>When a new Corpus is created, EDG requires the user to select its <em>data source</em>, as Corpora can be configured to connect to an external source.
+EDG will then harvest content from that external source and store it in the project graph.
+Harvesting can be repeated later on demand, and changes to the external source’s documents will be picked up.
+Harvesting needs to be triggered manually in the Corpora management UI.
+A Corpus does not synchronize automatically with its external source, but only when requested.</p>
+<p>Six types of connectors to such sources are currently offered, their respective creation wizard pages showing different forms depending on parameters that must me indicated for the connector to operate.
+These parameters can be adjusted later on by accessing the Manage Tab -&gt; Corpus-Connector-Type Configuration.</p>
+<ul class="simple">
+<li><p><strong>No connector</strong> if content documents are available as RDF already, these can be imported into the Corpus with the usual RDF import function.
+Similarly, raw documents can be imported singly from local files as described in Import Single Document. No external source will be configured with this connector type.
+Users will also be able to use the editor app to create new documents.</p></li>
+<li><p><strong>sitemap.xml</strong> If a website supports the <em>sitemaps</em> protocol, a configured sitemap.xml connector will harvest its content accordingly.</p></li>
+<li><p><strong>URL list</strong> This connector will simply fetch content from all of the URLs listed in its configuration.</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The site must not block crawlers or they will be skipped.</p>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>CMIS If a website is an interface to a Content Management System and offers a <a class="reference external" href="http://docs.oasis-open.org/cmis/CMIS/v1.1/CMIS-v1.1.html">Content Management Interoperability Services</a> (CMIS) service endpoint as defined by the standard, a configured CMIS connector will harvest its content accordingly.</p></li>
+<li><p><strong>Amazon S3</strong> Creates a new Corpus and imports documents from a(n) S3 bucket(s).
+(Make sure you have pre-configured S3 integration from <a href="#id118"><span class="problematic" id="id119">`External Systems Integration`_</span></a>)</p></li>
+<li><p><strong>Local directory</strong> Creates a new Corpus from a directory of files in the local files system.
+Can only be created by system administrators.</p></li>
+</ul>
+<p>Depending on the connector type, you will be asked to provide different settings as required to connect to the source.</p>
+<p>Using <strong>Manage</strong> tab of a Corpus, you could later modify connector parameters specified during the creation process – as external data sources can be on remote networks not necessarily under the creator’s control and connectors should reflect these changes.
+Connector-specific configuration panel is not available for Corpora configured with No Connector.
+While the connector’s parameters can be edited post creation, the type of data source (one of the six options above) cannot be changed after creation.</p>
+<p>If you will be using this Corpus for Auto Classification, you will need to keep the box checked for <strong>Store copy of all documents in EDG</strong>.
+The documents are stored in a “Corpora” folder in the workspace for EDG.
+Be sure your server has enough disk space for this storage.</p>
+<p>Once you have finished configuring your new Corpus, it will appear on the page listing all Corpora.
+This is the page displayed when you click on the Corpora link in the blue left-navigation pane in EDG.
+Clicking on an individual Corpus will display its content in the Corpus editor.
+The first tab for Corpus (the tab that gives you access to the editor) is called Documents.</p>
+</section>
+<section id="importing-for-a-corpus">
+<span id="importing-for-a-corpus-target"></span><h2>Importing for a Corpus<a class="headerlink" href="#importing-for-a-corpus" title="Permalink to this headline"></a></h2>
+<section id="import-single-document">
+<h3>Import Single Document<a class="headerlink" href="#import-single-document" title="Permalink to this headline"></a></h3>
+<p>This allows manually importing an external file in the corpus, rather than going through a Connector or importing an existing RDF representation of the Corpus.
+This will show a screen where the <strong>Browse…</strong> button opens a dialog for picking a source file.
+Its text and metadata will be parsed by the Apache Tika content analysis toolkit, which can handle these <a class="reference external" href="http://tika.apache.org/1.14/formats.html">supported formats</a>.
+The <strong>Show Imported data</strong> button on the next screen allows reviewing retrieved information.
+Most supported file formats will present three sections:</p>
+<ol class="arabic simple">
+<li><p>common Metadata Properties such as file name, <a class="reference external" href="https://www.iana.org/assignments/media-types/media-types.xhtml">media type</a>, title, creator;</p></li>
+<li><p>Content, which is the actual document’s text (where applicable);</p></li>
+<li><p>Other Properties, which include various ones the importer was unable to label and are therefore referred to with their URIs.</p></li>
+</ol>
+</section>
+</section>
+<section id="corpus-manage-tab">
+<span id="corpus-manage-tab-target"></span><h2>Corpus Manage Tab<a class="headerlink" href="#corpus-manage-tab" title="Permalink to this headline"></a></h2>
+<p>In addition to the settings available with other collection types, Corpus collection has a few additional options:</p>
+<figure class="align-center" id="id116">
+<img alt="TopBraid EDG Corpus Collection Additional Options" class="edg-figure" src="../../../_images/edg_corpus_collection_additional_options.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Corpus Collection Additional Options</strong></span><a class="headerlink" href="#id116" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These are not available for Corpora configured with No Connector or local directory.</p>
+</div>
+<p>To pick up new or changed files for local directory after the initial creation, clear the corpus on the Manage tab.</p>
+</section>
+<section id="corpus-contents-report">
+<span id="corpus-contents-report-target"></span><h2>Corpus contents Report<a class="headerlink" href="#corpus-contents-report" title="Permalink to this headline"></a></h2>
+<p>In addition to the normal reports for an asset collection, for any Corpus with a connected data source (production or working copy), the Reports tab &gt; Corpus contents action lists all documents that were either manually imported or retrieved from a remote location with a connector.</p>
+<figure class="align-center" id="id117">
+<img alt="TopBraid EDG External Content Table" class="edg-figure" src="../../../_images/edg_external_content_table.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG External Content Table</strong></span><a class="headerlink" href="#id117" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Each line in the table represents a single document, identified with its URL to the original document no matter it being a web page or downloadable file, its media type, the date of the last time it was downloaded from its remote location to the EDG cache, and a hyperlink shown as a page icon to download this cached copy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This report is not available for Corpora configured with No Connector.
+The Corpus editor can be used instead.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../working_with_crosswalks/index.html" class="btn btn-neutral float-left" title="Working with Crosswalks" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../working_with_data_graphs/index.html" class="btn btn-neutral float-right" title="Working with Data Graphs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.
+      <span class="lastupdated">Last updated on Dec 02, 2021.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

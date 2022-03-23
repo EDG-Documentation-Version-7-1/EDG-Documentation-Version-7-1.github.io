@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Searching in EDG &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Collaboration in EDG" href="../collaboration/index.html" />
+    <link rel="prev" title="Working with Files" href="../files/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guidance_specific_to_asset_collection_type/index.html">Guidance Specific to an Asset Collection Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../files/index.html">Working with Files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Searching in EDG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#search-the-edg">Search the EDG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#using-lucene-query-language">Using Lucene Query Language</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#search-panel">Search Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-asset-type-in-the-search-panel">Selecting Asset Type in the Search Panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#selecting-search-results-columns">Selecting Search Results Columns</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#searching-for-assets">Searching for Assets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#search-library-panel">Search Library Panel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#global-lookup">Global Lookup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search-results-via-api">Search results via API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lucene-integration-and-special-character-handling-in-search">Lucene integration and special character handling in Search</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#changing-to-lucene-whitespaceanalyzer">Changing to Lucene WhitespaceAnalyzer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content_classification/index.html">Content Classification in EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">User Guide</a> &raquo;</li>
+      <li>Searching in EDG</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="searching-in-edg">
+<span id="searching-target"></span><h1>Searching in EDG<a class="headerlink" href="#searching-in-edg" title="Permalink to this headline"></a></h1>
+<p>Searching in EDG is supported at across collections as well as within collections and their included collections.
+<strong>Search the EDG</strong> is the feature that supports EDG-wide search.
+The <strong>Search Panel</strong> that is available when viewing or editing a specific collection supports search within that collection and its included collections.</p>
+<section id="search-the-edg">
+<h2>Search the EDG<a class="headerlink" href="#search-the-edg" title="Permalink to this headline"></a></h2>
+<p><strong>Search the EDG</strong> searches across all EDG resources that EDG administrator and/or manager of a specific collection elected to include in the index.
+This decision can be made upon creation of a collection and can also be made later on the Manage tab of the collection or through Governance Model.
+An entire subject area or business area can be included in Search the EDG by checking the box as shown below.</p>
+<p>Submitting a search from the home page opens a page with the search results summary.
+Your search key words will be matched against text in any of the properties of the collections that are managed by Search the EDG.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may have fields that contain text tagged with different languages, note that search will be performed across all values, irrespective of the language.</p>
+</div>
+<p>In the search results page, you can:</p>
+<ul class="simple">
+<li><p>refine or completely change the search terms and re-execute the search,</p></li>
+<li><p>filter results via facets,</p></li>
+<li><p>click on any of the result results to see more information about it,</p></li>
+<li><p>make comments about any of the found resources and see comments made by other users,</p></li>
+<li><p>endorse any of the found resources and see endorsements made my others,</p></li>
+<li><p>access interactive visual views and diagrams for a found resource – what is available depends on a type of the item,</p></li>
+<li><p>access results and facets via API’s (see below),</p></li>
+<li><p>search using Lucene query expression.</p></li>
+</ul>
+<figure class="align-center" id="id90">
+<img alt="TopBraid Search the EDG Page" class="edg-figure-l" src="../../_images/edg_search.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid Search the EDG Page</strong></span><a class="headerlink" href="#id90" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>All properties of the collection will be indexed for search as well as applicable facets.
+The results of search are sorted by score, then alphabetically.
+The facet results list shows the top 10 facets for the results.
+The score is calculated based on the number of matches to the term within the document.
+Lucene also offers query boosting per field (be sure to check use advanced syntax).</p>
+<p>For example searching:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>*id^3 -will find anything that ends in &quot;id&quot; and assign it a weight of 3, boosting those results
+</pre></div>
+</div>
+<section id="using-lucene-query-language">
+<h3>Using Lucene Query Language<a class="headerlink" href="#using-lucene-query-language" title="Permalink to this headline"></a></h3>
+<p>In addition to simply using search keywords, users can combine them with Lucene operators to form richer search queries.
+By default wildcard search has been implemented before and after the search term.
+For example, searching for the string “customer” without quotes actually searches for *customer*.</p>
+<p>Check the box for Use Advanced Syntax for Lucene query expressions:</p>
+<p><strong>Example Lucene Operators</strong></p>
+<ul class="simple">
+<li><p><strong>Wildcards (* ?):</strong> “?” performs a single character wildcard search and “*” performs a multiple character wildcard search. For example, <code class="docutils literal notranslate"><span class="pre">te?t</span></code> matches “test”, “text”, etc and <code class="docutils literal notranslate"><span class="pre">Ken*</span></code> matches all values that start with “Ken”. <em>product</em> -will find anything with the word “product” in it. name -will find anything that ends in “name”</p></li>
+<li><p><strong>Fuzzy (~):</strong> Matches similar spellings of the word. For example <code class="docutils literal notranslate"><span class="pre">john~</span></code>, will match “john” and “jean”. The similarity threshold is set to 0.5 by default. You can adjust it using any number between 0 and 1. For example, john~0.8.</p></li>
+<li><p><strong>Prohibit (-term or NOT term):</strong> excludes matches that contain the term after the “-” or “NOT” symbols. For example, <code class="docutils literal notranslate"><span class="pre">Ken*</span> <span class="pre">-Kentucky</span></code> matches all values that start with “Ken” but excludes anything that matches ‘Kentucky’.</p></li>
+<li><p><strong>Modifiers (AND OR):</strong> using the AND operator will match items that contain both terms while the <code class="docutils literal notranslate"><span class="pre">OR</span></code> operator matches an item that contains either of the terms.</p></li>
+<li><p><strong>Range queries:</strong> using TO operator will match items with the range of values. For example, “Finland TO Germany” in curly brackets. If you want to limit this to a particular field (for example) only a label, use &lt;property name&gt;:{&lt;search query&gt;}. For example, skos_prefLabel:{Finland TO Germany}.</p></li>
+</ul>
+</section>
+</section>
+<section id="search-panel">
+<span id="id1"></span><h2>Search Panel<a class="headerlink" href="#search-panel" title="Permalink to this headline"></a></h2>
+<p>The Search panel lists assets of the selected type in a sortable table.
+From here, users can further filter displayed assets, export information, save searches and perform other operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This panel is not available for ontologies, please see ontology specific documentation in <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a>.</p>
+</div>
+<p>By default, this panel will display up to 1,000 result rows by default, unless changed by your EDG Administrator.</p>
+<figure class="align-center" id="id91">
+<img alt="TopBraid EDG Search Panel Page" class="edg-figure-l" src="../../_images/edg_search_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Panel Page</strong></span><a class="headerlink" href="#id91" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="selecting-asset-type-in-the-search-panel">
+<h3>Selecting Asset Type in the Search Panel<a class="headerlink" href="#selecting-asset-type-in-the-search-panel" title="Permalink to this headline"></a></h3>
+<p>The Type Selector shown at the top of the Search panel lets you to select the type of assets to show in the table.
+You can select an asset type either from the <strong>Type</strong> drop-down list (it supports autocomplete so to select you can start typing the name of an asset type you are interested in) or you could click on the button next to the drop-down list to open a browsable hierarchical navigator listing available asset types.</p>
+<p>Table in the Search panel shows only assets of the selected type including any of its sub types.</p>
+</section>
+<section id="selecting-search-results-columns">
+<h3>Selecting Search Results Columns<a class="headerlink" href="#selecting-search-results-columns" title="Permalink to this headline"></a></h3>
+<p>The <strong>Columns</strong> icon to the right of the <strong>Filter</strong> icon lets you add columns to the search results table.
+Properties available for selection depend on the type of the asset.
+For example, Database Column is selected as the asset type in the image below.
+You will be able to select any properties defined for the Database Column asset type.</p>
+<figure class="align-center" id="id92">
+<img alt="TopBraid EDG Search Results Column Selection Page" class="edg-figure-l" src="../../_images/edg_search_results_column_selection.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Results Column Selection Page</strong></span><a class="headerlink" href="#id92" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can scroll through the list of properties available for selection or quickly find a property by typing in the <strong>Search</strong> field at the top of the dropdown.
+Clicking on a property will select it as column.
+Currently selected columns will be shown at the top of the drop down list.
+To remove a selected column, click on the “x” icon next to it.</p>
+<p>For properties that are relationships, you will see “&gt;” to the right of the property name – as shown in the screenshot above.
+If you click on it, EDG will present a list of properties for the related asset.
+This way, you can add as columns not only properties of assets you are looking at, but also properties of related resources – these are called nested columns.</p>
+<p>The screenshot below shows a results table that we will get after selecting as columns 1) “record count” property that belongs to related assets – namely, Database Tables that assets of the selected type, Database Columns, are associated with via “column of” property – this is an example of a nested column and 2) “physical datatype” property that belongs directly to the Database Columns.</p>
+<figure class="align-center">
+<img alt="TopBraid EDG Database Column Search Page" class="edg-figure-l" src="../../_images/edg_database_column_search.png" />
+</figure>
+<p>If a column is a nested column, the header row will display the connecting relationship name in the square brackets.
+Cell values for such columns will display the related assets before displaying the value of the selected property.
+You can select more than one level of nesting.</p>
+<section id="actions-in-the-search-panel">
+<h4>Actions in the Search Panel<a class="headerlink" href="#actions-in-the-search-panel" title="Permalink to this headline"></a></h4>
+<p>The Search panel has <strong>New</strong> button.
+Clicking on it, will let you create a new asset of the currently selected type.</p>
+<p>The Search panel also offers several other actions that can be performed on the search query or on the search results.
+These actions and the corresponding menus and buttons are shown in the next screenshot and explained in the text below it.</p>
+<figure class="align-center" id="id93">
+<img alt="TopBraid EDG Numbered Concept Search Page" class="edg-figure-l" src="../../_images/edg_numbered_concept_search.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Numbered Concept Search Page</strong></span><a class="headerlink" href="#id93" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p><strong>Save Search</strong> button.</p></li>
+</ol>
+<blockquote>
+<div><p>Will bring up the dialog to save searches.
+Saved searches are public and can be seen and used by any other users of this collection.
+To run or delete previously saved searches use the <strong>Search Library</strong> panel.</p>
+</div></blockquote>
+<figure class="align-center" id="id94">
+<img alt="TopBraid EDG Save Query" class="edg-figure-m" src="../../_images/edg_save_query.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Save Query</strong></span><a class="headerlink" href="#id94" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic" start="2">
+<li><p><strong>Settings</strong> menu for Search Panel.
+Lets you personalize the behavior of this panel.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Hide Quick Asset Type Selector</strong> – will hide the type selector menu but leave the type selector menu in place.</p></li>
+<li><p><strong>Disable auto-searching</strong> – this will change the behavior of the free text search box.
+You will need to hit enter when ready to submit instead of the results auto populating as you type.</p></li>
+<li><p><strong>Add a column for each filter</strong> – checking this box will add a column to the results table each time you add a property as a filter for the search.</p></li>
+<li><p><strong>Return local results only</strong> – this will filter out included collections.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<figure class="align-center" id="id95">
+<img alt="TopBraid EDG Settings for Search Panel" class="edg-figure-m" src="../../_images/edg_search_panel_settings.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Settings for Search Panel</strong></span><a class="headerlink" href="#id95" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p><strong>Export</strong>. Provides access to the various export options for search results.</p></li>
+</ol>
+<blockquote>
+<div><p>The entire search results are exported unless you check certain results rows, then export will be limited to those rows.</p>
+</div></blockquote>
+<figure class="align-center" id="id96">
+<img alt="TopBraid EDG Search Results Export Options" class="edg-figure-m" src="../../_images/edg_search_export.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Results Export Options</strong></span><a class="headerlink" href="#id96" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><dl class="simple">
+<dt><strong>More</strong>. Provides access to several actions that can be performed on selected results.</dt><dd><p>Check the row boxes for the items you want to perform these actions on.</p>
+<ul class="simple">
+<li><p><strong>Delete</strong></p></li>
+<li><p><strong>Add to Asset List</strong> – which is another panel in the editor used for bulk functions or bookmarks</p></li>
+<li><p><strong>Add to Basket</strong> – which is the basket for all of EDG located in the left navigation menu</p></li>
+<li><p><strong>Edit assets</strong> – will launch a <a class="reference internal" href="../working_with_asset_collections/viewing_and_editing_asset_information.html#batch-edit"><span class="std std-ref">Batch Edit</span></a> wizard tool</p></li>
+<li><p><strong>Show on Map Results Panel</strong> – this option will be available only if <a class="reference internal" href="../working_with_asset_collections/working_with_geo_spatial_data.html#map-explorer-panel"><span class="std std-ref">Map Explorer Panel</span></a> is enabled.
+Clicking on it will display selected items on the map – provided that they have geo coordinates.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<figure class="align-center" id="id97">
+<img alt="TopBraid EDG Search Result Actions" class="edg-figure-m" src="../../_images/edg_search_result_actions.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Result Actions</strong></span><a class="headerlink" href="#id97" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="searching-for-assets">
+<h2>Searching for Assets<a class="headerlink" href="#searching-for-assets" title="Permalink to this headline"></a></h2>
+<p>You can search among the assets of selected type by using:</p>
+<ul class="simple">
+<li><p><strong>Free text</strong> (any property). This matches your string against any property with textual values e.g., label, description, note, etc.
+This query is wildcard.
+For example, searching for “rock” will be interpreted as <em>rock</em> and return results for “rocket”.
+Multiple word free text searches will be AND not OR.</p>
+<ul>
+<li><p>A B means an implicit AND</p></li>
+<li><p>“A B” matches the full term (in exactly that order)</p></li>
+<li><p>A OR B means an ‘or’ – infinite chains are supported such as A OR B OR C OR D</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-center" id="id98">
+<img alt="TopBraid EDG Searching for Assets using Free Text" class="edg-figure-m" src="../../_images/edg_search_free_text.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Searching for Assets using Free Text</strong></span><a class="headerlink" href="#id98" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><strong>Filter</strong> on specific property values.
+The filter icon will open a drop down listing available properties and letting you select one or more.
+This works similar to <strong>Columns</strong> drop down, including ability to select properties of related assets.
+For each property selected using <strong>Filters</strong> drop down, you will be able to enter a search criteria and specify the type of match.
+Type of match determines how EDG will use the value you enter in that field to search for matching data.
+Different properties can use different match types.
+Search criteria specified for each property are combined together to produce an overall search result.</p></li>
+</ul>
+<figure class="align-center" id="id99">
+<img alt="TopBraid EDG Searching for Assets using Filter" class="edg-figure-m" src="../../_images/edg_search_filter.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Searching for Assets using Filter</strong></span><a class="headerlink" href="#id99" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ul>
+<li><dl class="simple">
+<dt><strong>Refine</strong> field is displayed at the top of each column under the column name.</dt><dd><p>Entering a value in this field refines the results displayed in the table.
+The <strong>Refine</strong> is similar to <strong>Filter</strong> except that it only affects the <em>visibility</em> of assets that are already in the results table, without affecting which assets are loaded into results table, i.e., the underlying search scope is unchanged and refine only narrows data already in the table.</p>
+</dd>
+</dl>
+<figure class="align-center" id="id100">
+<img alt="TopBraid EDG Searching for Assets using Refine" class="edg-figure-m" src="../../_images/edg_search_refine.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Searching for Assets using Refine</strong></span><a class="headerlink" href="#id100" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ul>
+<blockquote>
+<div><p>If you have incomplete search results, over 1000 if you have the default settings, you can still search the entire collection as well as export all the search results:</p>
+<blockquote>
+<div><figure class="align-center" id="id101">
+<img alt="TopBraid EDG Labelled Image for Search" class="edg-figure-l" src="../../_images/edg_search_labelled.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Labelled Image for Search</strong></span><a class="headerlink" href="#id101" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</div></blockquote>
+<section id="search-library-panel">
+<span id="id2"></span><h3>Search Library Panel<a class="headerlink" href="#search-library-panel" title="Permalink to this headline"></a></h3>
+<p>This panel will show the list of searches saved using the Search panel. What it shows is determined by the asset collection you are currently in.</p>
+<p>You will be able to select and execute a search. You will also be able to delete saved searches.</p>
+<p>The settings menu lets you configure how much information about a search should be displayed.</p>
+<figure class="align-center" id="id102">
+<img alt="TopBraid EDG Search Library Panel" class="edg-figure-l" src="../../_images/edg_search_library_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Library Panel</strong></span><a class="headerlink" href="#id102" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For expert users familiar with RDF, EDG supports the <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL Query Language</a> for search, see <a class="reference internal" href="../working_with_asset_collections/using_sparql_to_query_and_modify_data.html#sparql-target"><span class="std std-ref">Using SPARQL to Query and Modify Data</span></a>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For software developers and others familiar with GraphQL, EDG supports the <a class="reference external" href="https://graphql.org/">GraphQL</a> for search, see <a class="reference internal" href="../../graphql/index.html#graphql-target"><span class="std std-ref">GraphQL</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="global-lookup">
+<span id="global-lookup-target"></span><h2>Global Lookup<a class="headerlink" href="#global-lookup" title="Permalink to this headline"></a></h2>
+<figure class="align-center" id="id103">
+<img alt="TopBraid EDG Global Lookup View" class="edg-figure" src="../../_images/edg_global_lookup.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Global Lookup View</strong></span><a class="headerlink" href="#id103" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>A <em>Global Lookup</em> text box In the page header lets you find assets (resources) across all asset collections in EDG by entering their name.
+This is an auto-complete look up field.
+As you type, any resource whose label is <em>prefixed</em> by the search text will appear in a popup list.
+Label and Preferred label with a language tag in the current browser’s language or with no language tag will be matched against the entered string.</p>
+<p>Selecting a listed resource displays form with its information in a new browser tab – in the context of the collection where it is defined.</p>
+</section>
+<section id="search-results-via-api">
+<span id="search-results-via-api-target"></span><h2>Search results via API<a class="headerlink" href="#search-results-via-api" title="Permalink to this headline"></a></h2>
+<p>Search results and facets can be accessed via API.
+Results are returned as JSON.</p>
+<p><a class="reference external" href="http://">http://</a>…/search/results</p>
+<p><a class="reference external" href="http://">http://</a>…/search/facets</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>term</p></td>
+<td><p>search term or phrase (uses query syntax)</p></td>
+<td><p>optional</p></td>
+</tr>
+<tr class="row-even"><td><p>limit</p></td>
+<td><p>number of results returned</p></td>
+<td><p>optional</p></td>
+</tr>
+<tr class="row-odd"><td><p>offset</p></td>
+<td><p>number for offset</p></td>
+<td><p>optional</p></td>
+</tr>
+<tr class="row-even"><td><p>withFacets</p></td>
+<td><p>true or false</p></td>
+<td><p>optional</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lucene-integration-and-special-character-handling-in-search">
+<span id="lucene-integration-target"></span><h2>Lucene integration and special character handling in Search<a class="headerlink" href="#lucene-integration-and-special-character-handling-in-search" title="Permalink to this headline"></a></h2>
+<p>EDG uses the Apache Lucene library for indexing text.
+A text index is built on system startup, if it does not already exist.
+The indexer is using <em>Graph Listeners</em> and is updated in near real time as data changes.
+Users with <em>administrator</em> privileges can rebuild the cache on demand using the <em>Cached Graphs</em> administration page (see <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/index.html#edg-administration-and-configuration"><span class="std std-ref">EDG Administration and Configuration</span></a>).</p>
+<section id="changing-to-lucene-whitespaceanalyzer">
+<h3>Changing to Lucene WhitespaceAnalyzer<a class="headerlink" href="#changing-to-lucene-whitespaceanalyzer" title="Permalink to this headline"></a></h3>
+<p>By default, both <em>Search the EDG</em> and the EDG editor search panel use the Lucene index <em>StandardAnalyzer</em>.</p>
+<p>The default <em>StandardAnalyzer</em> <strong>drops</strong> characters such as / and – while the <em>WhitespaceAnalyzer</em> preserves them.</p>
+<p>To search over special characters (such as / ? and -), an <em>administrator</em> must enable the <em>WhitespaceAnalyzer</em> option in <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a>.
+After making a change in analyzer, the administrator needs to rebuild the indices using <em>Text Indices</em> and <em>Search the EDG Index</em>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../files/index.html" class="btn btn-neutral float-left" title="Working with Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../collaboration/index.html" class="btn btn-neutral float-right" title="Collaboration in EDG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

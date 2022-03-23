@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopBraid Explorer &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Geo-spatial capabilities in TopBraid EDG" href="../edg_geo_spatial_capabilities/index.html" />
+    <link rel="prev" title="EDG Reference Data Management" href="../edg_reference_data_management/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Start Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../edg_vocabulary_management/index.html">EDG Vocabulary Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_business_glossaries/index.html">EDG Business Glossaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_reference_data_management/index.html">EDG Reference Data Management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">TopBraid Explorer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-and-setup">Installation and Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-user-interface">The User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-content-to-explorer">Adding Content to Explorer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#on-demand-publishing">On Demand Publishing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workflow-controlled-publishing">Workflow-controlled Publishing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#just-in-time-replication-of-changes">Just-in-Time Replication of Changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuring-search-the-edg">Configuring Search the EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#features-of-explorer">Features of Explorer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_geo_spatial_capabilities/index.html">Geo-spatial capabilities in TopBraid EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Quick Start Guides</a> &raquo;</li>
+      <li>TopBraid Explorer</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="topbraid-explorer">
+<span id="id1"></span><h1>TopBraid Explorer<a class="headerlink" href="#topbraid-explorer" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>TopBraid Explorer lets a broader community of data stakeholders work with the enterprise knowledge graph curated by <a class="reference external" href="https://www.topquadrant.com/topbraid-enterprise-data-governance/">TopBraid EDG</a>.
+TopBraid Explorer lets all stakeholders search, query and view all published information.
+It offers an easy to use Google-like search as well as visual exploration of graph connections, data lineage and impact.
+For access by applications, Explorer offers rich semantic services delivered through flexible and scalable APIs.
+For cost effective read access to the EDG knowledge graph by people and APIs TopBraid Explorer can be added to any of TopBraid EDG’s packages.</p>
+<p>TopBraid Explorer is installed on a server separate from EDG for scalable, high performance access.
+This setup separates the information curation environment, and associated workloads, from the information use environment.
+Individual asset collections are published from EDG to Explorer as they become ready to be used through a choice of mechanisms.
+These mechanisms are: on demand publishing; scheduled, workflow-controlled publishing;  just-in-time replication of changes to some or all asset collections.</p>
+<p>TopBraid Explorer users can search across all published information, view it and can create comments for the information curation team.</p>
+</section>
+<section id="installation-and-setup">
+<h2>Installation and Setup<a class="headerlink" href="#installation-and-setup" title="Permalink to this headline"></a></h2>
+<p>To install and configure Explorer, administrators will use the same process they follow to install EDG.</p>
+<p><strong>Step 1:</strong></p>
+<p>Obtain a license for Explorer from TopQuadrant.
+Contact <a class="reference external" href="mailto:sales&#37;&#52;&#48;topquadrant&#46;com">sales<span>&#64;</span>topquadrant<span>&#46;</span>com</a> if you have not already done this.</p>
+<p><strong>Step 2:</strong></p>
+<p>Set up a separate server or instance for your Explorer application.
+Follow the same guidelines used for your EDG environment.
+You can scale this down if you will have far less data, but if not, follow the same guidelines.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://doc.topquadrant.com/7.0/server-administration/">Administrator Guide</a> for complete instructions to install and configure Explorer as you would EDG.</p>
+</div>
+<p>You will use the same edg.war file for this installation.</p>
+<p><strong>Step 3:</strong></p>
+<p>Configure permissions on the Explorer server.
+You will need an administrator role and an explorer group role.
+Configure EDG and the Explorer server with Explorer Parameters.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://doc.topquadrant.com/7.0/install-exp-ac/">Explorer configuration</a> for complete instructions.</p>
+</div>
+</section>
+<section id="the-user-interface">
+<h2>The User Interface<a class="headerlink" href="#the-user-interface" title="Permalink to this headline"></a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For a basic orientation to the user interface, see <a class="reference external" href="https://doc.topquadrant.com/7.0/user-interface/">EDG User Guide – UI Overview</a>.</p>
+</div>
+</section>
+<section id="adding-content-to-explorer">
+<h2>Adding Content to Explorer<a class="headerlink" href="#adding-content-to-explorer" title="Permalink to this headline"></a></h2>
+<p>Once a collection has been published from EDG, a user (member of “explorer group” ) logged into the Explorer server will be able to see it.
+Explorer provides the same navigation and search features as TopBraid EDG.</p>
+<section id="on-demand-publishing">
+<h3>On Demand Publishing<a class="headerlink" href="#on-demand-publishing" title="Permalink to this headline"></a></h3>
+<p>Managers of specific asset collections, or EDG Administrators, can publish collections to the Explorer server once it’s configured.
+To do this, navigate to the collection in EDG → Export → Publish for Explorer Users  (as shown below for a Reference Dataset).</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Publish for Explorer Users" class="edg-figure" src="../../_images/edg_publish_for_explorer_users.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Publish for Explorer Users</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you immediately get a ‘bad request’ message back, then please double check the Explorer parameters on the EDG server and compare this to the examples in the documentation.</p>
+</div>
+<p>To remove the collection from Explorer, go to this same link and set its status to “Unpublished”.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Unpublish Country Codes for Explorer Users" class="edg-figure" src="../../_images/edg_unpublish_country_codes_to_explorer_users.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Unpublish Country Codes for Explorer Users</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In order to update the collection on Explorer to the most recent version in EDG, use the “update published copy” option.</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Update Published Copy - Country Codes for Explorer Users" class="edg-figure" src="../../_images/edg_update_published_copy_country_codes_to_explorer_users.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Update Published Copy - Country Codes for Explorer Users</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="workflow-controlled-publishing">
+<h3>Workflow-controlled Publishing<a class="headerlink" href="#workflow-controlled-publishing" title="Permalink to this headline"></a></h3>
+<p>Users can configure publishing as a step in a workflow template, and publishing can also be accomplished via an API.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information see <a class="reference external" href="https://doc.topquadrant.com/7.0/developer-guide">TopBraid EDG Developer Guide</a>.</p>
+</div>
+<p>Users can also create a publishing job and schedule it to run using the Job Scheduler in EDG.</p>
+</section>
+<section id="just-in-time-replication-of-changes">
+<h3>Just-in-Time Replication of Changes<a class="headerlink" href="#just-in-time-replication-of-changes" title="Permalink to this headline"></a></h3>
+<p>User organizations that have TopBraid Data Platform can set up the Explorer server as one of the replicated nodes.
+This setup will result in the continuous publishing of changes to selected asset collections in EDG.</p>
+<p>For more information, see <a class="reference external" href="https://doc.topquadrant.com/7.0/data-platform/">TopBraid Data Platform</a>.</p>
+</section>
+<section id="configuring-search-the-edg">
+<h3>Configuring Search the EDG<a class="headerlink" href="#configuring-search-the-edg" title="Permalink to this headline"></a></h3>
+<p>An Administrator of Explorer can configure which of the published collections should be included in the Search the EDG feature for the Explorer server.
+In order to set this, navigate to each collection → Manage tab, then select the checkbox as shown below.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Configure Search the EDG" class="edg-figure" src="../../_images/edg_include_graph_lucene_index.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Configure Search the EDG</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="features-of-explorer">
+<h2>Features of Explorer<a class="headerlink" href="#features-of-explorer" title="Permalink to this headline"></a></h2>
+<p>Explorer users will have read-only access to any collection that is published; no other permission configuration is required.
+When accessing a collection they will see its content and be able to perform a number of functions.
+Navigation to a collection works in the same way it does in EDG: by clicking on the collection type (e.g., Taxonomies) in the left hand side Navigator bar, or by using a hamburger menu in the header.</p>
+<p>Users can also go directly to the asset of interest, by searching in the <a class="reference external" href="https://doc.topquadrant.com/7.0/search-the-edg">Search the EDG</a> window, or using Global Lookup in the header bar.</p>
+<p>Clicking on a collection type, will bring you to the list of published collections.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Published Taxonomies" class="edg-figure" src="../../_images/edg_published_taxonomies.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Published Taxonomies</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Clicking on a collection’s name (e.g., Geography Taxonomy), will display its contents in the same view application as the one available in EDG.
+The screenshot below shows the view for a taxonomy.
+Here we have chosen to layout our panels with the concept tree, table search and the display form.
+Just like in EDG, this layout is configurable and can be saved by the user.
+The Explorer user will have access to the same panels as the EDG user but will not be able to do any editing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the “Panels” menu where the user can drag new panels into view.</p>
+</div>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Geography Taxonomy - Panels Dropdown" class="edg-figure" src="../../_images/edg_geography_taxonomy_panels_dropdown.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Geography Taxonomy - Panels Dropdown</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Just like in EDG, the user has many searching, filtering and sorting options.
+Additional features that EDG users are familiar with, such as Export, Print, and Save to Basket, and Asset List are also available.</p>
+<p>Explorer users have all the visualization features of EDG as well, such as Impact, Lineage and NeighborGram which are available through the form panel for a resource.</p>
+<p>In order to provide feedback to the editorial team working in EDG, Explorer users can make comments as shown below:</p>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG Explorer Users - Send Feedback" class="edg-figure" src="../../_images/edg_explorer_users_send_feedback.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Explorer Users - Send Feedback</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This comment will then be sent to the EDG server and appear in EDG as a comment from the Explorer user.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Explorer Users - Comment" class="edg-figure" src="../../_images/edg_explorer_users_comment.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Explorer Users - Comment</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../edg_reference_data_management/index.html" class="btn btn-neutral float-left" title="EDG Reference Data Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../edg_geo_spatial_capabilities/index.html" class="btn btn-neutral float-right" title="Geo-spatial capabilities in TopBraid EDG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

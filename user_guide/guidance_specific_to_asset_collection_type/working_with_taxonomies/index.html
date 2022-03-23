@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2021-12-03T12:29:05-05:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Taxonomies &mdash; edg-documentation 7.1 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Working with Crosswalks" href="../working_with_crosswalks/index.html" />
+    <link rel="prev" title="Exporting Ontologies" href="../working_with_ontologies/exporting_ontologies.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG 7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guidance Specific to an Asset Collection Type</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html">Working with Ontologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html#indices-and-tables">Indices and tables</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with Taxonomies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#taxonomy-editor">Taxonomy Editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taxonomy-concepts-panel">Taxonomy Concepts Panel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#merging">Merging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cloning-and-replacing">Cloning and Replacing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deleting-assets">Deleting Assets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taxonomy-specific-import-considerations">Taxonomy Specific Import Considerations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taxonomy-specific-exports">Taxonomy Specific Exports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taxonomy-specific-edit-operations">Taxonomy Specific Edit Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taxonomy-specific-reports">Taxonomy Specific Reports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#skos-xl-taxonomies">SKOS-XL Taxonomies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_crosswalks/index.html">Working with Crosswalks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_corpora/index.html">Working with Corpora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_graphs/index.html">Working with Data Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_enumerations/index.html">Working with Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_lineage/index.html">Working with Data Lineage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content_classification/index.html">Content Classification in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrading TopBraid EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../intray/index.html">Candidate Content</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">User Guide</a> &raquo;</li>
+          <li><a href="../index.html">Guidance Specific to an Asset Collection Type</a> &raquo;</li>
+      <li>Working with Taxonomies</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/user_guide/guidance_specific_to_asset_collection_type/working_with_taxonomies/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-taxonomies">
+<span id="working-with-taxonomies-target"></span><h1>Working with Taxonomies<a class="headerlink" href="#working-with-taxonomies" title="Permalink to this headline"></a></h1>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>Please see the <a class="reference internal" href="../../working_with_asset_collections/index.html#asset-collections"><span class="std std-ref">Working with Asset Collections</span></a> for all the general features of asset collections such as import/export, editing, user permissions, reports and settings.</p></li>
+<li><p>Specific taxonomy only information is contained within this page.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>In the current EDG release, there are two choices for editors.</p></li>
+<li><p>This documentation focuses on the “new editor”.</p></li>
+<li><p>Please see the previous documentation at doc.topquadrant.com for the “old editor”.</p></li>
+</ul>
+</div>
+<p>A taxonomy is an asset collection based on SKOS, the W3C standard ontology designed for representing taxonomies, thesauruses, and subject heading schemes.</p>
+<p>In EDG, Taxonomies are SKOS-based datasets, whereas other datasets typically do not include SKOS, although they may.
+When a new taxonomy is created, EDG will automatically include in it SKOS ontology.
+SKOS provides a definition of concept classes (types) and their properties e.g., fields like preferred and alternative labels, various notes and relationships.</p>
+<p>Every taxonomy is expected to have at least one concept scheme that identifies “top concepts” in a scheme.
+A taxonomy can have multiple concept schemes; however, a better practice can be to use a single concept scheme per individual taxonomy.
+Since taxonomies can, as all asset collections, be included into each other, a taxonomy with multiple concept schemes can be assembled through inclusion of several single concept scheme taxonomies.</p>
+<p>Use of the pre-defined SKOS fields can be configured locally for a given taxonomy, globally for the entire EDG or for a subset of taxonomies e.g., all taxonomies associated with some business area.
+You can disable fields for all or a group of taxonomies by taking advantage of the Ontology modeling functionality in EDG.
+Rules and constraints specified by SKOS are also included by default as well as other common constraints for taxonomies e.g., a concept must have a broader parent or be a top concept of some scheme.
+If desired, they can be disabled.</p>
+<p>Ontologies are also used to define custom, non-SKOS properties for taxonomy concepts and to define specializations (sub classes of concepts).
+If you customize SKOS, you need to make sure that the ontology with your customizations is included in the taxonomies these customizations apply to.
+There is a system-wide setting your EDG administrator can use to ensure that the customized model is included in every new taxonomy.
+If customization only applies to a subset of taxonomies, creator of a taxonomy can use the Includes dialog to include the desired customized model.</p>
+<section id="taxonomy-editor">
+<span id="taxonomy-editor-target"></span><h2>Taxonomy Editor<a class="headerlink" href="#taxonomy-editor" title="Permalink to this headline"></a></h2>
+<p>For taxonomies, the default editor layout is the Taxonomy Concepts Panel tree view and the details Form Panel.
+Just like the other collection editors, the UI for this editor can be customized and arranged and comes with many panels and layouts.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information on using EDG editors please see <a class="reference internal" href="../../working_with_asset_collections/viewing_and_editing_asset_information.html#viewing-and-editing-asset-information-target"><span class="std std-ref">Viewing and Editing Asset Information</span></a>.</p>
+</div>
+<figure class="align-center" id="id145">
+<img alt="TopBraid EDG Geography Taxonomy Page" class="edg-figure" src="../../../_images/edg_geography_taxonomy.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Geography Taxonomy Page</strong></span><a class="headerlink" href="#id145" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="taxonomy-concepts-panel">
+<span id="concepts-panel-in-taxonomies-target"></span><h2>Taxonomy Concepts Panel<a class="headerlink" href="#taxonomy-concepts-panel" title="Permalink to this headline"></a></h2>
+<p>This panel displays taxonomy concepts organized into concept schemes.
+It also lets you create new concepts and schemes.</p>
+<p>A concept scheme provides an additional organizing context for a collection of concepts in a taxonomy.
+A concept is said to belong to a concept scheme if it is a child (directly or indirectly) of a top concept.
+Once a scheme is created, top concepts are added to it.
+A concept must belong to at least one concept scheme in order to be displayed in the Taxonomy panel, but it can also belong to more than one, if needs be.</p>
+<p>You can create concept schemes and concepts using icons positioned in the header of the panel.</p>
+<figure class="align-center" id="id146">
+<img alt="TopBraid EDG Creating Concept Schemes and Concepts" class="edg-figure" src="../../../_images/edg_create_concept_scheme.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Creating Concept Schemes and Concepts</strong></span><a class="headerlink" href="#id146" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Taxonomy Concept panel has a quick search field.
+It lets you quickly look up concepts of interest.
+Lookup will only search for concepts presented in this panel i.e., those that are connected to concept schemes.
+The icon to the right of the <strong>Quick search</strong> field will switch from autocomplete lookup based on the preferred label to the full text search across all string properties.</p>
+<figure class="align-center" id="id147">
+<img alt="TopBraid EDG Switch to Full Text Search Option" class="edg-figure-m" src="../../../_images/edg_switch_full_text_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Switch to Full Text Search Option</strong></span><a class="headerlink" href="#id147" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When Quick search is in full text mode, the look up will be routed through the Lucene index and will be subject to its behavior …. for more information about the Lucene index see <a class="reference internal" href="../../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a>.</p>
+</div>
+<p>If you right click on a <strong>concept scheme</strong> in this panel, EDG will display the right click menu with the following options.</p>
+<figure class="align-center" id="id148">
+<img alt="TopBraid EDG Concept Scheme Right Click Options" class="edg-figure-m" src="../../../_images/edg_concept_scheme_right_click_options.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Concept Scheme Right Click Options</strong></span><a class="headerlink" href="#id148" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="create-top-concept">
+<h3>Create Top Concept<a class="headerlink" href="#create-top-concept" title="Permalink to this headline"></a></h3>
+<p>Lets you create a top concept for a scheme.</p>
+<section id="add-to-asset-list">
+<h4>Add to Asset List<a class="headerlink" href="#add-to-asset-list" title="Permalink to this headline"></a></h4>
+<p>Adds selected class to a sharable asset list.
+Asset lists are available in the <a class="reference internal" href="../../working_with_asset_collections/viewing_and_editing_asset_information.html#asset-list-panel"><span class="std std-ref">Asset List Panel</span></a> and used for bookmarking or bulk actions.</p>
+</section>
+<section id="add-to-basket">
+<h4>Add to Basket<a class="headerlink" href="#add-to-basket" title="Permalink to this headline"></a></h4>
+<p><strong>Basket</strong> (see <a class="reference internal" href="../../working_with_asset_collections/index.html#bookmarking-asset-collections-and-assets-target"><span class="std std-ref">Bookmarking Asset Collections and Assets</span></a>) is similar to Asset List but for all of EDG. It is located in the left navigation menu.
+Here you create create new versions of collection or bookmark assets or collections.
+This is per user and not shared.</p>
+</section>
+<section id="open-on-new-form">
+<h4>Open on new Form<a class="headerlink" href="#open-on-new-form" title="Permalink to this headline"></a></h4>
+<p>This opens the <a class="reference internal" href="../../working_with_asset_collections/viewing_and_editing_asset_information.html#form-panel"><span class="std std-ref">Form Panel</span></a> for the selected class.</p>
+</section>
+<section id="start-workflow">
+<span id="index-0"></span><h4>Start Workflow<a class="headerlink" href="#start-workflow" title="Permalink to this headline"></a></h4>
+<p>Starts a <a class="reference internal" href="../../workflows/workflows.html#workflows-target"><span class="std std-ref">Workflows</span></a> for this selected class in this collection.</p>
+</section>
+<section id="explore-menu">
+<h4>Explore Menu<a class="headerlink" href="#explore-menu" title="Permalink to this headline"></a></h4>
+<p>Provides access to the following operations:</p>
+<ul class="simple">
+<li><p>Find Similar Assets … – will open a search dialog to select similarity criteria</p></li>
+<li><p>Find Usages in other Asset Collections… – Shows references to this asset in other asset collections that you have access to</p></li>
+</ul>
+<ul class="simple" id="index-1">
+<li><p>Show Affected Workflows … – will check if any active workflows contain any changes to the selected class</p></li>
+<li><p>Show Comments … – will let you view already created comments for the selected class and will let you create new comments</p></li>
+<li><p>Show Tasks … – will let you view already created tasks for the selected class and will let you create new tasks</p></li>
+<li><p>Show NeighborGram – will display NeighborGram panel for selected class</p></li>
+<li><p>Show Relationship Tree – will display Relationship Tree panel for selected class</p></li>
+</ul>
+</section>
+<section id="modify-menu">
+<h4>Modify Menu<a class="headerlink" href="#modify-menu" title="Permalink to this headline"></a></h4>
+<p>Provides access to the following operations:</p>
+<ul class="simple">
+<li><p>Clone … – will clone the selected scheme.
+All top concepts associated with the selected scheme will also be associated with the clone.
+See <a class="reference internal" href="#cloning-and-replacing-target"><span class="std std-ref">Cloning and Replacing</span></a> for more details.</p></li>
+<li><p>Merge.. – Replaces the ID (URI) of an asset and moves all information about it that exists in the current asset collection to the new ID.
+See <a class="reference internal" href="merging.html#merging-in-taxonomies-target"><span class="std std-ref">Merging</span></a> below for details before using this operation.</p></li>
+<li><p>Replace … – will replace selected scheme.
+See <a class="reference internal" href="#cloning-and-replacing-target"><span class="std std-ref">Cloning and Replacing</span></a> for more.</p></li>
+<li><p>Delete – after confirmation, will delete the selected scheme.
+Deleting a scheme will not impact any concepts.
+See <a class="reference internal" href="#deleting-assets-in-taxonomies-target"><span class="std std-ref">Deleting Assets</span></a> for details.</p></li>
+</ul>
+<p>If you right click on a <strong>concept</strong> in this panel, EDG will display the right click menu with the following options.</p>
+<figure class="align-center" id="id149">
+<img alt="TopBraid EDG Modify Menu" class="edg-figure" src="../../../_images/edg_modify_menu.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Modify Menu</strong></span><a class="headerlink" href="#id149" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="create-narrower-concept-of">
+<h3>Create Narrower Concept of …<a class="headerlink" href="#create-narrower-concept-of" title="Permalink to this headline"></a></h3>
+<p>Lets you create a “child” concept of the selected concept.</p>
+<section id="id47">
+<h4>Add to Asset List<a class="headerlink" href="#id47" title="Permalink to this headline"></a></h4>
+<p>Adds selected class to a sharable asset list.
+Asset lists are available in the <a class="reference internal" href="../../working_with_asset_collections/viewing_and_editing_asset_information.html#asset-list-panel"><span class="std std-ref">Asset List Panel</span></a> and used for bookmarking or bulk actions.</p>
+</section>
+<section id="id48">
+<h4>Add to Basket<a class="headerlink" href="#id48" title="Permalink to this headline"></a></h4>
+<p><strong>Basket</strong> (see <a class="reference internal" href="../../working_with_asset_collections/index.html#bookmarking-asset-collections-and-assets-target"><span class="std std-ref">Bookmarking Asset Collections and Assets</span></a>) is similar to Asset List but for all of EDG.
+It is located in the left navigation menu.
+Here you create create new versions of collection or bookmark assets or collections.
+This is per user and not shared.</p>
+</section>
+<section id="id49">
+<h4>Open on new Form<a class="headerlink" href="#id49" title="Permalink to this headline"></a></h4>
+<p>This opens the <a class="reference internal" href="../../working_with_asset_collections/viewing_and_editing_asset_information.html#form-panel"><span class="std std-ref">Form Panel</span></a> for the selected class.</p>
+</section>
+<section id="id50">
+<h4>Start Workflow<a class="headerlink" href="#id50" title="Permalink to this headline"></a></h4>
+<p>Starts a <a class="reference internal" href="../../workflows/workflows.html#workflows-target"><span class="std std-ref">Workflows</span></a> for this selected class in this collection.</p>
+</section>
+<section id="id51">
+<h4>Explore Menu<a class="headerlink" href="#id51" title="Permalink to this headline"></a></h4>
+<figure class="align-center" id="id150">
+<img alt="TopBraid EDG Explore Menu" class="edg-figure" src="../../../_images/edg_explore_menu.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Explore Menu</strong></span><a class="headerlink" href="#id150" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Provides access to the following operations:</p>
+<ul class="simple">
+<li><p>Find Similar Assets … – will open a search dialog to select similarity criteria</p></li>
+<li><p>Show Affected Workflows … – will check if any active workflows contain any changes to the selected concept</p></li>
+<li><p>Show Comments … – will let you view already created comments for the selected concept and will let you create new comments</p></li>
+<li><p>Show Tasks … – will let you view already created tasks for the selected concept and will let you create new tasks</p></li>
+<li><p>Show NeighborGram – will display NeighborGram panel for the selected concepte</p></li>
+<li><p>Show Relationship Tree – will display Relationship Tree panel for the selected concept</p></li>
+<li><p>Export Hierarchy to Spreadsheet – will export the tree branch starting with the selected concept into a spreadsheet format using columns to represent levels of hierarchy.
+This will open in your browser, save to a file and then open in a spreadsheet to convert.</p></li>
+</ul>
+<p>For example:</p>
+<figure class="align-center" id="id151">
+<img alt="TopBraid EDG Explore Menu Example" class="edg-figure" src="../../../_images/edg_explore_menu_example.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Explore Menu Example</strong></span><a class="headerlink" href="#id151" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id52">
+<h4>Modify Menu<a class="headerlink" href="#id52" title="Permalink to this headline"></a></h4>
+<figure class="align-center" id="id152">
+<img alt="TopBraid EDG Modify Menu" class="edg-figure" src="../../../_images/edg_create_narrow_concepts_modify_menu.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Modify Menu</strong></span><a class="headerlink" href="#id152" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Provides access to the following operations:</p>
+<ul class="simple">
+<li><p>Create multiple concepts …- will let you enter names of multiple concepts, creating them in one step.</p></li>
+<li><p>Clone  … – will clone the selected concept.
+All children of the selected concept will be children of the clone.</p></li>
+<li><p>Clone with descendants … – will clone the entire tree branch.
+See <code class="code docutils literal notranslate"><span class="pre">:ref:`cloning_and_replacing_target</span></code> Assets for more.</p></li>
+<li><p>Replace  … – will replace selected concept.
+See <a class="reference internal" href="#cloning-and-replacing-target"><span class="std std-ref">Cloning and Replacing</span></a> Assets for more.</p></li>
+<li><p>Refresh details of remote values … – this option will appear if a concept is mapped to a resource from a remote Knowledge Graph and some of its value are derived from data in a remote graph.
+It will refresh derived values.</p></li>
+<li><p>Suggest matching WIkidata resources … – this option will appear if a concept type is mapped to a remote SPARQL endpoint.
+It will return resources from a remote Knowledge Graph that are likely matches to the selected concept.</p></li>
+<li><p>Delete – after confirmation, will delete the selected concept.
+Children will not be impacted.</p></li>
+<li><p>Delete with descendants – after confirmation, will delete the entire tree branch.
+Children will be deleted with the exception of children that have multiple parents and one of the parents is outside of the branch.</p></li>
+</ul>
+<p>This panel has no Settings menu.</p>
+</section>
+</section>
+</section>
+<section id="merging">
+<span id="merging-in-taxonomies-target"></span><h2>Merging<a class="headerlink" href="#merging" title="Permalink to this headline"></a></h2>
+<p>When you merge two concepts or concept schemes, you’re deleting one and moving its property values to another.
+For example, let’s say you have a concept with a preferred label of “Caribbean” selected on the concept hierarchy, and it has a scope note value of “Does not include Greater Antilles”.
+To merge it into the “West Indies” concept, transferring the property values to it, select Caribbean on the Concept Hierarchy and then select Merge into concept…” from the gear menu at the top of the form.
+Enter “West Indies” in the dialog box that displays and press Enter.</p>
+<p>When you are finished, the Caribbean concept will no longer be there, and the West Indies one will have a scope note value of “Does not include Greater Antilles” (if it didn’t already) as well as any other values formerly assigned to Caribbean.
+Also if Caribbean was used by some other vocabulary (including transitive imports and usages in Tagger graphs) then those references there are also updated.
+One exception is the Caribbean concept’s preferred label value of “Caribbean”, which instead of becoming an additional preferred label for “West Indies”, will become a new alternative label for it, because a concept should not have two preferred labels in the same language.</p>
+<p>From version 5.2, merge also has a transitive side-effect such that if Concept A is merged into Concept B and A was used by some other vocabulary (including transitive imports and usages in Tagger graphs) then those references there are also updated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>This does not happen for working copies because by default they are not committed, so the changes cannot be propagated.</p></li>
+<li><p>The changes to other graphs will not show up in the change history.</p></li>
+</ol>
+</div>
+<p>Replacing the ID (URI) of an asset will move all information about it that exists in the current asset collection to the new ID.
+This includes any references to the asset.
+If no other collection refers to this asset then this operation will effectively delete the “old” ID.
+However, any information about this asset contained in other collections will continue to refer to the “old” ID.
+You should proceed with this operation only if all information about the asset is contained within this collection, or you understand the implications of this change and, if needed, are prepared to adjust other asset collections.</p>
+</section>
+<section id="cloning-and-replacing">
+<span id="cloning-and-replacing-target"></span><h2>Cloning and Replacing<a class="headerlink" href="#cloning-and-replacing" title="Permalink to this headline"></a></h2>
+<p>Clone and Replace operations are available under Modify menu.</p>
+<p>Clone creates a copy of the selected Asset.
+The label of the clone (preferred label in case of SKOS Concepts) will be set as the label of original asset with “ Copy” post-pended to it.</p>
+<p>Replace, creates a clone of the selected asset using URI that you will provide and then deletes selected asset.
+One difference with the clone operation above is that the label will be the same as the label of the original asset, “ Copy” will not be postpended.
+You can use this operation if you decide that you need to modify URI identity of a resource.
+EDG will automatically adjust all incoming and outgoing references.
+However, it will do so only for the currently selected asset collection.
+Other asset collections will not be updated.
+If they contain references to the asset you are replacing, you will see broken links.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>To understand possible impacts of delete operations see <a class="reference internal" href="#deleting-assets">Deleting Assets</a> .</p>
+</div>
+</section>
+<section id="deleting-assets">
+<span id="deleting-assets-in-taxonomies-target"></span><h2>Deleting Assets<a class="headerlink" href="#deleting-assets" title="Permalink to this headline"></a></h2>
+<p>You can delete assets directly in an asset collection or you can start a workflow and delete in the working copy of the collection that is managed by the workflow.
+Irrespective of the choice, delete options are the same.
+See <a class="reference internal" href="../../workflows/workflows.html#start-workflow"><span class="std std-ref">Starting a Workflow</span></a> for the information on how to start a workflow.</p>
+<p>With asset information displayed on a form, click on Modify button and select Delete.</p>
+<p>You can also select Modify&gt;Delete by using a right click in the Classes, Node Shapes and Taxonomy Concepts panels.</p>
+<p>For Taxonomy Concepts only, in addition to Delete, there is an option to Delete with descendants.
+This deletes an entire tree starting with the selected concept.</p>
+<p>Since asset collections in EDG can include each other by reference, some care needs to be taken when deleting assets.
+Delete operation only deletes references to the deleted asset that exist in your current asset collection.
+Consider the following scenario:</p>
+<ul class="simple">
+<li><p>Taxonomy 1 defines Concept A</p></li>
+<li><p>Taxonomy 1 also defines Concept B making it a child of Concept A</p></li>
+<li><p>Taxonomy 2 includes Taxonomy 1</p></li>
+<li><p>Taxonomy 2 defines Concept C making it a child of Concept A</p></li>
+<li><p>You go to Taxonomy 1 and delete Concept A. Concept B’s reference to A will be removed, but Concept C’s reference to A will stay.
+Now concept C has a broader relationship to an undefined concept</p></li>
+</ul>
+<p>Running Problems and Suggestions report on Taxonomy 2 will report the issue and assist you in removing such references.</p>
+<p>Similarly, deleting a class (asset type) from an ontology will not remove class instances (assets of a given type) that may be stored in another asset collection.
+It will make them members of undefined class. Deleting a property does not delete property values that are held in another asset collection.</p>
+<p>Running Problems and Suggestion report will help you identify and fix these issues.
+Further, by going to the Settings&gt;Included By you will see all asset collections that include your selected collection.
+You can then go to them and use References panel to identify what may be referring to a resource you are planning to delete.</p>
+<p>In addition to generic import options, there is a taxonomy-specific import option that lets you import MultiTes files.</p>
+<p>When importing RDF files into a Taxonomy, EDG will perform some transformations:</p>
+<ul class="simple">
+<li><p>“Narrower concept” relationships will be used to generate inverse “broader concept” relationships</p></li>
+<li><p>A Concept scheme will be added if none exists.
+Concepts without broader parents will be made into top concepts of the scheme</p></li>
+</ul>
+<p>This is done to ensure that such concepts are visible in the Taxonomy Concepts panel.</p>
+<p>Hierarchical spreadsheet importers will also create concept schemes.</p>
+<p>In addition to generic exports options, there are several taxonomy-specific export options.</p>
+<p>In addition to create operations described in the Create New Assets and Clone and Replace sections, new taxonomy concepts can be created as follows:</p>
+<ul class="simple">
+<li><p>Select a parent concept, then select Modify&gt;Create multiple concepts…
+Create multiple instance dialog lets you enter labels for new concepts – one label per line.
+All labels must be in the same language.</p></li>
+<li><p>Select a parent concept, then select Modify&gt;Clone with descendants …
+This will clone an entire tree starting with the selected parent concept.</p></li>
+</ul>
+<p>Also see Taxonomy Concepts Panel for additional information.</p>
+<p>When you create a child concept, you may want its type to be based on the type of a parent concept.
+For example, you may want to make sure that all children of assets of type Continent are Countries.
+To get this behavior, you need to specify a constraint on the ‘narrower’ relationship in the ontology your taxonomy is based on.
+The constraint must be created on the inverse of skos:broader.
+For example:</p>
+<ul class="simple">
+<li><p>Go to the Geo Ontology and select Continent.
+Then, create a property shape for inverse of skos:broader.
+Do not modify the existing shape for inverse of skos:broader declared at Concept.
+You want to create a new one, specifically for the Continent</p></li>
+<li><p>In the create dialog, enter Country in the class field</p></li>
+</ul>
+<p>Now, when creating a child of a continent, you will no longer be asked to select a type, it will be automatically created as a Country.</p>
+<p>In addition to the general reports, there are two specialized reports for taxonomies:</p>
+<ul class="simple">
+<li><p>Spell Check Report</p></li>
+<li><p>Taxonomy Statistics Report</p></li>
+</ul>
+<section id="displaying-relationship-trees">
+<h3>Displaying Relationship Trees<a class="headerlink" href="#displaying-relationship-trees" title="Permalink to this headline"></a></h3>
+<p>EDG’s taxonomy panel displays a hierarchical tree using “broader” relationships.
+For example, if “dog” had a broader relationship of “mammal,” then the hierarchical tree would show “dog” as a child node of “mammal” on the tree.
+You can also display a horizontal graphical tree using any relationship property you like by selecting <strong>Explore &gt; Display relationship tree</strong> from Form Panel on the editor.
+EDG will then show a drop-down box that lets you select from all of the relationship properties used with the selected resource, and after you select one it renders a tree with all the concepts associated with that resource by that property.
+If those concepts have their own values for that property, EDG will display then with a colored circle that you can click to see those values.</p>
+<p>For example, in the following, someone has picked <strong>Display relationship tree</strong> after selecting Algeria in the sample Geography vocabulary and then selected the “has related” relationship.
+Clicking the colored circle with “North Africa” turned that circle white and expanded the tree to show its own “has related” properties, and then clicking the colored circle for “Middle East” did the same for that concept.</p>
+<figure class="align-center" id="id153">
+<img alt="TopBraid EDG Display Relationship Tree Example" class="edg-figure" src="user_guide/guidance_specific_to_asset_collection_type/working_with_taxonomies/_images/edg_displaying_relationship_tree.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Display Relationship Tree Example</strong></span><a class="headerlink" href="#id153" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The filled circles for Asia and Egypt show that clicking them would display additional values branching off from those.</p>
+<p>To make room, you can collapse any expanded branch.
+For example, clicking the white circle with “Middle East” above would turn the circle blue and hide its branches.</p>
+</section>
+<section id="displaying-a-neighborgram-of-all-concept-relationships">
+<h3>Displaying a NeighborGram of All Concept Relationships<a class="headerlink" href="#displaying-a-neighborgram-of-all-concept-relationships" title="Permalink to this headline"></a></h3>
+<p>You can display a graph diagram of all related concepts by selecting <strong>Explore &gt; Display NeighborGram</strong> from the Form Panel.</p>
+<p>The NeighborGram will open in a new browser tab.
+It has two panel display – navigable graph-like diagram on the left and a form showing all the information about the selected concept on the right.
+This option is available for classes (concept types) as well as concepts.</p>
+</section>
+</section>
+<section id="skos-xl-taxonomies">
+<span id="skos-xl-target"></span><h2>SKOS-XL Taxonomies<a class="headerlink" href="#skos-xl-taxonomies" title="Permalink to this headline"></a></h2>
+<p>SKOS-XL (SKOS eXtension for Labels) is a part of the W3C SKOS standard that lets you treat labels as resources in their own right, with their own metadata.
+This may be useful for adding provenance data or information for text mining tools about how to use specific labels.
+TopBraid EDG lets you use SKOS-XL to add any metadata you like to alternative and hidden labels.
+Starting with release 6.3, EDG also lets you add metadata directly to links between a concept and its textual labels as detailed in <a class="reference internal" href="../working_with_ontologies/ontology_how_to_guidance.html#enabling-reification"><span class="std std-ref">Enabling Reification of Property Values</span></a> .
+This may serve as an alternative to SKOS-XL – an alternative that supports capture of label metadata without the added complexity of managing labels as independent resources.</p>
+<p>To activate the SKOS-XL support for a particular taxonomy, select Settings &gt; Includes and check SKOS XL SHACL Shapes to include SKOS-XL.
+Then, when you edit concepts in that taxonomy, the edit forms will let you add existing label resources as the values of alternative and hidden labels.
+Once a label’s data has been entered, it will appear like any other relationship property value on the relevant form: as a hypertext link.
+You will be able create new labels using “Create New” as part of the editing concept information.
+Or, alternatively, you can create and work with label resources independently from concepts.
+To do so, switch to the Search panel (or Search layout) and select Label from the asset type navigator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>SKOS-XL SHACL Shapes only provide skosXL:altLabel and skosXL:hiddenLabel relationships so that you can create separate label resources for them.</p></li>
+<li><p>A concept still needs to have a textual label.
+This means that even with SKOS-XL, TopBraid EDG will continue to use skos:prefLabel as a direct label of a concept.</p></li>
+<li><p>EDG uses resource’s textual label (either skos:prefLabel or rdfs:label) as a display name consistently across all the UI.
+Further, TopBraid EDG creates text indexes of concepts (and other resources) to facilitate auto-complete and search.
+The indexing process uses resource’s label.</p></li>
+</ul>
+</div>
+<p>SKOS-XL defines only one property for the Label class – literal form.
+As previously mentioned, EDG uses either skos:prefLabel or rdfs:label as resource names.
+There is a special “hard coded exception” from this rule for the SKOS-XL Label resources.
+Even-though the create dialog for them says “label”, the value entered as a label is stored in the skosXL:literalForm property.
+EDG will understand that for Label resources this property is used as their name.
+To associate a new property with a SKOS-XL label use the same Ontology customization capabilities as you would use to create new properties for concepts.</p>
+<section id="transform-skos-xl">
+<h3>Transform SKOS-XL<a class="headerlink" href="#transform-skos-xl" title="Permalink to this headline"></a></h3>
+<p>On the Transform tab of Taxonomies you will find an option to convert SKOS-XL labels to reified values.
+This feature will convert any instances of <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> to values of their corresponding <em>direct</em> SKOS properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:prefLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:altLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:altLabel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:hiddenLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:hiddenLabel</span></code></p></li>
+</ul>
+<p>If the <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> has other properties than <code class="docutils literal notranslate"><span class="pre">skosxl:literalForm</span></code> and <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code> then these values will be converted into reified statements.
+For example, if your <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances have values for <code class="docutils literal notranslate"><span class="pre">ex:isAbbreviation</span></code> and <code class="docutils literal notranslate"><span class="pre">skosxl:prefLabel</span></code> was used to point to the label, then there will be a reified triple attached to the <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code> statement to store these additional values.
+The ontology should define suitable node shapes that define the properties such as <code class="docutils literal notranslate"><span class="pre">ex:isAbbreviation</span></code> for display and editing purposes, and attach them to the property shapes of properties such as <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code> using <code class="docutils literal notranslate"><span class="pre">dash:reifiableBy</span></code></p>
+<p>Optionally, the original URIs of the <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances will be stored as reified triples and the property <code class="docutils literal notranslate"><span class="pre">dash:uri</span></code> which can then be used to restore the original <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances as part of an exporter.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../working_with_ontologies/exporting_ontologies.html" class="btn btn-neutral float-left" title="Exporting Ontologies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../working_with_crosswalks/index.html" class="btn btn-neutral float-right" title="Working with Crosswalks" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.
+      <span class="lastupdated">Last updated on Dec 03, 2021.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

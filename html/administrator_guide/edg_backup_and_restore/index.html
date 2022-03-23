@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDG Backup and Restore &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="TopBraid EDG Studio" href="../../topbraid_edg_studio/index.html" />
+    <link rel="prev" title="TopBraid Explorer Setup" href="../topbraid_explorer_setup/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_installation_and_authentication/index.html">EDG Installation and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EDG Backup and Restore</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#edg-backup-and-restore-utility">EDG Backup and Restore Utility</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utility-backup">Utility Backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utility-restore">Utility Restore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-backup">Manual Backup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-restore">Manual Restore</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+      <li>EDG Backup and Restore</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<span class="target" id="index-0"></span><section id="edg-backup-and-restore">
+<span id="index-1"></span><span id="id1"></span><h1>EDG Backup and Restore<a class="headerlink" href="#edg-backup-and-restore" title="Permalink to this headline"></a></h1>
+<p>There are 2 options for backup and restore in EDG. The first is the built-in backup and restore utility in EDG. The second is a manual process.  The same steps and options to backup EDG are also applicable for Explorer.</p>
+<section id="edg-backup-and-restore-utility">
+<h2>EDG Backup and Restore Utility<a class="headerlink" href="#edg-backup-and-restore-utility" title="Permalink to this headline"></a></h2>
+<p>The backup and restore utility is available for Administrators of EDG to take backups of the collections in the workspace and restore from a backup if needed.
+Restores should be reserved for disaster recovery purposes. Please test this utility in a development environment to get familiar with the process. Note, this is memory intensive.
+If your server is low on memory, the restore could fail. We recommend manually running garbage collection prior to a restore through the memory management page.
+This feature should not replace any existing backup strategy you have for your organization, only supplement and enhance it.</p>
+<p>Important details prior to using this feature:</p>
+<ul class="simple">
+<li><p>Backups can be downloaded to local machine of user or stored in AWS S3 bucket. They are also stored in <code class="code docutils literal notranslate"><span class="pre">Tomcat\webapps\edg\config\restore</span></code> folder upon doing a restore. This is in case of rollback.</p></li>
+<li><p>If you are doing frequent restores, please clear this folder out periodically to save disk space.</p></li>
+<li><p>Everything in the workspace will be backed up/restored besides EDG system files and configurations.</p></li>
+<li><p>During the restore process, if there are any TDB databases (including new collections you have created) in the system that do not exist in the backup you are restoring, they will be cleared.
+Any other files in custom projects will remain, regardless of if they were in the backup or not.</p></li>
+<li><p>This feature is only available for TDB backed data, not RDBMS.</p></li>
+<li><p>Data Platform backup and restore is available but requires manual intervention for restore. See steps below.</p></li>
+<li><p>Once a restore is in progress do not navigate away from the page or shutdown the server. It may take time to do the restore, so please let it finish. If you get an error then you may have to restart Tomcat.</p></li>
+</ul>
+<section id="utility-backup">
+<h3>Utility Backup<a class="headerlink" href="#utility-backup" title="Permalink to this headline"></a></h3>
+<p>Simply follow the instructions on the backup and restore page from Server Administration for TDB or Data Platform. Or use a Post call to <code class="code docutils literal notranslate"><span class="pre">edg/tbl/backupProjects</span></code> via API.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">curl</span> <span class="pre">–location</span> <span class="pre">–request</span> <span class="pre">POST</span> <span class="pre">‘http://server/edg/tbl/backupProjects’</span> <span class="pre">\</span> <span class="pre">2–header</span> <span class="pre">‘Authorization:</span> <span class="pre">Basic</span> <span class="pre">xxxxxxxxxxxxxxxx’</span></code></p>
+</section>
+<section id="utility-restore">
+<h3>Utility Restore<a class="headerlink" href="#utility-restore" title="Permalink to this headline"></a></h3>
+<p><strong>TDB Restore steps</strong></p>
+<p>Simply follow the instructions on the backup and restore page from Server Administration.</p>
+<p>or Post call to <code class="code docutils literal notranslate"><span class="pre">/edg/tbl/restoreProjects</span></code> via API.</p>
+<p>Example:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">curl</span> <span class="pre">–location</span> <span class="pre">-F</span> <span class="pre">“file=&#64;backup-project-17143359091279321948-.zip”</span> <span class="pre">-F</span> <span class="pre">“skipBackupPreRestart=false&amp;skipBackupPostRestart=false”</span> <span class="pre">–header</span> <span class="pre">“Authorization:</span> <span class="pre">Basic</span> <span class="pre">XXXXXXXXXXXX”</span> <span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">https://server/edg/tbl/restoreProjects</span></code></p>
+<p><strong>Data Platform Restore steps</strong></p>
+<ul class="simple">
+<li><p>Shutdown EDG nodes and Data Platform</p></li>
+<li><p>Download the backup locally, and unzip</p></li>
+<li><p>Take dp-server.zip from the backup</p></li>
+<li><p>Copy it to the DP server file system</p></li>
+<li><p>Unzip it</p></li>
+<li><p>Move the data in the unzipped folder to whatever you used for –base, if necessary</p></li>
+<li><p>Re-zip the rest of the backup (minus dp-server.zip) for use on each EDG node</p></li>
+</ul>
+<p>For each EDG node:</p>
+<ul class="simple">
+<li><p>Ensure Data Platform is offline</p></li>
+<li><p>Ensure tomcat is shut down on all EDG nodes.</p></li>
+<li><p>Place the rest of the backup(from step 7 above) in this location in the Tomcat EDG directory <code class="code docutils literal notranslate"><span class="pre">~/WEB-INF/restore/</span></code> for the primary EDG node. Create this directory if it doesn’t exist.</p></li>
+<li><p>In the workspace for this primary EDG node, delete the Zone folder and _Data folders</p></li>
+<li><p>Start Tomcat on the primary EDG node</p></li>
+<li><p>Once Tomcat has fully started on the primary EDG node, start Data Platform.</p></li>
+<li><p>Test to ensure the data looks correct and is syncing to the Data Platform.</p></li>
+<li><p>Once verified, in the remainder of the EDG nodes workspaces, move the workspace outside of the directory so that EDG will create a new one.</p></li>
+<li><p>Start each EDG node and let it sync.</p></li>
+</ul>
+</section>
+<section id="manual-backup">
+<h3>Manual Backup<a class="headerlink" href="#manual-backup" title="Permalink to this headline"></a></h3>
+<p><strong>TDB</strong></p>
+<ul class="simple">
+<li><p>Stop your EDG server, because the backup must occur offline.</p></li>
+<li><p>Backup your entire workspace, by performing a tar or zip operation on it. This will also backup the TDB databases with it.</p></li>
+<li><p>Start EDG backup once all of the above steps have been completed.</p></li>
+<li><p>Data Platform</p></li>
+<li><p>Stop your EDG servers, because the backup must occur offline.</p></li>
+<li><p>Backup your entire workspace, by performing a tar or zip operation on it.</p></li>
+<li><p>Backup your Data Platform database.</p></li>
+<li><p>Store these two files together offline.</p></li>
+<li><p>Start EDG backup once all of the above steps have been completed.</p></li>
+</ul>
+<p><strong>RDBMS</strong></p>
+<ul class="simple">
+<li><p>Backup your entire workspace, by server snapshot or other.</p></li>
+<li><p>Backup your configured database. See your RDBMS manufacturer’s website for more information. NOTE: Be sure to backup the correct database/schema, as configured for your EDG server.</p></li>
+<li><p>Store these two files together offline.</p></li>
+</ul>
+</section>
+<section id="manual-restore">
+<h3>Manual Restore<a class="headerlink" href="#manual-restore" title="Permalink to this headline"></a></h3>
+<p><strong>TDB</strong></p>
+<ul class="simple">
+<li><p>Stop EDG server.</p></li>
+<li><p>Locate and delete (or move out of the directory) your current EDG workspace.</p></li>
+<li><p>Replace the existing EDG workspace with your backed-up copy.</p></li>
+<li><p>Start EDG server.</p></li>
+</ul>
+<p><strong>Data Platform</strong></p>
+<ul class="simple">
+<li><p>Stop EDG server.</p></li>
+<li><p>Stop DP server.</p></li>
+<li><p>Locate and delete  (or move out of the directory) your current EDG workspace.</p></li>
+<li><p>Replace the existing EDG workspace with your backed-up copy.</p></li>
+<li><p>Replace your Data Platform database with your backed-up copy.</p></li>
+<li><p>Start DP server.</p></li>
+<li><p>Start EDG server.</p></li>
+</ul>
+<p><strong>RDBMS</strong></p>
+<ul class="simple">
+<li><p>Stop EDG server.</p></li>
+<li><p>Locate and delete (or move out of the directory) your current EDG workspace.</p></li>
+<li><p>Replace the existing EDG workspace with your backed-up copy.</p></li>
+<li><p>Restore your database from the backup. See your DBA for this step</p></li>
+<li><p>Start EDG server.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../topbraid_explorer_setup/index.html" class="btn btn-neutral float-left" title="TopBraid Explorer Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../topbraid_edg_studio/index.html" class="btn btn-neutral float-right" title="TopBraid EDG Studio" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

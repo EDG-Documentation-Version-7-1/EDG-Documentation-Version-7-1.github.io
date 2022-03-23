@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Crosswalks &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Working with Corpora" href="../working_with_corpora/index.html" />
+    <link rel="prev" title="Working with Taxonomies" href="../working_with_taxonomies/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guidance Specific to an Asset Collection Type</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html">Working with Ontologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_taxonomies/index.html">Working with Taxonomies</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with Crosswalks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#licensing-and-enablement">Licensing and Enablement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#overview-of-crosswalks">Overview of Crosswalks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crosswalks-home">Crosswalks Home</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-new-crosswalk">Creating a New Crosswalk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-crosswalk-editor">The Crosswalk Editor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crosswalk-operations">Crosswalk Operations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#including-crosswalks-into-participating-asset-collections">Including Crosswalks into Participating Asset Collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reporting-crosswalk-errors">Reporting Crosswalk Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-connections-using-edg-tagger">Creating Connections using EDG Tagger</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_corpora/index.html">Working with Corpora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_graphs/index.html">Working with Data Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_enumerations/index.html">Working with Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_lineage/index.html">Working with Data Lineage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content_classification/index.html">Content Classification in EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">User Guide</a> &raquo;</li>
+          <li><a href="../index.html">Guidance Specific to an Asset Collection Type</a> &raquo;</li>
+      <li>Working with Crosswalks</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-crosswalks">
+<span id="working-with-crosswalks-target"></span><h1>Working with Crosswalks<a class="headerlink" href="#working-with-crosswalks" title="Permalink to this headline"></a></h1>
+<section id="licensing-and-enablement">
+<span id="licensing-and-enablement-target"></span><h2>Licensing and Enablement<a class="headerlink" href="#licensing-and-enablement" title="Permalink to this headline"></a></h2>
+<p>The availability of any asset collection is determined by what is (a) licensed and (b) configured under <em>Server Administration</em>.
+To install a license or to view the currently licensed features, see Administrator Guide section on Product Registration` .
+To configure which licensed collection types are currently enabled or disabled, see Administrator Guide section on EDG Configuration Parameters.</p>
+<p>For general licensing information and available asset collections and packages, see the TopQuadrant website.</p>
+<p><a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a></p>
+</section>
+<section id="overview-of-crosswalks">
+<h2>Overview of Crosswalks<a class="headerlink" href="#overview-of-crosswalks" title="Permalink to this headline"></a></h2>
+<p>The <strong>Crosswalks</strong> assetc collecion type let you create connections between the assets in two different collections.
+This is especially useful for defining connections between two different standard vocabularies or between a standard one and a specialized local one.
+Applications can use saved crosswalk connection data to enhance the use of either vocabulary by taking advantage of the connected data and metadata for search, classification, and other operations.</p>
+<p>When creating a new Crosswalk, you will be asked to identify the <em>From</em> and <em>To</em> collection.</p>
+<p>For each of the two collections connected by a crosswalk (From and To), you will be asked to select the class of assets to be mapped.
+By default, mappings will use the <em>crosswalk:closeMatch</em> predicate.
+A different mapping predicate can be specified on the <strong>Manage</strong> tab.</p>
+<figure class="align-center" id="id233">
+<img alt="TopBraid EDG Display Relationship Tree Example" class="edg-figure" src="../../../_images/edg_crosswalk.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Display Relationship Tree Example</strong></span><a class="headerlink" href="#id233" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Mappings between two asset collections can be auto-generated by using the <strong>Generate Mappings</strong> button available in the Crosswalk Editor.
+The automated mapping functionality is part of the <strong>Problems and Suggestions</strong> algorithms.
+The <strong>Manage</strong> tab lets you set an option to automatically accept mappings that have 100% confidence.</p>
+<p>TopBraid EDG uses fuzzy matching on asset labels to generate crosswalk mappings.
+Alternative mapping algorithms can be added to TopBraid EDG.
+Adding a new algorithm requires access to TopBraid EDG Java code and is currently supported only through TopQuadrant Professional Services.
+If alternative auto-mapping algorithms are available in your installation of TopBraid EDG, users will be able to select them on the <strong>Manage</strong> tab.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>Specific crosswalk only information is contained within this page.</p></li>
+<li><p>Please see the <a class="reference internal" href="../../working_with_asset_collections/index.html#asset-collections"><span class="std std-ref">Working with Asset Collections</span></a> for all the general features of asset collections such as import/export, editing, user permissions, reports and settings.</p></li>
+</ul>
+</div>
+</section>
+<section id="crosswalks-home">
+<span id="crosswalks-home-target"></span><h2>Crosswalks Home<a class="headerlink" href="#crosswalks-home" title="Permalink to this headline"></a></h2>
+<p>Selecting the <strong>Crosswalks</strong> link in the left-navigation pane of TopBraid EDG lists all of the Crosswalk collections currently available to the user and, it allows authorized users to create new ones.</p>
+</section>
+<section id="creating-a-new-crosswalk">
+<span id="create-new-crosswalk-target"></span><h2>Creating a New Crosswalk<a class="headerlink" href="#creating-a-new-crosswalk" title="Permalink to this headline"></a></h2>
+<p>The <strong>Crosswalks &gt; Create New Crosswalk</strong> link opens a form with fields used to define the new Crosswalk.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also create a Crosswalk by using a Create link in <a href="#id242"><span class="problematic" id="id243">`Governance Areas (and Roles)`_</span></a>  or the plus button available in the application header bar.</p>
+</div>
+<p>The Create dialog box asks for the Crosswalk’s <strong>Label</strong> (name) and, optionally, a <strong>Description</strong>.</p>
+<p>The Crosswalk creator is set as having <em>manager</em> priveleges for the collection.</p>
+<figure class="align-center" id="id234">
+<img alt="TopBraid EDG Create New Crosswalk Page" class="edg-figure" src="../../../_images/edg_create_new_crosswalk1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create New Crosswalk Page</strong></span><a class="headerlink" href="#id234" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For both the <em>From</em> and <em>To</em> collection, select the class of mapped terms from the <strong>Entity Type</strong> drop-down list.
+For example, for a taxonomy users will choose Concept or one of its subclasses.
+For code lists, the class name often reflects the code list’s contents more directly, such as a “Market Identifier Code” class in a “Market Identifier Codes” code list.</p>
+<section id="references-to-crosswalks">
+<h3>References to Crosswalks<a class="headerlink" href="#references-to-crosswalks" title="Permalink to this headline"></a></h3>
+<p>If an asset collection participates in a crosswalk, you will find references to crosswalk(s) in the editor under the <strong>Available Crosswalks</strong> panel.
+You will be able to navigate to the relevant crosswalks.
+This panel also lets you create a new crosswalk.
+When you create a new crosswalk using this panel, you do not need to specify “from” asset collection.</p>
+<p>From your collection, click the <img alt="panels" src="../../../_images/edg_panels_dropdown.png" /> dropdown located on the right upper corner of the page and drag <strong>Available Crosswalks</strong> somewhere in the page.</p>
+<figure class="align-center" id="id235">
+<img alt="TopBraid EDG Create New Crosswalk Page" class="edg-figure" src="../../../_images/edg_create_new_crosswalk_higlighted.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create New Crosswalk Page</strong></span><a class="headerlink" href="#id235" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If you select an asset and then click on one of the available crosswalks, a crosswalk editor will open up with that asset pre-selected so you see what it has been mapped to in the crosswalk.</p>
+</section>
+</section>
+<section id="the-crosswalk-editor">
+<span id="the-crosswalk-editor-target"></span><h2>The Crosswalk Editor<a class="headerlink" href="#the-crosswalk-editor" title="Permalink to this headline"></a></h2>
+<p>The crosswalk panel has two main columns, one for each asset collection in the mapping.
+If the asset-type on the left side has a primary key, then it will also have a column.</p>
+<p>Like the Search Panel in other collections, users can filter-down the displayed assets by using (a) the <strong>Free Text</strong> search, property-specific constraints added from the <strong>Filters</strong> drop-down, or the filters available in each column.</p>
+<p>For each left-side asset, there are zero or more mapped right-side assets.
+The mapping can be many-to-many, so viewers can swap the left/right collections via the <strong>Toggle direction</strong> button <img alt="toggle" src="../../../_images/edg_toggle_direction_button.png" /> found in the page header.</p>
+<figure class="align-center" id="id236">
+<img alt="TopBraid EDG Crosswalk Mapped Assets" class="edg-figure" src="../../../_images/edg_crosswalk_mapped_assets.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Mapped Assets</strong></span><a class="headerlink" href="#id236" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To manually add a new mapping from a right-side asset to a left-side one, use the mappings panel as seen below.</p>
+<p>First highlight the row you wish to add a mapping in the table panel.
+This will cause the mapping panel to refresh for that particular row.
+You can then enter the matches along with comments for that row.
+Select each match from the dropdown and click the <em>add match</em> button.
+You will see all of the mappings entered below the <em>add match</em> button.
+If needed, you can delete a mapping from there.</p>
+<figure class="align-center" id="id237">
+<img alt="TopBraid EDG Crosswalk Add Match" class="edg-figure" src="../../../_images/edg_crosswalk_add_match.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Add Match</strong></span><a class="headerlink" href="#id237" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To automatically generate potential matches, click the <strong>Generate Mappings</strong> button.
+This runs the crosswalks’ ref:<code class="code docutils literal notranslate"><span class="pre">problems_and_suggestions_panel</span></code>, which lists suggested asset mappings between the two collections.
+EDG offers a default built-in generator of mappings.
+If a different mapping algorithm is desired, TQ professional services can help with plugging additional algorithms for mapping crosswalks.</p>
+<figure class="align-center" id="id238">
+<img alt="TopBraid EDG Crosswalk Generate Mapping" class="edg-figure" src="../../../_images/edg_crosswalk_generate_mapping.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Generate Mapping</strong></span><a class="headerlink" href="#id238" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="crosswalk-operations">
+<span id="crosswalk-operations-target"></span><h2>Crosswalk Operations<a class="headerlink" href="#crosswalk-operations" title="Permalink to this headline"></a></h2>
+<section id="export-crosswalk-as-a-spreadsheet">
+<h3>Export Crosswalk as a Spreadsheet<a class="headerlink" href="#export-crosswalk-as-a-spreadsheet" title="Permalink to this headline"></a></h3>
+<p>EDG Crosswalks features include the following special exporters:</p>
+<ul class="simple">
+<li><p><strong>Export Crosswalk as a Spreadsheet</strong> creates a comma-separated spreadsheet containing one row for each mapping in the current Crosswalk.</p></li>
+</ul>
+<figure class="align-center" id="id239">
+<img alt="TopBraid EDG Export Crosswalk as a Spreadsheet Option" class="edg-figure" src="../../../_images/edg_export_crosswalk_as_spreadsheet.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export Crosswalk as a Spreadsheet Option</strong></span><a class="headerlink" href="#id239" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="including-crosswalks-into-participating-asset-collections">
+<h2>Including Crosswalks into Participating Asset Collections<a class="headerlink" href="#including-crosswalks-into-participating-asset-collections" title="Permalink to this headline"></a></h2>
+<p>You may want to include a crosswalk into an asset collection involved in a crosswalk, so that when you look at its resources you see matches from the crosswalk.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will only see matches on the forms and will be able to use them in search if the cross-walked entity type has a property shape for the mapping predicate.
+If you use a custom mapping predicate, make sure to select one that is defined for the “from” assets.</p>
+</div>
+<p>If you are using the standard mapping predicate, make sure to define it as a property for the “from” assets.
+When you create a new crosswalk, you can check the box offering to automatically generate a property shape for the standard match (mapping) predicate.
+If you did not do this when the crosswalk was created, EDG can automatically generate the necessary property definition if you do he following:</p>
+<ul class="simple">
+<li><p>Include a crosswalk in the “from” asset collection</p></li>
+<li><p>Navigate to an ontology in EDG that contains class and property definitions for the “from” asset collection</p></li>
+<li><p>Select your “from” class. Then select <strong>Modify&gt;Derive property shapes from instances … .</strong></p></li>
+<li><p>In the dialog that will appear, select the “from” asset collection as the place to get instances from.</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more details, see <a href="#id244"><span class="problematic" id="id245">`Creating Classes and Property Shapes from Data`_</span></a>. If the same ontology is being used for the “to” graph, generate the inverse shape – to see matches when working with the “to” resources.</p>
+</div>
+<p>After the property has been defined, you will see the matches on the forms for the “from” resources.
+You will also be able to use the mapping predicate as a search results column.
+If the inverse was defined, you will also see matches on the forms for the “to” resources.
+Alternatively, to see matches for the “to” resources, use <strong>References</strong> panel.</p>
+</section>
+<section id="reporting-crosswalk-errors">
+<span id="reporting-crosswalk-errors-target"></span><h2>Reporting Crosswalk Errors<a class="headerlink" href="#reporting-crosswalk-errors" title="Permalink to this headline"></a></h2>
+<p>Deletions or modifications to asset collections involved in a crosswalk can cause crosswalk relationship errors.
+Built-in EDG crosswalk constraints identify such occurrences for reporting and maintenance purposes.
+To use this feature, see the <strong>Problems and Suggestions</strong> panel.
+The <strong>Problems and Suggestions</strong> panel also auto suggests new mappings.</p>
+<figure class="align-center" id="id240">
+<img alt="TopBraid EDG Crosswalk Add Match" class="edg-figure" src="../../../_images/edg_crosswalk_problems_suggestions.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Add Match</strong></span><a class="headerlink" href="#id240" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="creating-connections-using-edg-tagger">
+<span id="creating-connections-using-edg-tagger-target"></span><h2>Creating Connections using EDG Tagger<a class="headerlink" href="#creating-connections-using-edg-tagger" title="Permalink to this headline"></a></h2>
+<p>A <em>Crosswalk</em> is simply a set of links between assets from two different asset collections.</p>
+<p>As alternative to a <em>Crosswalk</em>, TopBraid EDG’s optional Tagger and AutoClassifier module, supports creating connections between assets in asset collections called <em>Content Tagsets</em>.
+There are a couple of reasons why you may want to do this:</p>
+<ul class="simple">
+<li><p>When creating a Content Tagset, you can select multiple mapping (tagging) predicates and then decide which to use when creating each connection.
+In the Crosswalks, you can only use one mapping predicate at a time.
+To switch to another predicate, you could update the selection on the <strong>Manage</strong> tab. However, the crosswalk table and the mappings panel will only show connections built using the currently set mapping predicate.</p></li>
+<li><p>For building connections manually, if your “to” asset collection is a taxonomy, Tagger lets you select you select related resources by browsing taxonomical tree.
+You can also use full text and parametric search to find resources to connect to.
+In the Crosswalks, while you can bring up <strong>Taxonomy Concepts</strong> or <strong>Search</strong> panels, manual connections are always built by using the autocomplete.</p></li>
+</ul>
+<p>If you decide to use this approach, configure a new Content Tagset by setting the “from” collection as the Content Graph and “to” collection as the Tagging Vocabulary.
+In the screenshot below, Geography Taxonomy has been selected as the Content Graph and IPTC Taxonomy as the Tagging Vocabulary.
+As you can see, “Africa” in the Geography Vocabulary has been connected (tagged) with “Africa” from the IPTC using “has exact match” predicate:</p>
+<figure class="align-center" id="id241">
+<img alt="TopBraid EDG Tagging Vocabulary" class="edg-figure" src="../../../_images/edg_tagging_vocab.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Add Match</strong></span><a class="headerlink" href="#id241" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>See the <a href="#id246"><span class="problematic" id="id247">`Using AutoClassifier`_</span></a> for further details.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../working_with_taxonomies/index.html" class="btn btn-neutral float-left" title="Working with Taxonomies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../working_with_corpora/index.html" class="btn btn-neutral float-right" title="Working with Corpora" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

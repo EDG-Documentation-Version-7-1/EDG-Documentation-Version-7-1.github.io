@@ -1,0 +1,56 @@
+# baseURI: http://extensionsamples.topbraid.org/resourceactions/exploreactionexample
+# imports: http://datashapes.org/dash
+# imports: http://topbraid.org/skos.shapes
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/resourceactions/exploreactionexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/resourceactions/exploreactionexample>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/resourceactions/exploreactionexample#" ;
+  rdfs:label "ExploreActionExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <http://topbraid.org/skos.shapes> ;
+.
+ex:ExampleConcept
+  a <http://www.w3.org/2004/02/skos/core#Concept> ;
+  <http://www.w3.org/2004/02/skos/core#prefLabel> "Example Concept" ;
+.
+ex:ExampleConceptScheme
+  a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+  rdfs:label "Example Concept Scheme" ;
+  <http://www.w3.org/2004/02/skos/core#hasTopConcept> ex:ExampleConcept ;
+.
+ex:HelloWorldExploreAction
+  a dash:ExploreAction ;
+  dash:actionGroup ex:SampleExploreActionsGroup ;
+  dash:actionIconClass "far fa-hand-paper" ;
+  dash:js """let msg = `Hello from ${focusNode}`;
+console.log(msg);
+graph.html(`
+	<div>
+		<h1>${msg}</h1>
+		<p>
+			This HTML snippet was created using ADS.
+			The selected focus node was ${focusNode.uri}.
+		</p>
+	</div>
+`)""" ;
+  rdfs:comment """A simple Explore Action that will show up in the Explore menu of every SKOS Concept. It simply logs a message with the label of the selected SKOS concept and returns an HTML snippet with some sample output based on the selected focus node.
+
+To try it out, either include this graph into any Taxonomy and then look into the Explore menu of any skos:Concept, or just open this as a file and navigate to the sample instance of skos:Concept contained in this file.""" ;
+  rdfs:label "Hello World (Explore Action)" ;
+.
+ex:SampleExploreActionsGroup
+  a dash:ActionGroup ;
+  rdfs:label "Sample Explore Actions" ;
+.
+<http://www.w3.org/2004/02/skos/core#Concept>
+  dash:resourceAction ex:HelloWorldExploreAction ;
+.

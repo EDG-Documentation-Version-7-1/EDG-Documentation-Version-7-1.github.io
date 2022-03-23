@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDG Configuration Parameters &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Review/Update installation" href="review_update_installation.html" />
+    <link rel="prev" title="Migrations" href="server_configuration/migrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_installation_and_authentication/index.html">EDG Installation and Authentication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Administration and Configuration</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#setup">Setup</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="server_configuration/index.html">Server Configuration Parameters</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">EDG Configuration Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="review_update_installation.html">Review/Update installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="product_registration.html">Product Registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="default_namespace_and_prefixes.html">Default Namespace and Prefixes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#access-control">Access control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#deployment-and-export">Deployment and Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#user-data">User Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#system-monitoring">System Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#component-monitoring">Component Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#development-and-qa">Development and QA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Administration and Configuration</a> &raquo;</li>
+      <li>EDG Configuration Parameters</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="edg-configuration-parameters">
+<span id="id1"></span><h1>EDG Configuration Parameters<a class="headerlink" href="#edg-configuration-parameters" title="Permalink to this headline"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Any required passwords must be entered after saving changes.</p></li>
+<li><p>Database updates and Sharepoint connection require an EDG server restart.</p></li>
+</ul>
+</div>
+<section id="teamwork-platform-parameters">
+<h2>Teamwork Platform Parameters<a class="headerlink" href="#teamwork-platform-parameters" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>Comments activated</em></p></td>
+<td><p>true</p></td>
+<td><p>Allows comments on data resources</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Tasks activated</em></p></td>
+<td><p>true</p></td>
+<td><p>Allows user tasks on data resources</p></td>
+</tr>
+<tr class="row-even"><td><p>Metrics dashboards activated</p></td>
+<td><p>false</p></td>
+<td><p>EDG only.
+This enables user viewing and administrator editing of metrics dashboards.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Disable Profile Avatars</p></td>
+<td><p>false</p></td>
+<td><p>Set this to true to remove the ability for users to add a profile image in the User Directory page.</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Default namespace suggestion</em></p></td>
+<td><p><a class="reference external" href="http://example.org">http://example.org</a>/{type}/new#</p></td>
+<td><p>This is the string used to pre-fill the <strong>Default namespace</strong> field for a new vocabulary/asset.
+The EDG default is <em>http://example.org/{type}/new#</em>, which an administrator can customize here.
+<strong>Note</strong> that the variable <em>{type}</em> produces the lowercase plural name of the vocabulary/asset type, e.g., “ontologies”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Constraint violations block editing</em></p></td>
+<td><p>false</p></td>
+<td><p>If true then the edit forms will block saving of edits if violations have at least sh:Violation severity.
+By default, users can override all violations, irrespective of their severity level, and continue despite them.</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Only admins can upload files from TriG files</em></p></td>
+<td><p>true</p></td>
+<td><p>If true then only administrators can upload TriG files containing graphs that are mapped to files.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="uri-construction-rules">
+<h2>URI Construction Rules<a class="headerlink" href="#uri-construction-rules" title="Permalink to this headline"></a></h2>
+<p>When a new asset is created, these parameters determine how its URI is automatically constructed.</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>Local name construct method</em></p></td>
+<td><p>label</p></td>
+<td><p>Usually, the new URI begins with the collection’s default namespace string (see the collection’s <strong>Settings</strong> utility group), and this parameter determines its <em>suffix</em>. The parameters settings are shared in the table <a class="reference internal" href="#below"><span class="std std-ref">Parameters Settings</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Include class prefix</em></p></td>
+<td><p>true</p></td>
+<td><p>When true, prepend the asset’s classname to the preceding local-name suffix parameter (except for: <strong>custom</strong>)</p></td>
+</tr>
+<tr class="row-even"><td><p><em>URI Prefix Separator</em></p></td>
+<td><p>-</p></td>
+<td><p>The character(s) used to separate the prefix value from the rest of the URI value when prefix is set, defaulting to “-“.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Include class acronym prefix</em></p></td>
+<td><p>true</p></td>
+<td><p>When the preceding parameter (class name prefix) is true <em>and</em> this is true, use an abbreviated form of the class name <em>if available</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Users cannot modify URI</em></p></td>
+<td><p>false</p></td>
+<td><p>When true, the URIs of new assets are automatically constructed and displayed, but collection editors cannot modify them.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>URI Counter Offset</em></p></td>
+<td><p>0</p></td>
+<td><p>The default offset used in the case of counter being set to construct URIs, defaulting to 0.</p></td>
+</tr>
+</tbody>
+</table>
+<span id="below"></span><table class="colwidths-given tight-table docutils align-default" id="id2">
+<caption><span class="caption-text">Parameters Settings</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter value</p></th>
+<th class="head"><p>URI structure</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>label</strong> or <em>[EMPTY]</em></p></td>
+<td><p>The asset’s label is appended to the default namespace</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>uuid</strong></p></td>
+<td><p>A generated UUID is appended to the default namespaceA generated UUID is appended to the default namespace</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>counter</strong></p></td>
+<td><p>A sequential integer is appended to the default namespace (from a namespace-specific sequence beginning with 0)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>custom</strong></p></td>
+<td><p><em>[EMPTY]</em> – The default namespace is not used: the editor must provide the full URI manually</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lucene-configuration-parameters">
+<h2>Lucene Configuration Parameters<a class="headerlink" href="#lucene-configuration-parameters" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Lucene Unlimited Matches</p></td>
+<td><p>If true then queries using the Lucene text index will not use an upper boundary (10000) of matches.
+Activating this will return more complete results but may lead to bad worst-case performance.
+This setting applies to EDG editors and not Search the EDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>Use Lucene WhitespaceAnalyzer</p></td>
+<td><p>Changes the Lucene index analyzer (currently used for the Text Indices/GraphQL-based and Seach the EDG queries only).
+The default StandardAnalyzer drops characters such as / and – while the WhitespaceAnalyzer preserves them.
+You need to restart the server and then rebuild the text index for this change to take effect.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="reification-configuration-parameters">
+<h2>Reification Configuration Parameters<a class="headerlink" href="#reification-configuration-parameters" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Preserve reification statements</p></td>
+<td><p>If true then EDG file importers will not attempt to convert rdf:Statement instances into corresponding reification URIs (and vice versa on export).
+By default this conversion applies to blank nodes only, unless alsoConvertURIStatements is true.
+Among the RDF file exporters, only the Sorted Turtle writer will observe this flag – all others do not convert reification URIs back to rdf:Statements.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Also convert URI statements</p></td>
+<td><p>If true then EDG file importers will not only convert rdf:Statements that are blank nodes but also URI statements.</p></td>
+</tr>
+<tr class="row-even"><td><p>Record statement URIs</p></td>
+<td><p>If true then EDG file importers will record the original URIs of rdf:Statements as values of dash:uri for round-tripping later.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="microsoft-365-authentication-parameters">
+<span id="ms365-auth-params"></span><h2>Microsoft 365 Authentication Parameters<a class="headerlink" href="#microsoft-365-authentication-parameters" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Registered Application ID</p></td>
+<td><p>The application id generated when the EDG application was registered in Azure.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Service account user name</p></td>
+<td><p>The user name for the service account used to authenticate Microsoft 365 service requests (e.g. Microsoft Graph API).</p></td>
+</tr>
+<tr class="row-even"><td><p>Service account password</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="git-integration">
+<h2>Git Integration<a class="headerlink" href="#git-integration" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Git Folder</p></td>
+<td><p>A local folder on the server that connects to a git repository. This must be the folder with a .git file or a sub-folder of such a folder.
+If a value is given then the user interface will have additional features to commit, push, pull and import asset collections using that repository.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Git user name</p></td>
+<td><p>The user name to authenticate to the git repository (e.g. for push requests). Typically combined with a password.
+Note that for GitHub access, the password may need to be a personal access token, see <code class="code docutils literal notranslate"><span class="pre">https://github.com/settings/tokens</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Git password</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lineagegram-configuration-parameters">
+<h2>LineageGram Configuration Parameters<a class="headerlink" href="#lineagegram-configuration-parameters" title="Permalink to this headline"></a></h2>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>LineageGram Reach</p></td>
+<td><p>Sets the number of hops made for building a lineage or impact diagram. A value of between 1 and 10 is advised.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LineageGram Breadth</p></td>
+<td><p>Sets the number of fan-in or fan-out paths that are evaluated for building a lineage or impact diagram, respectively. A value of between 2 and 10 is advised.</p></td>
+</tr>
+<tr class="row-even"><td><p>LineageGram with Viewframes</p></td>
+<td><p>If true sets the lineageGram to a framed view with collapsible panes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="edg-asset-collection-singletons">
+<h2>EDG Asset Collection Singletons<a class="headerlink" href="#edg-asset-collection-singletons" title="Permalink to this headline"></a></h2>
+<p>EDG Asset Collection Singletons are special asset collections that are automatically created when EDG is installed.
+Currently, there are two singletons: Governance Model and EDG Enumerations.
+Unlike other collection types, only one Governance Model and one EDG Enumerations collection can exist in a given installation of EDG.
+Assets in these collections are available for referencing in all other collections without a need to explicitly include them.</p>
+<p>Setup EDG Enumerations – Administrators can use this function to populate selection values for built-in EDG properties such as status and confidentiality.
+You will be able to load files with pre-build values and/or enter your own values.</p>
+</section>
+<section id="configure-asset-collection-types">
+<h2>Configure Asset Collection Types<a class="headerlink" href="#configure-asset-collection-types" title="Permalink to this headline"></a></h2>
+<p>For the asset collection types allowed by the installed TopBraid product license, these settings allow administrators to show or hide those types in the user interface.
+Administrators can also modify “default includes” for each asset collection type.
+Default includes are graphs that are automatically included when a new collection is created.</p>
+</section>
+<section id="user-interface-configuration">
+<h2>User Interface Configuration<a class="headerlink" href="#user-interface-configuration" title="Permalink to this headline"></a></h2>
+<p>Some TopBraid EDG features support assigning language tags to string attribute values using a drop-down list when editing, for example:</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Language Tags" class="edg-figure" src="../../_images/edg_language_tags.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Language Tags</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This section allows overriding and adding additional languages.
+The below entery is a space-delimited list where you can enter the language choices that will appear on EDG editing screens.
+Any codes can be entered, but the codes will interoperate better with other systems, such as Web browsers, if the ISO 639 language codes and, optionally, ISO 3166 country codes, are used.
+In the following, ISO codes for Spanish, English US English have been entered.
+These will be the only languages that appear in the language tag drop-down:</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Custom Language Setting" class="edg-figure" src="../../_images/edg_custom_language_setting.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Custom Language Setting</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="default-notification-setup">
+<span id="edg-default-notifications"></span><h2>Default Notification Setup<a class="headerlink" href="#default-notification-setup" title="Permalink to this headline"></a></h2>
+<p>These are the default notification settings that are used to initialize new collections.
+For each collection-related event, administrators can indicate default choices for the governance roles that should be notified of it.
+Each collection can override their initial default settings, and changes to these defaults do not affect existing collections.</p>
+</section>
+<section id="governance-roles">
+<h2>Governance Roles<a class="headerlink" href="#governance-roles" title="Permalink to this headline"></a></h2>
+<p>A user who is assigned a governance role will have permissions on a collection in that subject area.
+This global setting determines whether the role can create workflows.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A user having one role disabled for workflow creation could still create a workflow if they also have another applicable enabled role (or a permission profile assignment).</p>
+</div>
+<p>There is also a setting for roles that edit source code and edit ADS scripts.
+If source code checked, users will see the source code panel in the editor and be able to make direct edits.
+If ADS is checked, users will see the ADS panel and be able to write scripts that are executed on this EDG instance.
+Please disable these for non-expert users.</p>
+</section>
+<section id="landing-page-settings">
+<h2>Landing Page Settings<a class="headerlink" href="#landing-page-settings" title="Permalink to this headline"></a></h2>
+<p>The landing page widgets can be turned off or on for the entire EDG workspace.
+Users can turn off any widgets they don’t want to see individually from their users page, unless a widget has been deactivated here.
+It will then be unavailable to anyone.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="server_configuration/migrations.html" class="btn btn-neutral float-left" title="Migrations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="review_update_installation.html" class="btn btn-neutral float-right" title="Review/Update installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

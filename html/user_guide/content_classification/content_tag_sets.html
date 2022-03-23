@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Classification with TopBraid EDG &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Content Classification with TopBraid EDG</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="content-classification-with-topbraid-edg">
+<span id="index-1"></span><h1>Content Classification with TopBraid EDG<a class="headerlink" href="#content-classification-with-topbraid-edg" title="Permalink to this headline"></a></h1>
+<section id="licensing-and-enablement">
+<h2>Licensing and Enablement<a class="headerlink" href="#licensing-and-enablement" title="Permalink to this headline"></a></h2>
+<p>The availability of any asset collection is determined by what is (a) licensed and (b) configured under <em>Server Administration</em>.
+To install a license or to view the currently licensed features, see <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/product_registration.html#product-registration"><span class="std std-ref">Product Registration</span></a>.
+To configure which licensed collection types are currently enabled or disabled, see <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a>.
+For general licensing information and available asset collections and packages, see TopQuadrant.com.</p>
+<p><a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a></p>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>This document describes TopBraid Tagger and AutoClassifier, an add-on TopBraid EDG module designed to help you analyze your information assets –web pages and documents in many formats – to identify the context and meaning of each asset.
+This module can catalog your content, automatically extracting available metadata and help you add new metadata.</p>
+<p>TopBraid Tagger and AutoClassifier uses state-of-the art AI to automatically enrich the content by assigning to them the most relevant tags from your controlled vocabularies (Taxonomies and Ontologies).
+Auto-classifying your content resources by connecting them to relevant vocabulary terms, delivers improved search, navigation and automates lifecycle management of content.</p>
+<p>In addition to automatically assigning relevant terms to content, users can also manually tag or annotate content resources.
+In both cases, the result of tagging is a set of connections between the content and a vocabulary.
+For example, a resource representing a news story can be linked to vocabulary terms of Election and Weather through a property named “has subject”, stating that a given news story has topics of Election and Weather.</p>
+<p>These relationships—tags—can be used to enrich search, browsing, and other applications by managing metadata on concept-to-vocabulary relationships.
+The role of Tagger is to make it easy to manage and create these relationships. Asset collections that store these relationships are called Content Tag Sets.
+This guide focuses on working with Content Tag Sets.
+Corpora is the second type of asset collection that is enabled when you add the TopBraid Tagger and AutoClassifier module.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_corpora/index.html#working-with-corpora-target"><span class="std std-ref">Working with Corpora</span></a> for working with this type of collections.</p>
+</div>
+<p>Content Tag Sets could also be used to create mappings between two taxonomies or two ontologies.
+However, if you do need to build a mapping between two vocabularies, please see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_crosswalks/index.html#working-with-crosswalks-target"><span class="std std-ref">Working with Crosswalks</span></a>.
+It is likely to be a better fit for your use case.</p>
+<p>Just like Crosswalks, Content Tag Sets only store relationships. For example, information in a Content Tag Set from the example above would have the general form:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>{  <span class="nt">&lt;story&gt;</span> <span class="nt">&lt;hasSubject&gt;</span> <span class="nt">&lt;Election&gt;</span> .
+   <span class="nt">&lt;story&gt;</span> <span class="nt">&lt;hasSubject&gt;</span> <span class="nt">&lt;Weather&gt;</span> .
+}
+</pre></div>
+</div>
+<p>Information about the news story and about the vocabulary terms (or tags) is stored in the asset collections that are connected using the Content Tagset.
+The first collection (containing information about the story) is called <em>content graph</em>.
+Typically, it is a Corpus.
+The second collection (containing information about tagging terms) is called <em>tagging vocabulary</em>.
+Typically, it is a Taxonomy, although it could also be an Ontology.</p>
+</section>
+<section id="create-new-content-tag-set">
+<h2>Create New Content Tag Set<a class="headerlink" href="#create-new-content-tag-set" title="Permalink to this headline"></a></h2>
+<p>When a new Content Tag Set is created, EDG requires the user to select a <strong>Content Graph</strong> and a <strong>Tagging Vocabulary</strong>.</p>
+<p>The drop-down for the selection of the content graph will show all corpora, data graphs, taxonomies and ontologies.
+Typically, you would select a Corpus.</p>
+<p>As mentioned above you could use Content Tag Sets to connect two taxonomies or two ontologies.
+However, Crosswalks are a better option for this.
+The capability to select a taxonomy and/or an ontology remains available to support compatibility with versions that did not offer Crosswalks.
+This may be changed in the future versions.</p>
+<p>Additionally, the role of a content graph may be played by a file in EDG’s workspace.
+EDG Administrators can identify files that are to be used as content graphs.
+They would then also show up in the drop-down selection for a content graph.</p>
+<p>Tagging vocabulary is either a taxonomy or an ontology.
+The drop-down selection will show available ontologies and taxonomies.</p>
+<p>User will also be asked to:</p>
+<ul class="simple">
+<li><p>Select a <strong>Default Tag Property</strong> – a property that will, by default, be used to connect assets in the content graph with the vocabulary terms.
+Auto-tagging will always use the default property.
+When tagging manually, users can select among other properties.
+After creation, the <strong>Manage</strong> tab will let you select other properties that may be used for tagging.</p></li>
+<li><p>Optionally, select a <strong>Root Class</strong> for the content types tree – this is similar to selecting a Main Entity for other asset collections.
+By default, if your content graph is a Corpus, the root will be <strong>Document</strong>.</p></li>
+</ul>
+<p>Please see the <a class="reference internal" href="../working_with_asset_collections/index.html#asset-collections"><span class="std std-ref">Working with Asset Collections</span></a> for all the general features of asset collections such as import/export, user permissions, reports and settings.
+Specific Content Tag Set only information is contained within this page.</p>
+</section>
+<section id="managing-tag-sets">
+<h2>Managing Tag Sets<a class="headerlink" href="#managing-tag-sets" title="Permalink to this headline"></a></h2>
+<p>The <strong>Manage</strong> tab for Content Tag Sets contains an additional feature:</p>
+<ul class="simple">
+<li><p><strong>Select Tag Properties</strong> lets you modify, by checking or unchecking checkboxes, the list of which properties from the property graphs should be available on the Tagger drop-down property list.</p></li>
+</ul>
+<p>The <strong>Export</strong> tab for Content Tag Sets contains this additional feature:</p>
+<ul class="simple">
+<li><p><strong>Normalized Concepts (Troubleshooting)</strong> Generates a normalized version of the Tagging Vocabulary used in this Content Tag Set, as it would be seen by AutoClassifier, and returns it in the Turtle format.
+This can be used to check, for example, if desired language-specific labels are selected over other languages when dealing with multilingual vocabularies.</p></li>
+</ul>
+</section>
+<section id="tagging-documents">
+<h2>Tagging Documents<a class="headerlink" href="#tagging-documents" title="Permalink to this headline"></a></h2>
+<p>To manually tag documents click on the <strong>Taggings</strong> tab at the top of the page.
+This will take you to the editor application.
+This guide describes the new editor released as part of TopBraid EDG 6.3.
+Please refer to doc.topquadrant.com for the “old” editors.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Taggings Tab" class="edg-figure" src="../../_images/edg_taggings_tab.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Taggings Tab</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Tagging editor has very similar features to the other collection editors for searching, panel and layout options.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Please see <a class="reference internal" href="../working_with_asset_collections/viewing_and_editing_asset_information.html#viewing-and-editing-asset-information-target"><span class="std std-ref">Using Forms to View and Edit Asset Information</span></a> to learn more about using the features of the EDG editor.</p>
+</div>
+<p>To add a tag, use the Tags panel located in the bottom right by default.
+Shown above for “Campbell’s Soup”. You can delete tags through this panel as well.</p>
+<p>The Add Tags button brings up a new dialog.
+Here you can search for your concept with a hierarchy tree view or switch to the search view by using the magnifying glass icon.
+Continue to add tags here until you are finished and then select close button.
+You can add one to many.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Tags Panel" class="edg-figure" src="../../_images/edg_tags_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Tags Panel</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="configuring-content-graphs">
+<span id="index-2"></span><h2>Configuring Content Graphs<a class="headerlink" href="#configuring-content-graphs" title="Permalink to this headline"></a></h2>
+<p>Typically, you will use a Corpus as a content graph and you will either use a connector or enter/upload/import, documents. Corpora asset collections in EDG are based on a model that is called TopBraid Simple Corpus and Document Schema.</p>
+<p>If you need to configure this model, you can create an ontology and, using <strong>Settings&gt;Includes</strong> include TopBraid Simple Corpus and Document Schema.
+Then, you can extend it if needed.
+If you plan on using a Data Graph as your content graph, then you would need to create an ontology for it.
+This ontology may be, but not necessarily have to be, an extension of the TopBraid Simple Corpus and Document Schema.</p>
+<p>If you are creating a file that will be used as a content graph (e.g., a file obtained from some third party), there are a few notes to keep in mind:</p>
+<ul class="simple">
+<li><p>For the Content Types hierarchy to display properly in a Content Tag Set, the root classes must be subclasses of rdfs:Resource.</p></li>
+<li><p>The Content Tag Set editor displays titles of resources in the content graph using the rdfs:label property, or any subproperty of rdfs:label.
+If the title (label) uses a property other than rdfs:label, such as dc:title, define dc:title as a subproperty of rdfs:label.
+The title will then display properly.
+Additional properties about each content resource will be displayed on the form when the resource is selected.
+The form (and AutoClassifier result reports) will display any <code class="docutils literal notranslate"><span class="pre">dc:source</span></code> properties of those graphs as hypertext links to the URLs provided as values, so these are useful for providing easy access to such a resource for the users tagging them.</p></li>
+<li><p>The documents should all be typed with some class (or one if its subclasses), and that class should then later be used as the <strong>Root Content Type</strong> when creating a Content Tag Set.</p></li>
+<li><p>All properties that occur on any document resource (for example, date or author) should have an rdfs:label, or a subclass of rdfs:label, so that they can be displayed better.
+This can be achieved by importing an ontology that defines such labels into the content graph.</p></li>
+<li><p>Content graphs and tag property graphs should have rdfs:labels for the graph URI so that they are displayed nicely in the dropdowns when creating new Content Tag Sets.</p></li>
+</ul>
+<p>Ensuring these conditions may require slight customization of the graphs obtained from third parties.
+This is usually achieved most easily by creating a new graph, importing the the third party graph, adding customizations to this new one, and then selecting that one on this configuration screen.</p>
+<p>For content graphs that will be used by Tagger’s AutoClassifier feature, also keep that the actual text content of the documents should be kept in the content graph, in a property of the document resource such as “fullText” or “content”.
+The text in this property, possibly along with other text-containing properties such as title or abstract, will be analyzed by the AutoClassifier, both in training and when generating tag recommendations for documents.</p>
+<p>If you are planning to auto-create files, the TopBraid platform used to develop EDG provides tools such as SPARQLMotion for automating conversion of the documents.
+However, this can also be done using a programming language of the user’s choice.
+Typically, a conversion script runs on a scheduled basis (for example, nightly) or on demand.
+After the initial run, a conversion script can process only newly added or changed documents.
+Once the documents are tagged, information about tags can be provided to the content management and enterprise search systems through export or, in real time, through web services and queries.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

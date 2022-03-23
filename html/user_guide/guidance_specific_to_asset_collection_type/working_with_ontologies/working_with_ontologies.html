@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customizing Ontologies Provided with EDG &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="How-to Guidance" href="ontology_how_to_guidance.html" />
+    <link rel="prev" title="Working with Ontologies" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guidance Specific to an Asset Collection Type</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Working with Ontologies</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Customizing Ontologies Provided with EDG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#classes-vs-instances">Classes vs. Instances</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ontology_how_to_guidance.html">How-to Guidance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="shacl_enablement.html">SHACL Enablement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ontology_editor_panels.html">Panels for Editing Ontologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="managing_ontologies.html">Managing Ontologies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exporting_ontologies.html">Exporting Ontologies</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_taxonomies/index.html">Working with Taxonomies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_crosswalks/index.html">Working with Crosswalks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_corpora/index.html">Working with Corpora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_graphs/index.html">Working with Data Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_enumerations/index.html">Working with Enumerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_lineage/index.html">Working with Data Lineage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content_classification/index.html">Content Classification in EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">User Guide</a> &raquo;</li>
+          <li><a href="../index.html">Guidance Specific to an Asset Collection Type</a> &raquo;</li>
+          <li><a href="index.html">Working with Ontologies</a> &raquo;</li>
+      <li>Customizing Ontologies Provided with EDG</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="ontologies-collections-target"><strong>Ontologies</strong> is a special kind of an asset collection type in TopBraid EDG.
+Ontologies and ontology modeling are key to EDG since ontologies define schemas for all other types of collections.
+<strong>EDG is optimized for working with ontologies that are defined using SHACL, the World Wide Web Consortium’s (W3C) standard for defining graph data models.</strong>
+W3C is the same organization that is responsible for defining standards for XML, HTML, CSS and other web technologies.
+To learn more see <a class="reference external" href="https://www.w3.org/TR/shacl/">SHACL</a> and <a class="reference external" href="https://www.topquadrant.com/technology/shacl/">What is SHACL</a>.</p>
+<p>TopBraid EDG also supports RDFS and OWL which are the earlier generation of modeling languages defined by the W3C.
+You can load into EDG any standard ontology.
+Using features on the Transform tab for ontologies, you can then auto-generate SHACL model definitions from RDFS/OWL.
+Similarly, if you need RDFS/OWL for use with another tool, you can generate it from the ontology in SHACL – using options on the Export tab.</p>
+<p>Ontologies contain classes (asset types) and associated properties – attributes and relationships.</p>
+<p>A class in an ontology is a set of individuals that are members of the class.
+For example, a class Country is a set of all resources that have Country as their type.</p>
+<p>When a class is created in EDG it is automatically declared to be a node shapes.
+Node shapes define schema for class members – assets of a given type.
+Properties of assets (resources) are declared using property shapes.
+Within a property shape, you can define so-called constraints on property values e.g., number of values, their type and more.
+If you have learned object oriented modeling in the past, you will find these concepts familiar.</p>
+<blockquote>
+<div><p>For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When you define a class Country you may say (in the ontology describing it) that a Country <em>borders with</em> other  Countries.</p></li>
+<li><p>Then, if you create an asset (resource) of type Country (e.g., the United States), you will see on the form for United States a field to enter borders with value.
+You will be able to pick another Country (e.g., Canada) as a value for this property.</p></li>
+<li><p>You may also say that a Country has <em>date established</em> property and the value is a date.</p></li>
+<li><p>Then, on the form for United States (or any other country) you will see a field for <em>date established</em> and will be able to enter a date.
+You will not be picking another resource as the value. You will be entering a literal as the value.</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<section id="customizing-ontologies-provided-with-edg">
+<h1>Customizing Ontologies Provided with EDG<a class="headerlink" href="#customizing-ontologies-provided-with-edg" title="Permalink to this headline"></a></h1>
+<p>Majority of TopBraid EDG’s asset collection are based on pre-specified ontologies shipped with TopBraid EDG.</p>
+<p>These pre-specified ontologies are located in EDG workspace as files:</p>
+<ul class="simple">
+<li><p>Taxonomies in EDG are based on SKOS or SKOS-XL.</p></li>
+<li><p>Data assets, enterprise assets, technical assets, requirements, glossaries, enumerations, lineage models and the governance model are based “EDG ontologies”.
+Their names start with “EDG Shapes”, followed by the asset collection type. For example, “EDG Shapes – Data Assets”.</p></li>
+<li><p>Corpora are based on a model called “TopBraid Simple Corpus and Document Schema”.</p></li>
+</ul>
+<p>The exception to this rule are:</p>
+<ul class="simple">
+<li><p>Reference datasets and data graphs – these are based on the user defined ontologies</p></li>
+<li><p>Crosswalks and content tagsets – these asset collections contain only links between other collections</p></li>
+<li><p>Ontologies themselves – as described here, they are primarily based on <a class="reference external" href="https://www.w3.org/TR/shacl/">SHACL</a></p></li>
+</ul>
+<p>The process for customizing pre-built models is described below:</p>
+<ul class="simple">
+<li><p>Create an ontology in EDG</p></li>
+<li><p>Include in it an EDG provided model corresponding to the asset collection type you want to change</p></li>
+<li><p>Make changes to your ontology:</p>
+<ul>
+<li><p>You can freely add classes, node shapes, properties and property shapes</p></li>
+<li><p>You should not delete properties or property shapes.
+In fact, since they are included by reference, you will not be able to do so. Instead, de-activate a shape for a property you need to remove by setting <em>deactivated</em> to true</p></li>
+<li><p>You should not (and will not be able to) remove subclass relationship between pre-built classes.
+Instead, you can add new sub class relationships in the ontology and then change the Root Class for specific asset collections (using its <em>Manage</em> tab)</p></li>
+</ul>
+</li>
+<li><p>Include your customized ontology into an asset collection you want to have the modifications.
+If you changes should apply to all collection of a given type, EDG Administrators can define it as a default include for the type.
+This option is available under the <a class="reference internal" href="../../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a> page.</p></li>
+</ul>
+<p>If different groups in your organizations need to have different customizations, each should follow the process outlined above to address their specific customizations needs.
+<a href="#id1"><span class="problematic" id="id2">`Getting Started – EDG Business Glossaries`_</span></a> guide provides an example of using this approach to customize a glossary.</p>
+<p>If your organization decides that you need to physically remove anything in the pre-built ontologies, such changes can only be made directly to the underlying files.
+Should you decide to do this, the changes you make will need to be backed up and, possibly, reconciled with changes to the EDG models in the future releases.</p>
+</section>
+<section id="classes-vs-instances">
+<h1>Classes vs. Instances<a class="headerlink" href="#classes-vs-instances" title="Permalink to this headline"></a></h1>
+<p>TopBraid EDG implements the recommend practice that instance data should be separated from their class definitions, which are included via one or more ontologies.
+Ontologies define classes, properties, and shapes (SHACL constraints) and other asset collection types (e.g., taxonomy, etc.) contain only instances.</p>
+<p>If any non-ontology collection needs special classes (e.g., subclasses of skos:Concept in a taxonomy), then these should be defined in an ontology that gets included in the collections that need them.
+Inclusion is done on creation of an asset collection and, subsequently, additional ontologies can be included using <strong>Settings&gt;Includes</strong>.
+Internally, inclusions are recorded using <em>owl:imports</em> statements.</p>
+<p>To support special cases such as small enumerated values, the ontology editor still supports instances in a limited manner.
+By default, only <em>label</em> and <em>comment</em> can be defined for these instances.
+A warning is shown when creating a new instance in the Instances Panel of the editor:</p>
+<p><em>Ontologies should only contain shape-related assets but not instances.
+You may proceed creating small numbers of simple instances, for example to represent enumerated values.
+However, all fields of those instances except labels and comments will be marked as read-only.
+You are strongly encouraged to store instance data in non-Ontology asset collections such as Data Graphs.</em></p>
+<p>Users with <em>manager</em> privileges can activatethe <strong>Allow Editing Instances</strong> option on the <strong>Manage</strong> tab.
+With this option activated, users will be able to edit all fields of all instances.
+Turning on this option may significantly slow down the system after each edit.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The SHACL shape definitions from Ontologies will typically only take effect when they are stored in the production copy of the Ontology, <em>not</em> from working copies.
+For example, the Problems and Suggestions panel will not use constraints that only exist in the workflow but not in the production copy yet.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Working with Ontologies" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ontology_how_to_guidance.html" class="btn btn-neutral float-right" title="How-to Guidance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

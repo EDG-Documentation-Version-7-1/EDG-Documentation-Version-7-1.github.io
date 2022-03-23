@@ -1,0 +1,50 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _announcements_target:
+
+Announcements
+=============
+
+The default installation of EDG will have a prebuilt welcome banner and announcement on the home page.
+These can be modified and controlled through the Governance model.
+
+.. figure:: _images/edg_announcements_modification_page.jpeg
+  :alt: TopBraid EDG Announcements Modification Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Announcements Modification Page**
+
+Navigate to Governance model, other governance assets tab at the top.
+
+Select the “TopBraid Enterprise Data Governance” resource to bring up the form for the current default announcement.
+
+Here you can add new announcements along the order of display and start and stop dates.
+Select New button from the Governance Viewpoint Search panel.
+Then edit the description and other properties.
+
+.. figure:: _images/edg_create_announcement_form.jpeg
+  :alt: TopBraid EDG Create Announcement Form
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Create Announcement Form**
+
+Change the welcome banner by selecting this resource and the editing the text in the form:
+
+.. figure:: _images/edg_change_welcome_banner.jpeg
+  :alt: TopBraid EDG Change Welcome Banner
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Change Welcome Banner**

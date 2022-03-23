@@ -1,0 +1,74 @@
+# baseURI: http://extensionsamples.topbraid.org/multifunctions/multifunctionexample.api
+# imports: http://datashapes.org/dash
+# prefix: multifex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix multifex: <http://extensionsamples.topbraid.org/multifunctions/multifunctionexample.api#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/multifunctions/multifunctionexample.api>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/multifunctions/multifunctionexample.api#" ;
+  rdfs:label "MultiFunctionExample.api.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+multifex:namedSuperClasses
+  a dash:SPARQLMultiFunction ;
+  dash:apiStatus dash:Stable ;
+  dash:resultVariable multifex:namedSuperClasses-label ;
+  dash:resultVariable multifex:namedSuperClasses-superClass ;
+  rdfs:comment """Gets all (transitive) superclasses of a given class.
+
+To try it out, make sure this file is in the workspace and the workspace has been refreshed. This should globally register the SPARQL property function/magic property multifex:namedSuperClasses, and also make this function available to the ADS APIs of graphs that owl:import this graph here.
+
+From SPARQL, run something like
+
+SELECT *
+WHERE {
+	schema:DayOfWeek multifex:namedSuperClasses ( ?superClass ?label ) .
+}
+
+From ADS (e.g. this file here), try 
+
+multifex.namedSuperClasses(dash.QueryTestCase);""" ;
+  rdfs:label "named super classes" ;
+  sh:parameter multifex:namedSuperClasses-subClass ;
+  sh:prefixes <http://datashapes.org/dash> ;
+  sh:select """
+        SELECT ?superClass ?label
+        WHERE {
+            $subClass rdfs:subClassOf+ ?superClass .
+            ?superClass rdfs:label ?label .
+            FILTER isIRI(?superClass) .
+            FILTER (?superClass != $subClass) .
+            FILTER (?superClass NOT IN ( owl:Thing, rdfs:Resource ) )
+        }""" ;
+.
+multifex:namedSuperClasses-label
+  a sh:Parameter ;
+  sh:path multifex:label ;
+  sh:datatype xsd:string ;
+  sh:description "The label of the superclass." ;
+  sh:name "label" ;
+  sh:order 1 ;
+.
+multifex:namedSuperClasses-subClass
+  a sh:Parameter ;
+  sh:path multifex:subClass ;
+  sh:class rdfs:Class ;
+  sh:description "The class to get the superclasses of." ;
+  sh:name "sub class" ;
+  sh:order 0 ;
+.
+multifex:namedSuperClasses-superClass
+  a sh:Parameter ;
+  sh:path multifex:superClass ;
+  sh:class rdfs:Class ;
+  sh:description "The superclass resource." ;
+  sh:name "super class" ;
+  sh:order 0 ;
+.

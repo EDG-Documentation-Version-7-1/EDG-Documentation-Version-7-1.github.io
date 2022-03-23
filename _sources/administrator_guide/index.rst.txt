@@ -1,0 +1,36 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _administrator_quide:
+
+*******************
+Administrator Guide
+*******************
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   installation_checklist/index
+   edg_installation_and_authentication/index
+   edg_administration_and_configuration/index
+   topbraid_data_platform/index
+   auto_classifier_installation/index
+   topbraid_explorer_setup/index
+   edg_backup_and_restore/index
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`

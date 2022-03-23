@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workflows &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Workflows</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="workflows">
+<span id="workflows-target"></span><span id="index-0"></span><h1>Workflows<a class="headerlink" href="#workflows" title="Permalink to this headline"></a></h1>
+<p>To help teams maintain asset collections, EDG <em>workflows</em> provide special views and functions that coordinate multiple users in defined change-management processes.</p>
+<p>Users can start workflows for an entire asset collection or for a specific asset in a collection.
+Multiple workflows can be active at the same time.
+Changes made in each workflow are isolated from other workflows and are not part of the asset collection until authorized users review, approve, and commit the workflow’s changes back to the “production copy”.
+To isolate its changes, each workflow has a “working copy” of changes from the production state.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The any <em>includes</em> always refer to other collections’ production copies, never to working copies. In other words, uncommitted changes to an asset collection can not be included into a workflow for another asset collection.</p>
+</div>
+<p>EDG is shipped with a pre-defined workflow template called <em>Basic</em>.
+Additional workflow templates can be developed for your EDG installation.
+These templates can implement different process-flows with different scope of applicability.
+A template determines what users can perform various actions in a workflow:</p>
+<ul class="simple">
+<li><p>A template can specify what governance roles should have editor and manager privileges for the associated working copy</p></li>
+<li><p>A template always specify who can transition a workflow from one state to another.
+Authorizations for the workflow transition actions can be defined for permission levels (v/e/m) or for governance roles.
+For an example of such workflow transitions, see the main Workflow View tab for the Basic workflow.</p></li>
+</ul>
+<p>If an asset collection you are working with has any workflow in progress you can access them by clicking on <strong>Workflows</strong> tab for the collection.</p>
+<p>Any changes you will make will stay in the working copy associated with this workflow and will not be visible outside it.
+The tabs (import, reports,…) for a workflow operate the same as for the production copy but in the scope of the workflow only.
+Until it is committed to production, changes remain here only.</p>
+<section id="starting-a-workflow">
+<span id="start-workflow"></span><h2>Starting a Workflow<a class="headerlink" href="#starting-a-workflow" title="Permalink to this headline"></a></h2>
+<p>There are two places in EDG where you can start a workflow by selecting <strong>Start Workflow</strong>:</p>
+<ul class="simple">
+<li><p>When viewing a specific asset in the Editor, user can select Start Workflow from the asset menu.</p></li>
+<li><p>Start Workflow button is also available on the Workflows tab.</p></li>
+</ul>
+<p>Workflow can be started for a specific asset or for an entire collection if you will be creating a new asset(s) or making changes to multiple assets.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Starting a New Workflow About Glossary" class="edg-figure" src="../../_images/edg_start_glossary_workflow.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Starting a New Workflow About Glossary</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Start workflow dialog will let you select a workflow template (if more than one template is available) and provide a short description.
+TopBraid EDG will auto-generate a unique name for a workflow.
+If desired, you can override the generated name.</p>
+<section id="working-in-a-context-of-a-workflow">
+<h3>Working in a context of a Workflow<a class="headerlink" href="#working-in-a-context-of-a-workflow" title="Permalink to this headline"></a></h3>
+<p>You will always know when you are working in a context of a workflow because the horizontal menu bar on top of
+asset collection pages will change its color from grey to light yellow.</p>
+<p>In a context of a workflow you will see the same tabs as in the context of the asset collection it is performing updates to,
+although some tabs will be greyed out.
+For example, you can not start a workflow within a workflow which is why the Workflows tab is greyed out.</p>
+<p>To make edits, use the same features as those normally available to you for an asset collection.</p>
+<p>You will also see a new tab with a gear icon <a class="reference internal" href="../../_images/edg_gear_icon1.png"><img alt="gear_icon" src="../../_images/edg_gear_icon1.png" style="width: 45px;" /></a> on it – shown in the screenshot below.
+This tab lets you see information about the current state of workflow and lets authorized users move it to the next state.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Starting a New Workflow About Glossary" class="edg-figure" src="../../_images/edg_current_state_of_workflow.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Starting a New Workflow About Glossary</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When you click on the Diagram View link, the page switches to a view that visually depicts the workflow state and transitions.
+For example, if we, after making changes, click on the Freeze for review link and then switch to the Diagram View, the diagram will look as follows:</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Diagram View Example" class="edg-figure-m" src="../../_images/edg_diagram_view.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG EDG Diagram View Example</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>State that a workflow is currently in is shown in the diagram as a green colored box.
+If you could move a workflow into a next state, the diagram will depict transition actions as green clickable buttons.
+On the diagram above, you see three possible actions – to approve, to reject and to request further changes by reverting the workflow back to the Uncommitted state.</p>
+<p>You can easily navigate from a workflow to the asset collection itself (production copy) by clicking on the <img alt="cross_icon" src="../../_images/edg_cross_icon.png" /> icon next to the workflow name.</p>
+</section>
+<section id="rights-entailed-by-permission-profiles">
+<span id="index-1"></span><span id="id1"></span><h3>Rights Entailed by Permission Profiles<a class="headerlink" href="#rights-entailed-by-permission-profiles" title="Permalink to this headline"></a></h3>
+<p>Whoever starts a workflow becomes the manager of its working copy, even if that user only had viewer privileges of the asset collection itself.
+Such user can then make changes in the context of a workflow but cannot commit them to Production because only users with editor privileges for an asset collection can make changes to them.</p>
+<p>The same permission profiles of manager, editor and viewer are applicable to production copies and working copies, but the rights they entail are slightly different – as described below:</p>
+<p><strong>For an asset collection (production copy)</strong></p>
+<ul class="simple">
+<li><p>A <strong>viewer</strong> of an asset collection can:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>view and browse it,</p></li>
+<li><p>view a history of its changes,</p></li>
+<li><p>display various reports,</p></li>
+<li><p>export it in a variety of formats,</p></li>
+<li><p>enter its usage information,</p></li>
+<li><p>create tasks, change the status of a task assigned to them and comment on tasks, and</p></li>
+<li><p>create a workflow copy of it to make changes, which will not be applied back to the production one until the changes are reviewed and committed by an editor or manager of that production asset collection.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>An <strong>editor</strong> has all viewer permissions and can also make changes.</p></li>
+<li><p>A <strong>manager</strong> has all editor permissions and can also:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>perform operations on the <em>Manage</em> tab (for details, see the <em>Manage View</em> section in the $ModelTypes Utilities),</p></li>
+<li><p>assign permission profiles and governance roles to others,</p></li>
+<li><p>save searches and hierarchy views as “default” for a collection.</p></li>
+</ul>
+</div></blockquote>
+<p><strong>For a working copy</strong></p>
+<ul class="simple">
+<li><p>A <strong>viewer</strong> of a working copy can:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>view and browse it,</p></li>
+<li><p>view reports of changes contained in it,</p></li>
+<li><p>view reports of what other working copies will be affected by changes made as part of this particular workflow,</p></li>
+<li><p>run a report comparing a working copy to the production asset collection,</p></li>
+<li><p>export data to a variety of formats.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>An <strong>editor</strong> has all viewer permissions and can also make changes.</p></li>
+<li><p>A <strong>manager</strong> has all editor permissions and can also:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>control permission privileges to a working copy (i.e., <em>grant viewer/editor/manager</em> roles to users) and</p></li>
+<li><p>if a workflow is based on the <em>Basic</em> template, WF managers can freeze/unfreeze it to prevent/allow changes, e.g., for reviewing, and they can change the status to Approved or Rejected. This is defined in the Basic Workflow template.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="workflow-transitions-and-governance-roles">
+<h3>Workflow Transitions and Governance Roles<a class="headerlink" href="#workflow-transitions-and-governance-roles" title="Permalink to this headline"></a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">Workflow</span></code>, the state-action transitions (e.g., freezing/resuming, accepting/rejecting, etc.) are defined
+in terms of the permission profiles: viewer, editor, and manager.
+Workflow templates also allow workflow transitions to be defined in terms of <em>governance</em> roles
+(e.g., data steward, subject matter expert, etc.).</p>
+<p>Depending on the workflow design, state transitions can also happen automatically e.g., on a timer or as a result of
+some other event.</p>
+</section>
+<section id="workflow-scope">
+<h3>Workflow Scope<a class="headerlink" href="#workflow-scope" title="Permalink to this headline"></a></h3>
+<p>When you start a workflow, you may be able to select a workflow type from a dropdown if multiple workflow templates
+are installed in your EDG system.
+Only workflow types applicable to the workflow context will be available for selection.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">Workflow</span></code> is automatically selected.</p>
+<p id="index-2">Workflow templates in EDG can be scoped to be applicable only to a given type of collection or to a given asset type
+or to a given governance area.
+This lets users develop different workflows for change management.
+For example, Review and Approval process for Glossaries can be different from Data Assets.</p>
+<p>If no scope is set for a workflow template, it is applicable EDG-wise.
+The Basic Template has no scope which is why it can be used in all contexts.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

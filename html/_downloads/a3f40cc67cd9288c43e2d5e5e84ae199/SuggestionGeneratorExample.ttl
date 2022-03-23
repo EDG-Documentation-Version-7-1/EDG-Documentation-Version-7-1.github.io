@@ -1,0 +1,55 @@
+# baseURI: http://extensionsamples.topbraid.org/suggestiongenerators/suggestiongeneratorexample
+# imports: http://datashapes.org/dash
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/suggestiongenerators/suggestiongeneratorexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/suggestiongenerators/suggestiongeneratorexample>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/suggestiongenerators/suggestiongeneratorexample#" ;
+  rdfs:label "SuggestionGeneratorExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+ex:InvalidTestInstance
+  a ex:TestClass ;
+  rdfs:label "Invalid Test Instance" ;
+.
+ex:TestClass
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:label "Test Class" ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property ex:TestClass-testProperty ;
+.
+ex:TestClass-testProperty
+  a sh:PropertyShape ;
+  sh:path ex:testProperty ;
+  sh:datatype xsd:string ;
+  sh:maxLength 4 ;
+  sh:name "test property" ;
+.
+sh:MaxLengthConstraintComponent
+  dash:propertySuggestionGenerator [
+      a dash:ScriptSuggestionGenerator ;
+      dash:js """
+let newValue = value.substring(0, maxLength);
+(
+    {
+        message: `Prune to maximum length of ${maxLength} characters`,
+        add: [
+            [ focusNode, predicate, newValue ]
+        ],
+        delete: [
+            [ focusNode, predicate, value ]
+        ]
+    }
+)
+""" ;
+    ] ;
+.

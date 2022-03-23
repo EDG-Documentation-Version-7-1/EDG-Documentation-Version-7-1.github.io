@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHACL and the GraphQL Schema &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scripting with JavaScript and ADS" href="../scripting/index.html" />
+    <link rel="prev" title="GraphQL Mutations" href="mutations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">GraphQL</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="queries.html">GraphQL Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mutations.html">GraphQL Mutations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SHACL and the GraphQL Schema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#selecting-the-shapes">Selecting the Shapes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objects-and-fields">Objects and Fields</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#object-types-for-node-shapes">Object Types for Node Shapes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#defining-multiple-graphql-schemas">Defining multiple GraphQL Schemas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">GraphQL</a> &raquo;</li>
+      <li>SHACL and the GraphQL Schema</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="shacl-and-the-graphql-schema">
+<span id="graphql-schema"></span><h1>SHACL and the GraphQL Schema<a class="headerlink" href="#shacl-and-the-graphql-schema" title="Permalink to this headline"></a></h1>
+<p>This section (for maintainers of Ontologies and other RDF/SHACL data models) explains how RDF graphs can be published through the GraphQL services of TopBraid.
+In a nutshell, one or more GraphQL schemas are automatically generated using data shape definitions in the Shapes Constraint Language (SHACL).
+These SHACL shapes may be automatically generated using other input GraphQL schemas, enhancing them in the process with numerous features to query data stored in an RDF dataset.
+SHACL data shapes can also be generated from other input formats supported by TopQuarant’s products.</p>
+<p>The readers of this section are expected to be familiar with GraphQL and have basic RDF skills.
+Decent knowledge of SHACL is advantageous.</p>
+<p>This section uses the prefix <code class="code docutils literal notranslate"><span class="pre">dash</span></code> which represents the namespace <code class="code docutils literal notranslate"><span class="pre">http://datashapes.org/dash#</span></code>.
+The prefix <code class="code docutils literal notranslate"><span class="pre">graphql</span></code> represents the namespace <code class="code docutils literal notranslate"><span class="pre">http://datashapes.org/graphql#</span></code>.
+Both graphs are automatically included into every TopBraid EDG Ontology.</p>
+<section id="selecting-the-shapes">
+<h2>Selecting the Shapes<a class="headerlink" href="#selecting-the-shapes" title="Permalink to this headline"></a></h2>
+<p>An RDF graph may contain thousands of classes or data shapes.
+A GraphQL service that includes all of them at once would quickly become unusable.
+In order to instruct the processor on which shapes and classes shall be exposed via GraphQL, the starting point is the “Home” asset of a TopBraid EDG ontology.
+This schema instance must use the following properties to include or exclude shapes:</p>
+<figure class="align-center" id="id1">
+<img alt="Screenshot of TopBraid EDG Ontology editor defining the GraphQL schema properties" class="edg-figure" src="../_images/Ontology-GraphQL-Schema.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Use the GraphQL Schema view of the Ontology’s Home asset to edit what gets exposed by GraphQL</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">GraphQL Schema generation properties</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>graphql:publicShape</p></td>
+<td><p>The values are included into the GraphQL schema</p></td>
+</tr>
+<tr class="row-odd"><td><p>graphql:publicClass</p></td>
+<td><p>The values and all its subclasses are included</p></td>
+</tr>
+<tr class="row-even"><td><p>graphql:publicNamespace</p></td>
+<td><p>All shapes from the given namespace are included</p></td>
+</tr>
+<tr class="row-odd"><td><p>graphql:protectedShape</p></td>
+<td><p>The values are included but not available from the root query</p></td>
+</tr>
+<tr class="row-even"><td><p>graphql:protectedClass</p></td>
+<td><p>The values and all its subclasses are included but not available from the root query</p></td>
+</tr>
+<tr class="row-odd"><td><p>graphql:privateShape</p></td>
+<td><p>The values are excluded from the GraphQL schema (even if published by other properties)</p></td>
+</tr>
+</tbody>
+</table>
+<p>The algorithm that produces the set of published shapes first collects all shapes or classes defined using the <code class="code docutils literal notranslate"><span class="pre">graphql:publicXY</span></code> and <code class="code docutils literal notranslate"><span class="pre">graphql:protectedXY</span></code> properties above from the schema and also all its transitive values of <code class="code docutils literal notranslate"><span class="pre">owl:imports</span></code> and <code class="code docutils literal notranslate"><span class="pre">rdf:type</span></code> properties.
+Then it removes those that are marked via <code class="code docutils literal notranslate"><span class="pre">graphql:privateShape</span></code>.</p>
+<p>All published shapes can be queried via GraphQL and are automatically exposed by the root query object.
+Those that are marked protected can not be queried from the root query but can be reached and traversed from other object types.
+Here is an example:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">ex</span><span class="p">:</span><span class="nt">MySchema</span>
+<span class="linenos"> 2</span>    <span class="kt">a</span> <span class="nn">graphql</span><span class="p">:</span><span class="nt">Schema</span> <span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nn">graphql</span><span class="p">:</span><span class="nt">publicShape</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Human</span> <span class="p">.</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nn">ex</span><span class="p">:</span><span class="nt">Human</span>
+<span class="linenos"> 6</span>    <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+<span class="linenos"> 7</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>
+<span class="linenos"> 8</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">id</span> <span class="p">;</span>
+<span class="linenos"> 9</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<span class="linenos">10</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="linenos">11</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="linenos">12</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">order</span> <span class="s">&quot;0&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+<span class="linenos">13</span>        <span class="nn">graphql</span><span class="p">:</span><span class="nt">isIDField</span> <span class="l">true</span> <span class="p">;</span>
+<span class="linenos">14</span>    <span class="p">]</span> <span class="p">;</span>
+<span class="linenos">15</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>
+<span class="linenos">16</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">name</span> <span class="p">;</span>
+<span class="linenos">17</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<span class="linenos">18</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="linenos">19</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="linenos">20</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">order</span> <span class="s">&quot;1&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+<span class="linenos">21</span>    <span class="p">]</span> <span class="p">;</span>
+<span class="linenos">22</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>
+<span class="linenos">23</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">height</span> <span class="p">;</span>
+<span class="linenos">24</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+<span class="linenos">25</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="linenos">26</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">order</span> <span class="s">&quot;2&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+<span class="linenos">27</span>    <span class="p">]</span> <span class="p">;</span>
+<span class="linenos">28</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span>
+<span class="linenos">29</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">friends</span> <span class="p">;</span>
+<span class="linenos">30</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">node</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Human</span> <span class="p">;</span>
+<span class="linenos">31</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">order</span> <span class="s">&quot;3&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+<span class="linenos">32</span>    <span class="p">].</span>
+</pre></div>
+</div>
+<p>From these SHACL shapes, the processor will internally generate the following GraphQL schema:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>schema {
+<span class="linenos"> 2</span>	query: RootRDFQuery
+<span class="linenos"> 3</span>}
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>type RootRDFQuery {
+<span class="linenos"> 6</span>	humans (... filters etc, see later...): [Human]
+<span class="linenos"> 7</span>	... generated fields for aggregations and introspection ...
+<span class="linenos"> 8</span>}
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>type Human {
+<span class="linenos">11</span>	uri: ID!
+<span class="linenos">12</span>	label: String!
+<span class="linenos">13</span>	id (... filters etc...): ID!
+<span class="linenos">14</span>	name (... filters etc...): String!
+<span class="linenos">15</span>	height (... filters etc...): Float
+<span class="linenos">16</span>	friends (... filters etc...): [Human]
+<span class="linenos">17</span>	... generated fields for aggregations, derived values ...
+<span class="linenos">18</span>}
+</pre></div>
+</div>
+<p>As shown above, the system automatically produces a root query object that has fields for every public shape, with a name that is basically the plural form of the shape name.
+These root query fields can take a large number of arguments to select which of the matching objects shall be returned, see <span class="xref std std-ref">graphql_querying</span>.</p>
+<p>Completing this introductory example, here is an example GraphQL query against this schema, returning all humans where the name starts with L, and all their friends, translating the height from meters to feet.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>{
+<span class="linenos"> 2</span>    humans (where: {name:{pattern:&quot;^L&quot;}}, orderBy: name) {
+<span class="linenos"> 3</span>        id
+<span class="linenos"> 4</span>        name
+<span class="linenos"> 5</span>        height (transform: &quot;$height / 0.3048&quot;)
+<span class="linenos"> 6</span>        friends {
+<span class="linenos"> 7</span>            id
+<span class="linenos"> 8</span>            name
+<span class="linenos"> 9</span>        }
+<span class="linenos">10</span>    }
+<span class="linenos">11</span>}
+</pre></div>
+</div>
+<p>A possible result JSON would be:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>{
+<span class="linenos"> 2</span>	&quot;data&quot;: {
+<span class="linenos"> 3</span>		&quot;humans&quot;: [
+<span class="linenos"> 4</span>			{
+<span class="linenos"> 5</span>				&quot;id&quot;: &quot;1003&quot;,
+<span class="linenos"> 6</span>				&quot;name&quot;: &quot;Leia Organa&quot;,
+<span class="linenos"> 7</span>				&quot;height&quot;: 4.921259842519685,
+<span class="linenos"> 8</span>				&quot;friends&quot;: [
+<span class="linenos"> 9</span>					{
+<span class="linenos">10</span>						&quot;id&quot;: &quot;1002&quot;,
+<span class="linenos">11</span>						&quot;name&quot;: &quot;Han Solo&quot;
+<span class="linenos">12</span>					},
+<span class="linenos">13</span>					{
+<span class="linenos">14</span>						&quot;id&quot;: &quot;1000&quot;,
+<span class="linenos">15</span>						&quot;name&quot;: &quot;Luke Skywalker&quot;
+<span class="linenos">16</span>					}
+<span class="linenos">17</span>				]
+<span class="linenos">18</span>			},
+<span class="linenos">19</span>			...
+<span class="linenos">20</span>		]
+<span class="linenos">21</span>	}
+<span class="linenos">22</span>}
+</pre></div>
+</div>
+</section>
+<section id="objects-and-fields">
+<h2>Objects and Fields<a class="headerlink" href="#objects-and-fields" title="Permalink to this headline"></a></h2>
+<p>For each published node shape in a schema, the processor will create one GraphQL object type as described in the following sections.</p>
+<section id="object-types-for-node-shapes">
+<h3>Object Types for Node Shapes<a class="headerlink" href="#object-types-for-node-shapes" title="Permalink to this headline"></a></h3>
+<p>The name of this object type will be derived using the following rules (in order):</p>
+<ol class="arabic simple">
+<li><p>Use the value of <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code> of the shape.</p></li>
+<li><p>Use the local name (i.e. the part of the shape URI after a separator such as ‘/’ or ‘#’), replacing ‘-’ with ‘_’, if that is a valid GraphQL name.</p></li>
+</ol>
+<p>If there is more than one object type with the same name (e.g. from different namespaces but with the same local name), then preprend the prefix of the namespace and ‘_’.
+For example, <code class="code docutils literal notranslate"><span class="pre">ex:Human</span></code> would become <code class="code docutils literal notranslate"><span class="pre">ex_Human</span></code>.</p>
+<p>In general, the mapping is rather strict if the underlying shape definitions are invalid.
+For example if no valid name can be produced for a shape then the schema is rejected and the user encouraged to add suitable <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code> triples.</p>
+<section id="the-uri-field">
+<h4>The uri Field<a class="headerlink" href="#the-uri-field" title="Permalink to this headline"></a></h4>
+<p>Each generated object type has a built-in field called <code class="code docutils literal notranslate"><span class="pre">uri</span></code> that can be used to retrieve the URI of the RDF resource.
+For blank nodes this is an internal identifier starting with <code class="code docutils literal notranslate"><span class="pre">_:</span></code>.
+In general, these blank node identifiers can be used interchangeably with URIs.</p>
+</section>
+<section id="the-label-field">
+<h4>The label Field<a class="headerlink" href="#the-label-field" title="Permalink to this headline"></a></h4>
+<p>Each generated object type has a built-in field called label that can be used to retrieve a human-readable label for an object.
+This label is typically derived from the <code class="code docutils literal notranslate"><span class="pre">rdfs:label</span></code> (or a similar property) and should use the preferred language of the client, if multi-lingual labels exist.
+The <code class="code docutils literal notranslate"><span class="pre">label</span></code> field always returns something, falling back to the local name of the underlying RDF resource, or an internal identifier starting with <code class="code docutils literal notranslate"><span class="pre">_:</span></code> for blank nodes.</p>
+</section>
+<section id="fields-for-property-shapes">
+<h4>Fields for Property Shapes<a class="headerlink" href="#fields-for-property-shapes" title="Permalink to this headline"></a></h4>
+<p>The object types produced from a node shape will have one field for each distinct <code class="code docutils literal notranslate"><span class="pre">sh:path</span></code> that is defined at any property shape of the node shape.
+If the node shape is also an <code class="code docutils literal notranslate"><span class="pre">rdfs:Class</span></code> then this includes any property shape of the (transitive) superclasses.
+Furthermore, any property shapes attached to values of <code class="code docutils literal notranslate"><span class="pre">sh:node</span></code> of the node shape will (recursively) be included.
+(As a general pattern, <code class="code docutils literal notranslate"><span class="pre">rdfs:subClassOf</span></code> and <code class="code docutils literal notranslate"><span class="pre">sh:node</span></code> are treated uniformly, i.e. <code class="code docutils literal notranslate"><span class="pre">sh:node</span></code> is an extension and inheritance mechanism similar to subclassing.)</p>
+<p>The names of these fields are derived using the same rules as for object types, i.e. checking <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code> first, then local names of the <code class="code docutils literal notranslate"><span class="pre">sh:path</span></code> (if that’s a URI), and prepend a prefix if duplicate names would exist.
+Note that if a property shape is about a complex SHACL path, then a <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code> is strongly recommended.</p>
+<p>The type of these generated fields is derived from the <code class="code docutils literal notranslate"><span class="pre">sh:datatype</span></code>, <code class="code docutils literal notranslate"><span class="pre">sh:node</span></code> or <code class="code docutils literal notranslate"><span class="pre">sh:class</span></code>.
+For example, <code class="code docutils literal notranslate"><span class="pre">sh:datatype</span> <span class="pre">xsd:boolean</span></code> gets mapped to <code class="code docutils literal notranslate"><span class="pre">Boolean</span></code> and <code class="code docutils literal notranslate"><span class="pre">sh:datatype</span> <span class="pre">xsd:decimal</span></code> to <code class="code docutils literal notranslate"><span class="pre">Float</span></code>.
+To produce <code class="code docutils literal notranslate"><span class="pre">ID</span></code>, annotate the property shape with <code class="code docutils literal notranslate"><span class="pre">graphql:isIDField</span> <span class="pre">true</span></code> combined with <code class="code docutils literal notranslate"><span class="pre">sh:datatype</span> <span class="pre">xsd:string</span></code>.</p>
+<p>If the property shape defines an <code class="code docutils literal notranslate"><span class="pre">sh:or</span></code> list with at least one member, and all members of that list are node shapes with a URI, then a union type will be generated automatically.
+If the property shape has an <code class="code docutils literal notranslate"><span class="pre">sh:or</span></code> list that is either <code class="code docutils literal notranslate"><span class="pre">xsd:string</span></code> or <code class="code docutils literal notranslate"><span class="pre">rdf:langString</span></code> or its inverse variation <code class="code docutils literal notranslate"><span class="pre">rdf:langString</span></code> or <code class="code docutils literal notranslate"><span class="pre">xsd:string</span></code> then the object type <code class="code docutils literal notranslate"><span class="pre">LangString</span></code> (with fields lang and string) will be used.
+For other <code class="code docutils literal notranslate"><span class="pre">sh:or</span></code> lists where the first entry is a <code class="code docutils literal notranslate"><span class="pre">sh:datatype</span></code> shape, that specified datatype will be used.</p>
+<p>For object-valued properties for which there is no matching GraphQL object type, the system falls back to a built-in special type <code class="code docutils literal notranslate"><span class="pre">_Resource</span></code> that only offers <code class="code docutils literal notranslate"><span class="pre">uri</span></code> and <code class="code docutils literal notranslate"><span class="pre">label</span></code> fields.
+This type is for example used for links that typically go outside of the published schema, e.g. <code class="code docutils literal notranslate"><span class="pre">rdf:type</span></code> values.</p>
+<p>Fields are list-typed unless there is a property shape with <code class="code docutils literal notranslate"><span class="pre">sh:maxCount</span> <span class="pre">1</span></code>.
+Fields are marked as non-nullable (with !) if there is a <code class="code docutils literal notranslate"><span class="pre">sh:minCount</span> <span class="pre">1</span></code>.</p>
+<p>Note that, in general, any property shape that is marked as <code class="code docutils literal notranslate"><span class="pre">sh:deactivated</span> <span class="pre">true</span></code> is ignored by the processor.</p>
+</section>
+</section>
+</section>
+<section id="defining-multiple-graphql-schemas">
+<h2>Defining multiple GraphQL Schemas<a class="headerlink" href="#defining-multiple-graphql-schemas" title="Permalink to this headline"></a></h2>
+<p>A dataset may contain many named graphs and heterogeneous data.
+It is possible to define multiple GraphQL schemas for the same data, and in the same shapes graph.
+Each instance of <code class="code docutils literal notranslate"><span class="pre">graphql:Schema</span></code> can either be identified by its URI or by its <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code>.
+This is best explained through an example.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nn">ex</span><span class="p">:</span><span class="nt">MySchema</span>
+<span class="linenos">2</span>	<span class="kt">a</span> <span class="nn">graphql</span><span class="p">:</span><span class="nt">Schema</span> <span class="p">;</span>
+<span class="linenos">3</span>	<span class="nn">graphql</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;starwars&quot;</span> <span class="p">;</span>
+<span class="linenos">4</span>	<span class="nn">graphql</span><span class="p">:</span><span class="nt">publicShape</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Human</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>The above schema would be available through the URL schema <code class="code docutils literal notranslate"><span class="pre">[server]/graphql/[dataset]/starwars</span></code>.</p>
+<p>If a schema does not carry a <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code> then it can be accessed via the qname of its URI, replacing : with _: <code class="code docutils literal notranslate"><span class="pre">[server]/graphql/[dataset]/ex_MySchema</span></code> would also work.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mutations.html" class="btn btn-neutral float-left" title="GraphQL Mutations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../scripting/index.html" class="btn btn-neutral float-right" title="Scripting with JavaScript and ADS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: Searching
+
+.. _searching_across_edg:
+
+Searching Across TopBraid EDG
+=============================
+
+In addition to searching within each asset collection, EDG also lets you search across all collections. Options are detailed below.
+
+Global Lookup
+-------------
+
+.. figure:: _images/edg_global_lookup.png
+  :alt: TopBraid EDG Global Lookup View
+  :align: center
+  :class: edg-figure
+  
+  **TopBraid EDG Global Lookup View**
+
+A *Global Lookup* text box In the page header lets you find assets (resources) across all asset collections in EDG by entering their name. This is an auto-complete look up field. As you type, any resource whose label is *prefixed* by the search text will appear in a popup list. Label and Preferred label with a language tag in the current browser’s language or with no language tag will be matched against the entered string.
+
+Selecting a listed resource displays form with its information in a new browser tab – in the context of the collection where it is defined.
+
+Search the EDG
+--------------
+
+Available from the home page, this searches across all EDG resources that EDG administrator and/or manager of a specific collection elected to include in the index. More details for Search the EDG can be found in the `User Guide:Search the EDG`_.
+
+.. _User Guide:Search the EDG: https://doc.topquadrant.com/7.0/search-the-edg/
+
+Left-Nav Searches
+-----------------
+
+There are two search functions in the left-navigation menu‘s DASHBOARD section, Find Code and Find Tasks. More details for these can be found in the `User Guide`_.
+
+
+.. _User Guide: https://doc.topquadrant.com/7.0/user-guide/

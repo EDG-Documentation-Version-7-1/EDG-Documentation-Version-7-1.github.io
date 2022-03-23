@@ -1,0 +1,40 @@
+# baseURI: http://extensionsamples.topbraid.org/services/graphserviceexample
+# imports: http://datashapes.org/dash
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/services/graphserviceexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/services/graphserviceexample>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/services/graphserviceexample#" ;
+  rdfs:label "GraphServiceExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+ex:GraphStatisticsService
+  a dash:GraphService ;
+  dash:js """// Here we switch to the graph without owl:imports
+let baseGraph = dataset.withoutImports(graph.dataGraphURI);
+let localTripleCount = graph.withDataGraph(baseGraph, () => {
+	return graph.triples().length;
+})
+
+// Construct the response JSON object
+let response = {
+	localTripleCount: localTripleCount,
+	totalTripleCount: graph.triples().length,
+}
+
+// As usual, the last expression becomes the overall result
+response;""" ;
+  dash:responseContentType "application/json" ;
+  rdfs:comment """Produces a JSON structure with the number of triples in the graph.
+
+You can try this service from the Web Services section on the Reports tab.""" ;
+  rdfs:label "Graph Statistics" ;
+.

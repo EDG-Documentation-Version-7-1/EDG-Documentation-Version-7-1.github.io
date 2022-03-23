@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Extension Development Process &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Teamwork Framework" href="teamwork.html" />
+    <link rel="prev" title="Extension Development" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extension Development</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">General Extension Development Process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-extension-files">Working with Extension Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ads-and-swp">ADS and SWP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="teamwork.html">The Teamwork Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="points.html">Selected Extension Points</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Extension Development</a> &raquo;</li>
+      <li>General Extension Development Process</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="general-extension-development-process">
+<span id="ext-process"></span><h1>General Extension Development Process<a class="headerlink" href="#general-extension-development-process" title="Permalink to this headline"></a></h1>
+<p>The recommended tool for developing extensions is TopBraid EDG Studio.
+EDG Studio can be executed locally but otherwise offers all features of a server-side production installation.
+Running locally means that you have more control over what you want to do (e.g. to modify the files from your workspace directly).
+But more importantly, running in a local sandbox means that you can safely experiment, restart the system etc without affecting real users.
+Once you are satisfied that your extensions are working, move the relevant files and asset collections to the next stage of your production pipeline.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>There is a <a class="reference external" href="https://www.youtube.com/watch?v=jZ2WWEqiwP8&amp;t=15s">Video on TopBraid EDG Studio 7.1</a> that may help you get started.</p>
+</div>
+<p>Extensions typically live in files or Ontology asset collections.
+TopBraid EDG Studio can be used to edit files from the workspace, although theoretically you can also use external editors and perform a workspace refresh (from the <em>Files</em> page) after saving the files.</p>
+<p>In order to develop extensions, you should have a decent understanding of RDF, ontologies and SHACL.
+All extension points are activated by instantiating certain RDF/SHACL classes.
+For example, to create <a class="reference internal" href="points.html#ext-constructors"><span class="std std-ref">Constructors</span></a>, you instantiate the class <code class="code docutils literal notranslate"><span class="pre">dash:Constructor</span></code> using the EDG editor.</p>
+<p>Almost all extension points consist of executable scripts, written in JavaScript and ADS, see <a class="reference internal" href="../scripting/index.html#scripting"><span class="std std-ref">Scripting with JavaScript and ADS</span></a>.
+These scripts are typically linked to the declarative instances through the property <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> and are also edited using the EDG editor.</p>
+<section id="working-with-extension-files">
+<span id="ext-files"></span><h2>Working with Extension Files<a class="headerlink" href="#working-with-extension-files" title="Permalink to this headline"></a></h2>
+<p>Two types of files are used for extension development:</p>
+<ul class="simple">
+<li><p><strong>Turtle files</strong> (such as <code class="code docutils literal notranslate"><span class="pre">myextension.ttl</span></code>) are typically included (via <code class="code docutils literal notranslate"><span class="pre">owl:imports</span></code>) into Ontology asset collections and only apply in the context of asset collections that include them.
+From version 7.2 onwards, if your Turtle file ends with <code class="code docutils literal notranslate"><span class="pre">.api.ttl</span></code> then any <a class="reference internal" href="points.html#ext-functions"><span class="std std-ref">Script-based Functions</span></a>, <a class="reference internal" href="points.html#ext-multi-functions"><span class="std std-ref">Multi-Functions</span></a> or <a class="reference internal" href="../scripting/introduction.html#scripting-included-scripts"><span class="std std-ref">Included Scripts</span></a> will be added to all generated ADS APIs, which means that they can be used everywhere.</p></li>
+<li><p><strong>TurtleX files</strong> (such as <code class="code docutils literal notranslate"><span class="pre">myextension.ui.ttlx</span></code>) are registered <em>globally</em> without being tied to specific asset collections.
+These files are recognized by having <code class="code docutils literal notranslate"><span class="pre">.ui.</span></code> in their file name.
+You may use <code class="code docutils literal notranslate"><span class="pre">.ui.ttl</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> if you don’t use any SWP code and prefer to stick to the official Turtle format only.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not over-use <code class="code docutils literal notranslate"><span class="pre">.api.ttl</span></code> files because their content will get injected into all ADS APIs.
+If you are uncertain, use normal files without an <code class="code docutils literal notranslate"><span class="pre">.api.*</span></code> ending and include them explicitly into your Ontology.</p>
+</div>
+<p>In order to get your extension files from TopBraid EDG Studio into a production installation, you may either use</p>
+<ul class="simple">
+<li><p><em>Project Upload</em>, see <a class="reference internal" href="../administrator_guide/edg_administration_and_configuration/deployment_and_export.html#upload-project"><span class="std std-ref">Upload Project</span></a> - basically create a .zip of the project that you have created with TopBraid EDG Studio and have an administrator upload it to the upstream system.</p></li>
+<li><p><em>Git Integration</em>, see <a class="reference internal" href="../user_guide/working_with_asset_collections/synchronizing_data_with_git.html#synchronizing-data-with-git-target"><span class="std std-ref">Synchronizing Data with Git</span></a> - you could commit and push the changes from your local TopBraid EDG Studio workspace into a shared Git repository, and then perform a Git pull from the upstream system.</p></li>
+</ul>
+<p>Once your files are on a TopBraid EDG server and you have a pipeline of servers, e.g. from staging to production, you may use <a class="reference internal" href="../administrator_guide/edg_administration_and_configuration/deployment_and_export.html#send-project"><span class="std std-ref">Send Project to Another Server</span></a>.</p>
+</section>
+<section id="ads-and-swp">
+<span id="ext-swp"></span><h2>ADS and SWP<a class="headerlink" href="#ads-and-swp" title="Permalink to this headline"></a></h2>
+<p>With older versions before TopBraid 7.1, most extensions were written in a technology called <em>SPARQL Web Pages (SWP)</em>.
+SWP is still supported and is used extensively by TopBraid’s own code base.
+Extensions developed with earlier versions will continue to work and we have no plans to remove SWP support.</p>
+<p>However, with 7.1 onwards, we no longer require or recommend the use of SWP for any extensions, and favor JavaScript/ADS.
+JavaScript is considerably more flexible than SWP and is more familiar to most developers.
+With ADS and its API to execute queries and updates on RDF data, and to interact with TopBraid, JavaScript should offer everything that is typically needed for extension development.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have use cases where the available ADS API is not sufficient, please let us know so that we can improve the platform.</p>
+</div>
+<p>Many extension points still require SWP-based RDF vocabulary and use <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> files.
+Before TopBraid 7.1, users would need to write the implementation of their extension as a <code class="code docutils literal notranslate"><span class="pre">ui:prototype</span></code>.
+Since version 7.1, all SWP elements may alternatively use <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> to point at a JavaScript expression that will be executed instead of the <code class="code docutils literal notranslate"><span class="pre">ui:prototype</span></code>.</p>
+<figure class="align-center" id="id1">
+<img alt="An EDG form showing an example extension written in SWP" class="edg-figure-l" src="../_images/LandingPageGadgetExample.png" />
+<figcaption>
+<p><span class="caption-text"><strong>An example extension using the SWP vocabulary wrapping an ADS script</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>As shown in the screenshot above, these JavaScript expressions may produce HTML by returning an <code class="code docutils literal notranslate"><span class="pre">rdf:HTML</span></code> literal.
+The easiest way to produce those is through the <code class="code docutils literal notranslate"><span class="pre">graph.html()</span></code> function.</p>
+<p>Other output, e.g. JSON objects can also be produced by means of the last JavaScript expression of your <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> script.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Almost all <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> files that contain extensions to EDG should include the file <code class="code docutils literal notranslate"><span class="pre">teamwork.topbraidlive.org/ui/teamwork.ui.ttlx</span></code>.
+Use the <em>Includes</em> section on the Settings tab to add it if missing.</p>
+</div>
+<figure class="align-center" id="id2">
+<img alt="An EDG form showing an example extension written in SWP" class="edg-figure" src="../_images/import_teamwork_ui_ttlx.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Most .ui.ttlx files will need to include the file teamwork.ui.ttlx</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once you have created a new <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file, make sure you have done a full workspace refresh so that the system will register your file.
+Later, if you are only making incremental changes to your scripts, using <em>File &gt; Save Changes</em> is typically enough to update the executing scripts.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Extension Development" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="teamwork.html" class="btn btn-neutral float-right" title="The Teamwork Framework" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

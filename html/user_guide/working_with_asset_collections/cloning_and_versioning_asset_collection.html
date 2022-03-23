@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloning and Versioning an Asset Collection &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Cloning and Versioning an Asset Collection</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="cloning-and-versioning-an-asset-collection">
+<span id="cloning-and-versioning-asset-collection-target"></span><span id="index-1"></span><h1>Cloning and Versioning an Asset Collection<a class="headerlink" href="#cloning-and-versioning-an-asset-collection" title="Permalink to this headline"></a></h1>
+<section id="create-a-cloned-version">
+<h2>Create a Cloned Version<a class="headerlink" href="#create-a-cloned-version" title="Permalink to this headline"></a></h2>
+<p><strong>Create a Cloned Version</strong> is available under the <em>Manage</em> tab. It creates a clone of the current asset collection.
+The clone is created with the same content and user permission settings as the original asset collection.
+However, neither the change history, saved SPARQL queries, saved searches, working copies, comments or tasks will be cloned.</p>
+<p>Cloning is often used to “fork off” a version of an asset collection, so that it can be referenced and imported separately from the current version.
+For example, a user might start with an asset collection called <em>People</em> and, upon reaching a milestone, create a clone and call the clone <em>People 1.0.</em>.
+Then, another asset collection that should only use terms from version 1.0 could change its includes to reference the clone, while ongoing work towards version 2.0 continues on the main <em>People</em> asset collection.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The EDG Basket also offers <em>Clone</em> operation.</p>
+</div>
+</section>
+<section id="asset-collection-versioning">
+<h2>Asset Collection Versioning<a class="headerlink" href="#asset-collection-versioning" title="Permalink to this headline"></a></h2>
+<p>Multiple asset collections can be cloned and versioned together in one step, including their “includes”.
+To do this, place collections to clone into the basket and select the check box for the ones to be cloned.
+Use the operations menu to select <em>Create a new version</em>.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Basket with Asset Collection" class="edg-figure-l" src="../../_images/edg_basket_asset_collection.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Basket with Asset Collection</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This starts the versioning process and prompts for the following choices:</p>
+<ul class="simple">
+<li><p><strong>Clone Includes</strong>: Optional. If checked, the process will also create a new version for any <strong>directly</strong> included collections.
+If not checked, the new version will include the same includes as the original collection.
+Note that this feature is intended for the simple single-level includes case.
+If the included collection contains further includes, they are not handled automatically.</p></li>
+<li><p><strong>Version</strong>: Required. The version stored in the metadata about the collection.</p></li>
+<li><p><strong>Keep Subject Areas</strong>: Optional. If checked existing subject area settings will be retained for the new version of the collection.</p></li>
+<li><p><strong>Name</strong>: Required. The name of the new version of the collection.
+The new name for each “include” is also required.</p></li>
+</ul>
+<p>The figure below shows a taxonomy that includes an ontology where the process will create a clone of both the taxonomy and the ontology and where the Subject Area settings will be retained.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Batch Create a New Version Form" class="edg-figure-l" src="../../_images/edg_batch_create_new_version.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Batch Create a New Version Form</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once the names and other options are set, select Continue.
+The following figure shows a screenshot indicating success and shows links to the new collections.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Successful Batch Creation of New Version" class="edg-figure-l" src="../../_images/edg_successful_batch_create_new_version.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Successful Batch Creation of New Version</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The new version number is set in the metadata for the collection.</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Metadata Overview and Status" class="edg-figure-l" src="../../_images/edg_metadata_overview_status.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Metadata Overview and Status</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Note that this process does not automatically change the External Graph URI under the Settings tab if that is in use.
+That URI is sometimes used as part of managing versions of collections outside of EDG.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

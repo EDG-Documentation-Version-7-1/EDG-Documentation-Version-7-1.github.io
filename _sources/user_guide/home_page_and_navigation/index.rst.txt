@@ -1,0 +1,64 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _home_page_and_navigation_target:
+
+****************************
+EDG Home Page and Navigation
+****************************
+
+Many EDG views are oriented toward a particular type of asset collection, such as *taxonomy*, *ontology*, *data asset collection*, etc.
+Every view has a header that provides breadcrumb navigation, global lookup, and special application links.
+There is also a collapsible left-navigation menu and that provides direct links to all of the asset collection types and to
+other top-level functions and views.
+The entire left-navigation menu can be toggled down to icons via the left-arrow at the top, and the main menu sections
+can be expanded/collapsed by selecting the +/- |dashboard nav bar| in the top right hand corner of the section.
+
+.. figure:: _images/edg_home_page.jpg
+  :alt: TopBraid EDG Home Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Home Page**
+
+
+The main home view provides access to top-level EDG searches and other personalized widgets.
+See below for customizing the EDG landing page.
+
+* *Create New*: Initiates creating a new EDG collection. (see more below)
+* *Global Lookup*: This searches across all EDG resources by label prefix. (see more below)
+
+.. index:: Workflow
+
+* *Workflow summary*: Shortcut to the logged on users open workflows.
+* *My Tasks*: This widget is a personal view of open tasks assigned to the user.
+* *What’s Happening*: Lists important actions of users in the EDG system.
+* *Search the EDG*: Application wide faceted searching across selected EDG resources. (see more below)
+* *Recently Viewed Collections*: This widget is a personal view of the last 5 collections viewed by the user.
+* *My Governance Roles*: This widget shows which Subject Areas a user is a member of and their Governance Role within that Subject Area.
+* *Asset Collection Summary*: Counts of each Collection in the EDG system. Users actual count may differ depending on permission to collections.
+* *Left navigation menu*: Collapse by clicking the arrow at the top. (see more below)
+* *System Announcements*: Announcements can be set by Administrators. (see more below)
+
+
+.. include:: ./left_navigation_menu.rst
+.. include:: ./additional_ui_controls.rst
+.. include:: ./collection_type_pages.rst
+.. include:: ./user_directory.rst
+.. include:: ./announcements.rst
+.. include:: ./customizing_the_home_page.rst
+
+.. |dashboard nav bar| image:: _images/dashboard_nav_bar.png
+  :width: 140px
+
+.. comments - headings
+ .. include:: ./searching_across_edg.rst

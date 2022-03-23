@@ -1,0 +1,50 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. edg-documentation documentation master file, created by
+   sphinx-quickstart on Wed Oct  6 20:55:59 2021.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+.. comments - from Ralph:
+.. comments - todo: last modified - see https://stackoverflow.com/questions/53554636/how-to-make-sphinx-generate-last-modified-from-access-time-of-source-files-for
+.. comments - see also https://github.com/mgeier/sphinx-last-updated-by-git/C
+
+
+########################################
+EDG 7.1 Documentation - December 3, 2021
+########################################
+
+########################################
+PR Status: ME11-DP25-RH19-JD18-TM20-HK24
+########################################
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Contents:
+
+  introduction/index
+  quick_start_guides/index
+  user_guide/index
+  upgrading_topbraid_edg/index
+  installing_sample_data/index
+  administrator_guide/index
+  scripting/index
+  faqs/index
+  intray/index
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

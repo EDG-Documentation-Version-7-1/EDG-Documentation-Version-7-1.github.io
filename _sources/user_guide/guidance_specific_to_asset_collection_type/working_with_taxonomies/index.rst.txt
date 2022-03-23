@@ -1,0 +1,61 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _working_with_taxonomies_target:
+
+Working with Taxonomies
+-----------------------
+
+.. seealso::
+
+ * Please see the :ref:`asset_collections` for all the general features of asset collections such as import/export, editing, user permissions, reports and settings.
+
+ * Specific taxonomy only information is contained within this page.
+
+.. note::
+
+ * In the current EDG release, there are two choices for editors.
+
+ * This documentation focuses on the “new editor”.
+
+ * Please see the previous documentation at doc.topquadrant.com for the “old editor”.
+
+A taxonomy is an asset collection based on SKOS, the W3C standard ontology designed for representing taxonomies, thesauruses, and subject heading schemes.
+
+In EDG, Taxonomies are SKOS-based datasets, whereas other datasets typically do not include SKOS, although they may.
+When a new taxonomy is created, EDG will automatically include in it SKOS ontology.
+SKOS provides a definition of concept classes (types) and their properties e.g., fields like preferred and alternative labels, various notes and relationships.
+
+Every taxonomy is expected to have at least one concept scheme that identifies “top concepts” in a scheme.
+A taxonomy can have multiple concept schemes; however, a better practice can be to use a single concept scheme per individual taxonomy.
+Since taxonomies can, as all asset collections, be included into each other, a taxonomy with multiple concept schemes can be assembled through inclusion of several single concept scheme taxonomies.
+
+Use of the pre-defined SKOS fields can be configured locally for a given taxonomy, globally for the entire EDG or for a subset of taxonomies e.g., all taxonomies associated with some business area.
+You can disable fields for all or a group of taxonomies by taking advantage of the Ontology modeling functionality in EDG.
+Rules and constraints specified by SKOS are also included by default as well as other common constraints for taxonomies e.g., a concept must have a broader parent or be a top concept of some scheme.
+If desired, they can be disabled.
+
+Ontologies are also used to define custom, non-SKOS properties for taxonomy concepts and to define specializations (sub classes of concepts).
+If you customize SKOS, you need to make sure that the ontology with your customizations is included in the taxonomies these customizations apply to.
+There is a system-wide setting your EDG administrator can use to ensure that the customized model is included in every new taxonomy.
+If customization only applies to a subset of taxonomies, creator of a taxonomy can use the Includes dialog to include the desired customized model.
+
+
+
+
+.. include:: ./taxonomy_editor.rst
+.. include:: ./taxonomy_concepts_panel.rst
+.. include:: ./merging.rst
+.. include:: ./cloning_and_replacing.rst
+.. include:: ./deleting_assets.rst
+.. include:: ./exporting_taxonomies.rst
+.. include:: ./skos_xl_taxonomies.rst

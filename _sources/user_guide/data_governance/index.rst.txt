@@ -1,0 +1,22 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _operationalizing_data_governance:
+
+Operationalizing Data Governance
+================================
+
+
+The Governance Model consists of governance areas, organizational structure, metrics, issues, policies and other governance assets.
+
+.. include:: ./overview_operationalizing_data_governance.rst
+.. include:: ./the_governance_model_and_workflows.rst

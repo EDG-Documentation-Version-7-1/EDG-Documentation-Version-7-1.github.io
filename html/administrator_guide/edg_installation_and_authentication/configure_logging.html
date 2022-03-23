@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configure Logging &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Accessing the EDG Application" href="accessing_edg_application.html" />
+    <link rel="prev" title="Database Type: Application data storage" href="database_type_app_data_storage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="edg_server_platform_considerations.html">EDG Server Platform Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication_edg_background.html">Authentication for TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_configuration.html">LDAP Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oauth_authentication.html">OAuth Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_type_app_data_storage.html">Database Type: Application data storage</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Configure Logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tomcat-settings-other">Tomcat Settings – other</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="accessing_edg_application.html">Accessing the EDG Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>Configure Logging</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configure-logging">
+<span id="index-0"></span><span id="id1"></span><h1>Configure Logging<a class="headerlink" href="#configure-logging" title="Permalink to this headline"></a></h1>
+<p>EDG uses <code class="code docutils literal notranslate"><span class="pre">slf4j/log4j</span></code> as the logging library.
+The log level can set by the customer as well as the rotation and format.
+Some of the logging can be accessed in the user interface by administrators; errors, warnings and information.</p>
+<p>You can filter, send the log to TopQuadrant support or download it from the user interface.
+Additional logging is available through the container, Tomcat.
+This will include access and startup logs</p>
+<p>To configure the log size and rotation, modify the <code class="code docutils literal notranslate"><span class="pre">log4j2.xml</span></code> file found at <code class="code docutils literal notranslate"><span class="pre">“tomcat”/edg/web-inf/setupdata</span></code>.</p>
+<p>If you encounter server startup problems, the following settings in Apache Tomcat’s <code class="code docutils literal notranslate"><span class="pre">conf/logging.properties</span></code> file can give you a better picture of what’s going on:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>handlers = 1catalina.org.apache.juli.FileHandler, 2localhost.org.apache.juli.FileHandler,
+  3manager.org.apache.juli.FileHandler, 4host-manager.org.apache.juli.FileHandler,
+  5edg.org.apache.juli.FileHandler, java.util.logging.ConsoleHandler
+5edg.org.apache.juli.FileHandler.level = FINE
+5edg.org.apache.juli.FileHandler.directory = ${catalina.base}/logs
+5edg.org.apache.juli.FileHandler.prefix =edg.
+org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/edg].level = INFO
+org.apache.catalina.core.ContainerBase.[Catalina].[localhost].[/edg].handlers = 5edg.org.apache.juli.FileHandler
+</pre></div>
+</div>
+<p>Keep in mind that the handlers setting would replace the existing one.
+It is shown as three lines above, but should be one line in your logging.properties file.</p>
+<section id="tomcat-settings-other">
+<h2>Tomcat Settings – other<a class="headerlink" href="#tomcat-settings-other" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>A tomcat SSL connector, without an exclusion rule will require some characters be encoded where a flat http connector will not.
+This can cause problems with embedded links.</p></li>
+<li><p>Set the following in Tomcat <code class="code docutils literal notranslate"><span class="pre">relaxedPathChars=”&amp;lt;&amp;gt;”</span></code> <code class="code docutils literal notranslate"><span class="pre">relaxedQueryChars=”&amp;lt;&amp;gt;”</span></code></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="database_type_app_data_storage.html" class="btn btn-neutral float-left" title="Database Type: Application data storage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="accessing_edg_application.html" class="btn btn-neutral float-right" title="Accessing the EDG Application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _working_with_data_graphs_target:
+
+
+Working with Data Graphs
+------------------------
+
+Data Graphs are available as add-on module that can be combined with any package of TopBraid EDG.
+
+
+Data Graphs Asset Collection Type
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Data Graphs is an asset collection type that supports general collections containing instances of classes defined in customer-specified ontologies.
+This means that an organization decides what data to store in a data graph.
+
+
+
+When creating a new Data Graphs collection, the creator selects the (top-level) Ontology upon which it is based.
+Ontologies can include other ontologies by reference and when using Data Graphs a single top-level ontology that includes others is assumed.
+Users can then work with instances of classes from the selected ontologies that are:
+
+1. Declared as being SHACL Node Shapes
+
+2. Declared using **public classes** (directly, or through a superclass) in the **GraphQL Schema** section of the Ontology’s form, accessible using the “home” icon
+
+
+.. figure:: _images/data_graph_ontology_public_classes.png
+  :alt: TopBraid EDG Public Classes for Data Graphs
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Public Classes for Data Graphs**
+
+
+.. seealso:: For details see :ref:`shacl_enablement_target`
+
+
+After creating a new Data Graph, the **Main Class** can be specified on the **Manage** tab if desired.
+This determines the default asset type (i.e. class) in the Search panel in the editor page.
+This setting can be changed at any time.
+All public ontology classes remain available in the type selector dialog.
+
+.. seealso:: Please see the :ref:`asset_collections` for all the general features of asset collections such as import/export, editing, user permissions, reports and settings.
+
+
+.. include:: ../licensing_and_enablement.rst

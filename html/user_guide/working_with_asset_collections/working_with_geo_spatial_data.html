@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Geo-Spatial Data &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Working with Geo-Spatial Data</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="working-with-geo-spatial-data">
+<span id="working-with-geo-spatial-data-target"></span><span id="index-1"></span><h1>Working with Geo-Spatial Data<a class="headerlink" href="#working-with-geo-spatial-data" title="Permalink to this headline"></a></h1>
+<section id="enabling-geosparql">
+<h2>Enabling GeoSPARQL<a class="headerlink" href="#enabling-geosparql" title="Permalink to this headline"></a></h2>
+<p><strong>Enable GeoSPARQL and Related Features</strong> is available under the <em>Manage</em> tab.
+It specifies whether GeoSPARQL and related features are available for the collection.
+If enabled then all SPARQL queries issued by the editor use a spatial index for the production collection and its imports.</p>
+<p>Building the spatial index may consume time and memory, yet geography-related queries will be significantly faster.</p>
+</section>
+<section id="map-explorer-panel">
+<span id="id1"></span><h2>Map Explorer Panel<a class="headerlink" href="#map-explorer-panel" title="Permalink to this headline"></a></h2>
+<p>This panel works with EDG’s GeoSPARQL support.
+In order to use the Google Maps panels, your EDG Administrator needs to set a Google Maps API Key in the configuration parameters page.
+Geo location information must use W3C vocabulary for representing latitude, longitude and altitude
+information in the WGS84 geodetic reference datum (namespace <a class="reference external" href="http://www.w3.org/2003/01/geo/wgs84_pos">http://www.w3.org/2003/01/geo/wgs84_pos</a>).
+The W3C vocabulary has properties for specifying geo coordinates.</p>
+<p>TopBraid EDG provides the W3C vocabulary within its own Geo vocabulary that adds additional features for controlling map display.
+You will find it as an option in the <strong>Settings&gt;Includes</strong> dialog by using <em>Other</em> as the collection type.
+If you do not see it in the dialog, click on the <strong>Home</strong> button in your asset collection and in the Source Code panel add:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">owl:imports</span> <span class="pre">&lt;http://topbraid.org/tbgeo&gt;;</span></code></p>
+</div></blockquote>
+<p>To make geo coordinate properties directly available to your resources, you will typically declare their types as subclasses of geo:SpatialThing class.
+As an example, you can look at the TopBraid Example Geo Ontology in the <a class="reference external" href="https://www.topquadrant.com/topbraid-composer-install/">Asset Collections Samples project</a> where this is already done.</p>
+<p>The Map Explorer panel will display selected resources on the map using their geo coordinates – values of geo:lat and geo:long properties.</p>
+<p>The panel can display items using markers of different types, sizes and color.
+This is controlled using properties such <em>astbgeo:fillColor</em>.
+It can also display shapes (e.g., polygons) as shown below.
+These features require inclusion of TopBraid GeoSPARQL Vocabulary (tbgeo: namespace).</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Map Explorer - Germany" class="edg-figure-m" src="../../_images/edg_map_explorer_germany.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Map Explorer - Germany</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Map Explorer - Switzerland and Austria" class="edg-figure-m" src="../../_images/edg_map_explorer_switzerland_austria.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Map Explorer - Switzerland and Austria</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Follow the below example to get started with the polygon display.</p>
+<p>Create an Ontology, include TopBraid GeoSPARQL Vocabulary.
+In the class that will contain data to display on the map  (e.g. Country), use <strong>Create or Add Property&gt; Add an existing property definition (property shape)</strong>: <em>geosparql:Feature-hasGeometry</em>.
+This defines the property <em>hasGeometry</em> that can hold instances of <em>geosparql:Geometry</em> and those can carry either a GML or WKT rendering of the polygon or multi-polygon.
+Mark <em>geosparql:Geometry</em> as a public class of your ontology (click the <strong>Home</strong> button and switch to <strong>GraphQL Schema View</strong> in the Form to do this) so you will be able to readily create its instances.</p>
+<p>Create an asset collection based on your new ontology e.g., a Data Graph.
+Enable GeoSPARQL support on the <strong>Manage</strong> tab, Create an instance of <em>geosparql:Geometry</em> class.
+Using the <strong>Form</strong> or the <strong>Source Code</strong> panel, enter the information in the below example.
+Most data of this type will probably be imported.</p>
+<p>Example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>ex:SwissGeometry
+a geosparql:Geometry ;
+geosparql:asWKT &quot;MULTIPOLYGON(((7.697223 47.543327, 8.57642 47.59137, 8.566111 47.806938, 9.566724 47.540451, 9.533569 47.274544, 9.474637 47.057457, 9.598635 47.063835, 10.471235 46.871353, 10.465277 46.546387, 10.050278 46.539993, 10.129999 46.227219, 9.28194400000012 46.495827, 9.036665 45.837776, 8.43638800000014 46.463333, 7.855742 45.919052, 7.038054 45.931938, 6.79138900000015 46.434166, 5.966666 46.209442, 6.99055500000014 47.497215, 7.588268 47.58448, 7.697223 47.543327)))&quot;^^geosparql:wktLiteral ;
+.
+ex:Switzerland
+geosparql:hasGeometry ex:SwissGeometry ;
+tbgeo:fillColor &quot;green&quot; ;
+tbgeo:fillOpacity 0.8 ;
+tbgeo:strokeColor &quot;blue&quot; ;
+.
+</pre></div>
+</div>
+<p>An example value in GML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>geosparql:asGML &quot;&quot;&quot;<span class="cp">&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot; ?&gt;</span>
+<span class="nt">&lt;gml:Polygon</span> <span class="na">xmlns:gml=</span><span class="s">\&quot;http://www.opengis.net/ont/gml\&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;gml:exterior&gt;</span>
+<span class="nt">&lt;gml:LinearRing&gt;</span>
+<span class="nt">&lt;gml:posList&gt;</span>13.833611 48.773605 14.70028 48.581379 15.025833 49.018883 16.946182 48.619064 17.166386 48.012497 17.053886 47.709442 16.450554 47.698051 16.713886 47.543884 16.510555 47.00666 16.111805 46.86972 14.544998 46.407494 13.718655 46.526611 12.440554 46.690826 12.127777 47.001663 10.471235 46.871353 9.598635 47.063835 9.533569 47.274544 9.566724 47.540451 10.173332 47.274719 10.478054 47.591942 11.095554 47.396111 12.735554 47.684166 13.016666 47.470276 12.758333 48.123886 13.833611 48.773605<span class="nt">&lt;/gml:posList&gt;</span>
+<span class="nt">&lt;/gml:LinearRing&gt;</span>
+<span class="nt">&lt;/gml:exterior&gt;</span>
+<span class="nt">&lt;/gml:Polygon&gt;</span>&quot;&quot;&quot;^^geosparql:gmlLiteral ;
+</pre></div>
+</div>
+<p>The values of <em>tbgeo:fillColor</em>, etc., can be dynamically computed using <em>sh:values</em> rules.
+The map will automatically update when (asserted) values for <em>tbgeo:fillColor</em> etc., change after edits, but this will not work for dynamically computed values.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

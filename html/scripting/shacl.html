@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using ADS with SHACL &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using ADS from Node.js" href="nodejs.html" />
+    <link rel="prev" title="ADS-based Web Services" href="services.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">The Scripting User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">Working with Relational Databases via SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Resource Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ADS-based Web Services</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using ADS with SHACL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constraint-validation">Constraint Validation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#script-constraints">Script Constraints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#script-constraint-components">Script Constraint Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#inferring-values">Inferring Values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nodejs.html">Using ADS from Node.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web.html">Using ADS from Web Applications and React</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>Using ADS with SHACL</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="using-ads-with-shacl">
+<span id="scripting-shacl"></span><h1>Using ADS with SHACL<a class="headerlink" href="#using-ads-with-shacl" title="Permalink to this headline"></a></h1>
+<section id="constraint-validation">
+<span id="scripting-shacl-validation"></span><h2>Constraint Validation<a class="headerlink" href="#constraint-validation" title="Permalink to this headline"></a></h2>
+<p>While the SHACL Core language defines built-in constraint properties such as <code class="code docutils literal notranslate"><span class="pre">sh:minCount</span></code>, SHACL is also an extensible language, allowing extension languages such as SPARQL to declare constraints that go beyond the Core.</p>
+<p>In this section we introduce how the Active Data Shapes framework can be used as one such extension mechanism, allowing SHACL users to declare constraints and also constraint components, using JavaScript.
+JavaScript offers significantly greater expressiveness than, for example, SPARQL, allowing the representation of very complex conditions and taking better control over the execution speed.</p>
+<section id="script-constraints">
+<h3>Script Constraints<a class="headerlink" href="#script-constraints" title="Permalink to this headline"></a></h3>
+<p>The property <code class="code docutils literal notranslate"><span class="pre">dash:scriptConstraint</span></code> links a shape with instances of <code class="code docutils literal notranslate"><span class="pre">dash:ScriptConstraint</span></code>.
+This is similar to how <code class="code docutils literal notranslate"><span class="pre">sh:sparql</span></code> links a shape with instances of <code class="code docutils literal notranslate"><span class="pre">sh:SPARQLConstraint</span></code>.
+Each <code class="code docutils literal notranslate"><span class="pre">dash:ScriptConstraint</span></code> must have a value for <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> to represent the JavaScript expression that shall be evaluated.
+It may also use <code class="code docutils literal notranslate"><span class="pre">sh:message</span></code> to declare which validation messages shall be produced.
+The optional property <code class="code docutils literal notranslate"><span class="pre">dash:onAllValues</span></code> may be used to control what variables can be used by the script, as explained in the following examples.</p>
+<section id="example-validating-an-individual-value">
+<h4>Example: Validating an individual value<a class="headerlink" href="#example-validating-an-individual-value" title="Permalink to this headline"></a></h4>
+<p>This example illustrates the most simple form of script-based constraints: a single JavaScript expression that gets executed for each individual value of a property.
+Here we have a class <code class="code docutils literal notranslate"><span class="pre">ex:AdultPerson</span></code> with a property <code class="code docutils literal notranslate"><span class="pre">ex:age</span></code> that must not have values smaller than 18.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">ex</span><span class="p">:</span><span class="nt">AdultPerson</span>
+<span class="linenos"> 2</span>    <span class="kt">a</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">Class</span><span class="p">,</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">AdultPerson-age</span> <span class="p">.</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nn">ex</span><span class="p">:</span><span class="nt">AdultPerson-age</span>
+<span class="linenos"> 6</span>    <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">PropertyShape</span> <span class="p">;</span>
+<span class="linenos"> 7</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">age</span> <span class="p">;</span>
+<span class="linenos"> 8</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
+<span class="linenos"> 9</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="linenos">10</span>    <span class="nn">dash</span><span class="p">:</span><span class="nt">scriptConstraint</span> <span class="p">[</span>
+<span class="linenos">11</span>        <span class="kt">a</span> <span class="nn">dash</span><span class="p">:</span><span class="nt">ScriptConstraint</span> <span class="p">;</span>
+<span class="linenos">12</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;Age must be &gt;= 18&quot;</span> <span class="p">;</span>
+<span class="linenos">13</span>        <span class="nn">dash</span><span class="p">:</span><span class="nt">js</span> <span class="s">&quot;value &gt;= 18&quot;</span> <span class="p">;</span>
+<span class="linenos">14</span>    <span class="p">]</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>Such constraints will be executed for each value node of the property.
+In each script execution, the variable value will point at the actual property value.
+In this case, assuming that the value(s) of <code class="code docutils literal notranslate"><span class="pre">ex:age</span></code> are <code class="code docutils literal notranslate"><span class="pre">xsd:integer</span></code> literals, the value will be a JavaScript number.
+As usual with ADS, <code class="code docutils literal notranslate"><span class="pre">xsd:string</span></code> literals are represented as JavaScript strings, while <code class="code docutils literal notranslate"><span class="pre">xsd:boolean</span></code> literals become true or false in JavaScript.
+Literals of other datatypes become instances of <code class="code docutils literal notranslate"><span class="pre">LiteralNode</span></code>, and <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> is used to represent URIs or blank nodes.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> script can also access the current focus node using the variable <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> as an instance of <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code>, if needed.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> expression will be evaluated against the current data graph.
+As usual in JavaScript, such expressions may consist of multiple lines, and the final result of the expression will be the result of its last line.</p>
+<ul class="simple">
+<li><p>If the result is a string then the validation will produce a validation result with the given string as <code class="code docutils literal notranslate"><span class="pre">sh:resultMessage</span></code>.</p></li>
+<li><p>If the result is true then the validation passes OK without violations.</p></li>
+<li><p>If the result is false the validation will produce a validation result that uses the provided <code class="code docutils literal notranslate"><span class="pre">sh:message</span></code> or a generic fallback message.
+The values of <code class="code docutils literal notranslate"><span class="pre">sh:message</span></code> can access the values <code class="code docutils literal notranslate"><span class="pre">{$focusNode}</span></code>, <code class="code docutils literal notranslate"><span class="pre">{$value}</span></code> etc as template variables.</p></li>
+<li><p>If the result an object, a validation result will be produced using the value of the field <code class="code docutils literal notranslate"><span class="pre">message</span></code> of the object as result message.
+If the field <code class="code docutils literal notranslate"><span class="pre">value</span></code> has a value then this will become the <code class="code docutils literal notranslate"><span class="pre">sh:value</span></code> in the violation.</p></li>
+</ul>
+<p>Alternatively, the script may return an array then each array member will be mapped to one validation result, following the mapping rules above.</p>
+</section>
+<section id="example-validating-all-values-at-once">
+<h4>Example: Validating all values at once<a class="headerlink" href="#example-validating-all-values-at-once" title="Permalink to this headline"></a></h4>
+<p>In some scenarios, constraints need to look at all value nodes at once, for example to count the number of available values.
+This mode is activated if <code class="code docutils literal notranslate"><span class="pre">dash:onAllValues</span></code> is true, and the JavaScript variable <code class="code docutils literal notranslate"><span class="pre">values</span></code> will then be an array of the value nodes.</p>
+<p>In this example we verify that at least one of the values of the <code class="code docutils literal notranslate"><span class="pre">ex:supervision</span></code> property of a person is an adult.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">ex</span><span class="p">:</span><span class="nt">Person</span>
+<span class="linenos"> 2</span>    <span class="kt">a</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">Class</span><span class="p">,</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Person-supervision</span> <span class="p">.</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nn">ex</span><span class="p">:</span><span class="nt">Person-supervision</span>
+<span class="linenos"> 6</span>    <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">PropertyShape</span> <span class="p">;</span>
+<span class="linenos"> 7</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">supervision</span> <span class="p">;</span>
+<span class="linenos"> 8</span>    <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">Person</span> <span class="p">;</span>
+<span class="linenos"> 9</span>    <span class="nn">dash</span><span class="p">:</span><span class="nt">scriptConstraint</span> <span class="p">[</span>
+<span class="linenos">10</span>        <span class="kt">a</span> <span class="nn">dash</span><span class="p">:</span><span class="nt">ScriptConstraint</span> <span class="p">;</span>
+<span class="linenos">11</span>        <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;At least one of the supervisors must be an adult&quot;</span> <span class="p">;</span>
+<span class="linenos">12</span>        <span class="nn">dash</span><span class="p">:</span><span class="nt">onAllValues</span> <span class="l">true</span> <span class="p">;</span>
+<span class="linenos">13</span>        <span class="nn">dash</span><span class="p">:</span><span class="nt">js</span> <span class="s">&quot;values.some(value =&gt; value.instanceOf(ex.AdultPerson))&quot;</span> <span class="p">;</span>
+<span class="linenos">14</span>    <span class="p">]</span> <span class="p">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="script-constraint-components">
+<h3>Script Constraint Components<a class="headerlink" href="#script-constraint-components" title="Permalink to this headline"></a></h3>
+<p>SHACL constraint components are reusable building blocks that declare property types that others may use.
+Similar to <a class="reference external" href="https://www.w3.org/TR/shacl/#sparql-constraint-components">SPARQL-based Constraint Components</a>, ADS makes it possible to declare new constraint components using JavaScript.</p>
+<p>Create an instance of <code class="code docutils literal notranslate"><span class="pre">sh:ConstraintComponent</span></code> to get started, and declare the parameters as usual in SHACL.
+Then declare a <code class="code docutils literal notranslate"><span class="pre">dash:ScriptValidator</span></code> as value of <code class="code docutils literal notranslate"><span class="pre">sh:validator</span></code> and store the ADS script that shall be executed using <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> at the validator.
+Within the JavaScript code, the same variables may be used as for constraints, and <code class="code docutils literal notranslate"><span class="pre">dash:onAllValues</span></code> has the same meaning.
+In addition, the parameters will be mapped to JavaScript variables that have the same name as the local name of the parameter.
+This is similar to how SPARQL-based constraint components work.</p>
+<p>This is best explained using an example.</p>
+<p>This example declares a SHACL constraint component based on a parameter <code class="code docutils literal notranslate"><span class="pre">ex:isJSONArray</span></code> which can be used to validate that all values of a given property can be parsed into JSON arrays.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">ex</span><span class="p">:</span><span class="nt">IsJSONArrayConstraintComponent</span>
+<span class="linenos"> 2</span>  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">ConstraintComponent</span> <span class="p">;</span>
+<span class="linenos"> 3</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;As an example of a Script-based constraint component, this can be used to verify that all value nodes are valid JSON arrays (encoded as strings).&quot;</span> <span class="p">;</span>
+<span class="linenos"> 4</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Is JSON array constraint component&quot;</span> <span class="p">;</span>
+<span class="linenos"> 5</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;Value must be a JSON array: {$value}&quot;</span> <span class="p">;</span>
+<span class="linenos"> 6</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">parameter</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">IsJSONArrayConstraintComponent-isJSONArray</span> <span class="p">;</span>
+<span class="linenos"> 7</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">validator</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">IsJSONArrayScriptValidator</span> <span class="p">;</span>
+<span class="linenos"> 8</span><span class="p">.</span>
+<span class="linenos"> 9</span><span class="nn">ex</span><span class="p">:</span><span class="nt">IsJSONArrayConstraintComponent-isJSONArray</span>
+<span class="linenos">10</span>  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">Parameter</span> <span class="p">;</span>
+<span class="linenos">11</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">isJSONArray</span> <span class="p">;</span>
+<span class="linenos">12</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">boolean</span> <span class="p">;</span>
+<span class="linenos">13</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;True to activate the check that all values must be JSON arrays.&quot;</span> <span class="p">;</span>
+<span class="linenos">14</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;is JSONArray&quot;</span> <span class="p">;</span>
+<span class="linenos">15</span><span class="p">.</span>
+<span class="linenos">16</span><span class="nn">ex</span><span class="p">:</span><span class="nt">IsJSONArrayScriptValidator</span>
+<span class="linenos">17</span>  <span class="kt">a</span> <span class="nn">dash</span><span class="p">:</span><span class="nt">ScriptValidator</span> <span class="p">;</span>
+<span class="linenos">18</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;IsJSONArray script validator&quot;</span> <span class="p">;</span>
+<span class="linenos">19</span>  <span class="nn">dash</span><span class="p">:</span><span class="nt">js</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="linenos">20</span><span class="s">    if(isJSONArray) {</span>
+<span class="linenos">21</span><span class="s">      let array = JSON.parse(value);</span>
+<span class="linenos">22</span><span class="s">      Array.isArray(array);</span>
+<span class="linenos">23</span><span class="s">    }&quot;&quot;&quot; ;</span>
+<span class="linenos">24</span><span class="s">.</span>
+</pre></div>
+</div>
+<p>Note that the <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> script queries the value of <code class="code docutils literal notranslate"><span class="pre">isJSONArray</span></code> which will be a boolean that is automatically set to the correct value by the engine.</p>
+<p>Once declared, the new property can be used as in the following example shapes graph.
+Here we have set <code class="code docutils literal notranslate"><span class="pre">ex:isJSONArray</span></code> to true which will trigger the execution of the script validator, which will verify that the value is true before proceeding with the actual check.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">ex</span><span class="p">:</span><span class="nt">TestShape</span>
+<span class="linenos"> 2</span>  <span class="kt">a</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+<span class="linenos"> 3</span>  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+<span class="linenos"> 4</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Test shape&quot;</span> <span class="p">;</span>
+<span class="linenos"> 5</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">Resource</span> <span class="p">;</span>
+<span class="linenos"> 6</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">TestShape-property</span> <span class="p">;</span>
+<span class="linenos"> 7</span><span class="p">.</span>
+<span class="linenos"> 8</span><span class="nn">ex</span><span class="p">:</span><span class="nt">TestShape-property</span>
+<span class="linenos"> 9</span>  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">PropertyShape</span> <span class="p">;</span>
+<span class="linenos">10</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">property</span> <span class="p">;</span>
+<span class="linenos">11</span>  <span class="nn">ex</span><span class="p">:</span><span class="nt">isJSONArray</span> <span class="l">true</span> <span class="p">;</span>
+<span class="linenos">12</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<span class="linenos">13</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;property&quot;</span> <span class="p">;</span>
+<span class="linenos">14</span><span class="p">.</span>
+</pre></div>
+</div>
+<p>Here is a valid instance from a data graph:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nn">ex</span><span class="p">:</span><span class="nt">ValidInstance</span>
+<span class="linenos">2</span>  <span class="kt">a</span> <span class="nn">ex</span><span class="p">:</span><span class="nt">TestShape</span> <span class="p">;</span>
+<span class="linenos">3</span>  <span class="nn">ex</span><span class="p">:</span><span class="nt">property</span> <span class="s">&quot;[1, 2, 3]&quot;</span> <span class="p">;</span>
+<span class="linenos">4</span>  <span class="nn">ex</span><span class="p">:</span><span class="nt">property</span> <span class="s">&quot;[]&quot;</span> <span class="p">;</span>
+<span class="linenos">5</span>  <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Valid instance&quot;</span> <span class="p">;</span>
+<span class="linenos">6</span><span class="p">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="inferring-values">
+<span id="scripting-shacl-values"></span><h2>Inferring Values<a class="headerlink" href="#inferring-values" title="Permalink to this headline"></a></h2>
+<p>The SHACL Advanced Features include a mechanism to dynamically compute (infer) values of certain properties, based on the <code class="code docutils literal notranslate"><span class="pre">sh:values</span></code> property.
+Active Data Shapes technology introduces a new kind of SHACL Node Expression based on scripts that makes it possible to dynamically compute property values from JavaScript expressions.
+These node expressions are blank nodes that have the script as value of <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code>.
+In the script, you can use the variable <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> to reference the current context node.</p>
+<p>In the following example, we introduce a new derived property <code class="code docutils literal notranslate"><span class="pre">skos:narrowerConceptCount</span></code> which is an integer computed as the number of narrower concepts.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nn">skos</span><span class="p">:</span><span class="nt">Concept-narrowerConceptCount</span>
+<span class="linenos"> 2</span>  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">PropertyShape</span> <span class="p">;</span>
+<span class="linenos"> 3</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">narrowerConceptCount</span> <span class="p">;</span>
+<span class="linenos"> 4</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
+<span class="linenos"> 5</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;The number of narrower concepts of this.&quot;</span> <span class="p">;</span>
+<span class="linenos"> 6</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">group</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">HierarchicalRelationships</span> <span class="p">;</span>
+<span class="linenos"> 7</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+<span class="linenos"> 8</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;narrower concept count&quot;</span> <span class="p">;</span>
+<span class="linenos"> 9</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">order</span> <span class="s">&quot;10&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+<span class="linenos">10</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">values</span> <span class="p">[</span>
+<span class="linenos">11</span>      <span class="nn">dash</span><span class="p">:</span><span class="nt">js</span> <span class="s">&quot;focusNode.narrower.length&quot;</span> <span class="p">;</span>
+<span class="linenos">12</span>    <span class="p">]</span> <span class="p">.</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept-narrowerConceptCount</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>With the new property defined as above, forms of SKOS concepts will now show the count:</p>
+<figure class="align-center" id="id1">
+<img alt="Form panel with values that are inferred by an ADS script" class="edg-figure" src="../_images/narrowerConceptCount.png" />
+<figcaption>
+<p><span class="caption-text"><strong>ADS scripts can be used to infer/derive new property values such as the narrower concept count above</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> expression may also return an array, in which case multiple values would be inferred.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure to use this (powerful) feature with care, as it might have a performance impact if the system needs to repeatedly fire up a Script Runtime for each individual value on a form.
+Performance should however, be good as long as you call your inference as part of some other script.
+In the above case, you could now query the new property like any other property of the instance:</p>
+</div>
+<figure class="align-center" id="id2">
+<img alt="Script Editor panel with an example call to an inferred property value" class="edg-figure" src="../_images/valuesPropertyUse.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Inferred property values such as the narrower concept count can be queried like any other property</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>As usual, inferred properties cannot be directly modified, i.e. you cannot assign them.
+Change the underlying values (here: <code class="code docutils literal notranslate"><span class="pre">skos:broader</span></code>) instead.</p>
+<p>Pro tip: if you want the Form panel and other parts of the UI update automatically after changes to the asserted properties annotate your node expression with <code class="code docutils literal notranslate"><span class="pre">dash:dependencyPredicate</span></code>.</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nn">skos</span><span class="p">:</span><span class="nt">Concept-narrowerConceptCount</span>
+<span class="linenos">2</span>  <span class="p">...</span>
+<span class="linenos">3</span>  <span class="nn">sh</span><span class="p">:</span><span class="nt">values</span> <span class="p">[</span>
+<span class="linenos">4</span>      <span class="nn">dash</span><span class="p">:</span><span class="nt">js</span> <span class="s">&quot;focusNode.narrower.length&quot;</span> <span class="p">;</span>
+<span class="linenos">5</span>      <span class="nn">dash</span><span class="p">:</span><span class="nt">dependencyPredicate</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">broader</span> <span class="p">;</span>
+<span class="linenos">6</span>    <span class="p">]</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>The above will mean that the counter will automatically update whenever some <code class="code docutils literal notranslate"><span class="pre">skos:broader</span></code> triple has been changed (we are using <code class="code docutils literal notranslate"><span class="pre">skos:broader</span></code> as the <code class="code docutils literal notranslate"><span class="pre">sh:inversePath</span></code> in the computation of the narrower property).</p>
+<p>Current limitations: these script-based inferred values only work within graphs that are under teamwork control, i.e. you can only query them within EDG asset collections, not from other (file based) graphs in your installation.
+Furthermore, make sure that the focus node only has a single type, so that it is able to pick the right JavaScript class for the <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> variable.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="services.html" class="btn btn-neutral float-left" title="ADS-based Web Services" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nodejs.html" class="btn btn-neutral float-right" title="Using ADS from Node.js" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

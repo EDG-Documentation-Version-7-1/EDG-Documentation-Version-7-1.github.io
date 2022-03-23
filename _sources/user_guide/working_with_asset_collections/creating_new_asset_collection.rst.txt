@@ -1,0 +1,90 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Asset Collection ; Creating
+
+.. _creating_new_asset_collection_target:
+
+
+Creating New Asset Collection
+-----------------------------
+
+To create a new asset collection such as a *Taxonomies* collection, use the plus icon in the EDG application header bar or use the left navigation menu to the asset collection type to create and use the Create New button at the top of the page.
+
+A System Administrator or any user with **editor** profile for the Governance Model can also create a new collection by using a Create link in the Governance areas page.
+This will automatically place a collection into the chosen subject area and assign the user permissions for that subject area.
+See :ref:`operationalizing_data_governance` for more information on this feature.
+
+.. note:: No user will have a link for creating any asset collection until an administrator configures EDG’s persistence technology as documented in :ref:`administrator_quide`.
+ Additionally, a user will not have the ability to create asset collections unless the user or their role has a *Create* permission for the EDG *Repositories* project as documented in :ref:`access_control`.
+
+The Create dialog box options are as follows:
+
+* *Label*: Required.
+
+* *Default namespace*: Required for all asset collections except Crosswalks and Content Tagsets where it is not available.
+
+* *Description*: Optional.
+
+* *Search the EDG*: Optional.
+  Check this option if you want this collection to be included in the globally available “Search the EDG” feature of the application.
+
+* *URI rules*: Optional, not applicable to Crosswalks and Content Tagsets.
+  URI construction rules for assets in a collection can be set in the server administration area as described in :ref:`edg_configuration_parameters`.
+  These selections override the server-wide settings for the collection.
+  The rules will not apply if an asset type has a primary key as those URIs are based on the value of a primary key property.
+
+The user creating a new asset collection will be assigned with the **manager** profile over the collection.
+
+.. figure:: _images/edg_create_new_glossary.jpeg
+  :alt: TopBraid EDG Create New Glossary
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Create New Glossary**
+
+* *Ontology include*: Required and is available only for Data Graphs and Reference Datasets.
+  Used to specify an Ontology that defines data model for a collection.
+
+* *Data Platform*: If TopBraid EDG Data Platform feature is enabled and not selected as the default, then setting this includes the collection in Data Platform to be replicated across all servers.
+  This setting **cannot be added or changed later**.
+
+* *Includes*: Required and applicable only for Data Graphs and Reference Datasets.
+  Specifies an Ontologies collection defining the underlying data model for the data collection.
+
+* *Data source*: Required and applicable only for Corpora.
+  Selects a connector to use for harvesting documents.
+
+* *From Graph and To Graph*: Required and applicable only for Crosswalks.
+  Identifies asset collections that will be connected by the Crosswalk.
+
+* *From Entity Type and To Entity Type*: Required and applicable only for Crosswalks and appears when the From Graph and To Graph are selected.
+  Identifies the type of the assets to be connected by the Crosswalk.
+
+* *Also generate property shapes for the match predicate*: Optional and applicable only for Crosswalks.
+  Makes the match predicate available on forms and search operations if the predicate is not already covered by a property shape.
+
+* *Content Graph and Tagging Vocabulary*: Required and applicable only for Content Tagsets.
+  Identifies an asset collection containing content to be tagged and an asset collection containing tagging vocabulary – a Taxonomies or Ontologies collection.
+
+* *Datatypes Collection to include*: Optional and applicable only to Data Assets.
+  Can be selected after creation using Settings, Includes.
+
+For Reference Datasets additional setup is required after creation.
+Users will need to identify the main entity (class) for the dataset.
+Main entity is the asset type (i.e. class) for the assets that will be contained in the collection.
+The main entity must have a primary key property set in the underlying ontology.
+
+For Data Graphs additional setup is required after creation.
+Users will need to identify the main class which sets the type that will be pre-selected on the Search panel. .
+
+For Content Tagsets the Create page is a two step wizard.
+After making selections on the first page, users will be asked to make additional selections on the second page where the default property for tags and additional properties for tags are set.

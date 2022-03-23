@@ -1,0 +1,38 @@
+# baseURI: http://extensionsamples.topbraid.org/changescripts/commitscriptexample
+# imports: http://datashapes.org/dash
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/changescripts/commitscriptexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/changescripts/commitscriptexample>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/changescripts/commitscriptexample#" ;
+  rdfs:label "CommitScriptExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+ex:ExampleCommitScript
+  a dash:CommitScript ;
+  dash:js """console.log('Commit Script is running...');
+console.log('Added triples:');
+graph.withDataGraph(dataset.addedGraphURI, () => {
+	graph.triples().forEach(triple => console.log('- ' + triple.subject + ' ' + triple.predicate + ' ' + triple.object));
+});
+console.log('Deleted triples:');
+graph.withDataGraph(dataset.deletedGraphURI, () => {
+	graph.triples().forEach(triple => console.log('- ' + triple.subject + ' ' + triple.predicate + ' ' + triple.object));
+});
+console.log('Commit Script finished.');
+""" ;
+  rdfs:comment """This example of dash:CommitScript simply prints a list of added and deleted triples to the console.
+
+Note that this gets only executed when changes have really been asserted, i.e. unlike ChangeScripts they will not execute when the user merely does a Preview or a change gets rejected due to constraint violations.
+
+To try this out, include/owl:import this file into any asset collection and make some changes.""" ;
+  rdfs:label "Example Commit Script" ;
+.

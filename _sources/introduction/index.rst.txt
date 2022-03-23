@@ -1,0 +1,136 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. comments  https://doc.topquadrant.com/7.0/edg-introduction/
+
+.. _introduction:
+
+***********************
+Introduction to EDG 7.1
+***********************
+
+TopQuadrant’s TopBraid Enterprise Data Governance™ (EDG) is a flexible, Web-based solution that addresses data governance needs in
+enterprise environments with heterogeneous data stores, data processing, and applications.
+
+TopBraid EDG supports integrated data governance across the ever growing number and type of data assets
+and governance needs.
+It lets you capture business glossaries, data sources, conceptual models or ontologies, reference data,
+business applications, policies and more. Further, it lets you build relationships across all of these items –
+because connections are key to data governance.
+
+TopBraid EDG is based on a rich set of interconnected knowledge graphs expressing knowledge about how data
+is used and managed in the enterprise ecosystem.
+These integrated knowledge graphs are ready to be enriched with your enterprise specific knowledge.
+When this enrichment takes place, your enterprise is ready for implementing comprehensive data governance.
+
+TopBraid EDG is highly configurable.
+EDG defines a variety of asset types that it can govern, such as Business Term and Database Table.
+Assets based on those asset types are organized into asset collections that are also of different types,
+such as Reference Datasets and Taxonomies.
+EDG support of those asset collections is model-driven.
+When deploying EDG in your organization, the models defining asset types can easily be changed or extended.
+Additional asset collection types can also be defined.
+
+
+
+Features of TopBraid EDG
+========================
+
+* **Intuitive Graphical User Interface** – with auto-completion, drag and drop, rich text editing, search
+  and filtering; accessibility across popular browsers –
+  providing an easy-to-use environment for both business and technical stakeholders
+
+* **Flexible data and relationship modeling** – handles both simple and complex data models and their
+  relationships across domains; allows modeling,
+  storing and using not only identifiers, labels and codes, but all relevant associated information
+
+* **Auditability** – every change is logged and time stamped, change history can be searched, usage records
+  captured where reference data is used
+
+* **Control over versions** – virtual work-in-progress copies of asset collections allow parallel development
+  of versions and enable controlled publishing, review and approval workflow
+
+* **Collaboration** – through access and accountability based on roles, support for task assignments, statuses
+  and issues
+
+* **Shared semantics** – providing the ability to define and share meaning of all information elements globally
+  and in the context of specific use
+
+* **Repeatability of on-boarding** – capturing processes and best practices for on-boarding of external
+  reference data
+
+* **Wide and diverse distribution** – support for a variety of interaction patterns (for example, batch or real-time)
+  and integration approaches
+
+* **Data quality** – offering intuitive forms for creating data validation rules, but also enabling complex data
+  validation rules development by expert users
+
+* **Integration** – with third party systems and `Linked Data`_ clouds via Web Services interfaces and APIs;
+  support for GRAPHQL_ making RDF data easily available to the JSON and browser ecosystems
+
+* **Easy extensibility** – configurable user interfaces, reports, meta-model, import, export, Web Services;
+  add executable actions to data shapes using :ref:`active_data_shapes` ; and more including deep customizations
+  using TopQuadrant’s TopBraid platform
+
+* **Standards** – interoperability through a standards-based data representation instead of a vendor-specific
+  representation with proprietary data formats; built-in support for W3C_ (World Wide Web Consortium) standards
+  for data and data model interchange using Web/Linked Data technology, such as RDF_ , OWL_, SPARQL_, and SHACL_.
+  See `What is SHACL`_
+
+* **Enterprise-readiness** – scalable and robust architecture with :ref:`ldap_configuration` and JMS integration
+
+.. index:: Asset Collection Type
+
+Available Asset Collection Types
+================================
+
+A variety of asset collection types are available in EDG.
+They determine what kind of assets can be stored in the asset collection, what kind of metadata is captured about a collection and what functionality such as imports, exports, reports, editing applications, etc., are available for it.
+It is also possible to extend EDG by creating bespoke asset collection types.
+
+.. admonition:: |doc_icon| TopBraid EDG Assets and Asset Collection Types
+
+  A brief explanation of key TopBraid EDG asset collection types is available at `Assets and Asset Collection Types`_
+
+
+EDG Packages
+============
+
+TopQuadrant recognizes that when ramping up a data governance program, different organizations may have different priorities and starting points.
+With TopBraid EDG, the organization can start incrementally.
+
+For example, an organization might start using EDG for just business glossaries or reference data or might focus on
+metadata management first.
+After the initial capability is operational, the organization can extend its data governance scope to governing
+other assets when ready to do so.
+
+To support this comprehensive but staged approach, TopBraid EDG provides focused packages, available for use as
+an initial configuration of EDG.
+Each package can be used on its own or in any combination with the other packages toward the targeted scope of
+information governance in an organization.
+Further, several add-on modules are available to extend the use of TopBraid EDG even more.
+
+.. admonition:: |doc_icon| TopBraid EDG Data Governance packages
+
+  Details of TopBraid EDG Data Governance packages is available at `TopQuadrant Data Governance Packages`_
+
+
+.. index:: pair: Asset Collection Type ; Licensing
+
+Licensing and Enablement
+========================
+
+The availability of any asset collection is determined by what is (a) licensed and (b) configured under
+Server Administration.
+To install a license or to view the currently licensed features, see :ref:`product_registration`.
+To configure which licensed collection types are currently enabled or disabled, see :ref:`edg_configuration_parameters`.
+
+For general licensing information and available asset collections and packages, see the `TopQuadrant Website`_.

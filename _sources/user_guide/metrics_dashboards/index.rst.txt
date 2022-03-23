@@ -1,0 +1,37 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Metrics ; Dashboards
+
+.. _metrics_dashboards_target:
+
+Viewing Metrics Dashboards
+==========================
+
+Metrics Dashboards available from the left navigation menu of EDG, are used for visual representations of data in your EDG application.
+Pre-built dashboards are available for workflows, governance subject areas and data elements.
+Additional dashboards can be built as a customization to your EDG platform.
+
+EDG administrators can activate metrics dashboards, using *EDG Configuration Parameters > Teamwork Platform Parameters > Metrics dashboards activated* (see :ref:`administrator_quide`).
+And they can also edit the resulting **GOVERNANCE MODEL > Dashboards** item.
+To activate each dashboard in the governance model, you will need to modify the Governance Model Collection.
+The Default Dashboard contains each dashboard gadget such as Data Elements and Governance Roles.
+Select “activate” to true.
+
+.. note:: Creating new Metrics Dashboards requires advanced TopBraid developer knowledge in order to generate the scripts needed to supply data and add visualizations.
+ Upcoming releases will include additional scripts for a variety of metrics.
+
+If you are interested in the possibilities for tailoring TopBraid EDG Metrics Dashboards to better suit your needs, please contact TopQuadrant to explore the following options:
+
+* Have TopQuadrant quickly configure a customized EDG solution to meet your detailed requirements.
+  We will be pleased to quote and provide affordable customization and tailoring services.
+
+* Enable your organization to develop and maintain customizations for EDG by guiding and training your selected personnel to perform the variety of customization capabilities.

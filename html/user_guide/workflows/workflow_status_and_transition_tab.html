@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workflow Status and Transition Tab &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Workflow Status and Transition Tab</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="workflow-status-and-transition-tab">
+<span id="workflow-status-and-transition-tab-target"></span><h1>Workflow Status and Transition Tab<a class="headerlink" href="#workflow-status-and-transition-tab" title="Permalink to this headline"></a></h1>
+<p>This is the first tab in the horizontal navigation menu.
+It has a gear icon and contains a name of the workflow and its description.
+If you have manager privileges you will be able to edit either one by clicking on the text, editing, and confirming by clicking on the edit-box’s check-mark.</p>
+<p>The page shows shows the current state of the workflow and a diagram depicting its state transitions.
+This page also lets a user transition the workflow to the next state.
+Depending on the current state and the role you play in the workflow process, you may see action buttons for moving the workflow to the next state.</p>
+<section id="the-basic-workflow">
+<h2>The Basic Workflow<a class="headerlink" href="#the-basic-workflow" title="Permalink to this headline"></a></h2>
+<p>The standard EDG workflow template includes the Basic workflow, which supports optional review cycles and staging before committing changes to production.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Basic Workflow" class="edg-figure" src="../../_images/edg_basic_workflow.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Basic Workflow</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="the-basic-workflows-states-and-actions-transitions">
+<h3>The Basic workflow’s states and actions (transitions)<a class="headerlink" href="#the-basic-workflows-states-and-actions-transitions" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 19%" />
+<col style="width: 23%" />
+<col style="width: 31%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Basic WF Status</p></th>
+<th class="head"><p>Action</p></th>
+<th class="head"><p>Role(s): Graph(s) *</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Resulting Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Cancel this workflow</p></td>
+<td><p>Manager: either</p></td>
+<td><p>Irrevocably deletes the entire WF</p></td>
+<td><p>N/A</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"><p>Uncommitted
+(editable)</p></td>
+<td><p>Commit changes to production</p></td>
+<td><p>Editor: Production</p></td>
+<td><p>Applies all WF changes into production</p></td>
+<td><p>Complete</p></td>
+</tr>
+<tr class="row-even"><td><p>Freeze for review</p></td>
+<td><p>Manager: WF</p></td>
+<td><p>Pauses WF editability</p></td>
+<td><p>Frozen for Review</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="3"><p>Frozen for Review</p></td>
+<td><p>Request further changes</p></td>
+<td><p>Editor: WF</p></td>
+<td><p>Resumes WF editability</p></td>
+<td><p>Uncommitted</p></td>
+</tr>
+<tr class="row-even"><td><p>Reject changes</p></td>
+<td><p>Editor: WF</p></td>
+<td><p>Blocks applying any WF changes into production</p></td>
+<td><p>Rejected</p></td>
+</tr>
+<tr class="row-odd"><td><p>Approve changes</p></td>
+<td><p>Editor: Production</p></td>
+<td><p>Ends WF editability (staged for production)</p></td>
+<td><p>Approved</p></td>
+</tr>
+<tr class="row-even"><td><p>Rejected</p></td>
+<td><p>Allow further changes</p></td>
+<td><p>Editor: Prod. &amp; Manager : WF</p></td>
+<td><p>Resumes WF editability</p></td>
+<td><p>Uncommitted</p></td>
+</tr>
+<tr class="row-odd"><td><p>Approved</p></td>
+<td><p>Accept changes to production</p></td>
+<td><p>Editor: Production</p></td>
+<td><p>Applies all WF changes into production</p></td>
+<td><p>Complete</p></td>
+</tr>
+<tr class="row-even"><td><p>Complete</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Complete</p></td>
+</tr>
+<tr class="row-odd"><td colspan="5"><ul class="simple">
+<li><p>All actions require at least viewer permissions on both the production and WF copies.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

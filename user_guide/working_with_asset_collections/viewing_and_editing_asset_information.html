@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <meta property="article:modified_time" content="2021-12-02T11:07:41-05:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viewing and Editing Asset Information &mdash; edg-documentation 7.1 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG 7.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrading TopBraid EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intray/index.html">Candidate Content</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Viewing and Editing Asset Information</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/user_guide/working_with_asset_collections/viewing_and_editing_asset_information.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="viewing-and-editing-asset-information">
+<span id="viewing-and-editing-asset-information-target"></span><span id="index-1"></span><h1>Viewing and Editing Asset Information<a class="headerlink" href="#viewing-and-editing-asset-information" title="Permalink to this headline"></a></h1>
+<section id="configuring-editor-ui">
+<h2>Configuring Editor UI<a class="headerlink" href="#configuring-editor-ui" title="Permalink to this headline"></a></h2>
+<section id="editor-layout-view">
+<h3>Editor Layout View<a class="headerlink" href="#editor-layout-view" title="Permalink to this headline"></a></h3>
+<p>Editor applications are composed of panels that are combined to form layouts.
+Multiple layouts are available.
+Each collection type has its own default layout.
+Users can change these defaults.</p>
+<p>For example, the default layout for business glossaries will have two panels – Search and Form, looking as follows:</p>
+<figure class="align-center" id="id19">
+<img alt="TopBraid EDG SEC Glossary - Appendix C Page" class="edg-figure" src="../../_images/edg_sec_glossary_appendix_c.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG SEC Glossary - Appendix C Page</strong></span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>While for an ontology (asset collection that defines schema for other collections), the default editor layout will have panels looking as follows:</p>
+<figure class="align-center" id="id20">
+<img alt="TopBraid EDG Examples GEO Ontology Page" class="edg-figure" src="../../_images/edg_examples_geo_ontology.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Examples GEO Ontology Page</strong></span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="selecting-and-arranging-panels">
+<h4>Selecting and Arranging Panels<a class="headerlink" href="#selecting-and-arranging-panels" title="Permalink to this headline"></a></h4>
+<p>Each panel can be displayed in the entire with of the screen by closing all other panels.
+This is useful when you need more screen real estate for working.
+To reset the layout, just select a layout from the menu and your panels will come back.
+Or you can drag them back into view from the panels menu.
+The next image shows how the Glossary Editor Application would look if the Form panel was stand-alone.</p>
+<figure class="align-center" id="id21">
+<img alt="TopBraid EDG Advisory Affiliate Page" class="edg-figure" src="../../_images/edg_advisory_affiliate.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Advisory Affiliate Page</strong></span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Panels can also be rearranged by dragging and dropping.
+Panels can be stacked behind each other in the same screen area.
+In the image below, the Change History panel is stacked behind the Form panel.</p>
+<figure class="align-center" id="id22">
+<img alt="TopBraid EDG Advisory Affiliate Change History Page" class="edg-figure" src="../../_images/edg_advisory_affiliate_change_history.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Advisory Affiliate Change History Page</strong></span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Panels can be closed by clicking on the ‘x’ button in the panel’s header.
+This action removes a panel from a page.</p>
+<p>Clicking on the Panels button displays additional selection of panels to add to a page.</p>
+<figure class="align-center" id="id23">
+<img alt="TopBraid EDG Panels List Dropdown" class="edg-figure-m" src="../../_images/edg_panels_list.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Panels List Dropdown</strong></span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>All available panels are described below, organized into categories:</p>
+<p><strong>Asset Information Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="working_with_document_attachments.html#attachments-panel"><span class="std std-ref">Attachments Panel</span></a> (available when S3 is configured)</p></li>
+<li><p><a class="reference internal" href="#form-panel"><span class="std std-ref">Form Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#source-code-panel"><span class="std std-ref">Source Code Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#hierarchy-of-selected-asset-panel"><span class="std std-ref">Hierarchy of Selected Asset Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#references-panel"><span class="std std-ref">References Panel</span></a></p></li>
+</ul>
+<p><strong>Search and Query Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#instances-panel"><span class="std std-ref">Instances Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#search-panel"><span class="std std-ref">Search Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#search-library-panel"><span class="std std-ref">Search Library Panel</span></a></p></li>
+<li><p><a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-query-panel"><span class="std std-ref">SPARQL Query Panel</span></a></p></li>
+<li><p><a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-results-panel"><span class="std std-ref">SPARQL Results Panel</span></a></p></li>
+<li><p><a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-library-panel"><span class="std std-ref">SPARQL Library Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#asset-list-panel"><span class="std std-ref">Asset List Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#available-crosswalks-panel"><span class="std std-ref">Available Crosswalks Panel</span></a></p></li>
+</ul>
+<p><strong>Explore Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#assets-hierarchy-panel"><span class="std std-ref">Assets Hierarchy Panel</span></a></p></li>
+<li><p><a class="reference internal" href="working_with_geo_spatial_data.html#map-explorer-panel"><span class="std std-ref">Map Explorer Panel</span></a> (available when Google API key is enabled)</p></li>
+<li><p><a class="reference internal" href="#local-assets-panel"><span class="std std-ref">Local Assets Panel</span></a></p></li>
+<li><p>Show EDG Diagram (see <a class="reference internal" href="using_edg_diagrams.html#using-edg-diagrams-target"><span class="std std-ref">Using EDG Diagrams</span></a>)</p></li>
+</ul>
+<p><strong>Schema Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#class-hierarchy-panel"><span class="std std-ref">Class Hierarchy Panel</span></a></p></li>
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#node-shapes-panel"><span class="std std-ref">Node Shapes Panel</span></a> (only Ontology Editor)</p></li>
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a> (only Ontology Editor)</p></li>
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#rdfowl-properties-list-panel"><span class="std std-ref">RDF/OWL Properties List Panel</span></a>  (only Ontology Editor)</p></li>
+<li><p><a class="reference internal" href="../server_side_scripting/index.html#shape-scripts-panel"><span class="std std-ref">Shape Scripts Panel</span></a> (only Ontology Editor if scripts are enabled)</p></li>
+</ul>
+<p><strong>Taxonomy Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_taxonomies/taxonomy_concepts_panel.html#concepts-panel-in-taxonomies-target"><span class="std std-ref">Taxonomy Concepts Panel</span></a></p></li>
+</ul>
+<p><strong>Reports Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#problems-and-suggestions-panel"><span class="std std-ref">Problems and Suggestions Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#change-history-panel"><span class="std std-ref">Change History Panel</span></a></p></li>
+<li><p><a class="reference internal" href="#inferences-panel"><span class="std std-ref">Inferences Panel</span></a></p></li>
+</ul>
+<p><strong>Scripts Panels (available if scripts are enabled)</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../server_side_scripting/index.html#script-editor-panel-target"><span class="std std-ref">Script Editor Panel</span></a></p></li>
+<li><p><a class="reference internal" href="../server_side_scripting/index.html#script-results-panel"><span class="std std-ref">Script Results Panel</span></a></p></li>
+<li><p><a class="reference internal" href="../server_side_scripting/index.html#script-api-viewer-panel"><span class="std std-ref">Script API Viewer Panel</span></a></p></li>
+</ul>
+<p>Some panels can be placed on a page more than once and remain in the menu even if they already exist on a page.
+Other panels make sense only once per page and, when already shown on a page, they no longer appear in the menu.</p>
+<p>Some panels may have a pin icon – for example, if two forms are open.
+Pining a panel down will ensure that its content will not change if another panel is clicked.</p>
+<p>Once a panel is added or removed from a page, that choice is remembered for the user in their next session.</p>
+</section>
+<section id="using-layouts">
+<h4>Using Layouts<a class="headerlink" href="#using-layouts" title="Permalink to this headline"></a></h4>
+<p>The <em>Layouts</em> button save arrangements of panels as a layout.
+Users can also switch to one of the existing layouts.</p>
+<p>A saved layout can be made available to other users or kept private.
+It could also be declared as a new default only for the user who created it or for others as well.</p>
+<figure class="align-center" id="id24">
+<img alt="TopBraid EDG Save Layout Dialog Box" class="edg-figure" src="../../_images/edg_save_layout.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Save Layout Dialog Box</strong></span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Pre-built layouts are:</p>
+<ul class="simple">
+<li><p>Default layout for the selected collection type</p></li>
+<li><p>Single Form Layout – displays only the form for the selected resource</p></li>
+<li><p>SPARQL Layout – provides a way to run SPARQL queries as an alternative to clicking on the Export tab &gt; SPARQL Endpoint.
+Unlike the option on the Export tab, it is fully integrated with the editor.</p></li>
+<li><p>Classes and Instance Layout – useful for Enumerated values.</p></li>
+<li><p>Search Layout – a convenient page layout for Search operations, combines Search, Search Library and Form panels</p></li>
+<li><p>Problems and Suggestions Layout – provides a way to execute Problems and Suggestions checking</p></li>
+</ul>
+<p>The <strong>Layouts</strong> menu also lets you manage existing layouts by selecting “Available Layouts”.</p>
+</section>
+<section id="using-editor-wide-configuration-settings">
+<h4>Using Editor-wide Configuration Settings<a class="headerlink" href="#using-editor-wide-configuration-settings" title="Permalink to this headline"></a></h4>
+<p><strong>More</strong> icon in the header provides access to application settings and additional navigation options for user UX personalization. These settings are locally stored per user and won’t effect other users.</p>
+<figure class="align-center" id="id25">
+<img alt="TopBraid EDG Editor-wide Configuration Settings Dropdown" class="edg-figure-m" src="../../_images/edg_editor_wide_config_settings.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Editor-wide Configuration Settings Dropdown</strong></span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Display Edit Actions as Icons</strong> button turns various menu options into icons and vice versa.
+By default, <strong>Display Actions as icons</strong> is checked.
+Unchecking it will impact all panels that have <strong>Create New</strong> actions and there is more than one action in a panel.
+Currently, these are <strong>Property Groups</strong> and <strong>Taxonomy Concepts</strong> panels.
+Instead of the icons, we will see Add menu with dropdowns.
+For example:</p>
+<figure class="align-center" id="id26">
+<img alt="TopBraid EDG Create Concept Methods" class="edg-figure-m" src="../../_images/edg_create_concept.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Concept Methods</strong></span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Checking the option to <strong>Display Settings as icons</strong> will impact every panel that has a Settings menu (gear icorn).
+Instead of the menu, we will see icons for each option.</p>
+<p>Checking <strong>Display Panels palette</strong> option, will place in the header an icon for each panel – as shown in the screenshot below.</p>
+<figure class="align-center" id="id27">
+<img alt="TopBraid EDG Panels Palette View" class="edg-figure" src="../../_images/edg_panels_palette.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Panels Palette View</strong></span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Clear locally stored Settings</strong> button will clear out any personalization of the UI with the exception of the Layouts as those are stored in the system, not the browser.
+Any check box, Asset List, or other personalization you have made will be reset.</p>
+<p>Checking <strong>Hide values in non-preferred languages</strong> option will hide property values tagged with languages that are not set in your browser as one of your preferred language.</p>
+<p><strong>Manage default settings for all users …</strong> button will appear only if you have Manager profile for a collection.
+It will display a page where you can pre-set panel Settings for all users of a collection.
+For example, you can use it to ensure that for all users, when they look at the content of the current asset collection, the Form will show properties even if they don’t have any values.</p>
+<p>The remainder of the menu is navigation/search options.</p>
+</section>
+</section>
+<section id="local-search-options">
+<h3>Local Search Options<a class="headerlink" href="#local-search-options" title="Permalink to this headline"></a></h3>
+<p>This option is available only if the asset collection editor offers <a class="reference internal" href="#search-panel"><span class="std std-ref">Search Panel</span></a>.</p>
+<p>When using <a class="reference internal" href="#search-panel"><span class="std std-ref">Search Panel</span></a>, there is an option, <strong>Return local results only</strong>, which excludes results that come from included asset collections.
+(A local search only delivers resources having their <em>rdf:type</em> triple in the base graph.)</p>
+<p>By default, users can choose for themselves whether to enable or disable this <em>local results</em> option on any particular search.
+However, managers can permanently set this option as either <em>always local or always global</em> for all users.
+If set by a manager, then users will still see the setting value on their search panes, but they will not be able to change it.</p>
+</section>
+<section id="main-class-of-search-panel">
+<h3>Main Class of Search Panel<a class="headerlink" href="#main-class-of-search-panel" title="Permalink to this headline"></a></h3>
+<p>This option is available only if the asset collection editor offers <a class="reference internal" href="#search-panel"><span class="std std-ref">Search Panel</span></a>.</p>
+<p>It impacts the Type Selector in the Search panel, determining what will be shown in its drop-down list and what will be the root of the browsable hierarchical navigator listing available asset types.
+Each asset collection has a default main class.
+This option lets you modify the default.</p>
+</section>
+<section id="root-of-class-hierarchy-panel">
+<h3>Root of Class Hierarchy Panel<a class="headerlink" href="#root-of-class-hierarchy-panel" title="Permalink to this headline"></a></h3>
+<p>This option lets you reset which class will be shown as the root in the <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#class-hierarchy-panel"><span class="std std-ref">Class Hierarchy Panel</span></a>.</p>
+<p>The default root is Thing.
+However, you can use this option to limit the class tree to one of the subclasses of the owl:Thing class.
+You can also use this option to go “up the tree” by setting the root to rdfs:Resource class or any of its subclasses that are different from owl:Thing.</p>
+</section>
+<section id="root-shape-of-asset-hierarchy-panel">
+<h3>Root Shape of Asset Hierarchy Panel<a class="headerlink" href="#root-shape-of-asset-hierarchy-panel" title="Permalink to this headline"></a></h3>
+<p>When using <a class="reference internal" href="#assets-hierarchy-panel"><span class="std std-ref">Assets Hierarchy Panel</span></a>, users can select a shape of resources to be displayed as roots in this panel.</p>
+<p>If you select a shape here, it will be used as default for the panel.
+Users can still switch to another shape.</p>
+<p>If nothing is selected here, the panel will be empty until a user explicitly selects a root shape.</p>
+</section>
+<section id="also-create-global-owl-properties">
+<h3>Also Create Global OWL Properties<a class="headerlink" href="#also-create-global-owl-properties" title="Permalink to this headline"></a></h3>
+<p>If activated, EDG will produce an owl:DatatypeProperty or owl:ObjectProperty type statement for a property when a new SHACL property shape is created.</p>
+</section>
+</section>
+<section id="editor-panels">
+<h2>Editor Panels<a class="headerlink" href="#editor-panels" title="Permalink to this headline"></a></h2>
+<section id="asset-list-panel">
+<span id="id1"></span><h3>Asset List Panel<a class="headerlink" href="#asset-list-panel" title="Permalink to this headline"></a></h3>
+<figure class="align-center" id="id28">
+<img alt="TopBraid EDG Asset List Options" class="edg-figure" src="../../_images/edg_asset_list_options.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Asset List Options</strong></span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can add any asset or group of assets to an asset list through the <a class="reference internal" href="#search-panel"><span class="std std-ref">Search Panel</span></a>.</p>
+<p>The asset list is a way of bulk editing or sharing groups of assets. The “batch actions menu” is in the top right.</p>
+<figure class="align-center" id="id29">
+<img alt="TopBraid EDG Asset List More Options" class="edg-figure" src="../../_images/edg_asset_list_more_options.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Asset List More Options</strong></span><a class="headerlink" href="#id29" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Pencil icon lets you name an asset list.
+The above asset list has been named “customer”.
+To create another asset list, drag the asset list panel from the panel selection to your window.
+Now when you choose to add to an asset list, you will choose which of your two asset lists.</p>
+<p>Asset lists are private until shared.
+Cloud icon opens a menu that lets you open an existing asset list and share an asset list you create with colleagues who have permissions to this collection.
+They will be able to go to “Open an existing Asset List” and find all of the shared asset lists along with their own.</p>
+<p>The settings menu lets you configure how information about assets in a list is displayed e.g., whether a person who added it to a list is displayed as a column.</p>
+</section>
+<section id="search-panel">
+<span id="id2"></span><h3>Search Panel<a class="headerlink" href="#search-panel" title="Permalink to this headline"></a></h3>
+<p>The Search panel lists assets of the selected type in a sortable table.
+From here, users can further filter displayed assets, export information, save searches and perform other operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This panel is not available for ontologies, please see ontology specific documentation in <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a>.</p>
+</div>
+<p>By default, this panel will display up to 1,000 result rows.
+This default can be changed by your EDG Administrator.</p>
+<figure class="align-center" id="id30">
+<img alt="TopBraid EDG Search Panel Page" class="edg-figure" src="../../_images/edg_search_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Panel Page</strong></span><a class="headerlink" href="#id30" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="selecting-asset-type-in-the-search-panel">
+<h4>Selecting Asset Type in the Search Panel<a class="headerlink" href="#selecting-asset-type-in-the-search-panel" title="Permalink to this headline"></a></h4>
+<p>The Type Selector shown at the top of the Search panel lets you to select the type of assets to show in the table.
+You can select an asset type either from the <strong>Type</strong> drop-down list (it supports autocomplete so to select you can start typing the name of an asset type you are interested in) or you could click on the button next to the drop-down list to open a browsable hierarchical navigator listing available asset types.</p>
+<p>Table in the Search panel shows only assets of the selected type including any of its sub types.</p>
+</section>
+<section id="selecting-search-results-columns">
+<h4>Selecting Search Results Columns<a class="headerlink" href="#selecting-search-results-columns" title="Permalink to this headline"></a></h4>
+<p>The <strong>Columns</strong> icon to the right of the <strong>Filter</strong> icon lets you add columns to the search results table.
+Properties available for selection depend on the type of the asset.
+For example, Database Column is selected as the asset type in the image below.
+You will be able to select any properties defined for the Database Column asset type.</p>
+<figure class="align-center" id="id31">
+<img alt="TopBraid EDG Search Results Column Selection Page" class="edg-figure" src="../../_images/edg_search_results_column_selection.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Results Column Selection Page</strong></span><a class="headerlink" href="#id31" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can scroll through the list of properties available for selection or quickly find a property by typing in the <strong>Search</strong> field at the top of the dropdown.
+Clicking on a property will select it as column.
+Currently selected columns will be shown at the top of the drop down list.
+To remove a selected column, click on the “x” icon next to it.</p>
+<p>For properties that are relationships, you will see “&gt;” to the right of the property name – as shown in the screenshot above.
+If you click on it, EDG will present a list of properties for the related asset.
+This way, you can add as columns not only properties of assets you are looking at, but also properties of related resources – these are called nested columns.</p>
+<p>The screenshot below shows a results table that we will get after selecting as columns 1) “record count” property that belongs to related assets – namely, Database Tables that assets of the selected type, Database Columns, are associated with via “column of” property – this is an example of a nested column and 2) “physical datatype” property that belongs directly to the Database Columns.</p>
+<figure class="align-center" id="id32">
+<img alt="TopBraid EDG Database Column Search Page" class="edg-figure" src="../../_images/edg_database_column_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Database Column Search Page</strong></span><a class="headerlink" href="#id32" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If a column is a nested column, the header row will display the connecting relationship name in the square brackets.
+Cell values for such columns will display the related assets before displaying the value of the selected property.
+You can select more than one level of nesting.</p>
+</section>
+<section id="searching-for-assets">
+<h4>Searching for Assets<a class="headerlink" href="#searching-for-assets" title="Permalink to this headline"></a></h4>
+<p>You can search among the assets of selected type by using:</p>
+<ul>
+<li><p><strong>Free text</strong> (any property). This matches your string against any property with textual values e.g., label, description, note, etc.
+This query is wildcard.
+For example, searching for “rock” will be interpreted as <em>rock</em> and return results for “rocket”.
+Multiple word free text searches will be AND not OR.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A B means an implicit AND</p></li>
+<li><p>“A B” matches the full term (in exactly that order)</p></li>
+<li><p>A OR B means an ‘or’ – infinite chains are supported such as A OR B OR C OR D</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<blockquote>
+<div><figure class="align-center" id="id33">
+<img alt="TopBraid EDG Searching for Assets using Free Text" class="edg-figure-m" src="../../_images/edg_search_free_text.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Searching for Assets using Free Text</strong></span><a class="headerlink" href="#id33" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Filter</strong> on specific property values.
+The filter icon will open a drop down listing available properties and letting you select one or more.
+This works similar to <strong>Columns</strong> drop down, including ability to select properties of related assets.
+For each property selected using <strong>Filters</strong> drop down, you will be able to enter a search criteria and specify the type of match.
+Type of match determines how EDG will use the value you enter in that field to search for matching data.
+Different properties can use different match types.
+Search criteria specified for each property are combined together to produce an overall search result.</p></li>
+</ul>
+<blockquote>
+<div><figure class="align-center" id="id34">
+<img alt="TopBraid EDG Searching for Assets using Filter" class="edg-figure-m" src="../../_images/edg_search_filter.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Searching for Assets using Filter</strong></span><a class="headerlink" href="#id34" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Type of Match</strong></p></th>
+<th class="head"><p><strong>How a search value matches instance property-values</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>contains</p></td>
+<td><p>DEFAULT for text properties: Finds resources that contain the entered search string (case-insensitive) in the property value.
+Example: Search text “lis” on a city-name property would match instances having city-name values such as “Lisbon”, “Lisboa”, and “Minneapolis”.</p></td>
+</tr>
+<tr class="row-odd"><td><p>equals</p></td>
+<td><p>DEFAULT for relationships: For attributes, this will match the entered string exactly to the property value (case-sensitive).
+For relationships, this becomes an auto-complete field for selecting a related asset.
+As you start typing a value in a relationship field, you will get a list of autocomplete options that match the text you’ve typed so far—a list of the names (labels) of any resources that begin with the typed letters.</p></td>
+</tr>
+<tr class="row-even"><td><p>regular expression</p></td>
+<td><p>For text properties, searches text using a regular expression that matches a property-value (case-insensitive).
+Example: Search text “^lis” as a regular expression matches city-name values that begin with “lis”, e.g., “Lisbon” and “Lisboa” but not “Minneapolis”. Conversely, “lis$” would match only at the name’s end.
+For relationships, does similar matching, but on the labels of related resources.</p></td>
+</tr>
+<tr class="row-odd"><td><p>any value</p></td>
+<td><p>At least one value exists for the selected property (count &gt;= 1).
+Example: See how extensively a property is used.</p></td>
+</tr>
+<tr class="row-even"><td><p>min/max number of values</p></td>
+<td><p>Finds resources whose number of values for selected property fall in the range specified by the one or two numbers you enter.
+Example: If most resources in a Data Assets Collection have labels in three languages, entering a label search with values-range 0 to 2 would return those instances with fewer.
+Leaving min range empty and just using 2 in the max field will return the same results.</p></td>
+</tr>
+<tr class="row-odd"><td><p>no value</p></td>
+<td><p>No values exist for the search property (count = 0).
+Example: Use to clean up a Data Assets Collection and check for remaining work.</p></td>
+</tr>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>DEFAULT for Boolean properties: Search values restricted to true/false instead of free-text</p></td>
+</tr>
+<tr class="row-odd"><td><p>nested form</p></td>
+<td><p>Available only for relationships: Adds an embedded search form for properties whose type is another class</p></td>
+</tr>
+<tr class="row-even"><td><p>min/max (inclusive)</p></td>
+<td><p>DEFAULT for numeric properties: Finds resources that are within the range of entered search criteria, inclusively.</p></td>
+</tr>
+<tr class="row-odd"><td><p>min/max (exclusive)</p></td>
+<td><p>Finds resources that are within the range of entered search criteria, exclusively.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>Refine</strong> field is displayed at the top of each column under the column name.
+Entering a value in this field refines the results displayed in the table.
+The <strong>Refine</strong> is similar to <strong>Filter</strong> except that it only affects the <em>visibility</em> of assets that are already in the results table, without affecting which assets are loaded into results table, i.e., the underlying search scope is unchanged and refine only narrows data already in the table.</p></li>
+</ul>
+<blockquote>
+<div><figure class="align-center" id="id35">
+<img alt="TopBraid EDG Searching for Assets using Refine" class="edg-figure-m" src="../../_images/edg_search_refine.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Searching for Assets using Refine</strong></span><a class="headerlink" href="#id35" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<p>If you have incomplete search results, over 1000 if you have the default settings, you can still search the entire collection as well as export all the search results:</p>
+<blockquote>
+<div><figure class="align-center" id="id36">
+<img alt="TopBraid EDG Labelled Image for Search" class="edg-figure" src="../../_images/edg_search_labelled.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Labelled Image for Search</strong></span><a class="headerlink" href="#id36" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</section>
+<section id="actions-in-the-search-panel">
+<h4>Actions in the Search Panel<a class="headerlink" href="#actions-in-the-search-panel" title="Permalink to this headline"></a></h4>
+<p>The Search panel has <strong>New</strong> button.
+Clicking on it, will let you create a new asset of the currently selected type.</p>
+<p>The Search panel also offers several other actions that can be performed on the search query or on the search results.
+These actions and the corresponding menus and buttons are shown in the next screenshot and explained in the text below it.</p>
+<figure class="align-center" id="id37">
+<img alt="TopBraid EDG Numbered Concept Search Page" class="edg-figure" src="../../_images/edg_numbered_concept_search.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Numbered Concept Search Page</strong></span><a class="headerlink" href="#id37" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic">
+<li><p><strong>Save Search</strong> button.
+Will bring up the dialog to save searches.
+Saved searches are public and can be seen and used by any other users of this collection.
+To run or delete previously saved searches use the <strong>Search Library</strong> panel.</p>
+<figure class="align-center" id="id38">
+<img alt="TopBraid EDG Save Query" class="edg-figure" src="../../_images/edg_save_query.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Save Query</strong></span><a class="headerlink" href="#id38" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Settings</strong> menu for Search Panel.
+Lets you personalize the behavior of this panel.</p>
+<ul class="simple">
+<li><p><strong>Hide Quick Asset Type Selector</strong> – will hide the type selector menu but leave the type selector menu in place.</p></li>
+<li><p><strong>Disable auto-searching</strong> – this will change the behavior of the free text search box.
+You will need to hit enter when ready to submit instead of the results auto populating as you type.</p></li>
+<li><p><strong>Add a column for each filter</strong> – checking this box will add a column to the results table each time you add a property as a filter for the search.</p></li>
+<li><p><strong>Return local results only</strong> – this will filter out included collections.</p></li>
+</ul>
+<figure class="align-center" id="id39">
+<img alt="TopBraid EDG Settings for Search Panel" class="edg-figure-s" src="../../_images/edg_search_panel_settings.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Settings for Search Panel</strong></span><a class="headerlink" href="#id39" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Export</strong>. Provides access to the various export options for search results.
+The entire search results are exported unless you check certain results rows, then export will be limited to those rows.</p>
+<figure class="align-center" id="id40">
+<img alt="TopBraid EDG Search Results Export Options" class="edg-figure-s" src="../../_images/edg_search_export.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Results Export Options</strong></span><a class="headerlink" href="#id40" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>More</strong>. Provides access to several actions that can be performed on selected results.
+Check the row boxes for the items you want to perform these actions on.</p>
+<ul class="simple">
+<li><p><strong>Delete</strong></p></li>
+<li><p><strong>Add to Asset List</strong> – which is another panel in the editor used for bulk functions or bookmarks</p></li>
+<li><p><strong>Add to Basket</strong> – which is the basket for all of EDG located in the left navigation menu</p></li>
+<li><p><strong>Edit assets</strong> – will launch a <a class="reference internal" href="#batch-edit"><span class="std std-ref">Batch Edit</span></a> wizard tool</p></li>
+<li><p><strong>Show on Map Results Panel</strong> – this option will be available only if <a class="reference internal" href="working_with_geo_spatial_data.html#map-explorer-panel"><span class="std std-ref">Map Explorer Panel</span></a> is enabled.
+Clicking on it will display selected items on the map – provided that they have geo coordinates.</p></li>
+</ul>
+<figure class="align-center" id="id41">
+<img alt="TopBraid EDG Search Result Actions" class="edg-figure-s" src="../../_images/edg_search_result_actions.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Result Actions</strong></span><a class="headerlink" href="#id41" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+<section id="changing-to-lucene-whitespaceanalyzer">
+<h5>Changing to Lucene WhitespaceAnalyzer<a class="headerlink" href="#changing-to-lucene-whitespaceanalyzer" title="Permalink to this headline"></a></h5>
+<p>The EDG editor search panel uses a Lucene index.
+The default StandardAnalyzer for our Lucene implementation drops characters such as / and – while the WhitespaceAnalyzer preserves them.
+To search over special characters (such as / ? and -) enable the WhitespaceAnalyzer option in the <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a> page.
+You will need to rebuild the search index after making the switch. This can be done on the Text Indicies page. Changing this configuration parameter will also apply to the Search the EDG and a rebuild of Search the EDG index will need to be done.</p>
+</section>
+</section>
+</section>
+<section id="search-library-panel">
+<span id="id3"></span><h3>Search Library Panel<a class="headerlink" href="#search-library-panel" title="Permalink to this headline"></a></h3>
+<p>This panel will show the list of searches saved using the Search panel. What it shows is determined by the asset collection you are currently in.</p>
+<p>You will be able to select and execute a search. You will also be able to delete saved searches.</p>
+<p>The settings menu lets you configure how much information about a search should be displayed.</p>
+<figure class="align-center" id="id42">
+<img alt="TopBraid EDG Search Library Panel" class="edg-figure" src="../../_images/edg_search_library_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search Library Panel</strong></span><a class="headerlink" href="#id42" title="Permalink to this image"></a></p>
+<div class="legend">
+</div>
+</figcaption>
+</figure>
+</section>
+<section id="form-panel">
+<span id="id4"></span><h3>Form Panel<a class="headerlink" href="#form-panel" title="Permalink to this headline"></a></h3>
+<p>You can modify asset information directly by editing it in an asset collection or you can use <a class="reference internal" href="../workflows/workflows.html#workflows-target"><span class="std std-ref">Workflows</span></a> and edit information in the working copy of the collection that is managed by the workflow.
+Irrespective of the choice, editing options are the same.</p>
+<p>Asset information is modified primarily using the form panel.
+Clicking on the Edit button on top of the form opens all fields for editing.
+Alternatively, to clicking on the Edit button, users can do inline editing.
+Mouse over the area between the field name (e.g., definition) and the field itself.
+You will see a pencil icon.
+Click on it to start editing one property at the time.</p>
+<p>TopBraid EDG supports modular management of information.
+You can create resources in one asset collection, then include this collection into another one and add more information about these resources.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See :ref:’combining_asset_collections_target’ on how to combine asset collections through includes.</p>
+</div>
+<p>The hue of the icon at the top of the form will indicate if that resource is from the selected collection or is included from another collection.
+If <em>included</em> from another collection, the icon will be a lighter color.
+Further, you will see at the top of the form information about a collection where this resource is defined in.</p>
+<figure class="align-center" id="id43">
+<img alt="TopBraid EDG Actuality Tab" class="edg-figure-m" src="../../_images/edg_actuality_tab.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Actuality Tab</strong></span><a class="headerlink" href="#id43" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You will be able to click through to that “defining” collection and modify the resource there.</p>
+<p>If you do not go to the defining asset collection and decide to edit an <em>included</em> (or referenced) resource in your current collection:</p>
+<ul class="simple">
+<li><p>You will only be able to add information and will not be able to remove or modify any of the information from the included collection.</p></li>
+<li><p>The changes you make are added to the collection you are currently in, not the collection this resource has come from.</p></li>
+</ul>
+<p>Similarly if you choose to delete an included resource, only the changes you made in that collection will be deleted, not the original resource.
+If you want to make changes to the statements that are included, use Explore -&gt; Open in Defining Asset Collection.
+This will open the asset in the collection where it was originally created.</p>
+<figure class="align-center" id="id44">
+<img alt="TopBraid EDG Asset Information - United States" class="edg-figure" src="../../_images/edg_asset_info_us.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Asset Information - United States</strong></span><a class="headerlink" href="#id44" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click on the + (plus) sign to the left of the editable field to get a slot for a new value.
+Plus sign will appear only if the property could have more than one value. Click on the – (minus) sign to the right of the editable field to remove a value.</p>
+<p>For <em>attribute</em> values, you can just type the value.
+A convenient picker may appear depending on the datatype e.g., a date.
+EDG will protect you from making mistakes.
+For example, if a value is supposed to be an integer, you will not be able to enter letters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A language tag for a string can be selected from the dropdown to the right of the field – if a value is defined as a language tagged string.</p>
+</div>
+<p>The dropdown icon to the left of the delete icon lets you switch to a different edit widget – If multiple types are defined for an attribute e.g., a string or a language string or HTML.
+For string values, you will be able to switch between a “text field” (a single line entry field) and a “text area” (a larger text box).
+Options shown are determined by the schema (ontology) that defines the asset type.</p>
+<figure class="align-center" id="id45">
+<img alt="TopBraid EDG Switch Widget Dropdown" class="edg-figure" src="../../_images/edg_switch_edit_widget_dropdown.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Switch Widget Dropdown</strong></span><a class="headerlink" href="#id45" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For <em>relationship</em> values, you can:</p>
+<ul class="simple">
+<li><p>Start typing the name of the existing resource and pick it from the auto-complete.</p></li>
+<li><p>Enter the URI of the related asset. The dropdown menu available by clicking on the “v” sign to the right of the field will let you switch between using autocomplete (default) and entering a URI.</p></li>
+<li><p>Use search to <strong>find</strong> the resource you want to connect to by clicking on the button directly to the right of the field – as shown below.</p></li>
+<li><p><strong>Create</strong> a new resource by clicking on the button directly to the right of the field – as shown below.</p></li>
+<li><p><strong>Drag and drop</strong> assets from other panels directly into a form.</p></li>
+</ul>
+<figure class="align-center" id="id46">
+<img alt="TopBraid EDG Find or Create City Dropdown" class="edg-figure" src="../../_images/edg_find_create_city.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Find or Create City Dropdown</strong></span><a class="headerlink" href="#id46" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>After at least one change is made, Save Changes button becomes clickable.
+If any of the edits presents an issue, the page will display them.
+You will have a choice to correct issues prior to saving, cancel edits or save them as-is.</p>
+<figure class="align-center" id="id47">
+<img alt="TopBraid EDG Save Changes Anyway Example" class="edg-figure" src="../../_images/edg_save_changes_anyway_us.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Save Changes Anyway Example</strong></span><a class="headerlink" href="#id47" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Preview button will display added and deleted statements as well as any issues.</p>
+<figure class="align-center" id="id48">
+<img alt="TopBraid EDG Preview of Form Edits for United States" class="edg-figure" src="../../_images/edg_preview_form_edits_us.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Preview of Form Edits for United States</strong></span><a class="headerlink" href="#id48" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Sometimes, to the left of a field open for editing you will see a + icon surrounded by a square shape.
+Clicking on it will open a subform that lets you make statements about property’s value.
+For example, you may want to say that a value of a country code or a status has an effective start and an effective end date.</p>
+<p>When information shown on the form is a relationship, you can:</p>
+<ul class="simple">
+<li><p>Right click to see and use menu options for the related resource.</p></li>
+<li><p>Click on the dropdown to switch the display to show URI of the related asset instead of its label (in view not in edit mode).
+You can also click on Show Details to see the embedded form for the related asset.</p></li>
+</ul>
+<figure class="align-center" id="id49">
+<img alt="TopBraid EDG Data Element Properties View" class="edg-figure" src="../../_images/edg_data_element_properties.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Data Element Properties View</strong></span><a class="headerlink" href="#id49" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Further, if you mouse over the related asset, you will see an info box with its description (aka Wikipedia) if a description is available.</p>
+<figure class="align-center" id="id50">
+<img alt="TopBraid EDG Information Box in Location" class="edg-figure" src="../../_images/edg_location_info_box.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Information Box in Location</strong></span><a class="headerlink" href="#id50" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Sometimes, a form may display information in tables and/or display generated diagrams.
+What to display as a table is defined in the associated ontology models and can be configured.
+For example, in the form below for a database table from Northwind you see two tables: one containing data sample (not editable) and one containing records of data quality runs (editable).</p>
+<figure class="align-center" id="id51">
+<img alt="TopBraid EDG Data Sample &amp; Data Quality Records Tables" class="edg-figure" src="../../_images/edg_data_sample_quality_records_tables.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Data Sample &amp; Data Quality Records Tables</strong></span><a class="headerlink" href="#id51" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="values-that-cant-be-edited">
+<h4>Values That Can’t Be Edited<a class="headerlink" href="#values-that-cant-be-edited" title="Permalink to this headline"></a></h4>
+<p>If a value of a property is displayed, but not editable, it means that one of the following is true:</p>
+<ul class="simple">
+<li><p>Values for this property are automatically calculated (inferred) by EDG.
+Rules for inferring values are defined in the underlying ontologies.
+Some values may also be inferred by default, but still editable.
+In this case, any user edit overrides system inferences.</p></li>
+</ul>
+<p>Or</p>
+<ul class="simple">
+<li><p>Value has been entered in an asset collection that is included in the currently selected collection.
+In this case, you will not be able to remove or change the value.
+To edit it, you must navigate to the defining asset collection.
+If, however, the property can have multiple values, you will able to create additional values for such properties.</p></li>
+</ul>
+<p>Or</p>
+<ul class="simple">
+<li><p>Property has been set as “read only” in the underlying ontology.
+This may happen if your organization wants to control addition and edits of values for certain properties in the UI e.g., to make such edits possible only through import or APIs or to make them possible only in certain asset collections or to protect users in certain roles from incidentally modifying these values.</p></li>
+</ul>
+</section>
+<section id="alternate-form-views">
+<h4>Alternate Form Views<a class="headerlink" href="#alternate-form-views" title="Permalink to this headline"></a></h4>
+<p>An asset may have more than one type.
+It may also be of a single type, but have multiple views defined.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For information on defining alternative views, see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a> view shapes.</p>
+</div>
+<p>The view you will see by default will depend on your role and selections made in the relevant ontology.</p>
+<p>If an asset shown on a form has multiple types or different role-based views, it can be viewed and edited using any of these perspectives.
+In such cases, you will see a dropdown box at the top right of the form next to the settings menu.</p>
+<figure class="align-center" id="id52">
+<img alt="TopBraid EDG Alternate Form Views Dropdown" class="edg-figure" src="../../_images/edg_alternate_form_views_dropdown.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Alternate Form Views Dropdown</strong></span><a class="headerlink" href="#id52" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You will also be able to select a Merged view that, for assets that have multiple types, will combine properties of all types.
+To do this, select <em>Settings&gt;Merge properties from all suitable view shapes</em>.</p>
+</section>
+<section id="additional-options-for-viewing-and-modifying-data">
+<h4>Additional Options for Viewing and Modifying Data<a class="headerlink" href="#additional-options-for-viewing-and-modifying-data" title="Permalink to this headline"></a></h4>
+<p>Additional options for modifying data in other editors panels are as follows:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#source-code-panel"><span class="std std-ref">Source Code Panel</span></a>: This is a low-level technical operation and should be only used by users who are well versed in RDF, the underlying data model behind EDG. Your EDG Administrator can disable access to this panel for some of the users.</p></li>
+<li><p>ref:<code class="code docutils literal notranslate"><span class="pre">sparql_query_panel</span></code> Update access must be enabled on the server to modify through SPARQL queries.</p></li>
+</ul>
+<p>You can also modify data through GraphQL in EDG accessible from each collection’s Export tab.</p>
+<p>The Forms for classes, SKOS concepts and concept schemes have a section called “Display” where you will find the “hidden” property.
+Setting it to “true” will hide these resources from the panels that display tree views – Class Hierarchy panel (in case of classes) and Taxonomy Concepts panel (in case of concepts and concept schemes).
+When a parent is hidden in the tree, all its children also disappear from the tree – unless they have another parent.
+The Class and Taxonomy Concepts panels have a “ghost” setting to show hidden items.
+To do this, select <em>Settings&gt; Also show assets marked as hidden</em>.</p>
+</section>
+<section id="batch-edit">
+<span id="id5"></span><h4>Batch Edit<a class="headerlink" href="#batch-edit" title="Permalink to this headline"></a></h4>
+<p>Batch Edit is available from the Asset List Panel, Instances Panel and Search Panel.
+Where you see the following menu item once you select multiple assets:</p>
+<figure class="align-center" id="id53">
+<img alt="TopBraid EDG Edit Selected Assets Option" class="edg-figure-m" src="../../_images/edg_edit_selected_assets.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Edit Selected Assets Option</strong></span><a class="headerlink" href="#id53" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The batch edit wizard tool will then be launched.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>You can only modify resources of the same type.</p></li>
+<li><p>If you have selected resources with multiple types, you will be asked to choose one.</p></li>
+</ul>
+</div>
+<figure class="align-center" id="id54">
+<img alt="TopBraid EDG Batch Edit View" class="edg-figure" src="../../_images/edg_batch_edit_view.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Batch Edit View</strong></span><a class="headerlink" href="#id54" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The wizard will then let you select properties you want to change and walk you through modifying data using features similar to those of the   <a class="reference internal" href="#form-panel"><span class="std std-ref">Form Panel</span></a>.</p>
+</section>
+<section id="jira-launch-in-context">
+<span id="index-2"></span><h4>Jira Launch-in-Context<a class="headerlink" href="#jira-launch-in-context" title="Permalink to this headline"></a></h4>
+<p>If the Jira feature has been configured for the EDG server, then a <em>manager</em> can set an associated project-key string for each asset collection.
+<strong>Jira Project Key</strong> is available under the <em>Manage</em> tab.
+See <a class="reference internal" href="using_jira_tasks.html#using-jira-tasks-target"><span class="std std-ref">Using Jira Tasks</span></a> for more details.</p>
+<p>Once set, if a user is <em>logged into Jira</em>, they can launch from editor resources into related Jira searches and create new issues in the collection’s corresponding Jira project.</p>
+<p>On a selected resource in the form panel, use the modify menu select any of the following:
+<strong>Create Jira Issue, Search Jira issues by label</strong>, or <strong>Search Jira issues by URI</strong>.
+The two searches will open (as new browser tabs) JIRA pages that search on the indicated resource string (URI or label).
+The create option will open the start of a new Jira item.</p>
+<figure class="align-center" id="id55">
+<img alt="TopBraid EDG Create and Search Jira Issue Dropdown" class="edg-figure-m" src="../../_images/edg_create_search_jira_issues.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create and Search Jira Issue Dropdown</strong></span><a class="headerlink" href="#id55" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the browser is not logged into Jira (or if the administered JIRA settings fail), then the launches can result in a Server Interaction Error message dialog.
+Please check the server logs for details in that case.</p>
+</div>
+</section>
+</section>
+<section id="source-code-panel">
+<span id="id6"></span><h3>Source Code Panel<a class="headerlink" href="#source-code-panel" title="Permalink to this headline"></a></h3>
+<p>The Source Code panel allows users to view and edit asset data in the Turtle serialization format.
+Editing source code is a low level operation for expert users and care should be taken.
+IT is possible to cause damage to the EDG workspace making it unavailable.
+An administrator can configure the EDG server to block all edits to source code, which is recommended for organizations without expert users knowledgable about editing Turtle serialization.</p>
+<p>The Source Code panel can also be hidden from users in certain roles.</p>
+<figure class="align-center" id="id56">
+<img alt="TopBraid EDG Source Code Panel View" class="edg-figure" src="../../_images/edg_source_code_panel_view.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Source Code Panel View</strong></span><a class="headerlink" href="#id56" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Depending on the situation, you may see two windows: upper window will show content of the current graph (asset collection) and lower window may show content from included graphs, if any.
+The latter is not editable.
+The upper window lets you edit.
+You can make changes and click on the Save Changes button.</p>
+<p>If there are any syntax errors, Save Changes will not be available.</p>
+<p>Prefix declarations can be expanded and collapsed. Do not make changes to prefixes here.
+Change them as described in <a class="reference internal" href="index.html#controlling-namespaces-and-prefixes"><span class="std std-ref">Controlling Namespaces and Prefixes</span></a> .</p>
+<p>Settings menu option will let you hide statements from the included graph (if any).
+With it on, the window with statements from the included graph will be hidden.</p>
+</section>
+<section id="assets-hierarchy-panel">
+<span id="id7"></span><h3>Assets Hierarchy Panel<a class="headerlink" href="#assets-hierarchy-panel" title="Permalink to this headline"></a></h3>
+<p>These panels show tree views of resources based on any relationships.
+Select the root resource type to start the tree.
+Use the gold circle icon to the right of the setting icon to make the selection.
+This can also be pre-set in the <strong>Manage</strong> tab.</p>
+<figure class="align-center" id="id57">
+<img alt="TopBraid EDG Assets Hierarchy Panel Page" class="edg-figure" src="../../_images/edg_assets_hierarchy_panel_page.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Assets Hierarchy Panel Page</strong></span><a class="headerlink" href="#id57" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="hierarchy-of-selected-asset-panel">
+<span id="id8"></span><h3>Hierarchy of Selected Asset Panel<a class="headerlink" href="#hierarchy-of-selected-asset-panel" title="Permalink to this headline"></a></h3>
+<p>This panel shows a tree view starting with the currently selected resource, letting you to expand its relationship values as children in the hierarchy.
+These children can then be similarly expanded and so on.</p>
+</section>
+<section id="problems-and-suggestions-panel">
+<span id="id9"></span><h3>Problems and Suggestions Panel<a class="headerlink" href="#problems-and-suggestions-panel" title="Permalink to this headline"></a></h3>
+<p>This panel checks the content of the asset collection against all of applicable quality rules (i.e., applicable shapes and validity constraints they define).
+It also runs enrichment rules to suggest mappings.</p>
+<p>Problems and Suggestions panel will raise validation results if values of properties do not comply with the constraints defined in the ontology your data is based on.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>RDF, as a flexible graph data model, lets you make statements that were not anticipated e.g., to say something about Person’s eye color even if no property “eye color” is defined for a Person.</p>
+</div>
+<p>Creating such values is not supported by the form-based editing in TopBraid EDG – the forms are entirely driven by what is defined in ontology models.
+Yet, it is possible to add values for undefined properties e.g., if you have appropriate permissions, you could use the Source Code panel to add any triple directly in Turtle or you could import RDF containing any kind of triples.
+The fact that these triples may be using properties not explicitly defined in the ontology is not a violation of the model.
+It will not be flagged by the Problems and Suggestions unless you explicitly say that no values except for the defined properties are allowed.</p>
+</section>
+<section id="change-history-panel">
+<span id="id10"></span><h3>Change History Panel<a class="headerlink" href="#change-history-panel" title="Permalink to this headline"></a></h3>
+<p>The <strong>Change History Panel</strong> will show all captured changes – additions and deletions.</p>
+<p>Each change can be expanded to show details.
+Added statements are shown in green.
+Removed statements are shown in pink.</p>
+<p>You can filter displayed changes by selecting a user who made a change, the time period when changes were made, and/or the property (predicate) which values were changed.</p>
+<p>To see only changes made to the currently selected asset, click on the “on selected” button.</p>
+<figure class="align-center" id="id58">
+<img alt="TopBraid EDG Change History Panel" class="edg-figure" src="../../_images/edg_change_history_panel.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Change History Panel</strong></span><a class="headerlink" href="#id58" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Changes can also be reverted from the change history panel.
+Click to select changes you want to revert and then click on the Undo icon – the first icon in the panel.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will create an audit trail entry for the revert operation.</p>
+</div>
+<p>Workflows will have a button “from workflow only” to narrow down to only changes made specifically in the current workflow.</p>
+</section>
+<section id="inferences-panel">
+<span id="id11"></span><h3>Inferences Panel<a class="headerlink" href="#inferences-panel" title="Permalink to this headline"></a></h3>
+<p>Inferences panel lets you run rules.
+It will display all triples generated by the rules using a table with 3 columns: subject, predicate and object.</p>
+<figure class="align-center" id="id59">
+<img alt="TopBraid EDG Inferences Panel" class="edg-figure" src="../../_images/edg_inferences_panel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Inferences Panel</strong></span><a class="headerlink" href="#id59" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In addition to the button that runs rules, the panel provides:</p>
+<ul class="simple">
+<li><p>A button to assert all inferred triples.
+It will be displayed only once you execute rules and they generate some statements that will be shown in the panel.
+Clicking on this button will write the inferred statements into the asset collection.
+Until you take this action, generated statements are not stored permanently.</p></li>
+<li><p>A button that will display all available rules and let you activate and deactivate them for the run.</p></li>
+</ul>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Rules defined using sh:values are evaluated dynamically and will NOT be shown or executed by the panel.</p>
+</div>
+<p>The screenshot below shows the dialog that will appear when you click on this button.</p>
+<figure class="align-center" id="id60">
+<img alt="TopBraid EDG SHACL Inference Rules Dialog" class="edg-figure" src="../../_images/edg_shacl_inference_rules.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG SHACL Inference Rules Dialog</strong></span><a class="headerlink" href="#id60" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<ul class="simple">
+<li><p>Settings button. It lets you switch between the display of labels and URIs and between the tabular display of the inferred statements and display in the Turtle format (source code).
+It also lets you control the number of iterations.</p></li>
+</ul>
+<p>If you expect your rules to produce a large number of triple statements, we recommend that you run them by using the option available in the Transform tab.
+The role of Inferences panel is primarily to help you with testing rules as you develop them.</p>
+</section>
+<section id="instances-panel">
+<span id="id12"></span><h3>Instances Panel<a class="headerlink" href="#instances-panel" title="Permalink to this headline"></a></h3>
+<p>This panel will show a table of instances of a selected class i.e., resources with the type corresponding to the selected class.
+The free text search field at the top of the panel lets you filter the list.
+The panel also has New button for creation of new assets of selected type.
+Settings menu has further options governing what and how is shown.
+The first column of the table is a check box.
+If you select multiple assets, you will be able to use the “batch actions menu” at the top right to perform the same bulk operations as those available in the Assets List panel.</p>
+</section>
+<section id="references-panel">
+<span id="id13"></span><h3>References Panel<a class="headerlink" href="#references-panel" title="Permalink to this headline"></a></h3>
+<p>References panel displays all assets that refer to the currently selected asset (in the form or one of the other panels).
+For each referring asset, you will see its label and the referring relationship.</p>
+<p>If you click on one of the referring assets, it gets selected on the form, in the hierarchical panels, etc.
+Then, in turn, what is shown in the References panel will change.
+If you want to avoid this from happening, select the “pin” option under the Settings (gear) menu.
+This will prevent the contents of the Reference panel from changing as you click around.</p>
+</section>
+<section id="panels-for-working-with-schemas">
+<h3>Panels for Working with Schemas<a class="headerlink" href="#panels-for-working-with-schemas" title="Permalink to this headline"></a></h3>
+<section id="class-hierarchy-panel">
+<h4>Class Hierarchy Panel<a class="headerlink" href="#class-hierarchy-panel" title="Permalink to this headline"></a></h4>
+<p>In EDG, every asset is a member of at least one class.
+This panel displays hierarchy of classes starting with a selected root.
+Hierarchical relationship between classes is rdfs:subClassOf.
+Class information is only editable if you are in an Ontology.
+In other collection types you will only be able to view class information.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about this panel see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#class-hierarchy-panel"><span class="std std-ref">Class Hierarchy Panel</span></a> .</p>
+</div>
+</section>
+<section id="node-shapes">
+<h4>Node Shapes<a class="headerlink" href="#node-shapes" title="Permalink to this headline"></a></h4>
+<p>While EDG will declare all new Classes also as Node Shapes.
+It also also supports creation of Node Shapes that are not Classes which may be useful when creating an alternative view of class members or when creating a shape that will be used in other shapes, for example, as part of logical expressions.</p>
+<p>The <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#node-shapes-panel"><span class="std std-ref">Node Shapes Panel</span></a> displays ONLY node shapes that are not Classes and supports creation of such shapes.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about this panel see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#node-shapes-panel"><span class="std std-ref">Node Shapes Panel</span></a> .</p>
+</div>
+</section>
+<section id="property-groups">
+<h4>Property Groups<a class="headerlink" href="#property-groups" title="Permalink to this headline"></a></h4>
+<p>The <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a> displays properties associated with a selected class or a node shape.
+Properties are displayed organized into groups, reflecting how they would be shown on a form.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information about this panel see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a> .</p>
+</div>
+</section>
+<section id="rdf-owl-property-list">
+<h4>RDF/OWL Property List<a class="headerlink" href="#rdf-owl-property-list" title="Permalink to this headline"></a></h4>
+<p>The <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#rdfowl-properties-list-panel"><span class="std std-ref">RDF/OWL Properties List Panel</span></a> is a table showing instances of rdf:Property class and its subclasses.
+<strong>New</strong> button lets you create new properties.</p>
+</section>
+</section>
+<section id="local-assets-panel">
+<span id="id14"></span><h3>Local Assets Panel<a class="headerlink" href="#local-assets-panel" title="Permalink to this headline"></a></h3>
+<p>This panel will display only assets that are defined in the current asset collection.
+Assets from included collections will not be shown.
+There is a Search field to filter results and check boxes for selection.
+You can then use the “More” button in the upper left of the panel to execute operations on selected assets.</p>
+</section>
+<section id="available-crosswalks-panel">
+<span id="id15"></span><h3>Available Crosswalks Panel<a class="headerlink" href="#available-crosswalks-panel" title="Permalink to this headline"></a></h3>
+<p>This panel will list any crosswalks that map the current asset collection to another collection. Y
+ou will be able to access crosswalk mappings from this panel.
+You will also be able to create new crosswalks.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information see <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_crosswalks/index.html#working-with-crosswalks-target"><span class="std std-ref">Working with Crosswalks</span></a> .</p>
+</div>
+</section>
+<section id="taxonomy-concepts">
+<h3>Taxonomy Concepts<a class="headerlink" href="#taxonomy-concepts" title="Permalink to this headline"></a></h3>
+<p><strong>Taxonomies</strong> collections include a <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_taxonomies/taxonomy_concepts_panel.html#concepts-panel-in-taxonomies-target"><span class="std std-ref">Taxonomy Concepts Panel</span></a> which displays taxonomy concepts organized into concept schemes.
+It also lets you create new concepts and schemes.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information, see description of this panel in <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_taxonomies/index.html#working-with-taxonomies-target"><span class="std std-ref">Working with Taxonomies</span></a> guide.</p>
+</div>
+</section>
+<section id="other-panels">
+<h3>Other Panels<a class="headerlink" href="#other-panels" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
+</section>
+</section>
+<section id="asset-menus">
+<h2>Asset Menus<a class="headerlink" href="#asset-menus" title="Permalink to this headline"></a></h2>
+<section id="explore">
+<span id="id16"></span><h3>Explore<a class="headerlink" href="#explore" title="Permalink to this headline"></a></h3>
+<p>With asset information displayed on a form click on Explore button to select one of the available menu options.
+The explore menu may differ based on collection type.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a> or <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_taxonomies/index.html#working-with-taxonomies-target"><span class="std std-ref">Working with Taxonomies</span></a> for additional features available in these collections.</p>
+</div>
+<p>For all assets, you will be able to:</p>
+<ul class="simple">
+<li><p>Find similar assets</p></li>
+<li><p>Show any workflows that contain changes to the selected asset</p></li>
+<li><p>See and enter comments about the asset</p></li>
+<li><p>See and create tasks for the asset</p></li>
+<li><p>Select a number of diagrams and visualizations – available options depend on the type of the asset</p></li>
+<li><p>Add and view endorsements.
+Endorsements will be recorded as activity in the what’s happening section of EDG home page, viewable in the form panel and in Search the EDG.</p></li>
+</ul>
+<figure class="align-center" id="id61">
+<img alt="TopBraid EDG Modify Dropdown" class="edg-figure-m" src="../../_images/edg_modify_menu_dropdown.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Modify Dropdown</strong></span><a class="headerlink" href="#id61" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="modify">
+<h3>Modify<a class="headerlink" href="#modify" title="Permalink to this headline"></a></h3>
+<p>The modify menu may differ based on collection type.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a> or <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_taxonomies/index.html#working-with-taxonomies-target"><span class="std std-ref">Working with Taxonomies</span></a> for additional features available in these collections.</p>
+</div>
+<section id="cloning-and-replacing-assets">
+<span id="id17"></span><h4>Cloning and Replacing Assets<a class="headerlink" href="#cloning-and-replacing-assets" title="Permalink to this headline"></a></h4>
+<p>Clone and Replace operations are available under Modify menu.</p>
+<p>Clone creates a copy of the selected Asset.
+The label of the clone (preferred label in case of SKOS Concepts) will be set as the label of original asset with “ Copy” post-pended to it.</p>
+<p>Replace, creates a clone of the selected asset using URI that you will provide and then deletes selected asset.
+One difference with the clone operation above is that the label will be the same as the label of the original asset, “ Copy” will not be post-pended.
+You can use this operation if you decide that you need to modify URI identity of a resource.
+EDG will automatically adjust all incoming and outgoing references.
+However, it will do so only for the currently selected asset collection.
+Other asset collections will not be updated.
+If they contain references to the asset you are replacing, you will see broken links.
+To understand possible impacts of delete operations see Deleting Assets section.</p>
+</section>
+<section id="deleting-assets">
+<span id="id18"></span><h4>Deleting Assets<a class="headerlink" href="#deleting-assets" title="Permalink to this headline"></a></h4>
+<p>You can delete assets directly in an asset collection or you can start a workflow and delete in the working copy of the collection that is managed by <a class="reference internal" href="../workflows/workflows.html#workflows-target"><span class="std std-ref">Workflows</span></a>.
+Irrespective of the choice, delete options are the same.</p>
+<p>With asset information displayed on a form, click on Modify button and select Delete.</p>
+<p>Since asset collections in EDG can include each other by reference, some care needs to be taken when deleting assets.
+Delete operation only deletes references to the deleted asset that exist in your current asset collection.
+Consider the following scenario:</p>
+<ul class="simple">
+<li><p>Taxonomy 1 defines Concept A</p></li>
+<li><p>Taxonomy 1 also defines Concept B making it a child of Concept A</p></li>
+<li><p>Taxonomy 2 includes Taxonomy 1</p></li>
+<li><p>Taxonomy 2 defines Concept C making it a child of Concept A</p></li>
+<li><p>You go to Taxonomy 1 and delete Concept A.
+Concept B’s reference to A will be removed, but Concept C’s reference to A will stay.
+Now concept C has a broader relationship to an undefined concept</p></li>
+</ul>
+<p>Running Problems and Suggestions check on Taxonomy 2 will report the issue and assist you in removing such references.</p>
+<p>Similarly, deleting a class (asset type) from an ontology will not remove class instances (assets of a given type) that may be stored in another asset collection.
+It will make them members of undefined class.
+Deleting a property does not delete property values that are held in another asset collection.</p>
+<p>Running Problems and Suggestion check will help you identify and fix these issues.
+Further, by going to the Settings&gt;Included By you will see all asset collections that include your selected collection.
+You can then go to them and use References panel to identify what may be referring to a resource you are planning to delete.</p>
+</section>
+</section>
+<section id="more">
+<h3>More<a class="headerlink" href="#more" title="Permalink to this headline"></a></h3>
+<p>TBD</p>
+</section>
+</section>
+<section id="cross-panel-operations">
+<h2>Cross Panel Operations<a class="headerlink" href="#cross-panel-operations" title="Permalink to this headline"></a></h2>
+<p>Some features and options work the same across different panels.
+These are described below.</p>
+<section id="undoing-changes">
+<h3>Undoing Changes<a class="headerlink" href="#undoing-changes" title="Permalink to this headline"></a></h3>
+<p><strong>Undo</strong> button in the header lets you reverse the most recent Save operation.</p>
+<figure class="align-center" id="id62">
+<img alt="TopBraid EDG Undo Cross Panel Operations" class="edg-figure-m" src="../../_images/edg_undo_cross_panel_operations.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Undo Cross Panel Operations</strong></span><a class="headerlink" href="#id62" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can also reverse one or more changes made in the past by using <a class="reference internal" href="#change-history-panel"><span class="std std-ref">Change History Panel</span></a>.</p>
+</section>
+<section id="resource-right-click-menus">
+<h3>Resource (right click) Menus<a class="headerlink" href="#resource-right-click-menus" title="Permalink to this headline"></a></h3>
+<p>Right click menu’s are available in most panels.
+You can right click to access a menu anywhere a link to an EDG resource is present or in a tree.
+In the descriptions of the panels below, you will find details for the resource (right click) menus.</p>
+<p>For example:</p>
+<figure class="align-center" id="id63">
+<img alt="TopBraid EDG Cross Panel Operations Resource Menus" class="edg-figure" src="../../_images/edg_cross_panel_operations_resource_menus.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Cross Panel Operations Resource Menus</strong></span><a class="headerlink" href="#id63" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="drag-and-drop-operations">
+<h3>Drag and Drop Operations<a class="headerlink" href="#drag-and-drop-operations" title="Permalink to this headline"></a></h3>
+<p>Several panels support drag and drop:</p>
+<ul class="simple">
+<li><p>You can drag and drop items displayed in the hierarchical panels e.g., Taxonomy Concepts, Class Hierarchy and Property Groups</p></li>
+<li><p>You can also drag and drop from other panels into fields on the Form panel</p></li>
+<li><p>In an ordered list (indexed property) on a Form, list values can be re-arranged by dragging and dropping</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>by default, drag and drop in the hierarchical panels in order to re-arrange a tree structure performs “delete and add” as a resource gets moved. This, for example, means that if a taxonomy concept had two different parents – A and B, moving it from its position under parent A to a position under parent C will give it a brand new parent and remove the previous two parents. In other words, it will no longer be under both, A and B. It will only be under C.</p>
+</div>
+<p>If you want to simply add a new parent instead of replacing previously existing parents, press CTRL key when dragging.
+This will add a new parent without removing existing parents.
+Alternatively, you can select a resource for which you want to add a new parent and edit its information in a form by adding a new value to already existing values for the hierarchical property.</p>
+<p>When you drag and drop into a form, TopBraid EDG will check that a resource you are dragging has a suitable type for the field (property) you are dragging it into.
+Otherwise, you will not be able to drop it.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.
+      <span class="lastupdated">Last updated on Dec 02, 2021.
+      </span></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

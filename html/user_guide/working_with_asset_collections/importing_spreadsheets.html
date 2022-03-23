@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Importing Spreadsheets &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Importing Spreadsheets</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="importing-spreadsheets">
+<span id="importing-spreadsheets-target"></span><span id="index-0"></span><h1>Importing Spreadsheets<a class="headerlink" href="#importing-spreadsheets" title="Permalink to this headline"></a></h1>
+<section id="import-spreadsheet-using-template">
+<h2>Import Spreadsheet using Template<a class="headerlink" href="#import-spreadsheet-using-template" title="Permalink to this headline"></a></h2>
+<p><strong>Import Spreadsheet using Template</strong> is available under the <em>Import</em> tab for all collection types except Crosswalks, Content Tagsets and Corpora.</p>
+<p>This importer lets the user select a spreadsheet and a “template” that will be used to convert and store the spreadsheet data.
+The “template” is created using the mapping process explained in the <em>Import Spreadsheet using Pattern</em> importer.
+The imported spreadsheet must have exactly the same structure as the spreadsheet used to develop the template.
+The names and order of the columns must be exactly the same.
+If multiple worksheets are used, the order and structure of each worksheet (even for worksheets that are not imported) must be the same.</p>
+<p>The mapping can also be created or edited using TopBraid Composer if the mapping capabilities are insufficient and a more complex transformations is required (e.g. concatenation of values).
+TopBraid Composer’s SPINMAP tool provides a drag-and-drop interface that makes it especially easy to create more complex mappings.</p>
+<p>Templates developed with TopBraid Composer must be stored in files with “.tablemap.” in their name (for example, <em>myMapping.tablemap.ttl</em>) and be uploaded to the EDG server to be available to EDG users.</p>
+</section>
+<section id="import-spreadsheet-using-pattern">
+<h2>Import Spreadsheet using Pattern<a class="headerlink" href="#import-spreadsheet-using-pattern" title="Permalink to this headline"></a></h2>
+<p><strong>Import Spreadsheet using Pattern</strong> is available under the <em>Import</em> tab for all collection types except Crosswalks, Content Tagsets and Corpora.</p>
+<p>To use this importer, the worksheet must have a header row with the names of columns.
+EDG will find the first row with data and will assume that it is the header column.</p>
+<p>The <strong>Import &gt; Import Spreadsheet Using Pattern</strong> link shows the following screen:</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Import Spreadsheet using Pattern" class="edg-figure-m" src="../../_images/edg_import_spreadsheet_using_pattern.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Import Spreadsheet using Pattern</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Use <strong>Browse</strong> to select the spreadsheet file to import.
+Supported file types are an Excel file (<em>.xls</em> or <em>.xlsx</em>), a tab-separated value (<em>.tsv</em>) file, or a comma-separated value (<em>.csv</em>) file.
+The file should have the expected extension.</p>
+<p>Because an Excel file may have more than one sheet of data, there is an option to specify a <strong>sheet index</strong> value to identify which sheet to import.
+The default is 1, for the first sheet.
+The sheet index counts all sheets in an Excel workbook, including hidden ones.
+For example, if you enter a 3 here and EDG seems to import the second sheet, there may be a hidden one between the first and second sheet that made the third one look like it was the second one when Excel was displaying the workbook.
+The Excel online help explains how to check for the existence of hidden sheets.</p>
+<p>The <strong>Entity type for the imported data</strong> identifies the <em>class</em> of the assets you will be importing.
+Each row in the spreadsheet will be imported as an instance of the selected <em>class</em> and the spreadsheet columns can be mapped to the declared properties of the <em>class</em>.
+Select <strong>Next</strong> to continue and specify the mapping.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All imported assets are given the same type. To import assets of a different type, either import the same spreadsheet multiple times, with different mappings, or bulk edit the data after import.</p>
+</div>
+</section>
+<section id="select-spreadsheet-type">
+<h2>Select Spreadsheet Type<a class="headerlink" href="#select-spreadsheet-type" title="Permalink to this headline"></a></h2>
+<p>The <em>Select Spreadsheet Type</em> view enumerates five possible (column-wise) spreadsheet layout patterns, showing an example of each pattern.</p>
+<p>The <strong>1. No Hierarchy</strong> layout is the most common and simplest to use.
+We recommend users become familiar with it first, before using other patterns.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>No Hierarchy</strong> import pattern can create relationships in the imported data, including hierarchical relationships. However, <strong>referenced asset must exist prior to the import</strong> when using with this pattern. In the mapping, the column used to find existing assets to reference (e.g. hierarchical parents) can be indicated. This can be addressed, for example, by importing the same spreadsheet multiple times using different mappings - perhaps once to create assets and then again to add relationships between assets.</p>
+</div>
+<p>For data explicitly structured as a hierarchy, like a taxonomy, there are four layouts from which to select.
+The main difference between these four layouts and <strong>No Hierarchy</strong> is that children and parents can be imported and connected in a single import.
+EDG will create and relate both the children and their parents in the same import, even if they did not exist prior to the import.</p>
+<p>In the hierarchical layouts, each row also indicates its hierarchical path, either explicitly (absolute path, #2, #3, #4) or implicitly (recursive path #5); note that lighter text in the layout patterns indicates optional data.
+These are complex import patterns that behave differently depending on the URI construction method set for the asset collection.
+Depending on the URI construction method for the collection, they may not be able to be used.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Select Spreadsheet Type Page" class="edg-figure-l" src="../../_images/edg_select_spreadsheet_type.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Select Spreadsheet Type Page</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the <em>header row</em> of column labels in every layout.
+The imported spreadsheet must always have a header row.</p>
+</div>
+<p>Below the five layout options, the view will show a sample of the spreadsheet’s actual data.
+The following image shows a spreadsheet of airport codes.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Source Spreadsheet Page" class="edg-figure-l" src="../../_images/edg_source_spreadsheet.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Source Spreadsheet Page</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Select the <strong>layout link</strong> that most closely corresponds to the structure of the spreadsheet.</p>
+</section>
+<section id="import-no-hierarchy-spreadsheet">
+<h2>Import No Hierarchy Spreadsheet<a class="headerlink" href="#import-no-hierarchy-spreadsheet" title="Permalink to this headline"></a></h2>
+<p>After selecting <strong>1. No Hierarchy</strong> the <em>Import Spreadsheet</em> page appears where the user defines the data-mapping rules from the spreadsheet columns into the target properties of the class.</p>
+<p>The page is broken into sections:</p>
+<ul class="simple">
+<li><p>Column Mappings</p></li>
+<li><p>Default Concept Scheme, if a Taxonomies collections</p></li>
+<li><p>Unique Identifiers</p></li>
+<li><p>various selectable options</p></li>
+<li><p>prompt to enter the mapping template name if saving the pattern for future use</p></li>
+<li><p>Your Source Spreadsheet, data read from the spreadsheet</p></li>
+</ul>
+<p>When importing into a Taxonomies collection and not selecting a concept scheme, EDG creates a new scheme using the name of a spreadsheet.
+All concepts that do not have a broader parent nor are defined as top concepts of some scheme, will be made into top concepts of the selected or automatically created scheme.</p>
+<section id="column-mapping-section">
+<h3>Column Mapping Section<a class="headerlink" href="#column-mapping-section" title="Permalink to this headline"></a></h3>
+<p>In the <em>Column Mapping</em> section, the user specifies the target property to which each spreadsheet column corresponds.
+The target properties are taken from target entity type (class or asset type) identified on the previous page.
+When column names and property names are similar, EDG automatically proposes the mapping.
+When mapping a relationship, the user can indicate inverse relationships to the target entities.</p>
+<p>Unmapped columns and their data are ignored during the import.</p>
+<p>The following example shows an example Column Mapping.</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Import Spreadsheet Page" class="edg-figure-l" src="../../_images/edg_import_spreadsheet2.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Import Spreadsheet Page</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For the mapping to be successful, the datatype of the spreadsheet cell values should match that of the target property into which the column is being mapped.
+Do not use the string “abc” in a cell value being mapped into an target property with an integer datatype, for example.</p>
+<p>In cases where a string-valued target property supports language tags, the user is can optionally set the <strong>Language</strong> value for the import to set.</p>
+<p>If an imported row will result in a new instance, rather than adding data to an existing instance, then one of columns should be mapped to the <em>label</em> property or th <em>preferred label</em> if a Taxonomies collection.
+Those are used as the EDG display name, for auto-complete, etc.</p>
+<p>When importing relationships EDG needs to find the existing asset to which to add a reference.
+If the asset does not yet exist, EDG may be able to create a URI as the value of the reference.</p>
+<p>After selecting a relationship property from the dropdown, the following methods for directing EDG on how to build relationship values are possible:</p>
+<ol class="arabic simple">
+<li><p>If the selected class has a designated <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_how_to_guidance.html#primary-key-constraint"><span class="std std-ref">Setting a Primary Key for a Class</span></a>, no additional information is needed.
+EDG uses the value in each row of the mapped column to form the URI of the new instance according to the primary key definition.
+This option is demonstrated in the above screenshot – <em>airport country</em> is a relationship from airports to countries and the ontology defines a primary key for the class <em>Country</em>.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Therefore, the values in the mapped column must the exact value of the property used as the primary key meaning it must be unique for all instances of the class.</p></li>
+<li><p>In the example, the Country primary key values are 2 character country codes and the Country Code column with those values is mapped to the “airport country” relationship.</p></li>
+<li><p>Note that in this case, imported rows will <em>always</em> construct a reference with that URI structure regardless of whether it exists in the collection or not.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>If the values in the mapped column are actually valid URLs, then they can be used “as-is” to be the URI of the referenced asset, as indicated by the associated <strong>Use values as URIs</strong> label.</p></li>
+<li><p>If neither option 1 nor option 2 apply, the user selects a property of the related class on which to to match.
+The property will be used to find assets at the end of the relationship and will only create the relationship if the asset already exists in the collection.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>For example, if Country did not have a defined primary key, the user could map the Country Code column and select “ISO 3166-2 alphabetic country code” as the property to match.</p></li>
+<li><p>Values of the matching property must be unique across all instances of the class. If duplicate values are found, then the related resource will be assigned arbitrarily.</p></li>
+</ul>
+</div></blockquote>
+<p>Option 3 is demonstrated in the screenshot below – after removing the primary key from the class Country.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Import Spreadsheet - Country Code Mapping" class="edg-figure-l" src="../../_images/edg_import_spreadsheet_country_code.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Import Spreadsheet - Country Code Mapping</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>For <em>inverse</em> relationships, the spreadsheet column represents links from instances of some other class to the instances the import creates.
+Similar to forward relationships, if an inverse relationship is the chosen mapping, then there is a further choice of which referencing-class property to use to identify the referencing instances.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>As explained under <em>Other Parameters</em> below, if the target of a relationship has the same entity type
+as the entity type chosen for the import AND Option 3 is being used then the <strong>Override existing values</strong> option must be unchecked for the relationship to be created.</p></li>
+<li><p>When importing into a <em>Reference Datasets</em> collection, one of spreadsheet columns must map to the primary-key property of the main entity (class) for the dataset.
+For example, the screen image above identifies this field as the IATA code.</p></li>
+<li><p>When importing into a <em>Taxonomies</em> collection, the user can select a concept scheme to contain the imported concepts.
+Otherwise, EDG will create a new concept scheme and make all concepts that have no parents in the spreadsheet its top concepts.</p></li>
+</ul>
+</div>
+</section>
+<section id="unique-identifiers">
+<h3>Unique Identifiers<a class="headerlink" href="#unique-identifiers" title="Permalink to this headline"></a></h3>
+<p>This section explains the logic EDG uses to generate URIs for the imported data.</p>
+<p>If the import target class has a <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_how_to_guidance.html#primary-key-constraint"><span class="std std-ref">Setting a Primary Key for a Class</span></a>, no selections are required .
+Instead, use the <strong>Column Mapping</strong> section to map one of the spreadsheet columns to the primary key property.
+Otherwise, some selections are required.</p>
+<p>The available selections depend on the <strong>URI Construction Rules</strong> configured for the asset collection.</p>
+<p>If the <strong>URI Construct Method</strong> is <em>label</em>, specify the column(s) to be used to generate the URI of each imported row as shown below.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Unique Identifiers Based on Labels" class="edg-figure-l" src="../../_images/edg_unique_identifiers_labels.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Unique Identifiers Based on Labels</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Typically, the spreadsheet column containing the <em>label</em> value will map to the <strong>Id column #1</strong>, leaving the rest of mappings empty.
+However, it is possible to select a different column to generate URIs or even a combination of columns.
+When multiple columns are selected, their values are concatenated to form the URI.</p>
+<p>The <strong>Start of URIs</strong> option is also available to modify the default namespace of the collection to be used as the basis of the generated URI for the import.</p>
+<p>For a successful import adding new information to existing assets, make URI choices that will match the URIs of those assets.</p>
+<p>If the <strong>URI Construct Method</strong> of the asset collection is either the <em>counter</em> or <em>uuid</em>, a different set of options are needed, as shown in the following figure.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Unique Identifiers Based on Counter or UUID" class="edg-figure-l" src="../../_images/edg_unique_identifiers_uuid.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Unique Identifiers Based on Counter or UUID</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If the import is creating new instances, leave the selection empty and EDG will generate URIs according to the currently configured URI Construction Method for the collection,
+using the default namespace for the URIs.</p>
+<p>If the import is adding information to existing assets:</p>
+<ul class="simple">
+<li><p>use a spreadsheet containing a column with values that are the URIs of existing assets and select that column as the URI column;</p></li>
+<li><p>match on a property to find the existing assets. Values of this property must be unique for the entity type. If duplicate values are found, assignments will happen arbitrarily.</p></li>
+</ul>
+</section>
+<section id="other-parameters">
+<h3>Other Parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline"></a></h3>
+<p>Other parameters are located directly below the Unique Identifiers section.</p>
+<p>Selecting <strong>Overwrite existing values</strong> will <em>delete</em> an existing value for a mapped property before adding its new (different) value; otherwise, new values will be added to existing ones.</p>
+<p>If the imported rows are adding new data values to existing instances and/or adding new instances, it is best to make sure that the <em>Override existing values</em> option is <strong>unchecked</strong>.
+Checking this option has the following consequences:</p>
+<ul class="simple">
+<li><p>If an instance already exists and has a value for any of the mapped columns, the value will be replaced with the spreadsheet data.</p></li>
+<li><p>Relationships between instances of the same type that rely on matching of values will not be created (because these values may be overridden as part of the processing).</p></li>
+<li><p>When working with a Taxonomies collection, a combination of checked <em>Override existing values</em> and the <em>No Hierarchy</em> pattern will always make imported instances top concepts of a new Concept Scheme, even if they already exist in the Taxonomy and have parent concepts.</p></li>
+</ul>
+<p>Selecting <strong>Record each new triple in change history</strong> (warning: not recommended for large files) prevents EDG from recording the addition of each new triple in the change history.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option will not let you build relationships to assets that are members of the same class as the one you are importing – because these values can be replaced as part of the import.</p>
+</div>
+<p>A <strong>Preview</strong> button on the Import Spreadsheet form shows the RDF triples that would be generated with the currently configured settings. The browser’s <em>Back</em> button returns to the form.</p>
+<p><strong>Make this a reusable mapping template</strong> is optional and saves all of the settings on this form for later reuse.
+Reusable mappings are selectable using <strong>Import Spreadsheet using Template</strong> on the Import tab instead of <strong>Import Spreadsheet using Pattern</strong>. When used, a drop-down list of the saved template names appears for selection.</p>
+<p>When satisfied with the sample data shown on the preview, click the <strong>Finish</strong> button.
+EDG will start the import, running it in the background.</p>
+</section>
+</section>
+<section id="import-using-hierarchical-spreadsheet-patterns">
+<h2>Import Using Hierarchical Spreadsheet Patterns<a class="headerlink" href="#import-using-hierarchical-spreadsheet-patterns" title="Permalink to this headline"></a></h2>
+<p>After selecting one of the hierarchical patterns, there are three sections:</p>
+<ul class="simple">
+<li><p>Column Mappings</p></li>
+<li><p>Hierarchy</p></li>
+<li><p>Unique Identifiers</p></li>
+</ul>
+<p>and, as on the previous page, for convenience an example of the source spreadsheet data is shown.</p>
+<p>There are also URI column selections below the Unique Identifiers section, unless the URI Construct Method is <em>counter</em> or <em>uuid</em>, where no option to specify columns to use as URIs appears.
+EDG will always generate the URIs following the chosen method.</p>
+<p>When the asset collection uses the <em>counter</em> or <em>uuid</em> methods, these importers <strong>CANNOT</strong> be used to overwrite existing hierarchies – they can only create new assets:</p>
+<ul class="simple">
+<li><p>If the need is to add information to the previously imported hierarchies, use <strong>No Hierarchy</strong> import.</p></li>
+<li><p>If the need is to add a child tree consisting of new resources to an existing hierarchy, these importers can be used.
+However, the top of the new tree will not be connected to an already existing parent, that connection must be added after the import.</p></li>
+</ul>
+<p>Most of the options on the hierarchical import pages are the same as those described for the No Hierarchy pattern.
+Those are not described here again and this section of the guide focuses on the unique aspects of the hierarchy mapping.</p>
+<p>For all the hierarchical patterns, select a <strong>Hierarchy Property</strong> (e.g. “has broader”) to connect items in the hierarchy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>All hierarchical levels will be connected using the same relationship.</p></li>
+<li><p>To create different relationships between levels, use the <strong>No Hierarchy</strong> pattern.</p></li>
+</ul>
+</div>
+<p>The <strong>Generate in inverse direction</strong> checkbox will reverse the direction of how the property specified in <strong>Hierarchy property</strong> is applied.</p>
+<p>When working with Taxonomies collections, there is  an option to select an existing <strong>Concept Scheme</strong>.
+If not specified, the importer creates a new concept scheme using the name of a spreadsheet.
+All concepts that do not have hierarchical parents will be made top concepts of the scheme.</p>
+<section id="path-with-separator-pattern">
+<h3>Path with Separator Pattern<a class="headerlink" href="#path-with-separator-pattern" title="Permalink to this headline"></a></h3>
+<p>This pattern works <strong>ONLY</strong> if the URI Construct Method is <em>label</em>.</p>
+<p>For <strong>Path with Separator</strong> spreadsheets, in which a spreadsheet entry such as “World &gt; Europe &gt; France” indicates the hierarchical structure above the term “France”, the <strong>Hierarchy</strong> mapping section works as follows:</p>
+<ul class="simple">
+<li><p>Select a column containing the path and type a separator e.g., “&gt;”.</p></li>
+<li><p>Identify the Column containing the <em>last node of each path string</em></p></li>
+<li><p>In the <strong>Column Mapping</strong> section, to generate a name for imported resources, make sure to assign some column as the preferred label (in case of Taxonomies) or as the label (for all other asset collections) – to generate labels.
+This will typically be the same column as the one you selected in the <strong>Hierarchy</strong> section as containing a last node of the path.</p></li>
+<li><p>Map this column again in the <strong>Unique Identifiers</strong> section.
+If not specified, EDG will use row numbers to generate URIs.
+Alternatively, use other column(s) to generate URIs.</p></li>
+</ul>
+</section>
+<section id="column-based-tree-pattern">
+<h3>Column-based Tree Pattern<a class="headerlink" href="#column-based-tree-pattern" title="Permalink to this headline"></a></h3>
+<p>When using this pattern and when URI Construct Method is <em>counter</em> or <em>uuid</em>, the spreadsheet needs a single column containing the label for each asset.
+When URI Construct Method is <em>label</em>, there is not need for such a column, EDG will assume that the hierarchy columns contain the labels.</p>
+<p>For <strong>Column-based Trees</strong> spreadsheets, the <strong>Hierarchy</strong> mapping section works as follows:</p>
+<ul class="simple">
+<li><p>Specify the top and bottom levels of the hierarchy by picking the first and last columns containing hierarchical levels.
+All hierarchical columns must be located together and sequentially in the spreadsheet.</p></li>
+<li><p>If a column is mapped in the <strong>Hierarchy</strong> section, <strong>DO NOT</strong> map it in the <strong>Column Mapping</strong> section nor the <strong>Unique Identifiers</strong> section.
+These sections are used <strong>ONLY</strong> for mapping columns that do not specify the column based tree.</p></li>
+<li><p>If the URI Construction Method is <em>label</em>, EDG will assume that the hierarchy columns contain labels of respective resources.
+If not <em>label</em> then, as mentioned above, a separate column (outside of the hierarchy) needs to contains the label for each resource</p></li>
+<li><p>If the URI Construction Method is <em>label</em>, leave the <strong>Unique Identifiers</strong> section empty and EDG will use values in the hierarchical columns to generate URIs.
+Only make mappings in this section to override the Label-based approach and use some other values for the URIs.</p></li>
+<li><p>Carefully examine the <strong>Column-based Trees</strong> sample layout on the <strong>Select Spreadsheet Type</strong> screen.
+It is important that each item in the hierarchy has a row of its own. See below for correct and incorrect options.</p></li>
+</ul>
+<figure class="align-center" id="id8">
+<img alt="Column-based Tree Pattern Examples" class="edg-figure-l" src="../../_images/column_based_tree_pattern.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Column-based Tree Pattern Examples</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>It is important to remember that, as with all spreadsheet import options, all resources will be imported as members of the same class as selected as the start of the import mapping definition.
+An import cannot support Level 3 representing countries and Level 2 representing continents.</p>
+</section>
+<section id="path-with-fixed-length-segments-pattern">
+<h3>Path with Fixed-length Segments Pattern<a class="headerlink" href="#path-with-fixed-length-segments-pattern" title="Permalink to this headline"></a></h3>
+<p>This pattern requires a path column, where values are such that removing a string of a fixed length from a value identifies a parent for a resource on that row.
+For example, if using 2 character segments and “Australia” has a path column value of “010201”, its parent would be on a row with a path column value “0102” and its parent’s parent would be on a row with path column value “01”.</p>
+<p>EDG finds a parent by removing the exact number of characters specified in the segment length from the child’s path column value.
+The top most items could have a path column value that is different from the segment length e.g., 1 instead of 01.</p>
+<p>For <strong>Path with fixed-length Segments</strong> spreadsheets, the <strong>Hierarchy</strong> mapping section works as follows:</p>
+<ul class="simple">
+<li><p>Specify the column with the path values.</p></li>
+<li><p>Specify the length of the segments to use to calculate the parent row.</p></li>
+<li><p>In the <strong>Column Mapping</strong> section, to generate a name for imported resources, make sure to assign some column as the preferred label (in case of Taxonomies) or as the label (for all other asset collections).
+Otherwise, labels will not be generated.</p></li>
+<li><p>If the URI Construction Method is <em>label</em>, map the same column again in the <strong>Unique Identifiers</strong> section.
+If not specified, EDG will use row numbers to generate URIs.
+Alternatively, use other column(s) to generate URIs.</p></li>
+</ul>
+</section>
+<section id="self-join-pattern">
+<h3>Self-join Pattern<a class="headerlink" href="#self-join-pattern" title="Permalink to this headline"></a></h3>
+<p>For spreadsheets following the <strong>Self-Join</strong> pattern, the <strong>Hierarchy</strong> mapping section works as follows:</p>
+<ul class="simple">
+<li><p>Specify the <strong>Column containing the parent ids</strong> – this column will not necessarily be used to generate URI, it is simply a way to match children and parents</p></li>
+<li><p>Specify the <strong>Column containing the child ids</strong> – this column will not necessarily be used to generate URI, it is simply a way to match children and parents</p></li>
+<li><p>In the <strong>Column Mapping</strong> section, to generate a name for imported resources, make sure to assign some column as the preferred label (in case of Taxonomies) or as the label (for all other asset collections).
+Otherwise, labels will not be generated.
+Typically, but not necessarily, this will be the column you used as a <em>Column containing the child ids</em>.</p></li>
+<li><p>If the URI Construction Method is <em>label</em>, map the same column again in the <strong>Unique Identifiers</strong> section.
+If not specified, EDG will use row numbers to generate URIs.
+Alternatively, use other column(s) to generate URIs.</p></li>
+</ul>
+</section>
+</section>
+<section id="import-data-set-from-spreadsheet">
+<h2>Import Data Set from Spreadsheet<a class="headerlink" href="#import-data-set-from-spreadsheet" title="Permalink to this headline"></a></h2>
+<p><strong>Import Data Set from Spreadsheet</strong> is available under the <em>Import</em> tab and is available only for <strong>Data Assets</strong> collections.</p>
+<p>It reads the input spreadsheet and creates an EDG <em>Spreadsheets Workbook</em> instance, and a <em>Spreadsheet DataSet</em> instance that is part of the workbook and with related <em>DataSet Element</em> instances for each spreadsheet column.
+The import also includes data profiling for each imported column as shown in the following figure.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Data Profile Page" class="edg-figure-l" src="../../_images/edg_data_profile.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Data Profile Page</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Frequencies Page" class="edg-figure-l" src="../../_images/edg_frequencies.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Frequencies Page</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="import-crosswalk-from-spreadsheet">
+<h2>Import Crosswalk from Spreadsheet<a class="headerlink" href="#import-crosswalk-from-spreadsheet" title="Permalink to this headline"></a></h2>
+<p><strong>Import Crosswalk from Spreadsheet</strong> is available under the <em>Import</em> tab and is available only for <strong>Crosswalk</strong> asset collections.</p>
+<p>The input spreadsheet must contain two columns:</p>
+<ul class="simple">
+<li><p>the first column must contain the primary key used to build URIs of resources in the <em>From</em> asset collection;</p></li>
+<li><p>the second column must contain primary key used to build URIs of resources in the <em>To</em> asset collection.</p></li>
+</ul>
+</section>
+<section id="import-property-definitions-schema-from-a-spreadsheet">
+<h2>Import Property Definitions (Schema) from a Spreadsheet<a class="headerlink" href="#import-property-definitions-schema-from-a-spreadsheet" title="Permalink to this headline"></a></h2>
+<p>A spreadsheet can be used to to create property definitions for a class in an <strong>Ontologies</strong> collection.
+For information on how to do this, see the guide on <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_how_to_guidance.html#creating-ps-from-ss-columns"><span class="std std-ref">Creating Property Shapes from Spreadsheet Columns</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

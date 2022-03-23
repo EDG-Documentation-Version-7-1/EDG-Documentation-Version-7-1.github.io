@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Crosswalk Editor &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>The Crosswalk Editor</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-crosswalk-editor">
+<span id="the-crosswalk-editor-target"></span><h1>The Crosswalk Editor<a class="headerlink" href="#the-crosswalk-editor" title="Permalink to this headline"></a></h1>
+<p>The crosswalk panel has two main columns, one for each asset collection in the mapping.
+If the asset-type on the left side has a primary key, then it will also have a column.</p>
+<p>Like the Search Panel in other collections, users can filter-down the displayed assets by using (a) the <strong>Free Text</strong> search, property-specific constraints added from the <strong>Filters</strong> drop-down, or the filters available in each column.</p>
+<p>For each left-side asset, there are zero or more mapped right-side assets.
+The mapping can be many-to-many, so viewers can swap the left/right collections via the <strong>Toggle direction</strong> button <img alt="toggle" src="../../../_images/edg_toggle_direction_button.png" /> found in the page header.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Crosswalk Mapped Assets" class="edg-figure" src="../../../_images/edg_crosswalk_mapped_assets.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Mapped Assets</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To manually add a new mapping from a right-side asset to a left-side one, use the mappings panel as seen below.</p>
+<p>First highlight the row you wish to add a mapping in the table panel.
+This will cause the mapping panel to refresh for that particular row.
+You can then enter the matches along with comments for that row.
+Select each match from the dropdown and click the <em>add match</em> button.
+You will see all of the mappings entered below the <em>add match</em> button.
+If needed, you can delete a mapping from there.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Crosswalk Add Match" class="edg-figure" src="../../../_images/edg_crosswalk_add_match.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Add Match</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To automatically generate potential matches, click the <strong>Generate Mappings</strong> button.
+This runs the crosswalks’ ref:<code class="code docutils literal notranslate"><span class="pre">problems_and_suggestions_panel</span></code>, which lists suggested asset mappings between the two collections.
+EDG offers a default built-in generator of mappings.
+If a different mapping algorithm is desired, TQ professional services can help with plugging additional algorithms for mapping crosswalks.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Crosswalk Generate Mapping" class="edg-figure" src="../../../_images/edg_crosswalk_generate_mapping.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Crosswalk Generate Mapping</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taxonomy Specific Import Considerations &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Taxonomy Specific Import Considerations</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="taxonomy-specific-import-considerations">
+<span id="exporting-taxonomies-target"></span><h1>Taxonomy Specific Import Considerations<a class="headerlink" href="#taxonomy-specific-import-considerations" title="Permalink to this headline"></a></h1>
+<p>EDG Taxonomies features include the following special importers:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../working_with_asset_collections/index.html#importing-concepts-from-documents-target"><span class="std std-ref">Import Concepts from Documents</span></a></p></li>
+<li><p><a class="reference internal" href="../../working_with_asset_collections/index.html#importing-from-sharepoint-termstore-target"><span class="std std-ref">Import from SharePoint Term store</span></a></p></li>
+</ul>
+<section id="importer-details">
+<h2>Importer Details<a class="headerlink" href="#importer-details" title="Permalink to this headline"></a></h2>
+<p>When using <em>Import RDF File</em> to import data into a collection, EDG performs some transformations.
+This is done to ensure that imported concepts are visible in the Taxonomy Concepts panel.
+These modifications are as follows:</p>
+<ul class="simple">
+<li><p>“Narrower concept” relationships will be used to generate inverse “broader concept” relationships</p></li>
+<li><p>A Concept scheme will be added if none exists.
+Concepts without broader parents are made top concepts of the scheme</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the SPIN rules in TopBraid/SKOS/skoscleaner.ttl in the EDG workspace for technical details.</p>
+</div>
+<p>When using <strong>Import Spreadsheet using Pattern</strong>, hierarchical spreadsheet imports will also create concept schemes.</p>
+</section>
+</section>
+<section id="taxonomy-specific-exports">
+<h1>Taxonomy Specific Exports<a class="headerlink" href="#taxonomy-specific-exports" title="Permalink to this headline"></a></h1>
+<p>EDG Taxonomies features include the following special exporters:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../working_with_asset_collections/index.html#export-hierarchy-spreadsheet-target"><span class="std std-ref">Export Hierarchy Spreadsheet</span></a></p></li>
+<li><p><a class="reference internal" href="../../working_with_asset_collections/index.html#export-concept-overview-target"><span class="std std-ref">Export Concept Overview Spreadsheet</span></a></p></li>
+<li><p><a class="reference internal" href="../../working_with_asset_collections/index.html#export-sharepoint-term-store-target"><span class="std std-ref">Export SharePoint Term Store</span></a></p></li>
+</ul>
+</section>
+<section id="taxonomy-specific-edit-operations">
+<h1>Taxonomy Specific Edit Operations<a class="headerlink" href="#taxonomy-specific-edit-operations" title="Permalink to this headline"></a></h1>
+<p>In addition to create operations described in the Create New Assets and Clone and Replace sections, new taxonomy concepts can be created as follows:</p>
+<ul class="simple">
+<li><p>Select a parent concept, then select Modify&gt;Create multiple concepts…
+Create multiple instance dialog lets you enter labels for new concepts – one label per line.
+All labels must be in the same language.</p></li>
+<li><p>Select a parent concept, then select Modify&gt;Clone with descendants …
+This will clone an entire tree starting with the selected parent concept.</p></li>
+</ul>
+<p>Also see Taxonomy Concepts Panel for additional information.</p>
+<p>When you create a child concept, you may want its type to be based on the type of a parent concept.
+For example, you may want to make sure that all children of assets of type Continent are Countries.
+To get this behavior, you need to specify a constraint on the ‘narrower’ relationship in the ontology your taxonomy is based on.
+The constraint must be created on the inverse of skos:broader.
+For example:</p>
+<ul class="simple">
+<li><p>Go to the Geo Ontology and select Continent.
+Then, create a property shape for inverse of skos:broader.
+Do not modify the existing shape for inverse of skos:broader declared at Concept.
+You want to create a new one, specifically for the Continent</p></li>
+<li><p>In the create dialog, enter Country in the class field</p></li>
+</ul>
+<p>Now, when creating a child of a continent, you will no longer be asked to select a type, it will be automatically created as a Country.</p>
+</section>
+<section id="taxonomy-specific-reports">
+<h1>Taxonomy Specific Reports<a class="headerlink" href="#taxonomy-specific-reports" title="Permalink to this headline"></a></h1>
+<p>In addition to the general reports, there the following specialized <em>Reports</em> tab capabilities for taxonomies:</p>
+<ul class="simple">
+<li><p><strong>Taxonomy Statistics Report</strong> which Displays bar charts for the <em>number of nodes per level</em> and the distribution of the <em>number of children</em>.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

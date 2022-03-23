@@ -1,0 +1,23 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _understanding_and_using_workflows_target:
+
+
+Understanding and Using Workflows
+=================================
+
+.. include:: ./workflows.rst
+.. include:: ./workflow_status_and_transition_tab.rst
+.. include:: ./workflow_templates.rst
+.. include:: ./workflow_page_tab_in_an_asset_collection.rst
+.. include:: ./archive_working_copies_workflows_on_commit.rst

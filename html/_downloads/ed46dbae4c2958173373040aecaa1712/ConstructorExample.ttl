@@ -1,0 +1,79 @@
+# baseURI: http://extensionsamples.topbraid.org/constructors/constructorexample
+# imports: http://datashapes.org/dash
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/constructors/constructorexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/constructors/constructorexample>
+  a owl:Ontology ;
+  dash:generateClass ex:Person ;
+  dash:generatePrefixConstants "ex" ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/constructors/constructorexample#" ;
+  rdfs:label "ConstructorExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+ex:Person
+  a owl:Class ;
+  a sh:NodeShape ;
+  dash:constructor ex:PersonConstructor ;
+  rdfs:comment "A sample class to demonstrate dash:Constructors. Persons have first name and last name but with the constructor the user only needs to enter a full name." ;
+  rdfs:label "Person" ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property ex:Person-firstName ;
+  sh:property ex:Person-lastName ;
+.
+ex:Person-firstName
+  a sh:PropertyShape ;
+  sh:path ex:firstName ;
+  sh:datatype xsd:string ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "first name" ;
+.
+ex:Person-lastName
+  a sh:PropertyShape ;
+  sh:path ex:lastName ;
+  sh:datatype xsd:string ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "last name" ;
+.
+ex:PersonConstructor
+  a dash:Constructor ;
+  dash:js """let ss = fullName.split(' ');
+if(ss.length != 2) {
+	throw 'full name needs to contain exactly one space';
+}
+let firstName = ss[0];
+if(firstName.length == 0) {
+	throw 'first name cannot be empty';
+}
+let lastName = ss[1];
+if(lastName.length == 0) {
+	throw 'last name cannot be empty';
+}
+let uri = `${ex.NS}${encodeURIComponent(firstName)}-${encodeURIComponent(lastName)}`;
+ex.createPerson({
+	uri: uri,
+	firstName: firstName,
+	lastName: lastName,
+});""" ;
+  rdfs:comment """This constructor script takes the fullName as argument and attempts to create an instance of ex:Person from it.
+
+To try it out, select the class ex:Person and press New on the Instances panel. Also notice the error handling when you enter an invalid value.""" ;
+  rdfs:label "Person Constructor" ;
+  sh:parameter ex:PersonConstructor-fullName ;
+.
+ex:PersonConstructor-fullName
+  a sh:Parameter ;
+  sh:path ex:fullName ;
+  sh:datatype xsd:string ;
+  sh:description "The full name of the person, consisting of first name and last name, separated by a space." ;
+  sh:name "full name" ;
+.

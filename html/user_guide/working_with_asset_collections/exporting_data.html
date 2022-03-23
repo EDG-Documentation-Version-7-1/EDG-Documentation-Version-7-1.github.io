@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exporting Data &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Exporting Data</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="index-0"></span><section id="exporting-data">
+<span id="index-1"></span><h1>Exporting Data<a class="headerlink" href="#exporting-data" title="Permalink to this headline"></a></h1>
+<p>TopBraid EDG supports the export of metadata and data to JSON-LD, RDF/XML, N-Triples, Turtle, Turtle+, TriG, JSON, CSV, TSV and XML through pre-built functions, a SPARQL endpoint and a GraphQL endpoint.</p>
+<p><strong>Search</strong> and the <strong>SPARQL Query</strong> and <strong>SPARQL Results</strong> panels support the export of subsets of the data in an asset collection based on custom criteria and sorting.
+These panels provide fine-grained control over the selection of data.
+Menus in these panels offer several choices to export the results into spreadsheet-compatible formats (e.g., for Excel) as well as other formats.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../searching/index.html#search-panel"><span class="std std-ref">Search Panel</span></a> and <a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-target"><span class="std std-ref">Using SPARQL to Query and Modify Data</span></a> and <a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-results-panel"><span class="std std-ref">SPARQL Results Panel</span></a>.</p>
+</div>
+<p>Bulk export to AWS S3 can be done through the <strong>Basket</strong> (see <a class="reference internal" href="index.html#bookmarking-asset-collections-and-assets-target"><span class="std std-ref">Bookmarking Asset Collections and Assets</span></a>).</p>
+<section id="export-collection-as-an-rdf-file">
+<h2>Export Collection as an RDF File<a class="headerlink" href="#export-collection-as-an-rdf-file" title="Permalink to this headline"></a></h2>
+<p><strong>Export &lt;collection type&gt; as an RDF File</strong> is available under the <em>Export</em> tab.</p>
+<p>These operations support exporting a collection’s data in a standard RDF serialization format.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Export Taxonomy Options" class="edg-figure" src="../../_images/edg_export_taxonomy_options.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export Taxonomy Options</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Sorted Turtle</strong> includes an extension that supports the TopBraid <em>reification</em> capabilities.
+Reified statements in EDG are converted to standard RDF Statements in the exported file.</p>
+<p><strong>Sorted Turtle+</strong> is an extension to the standard <em>Sorted Turtle</em> that supports TopBraid’s <em>reification</em> capabilities known as “RDF-star” or “RDF*”.
+In this case, the serialization is <em>Turtle+</em> and requires a <em>Turtle+</em> parser in order to import the file.</p>
+<blockquote>
+<div><div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://w3c.github.io/rdf-star/cg-spec">RDF-star</a> is not yet an official W3C standard, but work on the specification is well under way. TopQuadrant is one of the contributors to the specification document. In the meantime, many of the RDF technology vendors, including TopQuadrant, already implemented support for this concept.</p>
+</div>
+</div></blockquote>
+<p>Browser interactions during export vary: the data may be directly displayed, via a kind of <em>view source</em> command or
+the browser might provide (on the link) a right-click menu option to <em>save the link target to a file</em>, without first displaying the link result in the browser,.
+prompting for the file location and name.</p>
+<p>The export of multiple asset collections is supported by placing them into the Basket and then selecting Export to S3 option.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Export Asset Collections Using Basket" class="edg-figure-m" src="../../_images/edg_export_using_basket.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export Asset Collections Using Basket</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This requires that at least one S3 bucket is configured by the EDG Administrator.
+Once set up, select a bucket using <strong>Select S3 Bucket for Exports</strong> under the <em>Manage</em> tab.
+The export will run in the background and, once exported, files will be saved to the S3 bucket.
+This option supports specifying that the exported files be compressed.</p>
+</section>
+<section id="export-collection-with-includes-as-a-file">
+<h2>Export Collection with Includes as a File<a class="headerlink" href="#export-collection-with-includes-as-a-file" title="Permalink to this headline"></a></h2>
+<p><strong>Export &lt;collection type&gt; with Includes as a File</strong> is available under the <em>Export</em> tab.
+Two formats for export with includes are available, <strong>TriG</strong> and <strong>Zip File</strong>.</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Export to Trig or Zip" class="edg-figure" src="../../_images/export_tab_trig_or_zip.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export to Trig or Zip</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><em>With inferences</em> options will add a dedicated graph named <code class="docutils literal notranslate"><span class="pre">urn:x-topbraid:inferences</span></code>, which has any triples inferred via SHACL or SPIN rules.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Inferences are computed on-the-fly and therefore the export may be slow.</p>
+</div>
+</section>
+<section id="publish-for-explorer-users">
+<h2>Publish for Explorer Users<a class="headerlink" href="#publish-for-explorer-users" title="Permalink to this headline"></a></h2>
+<p>On an EDG server that is paired with a <strong>TopBraid Explorer Server</strong> (for read-only access), managers can publish it to the Explorer for viewing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The working copies of all published asset collections might or might not be viewable, depending on the Explorer’s administrative configuration.</p>
+</div>
+<p>Any manager of an asset collection can control its Explorer publication status by selecting Export &gt; Publish Glossary for Explorer Users.
+The view shows a <strong>Status</strong> drop-down for the asset collection, which indicates whether the asset collection was ever <strong>Published</strong> or not (<strong>Unpublished</strong>).</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Publish for Explorer Users Status Options" class="edg-figure-m" src="../../_images/edg_publish_for_explorer_users_status.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Publish for Explorer Users Status Options</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Publish Included Graphs Options" class="edg-figure-l" src="../../_images/edg_publish_included_graphs.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Publish Included Graphs Options</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>It also lists any included asset collections that might also require publication.</p>
+<p>Ensure that all included graphs are either already present on the Explorer server or published along with the asset collection.
+Changing the status causes the following action.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 18%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Current Status</p></th>
+<th class="head"><p>Chosen Option</p></th>
+<th class="head"><p>Result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Unpublished</p></td>
+<td><p>Published</p></td>
+<td><p>Sends a copy of the asset collection and selected includes to the Explorer server.
+Changes the source collection’s status to Published.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Published</p></td>
+<td><p>Update Published Copy</p></td>
+<td><p>Re-sends a current copy and selected includes to the Explorer server, overwriting the previous version(s).
+Keeps the source collection’s status as Published.</p></td>
+</tr>
+<tr class="row-even"><td><p>Published</p></td>
+<td><p>Unpublished</p></td>
+<td><p>Deletes the asset collection on the Explorer server.
+Changes the source collection’s status to Unpublished.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id1">
+<h2>GraphQL Queries<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h2>
+<p>This options allows users of the collection to retrieve and modify asset collection data using new or saved GraphQL queries.</p>
+<p>See <a class="reference internal" href="../../graphql/index.html#graphql-target"><span class="std std-ref">GraphQL</span></a> for details.</p>
+</section>
+<section id="asset-collection-specific-exports">
+<h2>Asset Collection Specific Exports<a class="headerlink" href="#asset-collection-specific-exports" title="Permalink to this headline"></a></h2>
+<p>These exports are only available for specific collection types</p>
+<section id="export-hierarchy-spreadsheet">
+<span id="export-hierarchy-spreadsheet-target"></span><h3>Export Hierarchy Spreadsheet<a class="headerlink" href="#export-hierarchy-spreadsheet" title="Permalink to this headline"></a></h3>
+<p><strong>Export Hierarchy Spreadsheet</strong> is available under the <em>Export</em> tab only for <em>Taxonomies</em> collections.
+It outputs an entire taxonomy tree in a spreadsheet compatible format.</p>
+</section>
+<section id="export-concept-overview-spreadsheet">
+<span id="export-concept-overview-target"></span><h3>Export Concept Overview Spreadsheet<a class="headerlink" href="#export-concept-overview-spreadsheet" title="Permalink to this headline"></a></h3>
+<p><strong>Export Concept Overview Spreadsheet</strong> is available under the <em>Export</em> tab only for <em>Taxonomies</em> collections.
+It outputs all taxonomy concepts in a spreadsheet compatible format.
+For each concept, this output includes every available property as a spreadsheet column.</p>
+</section>
+<section id="export-sharepoint-term-store">
+<span id="export-sharepoint-term-store-target"></span><h3>Export SharePoint Term Store<a class="headerlink" href="#export-sharepoint-term-store" title="Permalink to this headline"></a></h3>
+<p><strong>Export SharePoint Term Store</strong> is available under the <em>Export</em> tab only for <em>Taxonomies</em> collections.
+It updates the SharePoint term store to reflect the current contents of a collection.
+All terms in the collection are updated.</p>
+</section>
+<section id="export-ontology-as-rdf-schema-file">
+<h3>Export Ontology as RDF Schema File<a class="headerlink" href="#export-ontology-as-rdf-schema-file" title="Permalink to this headline"></a></h3>
+<p><strong>Export Ontology as RDF Schema File</strong> is available under the <em>Export</em> tab only for <em>Ontologies</em> collections.
+It produces a simple, approximated RDF Schema version of the current ontology in SHACL.
+The output in in Turtle format.</p>
+</section>
+<section id="export-ontology-as-owl-file">
+<h3>Export Ontology as OWL File<a class="headerlink" href="#export-ontology-as-owl-file" title="Permalink to this headline"></a></h3>
+<p><strong>Export Ontology as OWL File</strong> is available under the <em>Export</em> tab only for <em>Ontologies</em> collections.
+It produces a simple, approximated OWL version of the current ontology in SHACL.
+The output in in Turtle format.</p>
+</section>
+<section id="export-crosswalk-as-spreadsheet">
+<h3>Export Crosswalk as Spreadsheet<a class="headerlink" href="#export-crosswalk-as-spreadsheet" title="Permalink to this headline"></a></h3>
+<p><strong>Export Crosswalk as Spreadsheet</strong> is available under the <em>Export</em> tab only for <em>Crosswalks</em> collections.
+It creates a comma-separated spreadsheet containing one row for each mapping in a Crosswalk.</p>
+</section>
+<section id="export-avro-json">
+<h3>Export Avro JSON<a class="headerlink" href="#export-avro-json" title="Permalink to this headline"></a></h3>
+<p><strong>Export Avro JSON</strong> is available under the <em>Export</em> tab only for <em>Data Assets</em> collections.
+It creates one or more Avro files in JSON format for database tables and allows users to select the tables to export.</p>
+</section>
+<section id="normalized-concepts">
+<h3>Normalized Concepts<a class="headerlink" href="#normalized-concepts" title="Permalink to this headline"></a></h3>
+<p><strong>Normalized Concepts (Troubleshooting)</strong> is available under the <em>Export</em> tab only for <em>Content Tagsets</em> collections.
+It generates a normalized version of the Tagging vocabulary used in a Content Tag Set, as it would be seen by AutoClassifier (useful for troubleshooting).
+The output is in Turtle format.</p>
+</section>
+</section>
+<section id="export-to-s3">
+<h2>Export to S3<a class="headerlink" href="#export-to-s3" title="Permalink to this headline"></a></h2>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline"></a></h3>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Setup Options" class="edg-figure" src="../../_images/edg_setup_options.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Setup Options</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>From Server Administration in EDG, configure your S3 bucket in External System Integration Management.</p></li>
+</ol>
+<blockquote>
+<div><figure class="align-center" id="id8">
+<img alt="TopBraid EDG External System Integration Page" class="edg-figure" src="../../_images/edg_external_system_integration.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG External System Integration Page</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Choose authentication type appropriate for your organization.
+<a class="reference external" href="https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default">https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default</a></p>
+<p>Test the connection after saving.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Test Connection Button" class="edg-figure" src="../../_images/edg_test_connection_button.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Test Connection Button</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>In EDG Configuration, select the bucket for the default location for S3 storage for your EDG application and save.</p></li>
+</ol>
+<blockquote>
+<div><figure class="align-center" id="id10">
+<img alt="TopBraid EDG S3 Configuration Paraemeters Section" class="edg-figure" src="../../_images/edg_s3_config_parameters.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG S3 Configuration Paraemeters Section</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div></blockquote>
+</section>
+<section id="using-the-s3-export">
+<h3>Using the S3 Export<a class="headerlink" href="#using-the-s3-export" title="Permalink to this headline"></a></h3>
+<p>S3 Export uses the Basket feature of EDG.</p>
+<p>Add your collection(s) to the Basket:</p>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG Add Collection to Basket Dialog" class="edg-figure" src="../../_images/edg_add_collection_to_basket.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Add Collection to Basket Dialog</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Navigate to the Basket:</p>
+<figure class="align-center" id="id12">
+<img alt="TopBraid EDG Navigation Bar with Basket Highlighted" class="edg-figure-s" src="../../_images/edg_navigation_bar_basket.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Navigation Bar with Basket Highlighted</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Check the collections you want to export and select Export to S3:</p>
+<figure class="align-center" id="id13">
+<img alt="TopBraid EDG Export to S3 Options Highlighted" class="edg-figure" src="../../_images/edg_basket_export_to_s3.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export to S3 Options Highlighted</strong></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Version will be added from the version metadata in the collection automatically.
+Change any settings here and then submit:</p>
+<figure class="align-center" id="id14">
+<img alt="TopBraid EDG Export to S3 Form" class="edg-figure" src="../../_images/edg_export_to_s3.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export to S3 Form</strong></span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The export will run in the background.
+An Administrator can check on the status through the Server Administration – Scheduled Jobs page.
+Once the job completes, it is no longer listed on this page.
+Success or failure is logged to Tomcat logs and also notifications sent (if enabled).</p>
+<figure class="align-center" id="id15">
+<img alt="TopBraid EDG Scheduled Jobs Page" class="edg-figure" src="../../_images/edg_scheduled_jobs.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Scheduled Jobs Page</strong></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>If email is configured on the EDG application, the user who submits the export will get an email notification when it is complete.</p>
+<figure class="align-center" id="id16">
+<img alt="TopBraid EDG S3 Export Complete Email" class="edg-figure" src="../../_images/edg_s3_export_complete_email.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export Complete Email</strong></span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The folders are automatically created in S3 for the type of collection that is being exported.</p>
+<figure class="align-center" id="id17">
+<img alt="TopBraid EDG S3 Export Folders Page" class="edg-figure" src="../../_images/edg_s3_export_folders.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Export Folders Page</strong></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

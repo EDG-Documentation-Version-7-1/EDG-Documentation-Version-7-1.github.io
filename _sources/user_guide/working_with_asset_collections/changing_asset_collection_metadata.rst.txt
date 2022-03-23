@@ -1,0 +1,49 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Asset Collection; Metadata
+
+.. _changing_asset_collection_metadata_target:
+
+
+Changing Asset Collection Metadata
+----------------------------------
+
+When a collection is in edit mode, clicking on the Home button in the header bar or the title of the collection in the header bar will display information about the collection itself.
+Edit the information about the collection itself, its subject area or version data for example, using the same Editor application as for other assets.
+
+.. figure:: _images/edg_geography_taxonomy.jpeg
+  :alt: TopBraid EDG Geography Taxonomy Page
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Geography Taxonomy Page**
+
+  In addition to the *Metadata* view, *Ontologies* collections (see :ref:`working_with_ontologies_target`) have a drop down to switch to the *GraphQL Schema* view.
+
+  .. figure:: _images/ontology_dropdown_views.png
+    :alt: TopBraid EDG Ontologies Dropdown Views
+    :align: center
+    :class: edg-figure
+
+
+  **TopBraid EDG Ontologies Dropdown Views**
+
+Use that view to set information used by EDG to generate a GraphQL schema that drives the EDG user interface if using the Data Graphs collection type, for example.
+In the following figure, three classes from the Geograph Ontology are set to be public classes for the ontology.
+
+.. figure:: _images/set_ontology_graphql_schema_view.png
+  :alt: TopBraid EDG Ontologies GraphQL Schema Settings
+  :align: center
+  :class: edg-figure
+
+
+  **TopBraid EDG Ontologies GraphQL Schema Settings**

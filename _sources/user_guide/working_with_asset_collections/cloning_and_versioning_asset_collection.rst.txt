@@ -1,0 +1,93 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Asset Collection; Cloning
+
+.. index:: pair: Asset Collection; Versioning
+
+.. _cloning_and_versioning_asset_collection_target:
+
+
+Cloning and Versioning an Asset Collection
+------------------------------------------
+
+Create a Cloned Version
+^^^^^^^^^^^^^^^^^^^^^^^
+
+**Create a Cloned Version** is available under the *Manage* tab. It creates a clone of the current asset collection.
+The clone is created with the same content and user permission settings as the original asset collection.
+However, neither the change history, saved SPARQL queries, saved searches, working copies, comments or tasks will be cloned.
+
+Cloning is often used to "fork off” a version of an asset collection, so that it can be referenced and imported separately from the current version.
+For example, a user might start with an asset collection called *People* and, upon reaching a milestone, create a clone and call the clone *People 1.0.*.
+Then, another asset collection that should only use terms from version 1.0 could change its includes to reference the clone, while ongoing work towards version 2.0 continues on the main *People* asset collection.
+
+.. note:: The EDG Basket also offers *Clone* operation.
+
+Asset Collection Versioning
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Multiple asset collections can be cloned and versioned together in one step, including their “includes”.
+To do this, place collections to clone into the basket and select the check box for the ones to be cloned.
+Use the operations menu to select *Create a new version*.
+
+.. figure:: _images/edg_basket_asset_collection.jpeg
+  :alt: TopBraid EDG Basket with Asset Collection
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Basket with Asset Collection**
+
+This starts the versioning process and prompts for the following choices:
+
+* **Clone Includes**: Optional. If checked, the process will also create a new version for any **directly** included collections.
+  If not checked, the new version will include the same includes as the original collection.
+  Note that this feature is intended for the simple single-level includes case.
+  If the included collection contains further includes, they are not handled automatically.
+
+* **Version**: Required. The version stored in the metadata about the collection.
+
+* **Keep Subject Areas**: Optional. If checked existing subject area settings will be retained for the new version of the collection.
+
+* **Name**: Required. The name of the new version of the collection.
+  The new name for each “include” is also required.
+
+The figure below shows a taxonomy that includes an ontology where the process will create a clone of both the taxonomy and the ontology and where the Subject Area settings will be retained.
+
+.. figure:: _images/edg_batch_create_new_version.jpeg
+  :alt: TopBraid EDG Batch Create a New Version Form
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Batch Create a New Version Form**
+
+Once the names and other options are set, select Continue.
+The following figure shows a screenshot indicating success and shows links to the new collections.
+
+.. figure:: _images/edg_successful_batch_create_new_version.jpeg
+  :alt: TopBraid EDG Successful Batch Creation of New Version
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Successful Batch Creation of New Version**
+
+The new version number is set in the metadata for the collection.
+
+.. figure:: _images/edg_metadata_overview_status.jpeg
+  :alt: TopBraid EDG Metadata Overview and Status
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Metadata Overview and Status**
+
+
+Note that this process does not automatically change the External Graph URI under the Settings tab if that is in use.
+That URI is sometimes used as part of managing versions of collections outside of EDG.

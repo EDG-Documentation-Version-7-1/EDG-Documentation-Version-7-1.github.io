@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentication for TopBraid EDG &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LDAP Configuration" href="ldap_configuration.html" />
+    <link rel="prev" title="EDG Server Platform Considerations" href="edg_server_platform_considerations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="edg_server_platform_considerations.html">EDG Server Platform Considerations</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Authentication for TopBraid EDG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#end-user-authentication">End User Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#web-service-authentication">Web Service Authentication</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_configuration.html">LDAP Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oauth_authentication.html">OAuth Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edg_server_installation.html#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_type_app_data_storage.html">Database Type: Application data storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure_logging.html">Configure Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="accessing_edg_application.html">Accessing the EDG Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>Authentication for TopBraid EDG</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="authentication-for-topbraid-edg">
+<span id="authentication-edg-background"></span><h1>Authentication for TopBraid EDG<a class="headerlink" href="#authentication-for-topbraid-edg" title="Permalink to this headline"></a></h1>
+<p>All authentication for TopBraid is handled by using standard Java EE web container methods.
+Once inside the container, users are free to design their own RBAC designs, such as TopBraid EDG’s <em>User Roles</em> management or Governance Roles for vocabulary or asset models.
+Some of the details will depend on the authentication Realm set up for Tomcat – i.e. LDAP, AD, etc. However, authentication is always a handshake between the entity requiring access and the web container (e.g. Tomcat), not TopBraid Suite applications.
+Please see sections below for details on LDAP, SAML and OAuth authentication.</p>
+<p>Organization-specific IT policies will largely dictate interactions with the web container to authenticate users and services.
+Therefore, TopQuadrant can only play an advisory role for getting started with authentication issues.</p>
+<p>Consult Java EE tutorials for a good starting point on authentication methods.
+TopBraid supports Form, Basic and no authentication:</p>
+<ol class="arabic simple">
+<li><p><strong>No Authentication</strong>. No user id or password is required to invoke services.
+This is useful for Linked Open Data applications and applications that are used openly behind firewalls.
+This should only be used for read-only servers and the administrator should ensure that the <em>Enable SPARQL Updates</em>
+parameter in <a class="reference internal" href="../edg_administration_and_configuration/index.html#edg-administration-and-configuration"><span class="std std-ref">EDG Administration and Configuration</span></a> is set to <code class="docutils literal notranslate"><span class="pre">false</span></code>, which is the default, that blocks updates.</p></li>
+<li><p><strong>Form-based authentication</strong>. This is the best choice for all UI-based applications, such as EDG and SWP-based applications.
+Form-based authentication will display a form for entering authentication, pass the challenge to the authentication agent, and respond with the challenge result.
+On logout, the user is logged out from the container.</p></li>
+<li><p><strong>Basic authentication</strong>. This should be used for access via 3rd party entities, such as web services.
+It is not convenient for user-based authentication because the user cannot log out of the system without closing the browser.
+It is recommended to use Basic authentication when the server is used for web services and an administrator needs to occasionally log in to perform maintenance.
+* When using SAML, the IDP performs the authentication unless an API request with BASIC authorization header, which will need to use BASIC as the auth-method.</p></li>
+</ol>
+<section id="end-user-authentication">
+<span id="index-0"></span><h2>End User Authentication<a class="headerlink" href="#end-user-authentication" title="Permalink to this headline"></a></h2>
+<p>If user logout is required, then it is best to use Form authentication.
+In this case the application controls the login and logout pages that are displayed to the user.
+When a user logs out, they are logged out from the web application container.</p>
+<p>Some user information is cached in the graph &lt;<a class="reference external" href="urn:x-evn-user-data">urn:x-evn-user-data</a>&gt; of the active TopBraid workspace.
+This information is passed to TopBraid from the web application container at login.
+Helper functions are available from any SPARQL context, including <code class="docutils literal notranslate"><span class="pre">smf:currentUserName()</span></code>, <code class="docutils literal notranslate"><span class="pre">smf:hasCurrentUser()</span></code>, and <code class="docutils literal notranslate"><span class="pre">smf:userWithName()</span></code>.</p>
+<section id="role-based-access-control-rbac-in-topbraid">
+<span id="index-1"></span><h3>Role-Based Access Control (RBAC) in TopBraid<a class="headerlink" href="#role-based-access-control-rbac-in-topbraid" title="Permalink to this headline"></a></h3>
+<p>TopBraid does not directly handle user authentication, which is performed by an authentication layer, such as LDAP or Active Directory, that interacts with the web application container (Tomcat).
+Once a user has passed the authentication challenge from the web application, the user id and roles are cached in TopBraid.
+An important implication is that the TopBraid infrastructure cannot know about the existence of a user until they have successfully logged in to the web container.</p>
+<p>Once a user has successfully passed authentication by the web container, user information is cached in the <a class="reference external" href="urn:x-evn-user-data">urn:x-evn-user-data</a> graph in the TopBraid workspace.
+Useful SPARQL functions for access to user information accessible by TopBraid include the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">smf:currentUserName</span></code>: Gets the name of the user that is currently logged into TopBraid. Should be preceded by <code class="docutils literal notranslate"><span class="pre">smf:hasCurrentUser</span></code> to avoid exceptions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smf:userWithName</span></code>: Converts a user name into a URI resource, following the default settings in TopBraid.
+Often used in conjunction with <code class="docutils literal notranslate"><span class="pre">smf:currentUserName()</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">teamwork:currentUserHasPrivilege</span></code>: Checks whether the currently logged in user has a given privilege, specified by a role property.
+The current user must have that role or a sub-property thereof, for the given governed resource.
+The query will be executed on the given team graph.</p></li>
+</ul>
+</section>
+</section>
+<section id="web-service-authentication">
+<h2>Web Service Authentication<a class="headerlink" href="#web-service-authentication" title="Permalink to this headline"></a></h2>
+<p>Web services invocation on servers requiring authentication can use Basic or Form-based authentication.
+Basic authentication using HTTPS encryption is recommended. SAML SSO cannot be used for web services.
+Please see SAML below for more information.</p>
+<section id="basic-authentication">
+<span id="index-2"></span><h3>Basic Authentication<a class="headerlink" href="#basic-authentication" title="Permalink to this headline"></a></h3>
+<p>Basic authentication should be used for access by web services.
+Basic authentication relies on a Base64 encoded ‘Authorization’ header whose value consists of the word ‘Basic’ followed by a space followed by the Base64 encoded name:password.
+This is better suited for service-only access because the only way a user can log out is to shut down their browser.
+The URL with header information can be submitted with authentication information.
+Here’s an example using cURL to access a SPARQLMotion service named <code class="code docutils literal notranslate"><span class="pre">DisplaySimpleHtml</span></code> in TopBraid:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl -H “Authorization: Basic c2NvdHQ6MTIzNDU=” -X POST “http://localhost:8080/edg/tbl/sparqlmotion?id=DisplaySimpleHtml”
+</pre></div>
+</div>
+<p>GET works as well.
+The base 64 in the middle translates to the uid:pwd string “scott:12345”.</p>
+<p>Some other examples of service calls with parameters (be sure to encode the URL before submitting as a web service call) :</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl -H “Authorization: Basic c2NvdHQ6MTIzNDU=” -X POST “http://localhost:8080/edg/tbl/sparql
+?default-graph-uri=http://topbraid.org/examples/kennedys&amp;format=application/sparql-results+json
+&amp;query=SELECT ?s WHERE {?s a &lt;http://www.w3.org/2002/07/owl#Class&gt;}”
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>curl -H “Authorization: Basic c2NvdHQ6MTIzNDU=” -X POST “http://localhost:8080/edg/tbl/sparql
+?query=SELECT ?s WHERE { GRAPH &lt;http://topbraid.org/examples/kennedys&gt; {?s a &lt;http://www.w3.org/2002/07/owl#Class&gt;} }”
+</pre></div>
+</div>
+<p>wget has a similar protocol:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>wget –save-cookies=”/tmp/cookies” –header “Content-type: application/x-www-form-urlencoded”
+ –post-data=”j_username=scott&amp;j_password=tomcat” http://localhost:8080/edg/j_security_check
+</pre></div>
+</div>
+<p>For secure access, web services should use HTTPS encryption.</p>
+</section>
+<section id="form-based-authentication">
+<span id="index-3"></span><h3>Form-Based Authentication<a class="headerlink" href="#form-based-authentication" title="Permalink to this headline"></a></h3>
+<p>Access using Form-based authentication, while not recommended, is possible using cookies generated by the server.
+One method is to respond to the challenge with a hardcoded URL with a valid user id and password.
+The general form of this response is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>http://[host]:[port]/edg/j_security_check?j_username=[username]&amp;j_password=[password]
+</pre></div>
+</div>
+<p>Another method is to request an HTTP cookie that can be used in subsequent requests.
+The following is an example script for accessing a TopBraid form-based server.
+In summary, the script interaction has three parts:</p>
+<ol class="arabic simple">
+<li><p>The client requests a cookie, e.g., <code class="docutils literal notranslate"><span class="pre">loginRequestCookie</span></code>, to use for logging in using <code class="docutils literal notranslate"><span class="pre">GET</span></code> or <code class="docutils literal notranslate"><span class="pre">POST</span></code>.</p></li>
+<li><p>The client logs in, and if successful, the client will receive another cookie, e.g., <code class="docutils literal notranslate"><span class="pre">loginSuccessCookie</span></code>, which is saved for subsequent requests.</p></li>
+<li><p>The client uses the <code class="docutils literal notranslate"><span class="pre">loginSuccessCookie</span></code> for subsequent TopBraid service requests, such as the SPARQL endpoint call in the example.</p></li>
+</ol>
+<p>Assuming the following is defined in a file named <code class="docutils literal notranslate"><span class="pre">authenticateCallService.sh</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+
+#The script needs the servername:portnumber, username and password respectively to work correctly.
+
+if [[ $# -ne 3 ]] ; then
+echo &#39;Invalid command. Please run authenticate script in following format ./authenticateCallService &lt;servername:port&gt; &lt;username&gt; &lt;password&gt;&#39;
+  exit 1
+fi
+
+curl -c ~/loginRequestCookie -X POST &quot;http://$1/edg/tbl&quot;  -D ~/firstReqHeaders &gt; /dev/null
+
+#The server sends a new cookie as a response to this request. Use that cookie for subsequent requests.
+curl -i -b ~/loginRequestCookie -d &quot;j_username=$2&quot; -d &quot;j_password=$3&quot; -L http://$1/edg/tbl/swp?_viewName=home http://$1/edg/tbl/j_security_check -c ~/loginSuccessCookie
+
+curl -b ~/loginSuccessCookie -X POST &quot;http://$1/edg/tbl/sparql&quot; -G --data-urlencode &quot;query=SELECT * WHERE{?s a &lt;http://www.w3.org/2002/07/owl#Class&gt;} &quot;
+--data-urlencode &quot;default-graph-uri=http://topbraid.org/examples/kennedys&quot; --data &quot;format=json&quot; -D ~/thirdReqHeaders
+
+#Logout when done so as not to exhaust the user limit on the license
+curl -b ~/loginSuccessCookie -X POST &quot;http://$1/edg/tbl/purgeuser&quot; -D ~/logoutReqHeaders
+</pre></div>
+</div>
+<p>The script can be invoked by the command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>./authenticateCallService &lt;servername:port&gt; &lt;username&gt; &lt;password&gt;
+</pre></div>
+</div>
+<p>For secure access, web services should use HTTPS encryption.</p>
+</section>
+<section id="authenticating-calls-that-use-sparqls-service-keyword">
+<h3>Authenticating calls that use SPARQL’s SERVICE keyword<a class="headerlink" href="#authenticating-calls-that-use-sparqls-service-keyword" title="Permalink to this headline"></a></h3>
+<p>To enable the use of the SPARQL SERVICE keyword to retrieve data from SPARQL endpoints that require authentication, add an entry to Password Management in Server Administration of the following form:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>username@localhost:8080/edg/tbl/sparql : password
+</pre></div>
+</div>
+<p>For a query like the following, TopBraid EDG will check whether there is a <a class="reference external" href="mailto:user&#37;&#52;&#48;uri">user<span>&#64;</span>uri</a> key in storage that ends with the given URI, and returns the first one.</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="nv">?fname</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+       <span class="k">SERVICE</span> <span class="nl">&lt;https://localhost:8080/edg/tbl/sparql&gt;</span> <span class="p">{</span>
+               <span class="k">GRAPH</span> <span class="nl">&lt;http://topbraid.org/examples/kennedys&gt;</span> <span class="p">{</span>
+                       <span class="nv">?subject</span> <span class="nl">&lt;http://topbraid.org/examples/kennedys#firstName&gt;</span> <span class="nv">?fname</span>
+               <span class="p">}</span>
+       <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This is used to generate the credentials for basic authentication.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../edg_administration_and_configuration/password_management.html#password-management"><span class="std std-ref">Password Management</span></a> for more information about managing passwords in storage.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="edg_server_platform_considerations.html" class="btn btn-neutral float-left" title="EDG Server Platform Considerations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ldap_configuration.html" class="btn btn-neutral float-right" title="LDAP Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

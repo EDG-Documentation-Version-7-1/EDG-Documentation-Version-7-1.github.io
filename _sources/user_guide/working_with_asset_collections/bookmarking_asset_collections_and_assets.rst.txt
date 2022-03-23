@@ -1,0 +1,55 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Asset Collection; Basket
+
+.. index:: pair: Asset; Basket
+
+.. index:: pair: Asset Collection; Bookmarking
+
+.. _bookmarking_asset_collections_and_assets_target:
+
+
+Bookmarking Asset Collections and Assets
+----------------------------------------
+
+.. index:: Basket
+
+Basket
+^^^^^^
+
+Each user can maintain a personal list of “bookmarked” asset collections or individual assets in a *Basket*.
+The *Basket* is available in the left navigation menu and in addition to quick reference, allows for individual or batch operations on collections.
+Those operations are to create new versions of collections or export files in .ttl or .trig format to Amazon S3 buckets for external use.
+
+.. figure:: _images/edg_basket_view.jpeg
+  :alt: TopBraid EDG Basket View
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Basket View**
+
+To add a collection, open the collection and select the star icon in the collection’s header.
+Re-selecting the star icon in the collection’s header will remove it.
+When viewing the Basket, collections can be removed individually or as a group using the drop-down *Remove element*.
+
+.. figure:: _images/star_icon_add_remove_collection.png
+  :alt: Star Icon to Add or Remove Collection
+  :align: center
+  :class: edg-figure-s
+
+  **Star Icon to Add or Remove Collection**
+
+To add an asset, select it in the editor and then in the asset editing form for the asset select
+|available actions for this| *(Available actions for this) > Add to Basket*.
+
+.. |available actions for this| image:: _images/available_actions_for_this.png
+   :width: 20px

@@ -1,0 +1,61 @@
+# baseURI: http://extensionsamples.topbraid.org/services/resourceserviceexample
+# imports: http://datashapes.org/dash
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/services/resourceserviceexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/services/resourceserviceexample>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/services/resourceserviceexample#" ;
+  rdfs:label "ResourceServiceExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+ex:ClassTreeService
+  a dash:ResourceService ;
+  dash:js """
+/**
+ * Constructs an HTML snippet representing a class tree.
+ * @param cls {rdfs_Class}  the rdfs:Class to get the sub class tree of
+ * @returns {string}
+ */
+const classTree = (cls) => {
+    return `<div><span>${cls}</span>${subClassTree(cls)}</div>`;
+}
+
+/**
+ * Constructs an HTML list of all direct subclasses of a given class.
+ * @param cls {rdfs_Class}  the rdfs:Class to get the sub class tree of
+ * @returns {string}
+ */
+const subClassTree = (cls) => {
+    if(cls.subclasses.length == 0) {
+        return '';
+    }
+    else {
+        return `
+            <ul>
+                ${cls.subclasses.
+					sort((a, b) => a.toString().localeCompare(b.toString())).
+					map(subClass => `<li>${classTree(subClass)}</li>`).
+					join('')}
+            </ul>
+        `;
+    }
+}
+
+classTree(rdfs.asClass(focusNode));""" ;
+  dash:responseContentType "text/html" ;
+  rdfs:comment """An example web service for rdfs:Classes that takes the focusNode as starting point and produces an HTML tree of all (recursive) subclasses. Make sure to not call this for cyclic class hierarchies!
+
+To try this out, go the the Web Services section of the Reports tab. As parameters try something like namePart1: "dash" and namePart2: "Script".""" ;
+  rdfs:label "Class Tree" ;
+.
+rdfs:Class
+  dash:resourceService ex:ClassTreeService ;
+.

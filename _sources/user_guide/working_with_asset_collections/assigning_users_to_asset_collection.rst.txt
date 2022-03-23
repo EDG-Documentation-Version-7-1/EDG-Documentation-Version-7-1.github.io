@@ -1,0 +1,61 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Asset Collection; Users
+
+.. _assigning_users_to_asset_collection_target:
+
+
+Assigning Users to an Asset Collection
+--------------------------------------
+
+The *Users* tab lists current permissions and roles for the asset collection or workflow’s working copy.
+For details on how permissions and roles work in TopBraid EDG, please see the Access Control documentation.
+
+Users with at least **manager** profile use this page to modify roles and permissions, while it is read-only for other users.
+
+.. index:: Permissions
+
+Collection Permissions
+^^^^^^^^^^^^^^^^^^^^^^
+
+For any asset collection and a working copy of a collection in a context of a workflow, access to its basic viewing, editing, and utility functions is controlled by the three nested permission profiles: *viewer*, *editor*, and *manager* (where each profile is a superset of the preceding one).
+On each collection, these permissions are set for various users, either as individuals or as security roles (e.g., from LDAP).
+
+**Collection Permissions** section list the three permission profiles and, for each, users that have it.
+A *blank* setting indicates that no users have this profiles.
+
+In a context of a production copy of an asset collection, permissions can be set for any user.
+In a context of a workflow permissions can be set only for users that already have (at least) a viewers privileges for the production copy.
+
+A given user can have permission profiles for the collection itself (production copy) that differ from a profile for one of its workflows working copies.
+Similarly, they could have different permissions in the context of different workflows.
+
+For example, if Jane has **manager** profile for an asset collection, she can give John *viewer* profile for it and *editor* profile for one of its workflow copies.
+John can then make changes in the context of a workflow.
+
+A user that has any governance role for a collection is automatically granted viewer privileges for the collection and any of its workflows.
+Users can also be designated as managers or editors through their governance role.
+
+.. seealso:: For more information see the :ref:`data_governance_target` section of the documentation.
+
+A user with multiple permission profiles on a given collection or workflow receives the greatest level assigned.
+
+.. seealso:: See :ref:`rights_entailed_by_permission_profiles` for details.
+
+Collection Governance Roles
+---------------------------
+
+This section lists governance roles assigned either directly for this collection or indirectly through a governance area it belongs to.
+
+Users with **manager** profile can use this page to assign governance roles to other users: as individuals, as security roles (e.g., from LDAP), or as organizations.
+
+.. seealso:: For details on governance roles, see :ref:`governance_areas_and_roles`.

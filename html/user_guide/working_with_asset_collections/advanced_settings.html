@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Settings &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Advanced Settings</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced-settings">
+<span id="advanced-settings-target"></span><h1>Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permalink to this headline"></a></h1>
+<section id="controlling-namespaces-and-prefixes">
+<span id="id1"></span><h2>Controlling Namespaces and Prefixes<a class="headerlink" href="#controlling-namespaces-and-prefixes" title="Permalink to this headline"></a></h2>
+<p><strong>Namespaces and Prefixes</strong> is available under the <em>Settings</em> tab.
+The namespace prefixes used in the collection, for use in SPARQL queries for example, are visible when this is selected.
+Users with <em>manager</em> privileges for the collection can edit them using Turtle notation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although comments (#) are accepted, they are not preserved.</p>
+</div>
+</section>
+<section id="external-graph-uri">
+<h2>External Graph URI<a class="headerlink" href="#external-graph-uri" title="Permalink to this headline"></a></h2>
+<p><strong>External Graph URI</strong> is available under the <em>Settings</em> tab.
+It defines a URI for the collection for use during imports and exports.
+The <em>Import RDF</em> function automatically redirects any owl:imports statements in an imported RDF file to the collection in EDG with a matching <em>External Graph URI</em>.
+The <em>Export RDF</em> function for a collection with <em>External Graph URI</em> set uses that in the resulting RDF file rather than the internal <em>Graph URI</em> defined by EDG when the collection was created.</p>
+</section>
+<section id="limiting-search-to-local-resources">
+<h2>Limiting Search to Local Resources<a class="headerlink" href="#limiting-search-to-local-resources" title="Permalink to this headline"></a></h2>
+<p><strong>Local Search Options</strong> is available under the <em>Manage</em> tab.
+This option is available only if the asset collection editor offers <a href="#id4"><span class="problematic" id="id5">`Search panel`_</span></a>.
+It determines whether users can select to ‘Return local results only’ on search forms.</p>
+<p>When using <a class="reference internal" href="../searching/index.html#search-panel"><span class="std std-ref">Search Panel</span></a>, there is an option, <strong>Return local results only,</strong> which excludes results that come from included asset collections.
+(A local search only delivers resources having their <em>rdf:type</em> triple in the current collection.)</p>
+<p>By default, users can choose for themselves whether to enable or disable this local results option on any particular search.
+However, users with <em>manager</em> privileges can permanently set this option as either <em>always local or always global</em> for all users who will then see the setting on search panels, but cannot change it.</p>
+</section>
+<section id="configure-notifications">
+<span id="index-0"></span><span id="id2"></span><h2>Configure Notifications<a class="headerlink" href="#configure-notifications" title="Permalink to this headline"></a></h2>
+<p><strong>Configure Notifications</strong> is available under the <em>Manage</em> tab.
+For each asset collection, EDG can send notifications to users in specified roles when specific kinds of change happen.
+Notifications for each asset collection type can be configured for the EDG server. but users with <em>manager</em> privileges can override the EDG-wide defaults.
+In order to receive email notifications, the SMTP parameters in the Server Configuration must be configured.</p>
+<p>Clicking on the Configure Notifications link will display a page listing all available Notification Events together with check-boxes to select the governance roles that will be notified:</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Configuring Notifications Example" class="edg-figure-m" src="../../_images/edg_configuring_notifications_example.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Configuring Notifications Example</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The association of users with the governance roles for a collection is configured via either <strong>Governance Areas</strong> page or directly for a collection on the <strong>Users</strong> tab.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../data_governance/the_governance_model_and_workflows.html#the-governance-model-and-workflows-target"><span class="std std-ref">The Governance Model and Workflows</span></a> for more details.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Workflows can also produce notifications after each step.
+This is an alternative to the events-based notification set here.
+Workflow controlled notifications are specified directly in the workflow templates.</p>
+</div>
+</section>
+<section id="configuring-asset-collection-tabs">
+<span id="index-1"></span><h2>Configuring Asset Collection Tabs<a class="headerlink" href="#configuring-asset-collection-tabs" title="Permalink to this headline"></a></h2>
+<p><strong>Configure Features</strong> is available under the <em>Manage</em> tab.
+It allows managers to selectively remove particular features from the user interface for the specific collection.
+Features that may not scale for large asset collections are marked with “*”.
+The removal of features from the UI might be desired to simplify the user experience or to prevent users using long running, high impact operations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Regardless of this configuration, all features remain available to EDG <em>Administrators</em>.</p>
+</div>
+</section>
+<section id="setting-collection-to-read-only">
+<h2>Setting Collection to Read-only<a class="headerlink" href="#setting-collection-to-read-only" title="Permalink to this headline"></a></h2>
+<p><strong>Read-only</strong> is available under the <em>Manage</em> tab.
+There are two options:</p>
+<ul class="simple">
+<li><p><strong>Everything</strong> which makes the collection read-only for all users. No edits or workflows are allowed in the collection.</p></li>
+<li><p><strong>Includes Only</strong> which makes included collections read-only for all users. Included assets cannot have new property values set for them, for example.</p></li>
+</ul>
+</section>
+<section id="setting-default-language">
+<h2>Setting Default Language<a class="headerlink" href="#setting-default-language" title="Permalink to this headline"></a></h2>
+<p><strong>Default Language</strong> is available under the <em>Manage</em> tab.
+It specifies the default language code for new literals that will be pre-selected on forms.
+The user may select another language code in forms if multiple languages are configured for the EDG server.</p>
+<p>The default language code in EDG are <em>en ar de es fr it pt ru zh</em>. These may have been changed by an Administrator.
+Please check the language codes available on the EDG server prior to setting this field.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

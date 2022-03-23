@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assigning Users to an Asset Collection &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Assigning Users to an Asset Collection</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="assigning-users-to-an-asset-collection">
+<span id="assigning-users-to-asset-collection-target"></span><span id="index-0"></span><h1>Assigning Users to an Asset Collection<a class="headerlink" href="#assigning-users-to-an-asset-collection" title="Permalink to this headline"></a></h1>
+<p>The <em>Users</em> tab lists current permissions and roles for the asset collection or workflow’s working copy.
+For details on how permissions and roles work in TopBraid EDG, please see the Access Control documentation.</p>
+<p>Users with at least <strong>manager</strong> profile use this page to modify roles and permissions, while it is read-only for other users.</p>
+<section id="collection-permissions">
+<span id="index-1"></span><h2>Collection Permissions<a class="headerlink" href="#collection-permissions" title="Permalink to this headline"></a></h2>
+<p>For any asset collection and a working copy of a collection in a context of a workflow, access to its basic viewing, editing, and utility functions is controlled by the three nested permission profiles: <em>viewer</em>, <em>editor</em>, and <em>manager</em> (where each profile is a superset of the preceding one).
+On each collection, these permissions are set for various users, either as individuals or as security roles (e.g., from LDAP).</p>
+<p><strong>Collection Permissions</strong> section list the three permission profiles and, for each, users that have it.
+A <em>blank</em> setting indicates that no users have this profiles.</p>
+<p>In a context of a production copy of an asset collection, permissions can be set for any user.
+In a context of a workflow permissions can be set only for users that already have (at least) a viewers privileges for the production copy.</p>
+<p>A given user can have permission profiles for the collection itself (production copy) that differ from a profile for one of its workflows working copies.
+Similarly, they could have different permissions in the context of different workflows.</p>
+<p>For example, if Jane has <strong>manager</strong> profile for an asset collection, she can give John <em>viewer</em> profile for it and <em>editor</em> profile for one of its workflow copies.
+John can then make changes in the context of a workflow.</p>
+<p>A user that has any governance role for a collection is automatically granted viewer privileges for the collection and any of its workflows.
+Users can also be designated as managers or editors through their governance role.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For more information see the <span class="xref std std-ref">data_governance_target</span> section of the documentation.</p>
+</div>
+<p>A user with multiple permission profiles on a given collection or workflow receives the greatest level assigned.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="../workflows/workflows.html#rights-entailed-by-permission-profiles"><span class="std std-ref">Rights Entailed by Permission Profiles</span></a> for details.</p>
+</div>
+</section>
+</section>
+<section id="collection-governance-roles">
+<h1>Collection Governance Roles<a class="headerlink" href="#collection-governance-roles" title="Permalink to this headline"></a></h1>
+<p>This section lists governance roles assigned either directly for this collection or indirectly through a governance area it belongs to.</p>
+<p>Users with <strong>manager</strong> profile can use this page to assign governance roles to other users: as individuals, as security roles (e.g., from LDAP), or as organizations.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For details on governance roles, see <a class="reference internal" href="../data_governance/the_governance_model_and_workflows.html#governance-areas-and-roles"><span class="std std-ref">Governance Areas (and Roles)</span></a>.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

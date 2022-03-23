@@ -1,0 +1,41 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. index:: pair: Asset Collection; Delete
+
+.. index:: pair: Asset Collection; Clear
+
+.. _deleting_asset_collection_target:
+
+
+Deleting or Clearing an Asset Collection
+----------------------------------------
+
+Delete
+^^^^^^
+
+**Delete** is available under the *Manage* tab.
+Delete removes the asset collection.
+When selected a message to confirm the deletion appears and clicking OK deletes the asset collection including any working copies and history data.
+If the collection is included by another collection it cannot be deleted and and error is reported showing the including collections.
+
+.. note:: Use caution as this action is not recoverable without resorting to restore from backup.
+
+Clear
+^^^^^
+
+**Clear** is available under the *Manage* tab.
+Clear removes all content in the asset collection, including its history, working copies, comments, and tasks.
+The empty collection itself, its includes and its user permission settings are preserved.
+This feature can be used prior to import, for example, when replacing the collection content with an externally generated version.
+
+.. note:: Use caution as this action is not recoverable without resorting to restore from backup.

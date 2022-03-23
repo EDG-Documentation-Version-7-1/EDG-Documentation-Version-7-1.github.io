@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Import RDF File &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Import RDF File</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="import-rdf-file">
+<span id="importing-rdf-target"></span><span id="index-0"></span><h1>Import RDF File<a class="headerlink" href="#import-rdf-file" title="Permalink to this headline"></a></h1>
+<p><strong>Import RDF File</strong> is available under the <em>Import</em> tab.
+Any asset collection can import data from an external RDF file.
+The <strong>Import &gt; Import RDF File</strong> link shows a screen where the <strong>Browse</strong> button opens a dialog to select the external RDF file.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Import RDF File Page" class="edg-figure" src="../../_images/edg_import_rdf_file.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Import RDF File Page</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Choose the RDF file and select its <strong>Format</strong>, noting that the file may be compressed.
+The compression formats ZIP (.zip), gzip (.ttl.gz etc) and bzip2 (.ttl.bz2 etc) are supported. Only the first file in a ZIP archive will be imported.</p>
+<p>Then, if applicable select the following options:</p>
+<ul class="simple">
+<li><p><em>Record each new triple in change history</em> (use with care for large RDF files!).
+If importing into a Working Copy, history will always be recorded and this option is greyed out.</p></li>
+<li><p><em>Direct streaming import into production copy</em>, available only for users with at least Managers permission.
+Direct streaming is not available for import into Working Copies.</p></li>
+<li><p><em>Perform constraint validation only</em>
+Validate the RDF file content combined with the existing collection data
+This is necessary because some violations only become apparent for the combined data.</p></li>
+</ul>
+<p>Click <strong>Finish</strong> to complete the the operation.
+A message will indicate whether the import was successful.
+For large imports, this process may take minutes.
+Please check the status on the <em>Reports</em> tab for File History Report.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>If an RDF file contains any “schema” definitions such as classes, properties, or shapes, then it can only be imported it into an Ontologies collection.</p></li>
+<li><p>If an RDF file contains both “instances” and “schema”, either split the file before import or follow instructions in <a href="#id2"><span class="problematic" id="id3">`Copy or Move Instances from Other Asset Collection`_</span></a>.</p></li>
+</ul>
+</div>
+<p>When importing RDF into a Working Copy, the addition of each triple will be recorded as an entry in the change history, where it will be available to all the relevant reports.
+When importing into a Production Copy, the <strong>Record each new triple in change history</strong> checkbox gives you the option of adding these to the change history;</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is <strong>not</strong> recommended when importing large amounts of data.</p>
+</div>
+<p>The option of <em>Direct streaming import into production copy</em> imports the content much more quickly and uses less memory.
+This should only be used for large imports if the user is confident they do not need to do validation or clean up on the data.
+It’s best to perform a backup (e.g. Export RDF File) of the collection prior to importing with direct streaming or use a workflow so that reverting is possible should anything go wrong.</p>
+<p>When importing RDF files into an Ontologies or a Taxonomies collection, EDG performs some transformations (unless the streaming import is chosen):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For Ontologies, “subclass of Thing” statements will be added for classes that have no parents.
+This is done to ensure that these classes are visible in the Class Hierarchy.</p></li>
+<li><p>For Taxonomies, “narrower concept” relationships will be used to generate inverse “broader concept” relationships.
+This is done to ensure that such concepts are visible in the Concept Hierarchy.</p></li>
+</ul>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selected Extension Points &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQs" href="../faqs/index.html" />
+    <link rel="prev" title="The Teamwork Framework" href="teamwork.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extension Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="process.html">General Extension Development Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teamwork.html">The Teamwork Framework</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Selected Extension Points</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#script-based-functions">Script-based Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-functions">Multi-Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constructors">Constructors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-and-commit-scripts">Change and Commit Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resource-actions">Resource Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-services">Web Services</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#web-services-based-on-ads">Web Services based on ADS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#web-services-based-on-functions">Web Services based on Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#web-services-based-on-multi-functions">Web Services based on Multi-Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#web-services-based-on-swp">Web Services based on SWP</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#generators-for-the-problems-and-suggestions-reports">Generators for the Problems and Suggestions Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suggestion-generators">Suggestion Generators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#landing-page-gadgets">Landing Page Gadgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#injecting-css-styles-and-logo">Injecting CSS Styles and Logo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scheduled-jobs">Scheduled Jobs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-notifications">Custom Notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asset-collection-constructors">Asset Collection Constructors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asset-collection-clone-plugins">Asset Collection Clone Plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-asset-collection-types">Custom Asset Collection Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-new-panel-to-the-editor-applications">Adding a New Panel to the Editor Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-new-java-components">Adding new Java Components</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Extension Development</a> &raquo;</li>
+      <li>Selected Extension Points</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="selected-extension-points">
+<span id="ext-points"></span><h1>Selected Extension Points<a class="headerlink" href="#selected-extension-points" title="Permalink to this headline"></a></h1>
+<p>The following sub-sections describe how to use selected extension points.
+The topics listed here do not cover all possible scenarios but are meant as a starting point for the most frequently needed extensions.
+If you have specific needs for modifying TopBraid EDG in your organization that are not covered here, please ask us and we may update this documentation.</p>
+<p>The sections below include links to sample files for most extension points.
+You may put those samples into your TopBraid EDG Studio workspace where you can explore their implementation, try them out and even modify the samples.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Don’t just put all samples into your workspace at once.
+Each of the samples makes changes to the system, so you would see things like unexpected new menu items and background scripts that will be hard to understand without studying them individually.</p>
+</div>
+<section id="script-based-functions">
+<span id="ext-functions"></span><h2>Script-based Functions<a class="headerlink" href="#script-based-functions" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install new SPARQL functions and JavaScript functions in the generated ADS APIs.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/35f410c38c3015804f4dea7323c7a3fb/HelloFunctionExample.api.ttl"><code class="xref download docutils literal notranslate"><span class="pre">HelloFunctionExample.api.ttl</span></code></a></p></li>
+</ul>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Studio rendering the hello function" class="edg-figure-l" src="../_images/HelloFunction.png" />
+<figcaption>
+<p><span class="caption-text"><strong>An example Script-based function in TopBraid EDG (Studio)</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Instructions:</strong></p>
+<p>Instances of <code class="code docutils literal notranslate"><span class="pre">dash:ScriptFunction</span></code> define functions that may be used from SPARQL or ADS scripts.
+Such functions encapsulate almost any business logic that can be expressed in JavaScript/ADS, as value of <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code>.
+The examples and the screenshot illustrate the mechanics.</p>
+<p>Functions may take parameters, which must be declared using <code class="code docutils literal notranslate"><span class="pre">sh:parameter</span></code> and can declare a return type using <code class="code docutils literal notranslate"><span class="pre">sh:returnType</span></code>.
+All this is very similar to <a class="reference external" href="https://w3c.github.io/shacl/shacl-af/#functions">SHACL-SPARQL Functions</a> from the SHACL Advanced Features specification.
+The main difference is that here we use <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> to store the executable body of the function.
+That body needs to use the <code class="code docutils literal notranslate"><span class="pre">return</span></code> keyword to specify the result value (if any).</p>
+<p>There are two kinds of Script-based functions:</p>
+<ul class="simple">
+<li><p><em>read-only functions</em> have no value or false for <code class="code docutils literal notranslate"><span class="pre">dash:canWrite</span></code>.
+These functions execute with a read-only API and are not permitted to make modifications or have side effects.
+These functions will be turned into SPARQL functions - all SPARQL functions are strictly read-only to avoid deadlocks and other SPARQL execution issues.</p></li>
+<li><p><em>read/write functions</em> have <code class="code docutils literal notranslate"><span class="pre">dash:canWrite</span> <span class="pre">true</span></code>.
+These functions are only exposed through the ADS APIs and may make changes to the data and have other side effects.</p></li>
+</ul>
+</section>
+<section id="multi-functions">
+<span id="ext-multi-functions"></span><h2>Multi-Functions<a class="headerlink" href="#multi-functions" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install new ADS functions and SPARQL magic properties that return multiple rows of (potentially) multiple values each.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/5360d492f5b7922a3bd7c2450a4bb4e1/MultiFunctionExample.api.ttl"><code class="xref download docutils literal notranslate"><span class="pre">MultiFunctionExample.api.ttl</span></code></a></p></li>
+</ul>
+<p>See <a class="reference external" href="https://datashapes.org/multifunctions.html">DASH Multi-Functions</a> for technical background and further examples.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Multi-functions should be stored in files ending with <code class="code docutils literal notranslate"><span class="pre">.api.ttl</span></code> so that they are globally registered as SPARQL magic properties.</p>
+</div>
+</section>
+<section id="constructors">
+<span id="ext-constructors"></span><h2>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to override the <em>Create New</em> dialogs for instances of certain classes, for example to initialize new instances from values entered by the user.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/ed46dbae4c2958173373040aecaa1712/ConstructorExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">ConstructorExample.ttl</span></code></a></p></li>
+</ul>
+<p>In this example the class Person has two properties (first name and last name).
+However, when a new instance is created, we want users to only enter the full name and then split that input string into the two name components.
+To do that, the class Person declares a <code class="code docutils literal notranslate"><span class="pre">dash:constructor</span></code>:</p>
+<figure class="align-center" id="id3">
+<img alt="A class definition with a constructor" class="edg-figure-l" src="../_images/ConstructorClass.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Classes can define a Constructor</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Here is how the constructor itself is defined:</p>
+<figure class="align-center" id="id4">
+<img alt="The definition of a constructor" class="edg-figure-l" src="../_images/ConstructorDefinition.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Constructors define input parameters and an ADS script to perform the actual construction</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When the New button is pressed, the following dialog will appear:</p>
+<figure class="align-center" id="id5">
+<img alt="Screenshot of a modified create dialog" class="edg-figure-l" src="../_images/ConstructorCreateDialog.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Create dialog only asks for the parameters defined in the constructor</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The new instance is then derived from the entered parameter value:</p>
+<figure class="align-center" id="id6">
+<img alt="Screenshot of an instance created using the constructor" class="edg-figure-l" src="../_images/ConstructorInstance.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The actual instance is created using the script of the constructor using the parameters as input</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Constructor scripts get the variable <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> as input from the outside, pointing at the selected class.
+All other parameters are mapped to namesake variables based on the entered values, such as <code class="code docutils literal notranslate"><span class="pre">fullName</span></code> here.
+The result value of the script (i.e. the last line) must be the newly created instance - this is needed to instruct the surrounding tool to highlight the new instance.</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Constructors are using class inheritance.
+To keep things simple, there should only ever be one reachable constructor in the parent class hierarchy.
+Constructors of subclasses may however override the constructors of superclasses.</p>
+</div>
+</section>
+<section id="change-and-commit-scripts">
+<span id="ext-change-scripts"></span><h2>Change and Commit Scripts<a class="headerlink" href="#change-and-commit-scripts" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install scripts that are triggered whenever a user makes changes to an asset collection, e.g. by pressing the <em>Save Changes</em> button on a form.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/12675b69ec2703d92c6c2f6f65449ea3/ChangeScriptExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">ChangeScriptExample.ttl</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/edb6ad608245c2812a480e77b4df6e1f/CommitScriptExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">CommitScriptExample.ttl</span></code></a></p></li>
+</ul>
+<p>These scripts can be split in two categories:</p>
+<ul class="simple">
+<li><p><em>pre-commit</em> scripts (<code class="code docutils literal notranslate"><span class="pre">dash:ChangeScript</span></code>) are triggered anytime after a change is done in a graph, and executed within the edit itself.
+In practice, this means that if there is some validation problem, the rule is triggered twice - once when the initial save button was clicked, and the second time when the save is confirmed.
+These rules are also executed in preview mode.
+Therefore, pre-commit rules (<code class="code docutils literal notranslate"><span class="pre">dash:ChangeScript</span></code>) must not have side effects, as this might cause further constraint violations.</p></li>
+<li><p><em>post-commit</em> scripts (<code class="code docutils literal notranslate"><span class="pre">dash:CommitScript</span></code>) are only executed once the edits to the data graph are persisted.
+Unlike their counterpart, these scripts are not triggered in preview mode, or if a constraint violation is blocking an edit.
+These scripts may have side-effects, meaning that updates to other graphs or sending notifications to external systems can be done.</p></li>
+</ul>
+<p>Multiple scripts of the same category can be ordered using the <code class="code docutils literal notranslate"><span class="pre">sh:order</span></code>, with the lower the value, the highest the execution priority.</p>
+<p>In these scripts, the current changes from the active graph can be accessed via <code class="code docutils literal notranslate"><span class="pre">dataset.addedGraphURI</span></code> for resource values that have been added and <code class="code docutils literal notranslate"><span class="pre">dataset.deletedGraphURI</span></code> for resource values that have been deleted, in that particular edit.
+These graphs can be queried by using <code class="code docutils literal notranslate"><span class="pre">graph.withDataGraph(dataset.addedGraphURI,</span> <span class="pre">...)</span></code> or via SPARQL’s <code class="code docutils literal notranslate"><span class="pre">GRAPH</span></code> keyword.</p>
+</section>
+<section id="resource-actions">
+<span id="ext-actions"></span><h2>Resource Actions<a class="headerlink" href="#resource-actions" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install new items for the Explore and Modify menus of selected resources.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/a2342802e692ba33c696936fd689d669/ExploreActionExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">ExploreActionExample.ttl</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/daac4c133bed1df08c38ff8ba8cbd213/ModifyActionExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">ModifyActionExample.ttl</span></code></a></p></li>
+</ul>
+<p>More information on this extension point can be found at <a class="reference internal" href="../scripting/actions.html#scripting-actions"><span class="std std-ref">Resource Actions</span></a>.</p>
+</section>
+<section id="web-services">
+<span id="ext-services"></span><h2>Web Services<a class="headerlink" href="#web-services" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install new web services that can be called from the outside but execute within the TopBraid server.</p>
+<p>Web services can be defined declaratively in ontologies or files as instances of certain classes.
+For example, ADS-based services may be instances of <code class="code docutils literal notranslate"><span class="pre">dash:GraphService</span></code> and be stored in an Ontology asset collection or a file that is used by an Ontology.
+It is strongly recommended to use TopBraid EDG Studio to develop, test and harden your services before putting them into production.</p>
+<p>As of TopBraid 7.2, there are several kinds of web services supported:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#ext-services-ads"><span class="std std-ref">Web Services based on ADS</span></a> are declared as instances of <code class="code docutils literal notranslate"><span class="pre">dash:Service</span></code> and use JavaScript/ADS to perform almost arbitrary tasks</p></li>
+<li><p><a class="reference internal" href="#ext-services-functions"><span class="std std-ref">Web Services based on Functions</span></a> are read-only services declared in <code class="code docutils literal notranslate"><span class="pre">.api.ttl</span></code> files as instances of <code class="code docutils literal notranslate"><span class="pre">sh:Function</span></code>, often simply wrapping a SPARQL query</p></li>
+<li><p><a class="reference internal" href="#ext-services-multi-functions"><span class="std std-ref">Web Services based on Multi-Functions</span></a> are read-only services declared in <code class="code docutils literal notranslate"><span class="pre">.api.ttl</span></code> files as instances of <code class="code docutils literal notranslate"><span class="pre">dash:MultiFunction</span></code></p></li>
+<li><p><a class="reference internal" href="#ext-services-swp"><span class="std std-ref">Web Services based on SWP</span></a> are services declared in <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> files as instances of <code class="code docutils literal notranslate"><span class="pre">ui:Service</span></code>, using the SWP framework, only recommended with help by TopQuadrant staff</p></li>
+</ul>
+<p>The RDF resources that declare these services must have a URI, and the URI is used to construct the URL under which the service can be called.
+The general pattern of web service URLs is:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>/tbl/service/{graphId}/{servicePrefix}/{serviceLocalName}
+</pre></div>
+</div>
+<p>As an example, we have a service that takes one parameter called <code class="code docutils literal notranslate"><span class="pre">name</span></code> and is declared with the RDF resource <code class="code docutils literal notranslate"><span class="pre">exservice:HelloService</span></code>.
+Assuming we want to call this service against the Geography taxonomy that is abbreviated <code class="code docutils literal notranslate"><span class="pre">geo</span></code>, the URL becomes:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>/tbl/service/geo/exservice/HelloService?name=World
+</pre></div>
+</div>
+<p>The <code class="code docutils literal notranslate"><span class="pre">graphId</span></code> part can be <code class="code docutils literal notranslate"><span class="pre">_</span></code> if no graph shall be pre-selected as query graph.
+This is called a <strong>context-free</strong> service call.
+Only services marked with <code class="code docutils literal notranslate"><span class="pre">dash:contextFree</span> <span class="pre">true</span></code> can be called without a query graph.</p>
+<p>All web services need to declare a value for <code class="code docutils literal notranslate"><span class="pre">dash:apiStatus</span></code>.
+The possible values are:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">dash:Experimental</span></code> for services that have just been introduced and may be used by early adopters</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">dash:Stable</span></code> for services that have been well tested and which are expected to still exist in the next version(s)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">dash:Deprecated</span></code> for services that should no longer be used because they have become outdated or found problematic</p></li>
+</ul>
+<p>You can deactivate most web services (except those based on SWP) by setting <code class="code docutils literal notranslate"><span class="pre">sh:deactivated</span> <span class="pre">true</span></code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Go to <em>Reports &gt; Web Services Swagger UI</em> to explore and possibly test the known web services.</p>
+</div>
+<section id="web-services-based-on-ads">
+<span id="ext-services-ads"></span><h3>Web Services based on ADS<a class="headerlink" href="#web-services-based-on-ads" title="Permalink to this headline"></a></h3>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/f862b8143766b30ad9226916861979ab/GraphServiceExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">GraphServiceExample.ttl</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/b6f37e36918487d82c40f960bc483d32/ResourceServiceExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">ResourceServiceExample.ttl</span></code></a></p></li>
+</ul>
+<p>More information on this extension point can be found at <a class="reference internal" href="../scripting/services.html#scripting-services"><span class="std std-ref">ADS-based Web Services</span></a>.</p>
+</section>
+<section id="web-services-based-on-functions">
+<span id="ext-services-functions"></span><h3>Web Services based on Functions<a class="headerlink" href="#web-services-based-on-functions" title="Permalink to this headline"></a></h3>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/35f410c38c3015804f4dea7323c7a3fb/HelloFunctionExample.api.ttl"><code class="xref download docutils literal notranslate"><span class="pre">HelloFunctionExample.api.ttl</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>All SHACL functions stored in <code class="code docutils literal notranslate"><span class="pre">.api.ttl</span></code> files in the workspace that declare any value of <code class="code docutils literal notranslate"><span class="pre">dash:apiStatus</span></code> can be called as web services against any (or none) target graph.
+Functions that are declared <code class="code docutils literal notranslate"><span class="pre">dash:canWrite</span> <span class="pre">true</span></code> or <code class="code docutils literal notranslate"><span class="pre">sh:deactivated</span> <span class="pre">true</span></code> will be excluded.</p>
+<p>Services based on functions return nothing or a JSON object representing the RDF node produced by the function.
+For URI nodes and blank nodes the syntax is:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>{
+    uri: &quot;http://example.org/ns#something&quot;
+}
+</pre></div>
+</div>
+<p>For blank nodes the <code class="code docutils literal notranslate"><span class="pre">uri</span></code> starts with <code class="code docutils literal notranslate"><span class="pre">_:</span></code> followed by the internal identifier of the node.
+For literal nodes the syntax is:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>{
+    lex: &quot;...&quot;,
+    datatype: &quot;URI of datatype&quot;,
+    lang: &quot;language tag if applicable&quot;,
+}
+</pre></div>
+</div>
+<p>The datatype field is not used for <code class="code docutils literal notranslate"><span class="pre">xsd:string</span></code> literals, and <code class="code docutils literal notranslate"><span class="pre">lang</span></code> is only used for <code class="code docutils literal notranslate"><span class="pre">rdf:langString</span></code> literals.</p>
+<p>See <a class="reference internal" href="#ext-functions"><span class="std std-ref">Script-based Functions</span></a>.</p>
+</section>
+<section id="web-services-based-on-multi-functions">
+<span id="ext-services-multi-functions"></span><h3>Web Services based on Multi-Functions<a class="headerlink" href="#web-services-based-on-multi-functions" title="Permalink to this headline"></a></h3>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/5360d492f5b7922a3bd7c2450a4bb4e1/MultiFunctionExample.api.ttl"><code class="xref download docutils literal notranslate"><span class="pre">MultiFunctionExample.api.ttl</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>All instances of <code class="code docutils literal notranslate"><span class="pre">dash:MultiFunction</span></code> stored in <code class="code docutils literal notranslate"><span class="pre">.api.ttl</span></code> files in the workspace that declare any value of <code class="code docutils literal notranslate"><span class="pre">dash:apiStatus</span></code> can be called as web services against any (or none) target graph.
+Multi-functions that are declared <code class="code docutils literal notranslate"><span class="pre">sh:deactivated</span> <span class="pre">true</span></code> will be excluded.</p>
+<p>Services based on multi-functions always return a JSON array with name-value pairs for each result variable, using the JSON syntax from <a class="reference internal" href="#ext-services-functions"><span class="std std-ref">Web Services based on Functions</span></a>.</p>
+<p>See <a class="reference internal" href="#ext-multi-functions"><span class="std std-ref">Multi-Functions</span></a>.</p>
+</section>
+<section id="web-services-based-on-swp">
+<span id="ext-services-swp"></span><h3>Web Services based on SWP<a class="headerlink" href="#web-services-based-on-swp" title="Permalink to this headline"></a></h3>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/ad169cb81888487296921e44fe7f8110/UIServiceExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">UIServiceExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>SWP technology is used by TopBraid EDG to provide various kinds of functionality that is not available by other means.
+For example, the SWP element <code class="code docutils literal notranslate"><span class="pre">teamwork:createProject</span></code> is a low-level module to create asset collections.
+If you need to access these features in web services then defining your own SWP-based services is sometimes the only option.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>SWP services require a good understanding of TopBraid’s SWP technology.
+Unless you have been working with SWP for a long time, or you have been adviced by TopQuadrant staff, we suggest you try <a class="reference internal" href="#ext-services-ads"><span class="std std-ref">Web Services based on ADS</span></a> first.
+See <a class="reference internal" href="process.html#ext-swp"><span class="std std-ref">ADS and SWP</span></a> on the role of SWP.</p>
+</div>
+<p>All SWP services need to be stored in <code class="code docutils literal notranslate"><span class="pre">.ui.ttl*</span></code> files and are globally registered after a workspace refresh.
+You need to instantiate <code class="code docutils literal notranslate"><span class="pre">ui:Service</span></code>, which is best done by subclassing <code class="code docutils literal notranslate"><span class="pre">ui:Services</span></code>.</p>
+<p>Use <code class="code docutils literal notranslate"><span class="pre">ui:prototype</span></code> to write the body of the service.
+There is no reason to use <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> here - use <a class="reference internal" href="#ext-services-ads"><span class="std std-ref">Web Services based on ADS</span></a> instead if you would like to use JavaScript.</p>
+<p>While all other web service types use SHACL vocabulary to declare the input parameters (using <code class="code docutils literal notranslate"><span class="pre">sh:parameter</span></code>), SWP uses <code class="code docutils literal notranslate"><span class="pre">spl:Argument</span></code> at <code class="code docutils literal notranslate"><span class="pre">spin:constraint</span></code>.
+Services need to declare a value for <code class="code docutils literal notranslate"><span class="pre">dash:apiStatus</span></code>.</p>
+<p>You can deactivate existing SWP-based web services by setting <code class="code docutils literal notranslate"><span class="pre">ui:private</span> <span class="pre">true</span></code>.</p>
+<p>The result of these web services depends on the declared <code class="code docutils literal notranslate"><span class="pre">ui:responseType</span></code>.
+When you subclass <code class="code docutils literal notranslate"><span class="pre">ui:JSONServices</span></code> the response type will be inferred to be <code class="code docutils literal notranslate"><span class="pre">application/json</span></code>, but you can potentially produce any kind of response based on the textual output of the SWP script.</p>
+</section>
+</section>
+<section id="generators-for-the-problems-and-suggestions-reports">
+<span id="ext-results-generators"></span><h2>Generators for the Problems and Suggestions Reports<a class="headerlink" href="#generators-for-the-problems-and-suggestions-reports" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to have the Problems and Suggestions panel produce new kinds of results.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/c68b61f5303b7503371def77b0dea227/ResultsGeneratorExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">ResultsGeneratorExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>Create an instance of <code class="code docutils literal notranslate"><span class="pre">tosh:ResultsGenerator</span></code> in a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file.
+In that instance, store the JavaScript code that shall be executed under <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code>.
+In that script, the variable <code class="code docutils literal notranslate"><span class="pre">resultsGraph.uri</span></code> is the URI of the target graph that the script can add new results to.
+For example, use the script to generate new instances of <code class="code docutils literal notranslate"><span class="pre">dash:SuggestionResult</span></code>, along with</p>
+<ul class="simple">
+<li><p>one or more values for <code class="code docutils literal notranslate"><span class="pre">sh:resultMessage</span></code> for human-readable messages</p></li>
+<li><p>a value for <code class="code docutils literal notranslate"><span class="pre">sh:focusNode</span></code> to link to the main resource that the result is about</p></li>
+<li><p>a value for <code class="code docutils literal notranslate"><span class="pre">sh:resultSeverity</span></code> (such as <code class="code docutils literal notranslate"><span class="pre">sh:Warning</span></code> or <code class="code docutils literal notranslate"><span class="pre">sh:Info</span></code>)</p></li>
+<li><p>a value for <code class="code docutils literal notranslate"><span class="pre">sh:resultPath</span></code> if the result is about a certain property path from the focus node</p></li>
+</ul>
+<p>Finally, the result instance needs to be linked to the <code class="code docutils literal notranslate"><span class="pre">sh:ValidationReport</span></code> instance using the pre-defined variable <code class="code docutils literal notranslate"><span class="pre">report</span></code> using <code class="code docutils literal notranslate"><span class="pre">report.add(sh.result,</span> <span class="pre">result)</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a class="reference external" href="https://www.w3.org/TR/shacl/#validation-report">SHACL Results Vocabulary</a> for technical background on the results vocabulary.</p>
+<p>See the <a class="reference external" href="https://datashapes.org/suggestions.html">DASH Suggestions Vocabulary</a> for details on the suggestions framework.</p>
+</div>
+</section>
+<section id="suggestion-generators">
+<span id="ext-suggestion-generators"></span><h2>Suggestion Generators<a class="headerlink" href="#suggestion-generators" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to generate new Suggestions for the Problems and Suggestions panel and the Form panel.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/a3f40cc67cd9288c43e2d5e5e84ae199/SuggestionGeneratorExample.ttl"><code class="xref download docutils literal notranslate"><span class="pre">SuggestionGeneratorExample.ttl</span></code></a></p></li>
+</ul>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Studio with a suggested fix to a constraint violation" class="edg-figure-l" src="../_images/SuggestionGeneratorInAction.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The suggestion generator in Action</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the <a class="reference external" href="https://datashapes.org/suggestions.html">DASH Suggestions Vocabulary</a> for background on the suggestions framework.</p>
+</div>
+<p><strong>Instructions:</strong></p>
+<p>Instances of <code class="code docutils literal notranslate"><span class="pre">dash:ScriptSuggestionGenerator</span></code> implement suggestion generators that are backed by an Active Data Shapes script.
+The script needs to return a JSON object or an array of JSON objects if it shall generate multiple suggestions.
+It may also return <code class="code docutils literal notranslate"><span class="pre">null</span></code> to indicate that nothing was suggested.</p>
+<p>Note that the whole script is evaluated as a (JavaScript) expression, and those will use the last value as result.
+So simply putting an object at the end of your script should do.
+Alternatively, define the bulk of the operation as a function and simply call that function in the script.</p>
+<p>Each response object can have the following fields:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">message</span></code>: a human readable message, defaults to the rdfs:label(s) of the suggestion generator</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">add</span></code>: an array of triples to add, each triple as an array with three nodes for <code class="code docutils literal notranslate"><span class="pre">subject</span></code>, <code class="code docutils literal notranslate"><span class="pre">predicate</span></code> and <code class="code docutils literal notranslate"><span class="pre">object</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">delete</span></code>: like <code class="code docutils literal notranslate"><span class="pre">add</span></code>, for the triples to delete</p></li>
+</ul>
+<p>Suggestions with neither added nor deleted triples will be discarded.</p>
+<p>At execution time, the script operates on the data graph as the active graph, with the following pre-bound variables:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">focusNode</span></code>: the <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> that is the <code class="code docutils literal notranslate"><span class="pre">sh:focusNode</span></code> of the validation result</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">predicate</span></code>: the <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> representing the predicate of the validation result, assuming <code class="code docutils literal notranslate"><span class="pre">sh:resultPath</span></code> is a URI</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">value</span></code>: the value node from the validation result’s <code class="code docutils literal notranslate"><span class="pre">sh:value</span></code>, cast into the most suitable JavaScript object</p></li>
+<li><p>the other pre-bound variables for the parameters of the constraint, e.g. in a <code class="code docutils literal notranslate"><span class="pre">sh:maxCount</span></code> constraint it would be <code class="code docutils literal notranslate"><span class="pre">maxCount</span></code></p></li>
+</ul>
+<p>The script will be executed in read-only mode, i.e. it cannot modify the graph.</p>
+</section>
+<section id="landing-page-gadgets">
+<span id="ext-landing-page-gadgets"></span><h2>Landing Page Gadgets<a class="headerlink" href="#landing-page-gadgets" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install new gadgets on the <em>Home</em> page of TopBraid EDG itself.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/0745149c1aec7ffec0b9072261b4aedd/LandingPageHookExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">LandingPageHookExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>In a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file, make sure that <code class="code docutils literal notranslate"><span class="pre">teamwork.ui.ttlx</span></code> is included so that you can create a subclass of <code class="code docutils literal notranslate"><span class="pre">teamwork:LandingPageGadgetHooks</span></code>.
+In the <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> of that subclass, use <code class="code docutils literal notranslate"><span class="pre">graph.html()</span></code> in the last line to produce the HTML output that you would like to have inserted into the home page.
+Use the properties <code class="code docutils literal notranslate"><span class="pre">teamwork:landingPageColumn</span></code> and <code class="code docutils literal notranslate"><span class="pre">teamwork:landingPageOrder</span></code> as shown in the sample.
+Make sure the component has a suitable <code class="code docutils literal notranslate"><span class="pre">rdfs:label</span></code> so that individual users can select to see or hide that gadget from their user-specific settings.</p>
+</section>
+<section id="injecting-css-styles-and-logo">
+<h2>Injecting CSS Styles and Logo<a class="headerlink" href="#injecting-css-styles-and-logo" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to override the appearance and, to a limited extend, the behavior of TopBraid user interface components (outside of the main editor).</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/6f8d98f9bdf66aca5004a3084aacdf64/UIOverrideExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">UIOverrideExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>In a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file, make sure that <code class="code docutils literal notranslate"><span class="pre">teamwork.ui.ttlx</span></code> is included with the definitions of all commonly used UI components.
+In the example, we subclass <code class="code docutils literal notranslate"><span class="pre">teamwork:Logo</span></code> and use <code class="code docutils literal notranslate"><span class="pre">ui:override</span></code> to instruct the system that our own subclass should be used instead of the original <code class="code docutils literal notranslate"><span class="pre">teamwork:Logo</span></code>.
+For typical user interface customizations, use <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> with <code class="code docutils literal notranslate"><span class="pre">graph.html()</span></code> to produce alternative HTML.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Using this extension point requires a fair bit of understanding of how TopBraid uses SWP.
+Check with TopQuadrant staff if the SWP component that you want to replace is considered “stable”.
+We will attempt to keep them stable if we know that customers actually rely on them.</p>
+</div>
+</section>
+<section id="scheduled-jobs">
+<span id="ext-scheduled-jobs"></span><h2>Scheduled Jobs<a class="headerlink" href="#scheduled-jobs" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to define scripts that shall be executed in the background on a TopBraid EDG server, triggered in recurring intervals.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/bc3c904ef6bed3ad8840d98dd63522d2/ScheduledJobExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">ScheduledJobExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>In a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file, make sure that <code class="code docutils literal notranslate"><span class="pre">teamwork.ui.ttlx</span></code> is included so that you can create a subclass of <code class="code docutils literal notranslate"><span class="pre">scheduler:ScheduledJobs</span></code>.
+In that subclass, define what should happen in your script under <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code>.
+Set <code class="code docutils literal notranslate"><span class="pre">scheduler:cronSchedule</span></code> to something like <code class="code docutils literal notranslate"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">*</span> <span class="pre">?</span></code> to have your script execute in regular intervals.
+You may need to edit this triple from the Source Code panel if you don’t see a widget on the form.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use <em>Administration &gt; Scheduled Jobs</em> to see if your scheduled job has been recognized, and to trigger it manually.</p>
+</div>
+</section>
+<section id="custom-notifications">
+<span id="ext-notifications"></span><h2>Custom Notifications<a class="headerlink" href="#custom-notifications" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install new types of <em>Notifications</em> that can be triggered as side effects of various events in TopBraid EDG.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/30452e68ce644eb29dc79b05c02106d3/NotificationExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">NotificationExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>In a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file, make sure that <code class="code docutils literal notranslate"><span class="pre">teamwork.ui.ttlx</span></code> is included so that you can create a subclass of one of the specific notification types.
+For example subclass <code class="code docutils literal notranslate"><span class="pre">teamwork:RegularEditNotification</span></code> to add a notification after normal edits (on forms) have happened.
+Each notification needs to produce some text, ideally as an HTML snippet.
+Use <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> to produce that text, e.g. using <code class="code docutils literal notranslate"><span class="pre">graph.html()</span></code>.</p>
+<p>Then use the property <code class="code docutils literal notranslate"><span class="pre">arg:expression</span></code> to specify under which condition the notification should be sent out.
+In the provided example, a notification is sent when a change has happened that involved the predicate <code class="code docutils literal notranslate"><span class="pre">skos:prefLabel</span></code>.
+The syntax of those expressions is SPIN RDF notation, and the example is making a SPARQL function call.
+You could theoretically just set it to <code class="code docutils literal notranslate"><span class="pre">true</span></code> to always send out notifications.
+Use the Source Code panel if you don’t see an input widget for <code class="code docutils literal notranslate"><span class="pre">arg:expression</span></code> on the form.</p>
+<p>Once you have defined your notification type and refreshed the workspace for the <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file to be recognized, you may need to activate the notification for some user roles in your asset collection.</p>
+</section>
+<section id="asset-collection-constructors">
+<span id="ext-project-constructors"></span><h2>Asset Collection Constructors<a class="headerlink" href="#asset-collection-constructors" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install scripts that are triggered whenever a new asset collection (of certain types) is created, for example to initialize the state of the new asset collection.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/fd96540cb81709bc76c4dfaa0ef6ecae/ProjectConstructorExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">ProjectConstructorExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p><strong>Instructions:</strong></p>
+<p>In a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file, make sure that <code class="code docutils literal notranslate"><span class="pre">teamwork.ui.ttlx</span></code> is included so that the property <code class="code docutils literal notranslate"><span class="pre">teamwork:projectConstructor</span></code> is defined.
+These constructors need to be linked to specific asset collection types using that property.</p>
+<p>The following table lists the supported asset collection types and the files in which they are defined.
+For example, in order to add a constructor for Taxonomies, add an <code class="code docutils literal notranslate"><span class="pre">owl:import</span></code> of the file <code class="code docutils literal notranslate"><span class="pre">teamwork.topbraidlive.org/taxonomy/taxonomyprojects.ui.ttlx</span></code> and then add a triple <code class="code docutils literal notranslate"><span class="pre">taxonomies:ProjectType</span> <span class="pre">teamwork:projectConstructor</span> <span class="pre">[</span> <span class="pre">ex:ExampleProjectConstructor</span> <span class="pre">]</span></code> using the Source Code panel.</p>
+<table class="colwidths-given docutils align-default" id="id8">
+<caption><span class="caption-text">TopBraid EDG Collection Types</span><a class="headerlink" href="#id8" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Collection Type Name</p></th>
+<th class="head"><p>Collection Type Resource</p></th>
+<th class="head"><p>File Path of Defining Graph</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Content Tag Set</p></td>
+<td><p>taggerprojects:ProjectType</p></td>
+<td><p>teamwork.topbraidlive.org/tagger/taggerprojects.ui.ttlx</p></td>
+</tr>
+<tr class="row-odd"><td><p>Crosswalk</p></td>
+<td><p>taxonomies:ProjectType</p></td>
+<td><p>teamwork.topbraidlive.org/taxonomy/taxonomyprojects.ui.ttlx</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Graph</p></td>
+<td><p>datagraphprojects:ProjectType</p></td>
+<td><p>teamwork.topbraidlive.org/datagraph/datagraphprojects.ui.ttlx</p></td>
+</tr>
+<tr class="row-odd"><td><p>Datatypes Collection</p></td>
+<td><p>edg:DatatypesProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-datatypes-v1.0.ui.ttlx</p></td>
+</tr>
+<tr class="row-even"><td><p>Enterprise Assets Collection</p></td>
+<td><p>edg:EnterpriseModelsProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-enterprise-assets-v1.0.ui.ttlx</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enumeration Collection</p></td>
+<td><p>edg:EnumerationsProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-ENUMERATIONS-v1.0.ui.ttlx</p></td>
+</tr>
+<tr class="row-even"><td><p>File</p></td>
+<td><p>teamwork:FileProjectType</p></td>
+<td><p>teamwork.topbraidlive.org/file/teamworkfiles.ui.ttlx</p></td>
+</tr>
+<tr class="row-odd"><td><p>Glossary</p></td>
+<td><p>edg:GlossaryProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-common-v1.0.ui.ttlx</p></td>
+</tr>
+<tr class="row-even"><td><p>Governance Assets Collection</p></td>
+<td><p>edg:GovernanceModelProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-governance-assets-v1.0.ui.ttlx</p></td>
+</tr>
+<tr class="row-odd"><td><p>Lineage Model</p></td>
+<td><p>edg:LineageModelProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-lineage-models-v1.0.ui.ttlx</p></td>
+</tr>
+<tr class="row-even"><td><p>Ontology</p></td>
+<td><p>ontologyprojects:ProjectType</p></td>
+<td><p>teamwork.topbraidlive.org/ontology/ontologyprojects.ui.ttlx</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reference Dataset</p></td>
+<td><p>rdmprojects:ProjectType</p></td>
+<td><p>teamwork.topbraidlive.org/dataset/datasetprojects.ui.ttlx</p></td>
+</tr>
+<tr class="row-even"><td><p>Requirements Collection</p></td>
+<td><p>edg:RequirementsModelProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-requirements-model-v1.0.ui.ttlx</p></td>
+</tr>
+<tr class="row-odd"><td><p>Taxonomy</p></td>
+<td><p>taxonomies:ProjectType</p></td>
+<td><p>teamwork.topbraidlive.org/taxonomy/taxonomyprojects.ui.ttlx</p></td>
+</tr>
+<tr class="row-even"><td><p>Technical Assets Collection</p></td>
+<td><p>edg:TechnicalAssetsProjectType</p></td>
+<td><p>edg.topbraidlive.org/1.0/controller/CONTROLLER_EDG-technical-assets-v1.0.ui.spin.ttlx</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your installation may not include licenses for all of those collection types.</p>
+</div>
+</section>
+<section id="asset-collection-clone-plugins">
+<span id="ext-clone-plugins"></span><h2>Asset Collection Clone Plugins<a class="headerlink" href="#asset-collection-clone-plugins" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to install scripts that execute whenever an asset collection has been cloned, for example to modify the clone before its first use.</p>
+<p><strong>Samples:</strong></p>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/22b7e436b7e70b160d2ad67dc4560e6b/ClonePluginExample.ui.ttlx"><code class="xref download docutils literal notranslate"><span class="pre">ClonePluginExample.ui.ttlx</span></code></a></p></li>
+</ul>
+<p>In a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file, make sure that <code class="code docutils literal notranslate"><span class="pre">teamwork.ui.ttlx</span></code> is included so that you can create a subclass of <code class="code docutils literal notranslate"><span class="pre">teamwork:ClonePlugin</span></code>.
+In that subclass use <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> to store the ADS script that shall be executed when an asset collection gets cloned.
+In those scripts, you can use the variables <code class="code docutils literal notranslate"><span class="pre">oldProjectGraph</span></code> and <code class="code docutils literal notranslate"><span class="pre">newProjectGraph</span></code> to query the <code class="code docutils literal notranslate"><span class="pre">uri</span></code> of the source and target of the clone operation.
+You can use this, for example, to look up the type of the old or new asset collection to decide what actually needs to happen with the clone.</p>
+</section>
+<section id="custom-asset-collection-types">
+<span id="ext-project-types"></span><h2>Custom Asset Collection Types<a class="headerlink" href="#custom-asset-collection-types" title="Permalink to this headline"></a></h2>
+<p>This extension point can be used to define new Asset Collection types in addition to the built-in types (such as Taxonomies).</p>
+<p><strong>Instructions:</strong></p>
+<p>All collections of the same type share the same features.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Defining custom collection types is a licensed feature of EDG.
+While you will be able to develop and test new project types in TopBraid EDG Studio, once you deploy your code to the EDG server, new types of collections will only be available if your solution is licensed for creation of new asset collection types.
+To upgrade your license, please contact TopQuadrant.</p>
+</div>
+<p>Each of the default collection types that come with TopBraid EDG are plug-in modules within the more general Teamwork Framework.
+It is possible to add new modules by creating an instance of the class <code class="code docutils literal notranslate"><span class="pre">teamwork:ProjectType</span></code> in a globally registered file ending with <code class="code docutils literal notranslate"><span class="pre">.ui.*</span></code>.
+This file should import the file <code class="code docutils literal notranslate"><span class="pre">teamwork.ui.ttlx</span></code>.</p>
+<p>Simply create an instance of <code class="code docutils literal notranslate"><span class="pre">teamwork:ProjectType</span></code> and fill in the properties similar to how it’s done in the default Ontology application (from <code class="code docutils literal notranslate"><span class="pre">ontologyprojects.ui.ttlx</span></code>).
+You need to enter values for <code class="code docutils literal notranslate"><span class="pre">teamwork:singularLabel</span></code> and <code class="code docutils literal notranslate"><span class="pre">teamwork:pluralLabel</span></code>.
+You also need to enter value for the <code class="code docutils literal notranslate"><span class="pre">teamwork:vocabularyType</span></code>.
+These values must be subclasses of the <code class="code docutils literal notranslate"><span class="pre">teamwork:Vocabulary</span></code> class.
+For the ontologies this value is <code class="code docutils literal notranslate"><span class="pre">ontologyprojects:Ontology</span></code>.
+Under <code class="code docutils literal notranslate"><span class="pre">teamwork:Product</span></code> select the one instance for EDG and add the “yourprojectype”:ProjectType to the defaultProjectType property</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use the Source Code panel where required, for properties that don’t show up on the form.</p>
+</div>
+<p>Also include the file <code class="code docutils literal notranslate"><span class="pre">edg.topbraidlive.org/edgproduct.ui.ttlx</span></code> and add a triple such as <code class="code docutils literal notranslate"><span class="pre">edgproduct:EDG</span> <span class="pre">teamwork:defaultProjectType</span> <span class="pre">ex:MyProjectType</span></code> to make sure your new <code class="code docutils literal notranslate"><span class="pre">teamwork:ProjectType</span></code> is actually visible in the menus.</p>
+</section>
+<section id="adding-a-new-panel-to-the-editor-applications">
+<span id="ext-panels"></span><h2>Adding a New Panel to the Editor Applications<a class="headerlink" href="#adding-a-new-panel-to-the-editor-applications" title="Permalink to this headline"></a></h2>
+<p>The EDG Editor application is developed using React and a front-end build process.
+The Editor offers a choice of pre-built panels that can be organized into page layouts.</p>
+<p>You can add your own custom panels to the editor.
+New panels will be available to users in exactly the same way as pre-built panels.
+In order to create new custom panels you will need to be familiar with RDF, React, WebPack and Babel.</p>
+<p>We have prepared a sample guide and sample project that adds a new panel to the editor.
+Please download the items below to get started.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doc.topquadrant.com/7.0/wp-content/uploads/2020/08/create-tb-app_guide.pdf">Guide</a></p></li>
+<li><p><a class="reference external" href="https://doc.topquadrant.com/7.0/wp-content/uploads/2020/08/create-tb-app.zip">Sample zip file</a></p></li>
+</ul>
+</section>
+<section id="adding-new-java-components">
+<span id="ext-java"></span><h2>Adding new Java Components<a class="headerlink" href="#adding-new-java-components" title="Permalink to this headline"></a></h2>
+<p>It is technically possible to inject new Java components into TopBraid EDG servers.
+This is, obviously, a very low-level operation and only recommended for very experienced developers.
+As our Java code is not open source, this will most likely require hand-holding.
+We strongly recommend to use Premium Support hours for such endeavours.</p>
+<p>To get an idea, see this <a class="reference external" href="https://groups.google.com/g/topbraid-users/c/1gD6WR1OEaU/m/NjUgdRWZDQAJ">thread</a> on the TopBraid users mailing list.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="teamwork.html" class="btn btn-neutral float-left" title="The Teamwork Framework" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../faqs/index.html" class="btn btn-neutral float-right" title="FAQs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

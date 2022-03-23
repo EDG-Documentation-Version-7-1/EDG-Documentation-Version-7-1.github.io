@@ -1,0 +1,37 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _asset_collection_type_specific_guidance_target:
+
+*********************************************
+Guidance Specific to an Asset Collection Type
+*********************************************
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Contents:
+
+   working_with_ontologies/index
+   working_with_taxonomies/index
+   working_with_crosswalks/index
+   working_with_corpora/index
+   working_with_data_graphs/index
+   working_with_enumerations/index
+   working_with_data_lineage/index
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`search`
+

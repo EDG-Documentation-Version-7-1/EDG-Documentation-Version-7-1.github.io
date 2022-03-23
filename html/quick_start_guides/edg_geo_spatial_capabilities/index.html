@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geo-spatial capabilities in TopBraid EDG &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="User Guide" href="../../user_guide/index.html" />
+    <link rel="prev" title="TopBraid Explorer" href="../topbraid_explorer/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Start Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../edg_vocabulary_management/index.html">EDG Vocabulary Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_business_glossaries/index.html">EDG Business Glossaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_reference_data_management/index.html">EDG Reference Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer/index.html">TopBraid Explorer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Geo-spatial capabilities in TopBraid EDG</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">1. Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creation-of-a-geo-aware-schema-in-edg">2. Creation of a geo-aware schema in EDG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-existing-geo-vocabularies-and-shapes">2.1 Adding existing Geo vocabularies and shapes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#defining-the-schema">2.2 Defining the Schema</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-geo-aware-asset-collection">3. Creating a Geo-Aware asset collection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enabling-geosparql">3.1 Enabling GeoSPARQL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exploring-geo-resources">3.2 Exploring Geo Resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-resource">3.3 Creating a Resource</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#querying-using-geosparql">4. Querying using GeoSPARQL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#required-prefixes-and-functions">4.1 Required Prefixes and Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#querying-geo-aware-collections-using-sparql">4.2 Querying geo-aware collections using SPARQL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#advance-topics">5. Advance Topics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#interactive-maps-in-edg">5.1 Interactive maps in EDG</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shacl-constraints-on-geo-spatial-resources">5.2 SHACL Constraints on Geo-spatial resources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#extending-data-governance-ontologies-with-geo-schemas">5.3 Extending Data Governance Ontologies with Geo Schemas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references">6. References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Quick Start Guides</a> &raquo;</li>
+      <li>Geo-spatial capabilities in TopBraid EDG</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="geo-spatial-capabilities-in-topbraid-edg">
+<span id="edg-geo-spatial-capabilities"></span><h1><a class="toc-backref" href="#id51">Geo-spatial capabilities in TopBraid EDG</a><a class="headerlink" href="#geo-spatial-capabilities-in-topbraid-edg" title="Permalink to this headline"></a></h1>
+<p>The purpose of this document is to showcase how GeoSPARQL can be used within TopBraid Enterprise Data Governance (referred to as EDG). This document will walkthrough steps that enable the usage of the Geo features in EDG, from the creation of schemas to performing actions on items on maps. Finally, the cookbook demonstrates how data governance assets can be enriched with geospatial information.</p>
+<p>You will need the following EDG project and TriG file to walk through the cookbook.
+To install this sample project in EDG, navigate to Server Administration, Upload Project.
+To remove this project in the future use Delete Project.</p>
+<p><a class="reference download internal" download="" href="../../_downloads/65a7516c96cf572cfa72194d06f9dcac/geosparql_cookbook.trig"><code class="xref download docutils literal notranslate"><span class="pre">geosparql_cookbook.trig</span></code></a></p>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#geo-spatial-capabilities-in-topbraid-edg" id="id51">Geo-spatial capabilities in TopBraid EDG</a></p>
+<ul>
+<li><p><a class="reference internal" href="#prerequisites" id="id52">1. Prerequisites</a></p></li>
+<li><p><a class="reference internal" href="#creation-of-a-geo-aware-schema-in-edg" id="id53">2. Creation of a geo-aware schema in EDG</a></p>
+<ul>
+<li><p><a class="reference internal" href="#adding-existing-geo-vocabularies-and-shapes" id="id54">2.1 Adding existing Geo vocabularies and shapes</a></p></li>
+<li><p><a class="reference internal" href="#defining-the-schema" id="id55">2.2 Defining the Schema</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-geometry-shape" id="id56">2.2.1 The Geometry Shape</a></p></li>
+<li><p><a class="reference internal" href="#map-context-shape" id="id57">2.2.2 Map Context Shape</a></p></li>
+<li><p><a class="reference internal" href="#spatial-thing-shape" id="id58">2.2.3 Spatial Thing Shape</a></p></li>
+<li><p><a class="reference internal" href="#properties-defined-in-topbraid-geosparql-vocabulary" id="id59">2.2.4 Properties defined in TopBraid GeoSPARQL Vocabulary</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#creating-a-geo-aware-asset-collection" id="id60">3. Creating a Geo-Aware asset collection</a></p>
+<ul>
+<li><p><a class="reference internal" href="#enabling-geosparql" id="id61">3.1 Enabling GeoSPARQL</a></p></li>
+<li><p><a class="reference internal" href="#exploring-geo-resources" id="id62">3.2 Exploring Geo Resources</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-resource" id="id63">3.3 Creating a Resource</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-geometry-objects" id="id64">3.3.1 Creating Geometry Objects</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-a-point" id="id65">Creating a Point</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-line-string" id="id66">Creating a Line String</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-polygon" id="id67">Creating a Polygon</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-multi-polygon" id="id68">Creating a Multi-Polygon</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#querying-using-geosparql" id="id69">4. Querying using GeoSPARQL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#required-prefixes-and-functions" id="id70">4.1 Required Prefixes and Functions</a></p></li>
+<li><p><a class="reference internal" href="#querying-geo-aware-collections-using-sparql" id="id71">4.2 Querying geo-aware collections using SPARQL</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example-1-find-items-within-a-geometry-box" id="id72">Example 1: Find items within a geometry box</a></p></li>
+<li><p><a class="reference internal" href="#example-1a-alternative-find-items-within-a-geometry-box" id="id73">Example 1a: (Alternative) Find items within a geometry box</a></p></li>
+<li><p><a class="reference internal" href="#example-1b-alternative-find-items-within-a-geometry-polygon" id="id74">Example 1b: (Alternative) Find items within a geometry polygon</a></p></li>
+<li><p><a class="reference internal" href="#example-2-find-if-two-polygons-intersect" id="id75">Example 2: Find if two polygons intersect</a></p></li>
+<li><p><a class="reference internal" href="#example-3-find-geometric-features-within-an-intersection" id="id76">Example 3: Find geometric features within an intersection</a></p></li>
+<li><p><a class="reference internal" href="#example-4-find-cities-in-a-5-km-radium-of-a-selected-item" id="id77">Example 4: Find cities in a 5 km radium of a selected item</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#advance-topics" id="id78">5. Advance Topics</a></p>
+<ul>
+<li><p><a class="reference internal" href="#interactive-maps-in-edg" id="id79">5.1 Interactive maps in EDG</a></p>
+<ul>
+<li><p><a class="reference internal" href="#creating-context-maps" id="id80">5.1.1 Creating Context Maps</a></p></li>
+<li><p><a class="reference internal" href="#creating-a-click-handler" id="id81">5.1.2 Creating a click handler</a></p></li>
+<li><p><a class="reference internal" href="#using-context-maps-in-geo-aware-data-assets" id="id82">5.1.3 Using context maps in geo-aware data assets</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#shacl-constraints-on-geo-spatial-resources" id="id83">5.2 SHACL Constraints on Geo-spatial resources</a></p></li>
+<li><p><a class="reference internal" href="#extending-data-governance-ontologies-with-geo-schemas" id="id84">5.3 Extending Data Governance Ontologies with Geo Schemas</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#references" id="id85">6. References</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="prerequisites">
+<span id="id1"></span><h2><a class="toc-backref" href="#id52">1. Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h2>
+<p>Google Maps API key set up in EDG: <em>Server Administration</em> &gt; <em>Server Configuration</em> &gt; <em>Advanced Parameters</em>.</p>
+</section>
+<section id="creation-of-a-geo-aware-schema-in-edg">
+<span id="id2"></span><h2><a class="toc-backref" href="#id53">2. Creation of a geo-aware schema in EDG</a><a class="headerlink" href="#creation-of-a-geo-aware-schema-in-edg" title="Permalink to this headline"></a></h2>
+<p>The following section demonstrates the creation of a generic schema that
+describe countries and cities. A mixture of RDF constructs and SHACL
+shapes are used. Under <em>Asset Collections</em> select <em>Ontologies</em>. On page
+load, click on the <em>Create New Ontology</em> button, which in turn will
+display the following form. The <em>Label</em> field is mandatory, and once
+filled press <em>Create Ontology</em>. By default, EDG creates a skeleton
+schema, importing the <em>Default constraints for EDG</em> and <em>GraphQL
+Vocabulary</em>.</p>
+<figure class="align-center">
+<img alt="Create Ontology" class="edg-figure" src="../../_images/create_ontology.png" />
+</figure>
+<section id="adding-existing-geo-vocabularies-and-shapes">
+<span id="id3"></span><h3><a class="toc-backref" href="#id54">2.1 Adding existing Geo vocabularies and shapes</a><a class="headerlink" href="#adding-existing-geo-vocabularies-and-shapes" title="Permalink to this headline"></a></h3>
+<p>EDG provides a general vocabulary defining a number of classes, SHACL
+shapes and SHACL functions, which drives the various functionality
+within EDG, for example the <em>Maps Explorer</em> panel. The <strong>TopBraid
+GeoSPARQL Vocabulary</strong> (<code class="docutils literal notranslate"><span class="pre">prefix:</span> <span class="pre">tbgeo:</span></code>) gathers concepts from the
+W3C <em>WGS84 Geo Positioning</em> RDF vocabulary  <a class="footnote-reference brackets" href="#id38" id="id4">1</a> and the <em>Open
+Geospatial Consortium GeoSPARQL - A Geographic Query Language for RDF
+Data</em> schema  <a class="footnote-reference brackets" href="#id39" id="id5">2</a>, and describes these concepts as SHACL shapes. The
+former vocabulary allows the representation of latitude, longitude and
+altitude information. The latter vocabulary enables the representation
+of geospatial data, and defines a SPARQL extension to query the said
+data. By defining these as SHACL shapes, it ensures that users can query
+properties in geo-aware asset collections using GraphQL. Furthermore,
+the TopBraid vocabulary defines a number of shapes that can be extended
+to enable interactive actions on maps in EDG and other functions
+relevant for querying. Therefore, adding this vocabulary in the custom
+geo-aware schema will ensure that the schema contains all the required
+property and node shapes to create a geo-driven asset collection.</p>
+<p>In order to include The <strong>TopBraid GeoSPARQL Vocabulary</strong> in the schema,
+click on the <em>Settings</em> tab, followed by the <em>Includes</em> link. This will
+display a dialog box with all possible includes. Filter by the
+<em>Collection Name</em> column, typing <strong>TopBraid GeoSPARQL Vocabulary</strong>, tick
+the first column and press <em>Close</em>.</p>
+<figure class="align-center">
+<img alt="Includes" class="edg-figure" src="../../_images/includes.png" />
+</figure>
+<p>The <em>Settings</em> page will look as follows, with <strong>TopBraid GeoSPARQL
+vocabulary</strong> added under <em>Includes</em>:</p>
+<figure class="align-center">
+<img alt="Includes Full" class="edg-figure" src="../../_images/includes-full.png" />
+</figure>
+<p>Clicking back on the <em>Ontology</em> tab, the <em>Class Hierarchy</em> panel shows a
+tree, with three concepts <em>Geometry</em>, <em>Map context</em>, and <em>Spatial
+thing</em>. These concepts will be explained later on in this document.</p>
+<figure class="align-center">
+<img alt="Ontology Page Empty" class="edg-figure" src="../../_images/ontology-page-empty.png" />
+</figure>
+</section>
+<section id="defining-the-schema">
+<span id="id6"></span><h3><a class="toc-backref" href="#id55">2.2 Defining the Schema</a><a class="headerlink" href="#defining-the-schema" title="Permalink to this headline"></a></h3>
+<p>This section describes the shapes and properties defined to create a
+geo-aware ontology. This section is not meant to demonstrate the
+ontology editing capabilities of EDG. For an introduction in this
+regard, the reader is referred to  <a class="footnote-reference brackets" href="#id40" id="id7">3</a>.</p>
+<p>The inclusion of the <strong>TopBraid GeoSPARQL vocabulary</strong> automatically
+added three concepts <em>Geometry</em> (<code class="docutils literal notranslate"><span class="pre">geosparql:Geometry</span></code>), <em>Map context</em>
+(<code class="docutils literal notranslate"><span class="pre">tbgeo:MapContext</span></code>), and <em>Spatial thing</em> (<code class="docutils literal notranslate"><span class="pre">geo:SpatialThing</span></code>).
+Having these concepts included, public classes have to be defined for
+the schema. Clicking on the form’s dropdown, EDG allows user to view
+content related to the ontology’s metadata, and content related to the
+ontology’s GraphQL schema. For the latter schema, this cookbook defines
+<em>Spatial thing</em> as a public class, meaning that the value and all its
+subclasses are included and exposed to the GraphQL endpoint  <a class="footnote-reference brackets" href="#id41" id="id8">4</a>.</p>
+<figure class="align-center">
+<img alt="Public Class Settings" class="edg-figure" src="../../_images/setting-public-class.png" />
+</figure>
+<section id="the-geometry-shape">
+<span id="id9"></span><h4><a class="toc-backref" href="#id56">2.2.1 The Geometry Shape</a><a class="headerlink" href="#the-geometry-shape" title="Permalink to this headline"></a></h4>
+<p>The <em>Geometry</em> shape represents the top-level geometry type. This is
+equivalent to the GM_Object defined in ISO 19107  <a class="footnote-reference brackets" href="#id42" id="id10">5</a>, which allows the
+definition of <em>geometric shapes</em> (or geometry objects) on maps, such as
+points, lines, polygons. The TopBraid vocabulary automatically adds two
+property shapes that enable the serialisation of geometric shapes (e.g
+polygons) in geo-aware resources in EDG: (1) <em>asGML</em>
+(<code class="docutils literal notranslate"><span class="pre">geosparql:asGML</span></code>) , and (2) <em>asWKT</em> (<code class="docutils literal notranslate"><span class="pre">geosparql:asWKT</span></code>).</p>
+<p>The following snippet shows an polygon example serialised using GML:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot; ?&gt;</span>
+<span class="nt">&lt;gml:Polygon</span> <span class="na">xmlns:gml=</span><span class="s">\&quot;http://www.opengis.net/ont/gml\&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;gml:exterior&gt;</span>
+    <span class="nt">&lt;gml:LinearRing&gt;</span>
+      <span class="nt">&lt;gml:posList&gt;</span>
+        13.833611 48.773605 14.70028 48.581379 15.025833 49.018883 16.946182 48.619064 17.166386 48.012497 17.053886 47.709442 16.450554 47.698051 16.713886 47.543884 16.510555 47.00666 16.111805 46.86972 14.544998 46.407494 13.718655 46.526611 12.440554 46.690826 12.127777 47.001663 10.471235 46.871353 9.598635 47.063835 9.533569 47.274544 9.566724 47.540451 10.173332 47.274719 10.478054 47.591942 11.095554 47.396111 12.735554 47.684166 13.016666 47.470276 12.758333 48.123886 13.833611 48.773605
+      <span class="nt">&lt;/gml:posList&gt;</span>
+    <span class="nt">&lt;/gml:LinearRing&gt;</span>
+  <span class="nt">&lt;/gml:exterior&gt;</span>
+<span class="nt">&lt;/gml:Polygon&gt;</span>
+</pre></div>
+</div>
+<p>The following snippet shows a polygon example serialised in WKT:</p>
+<div class="highlight-wkt notranslate"><div class="highlight"><pre><span></span>MULTIPOLYGON(((7.697223 47.543327, 8.57642 47.59137, 8.566111 47.806938, 9.566724 47.540451, 9.533569 47.274544, 9.474637 47.057457, 9.598635 47.063835, 10.471235 46.871353, 10.465277 46.546387, 10.050278 46.539993, 10.129999 46.227219,  9.28194400000012 46.495827, 9.036665 45.837776, 8.43638800000014 46.463333, 7.855742 45.919052, 7.038054 45.931938, 6.79138900000015 46.434166, 5.966666 46.209442, 6.99055500000014 47.497215, 7.588268 47.58448, 7.697223 47.543327)))
+</pre></div>
+</div>
+<p>In this cookbook, no concepts or property shapes will be created,
+extending the <em>Geometry</em> shape.</p>
+</section>
+<section id="map-context-shape">
+<span id="id11"></span><h4><a class="toc-backref" href="#id57">2.2.2 Map Context Shape</a><a class="headerlink" href="#map-context-shape" title="Permalink to this headline"></a></h4>
+<p>The <em>Map Context</em> shape is a core EDG shape which enables user
+interactive actions on maps in geo-aware asset collections. This shape
+is an abstract superclass of objects that may serve as the context of
+Context Maps. A Context Map is populated with a set of geo resources
+that are either asserted or dynamically computed by a <code class="docutils literal notranslate"><span class="pre">sh:values</span></code>
+rule. Section <a class="reference external" href="#creating-interactive-maps">Creating Interactive Maps</a>
+details the implementation of <em>MapContext</em> subclasses.</p>
+</section>
+<section id="spatial-thing-shape">
+<span id="id12"></span><h4><a class="toc-backref" href="#id58">2.2.3 Spatial Thing Shape</a><a class="headerlink" href="#spatial-thing-shape" title="Permalink to this headline"></a></h4>
+<p>The <em>Spatial Thing</em> shape describes anything with spatial extent, that
+is, size, shape and/or position. By default, the TopBraid vocabulary
+makes <code class="docutils literal notranslate"><span class="pre">geo:lat</span></code> and <code class="docutils literal notranslate"><span class="pre">geo:long</span></code> visible to the user by defining them
+as property shapes.</p>
+<figure class="align-center">
+<img alt="Extending Spatial Thing Properties" class="edg-figure" src="../../_images/extending-spatial-thing-properties.png" />
+</figure>
+<p>For purposes of this cookbook, two properties are added to the <em>Spatial
+Thing</em>, (1) <em>fill color</em> (<code class="docutils literal notranslate"><span class="pre">tbgeo:fillColor</span></code>), and (2) <em>hasGeometry</em>
+(<code class="docutils literal notranslate"><span class="pre">geosparql:hasGeometry</span></code>). <code class="docutils literal notranslate"><span class="pre">tbgeo:fillColor</span></code> is an existing property
+shape in the core TopBraid GeoSPARQL vocabulary which used internally to
+define a CSS3 color that is used to fill geometry objects (such as
+polygons) attached to a <em>Spatial Thing</em> resource. The property
+<em>hasGeometry</em> is defined in  <a class="footnote-reference brackets" href="#id43" id="id13">6</a>, and thus require a definition of a
+property shape. The shape defines the property path (<code class="docutils literal notranslate"><span class="pre">sh:path</span></code>) to
+look for values with the predicate <code class="docutils literal notranslate"><span class="pre">geosparql:hasGeometry</span></code> (<em>range
+value: geosparql:Geometry</em>). This ensures that the core EDG <em>Map
+Explorer</em> panel can interpret and display any geometric shapes (in GML
+or WKT) on maps. This shape also defines that a <em>Spatial Thing</em> expects
+at most one <code class="docutils literal notranslate"><span class="pre">geosparql:hasGeometry</span></code> which is defined in a blank node <a class="footnote-reference brackets" href="#id44" id="id14">7</a>.
+Furthermore, a <em>Details Viewer</em> is a used to show the value of the geometry as a nested form-like display.</p>
+<figure class="align-center">
+<img alt="Has Geometry Shape" class="edg-figure" src="../../_images/hasGeometry-shape.png" />
+</figure>
+<p>In this cookbook, we also extend the <em>Spatial Thing</em> shape with a number
+of new shapes, having two direct subclasses <em>Geographical Concept</em> and
+<em>Points of Interest</em>, each having a number of children subclasses. The
+former concept describes countries, cities and roads. The latter
+describes physical buildings and monuments. All concepts are defined as
+<em>Node Shapes</em>.</p>
+<figure class="align-center">
+<img alt="Extended Concepts" class="edg-figure" src="../../_images/extended-concepts.png" />
+</figure>
+<p>Both concepts are extended with more refined concepts, where each
+concept has its own set of properties, apart from those shared by the
+super-concept. Taking a closer look to the newly defined concept
+<em>Country</em>, this concept has two new declared properties: (1)
+<em>hasCapital</em> that points to an existing <em>City</em> resource, and (2)
+<em>wikidata</em> - a predicate that indicates the corresponding wikidata  <a class="footnote-reference brackets" href="#id45" id="id15">8</a>
+resource URI for a defined resouce in EDG (for example the <em>Country</em>
+Malta in EDG would have a wikidata URI value:
+<a class="reference external" href="http://www.wikidata.org/entity/Q233">http://www.wikidata.org/entity/Q233</a>). EDG makes use of these external
+links to perform transformation operations such as dynamically computing
+values (e.g. getting the population of a country from wikidata),
+however, this is out of scope for this cookbook.</p>
+<figure class="align-center">
+<img alt="Country Concepts" class="edg-figure" src="../../_images/country-concept.png" />
+</figure>
+<p>The rest of the concepts are described in the EDG project file attached
+with this project.</p>
+</section>
+<section id="properties-defined-in-topbraid-geosparql-vocabulary">
+<span id="id16"></span><h4><a class="toc-backref" href="#id59">2.2.4 Properties defined in TopBraid GeoSPARQL Vocabulary</a><a class="headerlink" href="#properties-defined-in-topbraid-geosparql-vocabulary" title="Permalink to this headline"></a></h4>
+<p>The TopBraid GeoSPARQL vocabulary provides a number of properties and
+property shapes that can be used off the shelf. These properties are
+used within the available map panels in order to enhance the UX:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tbgeo:fillColor</span></code> - The CSS3 color that shall be used to fill the
+geometry object(s).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbgeo:fillOpacity</span></code> - The fill opacity between 0 and 1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbgeo:strokeColor</span></code> - The CSS3 color that shall be used for the
+(out) lines the geometry object(s). For polylines (LineStrings) this
+can only be a hexadecimal HTML color of the format “#FFFFFF”.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbgeo:strokeWeight</span></code> - The stroke weight in pixels.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbgeo:symbolPath</span></code> - For Points, this may specify the SVG Path to
+render the marker on a map, e.g. “M -20 -10 L 20 -10 L 20 10 L -20 10
+L -20 -10” for a rectangle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbgeo:symbolScale</span></code> - For Points, this may specify the symbol’s
+scaling factor, defaulting to 1.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tbgeo:text</span></code> - A (short) text to display on a marker.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="creating-a-geo-aware-asset-collection">
+<span id="id17"></span><h2><a class="toc-backref" href="#id60">3. Creating a Geo-Aware asset collection</a><a class="headerlink" href="#creating-a-geo-aware-asset-collection" title="Permalink to this headline"></a></h2>
+<p>For the purpose of this cookbook, a <em>Data Graph</em> asset collection is
+created. Under <em>Asset Collections</em> select <em>Data Graphs</em>. On page load,
+click on the <em>Create New Data Graph</em> button. The <em>Label</em> field is
+mandatory, and in the <em>Includes</em> field search for the schema that was
+created in <a class="reference external" href="#creation-of-a-geo-aware-schema-in-edg">the previous
+section</a>. Once filled, press
+the <em>Create Data Graph</em> button. In order to mark the newly created <em>Data
+Graph</em> as geo-aware, the user needs to <a class="reference external" href="#enabling-geosparql">enable
+GeoSPARQL</a> for the asset collection</p>
+<p>A sample data graph, is provided in the cookbook’s EDG project. In order
+to open the project, under <em>Asset Collections</em> select <em>Data Graphs</em>. On
+page load, open the GeoSPARQL Cookbook asset.</p>
+<section id="enabling-geosparql">
+<span id="id18"></span><h3><a class="toc-backref" href="#id61">3.1 Enabling GeoSPARQL</a><a class="headerlink" href="#enabling-geosparql" title="Permalink to this headline"></a></h3>
+<p>Any asset collection can become a geo-aware, however, it must be noted
+that this assumes that the asset collection underlying schema has shapes
+describing geometry features (as described in <a class="reference external" href="#creation-of-a-geo-aware-schema-in-edg">section
+2</a>). In order to enable
+GeoSPARQL, the following steps are to be followed:</p>
+<ol class="arabic">
+<li><p>Open relevant asset collection in EDG;</p></li>
+<li><p>Navigate to <em>Manage</em> tab;</p></li>
+<li><p>Scroll down to <strong>Enable GeoSPARQL and Related Features</strong> and check
+the box next to <em>Enable GeoSPARQL for this
+{asset_collection_type}</em>, where <em>{asset_collection_type}</em> is the
+type of the selected asset collection;</p>
+<figure class="align-center">
+<img alt="Enable GeoSPARQL" class="edg-figure" src="../../_images/enable_geosparql.png" />
+</figure>
+</li>
+<li><p>Click <em>Rebuild Spatial Index</em> button.</p></li>
+</ol>
+<p>Occasionally, the Spatial Index needs to be rebuild, due to changes in
+the asset collection resources. The steps mentioned above can be
+re-performed for this task, however, there is no need to un-check and
+re-check the enable checkbox.</p>
+</section>
+<section id="exploring-geo-resources">
+<span id="id19"></span><h3><a class="toc-backref" href="#id62">3.2 Exploring Geo Resources</a><a class="headerlink" href="#exploring-geo-resources" title="Permalink to this headline"></a></h3>
+<p>The cookbook’s sample asset collection has a number of countries and
+cities that pre-defined. Once the asset collection is loaded, EDG loads
+the default <em>Data Graph</em> view. The left panel is used to filter and
+search resources, whilst the right panel is the form panel, where
+resource content is displayed.</p>
+<figure class="align-center">
+<img alt="Data Graph Intro" class="edg-figure" src="../../_images/data-graph-intro.png" />
+</figure>
+<p>The user can navigate through the different types of <em>Spatial Types</em>
+(e.g. countries, cities, etc…) by selecting the required type in the
+search panel dropdown.</p>
+<p>EDG 7.0 introduces two new map panels, the <strong>Map Explorer</strong> and the
+<strong>Context Map</strong>. This section will walk through the former panel, whilst
+the latter is discussed in section <a class="reference external" href="#creating-interactive-maps">Creating Interactive
+Maps</a>.</p>
+<p>The <strong>Map Explorer</strong> panel can be added to the view by clicking on the
+<strong>Panels</strong> dropdown, and drag the panel (highlighted in yellow) anywhere
+on the screen.</p>
+<figure class="align-center">
+<img alt="Map Explorer Panel" class="edg-figure" src="../../_images/map-explorer-panel.png" />
+</figure>
+<p>Once open, EDG will populate the map with all geo latitute and longitute
+information, and any geometric objects defined:</p>
+<figure class="align-center">
+<img alt="Map Explorer Panel All Data" class="edg-figure" src="../../_images/map-explorer-panel-alldata.png" />
+</figure>
+<p>Another feature in EDG 7.0 is to display selected resources on the map.
+In the search panel, select the desired resources (clicking on the
+checkbox next to the resource label). With the resources selected, click
+on the batch action dropdown button and select <em>Show on Map Result
+Panel</em>.</p>
+<figure class="align-center">
+<img alt="Show results on Map" class="edg-figure" src="../../_images/show-result-on-map.png" />
+</figure>
+<p>EDG will display the geo latitute and longitude of the selected
+resources as pins on the map, as well as any other geometry object (such
+as polygons). The currently selected resource is highligted as a blue
+pin. The user can click on any displayed pin, with EDG changing the
+current context resource with the newly selected one. This will also
+change the information displayed on the form panel.</p>
+</section>
+<section id="creating-a-resource">
+<span id="id20"></span><h3><a class="toc-backref" href="#id63">3.3 Creating a Resource</a><a class="headerlink" href="#creating-a-resource" title="Permalink to this headline"></a></h3>
+<p>In this example, a city will be created. Click the <em>new</em> button on the
+search panel. A dialog is presented to the user. The user needs to type
+in a <em>Label</em>, whilst EDG will take care of generating a new ID. Press OK
+when done.</p>
+<figure class="align-center">
+<img alt="Create City Resource" class="edg-figure" src="../../_images/create-city-resource.png" />
+</figure>
+<p>This will load the new resource in the form panel, where details can be
+entered. Once done, press <em>Save Changes</em>.</p>
+<figure class="align-center">
+<img alt="Create City Form" class="edg-figure" src="../../_images/create-city-form.png" />
+</figure>
+<section id="creating-geometry-objects">
+<span id="id21"></span><h4><a class="toc-backref" href="#id64">3.3.1 Creating Geometry Objects</a><a class="headerlink" href="#creating-geometry-objects" title="Permalink to this headline"></a></h4>
+<p>The <strong>TopBraid GeoSPARQL vocabulary</strong> allows users to define geometry
+objects using the <em>Well-known Text</em> representation or the <em>Geography
+Markup Language</em>. EDG 7.0 currently supports the following geometric
+shapes: <code class="docutils literal notranslate"><span class="pre">POINT</span></code>, <code class="docutils literal notranslate"><span class="pre">LINESTRING</span></code>, <code class="docutils literal notranslate"><span class="pre">POLYGON</span></code>, <code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span></code>.</p>
+<p>In order to create a geometric shape on a resource, click the <em>Edit</em>
+button and then click on the <em>New Geometry</em> button. This will open a
+second form panel. Click the <em>Edit</em> button on the second form panel, and
+type in the geometry shape values.</p>
+<figure class="align-center">
+<img alt="Geometry Entry" class="edg-figure" src="../../_images/geometry-entry.png" />
+</figure>
+<p>Once done, press <em>Save Changes</em> in both forms. In this example, the WKT
+format is used.</p>
+<section id="creating-a-point">
+<h5><a class="toc-backref" href="#id65">Creating a Point</a><a class="headerlink" href="#creating-a-point" title="Permalink to this headline"></a></h5>
+<p>Example: <code class="docutils literal notranslate"><span class="pre">POINT(14.518878068246499</span> <span class="pre">35.90215229036674)</span></code></p>
+<p>Map depiction:</p>
+<figure class="align-center">
+<img alt="Point Shape" class="edg-figure" src="../../_images/point-shape.png" />
+</figure>
+</section>
+<section id="creating-a-line-string">
+<h5><a class="toc-backref" href="#id66">Creating a Line String</a><a class="headerlink" href="#creating-a-line-string" title="Permalink to this headline"></a></h5>
+<p>Example:
+<code class="docutils literal notranslate"><span class="pre">LINESTRING(14.509179200448648</span> <span class="pre">35.896277248610694,14.517676438607827</span> <span class="pre">35.901491804470666)</span></code></p>
+<p>Map depiction:</p>
+<figure class="align-center">
+<img alt="Line Shape" class="edg-figure" src="../../_images/line-shape.png" />
+</figure>
+</section>
+<section id="creating-a-polygon">
+<h5><a class="toc-backref" href="#id67">Creating a Polygon</a><a class="headerlink" href="#creating-a-polygon" title="Permalink to this headline"></a></h5>
+<p>Example:
+<code class="docutils literal notranslate"><span class="pre">POLYGON((14.506690110482827</span> <span class="pre">35.89478234591123,14.50561722687687</span> <span class="pre">35.89860645934702,14.508235062875405</span> <span class="pre">35.900101289830765,14.509908761300698</span> <span class="pre">35.89982318397129,14.513384904183999</span> <span class="pre">35.902048003486435,14.515230263986245</span> <span class="pre">35.90097036434348,14.517290200509683</span> <span class="pre">35.9018741917139,14.518663491525308</span> <span class="pre">35.90048368379201,14.518019761361733</span> <span class="pre">35.89732018726464,14.514543618478433</span> <span class="pre">35.896207718878536,14.513556565560952</span> <span class="pre">35.894608518183865,14.510260930329997</span> <span class="pre">35.89275639869175,14.507771840364176</span> <span class="pre">35.891956767523475,14.506999364167887</span> <span class="pre">35.89272163228715,14.507728925019938</span> <span class="pre">35.893416957478486,14.506690110482827</span> <span class="pre">35.89478234591123))</span></code></p>
+<p>Map depiction (with fillColor yellow):</p>
+<figure class="align-center">
+<img alt="Polygon Shape" class="edg-figure" src="../../_images/polygon-shape.png" />
+</figure>
+</section>
+<section id="creating-a-multi-polygon">
+<h5><a class="toc-backref" href="#id68">Creating a Multi-Polygon</a><a class="headerlink" href="#creating-a-multi-polygon" title="Permalink to this headline"></a></h5>
+<p>Example:
+<code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON</span> <span class="pre">(((14.506690110482827</span> <span class="pre">35.89478234591123,14.50561722687687</span> <span class="pre">35.89860645934702,14.508235062875405</span> <span class="pre">35.900101289830765,14.509908761300698</span> <span class="pre">35.89982318397129,14.513384904183999</span> <span class="pre">35.902048003486435,14.515230263986245</span> <span class="pre">35.90097036434348,14.517290200509683</span> <span class="pre">35.9018741917139,14.518663491525308</span> <span class="pre">35.90048368379201,14.518019761361733</span> <span class="pre">35.89732018726464,14.514543618478433</span> <span class="pre">35.896207718878536,14.513556565560952</span> <span class="pre">35.894608518183865,14.510260930329997</span> <span class="pre">35.89275639869175,14.507771840364176</span> <span class="pre">35.891956767523475,14.506999364167887</span> <span class="pre">35.89272163228715,14.507728925019938</span> <span class="pre">35.893416957478486,14.506690110482827</span> <span class="pre">35.89478234591123))</span> <span class="pre">,</span> <span class="pre">((14.512335501507883</span> <span class="pre">35.897205967563785,14.51139136393464</span> <span class="pre">35.89824889398179,14.512174568966989</span> <span class="pre">35.89874427921673,14.51366587717927</span> <span class="pre">35.899682895370105,14.514851931908979</span> <span class="pre">35.89847408810674,14.51406872687663</span> <span class="pre">35.89801346527679,14.514508609155072</span> <span class="pre">35.897544148693264,14.513028029778852</span> <span class="pre">35.8966055071787,14.512335501507883</span> <span class="pre">35.897205967563785)))</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Particular attention is required to bracketing when creating a multipolygon, due to the visualisation engine parsing. A multipolygon has to be defined as follows: <code class="docutils literal notranslate"><span class="pre">MULTIPOLYGON(</span> <span class="pre">((lat1</span> <span class="pre">lng1,</span> <span class="pre">lat2,</span> <span class="pre">lng2</span> <span class="pre">...</span> <span class="pre">latn,</span> <span class="pre">lngn))</span> <span class="pre">,</span> <span class="pre">((lat1</span> <span class="pre">lng1,</span> <span class="pre">lat2,</span> <span class="pre">lng2</span> <span class="pre">...</span> <span class="pre">latn,</span> <span class="pre">lngn)))</span></code>. Notice that each <em>polygon</em> is encapsulated within 2 sets of brackets.</p>
+</div>
+<p>Map depiction:</p>
+<figure class="align-center">
+<img alt="Multipolygon Shape" class="edg-figure" src="../../_images/multipolygon-shape.png" />
+</figure>
+</section>
+</section>
+</section>
+</section>
+<section id="querying-using-geosparql">
+<span id="id22"></span><h2><a class="toc-backref" href="#id69">4. Querying using GeoSPARQL</a><a class="headerlink" href="#querying-using-geosparql" title="Permalink to this headline"></a></h2>
+<p>There are three possible ways to query asset collections, in EDG:
+SPARQL, GraphQL, and Active Data Shapes  <a class="footnote-reference brackets" href="#id46" id="id23">9</a>. This looks into the
+GeoSPARQL functionalities embedded into SPARQL. Support for GeoSPARQL
+functions in GraphQL is planned for future EDG versions. Remember to
+rebuild the GeoSPARQL index in case of changes to the asset collection.</p>
+<section id="required-prefixes-and-functions">
+<span id="id24"></span><h3><a class="toc-backref" href="#id70">4.1 Required Prefixes and Functions</a><a class="headerlink" href="#required-prefixes-and-functions" title="Permalink to this headline"></a></h3>
+<p>In order to use GeoSPARQL functions, the following prefixes must be
+added to the SPARQL query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">PREFIX</span> <span class="nn">spatial</span><span class="p">:</span> <span class="nl">&lt;http://jena.apache.org/spatial#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">spatialf</span><span class="p">:</span> <span class="nl">&lt;http://jena.apache.org/function/spatial#&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">geof</span><span class="p">:</span> <span class="nl">&lt;http://www.opengis.net/def/function/geosparql/&gt;</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">spatial</span></code> namespace provides property functions <a class="footnote-reference brackets" href="#id47" id="id25">10</a> that carry
+out the triple matching by executing some backend code. Such functions
+can have a bounded or unbounded subject and/or object variables, whilst
+the predicate acts as the property function, which could have
+parameters. It is not uncommon that a property functions requires the
+subject or the object variable. Should any of the variables be unbound,
+the function finds all cases where the pattern is true. Property
+functions found in this namespace are related to spatial features (e.g.
+finding features within a box) and cardinal features (e.g. finding
+features that are present in a specific directions)</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">spatialf</span></code> namespace provides mainly filter, conversion, and
+distance functions. Filter functions return true or false, whilst
+conversion functions converts values between two types. Distance
+functions are used to calculate distance between two points or
+geometries.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">geof</span></code> namespace provides functions for performing topological
+spatial operations, namely covering simple features, simple features,
+Egenhofer relations and RCC8 relations. The provided functions are based
+on the Dimensionally Extended 9-Intersection Model (DE-9IM) <a class="footnote-reference brackets" href="#id48" id="id26">11</a>.</p>
+<p>For more informations and exhaustive list of functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">spatial</span></code> and <code class="docutils literal notranslate"><span class="pre">spatialf</span></code> -
+<a class="reference external" href="https://jena.apache.org/documentation/geosparql/index.html">https://jena.apache.org/documentation/geosparql/index.html</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geof</span></code> - <a class="reference external" href="http://www.opengis.net/def/function/geosparql">http://www.opengis.net/def/function/geosparql</a></p></li>
+</ul>
+</section>
+<section id="querying-geo-aware-collections-using-sparql">
+<span id="id27"></span><h3><a class="toc-backref" href="#id71">4.2 Querying geo-aware collections using SPARQL</a><a class="headerlink" href="#querying-geo-aware-collections-using-sparql" title="Permalink to this headline"></a></h3>
+<p>Open the <em>SPARQL Query</em> panel (from the <em>Panels</em> dropdown button under
+<em>Search and Query</em>). The addition of geo features in EDG, allows users
+to visualise SPARQL results to be displayed on a map. The image below
+shows how the results can be shown in the <strong>Map Results</strong> panel.</p>
+<figure class="align-center">
+<img alt="SPRAQL Geo Panel" class="edg-figure" src="../../_images/sparql-geo-panels.png" />
+</figure>
+<p>In this section, a number of examples using the various GeoSPARQL
+functions are demonstrated in this cookbook.</p>
+<section id="example-1-find-items-within-a-geometry-box">
+<h4><a class="toc-backref" href="#id72">Example 1: Find items within a geometry box</a><a class="headerlink" href="#example-1-find-items-within-a-geometry-box" title="Permalink to this headline"></a></h4>
+<p>Functions used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">spatial:withinBox</span></code>- calculates a rectangle by specifying the
+bottom-most and top-most coordinates for the edges, and return
+features that intersect the provided box.</p>
+<ul>
+<li><p>Usage:
+<code class="docutils literal notranslate"><span class="pre">?feature</span> <span class="pre">spatial:withinBox(?latMin</span> <span class="pre">?lonMin</span> <span class="pre">?latMax</span> <span class="pre">?lonMax</span> <span class="pre">[</span> <span class="pre">?limit</span> <span class="pre">])</span> <span class="pre">.</span></code></p></li>
+<li><p>Parameters:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">?latMin</span> <span class="pre">?lonMin</span></code> - the minimum latitude and longitude point
+(bottom corner point of the box);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?latMax</span> <span class="pre">?lonMax</span></code> - the maximum latitude and longitude point
+(opposite top corner point of the box);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?limit</span></code> — an integer that limits the number of results
+returned [optional].</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="c"># Prefixes ...</span>
+
+<span class="k">SELECT</span> <span class="o">*</span> <span class="p">{</span>
+  <span class="nv">?item</span> <span class="nn">spatial</span><span class="p">:</span><span class="nt">withinBox</span> <span class="p">(</span> <span class="mf">36.01474535055199</span> <span class="mf">14.176477635899216</span>  <span class="mf">36.082639559265225</span> <span class="mf">14.35780428732703</span> <span class="p">)</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-1a-alternative-find-items-within-a-geometry-box">
+<h4><a class="toc-backref" href="#id73">Example 1a: (Alternative) Find items within a geometry box</a><a class="headerlink" href="#example-1a-alternative-find-items-within-a-geometry-box" title="Permalink to this headline"></a></h4>
+<p>Functions used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">spatialf:convertLatLonBox</span></code> — converts a set of latitude and
+longitude double coordinates into a rectangle shaped polygon as a WKT
+string</p>
+<ul>
+<li><p>Usage:
+<code class="docutils literal notranslate"><span class="pre">BIND(spatialf:convertLatLonBox(?latMin,</span> <span class="pre">?lonMin,</span> <span class="pre">?latMax,</span> <span class="pre">?lonMax)</span> <span class="pre">as</span> <span class="pre">?wktString).</span></code></p></li>
+<li><p>Parameters:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">?latMin</span> <span class="pre">?lonMin</span></code> - the minimum latitude and longitude point
+(bottom corner point of the box);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?latMax</span> <span class="pre">?lonMax</span></code> — the maximum latitude and longitude point
+(opposite top corner point of the box).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spatialf:convertLatLon</span></code> — converts latitude and longitude double
+coordinates into a WKT string of a point.</p>
+<ul>
+<li><p>Usage: <code class="docutils literal notranslate"><span class="pre">BIND(spatialf:convertLatLon(?lat,</span> <span class="pre">?lon)</span> <span class="pre">as</span> <span class="pre">?wktString).</span></code></p></li>
+<li><p>Parameters:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">?lat</span></code> - the latitude as double value;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?lon</span></code> - the longitude as a double value.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geof:sfWithin</span></code> - a function that returns true if the first
+geometry argument is spatially within the second geometry argument.</p>
+<ul>
+<li><p>Usage: <code class="docutils literal notranslate"><span class="pre">FILTER(geof:sfWithin(?queryWKT,</span> <span class="pre">?searchAreaWKT))</span></code></p></li>
+<li><p>Parameters:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">?queryWKT</span></code>- the geometry WKT that is to be looked for within
+the <em>search area</em> polygon;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?searchAreaWKT</span></code> - the geometry WKT search pool.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="c"># Prefixes ...</span>
+
+<span class="k">SELECT</span> <span class="nv">?item</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+  <span class="k">BIND</span><span class="p">(</span><span class="nn">spatialf</span><span class="p">:</span><span class="nt">convertLatLonBox</span><span class="p">(</span><span class="mf">36.01474535055199</span><span class="p">,</span> <span class="mf">14.176477635899216</span><span class="p">,</span>  <span class="mf">36.082639559265225</span><span class="p">,</span> <span class="mf">14.35780428732703</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?wktBox</span><span class="p">)</span> <span class="p">.</span>
+  <span class="nv">?item</span> <span class="k">a</span> <span class="nv">?type</span> <span class="p">;</span>
+        <span class="nn">geo</span><span class="p">:</span><span class="nt">lat</span> <span class="nv">?lat</span><span class="p">;</span>
+        <span class="nn">geo</span><span class="p">:</span><span class="nt">long</span> <span class="nv">?lon</span> <span class="p">.</span>
+  <span class="k">BIND</span><span class="p">(</span><span class="nn">spatialf</span><span class="p">:</span><span class="nt">convertLatLon</span><span class="p">(</span><span class="nv">?lat</span><span class="p">,</span> <span class="nv">?lon</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?itemWKT</span><span class="p">)</span> <span class="p">.</span>
+  <span class="k">FILTER</span><span class="p">(</span><span class="nn">geof</span><span class="p">:</span><span class="nt">sfWithin</span><span class="p">(</span><span class="nv">?itemWKT</span><span class="p">,</span> <span class="nv">?wktBox</span><span class="p">))</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Results:</p>
+<figure class="align-center">
+<img alt="Results 1a" class="edg-figure" src="../../_images/results-1a.png" />
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>DE-9IM provides equivalent functions which GeoSPARQL (<code class="docutils literal notranslate"><span class="pre">prefix</span> <span class="pre">geof:</span></code>) defines. The function <code class="docutils literal notranslate"><span class="pre">geof:sfWithin(?queryWKT,</span> <span class="pre">?polygonWKT)</span></code> can be replaced with:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">geof:sfContains(?searchAreaWKT,</span> <span class="pre">?queryWKT)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">geof:ehInside(?queryWKT,</span> <span class="pre">?searchAreaWKT)</span></code></p></li>
+</ul>
+</div>
+</section>
+<section id="example-1b-alternative-find-items-within-a-geometry-polygon">
+<h4><a class="toc-backref" href="#id74">Example 1b: (Alternative) Find items within a geometry polygon</a><a class="headerlink" href="#example-1b-alternative-find-items-within-a-geometry-polygon" title="Permalink to this headline"></a></h4>
+<p>Similar to 1a and 1b, this example shows how a WKT polygon string can be
+used in queries.</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="c"># Prefixes ...</span>
+
+<span class="k">SELECT</span> <span class="nv">?item</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+     <span class="k">BIND</span><span class="p">(</span><span class="s">&quot;POLYGON((14.169558943455778 36.092930332940085,14.341906965916715 36.09182062002719,14.341906965916715 36.01243554775603,14.16749900693234 36.0141017909665,14.169558943455778 36.092930332940085))&quot;</span><span class="o">^^</span><span class="nn">geosparql</span><span class="p">:</span><span class="nt">wktLiteral</span> <span class="k">as</span> <span class="nv">?wktBox</span><span class="p">)</span>
+     <span class="nv">?item</span> <span class="k">a</span> <span class="nv">?type</span> <span class="p">;</span>
+             <span class="nn">geo</span><span class="p">:</span><span class="nt">lat</span> <span class="nv">?lat</span><span class="p">;</span>
+             <span class="nn">geo</span><span class="p">:</span><span class="nt">long</span> <span class="nv">?lon</span> <span class="p">.</span>
+     <span class="k">BIND</span><span class="p">(</span><span class="nn">spatialf</span><span class="p">:</span><span class="nt">convertLatLon</span><span class="p">(</span><span class="nv">?lat</span><span class="p">,</span> <span class="nv">?lon</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?cityWKT</span><span class="p">)</span> <span class="p">.</span>
+     <span class="k">FILTER</span><span class="p">(</span><span class="nn">geof</span><span class="p">:</span><span class="nt">sfWithin</span><span class="p">(</span><span class="nv">?cityWKT</span><span class="p">,</span> <span class="nv">?wktBox</span><span class="p">))</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Results:</p>
+<figure class="align-center">
+<img alt="Results 1a" class="edg-figure" src="../../_images/results-1a.png" />
+</figure>
+</section>
+<section id="example-2-find-if-two-polygons-intersect">
+<h4><a class="toc-backref" href="#id75">Example 2: Find if two polygons intersect</a><a class="headerlink" href="#example-2-find-if-two-polygons-intersect" title="Permalink to this headline"></a></h4>
+<p>Functions used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">geof:sfIntersects</span></code> - returns true if the input geometries
+intersect</p>
+<ul>
+<li><p>Usage:
+<code class="docutils literal notranslate"><span class="pre">BIND(geof:sfIntersects(?wktP1,</span> <span class="pre">?wktP2)</span> <span class="pre">as</span> <span class="pre">?polygonsIntersect)</span> <span class="pre">.</span></code></p></li>
+<li><p>Parameters:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">?wktP1</span></code> - first polygon input;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?wktP2</span></code> - second polygon input.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="c"># Prefixes ...</span>
+
+<span class="k">SELECT</span> <span class="nv">?doIntersect</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+     <span class="k">BIND</span><span class="p">(</span><span class="s">&quot;POLYGON((14.153112021709822 36.100508784240176,14.495061484600447 36.100508784240176,14.495061484600447 35.92610888887777,14.153112021709822 35.92610888887777,14.153112021709822 36.100508784240176))&quot;</span><span class="o">^^</span><span class="nn">geosparql</span><span class="p">:</span><span class="nt">wktLiteral</span> <span class="k">as</span> <span class="nv">?wktP1</span><span class="p">)</span>
+  <span class="k">BIND</span><span class="p">(</span><span class="s">&quot;POLYGON((14.260228720928572 35.98891507615424,14.483388510967634 35.98891507615424,14.483388510967634 35.858800895950345,14.260228720928572 35.858800895950345,14.260228720928572 35.98891507615424))&quot;</span><span class="o">^^</span><span class="nn">geosparql</span><span class="p">:</span><span class="nt">wktLiteral</span> <span class="k">as</span> <span class="nv">?wktP2</span><span class="p">)</span>
+  <span class="k">BIND</span><span class="p">(</span><span class="nn">geof</span><span class="p">:</span><span class="nt">sfIntersects</span><span class="p">(</span><span class="nv">?wktP1</span><span class="p">,</span> <span class="nv">?wktP2</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?doIntersect</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<figure class="align-center">
+<img alt="Results 2" class="edg-figure" src="../../_images/result-2.png" />
+</figure>
+</section>
+<section id="example-3-find-geometric-features-within-an-intersection">
+<h4><a class="toc-backref" href="#id76">Example 3: Find geometric features within an intersection</a><a class="headerlink" href="#example-3-find-geometric-features-within-an-intersection" title="Permalink to this headline"></a></h4>
+<p>Functions used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">geof:intersection</span></code>- A query function that returns a geometry
+consisting of all points that are part of both input geometries.</p>
+<ul>
+<li><p>Usage:
+<code class="docutils literal notranslate"><span class="pre">BIND(geof:intersection(?wktP1,</span> <span class="pre">?wktP2)</span> <span class="pre">as</span> <span class="pre">?intersection)</span> <span class="pre">.</span></code></p></li>
+<li><p>Parameters:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">?wktP1</span></code> - first polygon input;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?wktP2</span></code> - second polygon input.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="c"># Prefixes ...</span>
+
+<span class="k">SELECT</span> <span class="nv">?item</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+     <span class="k">BIND</span><span class="p">(</span><span class="s">&quot;POLYGON((14.153112021709822 36.100508784240176,14.495061484600447 36.100508784240176,14.488881675030134 35.95501705425438,14.151738730694197 35.92888897961968,14.153112021709822 36.100508784240176))&quot;</span><span class="o">^^</span><span class="nn">geosparql</span><span class="p">:</span><span class="nt">wktLiteral</span> <span class="k">as</span> <span class="nv">?wktP1</span><span class="p">)</span>
+     <span class="k">BIND</span><span class="p">(</span><span class="s">&quot;POLYGON((14.260228720928572 35.98891507615424,14.483388510967634 35.98891507615424,14.483388510967634 35.858800895950345,14.260228720928572 35.858800895950345,14.260228720928572 35.98891507615424))&quot;</span><span class="o">^^</span><span class="nn">geosparql</span><span class="p">:</span><span class="nt">wktLiteral</span> <span class="k">as</span> <span class="nv">?wktP2</span><span class="p">)</span>
+     <span class="k">BIND</span><span class="p">(</span><span class="nn">geof</span><span class="p">:</span><span class="nt">intersection</span><span class="p">(</span><span class="nv">?wktP1</span><span class="p">,</span> <span class="nv">?wktP2</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?intersection</span><span class="p">)</span>
+     <span class="nv">?item</span> <span class="k">a</span> <span class="nv">?type</span> <span class="p">;</span>
+             <span class="nn">geo</span><span class="p">:</span><span class="nt">lat</span> <span class="nv">?lat</span><span class="p">;</span>
+             <span class="nn">geo</span><span class="p">:</span><span class="nt">long</span> <span class="nv">?lon</span> <span class="p">.</span>
+     <span class="k">BIND</span><span class="p">(</span><span class="nn">spatialf</span><span class="p">:</span><span class="nt">convertLatLon</span><span class="p">(</span><span class="nv">?lat</span><span class="p">,</span> <span class="nv">?lon</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?itemWKT</span><span class="p">)</span> <span class="p">.</span>
+     <span class="k">FILTER</span><span class="p">(</span><span class="nn">geof</span><span class="p">:</span><span class="nt">sfWithin</span><span class="p">(</span><span class="nv">?itemWKT</span><span class="p">,</span> <span class="nv">?intersection</span><span class="p">))</span> <span class="p">.</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<figure class="align-center">
+<img alt="Results 3" class="edg-figure" src="../../_images/result-3.png" />
+</figure>
+</section>
+<section id="example-4-find-cities-in-a-5-km-radium-of-a-selected-item">
+<h4><a class="toc-backref" href="#id77">Example 4: Find cities in a 5 km radium of a selected item</a><a class="headerlink" href="#example-4-find-cities-in-a-5-km-radium-of-a-selected-item" title="Permalink to this headline"></a></h4>
+<p>Functions used:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">spatial:nearby</span></code>- find features that are within radius.</p>
+<ul>
+<li><p>Usage:
+<code class="docutils literal notranslate"><span class="pre">?feature</span> <span class="pre">spatial:nearby(?lat</span> <span class="pre">?lon</span> <span class="pre">?radius</span> <span class="pre">[</span> <span class="pre">?unitsURI</span> <span class="pre">[</span> <span class="pre">?limit]])</span> <span class="pre">.</span></code></p></li>
+<li><p>Parameters:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">?lat</span></code> - latitude of the selected item as a double value;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?lon</span></code> - longitude of the selected item as a double value;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?radius</span></code> - the radius as a double value;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?unitsURI</span></code>- specifies the units of a distance. The default value is kilometres through the string or resource <code class="docutils literal notranslate"><span class="pre">http://www.opengis.net/def/uom/OGC/1.0/kilometre</span></code> [optional];</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">?limit</span></code> - an integer that limits the number of results returned [optional].</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Query:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="c"># Prefixes ...</span>
+
+<span class="k">SELECT</span> <span class="nv">?city</span>
+<span class="k">WHERE</span> <span class="p">{</span>
+    <span class="nl">&lt;urn:uuid:5c0ed2ad-9a2b-45bd-9fba-383676065502&gt;</span>
+        <span class="nn">geo</span><span class="p">:</span><span class="nt">lat</span> <span class="nv">?lat</span><span class="p">;</span>
+        <span class="nn">geo</span><span class="p">:</span><span class="nt">long</span> <span class="nv">?lon</span> <span class="p">.</span>
+             <span class="nv">?city</span> <span class="nn">spatial</span><span class="p">:</span><span class="nt">nearby</span><span class="p">(</span><span class="nv">?lat</span> <span class="nv">?lon</span> <span class="mi">5</span><span class="p">)</span> <span class="p">.</span>
+             <span class="nv">?city</span> <span class="k">a</span> <span class="nn">geosparql_cookbook_schema</span><span class="p">:</span><span class="nt">City</span> <span class="p">.</span>
+     <span class="k">FILTER</span> <span class="p">(</span><span class="nv">?city</span> <span class="o">!=</span> <span class="nl">&lt;urn:uuid:5c0ed2ad-9a2b-45bd-9fba-383676065502&gt;</span><span class="p">).</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<figure class="align-center">
+<img alt="Results 4" class="edg-figure" src="../../_images/result-4.png" />
+</figure>
+</section>
+</section>
+</section>
+<section id="advance-topics">
+<span id="id28"></span><h2><a class="toc-backref" href="#id78">5. Advance Topics</a><a class="headerlink" href="#advance-topics" title="Permalink to this headline"></a></h2>
+<p>This section discusses advanced features of using geo-spatial features
+in EDG.</p>
+<section id="interactive-maps-in-edg">
+<span id="id29"></span><h3><a class="toc-backref" href="#id79">5.1 Interactive maps in EDG</a><a class="headerlink" href="#interactive-maps-in-edg" title="Permalink to this headline"></a></h3>
+<p>EDG provides the functionality for interactive maps, in which geo-aware
+resources can be edited, to a <em>context</em> extent. This means that editing
+is done on <em>what is being shown</em> (referred to <em>geo features</em> later on)
+basis. Previously the <a class="reference external" href="#map-context-shape">Map Context Shape</a> was
+introduced whereby <em>Context Map</em>s were described as:</p>
+<blockquote>
+<div><p><em>… a set of geo resources that are either asserted or dynamically
+computed by a ``sh:values`` rule.</em></p>
+</div></blockquote>
+<p>Taking a more concrete example, users can ask EDG to display the
+countries that are part of the European Union in the map panel. The
+users can then perform actions on these countries, which may modify the
+state of the selected country (resource). For example removing their
+membership from the European Union, or changing the color of the
+polygon, and so on. These actions are programmatically defined using
+JavaScript, and this is demonstrated later on in this section.</p>
+<section id="creating-context-maps">
+<span id="id30"></span><h4><a class="toc-backref" href="#id80">5.1.1 Creating Context Maps</a><a class="headerlink" href="#creating-context-maps" title="Permalink to this headline"></a></h4>
+<p>In order to create <em>Context Maps</em>, the context needs to be defined in
+the geo-aware schema. The <strong>TopBraid GeoSPARQL Vocabulary</strong> includes the
+abstract <code class="docutils literal notranslate"><span class="pre">tbgeo:MapContext</span></code> node shape. This node shape has to be
+subclassed (<code class="docutils literal notranslate"><span class="pre">ex:myContextMap</span> <span class="pre">rdfs:subClassOf</span> <span class="pre">tbgeo:MapContext</span></code>) with
+the desired context maps. subclasses must declare a new property shape
+for the predicate <code class="docutils literal notranslate"><span class="pre">tbgeo:mapFeatures</span></code> (i.e. using <code class="docutils literal notranslate"><span class="pre">sh:path</span></code>) which
+may be an inferred property based on <code class="docutils literal notranslate"><span class="pre">sh:this</span></code>, or hold asserted
+values, using the <code class="docutils literal notranslate"><span class="pre">sh:values</span></code> rule. More information on the Shapes
+Constraint Language (SHACL) can be found in  <a class="footnote-reference brackets" href="#id49" id="id31">12</a>.</p>
+<p>In order to define a context map, navigate towards the geo-aware
+ontology (under <em>Asset Collections</em> select <em>Ontologies</em>, and on page
+load click on the schema that was created in <a class="reference external" href="#creating-a-geo-aware-schema-in-edg">section
+2</a>).</p>
+<p>Once loaded, in the <em>Class Hierarchy</em> panel navigate to <em>Map context</em>,
+right click on the tree node and select the action item <em>Create subclass
+of Map context…</em></p>
+<figure class="align-center">
+<img alt="Create Map Context Subclass" class="edg-figure" src="../../_images/create-map-context-subclass.png" />
+</figure>
+<p>This displays a dialog box where the user is required to input a <em>Label</em>
+and optionally modify the <em>ID</em> and/or add a <em>Description</em>. In the sample
+cookbook project, a abstract context map, <em>Organisation Context</em>, is
+created, together with two “implementations” called <em>Intergovernmental
+Organisation</em> and <em>Regional Organisation</em></p>
+<figure class="align-center">
+<img alt="Context Map Subclass" class="edg-figure" src="../../_images/context-map-subclasses.png" />
+</figure>
+<p>For each context implementation, a property shape is declared for the
+predicate <code class="docutils literal notranslate"><span class="pre">tbgeo:mapFeatures</span></code>. Click on the <em>+</em> button in the
+<em>Property Groups</em> panel. This displays a dropdown menu, which the user
+should click on the action <em>Create Attribute (Datatype property shape)</em>
+or <em>Create Relationship (Object property shape)</em>. The predicate
+<code class="docutils literal notranslate"><span class="pre">tbgeo:mapFeatures</span></code> has a flexible range which changes based on the
+values being inferred.</p>
+<p>Once the property shape is created, the user needs to change the
+property path value to <code class="docutils literal notranslate"><span class="pre">tbgeo:mapFeatures</span></code>. Furthermore, the values
+field (under <em>Inferences</em>) needs to be populated. For these two context
+maps, in the inferred values looks for countries that are part of the
+organisation. The following rule is defined:
+<code class="docutils literal notranslate"><span class="pre">path(^geosparql_cookbook_schema:inRegionalOrganisation)</span></code>. This rule
+basically takes the context resource and follows the inverse path to
+find the countries. The property shape form will look as follows:</p>
+<figure class="align-center">
+<img alt="Context Property Shape" class="edg-figure" src="../../_images/context-property-shape.png" />
+</figure>
+<p>The following is the property shape definition in turtle syntax (one
+could see this in EDG using the <strong>Source Code</strong> panel)</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="nn">geosparql_cookbook_schema</span><span class="p">:</span><span class="nt">RegionalOrganisation-countries</span>
+  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">PropertyShape</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">tbgeo</span><span class="p">:</span><span class="nt">mapFeatures</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">geosparql_cookbook_schema</span><span class="p">:</span><span class="nt">Country</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;countries&quot;</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">values</span> <span class="p">[</span>
+      <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="p">[</span>
+          <span class="nn">sh</span><span class="p">:</span><span class="nt">inversePath</span> <span class="nn">geosparql_cookbook_schema</span><span class="p">:</span><span class="nt">inRegionalOrganisation</span> <span class="p">;</span>
+        <span class="p">]</span> <span class="p">;</span>
+    <span class="p">]</span> <span class="p">;</span>
+<span class="p">.</span>
+</pre></div>
+</div>
+<p>Prior to creating this property shape, in the <em>Country</em> we declared two
+additional property shapes: <em>inRegionalOrganisation</em> and
+<em>inIntergovernmentalOrganisation</em>. These shapes define the groups to
+which a country belongs in, e.g.
+<code class="docutils literal notranslate"><span class="pre">geosparql_cookbook:ireland</span> <span class="pre">geosparql_cookbook_schema:inRegionalOrganisation</span> <span class="pre">geosparql_cookbook:EU</span> <span class="pre">.</span></code></p>
+</section>
+<section id="creating-a-click-handler">
+<span id="id32"></span><h4><a class="toc-backref" href="#id81">5.1.2 Creating a click handler</a><a class="headerlink" href="#creating-a-click-handler" title="Permalink to this headline"></a></h4>
+<p>Map actions are created as instances of <code class="docutils literal notranslate"><span class="pre">tbgeo:MapClickHandler</span></code>.
+Instances of this type must have a script declared by the
+predicate<code class="docutils literal notranslate"><span class="pre">dash:js</span></code>, which gets triggered when a user clicks on a
+polygon or marker on a map. The script has access to two pre-bounded
+variables <code class="docutils literal notranslate"><span class="pre">focusNode</span></code> and <code class="docutils literal notranslate"><span class="pre">mapContext</span></code>. The former is the resource
+that was clicked on. This is a JavaScript object with the label and URI
+of the resource. The <code class="docutils literal notranslate"><span class="pre">mapContext</span></code> variable is the currently selected
+<code class="docutils literal notranslate"><span class="pre">tbgeo:MapContext</span></code>.</p>
+<p>All scripts implementing click handlers will be invoked at each click.
+Therefore, it is advisable that guard clauses (e.g if statements) are
+implemented. In such statements one can verify if the action can
+proceed, say for example whether the selected resource (<code class="docutils literal notranslate"><span class="pre">focusNode</span></code>)
+or <code class="docutils literal notranslate"><span class="pre">mapContext</span></code> is of a particular instance.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since map actions modify the state of resources, these are only available if the graph is not in read-only mode.</p>
+</div>
+<p>In the sample project, these functions are defined in a separate turtle
+file (<code class="docutils literal notranslate"><span class="pre">geosparql.topbraid.org</span> <span class="pre">&gt;</span> <span class="pre">GeoFunctions.ttl</span></code>). Whilst these
+functions, in theory, can be defined in the schema itself, it is a good
+practice to differentiate between the <strong>A-box</strong> and <strong>T-box</strong> statements</p>
+<p>Based on the two context maps defined in the previous section, a <em>map
+click handler</em> is defined that removes the <em>focusNode</em> from the
+organisation in context (<code class="docutils literal notranslate"><span class="pre">mapContext</span></code>). The following JavaScript code
+is declared in the <em>map click handler</em> instance.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nx">mapContext</span><span class="p">.</span><span class="nx">instanceOf</span><span class="p">(</span><span class="nx">geosparql_cookbook_schema</span><span class="p">.</span><span class="nx">RegionalOrganisation</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">graph</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">focusNode</span><span class="p">,</span> <span class="nx">geosparql_cookbook_schema</span><span class="p">.</span><span class="nx">inRegionalOrganisation</span><span class="p">,</span> <span class="nx">mapContext</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">mapContext</span><span class="p">.</span><span class="nx">instanceOf</span><span class="p">(</span><span class="nx">geosparql_cookbook_schema</span><span class="p">.</span><span class="nx">IntergovernmentalOrganisation</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">graph</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">focusNode</span><span class="p">,</span> <span class="nx">geosparql_cookbook_schema</span><span class="p">.</span><span class="nx">inIntergovernmentalOrganisation</span><span class="p">,</span> <span class="nx">mapContext</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The turtle instance is as follows:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="nn">gfunc</span><span class="p">:</span><span class="nt">RemoveFromOrg</span>
+  <span class="kt">a</span> <span class="nn">tbgeo</span><span class="p">:</span><span class="nt">MapClickHandler</span> <span class="p">;</span>
+  <span class="nn">dash</span><span class="p">:</span><span class="nt">js</span> <span class="s">&quot;&quot;&quot;if (mapContext.instanceOf(geosparql_cookbook_schema.RegionalOrganisation)) {</span>
+<span class="s">    graph.remove(focusNode, geosparql_cookbook_schema.inRegionalOrganisation, mapContext)</span>
+<span class="s">}</span>
+<span class="s">if (mapContext.instanceOf(geosparql_cookbook_schema.IntergovernmentalOrganisation)) {</span>
+<span class="s">    graph.remove(focusNode, geosparql_cookbook_schema.inIntergovernmentalOrganisation, mapContext)</span>
+<span class="s">}</span>
+<span class="s">&quot;&quot;&quot; ;</span>
+<span class="s">  rdfs:label &quot;Remove from Organisation&quot; ;</span>
+<span class="s">.</span>
+</pre></div>
+</div>
+</section>
+<section id="using-context-maps-in-geo-aware-data-assets">
+<span id="id33"></span><h4><a class="toc-backref" href="#id82">5.1.3 Using context maps in geo-aware data assets</a><a class="headerlink" href="#using-context-maps-in-geo-aware-data-assets" title="Permalink to this headline"></a></h4>
+<p>In the cookbook’s sample project, a number of regional organisations and
+intergovernmental organisations are defined and countries are linked to
+these organisations with the newly defined predicates.</p>
+<p>In the GeoSPARQL cookbook data graph, select <em>Regional Organisation</em> in
+the search drop down. Filter the organisations to find “European Union”.
+Once the resource is found, open the <strong>Context Map</strong> panel. This is done
+by right-clicking the resource &gt; <em>Explore</em> &gt; <em>Show Context Map</em>.</p>
+<figure class="align-center">
+<img alt="Show Context Map" class="edg-figure" src="../../_images/show-context-map.png" />
+</figure>
+<p>This will open the <strong>Context Map</strong> panel, showing points inferred by
+<code class="docutils literal notranslate"><span class="pre">tbgeo:mapFeatures</span></code>.</p>
+<figure class="align-center">
+<img alt="Context Map" class="edg-figure" src="../../_images/context-map.png" />
+</figure>
+<p>When clicking on a country resource, the <em>map click handler</em> script is
+invoked and the country is no longer part of the context map, and hence
+removed (in this example, Ireland is removed):</p>
+<figure class="align-center">
+<img alt="Context Map Action" class="edg-figure" src="../../_images/context-map-action.png" />
+</figure>
+<p>Since the <em>map click handler</em> is driven by JavaScript, more advanced
+action can be done on the resource to change the state. This cookbook
+demonstrates a toy example, however, more complex coding can be handled
+by EDG <a class="footnote-reference brackets" href="#id50" id="id34">13</a>.</p>
+</section>
+</section>
+<section id="shacl-constraints-on-geo-spatial-resources">
+<span id="id35"></span><h3><a class="toc-backref" href="#id83">5.2 SHACL Constraints on Geo-spatial resources</a><a class="headerlink" href="#shacl-constraints-on-geo-spatial-resources" title="Permalink to this headline"></a></h3>
+<p>In EDG, schemas are driven by SHACL node and property shapes. This gives
+the opportunity for <em>on-the-fly</em> validation of data entry. An example in
+this regard is making sure that the city selected for <code class="docutils literal notranslate"><span class="pre">hasCapital</span></code>
+lies within a country. Assuming that all countries have polygon
+boundaries, the following SPARQL constraint can be defined:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="nv">$this</span> <span class="nv">$value</span> <span class="k">WHERE</span> <span class="p">{</span>
+      <span class="nv">$this</span> <span class="nv">$PATH</span> <span class="nv">$value</span> <span class="p">.</span>
+                     <span class="nv">$this</span> <span class="nn">geosparql</span><span class="p">:</span><span class="nt">hasGeometry</span> <span class="nv">?aGeometry</span> <span class="p">.</span>
+                     <span class="nv">?aGeometry</span> <span class="k">a</span> <span class="nn">geosparql</span><span class="p">:</span><span class="nt">Geometry</span> <span class="p">;</span>
+                     <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?aGeometry</span> <span class="nn">geosparql</span><span class="p">:</span><span class="nt">asWKT</span> <span class="nv">?wktPolygon</span> <span class="p">}</span> <span class="p">.</span>
+                     <span class="k">OPTIONAL</span> <span class="p">{</span> <span class="nv">?aGeometry</span> <span class="nn">geosparql</span><span class="p">:</span><span class="nt">asGML</span> <span class="nv">?gmlPolygon</span> <span class="p">}</span> <span class="p">.</span>
+                     <span class="k">BIND</span><span class="p">(</span><span class="nf">COALESCE</span><span class="p">(</span><span class="nv">?wktPolygon</span><span class="p">,</span> <span class="nv">?gmlPolygon</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?polygon</span><span class="p">)</span> <span class="p">.</span>
+            <span class="nv">$value</span> <span class="k">a</span> <span class="nv">?type</span> <span class="p">;</span>
+                    <span class="nn">geo</span><span class="p">:</span><span class="nt">lat</span> <span class="nv">?lat</span><span class="p">;</span>
+                    <span class="nn">geo</span><span class="p">:</span><span class="nt">long</span> <span class="nv">?lon</span>
+              <span class="k">BIND</span><span class="p">(</span><span class="nn">spatialf</span><span class="p">:</span><span class="nt">convertLatLon</span><span class="p">(</span><span class="nv">?lat</span><span class="p">,</span> <span class="nv">?lon</span><span class="p">)</span> <span class="k">as</span> <span class="nv">?valueWKT</span><span class="p">)</span> <span class="p">.</span>
+              <span class="k">FILTER</span><span class="p">(</span><span class="o">!</span><span class="nn">geof</span><span class="p">:</span><span class="nt">sfWithin</span><span class="p">(</span><span class="nv">?valueWKT</span><span class="p">,</span> <span class="nv">?polygon</span><span class="p">))</span> <span class="p">.</span>
+             <span class="p">}</span>
+</pre></div>
+</div>
+<p>This query is added as a SPARQL constraint in the shape
+<code class="docutils literal notranslate"><span class="pre">geosparql_cookbook_schema:Country-hasCapital</span></code>, using the
+<code class="docutils literal notranslate"><span class="pre">sh:sparql</span></code> predicate:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="nn">geosparql_cookbook_schema</span><span class="p">:</span><span class="nt">Country-hasCapital</span>
+  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">PropertyShape</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">geosparql_cookbook_schema</span><span class="p">:</span><span class="nt">hasCapital</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">geosparql_cookbook_schema</span><span class="p">:</span><span class="nt">City</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">group</span> <span class="nn">metadata</span><span class="p">:</span><span class="nt">DescriptionPropertyGroup</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;hasCapital&quot;</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">order</span> <span class="s">&quot;1&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">severity</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">Violation</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">sparql</span> <span class="p">[</span>
+      <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;{$value} is not within {$this}.&quot;</span> <span class="p">;</span>
+      <span class="nn">sh</span><span class="p">:</span><span class="nt">prefixes</span> <span class="p">[</span>
+          <span class="nn">sh</span><span class="p">:</span><span class="nt">declare</span> <span class="p">[</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">namespace</span> <span class="s">&quot;http://jena.apache.org/function/spatial#&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">;</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">prefix</span> <span class="s">&quot;spatialf&quot;</span> <span class="p">;</span>
+            <span class="p">]</span> <span class="p">;</span>
+        <span class="p">]</span> <span class="p">;</span>
+      <span class="nn">sh</span><span class="p">:</span><span class="nt">prefixes</span> <span class="p">[</span>
+          <span class="nn">sh</span><span class="p">:</span><span class="nt">declare</span> <span class="p">[</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">namespace</span> <span class="s">&quot;http://www.opengis.net/def/function/geosparql/&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">;</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">prefix</span> <span class="s">&quot;geof&quot;</span> <span class="p">;</span>
+            <span class="p">]</span> <span class="p">;</span>
+        <span class="p">]</span> <span class="p">;</span>
+      <span class="nn">sh</span><span class="p">:</span><span class="nt">prefixes</span> <span class="p">[</span>
+          <span class="nn">sh</span><span class="p">:</span><span class="nt">declare</span> <span class="p">[</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">namespace</span> <span class="s">&quot;http://www.opengis.net/ont/geosparql#&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">;</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">prefix</span> <span class="s">&quot;geosparql&quot;</span> <span class="p">;</span>
+            <span class="p">]</span> <span class="p">;</span>
+        <span class="p">]</span> <span class="p">;</span>
+      <span class="nn">sh</span><span class="p">:</span><span class="nt">prefixes</span> <span class="p">[</span>
+          <span class="nn">sh</span><span class="p">:</span><span class="nt">declare</span> <span class="p">[</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">namespace</span> <span class="s">&quot;http://www.w3.org/2003/01/geo/wgs84_pos#&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">anyURI</span> <span class="p">;</span>
+              <span class="nn">sh</span><span class="p">:</span><span class="nt">prefix</span> <span class="s">&quot;geo&quot;</span> <span class="p">;</span>
+            <span class="p">]</span> <span class="p">;</span>
+        <span class="p">]</span> <span class="p">;</span>
+      <span class="nn">sh</span><span class="p">:</span><span class="nt">select</span> <span class="s">&quot;&quot;&quot;SELECT DISTINCT $this $value WHERE {</span>
+<span class="s">            $this $PATH $value .</span>
+<span class="s">                                             $this geosparql:hasGeometry ?aGeometry .</span>
+<span class="s">                                             ?aGeometry a geosparql:Geometry ;</span>
+<span class="s">                                             OPTIONAL { ?aGeometry geosparql:asWKT ?wktPolygon } .</span>
+<span class="s">                                             OPTIONAL { ?aGeometry geosparql:asGML ?gmlPolygon } .</span>
+<span class="s">                                             BIND(COALESCE(?wktPolygon, ?gmlPolygon) as ?polygon) .</span>
+<span class="s">             $value a ?type ;</span>
+<span class="s">                    geo:lat ?lat;</span>
+<span class="s">                    geo:long ?lon</span>
+<span class="s">            BIND(spatialf:convertLatLon(?lat, ?lon) as ?valueWKT) .</span>
+<span class="s">            FILTER(!geof:sfWithin(?valueWKT, ?polygon)) .</span>
+<span class="s">             }&quot;&quot;&quot; ;</span>
+<span class="s">    ] ;</span>
+<span class="s">.</span>
+</pre></div>
+</div>
+<p>Once having this constraint in place, EDG displays an error message when the constraint is validated:</p>
+<figure class="align-center">
+<img alt="Error SHACL" class="edg-figure" src="../../_images/error-shacl.png" />
+</figure>
+</section>
+<section id="extending-data-governance-ontologies-with-geo-schemas">
+<span id="id36"></span><h3><a class="toc-backref" href="#id84">5.3 Extending Data Governance Ontologies with Geo Schemas</a><a class="headerlink" href="#extending-data-governance-ontologies-with-geo-schemas" title="Permalink to this headline"></a></h3>
+<p>Start off by creating a new ontology in EDG, naming it for example
+<em>Enterprise Asset Extension</em>. Once created include the following two
+vocabularies:</p>
+<ul class="simple">
+<li><p>EDG Schema - Enterprise Models</p></li>
+<li><p>TopBraid GeoSPARQL Vocabulary</p></li>
+</ul>
+<p>The <strong>EDG Schema - Enterprise Models</strong> describe terms that make up Data
+Governance (DG) assets, including <em>Business Assets</em>, <em>Data Assets</em>,
+<em>Technical Assets</em>, and <em>Governance Assets</em>. In EDG, a number of DG
+terms are subclasses of the concept <em>Locatable</em> (<code class="docutils literal notranslate"><span class="pre">edg:Locatable</span></code>).
+This concept provides a number of predicates related to location
+information, however, it lacks general geospatial information such as
+<code class="docutils literal notranslate"><span class="pre">geo:lat</span></code> and <code class="docutils literal notranslate"><span class="pre">geo:long</span></code>. Therefore, in order to make
+<code class="docutils literal notranslate"><span class="pre">edg:Locatable</span></code> geo-aware, the concept needs to be a subclass of
+<code class="docutils literal notranslate"><span class="pre">geo:SpatialThing</span></code>. This can be done by editing the <em>superclasses</em>
+field in the form. Furthermore, <code class="docutils literal notranslate"><span class="pre">geo:SpatialThing</span></code> can be enhanced
+with geometric shapes by creating a property shape for
+<code class="docutils literal notranslate"><span class="pre">geosparql:hasGeometry</span></code>, as described in <a class="reference external" href="#map-context-shape">section
+2.2.2</a>. The following snippet shows the TURTLE
+code for the property shape:</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="nn">geo</span><span class="p">:</span><span class="nt">SpatialThing</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="nn">geo</span><span class="p">:</span><span class="nt">SpatialThing-geometry</span> <span class="p">;</span>
+<span class="p">.</span>
+<span class="nn">geo</span><span class="p">:</span><span class="nt">SpatialThing-geometry</span>
+  <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">PropertyShape</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">geosparql</span><span class="p">:</span><span class="nt">hasGeometry</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">geosparql</span><span class="p">:</span><span class="nt">Geometry</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;Allows the definition of geometric shapes&quot;</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">group</span> <span class="nn">tbgeo</span><span class="p">:</span><span class="nt">MapRenderingPropertyGroup</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">&quot;geometry&quot;</span> <span class="p">;</span>
+  <span class="nn">sh</span><span class="p">:</span><span class="nt">order</span> <span class="s">&quot;0&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">decimal</span> <span class="p">;</span>
+<span class="p">.</span>
+</pre></div>
+</div>
+<p>Any other concept, such as <em>Information Asset</em>
+(<code class="docutils literal notranslate"><span class="pre">edg:InformationAsset</span></code>) or <em>Party</em> (<code class="docutils literal notranslate"><span class="pre">edg:Party</span></code>), that requires
+geo-spatial information can be extended to be a subclass of
+<code class="docutils literal notranslate"><span class="pre">geo:SpatialThing</span></code>. In order to view all different concepts and
+properties that are displayable in EDG’s UI forms, in the <em>Quick Search</em>
+dropdown (<strong>Class Hierarchy</strong> panel) search for <em>Enterprise Viewpoints</em>.
+In EDG, a viewpoint is an abstract class that organises UI “views” for
+different asset collections.</p>
+<figure class="align-center">
+<img alt="Enterprise Viewpoint" class="edg-figure" src="../../_images/enterprise-viewpoint.png" />
+</figure>
+<p>In order to create an enterprise asset, under <em>Asset Collections</em> select
+Enterprise Assets. On page load, click on the <em>Create New Enterprise
+Asset Collection</em> button. Fill in the displayed form, with the <em>Label</em>
+field being mandatory, and once filled press <em>Create Enterprise Asset
+Collection</em>. Once created, click on the <em>Settings</em> tab, and then
+<em>Includes</em>. Find and select the extension ontology created. Finally,
+click on the <em>Manage</em> tab and <a class="reference external" href="#enabling-geosparql">enable
+GeoSPARQL</a>.</p>
+</section>
+</section>
+<section id="references">
+<span id="id37"></span><h2><a class="toc-backref" href="#id85">6. References</a><a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<dl class="footnote brackets">
+<dt class="label" id="id38"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>WGS84 Geo Positioning RDF vocabulary -
+<a class="reference external" href="https://www.w3.org/2003/01/geo/wgs84_pos">https://www.w3.org/2003/01/geo/wgs84_pos</a></p>
+</dd>
+<dt class="label" id="id39"><span class="brackets"><a class="fn-backref" href="#id5">2</a></span></dt>
+<dd><p>Open Geospatial Consortium GeoSPARQL - A Geographic Query Language
+for RDF Data schema - <a class="reference external" href="https://www.ogc.org/standards/geosparql">https://www.ogc.org/standards/geosparql</a></p>
+</dd>
+<dt class="label" id="id40"><span class="brackets"><a class="fn-backref" href="#id7">3</a></span></dt>
+<dd><p><a class="reference external" href="https://www.topquadrant.com/project/ontology_modeling_overview/">https://www.topquadrant.com/project/ontology_modeling_overview/</a></p>
+</dd>
+<dt class="label" id="id41"><span class="brackets"><a class="fn-backref" href="#id8">4</a></span></dt>
+<dd><p><a class="reference external" href="https://www.topquadrant.com/graphql/shacl-graphql.html#schema">https://www.topquadrant.com/graphql/shacl-graphql.html#schema</a></p>
+</dd>
+<dt class="label" id="id42"><span class="brackets"><a class="fn-backref" href="#id10">5</a></span></dt>
+<dd><p>ISO 19107:2019 Geographic information — Spatial schema
+(<a class="reference external" href="https://www.iso.org/standard/66175.html">https://www.iso.org/standard/66175.html</a>)</p>
+</dd>
+<dt class="label" id="id43"><span class="brackets"><a class="fn-backref" href="#id13">6</a></span></dt>
+<dd><p>Open Geospatial Consortium GeoSPARQL - A Geographic Query Language
+for RDF Data schema - <a class="reference external" href="https://www.ogc.org/standards/geosparql">https://www.ogc.org/standards/geosparql</a></p>
+</dd>
+<dt class="label" id="id44"><span class="brackets"><a class="fn-backref" href="#id14">7</a></span></dt>
+<dd><p>Blank nodes are usually used to define <em>local scoped</em> resources, i.e.
+those resources which are not meant to be shared outside of the asset
+collection defined.</p>
+</dd>
+<dt class="label" id="id45"><span class="brackets"><a class="fn-backref" href="#id15">8</a></span></dt>
+<dd><p><a class="reference external" href="https://www.wikidata.org">https://www.wikidata.org</a>.</p>
+</dd>
+<dt class="label" id="id46"><span class="brackets"><a class="fn-backref" href="#id23">9</a></span></dt>
+<dd><p>Active Data Shapes Tutorial - <a class="reference external" href="http://datashapes.org/active/">http://datashapes.org/active/</a></p>
+</dd>
+<dt class="label" id="id47"><span class="brackets"><a class="fn-backref" href="#id25">10</a></span></dt>
+<dd><p>Jena Extensions in ARQ -
+<a class="reference external" href="https://jena.apache.org/documentation/query/extension.html#property-functions">https://jena.apache.org/documentation/query/extension.html#property-functions</a></p>
+</dd>
+<dt class="label" id="id48"><span class="brackets"><a class="fn-backref" href="#id26">11</a></span></dt>
+<dd><p>Dimensionally Extended 9-Intersection Model (DE-9IM) -
+<a class="reference external" href="https://en.wikipedia.org/wiki/DE-9IM">https://en.wikipedia.org/wiki/DE-9IM</a></p>
+</dd>
+<dt class="label" id="id49"><span class="brackets"><a class="fn-backref" href="#id31">12</a></span></dt>
+<dd><p>Shapes Constraint Language - W3C Recommendation -
+<a class="reference external" href="https://www.w3.org/TR/shacl/">https://www.w3.org/TR/shacl/</a></p>
+</dd>
+<dt class="label" id="id50"><span class="brackets"><a class="fn-backref" href="#id34">13</a></span></dt>
+<dd><p>The Many Shapes of SHACL -
+<a class="reference external" href="http://www.lotico.com/index.php/The_Many_Shapes_of_SHACL">http://www.lotico.com/index.php/The_Many_Shapes_of_SHACL</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../topbraid_explorer/index.html" class="btn btn-neutral float-left" title="TopBraid Explorer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../user_guide/index.html" class="btn btn-neutral float-right" title="User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

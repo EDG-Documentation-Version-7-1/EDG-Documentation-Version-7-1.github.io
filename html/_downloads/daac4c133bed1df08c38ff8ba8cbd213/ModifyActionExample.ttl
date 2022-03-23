@@ -1,0 +1,64 @@
+# baseURI: http://extensionsamples.topbraid.org/resourceactions/modifyactionexample
+# imports: http://datashapes.org/dash
+# prefix: ex
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix ex: <http://extensionsamples.topbraid.org/resourceactions/modifyactionexample#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://extensionsamples.topbraid.org/resourceactions/modifyactionexample>
+  a owl:Ontology ;
+  <http://topbraid.org/swa#defaultNamespace> "http://extensionsamples.topbraid.org/resourceactions/modifyactionexample#" ;
+  rdfs:label "ModifyActionExample.ttl" ;
+  owl:imports <http://datashapes.org/dash> ;
+.
+ex:AddGermanLabelAction
+  a dash:ModifyAction ;
+  dash:actionGroup ex:SampleModifyActionsGroup ;
+  dash:actionIconClass "fas fa-language" ;
+  dash:js "focusNode.add(rdfs.label, graph.langString(germanLabel, 'de'))" ;
+  dash:jsCondition """// Returns true if the focusNode has no rdfs:label that has language 'de'
+!focusNode.values(rdfs.label).some((label) => label instanceof LiteralNode && label.lang == 'de')""" ;
+  rdfs:comment """A sample ModifyAction that asks the user to enter a (German) label and then adds this to the currently selected focus node. The action is available from the Modify menu of any instance of owl:Thing (or a subclass of that), unless the instance already has a label with @de as language tag.
+
+You can try this out using the New Zealand instance of Country. Once you add a German language, the action will be disabled.""" ;
+  rdfs:label "Add German label..." ;
+  sh:parameter [
+      a sh:Parameter ;
+      sh:path <urn:param:germanLabel> ;
+      sh:datatype xsd:string ;
+      sh:description "The label that shall be added to the selected asset. Should be in German :)" ;
+      sh:name "German label" ;
+    ] ;
+.
+ex:Country
+  a owl:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "Just a simple example class with a label property." ;
+  rdfs:label "Country" ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property ex:Country-label ;
+.
+ex:Country-label
+  a sh:PropertyShape ;
+  sh:path rdfs:label ;
+  dash:singleLine true ;
+  <http://datashapes.org/graphql#name> "labels" ;
+  sh:name "labels" ;
+  sh:or dash:StringOrLangString ;
+.
+ex:NewZealand
+  a ex:Country ;
+  rdfs:label "New Zealand" ;
+.
+ex:SampleModifyActionsGroup
+  a dash:ActionGroup ;
+  rdfs:label "Sample Modify Actions" ;
+.
+owl:Thing
+  dash:resourceAction ex:AddGermanLabelAction ;
+.

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to ADS &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Scripting User Interface" href="ui.html" />
+    <link rel="prev" title="Scripting with JavaScript and ADS" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Introduction to ADS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#core-api">Core API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#auto-generated-api">Auto-Generated API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shape-scripts">Shape Scripts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#shape-script-examples">Shape Script Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#included-scripts">Included Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#architecture-of-ads">Architecture of ADS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">The Scripting User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">Working with Relational Databases via SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Resource Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ADS-based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shacl.html">Using ADS with SHACL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodejs.html">Using ADS from Node.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web.html">Using ADS from Web Applications and React</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>Introduction to ADS</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="introduction-to-ads">
+<span id="scripting-introduction"></span><h1>Introduction to ADS<a class="headerlink" href="#introduction-to-ads" title="Permalink to this headline"></a></h1>
+<p><em>Active Data Shapes</em> (ADS) is an innovative scripting technology that enables people with JavaScript skills to interact with the knowledge graphs stored within the EDG asset collections.
+ADS closely integrates declarative graph schema definitions (using SHACL shapes) with imperative scripting language code by means of an API generator that mirrors the shapes of the graph data as JavaScript classes.
+Using familiar design patterns, Active Data Shapes may significantly lower the cost of entry into graph technology for “mainstream” developers, while greatly enhancing the productivity of graph technology power users.
+Let’s look at some basic concepts of how ADS works.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ADS scripts generally execute server-side on the TopBraid platform.
+This means that ADS scripts can very quickly query and modify the data stored in the graphs.</p>
+</div>
+<p>ADS scripts can be edited with and executed from TopBraid EDG, in particular through the Script Editor panel.
+TopBraid provides various mechanisms to store ADS scripts alongside the ontologies so that they can be executed repeatedly, for example as web services.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ADS is extremely powerful.
+Like with any full programming language, ADS scripts may contain errors that cause infinite loops and other nasty surprises.
+Scripts should only be edited by experts and be developed in a safe sandbox environment such as TopBraid EDG Studio.
+Furthermore, the administrator can disable editing ADS scripts for certain governance roles on the EDG server configuration parameters page.
+The JavaScript/ADS experts in your organization can prepare well-tested scripts for all other users.</p>
+</div>
+<p>ADS scripts may also be executed on the Node.js platform.
+In that role, ADS serves as a client API for external Node.js applications to interact with TopBraid EDG.
+Finally, ADS code may be embedded into Web applications to simplify the development of components that execute in the browser.
+However, even in that role, ADS scripts are always executed server-side.
+We will get to this later.</p>
+<p>All ADS scripts are written in JavaScript (in particular: ECMAScript) and can access all built-in features of the ECMAScript API such as Objects, Arrays and String functions.
+Since ADS scripts are executing server-side, they <em>do not</em> have access to client-side JavaScript libraries such as DOM manipulation and events.</p>
+<p>In addition to the standard ECMAScript features, ADS scripts can access two sets of APIs:</p>
+<ul class="simple">
+<li><p>The Core API contains the generic features to interact with any RDF graph and basic I/O functionality</p></li>
+<li><p>The Auto-Generated APIs contain classes and functions that are based on the ontologies that are included by the currently active asset collection</p></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use the Script API Viewer panel to see the source code of all available ADS features.
+The Script Editors also provide auto-complete.
+For example, start typing <code class="code docutils literal notranslate"><span class="pre">graph.</span></code> to see the most important functions of the Core API.</p>
+</div>
+<section id="core-api">
+<span id="scripting-core-api"></span><h2>Core API<a class="headerlink" href="#core-api" title="Permalink to this headline"></a></h2>
+<p>The ADS Core API is available for all asset collections.
+You can see the generated documentation for the Core API from the highlighted button of the Script Editor panel:</p>
+<figure class="align-center" id="id1">
+<img alt="The Script Editor panel with the API button" src="../_images/ScriptEditorAPIButton.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Script Editor supports auto-complete and has a button to open the Core API documentation</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The main entry point into the API is the object <code class="code docutils literal notranslate"><span class="pre">graph</span></code> which offers various functions to query the currently active graph and to construct other objects such as RDF nodes.
+It is important to understand how RDF nodes are represented in the ADS API:</p>
+<figure class="align-center" id="id2">
+<img alt="Core classes of the ADS API" src="../_images/CoreNodeClasses.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The core classes used by ADS to represent RDF nodes</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Every node is an instance of <code class="code docutils literal notranslate"><span class="pre">GraphNode</span></code>.
+RDF literals (strings, booleans, dates etc) are represented as instances of <code class="code docutils literal notranslate"><span class="pre">LiteralNode</span></code>.
+You can query the lexical form of a literal using its field <code class="code docutils literal notranslate"><span class="pre">lex</span></code>.
+All literals have a <code class="code docutils literal notranslate"><span class="pre">datatype</span></code> property holding the URI of the RDF datatype, and a <code class="code docutils literal notranslate"><span class="pre">lang</span></code> property with the language tag (usually an empty string unless the literal has datatype <code class="code docutils literal notranslate"><span class="pre">rdf:langString</span></code>).
+All of those values are read-only properties.</p>
+<p>You can use <code class="code docutils literal notranslate"><span class="pre">graph.node(...)</span></code> and other convenience methods such as <code class="code docutils literal notranslate"><span class="pre">graph.langString(lex,</span> <span class="pre">lang)</span></code> to produce new nodes if you need them.
+For example you can use <code class="code docutils literal notranslate"><span class="pre">graph.literal(4.2)</span></code> to produce a instance of <code class="code docutils literal notranslate"><span class="pre">LiteralNode</span></code> with <code class="code docutils literal notranslate"><span class="pre">4.2</span></code> as lexical form and datatype <code class="code docutils literal notranslate"><span class="pre">xsd:decimal</span></code>.
+Or use <code class="code docutils literal notranslate"><span class="pre">graph.node({lex:</span> <span class="pre">&quot;2020-06-01&quot;,</span> <span class="pre">datatype:</span> <span class="pre">xsd.date})</span></code> for an <code class="code docutils literal notranslate"><span class="pre">xsd:date</span></code> literal.
+(In case you wondered, <code class="code docutils literal notranslate"><span class="pre">xsd.date</span></code> is part of the automatically generated APIs for the XSD namespace.)</p>
+<p>Non-literals are represented as instances of <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> and they all have a <code class="code docutils literal notranslate"><span class="pre">uri</span></code> property holding the identifier of the node.
+(For the RDF geeks, we represent blank nodes also as named nodes, only with a URI consisting of _: and then the blank node identifier.
+Use <code class="code docutils literal notranslate"><span class="pre">.isBlankNode()</span></code> and <code class="code docutils literal notranslate"><span class="pre">.isURI()</span></code> if you need to distinguish between them.)
+URIs are also read-only, but you can construct new <code class="code docutils literal notranslate"><span class="pre">NamedNodes</span></code> with <code class="code docutils literal notranslate"><span class="pre">graph.namedNode(&quot;...&quot;)</span></code> or <code class="code docutils literal notranslate"><span class="pre">graph.namedNode({qname:</span> <span class="pre">&quot;...&quot;})</span></code> and with the factory methods from the generated namespaces explained below.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Keep in mind that you cannot simply use JavaScript <code class="code docutils literal notranslate"><span class="pre">==</span></code> operators on instances of these node types.
+This is because the same URI node may have multiple JavaScript objects over the life time of your script.
+Instead, use <code class="code docutils literal notranslate"><span class="pre">nodeA.equals(nodeB)</span></code> to compare them, or to find an item in an array.</p>
+</div>
+<p><code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> has various functions to query RDF property values.
+For example you can use <code class="code docutils literal notranslate"><span class="pre">focusNode.values(skos.broader)</span></code> to return an array of values for <code class="code docutils literal notranslate"><span class="pre">skos:broader</span></code> of the focus node.
+However, typically you may prefer to go through the much more readable properties from the generated APIs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each ADS API can be used in read-only mode and read/write mode.
+Read-only mode does not contain functions and setters to modify the underlying graph and is therefore a “safer” choice if you just want to query.
+Use the “lock” button of the Script Editor to switch between these two modes.</p>
+</div>
+</section>
+<section id="auto-generated-api">
+<span id="scripting-auto-generated-api"></span><h2>Auto-Generated API<a class="headerlink" href="#auto-generated-api" title="Permalink to this headline"></a></h2>
+<p>In EDG, domain experts define the required data model using ontologies and SHACL shapes.
+Internally, ADS generates a JavaScript API based on the system and user-defined SHACL shapes.
+For example, the SKOS ontology has a class <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> with properties such as <code class="code docutils literal notranslate"><span class="pre">prefLabel</span></code> and <code class="code docutils literal notranslate"><span class="pre">broader</span></code> generated in the API.
+These properties can be used as getters and setters.</p>
+<figure class="align-center" id="id3">
+<img alt="Node classes with skos:Concept" src="../_images/NodeClassesWithSkosConcept.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Additional subclasses of NamedNode are automatically generated from the Ontology</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This auto-generated API can be used from all asset collections that include the corresponding ontologies.
+For example, if you have a Geography Taxonomy that <code class="code docutils literal notranslate"><span class="pre">owl:imports</span></code> the SKOS SHACL shapes, then the <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> features become available to ADS scripts.</p>
+<p>A typical <em>process</em> includes:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Domain experts/Information architects defining the required data models using ontologies and SHACL shapes;</p></li>
+<li><p>Internally, EDG generated the required JavaScript API functions (e.g various getters and setter classes for defined properties);</p></li>
+<li><p>Developers can declaratively define custom methods that extend the automatically generated API and interact with the graphs stored in EDG.</p></li>
+</ol>
+</div></blockquote>
+<p>The API generator will produce one JavaScript class for each named SHACL node shape (or class that is also a <code class="code docutils literal notranslate"><span class="pre">sh:NodeShape</span></code>).
+The name of the class will be the prefix of the namespace plus underscore plus the local name of the class.
+For example, the RDFS class <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code> becomes <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> in JavaScript.
+Each property shape for such node shapes is mapped to a JavaScript property based on the local name of the property that is the <code class="code docutils literal notranslate"><span class="pre">sh:path</span></code> of the property shape.
+For example, <code class="code docutils literal notranslate"><span class="pre">skos:broader</span></code> is mapped to a JavaScript property <code class="code docutils literal notranslate"><span class="pre">broader</span></code> at the class <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code>.
+If no suitable local name exists (e.g. if it contains a dash or other unsuitable characters), or if you want to use a plural name such as <code class="code docutils literal notranslate"><span class="pre">broaderConcepts</span></code>, you can specify a different name using the property <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code> at the property shape.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The properties of the generated JavaScript APIs are backed by <em>getters</em> and <em>setters</em> which means that their values are fetched from the RDF database when requested, and assignments of the JavaScript property will actually create new triples in the data graph.</p>
+</div>
+<p>The API generator will also produce one JavaScript object for selected namespace prefixes that contains either classes, node shapes, properties or datatypes.
+These prefix objects have automatically generated factory methods such as <code class="code docutils literal notranslate"><span class="pre">skos.asConcept(...)</span></code> that can be used to conveniently create new instances.
+For example use <code class="code docutils literal notranslate"><span class="pre">skos.asConcept(g.NS</span> <span class="pre">+</span> <span class="pre">'Canada')</span></code> to produce an instance of <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> for the node with the given URI.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A key feature of Active Data Shapes is polymorphism, which means that you can cast any named node into an instance of any other named node class.
+For example, you can use <code class="code docutils literal notranslate"><span class="pre">skos.asConcept(anyNode).broader</span></code> to convert the given named node into an instance of <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> and then fetch its broader concepts.
+The generated prefix objects also contain identifiers for any declared datatype, class, node shape or property from that namespace.
+For example, you can use <code class="code docutils literal notranslate"><span class="pre">xsd.string</span></code> to access a <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code> for the <code class="code docutils literal notranslate"><span class="pre">xsd:string</span></code> datatype.</p>
+</div>
+<p>When you have created your own ontology and want the system to generate API for your classes or your namespace, go to the “Home” asset of your Ontology and switch the form to the <em>Script API</em> page.</p>
+<figure class="align-center" id="id4">
+<img alt="Script API generation options" src="../_images/GenerateScriptAPIOptions.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Select the classes and namespaces for the API generation</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>On that Script API page, use:</p>
+<ul class="simple">
+<li><p><em>generate class</em> to select individual classes or shapes that shall be generated</p></li>
+<li><p><em>generate prefix constants</em> to include JavaScript constants for all classes, shapes, datatypes and properties from the namespaces, e.g. <code class="code docutils literal notranslate"><span class="pre">skos.broader</span></code></p></li>
+<li><p><em>generate prefix classes</em> to generate JavaScript classes for all classes and shapes from the given namespaces</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Avoid generating huge APIs that consume too many server resources.
+Do not use generate prefix classes for namespaces containing thousands of classes or shapes.</p>
+</div>
+<p>Prefix objects such as <code class="code docutils literal notranslate"><span class="pre">skos</span></code> will also contain JavaScript functions that mirror any declared SHACL function, making it easy to call most SPARQL functions with a familar JavaScript syntax.
+As an example from the built-in functions, <code class="code docutils literal notranslate"><span class="pre">tosh:hasShape</span></code> can be called using <code class="code docutils literal notranslate"><span class="pre">tosh.hasShape(...)</span></code> from your ADS scripts.
+Any function that shall be included in the API needs to have a value for the property <code class="code docutils literal notranslate"><span class="pre">dash:apiStatus</span></code>, e.g. <code class="code docutils literal notranslate"><span class="pre">dash:Stable</span></code>.
+See <a class="reference internal" href="../ext/points.html#ext-functions"><span class="std std-ref">Script-based Functions</span></a>.</p>
+<p>One big advantage of going through such domain-specific JavaScript APIs instead of a generic API is that you can benefit from the code completion and other IntelliSense features of your JavaScript editor, including the online editor bundled with TopBraid EDG.
+Using the API generated from the SHACL shapes, the editor will know in advance that the values of <code class="code docutils literal notranslate"><span class="pre">broader</span></code> are again instances of <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> and therefore can help you select the next operation on those values.
+Furthermore, if a shape declares that a certain property has <code class="code docutils literal notranslate"><span class="pre">sh:datatype</span> <span class="pre">xsd:string</span></code> then the API will directly return a native JavaScript string, it will return native booleans for <code class="code docutils literal notranslate"><span class="pre">xsd:boolean</span></code> and produce native numbers for any numeric datatype such as <code class="code docutils literal notranslate"><span class="pre">xsd:integer</span></code> and <code class="code docutils literal notranslate"><span class="pre">xsd:decimal</span></code>.
+This means you can use familar programming idioms to ask queries such as <code class="code docutils literal notranslate"><span class="pre">country.areaKM</span> <span class="pre">&gt;</span> <span class="pre">200000</span></code>.</p>
+<p>Furthermore, the generated API can make deeper use of the SHACL shape definitions, for example to recognize that some property values should be sorted by their <code class="code docutils literal notranslate"><span class="pre">dash:index</span></code>, meaning that arrays will maintain their order.
+Future versions may also perform basic constraint checks before a property value can be assigned.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The JavaScript properties based on property shapes may use complex path expressions (including inverse paths) and even inferred values that are computed dynamically using <code class="code docutils literal notranslate"><span class="pre">sh:values</span></code> rules.
+However, only non-inferred paths that consist of a simple predicate can be assigned using <code class="code docutils literal notranslate"><span class="pre">=</span></code> - the others are read-only.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Any RDF statements that are relevant to ADS code generation must be represented in either Ontology asset collections or Files in the workspace.
+It is not supported to store shape definitions or any other triples that impact the code generation in other asset collection types such as Taxonomies.</p>
+</div>
+</section>
+<section id="shape-scripts">
+<span id="scripting-shape-scripts"></span><h2>Shape Scripts<a class="headerlink" href="#shape-scripts" title="Permalink to this headline"></a></h2>
+<p>One way of extending the generated ADS APIs is to define <em>shape scripts</em>.
+This is basically a way to programmatically define extra functions associated with node shapes.
+These definitions are injected into the API for consumption by other ADS scripts.
+For example, we might want to define how to output the JSON structure of instances (<code class="code docutils literal notranslate"><span class="pre">focusNode</span></code>) of a particular node shape/class for a particular API output.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Since shape scripts are injected into class definitions they access the current object via the variable <code class="code docutils literal notranslate"><span class="pre">this</span></code>.
+So if you are developing and testing your features using the Script Editor panel, make sure to not accidentally use <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">this</span></code>.</p>
+</div>
+<p>Shape scripts are defined directly on ontologies.
+EDG provides a Shape Script editor panel, which when selecting a node shape, the panel auto-populates with the class header, where any definition for the selected node shape would be implemented.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Shape Script Panel" class="edg-figure-xl" src="../_images/edg_shape_script_panel.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Shape Script Panel in the Ontologies asset collection</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>On saving, EDG will automatically create an instance of type <code class="code docutils literal notranslate"><span class="pre">dash:ShapeScript</span></code> which is attached to the selected node shape.
+This will ensure that the next time the node shape is selected, the defined function is shown in the shape script panel.</p>
+<section id="shape-script-examples">
+<span id="index-0"></span><h3>Shape Script Examples<a class="headerlink" href="#shape-script-examples" title="Permalink to this headline"></a></h3>
+<p>In the first two examples we show how we can define custom convenience functions that can be used in other shape scripts (as we will demonstrate later) and ADS functions.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="k">extends</span> <span class="nx">skos_Concept</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="cm">/**</span>
+<span class="linenos"> 3</span><span class="cm">    * A convenience function that converts a prefLabel to string</span>
+<span class="linenos"> 4</span><span class="cm">    * Param: prefLabel resource (if known) - eg pref label for a particular language</span>
+<span class="linenos"> 5</span><span class="cm">    * or null</span>
+<span class="linenos"> 6</span><span class="cm">    */</span>
+<span class="hll"><span class="linenos"> 7</span>    <span class="nx">prefLabelToString</span><span class="p">(</span><span class="nx">prefLabel</span><span class="p">){</span>
+</span><span class="hll"><span class="linenos"> 8</span>        <span class="k">return</span> <span class="nx">prefLabel</span> <span class="o">?</span> <span class="nx">prefLabel</span><span class="p">.</span><span class="nx">lex</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">prefLabel</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">label</span> <span class="p">=&gt;</span> <span class="nx">label</span><span class="p">.</span><span class="nx">lex</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos"> 9</span>    <span class="p">}</span>
+</span><span class="linenos">10</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The function <code class="code docutils literal notranslate"><span class="pre">prefLabelToString(prefLabel)</span></code> is defined on the <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code> node shape. By default, when accessing the <code class="code docutils literal notranslate"><span class="pre">skos:prefLabel</span></code> of the current focus node, ADS will return an array of prefLabel nodes, containing the lexical value and the language.
+This function has two options:
+(a) if a particular prefLabel node - say a pref label for a particular language - is passed as a parameter, the function will return a string with the lexical value of the prefLabel;
+(b) if no parameter is passed, then the shape script will return a flat array, where the items of the array will be just a string representation of the lexical values.</p>
+<p>Diving deeper in the code snippet, we use <code class="code docutils literal notranslate"><span class="pre">this.prefLabel.map(...)</span></code>.
+This means that properties available to the current focus node (which in this case would be an instance of <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code>) are also available in this custom defined function.
+Furthermore, any instances whose node shape is a subclass of <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code> will have the function <code class="code docutils literal notranslate"><span class="pre">prefLabelToString(prefLabel)</span></code> available.
+This happens either through inheritance or, if the class in the ontology has multiple parents, by re-declaration.</p>
+<p>Here is another example shape script:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">class</span> <span class="k">extends</span> <span class="nx">g_GeoConcept</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="cm">/**</span>
+<span class="linenos">3</span><span class="cm">     * A function that returns the pref label of a geo concept</span>
+<span class="linenos">4</span><span class="cm">     * for a specific language.</span>
+<span class="linenos">5</span><span class="cm">     */</span>
+<span class="hll"><span class="linenos">6</span>    <span class="nx">prefLabelByLang</span><span class="p">(</span><span class="nx">lang</span><span class="p">){</span>
+</span><span class="hll"><span class="linenos">7</span>        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">prefLabel</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">label</span> <span class="p">=&gt;</span> <span class="nx">label</span><span class="p">.</span><span class="nx">lang</span> <span class="o">==</span> <span class="nx">lang</span><span class="p">)</span>
+</span><span class="hll"><span class="linenos">8</span>    <span class="p">}</span>
+</span><span class="linenos">9</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Once these shape scripts are defined, we can use them in the Script Editor panel in other asset collections where the ontology is included.
+In this case, we’ll be using the Geography Taxonomy asset collection.
+The script editor picks up the newly defined functions:</p>
+<figure class="align-center" id="id6">
+<img alt="ADS Shape Script Example" class="edg-figure" src="../_images/ads_shape_script_example_1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Using defined shape scripts in ADS - Intellisense</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Every time shape scripts or any other ADS functions are modified in the ontology, we need to refresh the ADS API.
+This can be done by clicking the refresh button on any ADS panel.</p>
+</div>
+<p>The next two examples demonstrates the use of the previously defined shape scripts (<code class="code docutils literal notranslate"><span class="pre">prefLabelByLang(...)</span></code> and <code class="code docutils literal notranslate"><span class="pre">prefLabelToString(...)</span></code>) in our custom <code class="code docutils literal notranslate"><span class="pre">toJSON(...)</span></code> function for the <code class="code docutils literal notranslate"><span class="pre">City</span></code> and the <code class="code docutils literal notranslate"><span class="pre">Country</span></code> node shapes respectively.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="k">extends</span> <span class="nx">g_City</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="cm">/**</span>
+<span class="linenos"> 3</span><span class="cm">     * toJson Function for Cities</span>
+<span class="linenos"> 4</span><span class="cm">     */</span>
+<span class="hll"><span class="linenos"> 5</span>    <span class="nx">toJSON</span><span class="p">(</span><span class="nx">lang</span><span class="p">){</span>
+</span><span class="hll"><span class="linenos"> 6</span>        <span class="k">return</span> <span class="p">{</span>
+</span><span class="hll"><span class="linenos"> 7</span>            <span class="nx">uri</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">uri</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos"> 8</span>            <span class="nx">label</span><span class="o">:</span> <span class="nx">lang</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">prefLabelByLang</span><span class="p">(</span><span class="nx">lang</span><span class="p">).</span><span class="nx">lex</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">prefLabelToString</span><span class="p">(),</span>
+</span><span class="hll"><span class="linenos"> 9</span>        <span class="p">}</span>
+</span><span class="hll"><span class="linenos">10</span>    <span class="p">}</span>        
+</span><span class="linenos">11</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">class</span> <span class="k">extends</span> <span class="nx">g_Country</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="cm">/**</span>
+<span class="linenos"> 3</span><span class="cm">     * toJson Function for Countries</span>
+<span class="linenos"> 4</span><span class="cm">     */</span>
+<span class="hll"><span class="linenos"> 5</span>    <span class="nx">toJSON</span><span class="p">(</span><span class="nx">lang</span><span class="p">){</span>
+</span><span class="hll"><span class="linenos"> 6</span>        <span class="k">return</span> <span class="p">{</span>
+</span><span class="hll"><span class="linenos"> 7</span>            <span class="nx">uri</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">uri</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos"> 8</span>            <span class="nx">label</span><span class="o">:</span> <span class="nx">lang</span> <span class="o">?</span> <span class="k">this</span><span class="p">.</span><span class="nx">prefLabelByLang</span><span class="p">(</span><span class="nx">lang</span><span class="p">).</span><span class="nx">lex</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">prefLabelToString</span><span class="p">(),</span>
+</span><span class="hll"><span class="linenos"> 9</span>            <span class="nx">region</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">related</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">rel</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="p">{</span> <span class="nx">uri</span><span class="o">:</span> <span class="nx">rel</span><span class="p">.</span><span class="nx">uri</span> <span class="p">}</span> <span class="p">}),</span>
+</span><span class="hll"><span class="linenos">10</span>            <span class="nx">cities</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">narrower</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">city</span> <span class="p">=&gt;</span> <span class="nx">g</span><span class="p">.</span><span class="nx">asCity</span><span class="p">(</span><span class="nx">city</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">(</span><span class="nx">lang</span><span class="p">))</span>
+</span><span class="hll"><span class="linenos">11</span>        <span class="p">}</span>
+</span><span class="hll"><span class="linenos">12</span>    <span class="p">}</span>   
+</span><span class="linenos">13</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The figure below depicts the ouput of the <code class="code docutils literal notranslate"><span class="pre">toJSON()</span></code> method for the country instance Germany:</p>
+<figure class="align-center" id="id7">
+<img alt="ADS Shape Script Example and Output" class="edg-figure-xl" src="../_images/ads_shape_script_example_2.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Using defined shape scripts in ADS - Output</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="included-scripts">
+<span id="scripting-included-scripts"></span><h2>Included Scripts<a class="headerlink" href="#included-scripts" title="Permalink to this headline"></a></h2>
+<p>The instances of the class <code class="code docutils literal notranslate"><span class="pre">dash:IncludedScript</span></code> are another technique to extend the generated ADS APIs.
+The code associated with instances of this class will get injected into the generated APIs, as global code snippets.
+Typically used to declare libraries of utility functions or constants that are (compared to shape scripts) not necessarily associated with specific classes or shapes.</p>
+<p>Note that the JavaScript code stored in <code class="code docutils literal notranslate"><span class="pre">dash:js</span></code> cannot use the export keyword because the code must also work in external scripts (such as on Node.js).
+Instead, if you plan to use <a class="reference internal" href="nodejs.html#scripting-nodejs"><span class="std std-ref">Using ADS from Node.js</span></a>, you need to enumerate the exported symbols via <code class="code docutils literal notranslate"><span class="pre">dash:exports</span></code>.</p>
+</section>
+<section id="architecture-of-ads">
+<h2>Architecture of ADS<a class="headerlink" href="#architecture-of-ads" title="Permalink to this headline"></a></h2>
+<p>For those who want to get a better understanding of how ADS works, the diagram below illustrates the runtime architecture.</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/ADS-Architecture-Tree.png" src="../_images/ADS-Architecture-Tree.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Runtime Architecture of Active Data Shapes</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The base of the architecture, at the bottom, are the RDF graphs.
+In read/write mode, those graphs will be wrapped with a so-called DiffGraph that will collect the changes until they are committed at the end of a script.
+Access to the RDF graphs happens internally from a dedicated ADS Session object through the Apache Jena API.
+The actual ADS scripts are executed by the GraalVM engine.</p>
+<p>The Core API and the Generated APIs constitute the available runtime APIs.
+From within TopBraid EDG, ADS scripts are executed from numerous places including inference rules, Explore/Modify actions and web services.</p>
+<p>From Node.js, the ADS API can be either used on the Node.js platform, or through a function injection mechanism directly on the EDG server.
+From Web and React applications running in a web browser, ADS snippets can be sent to the EDG server for server-side execution.
+These topics will be covered in <a class="reference internal" href="nodejs.html#scripting-nodejs"><span class="std std-ref">Using ADS from Node.js</span></a> and <a class="reference internal" href="web.html#scripting-web"><span class="std std-ref">Using ADS from Web Applications and React</span></a>.</p>
+<p>The table below illustrates the main differences between an EDG implementation, a Web/React components implementation, and a NodeJS implementation:</p>
+<table class="tight-table colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>EDG Implementation</p></th>
+<th class="head"><p>Web/React Components
+Implementation</p></th>
+<th class="head"><p>Node.js
+Implementation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Can attach script to
+Explore and Modify
+drop down buttons in
+forms.</p></td>
+<td><p>Allows the creation
+of custom panels
+that are installed
+in EDG.</p></td>
+<td><p>A complete
+independent
+application with its
+own server, which
+connects to EDG via
+the ADS broker.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EDG automatically
+creates dialog boxes
+and UI components
+for parameters.</p></td>
+<td><p>Requires the
+implementation of
+any extra UI
+components within
+the panel and EDG.</p></td>
+<td><p>UI is implemented
+and handled in the
+Node.js application
+and is not
+integrated within
+EDG.</p></td>
+</tr>
+<tr class="row-even"><td><p>Permissions based on
+the user logged in
+EDG.</p></td>
+<td><p>Permissions based on
+the user logged in
+EDG.</p></td>
+<td><p>Additional
+permissions required
+for the Node.js
+application.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Limited use of
+third-party
+libraries.</p></td>
+<td><p>Can use third-party
+client libraries.</p></td>
+<td><p>Can use third-party
+Node.js libraries.</p></td>
+</tr>
+<tr class="row-even"><td><p>Scripts (ADS and
+JavaScript
+functions) are
+executed on the same
+EDG backend/server
+(GraalVM).</p></td>
+<td><p>ADS functions are
+executed on the same
+EDG
+back
+end/server(GraalVM),
+whilst the rest of
+the JavaScript
+functions are
+executed on the
+client (through the
+React ecosystem).</p></td>
+<td><p>ADS functions are
+installed and
+executed on the EDG
+back
+end/server(GraalVM),
+whilst the rest of
+the JavaScript
+functions are
+executed on the
+server where the
+Node.js application
+resides.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Implemented and
+stored within the
+EDG workspace.</p></td>
+<td><p>Implemented
+externally and
+installed in EDG as
+a project.</p></td>
+<td><p>External
+application.</p></td>
+</tr>
+<tr class="row-even"><td><p>No communication
+overhead.</p></td>
+<td><p>Has slight
+communication
+overhead between EDG
+and the React-based
+UI.</p></td>
+<td><p>Communication
+overhead between
+Node.js and EDG.
+However, this is
+compensated by
+complex algorithms
+being executed
+outside of the EDG
+domain.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Scripting with JavaScript and ADS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui.html" class="btn btn-neutral float-right" title="The Scripting User Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

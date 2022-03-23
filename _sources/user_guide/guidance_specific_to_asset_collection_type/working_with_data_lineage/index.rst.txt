@@ -1,0 +1,20 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _working_with_data_lineage_target:
+
+
+Working with Data Lineage
+-------------------------
+
+.. include:: ../licensing_and_enablement.rst
+.. include:: ./lineage_for_edg.rst

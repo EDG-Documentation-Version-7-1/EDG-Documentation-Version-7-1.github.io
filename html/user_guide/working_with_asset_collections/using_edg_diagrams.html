@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using EDG Diagrams &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Using EDG Diagrams</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-edg-diagrams">
+<span id="using-edg-diagrams-target"></span><h1>Using EDG Diagrams<a class="headerlink" href="#using-edg-diagrams" title="Permalink to this headline"></a></h1>
+<p>The <strong>EDG Diagram</strong> is the latest visualization feature of EDG replacing the Class Diagram, NeighborGram and the Relationship Tree Diagram.
+All of those visualization features have been combined into a single one-stop shop of relationship exploration.</p>
+<p>The EDG Diagram is a panel and users can have multiple diagrams open at the same time.
+However, note that large diagrams can take a lot of resources to render/animate and maintain.</p>
+<p>Definitions:</p>
+<ul class="simple">
+<li><p><strong>Node</strong>: A node is an element on the diagram that represents a Class, Resource or Property Shape.</p></li>
+<li><p><strong>Edge</strong>: An edge is an element on the diagram that represents a relationship between nodes.</p></li>
+</ul>
+<p>For the purposes of this document diagram elements will be referred to as Nodes and Edges.</p>
+<p>Using <em>Explore</em> and then <em>Show EDG Diagram</em> opening the EDG Diagram Panel.</p>
+<section id="edg-diagram-panel">
+<h2>EDG Diagram Panel<a class="headerlink" href="#edg-diagram-panel" title="Permalink to this headline"></a></h2>
+<p>Once opened, nodes can be added to the diagram by drag and drop, for example from the class hierarchy in an Ontologies collection.</p>
+<p>The EDG Diagram panel has buttons that perform actions on the diagram.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Diagram Buttons" class="edg-figure-l" src="../../_images/edg_diagram_buttons.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Buttons</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>From left to right the buttons are:</p>
+<ul class="simple">
+<li><p>Diagram Settings</p></li>
+<li><p>Clear Diagram</p></li>
+<li><p>Save Diagram</p></li>
+<li><p>Open Diagram</p></li>
+<li><p>Export (as GraphML, SVG, or PNG files)</p></li>
+<li><p>Search (within diagram)</p></li>
+<li><p>Zoom In</p></li>
+<li><p>Zoom Out</p></li>
+<li><p>Fit To Screen</p></li>
+<li><p>Fixate selected nodes</p></li>
+<li><p>Release selected nodes (from Fixate)</p></li>
+<li><p>Undo</p></li>
+<li><p>Redo</p></li>
+<li><p>Toggle Overview Visibility</p></li>
+<li><p>Expand All Nodes</p></li>
+<li><p>Collapse All Nodes</p></li>
+</ul>
+<p><strong>Undo/Redo</strong></p>
+<p>While working with the diagram all actions can be undone or reapplied.
+There are only three limitations:</p>
+<ol class="arabic simple">
+<li><p>diagram history does not persist when the diagram is saved and reopened;</p></li>
+<li><p>diagram history does not persist when the panel is closed;</p></li>
+<li><p>if the diagram is reset by using the <em>Trash</em> button, the diagram history is cleared.</p></li>
+</ol>
+<p><strong>Fixate/Release selected nodes</strong> buttons can be used so that when <em>fixated</em> and the diagram needs to redraw/relayout, then those nodes are locked in place.</p>
+<p><strong>Search</strong></p>
+<p>Users can search for specific labels in the diagram by selecting the Search button and then entering text in the dialog.
+Nodes with matching labels are highlighted. Selecting the button again removes the dialog.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Diagram Search" class="edg-figure-l" src="../../_images/edg_diagram_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Search</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Toggle Overview Visibility</strong></p>
+<p>The EDG Diagram has a low fidelity overview panel in the lower right corner of the diagram.
+Users can control the visisble nodes for very large diagrams by selecting and moving the overview rectangle.
+This panel is hidden by default.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Diagram Overview" class="edg-figure-m" src="../../_images/edg_diagram_overview.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Overview</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Node Types</strong></p>
+<p>By default EDG Diagram supports three node types and their general layout is shown in the following figure.
+<em>Resource Nodes</em>, <em>Class Nodes</em> and <em>Property Shape Nodes</em> all follow this layout, but offer type-specific detailed information.</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Diagram Node Types" class="edg-figure-m" src="../../_images/edg_diagram_node_types.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Node Types</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+<div class="legend">
+<p><strong>Node Type Interaction</strong></p>
+<p>All three nodes have a (right-click) context menu that is only accessible through the ‘header’ of the node.
+This context menu is the same that is available throughout the EDG editor.
+However, there are now some node specific actions.
+These actions will vary depending on the current node type.</p>
+</div>
+</figcaption>
+</figure>
+<p><strong>TopBraid EDG Diagram Node Types</strong></p>
+<p><strong>Resource Node</strong>: A Resource Node is a node that represents an instance of a class.
+The information in a resource node is controlled by DASH Property Roles. (<a class="reference external" href="https://datashapes.org/propertyroles.html">https://datashapes.org/propertyroles.html</a>)</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Diagram Resource Node" class="edg-figure-m" src="../../_images/edg_diagram_resource_node.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Resource Node</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following figure shows the context menu.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Diagram Resource Node Context Menu" class="edg-figure-m" src="../../_images/edg_diagram_resource_node_menu.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Resource Node Context Menu</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Class Node</strong>: A Class Node is a node that represents a class definition.
+It shows the list of declared properties.
+The diagram also has the ability to show inherited properties in a Class Node, controlled by a per-diagram setting.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Diagram Class Node Including Inherited Properties" class="edg-figure-m" src="../../_images/edg_diagram_class_node.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Class Node Including Inherited Properties</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following figure shows the context menu.</p>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG Diagram Class Node Context Menu" class="edg-figure-m" src="../../_images/edg_diagram_class_node_menu.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Class Node Context Menu</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Property Shape Node</strong>: A Property Shape Node is a node that represents a property shape definition.
+It mirrors the editor form, rendering the property group and all properties relevant to the property shape definition.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Diagram Property Shape Node" class="edg-figure-m" src="../../_images/edg_diagram_property_shape_node.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Property Shape Node</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The following figure shows the context menu.</p>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Diagram Property Shape Node Context Menu" class="edg-figure-m" src="../../_images/edg_diagram_property_shape_node_menu.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Property Shape Node Context Menu</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="edg-diagram-context-menu-explained">
+<h2>EDG Diagram Context Menu Explained<a class="headerlink" href="#edg-diagram-context-menu-explained" title="Permalink to this headline"></a></h2>
+<p><strong>Show Neighborhood</strong>: Show Neighborhood expands from left (incoming) to right (outgoing) using the target node as the center.
+This action uses the same data algorithm as NeighborGram.
+Neighborhoods can be busy, depending on the target node type.</p>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG Diagram Show Neighborhood Result" class="edg-figure-l" src="../../_images/edg_diagram_show_neighborhood_result.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Show Neighborhood Result</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Expand Inherited</strong>: The expand inherited action uses the same data algorithm as the Class Diagram panel.
+This action will calculate the inheritance chain of the target node. The layout is from bottom to top, where the target node is the bottom.</p>
+<figure class="align-center" id="id12">
+<img alt="TopBraid EDG Diagram Expand Inherited Result" class="edg-figure-s" src="../../_images/edg_diagram_expand_inherited_result.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Expand Inherited Result</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Expand Associations 1 - Level / 2 - Level</strong>: The expand inherited action uses the same data algorithm as the Class Diagram panel.
+The default layout is top to bottom, where the target node is at the top. The only difference between 1 - Level / 2 - Level is the number of graph traversals. 1 - Level will reveal the immediate relationships the target node contains. 2 - Level will follow the immediate relationships and expand their relationships as well.</p>
+<figure class="align-center" id="id13">
+<img alt="TopBraid EDG Diagram Expand Associations 1 - Level Result" class="edg-figure-l" src="../../_images/edg_diagram_expand_associations_1level.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Expand Associations 1 - Level Result</strong></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+<div class="legend">
+<figure class="align-center" id="id14">
+<img alt="TopBraid EDG Diagram Expand Associations 2 - Level Result" class="edg-figure-l" src="../../_images/edg_diagram_expand_associations_2level.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Expand Associations 2 - Level Result</strong></span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div>
+</figcaption>
+</figure>
+</section>
+<section id="edg-diagram-other-expansion-options">
+<h2>EDG Diagram Other Expansion Options<a class="headerlink" href="#edg-diagram-other-expansion-options" title="Permalink to this headline"></a></h2>
+<p>The EDG Diagram will automatically resolve relationships between existing nodes on a diagram.</p>
+<p>Outside of the default layout algorithms each node has the ability to expand upon known relationships.
+This can be done in a directional manner (North: Bottom-Top, South: Top-Bottom, East: Right-Left, West: Left-Right).
+When selected, a node has several action buttons.</p>
+<p>Selecting any of these buttons opens a dialog showing the available relationships.
+Only existing relationships will be available, not potential relationships as defined by Property Shapes.
+Select the target relationships and click Ok to accept.
+Then observe the layout of the nodes in that direction.</p>
+<p>Once a relationship has been selected it is no longer available as a candidate for the other directions.</p>
+<p><strong>Focus Node</strong> in the EDG diagram means hiding elements that are not connected to the target node.
+The undo button can be used to revert the action.</p>
+<figure class="align-center" id="id15">
+<img alt="TopBraid EDG Diagram Focus Node Control" class="edg-figure-m" src="../../_images/edg_diagram_focus_node.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Focus Node Control</strong></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Focusing on a node in the earlier EDG NeighorGram meant re-drawing the entire diagram around the new focus node.</p>
+</div>
+<p><strong>Zoom To Node</strong> is the control used to make the selected node be the center of the diagram.</p>
+<figure class="align-center" id="id16">
+<img alt="TopBraid EDG Diagram Zoom To Node Control" class="edg-figure-m" src="../../_images/edg_diagram_zoom_to_node.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Zoom To Node Control</strong></span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+<div class="legend">
+<p><strong>Hide/Show Properties</strong> is the control at the top right of the node used to hide or show properties inside the box.</p>
+<figure class="align-center" id="id17">
+<img alt="TopBraid EDG Diagram Hide Properties Control" class="edg-figure-m" src="../../_images/edg_diagram_hide_properties.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Hide Properties Control</strong></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</div>
+</figcaption>
+</figure>
+</section>
+<section id="edg-diagram-relationship-filtering">
+<h2>EDG Diagram Relationship Filtering<a class="headerlink" href="#edg-diagram-relationship-filtering" title="Permalink to this headline"></a></h2>
+<p>The EDG Diagram has the ability to filter relationships.
+There are two filter options: global and local.
+If global filters are applied, local filters are possible as the number of filter combinations would become difficult to maintain.</p>
+<p><strong>Global Filtering</strong> is managed using the <em>Diagram Settings</em> dialog accessible through the gear icon in the diagram toolbar has four setting areas.</p>
+<figure class="align-center" id="id18">
+<img alt="TopBraid EDG Diagram Settings" class="edg-figure-l" src="../../_images/edg_diagram_settings.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Settings</strong></span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>To set a relationship filter, select one of the options:</p>
+<ul class="simple">
+<li><p><strong>No Filter</strong> removes any filtering.</p></li>
+<li><p><strong>Filter All</strong> hides all relationships and properties.</p></li>
+<li><p><strong>Include</strong> hides all relationships except for those selected.</p></li>
+<li><p><strong>Exclude</strong> shows all relationships except for those selected.</p></li>
+</ul>
+<p>Include/Exclude list all <em>Available Properties</em> (relationships) for the current Asset Collection.</p>
+<figure class="align-center" id="id19">
+<img alt="TopBraid EDG Diagram Available Properties Dialog" class="edg-figure-l" src="../../_images/edg_diagram_available_properties_dialog.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Available Properties Dialog</strong></span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Local Filtering</strong> is handled by the <em>Property Control</em> action.
+It has the same options as global filters, the primary difference is that the filter only applies to the target node and relationships that are connected to the target node.</p>
+<figure class="align-center" id="id20">
+<img alt="TopBraid EDG Diagram Property Control" class="edg-figure-m" src="../../_images/edg_diagram_property_control.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Property Control</strong></span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>When selected the properties of the asset are shown to be selected for filtering.</p>
+<figure class="align-center" id="id21">
+<img alt="TopBraid EDG Diagram Property Filters Dialog" class="edg-figure-l" src="../../_images/edg_diagram_property_filters_dialog.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Property Filters Dialog</strong></span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Property Hover Menu (Class Nodes Only)</strong></p>
+<p>The property hover menu presents <em>quick</em> actions.
+Properties that have a relationship with another Resource have three options:</p>
+<ul class="simple">
+<li><p><strong>Expand Relationship</strong>: which expands upon the target property.
+The default layout is bottom-to-top, expanded nodes may layout above or below the target node depending on the direction of the relationship.</p></li>
+<li><p><strong>Quick Hide Relationship</strong>: hides the property from the ClassNode and close any open edges/node on that relationship.
+If a relationship is hidden with the quick hide the global/local filters will have no effect on that relationship.</p></li>
+<li><p><strong>Open Menu</strong>: opens the context menu for the target property.</p></li>
+</ul>
+<figure class="align-center" id="id22">
+<img alt="TopBraid EDG Diagram Property Hover Menu" class="edg-figure-m" src="../../_images/edg_diagram_property_hover.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Property Hover Menu</strong></span><a class="headerlink" href="#id22" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Edge Customizations</strong></p>
+<p>When an edge is selected a context menu will be presented.
+This context menu provides the ability to customize edges.
+Edges can be customized several ways: color, thickness, dash style, edge style (e.g. polyline or bezier).</p>
+<figure class="align-center" id="id23">
+<img alt="TopBraid EDG Diagram Edge Customizations" class="edg-figure-s" src="../../_images/edg_diagram_edge_customizations.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Edge Customizations</strong></span><a class="headerlink" href="#id23" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id24">
+<img alt="TopBraid EDG Diagram Edge Color" class="edg-figure-s" src="../../_images/edg_diagram_edge_color.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Edge Color</strong></span><a class="headerlink" href="#id24" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id25">
+<img alt="TopBraid EDG Diagram Edge Thickness" class="edg-figure-s" src="../../_images/edg_diagram_edge_thickness.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Edge Thickness</strong></span><a class="headerlink" href="#id25" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id26">
+<img alt="TopBraid EDG Diagram Edge/Dash Style" class="edg-figure-s" src="../../_images/edg_diagram_edge_style.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Edge/Dash Style</strong></span><a class="headerlink" href="#id26" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Removing Nodes</strong></p>
+<p>While not obvious nodes can be removed from the diagram. This is done by selecting the nodes and clicking the delete or backspace button. The nodes and connected edges will be removed.</p>
+<p><strong>Saving and Sharing</strong></p>
+<p>Diagrams can be saved to asset collections.
+This allows users to save their work, create snapshots at intervals and also share diagrams with other users.
+Diagrams can be marked as public or private, all public diagrams are discoverable by other users, but only the owner can make modifications.</p>
+<figure class="align-center" id="id27">
+<img alt="TopBraid EDG Diagram Save Button" class="edg-figure-l" src="../../_images/edg_diagram_save_button.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Save Button</strong></span><a class="headerlink" href="#id27" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id28">
+<img alt="TopBraid EDG Diagram Save Diagram Dialog" class="edg-figure-l" src="../../_images/edg_diagram_save_label.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Save Diagram Dialog</strong></span><a class="headerlink" href="#id28" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>After a diagram has been created, to share the link, select <em>Open saved diagram</em> to browse the available diagrams.
+Keep in mind that diagrams can only be viewed by EDG users.</p>
+<figure class="align-center" id="id29">
+<img alt="TopBraid EDG Diagram Open Saved Diagram Button" class="edg-figure-l" src="../../_images/edg_diagram_open_saved_button.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Open Saved Diagram Button</strong></span><a class="headerlink" href="#id29" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Click the link for a specific diagram to copy it to the clipboard.
+Use <em>Delete</em> to removed the selected Saved diagram.</p>
+<figure class="align-center" id="id30">
+<img alt="TopBraid EDG Diagram Open Saved Diagram Dialog" class="edg-figure-l" src="../../_images/edg_diagram_open_saved_dialog.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Diagram Open Saved Diagram Dialog</strong></span><a class="headerlink" href="#id30" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

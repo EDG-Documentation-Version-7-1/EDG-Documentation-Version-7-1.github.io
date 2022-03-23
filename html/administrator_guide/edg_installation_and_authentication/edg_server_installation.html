@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDG Server Installation &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Database Type: Application data storage" href="database_type_app_data_storage.html" />
+    <link rel="prev" title="Tomcat Users Authentication" href="tomcat_users_authentication.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Installation and Authentication</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="edg_server_platform_considerations.html">EDG Server Platform Considerations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="authentication_edg_background.html">Authentication for TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ldap_configuration.html">LDAP Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="saml_authentication.html">SAML Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oauth_authentication.html">OAuth Authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tomcat_users_authentication.html">Tomcat Users Authentication</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">EDG Server Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edg-installation-using-the-setup-properties-file">EDG installation using the setup.properties file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edg-installation-using-the-interactive-deployment-wizard">EDG installation using the interactive deployment wizard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="database_type_app_data_storage.html">Database Type: Application data storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configure_logging.html">Configure Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="accessing_edg_application.html">Accessing the EDG Application</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_administration_and_configuration/index.html">EDG Administration and Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Installation and Authentication</a> &raquo;</li>
+      <li>EDG Server Installation</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="edg-server-installation">
+<span id="id1"></span><h1>EDG Server Installation<a class="headerlink" href="#edg-server-installation" title="Permalink to this headline"></a></h1>
+<p>If setup was done incorrectly or is incomplete you will get a setup page instead of the EDG home page.
+You can always navigate to <code class="code docutils literal notranslate"><span class="pre">&quot;server&quot;/edg/tbl/setup</span></code> to see your configurations.</p>
+<p>The following sections detail specific instructions for running TopBraid servers on Tomcat.
+There are 2 ways to configure TopBraid EDG and Explorer.
+First using the setup properties file and second the interactive method.
+Please choose which ever you feel most comfortable with.</p>
+</section>
+<section id="edg-installation-using-the-setup-properties-file">
+<h1>EDG installation using the setup.properties file<a class="headerlink" href="#edg-installation-using-the-setup-properties-file" title="Permalink to this headline"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These are not upgrade steps. These are for new installations.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Ensure you are running on Java 11</p></li>
+<li><p>Configure authentication for user access.
+See <a class="reference internal" href="ldap_configuration.html#ldap-configuration"><span class="std std-ref">LDAP Configuration</span></a>, <a class="reference internal" href="tomcat_users_authentication.html#tomcat-users-authentication"><span class="std std-ref">Tomcat Users Authentication</span></a>, <a class="reference internal" href="saml_authentication.html#saml-authentication"><span class="std std-ref">SAML Authentication</span></a>, or <a class="reference internal" href="oauth_authentication.html#oauth-authentication"><span class="std std-ref">OAuth Authentication</span></a> depending on preferred authentication method.</p></li>
+<li><p>Copy the file called <code class="code docutils literal notranslate"><span class="pre">edg-setup.properties</span></code> from the <code class="code docutils literal notranslate"><span class="pre">topbraid-edg7.1.zip</span></code> download into the tomcat root directory (or location readable by tomcat).
+Modify the parameters in the file per the file instructions.</p></li>
+</ol>
+<blockquote>
+<div><table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 50%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>workspacePath</p></td>
+<td><p>The workspace houses all the data for EDG.
+This needs to be persistent and have read/write access for Tomcat.</p></td>
+<td><p>/var/lib/tomcat9/Workspace</p></td>
+</tr>
+<tr class="row-odd"><td><p>authMethod</p></td>
+<td><p>See authentication above.</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>authRealm</p></td>
+<td><p>For basic, sets the name in the header</p></td>
+<td><p>TopBraid EDG</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityRoles</p></td>
+<td><p>Security groups that align with LDAP or ADFS or Tomcat users</p></td>
+<td><p>admin,poweruser,manager,editor,viewer</p></td>
+</tr>
+<tr class="row-even"><td><p>vaultPath</p></td>
+<td><p>Location of encrypted data for EDG</p></td>
+<td><p>./vault.properties</p></td>
+</tr>
+<tr class="row-odd"><td><p>vaultPassword</p></td>
+<td><p>Master password used to decrypt and encrypt  storage</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>vaultEncryption</p></td>
+<td><p>Encryption algorithm used for encrypted storage</p></td>
+<td><p>PBEWithHMACSHA512AndAES_256</p></td>
+</tr>
+<tr class="row-odd"><td><p>licenseFile</p></td>
+<td><p>Path to license file.
+Do not enter this if you want your Administrators to be able to update the license in the UI.
+If entered then this file will need to be updated when new licenses are provided by TopQuadrant and the server restarted.</p></td>
+<td><p>./edg-license.lic</p></td>
+</tr>
+<tr class="row-even"><td><p>sessionTimeout</p></td>
+<td><p>Tomcat session timeout in minutes</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-odd"><td><p>databaseType</p></td>
+<td><p>Choice of database storage option, TDB, RDBMS or Data Platform.
+Additional fields will need to be entered when choosing DP or RDBMS.
+Please see descriptions <a class="reference internal" href="database_type_app_data_storage.html#database-type-app-data-storage"><span class="std std-ref">Database Type: Application data storage</span></a> for more details.
+Note: If you are using RDMBS please restart your server once setup is complete.</p></td>
+<td><p>SharedTDB</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<ol class="arabic" start="4">
+<li><p>Set the system property <code class="code docutils literal notranslate"><span class="pre">edg.setup</span></code> for Tomcat to the full path of <code class="code docutils literal notranslate"><span class="pre">edg-setup.properties</span></code>.
+This can be done in various ways, for example by editing Tomcat’s <code class="code docutils literal notranslate"><span class="pre">conf/catalina.properties</span></code> file.
+For example: <code class="code docutils literal notranslate"><span class="pre">edg.setup=/var/lib/tomcat9/edg-setup.properties</span></code></p>
+<p>Or you can also modify the command line used to start Tomcat such as:
+<code class="code docutils literal notranslate"><span class="pre">-Dedg-setup=/var/lib/tomcat9/edg-setup.properties</span></code></p>
+</li>
+<li><p>Place the <code class="code docutils literal notranslate"><span class="pre">edg.war</span></code> into the <code class="code docutils literal notranslate"><span class="pre">webapps</span></code> directory in tomcat</p></li>
+<li><p>Start Tomcat</p></li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>In EDG, Enter license if location not specified in the setup file.</p></li>
+<li><p>Navigate to Server Administration, Rights Management, make sure security roles are correctly set for ANY_ROLE, administrator, etc.
+Initially, <em>all</em> users will have permissions to <em>all</em> EDG resources and functions via the default assignment of AdministratorGroup to ANY_ROLE.
+An administrator’s initial task should be to use <a class="reference internal" href="../edg_administration_and_configuration/access_control.html#access-control"><span class="std std-ref">Access Control</span></a> to transfer the AdministratorGroup to their organization’s defined administrative role(s) and then remove it from ANY_ROLE.</p></li>
+</ol>
+<ol class="arabic simple" start="11">
+<li><p>Now navigate to the home page of EDG. Setup is complete.
+From now on this file will act as the source of your configuration settings.
+An administrator should now go over the <a class="reference internal" href="../edg_administration_and_configuration/index.html#edg-administration-and-configuration"><span class="std std-ref">EDG Administration and Configuration</span></a> guidance to make any additional adjustments to EDG.
+If setup was done incorrectly or is incomplete you will get a setup page instead of the EDG home page.
+You can always navigate to <code class="code docutils literal notranslate"><span class="pre">“server”/edg/tbl/setup</span></code> to see your configurations.</p></li>
+</ol>
+</section>
+<section id="edg-installation-using-the-interactive-deployment-wizard">
+<h1>EDG installation using the interactive deployment wizard<a class="headerlink" href="#edg-installation-using-the-interactive-deployment-wizard" title="Permalink to this headline"></a></h1>
+<ol class="arabic simple">
+<li><p>Ensure you are running on Java 11</p></li>
+<li><p>Configure authentication for user access. See <a class="reference internal" href="ldap_configuration.html#ldap-configuration"><span class="std std-ref">LDAP Configuration</span></a>, <a class="reference internal" href="tomcat_users_authentication.html#tomcat-users-authentication"><span class="std std-ref">Tomcat Users Authentication</span></a>, <a class="reference internal" href="saml_authentication.html#saml-authentication"><span class="std std-ref">SAML Authentication</span></a>, or <a class="reference internal" href="oauth_authentication.html#oauth-authentication"><span class="std std-ref">OAuth Authentication</span></a> depending on preferred authentication method.</p></li>
+<li><p>Place the edg.war into the webapps directory in tomcat</p></li>
+<li><p>Start Tomcat</p></li>
+<li><p>Navigate to EDG, this should detect you need to setup configuration and present a page with an option to use the interactive setup.
+Launch this option.</p></li>
+</ol>
+<blockquote>
+<div><table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 50%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Workspace</p></td>
+<td><p>The workspace houses all the data for EDG.
+This needs to be persistent and have read/write access for Tomcat.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>License</p></td>
+<td><p>Upload your license provided by support</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Authentication Configuration</p></td>
+<td><p>See authentication above.</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Roles to be added</p></td>
+<td><p>Security groups that align with LDAP or ADFS or Tomcat users.
+Map these to permissions such as Manager, Editor, Viewer in the dropdowns.</p></td>
+<td><p>admin,poweruser,manager,editor,viewer</p></td>
+</tr>
+<tr class="row-even"><td><p>Vault Configuration</p></td>
+<td><p>Location of encrypted data for EDG</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Vault Password</p></td>
+<td><p>Master password used to decrypt and encrypt  storage</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>License file</p></td>
+<td><p>Enter the license provided by TopQuadrant</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Session Timeout</p></td>
+<td><p>Tomcat session timeout in minutes</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-even"><td><p>Application Data Storage</p></td>
+<td><p>Choice of database storage option, TDB, RDBMS or Data Platform.
+Additional fields will need to be entered when choosing DP or RDBMS.
+Please see descriptions <a class="reference internal" href="database_type_app_data_storage.html#database-type-app-data-storage"><span class="std std-ref">Database Type: Application data storage</span></a> for more details.</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Click the Restart EDG button after submitting the form</p></li>
+<li><p>Navigate to EDG home once the application restarts to log in.
+Initial deployment and setup is now complete.
+If setup was done incorrectly or is incomplete you will get a setup page instead of the EDG home page.
+You can always navigate to <code class="code docutils literal notranslate"><span class="pre">&quot;server”/edg/tbl/setup</span></code> to see your configurations.</p></li>
+<li><p>An administrator should now go over the <a class="reference internal" href="../edg_administration_and_configuration/index.html#edg-administration-and-configuration"><span class="std std-ref">EDG Administration and Configuration</span></a> guidance to make any additional adjustments to EDG.</p></li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tomcat_users_authentication.html" class="btn btn-neutral float-left" title="Tomcat Users Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="database_type_app_data_storage.html" class="btn btn-neutral float-right" title="Database Type: Application data storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creating New Asset Collection &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Creating New Asset Collection</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="creating-new-asset-collection">
+<span id="creating-new-asset-collection-target"></span><span id="index-0"></span><h1>Creating New Asset Collection<a class="headerlink" href="#creating-new-asset-collection" title="Permalink to this headline"></a></h1>
+<p>To create a new asset collection such as a <em>Taxonomies</em> collection, use the plus icon in the EDG application header bar or use the left navigation menu to the asset collection type to create and use the Create New button at the top of the page.</p>
+<p>A System Administrator or any user with <strong>editor</strong> profile for the Governance Model can also create a new collection by using a Create link in the Governance areas page.
+This will automatically place a collection into the chosen subject area and assign the user permissions for that subject area.
+See <a class="reference internal" href="../data_governance/index.html#operationalizing-data-governance"><span class="std std-ref">Operationalizing Data Governance</span></a> for more information on this feature.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No user will have a link for creating any asset collection until an administrator configures EDG’s persistence technology as documented in <a class="reference internal" href="../../administrator_guide/index.html#administrator-quide"><span class="std std-ref">Administrator Guide</span></a>.
+Additionally, a user will not have the ability to create asset collections unless the user or their role has a <em>Create</em> permission for the EDG <em>Repositories</em> project as documented in <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/access_control.html#access-control"><span class="std std-ref">Access Control</span></a>.</p>
+</div>
+<p>The Create dialog box options are as follows:</p>
+<ul class="simple">
+<li><p><em>Label</em>: Required.</p></li>
+<li><p><em>Default namespace</em>: Required for all asset collections except Crosswalks and Content Tagsets where it is not available.</p></li>
+<li><p><em>Description</em>: Optional.</p></li>
+<li><p><em>Search the EDG</em>: Optional.
+Check this option if you want this collection to be included in the globally available “Search the EDG” feature of the application.</p></li>
+<li><p><em>URI rules</em>: Optional, not applicable to Crosswalks and Content Tagsets.
+URI construction rules for assets in a collection can be set in the server administration area as described in <a class="reference internal" href="../../administrator_guide/edg_administration_and_configuration/edg_configuration_parameters.html#edg-configuration-parameters"><span class="std std-ref">EDG Configuration Parameters</span></a>.
+These selections override the server-wide settings for the collection.
+The rules will not apply if an asset type has a primary key as those URIs are based on the value of a primary key property.</p></li>
+</ul>
+<p>The user creating a new asset collection will be assigned with the <strong>manager</strong> profile over the collection.</p>
+<figure class="align-center" id="id1">
+<img alt="TopBraid EDG Create New Glossary" class="edg-figure" src="../../_images/edg_create_new_glossary.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create New Glossary</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p><em>Ontology include</em>: Required and is available only for Data Graphs and Reference Datasets.
+Used to specify an Ontology that defines data model for a collection.</p></li>
+<li><p><em>Data Platform</em>: If TopBraid EDG Data Platform feature is enabled and not selected as the default, then setting this includes the collection in Data Platform to be replicated across all servers.
+This setting <strong>cannot be added or changed later</strong>.</p></li>
+<li><p><em>Includes</em>: Required and applicable only for Data Graphs and Reference Datasets.
+Specifies an Ontologies collection defining the underlying data model for the data collection.</p></li>
+<li><p><em>Data source</em>: Required and applicable only for Corpora.
+Selects a connector to use for harvesting documents.</p></li>
+<li><p><em>From Graph and To Graph</em>: Required and applicable only for Crosswalks.
+Identifies asset collections that will be connected by the Crosswalk.</p></li>
+<li><p><em>From Entity Type and To Entity Type</em>: Required and applicable only for Crosswalks and appears when the From Graph and To Graph are selected.
+Identifies the type of the assets to be connected by the Crosswalk.</p></li>
+<li><p><em>Also generate property shapes for the match predicate</em>: Optional and applicable only for Crosswalks.
+Makes the match predicate available on forms and search operations if the predicate is not already covered by a property shape.</p></li>
+<li><p><em>Content Graph and Tagging Vocabulary</em>: Required and applicable only for Content Tagsets.
+Identifies an asset collection containing content to be tagged and an asset collection containing tagging vocabulary – a Taxonomies or Ontologies collection.</p></li>
+<li><p><em>Datatypes Collection to include</em>: Optional and applicable only to Data Assets.
+Can be selected after creation using Settings, Includes.</p></li>
+</ul>
+<p>For Reference Datasets additional setup is required after creation.
+Users will need to identify the main entity (class) for the dataset.
+Main entity is the asset type (i.e. class) for the assets that will be contained in the collection.
+The main entity must have a primary key property set in the underlying ontology.</p>
+<p>For Data Graphs additional setup is required after creation.
+Users will need to identify the main class which sets the type that will be pre-selected on the Search panel. .</p>
+<p>For Content Tagsets the Create page is a two step wizard.
+After making selections on the first page, users will be asked to make additional selections on the second page where the default property for tags and additional properties for tags are set.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

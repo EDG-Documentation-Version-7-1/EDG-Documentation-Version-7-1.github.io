@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Teamwork Framework &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Selected Extension Points" href="points.html" />
+    <link rel="prev" title="General Extension Development Process" href="process.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Extension Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="process.html">General Extension Development Process</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">The Teamwork Framework</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview-of-the-teamwork-framework">Overview of the Teamwork Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anatomy-of-a-teamwork-asset-collection">Anatomy of a Teamwork Asset Collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#permissions">Permissions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-tracking">Change tracking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#working-copies-tags">Working copies (tags)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comments-and-tasks">Comments and Tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="points.html">Selected Extension Points</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Extension Development</a> &raquo;</li>
+      <li>The Teamwork Framework</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="the-teamwork-framework">
+<span id="ext-teamwork"></span><h1>The Teamwork Framework<a class="headerlink" href="#the-teamwork-framework" title="Permalink to this headline"></a></h1>
+<p>The Teamwork Framework (TTF) is a key component of TopBraid EDG for different types of data assets or vocabularies.</p>
+<p>For example, an asset collection type to work with SKOS-based Taxonomies consists of pages to create a new taxonomy, to manage user permissions, to track and review changes, to edit the taxonomy itself, to produce various reports and to run data exports and imports.
+Many of these capabilities are also applicable to other kinds of asset collections, not just SKOS taxonomies.
+The role of TTF is to generalize those capabilities so that it becomes more efficient to develop similar asset collection types in a componentized way.</p>
+<section id="overview-of-the-teamwork-framework">
+<h2>Overview of the Teamwork Framework<a class="headerlink" href="#overview-of-the-teamwork-framework" title="Permalink to this headline"></a></h2>
+<p>Asset collections consist of two workspace files that connect to a database for data storage.
+The first database contains the actual data of the “master” graph.
+The second database, ending with “.tch” contains metadata that is used to keep track of changes, permissions and other vocabulary specific settings.</p>
+<p>The teamwork asset collection types (sometimes called “project types”) are the kinds of models that are available to the end user.</p>
+<p>Each collection type is defined as a plugin to the teamwork framework.
+In a nutshell, each vocabulary type is backed by an instance of the class <code class="code docutils literal notranslate"><span class="pre">teamwork:ProjectType</span></code> which is stored in a <code class="code docutils literal notranslate"><span class="pre">.ui.ttlx</span></code> file and points to the specific plugins and other features that distinguish this collection type from others.
+If you are interested in adding your own vocabulary types, see <a class="reference internal" href="points.html#ext-project-types"><span class="std std-ref">Custom Asset Collection Types</span></a>.
+You  can also modify features available for the pre-defined vocabulary types.</p>
+<p>EDG home pages list all installed vocabulary/asset types.
+When users click on the available type, they see a list of all vocabularies/assets of that type.
+From there, they have access to the available features.</p>
+</section>
+<section id="anatomy-of-a-teamwork-asset-collection">
+<h2>Anatomy of a Teamwork Asset Collection<a class="headerlink" href="#anatomy-of-a-teamwork-asset-collection" title="Permalink to this headline"></a></h2>
+<p>A combination of two related graphs, one containing the data and another one containing the change history of the data plus other information, is called a Teamwork project.
+This should not to be confused with the term project when used as top-level folder of the workspace.
+When using EDG, every vocabulary/asset is a Teamwork project.
+For the purposes of this discussion, asset collection is synonymous with Teamwork project.</p>
+<p>Each asset collection type consists of two graphs that have corresponding connection files in the TopBraid workspace.
+You can query those graphs using any of the available query languages like SPARQL or from TopBraid EDG Studio from the Base URI Management admin page.</p>
+<p>The master graph (e.g. XY.xdb) contains the actual data such as the edited SKOS concepts, also known as a “production copy”.
+The TCH (or team) graph (e.g. XY.tch.xdb) contains metadata about the project, including the change history, available working copies, user permissions and comments.
+TopBraid identifies Teamwork projects by their graph URIs:
+<code class="code docutils literal notranslate"><span class="pre">urn:x-evn-master:XY</span></code> is the master graph for the vocabulary with the short id “XY”.
+Its metadata would be stored in <code class="code docutils literal notranslate"><span class="pre">urn:x-evn-master:XY.tch</span></code>.
+The teamwork namespace contains SPARQL functions that can be used to derive those URNs from ids and to extract ids from a given URN.
+These functions are the preferred way of working with those graphs.</p>
+<p>The project id (sometimes called graph id) is the short name of the vocabulary, usually consisting of letters only.</p>
+</section>
+<section id="permissions">
+<h2>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline"></a></h2>
+<p>All users with access to the surrounding TopBraid server can log into the EDG pages.
+However, who is allowed to do what can be controlled by the system administrator as well as the corresponding asset collection managers.</p>
+<p>Teamwork supports the following three roles per vocabulary:</p>
+<ul class="simple">
+<li><p><strong>viewer</strong>: can only view a vocabulary or working copy, and make comments</p></li>
+<li><p><strong>editor</strong>: same as viewer but also has editing rights to make changes to a collection or working copy</p></li>
+<li><p><strong>manager</strong>: same as editor but also has administrative control over a collection or working copy, including the permission to grant or deny permissions to other users.</p></li>
+</ul>
+<p>Any user can create a new collection, and will become its initial manager.
+At any given time, there must be at least one manager per asset collection.
+The Roles tab of the collection can then be used to grant additional permissions to other known users.
+All of those permissions are stored in the TCH graph.
+For example if Administrator is the manager of the asset collection with the id XY, then the TCH graph will contain the following triple:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">&lt;urn:x-evn-master:XY.tch&gt;</span> <span class="pre">teamwork:manager</span> <span class="pre">&lt;urn:x-tb-users:Administrator&gt;</span></code></p>
+<p>As shown above, the URIs of the users are always following the same pattern.
+Use the SPARQL function <code class="code docutils literal notranslate"><span class="pre">smf:currentUserName()</span></code> to access the currently logged in user, and <code class="code docutils literal notranslate"><span class="pre">smf:userWithName(?userName)</span></code> to construct the user URIs as above.</p>
+<p>In addition to assigning permission roles to individual users, it is also possible to assign roles to security roles from LDAP or tomcat.
+The UI provides simple drop down boxes for this.
+In terms of the internal RDF representation in the TCH graph, an LDAP role is represented with a URI such as <code class="code docutils literal notranslate"><span class="pre">urn:x-tb-role:ROLE</span></code>.</p>
+<p>You can get the union of all master graphs that the given user (in the example, Administrator) has at least read access to by using special named graphs of the pattern <a class="reference external" href="urn:x-evn">urn:x-evn</a>-union&lt;:user&gt;.
+For example, <code class="code docutils literal notranslate"><span class="pre">urn:x-evn-union:Administrator</span></code>.
+This can be convenient for global search across multiple graphs.
+Note that such graphs are strictly read-only.</p>
+</section>
+<section id="change-tracking">
+<h2>Change tracking<a class="headerlink" href="#change-tracking" title="Permalink to this headline"></a></h2>
+<p>A change is an atomic unit of modifications to a given graph.
+They are usually created by the user through buttons and menu items such as the Create Concept buttons in EDG or the Save Changes button of the edit forms.
+Whenever the user sends such a request to the server, the master or working copy graph will be updated and the TCH graph will be updated with a new instance of <code class="code docutils literal notranslate"><span class="pre">teamwork:Change</span></code>.
+An example Change object is shown below (in Turtle):</p>
+<div class="highlight-turtle notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nv">&lt;urn:x-change:2013-04-03T00-32-05.915ZAdministrator&gt;</span>
+<span class="linenos"> 2</span>    <span class="kt">a</span> <span class="nn">teamwork</span><span class="p">:</span><span class="nt">Change</span> <span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Create Class with URI http://example.org/vocabulary1/ExampleClass&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<span class="linenos"> 4</span>    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">created</span> <span class="s">&quot;2013-04-03T00:32:05.915Z&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+<span class="linenos"> 5</span>    <span class="nn">sioc</span><span class="p">:</span><span class="nt">has_creator</span> <span class="nv">&lt;urn:x-tb-users:Administrator&gt;</span> <span class="p">;</span>
+<span class="linenos"> 6</span>    <span class="nn">teamwork</span><span class="p">:</span><span class="nt">added</span> <span class="p">[</span>
+<span class="linenos"> 7</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">object</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+<span class="linenos"> 8</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">predicate</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">type</span> <span class="p">;</span>
+<span class="linenos"> 9</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">subject</span> <span class="nv">&lt;http://example.org/vocabulary1/ExampleClass&gt;</span>
+<span class="linenos">10</span>    <span class="p">]</span> <span class="p">;</span>
+<span class="linenos">11</span>    <span class="nn">teamwork</span><span class="p">:</span><span class="nt">added</span> <span class="p">[</span>
+<span class="linenos">12</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">object</span> <span class="s">&quot;Sub3&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<span class="linenos">13</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">predicate</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="p">;</span>
+<span class="linenos">14</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">subject</span> <span class="nv">&lt;http://example.org/vocabulary1/ExampleClass&gt;</span>
+<span class="linenos">15</span>    <span class="p">]</span> <span class="p">;</span>
+<span class="linenos">16</span>    <span class="nn">teamwork</span><span class="p">:</span><span class="nt">added</span> <span class="p">[</span>
+<span class="linenos">17</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">object</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Thing</span> <span class="p">;</span>
+<span class="linenos">18</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">predicate</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="p">;</span>
+<span class="linenos">19</span>        <span class="nn">teamwork</span><span class="p">:</span><span class="nt">subject</span> <span class="nv">&lt;http://example.org/vocabulary1/ExampleClass&gt;</span>
+<span class="linenos">20</span>    <span class="p">]</span> <span class="p">;</span>
+<span class="linenos">21</span>    <span class="nn">teamwork</span><span class="p">:</span><span class="nt">status</span> <span class="nn">teamwork</span><span class="p">:</span><span class="nt">Committed</span> <span class="p">.</span>
+</pre></div>
+</div>
+<p>This is a set of changes indicating that the user:</p>
+<ul class="simple">
+<li><p>Created a new class with the id <code class="code docutils literal notranslate"><span class="pre">http://example.org/vocabulary1/ExampleClass</span></code></p></li>
+<li><p>Set the label of the new class to “Sub3”</p></li>
+<li><p>Made the class a subclass of <code class="code docutils literal notranslate"><span class="pre">owl:Thing</span></code></p></li>
+</ul>
+<p>A change may also point to a working copy via <code class="code docutils literal notranslate"><span class="pre">teamwork:tag</span></code> if it has been made while the user was editing a working copy.
+Each added or deleted triple is stored in reified form via <code class="code docutils literal notranslate"><span class="pre">teamwork:subject</span></code>, <code class="code docutils literal notranslate"><span class="pre">teamwork:predicate</span></code> and <code class="code docutils literal notranslate"><span class="pre">teamwork:object</span></code> as shown above.
+This makes it possible to find all changes for a given resource via a SPARQL query over the TCH graph.
+Note that <code class="code docutils literal notranslate"><span class="pre">teamwork:deleted</span></code> is used to point at triples that were deleted.</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">teamwork:status</span></code> triple of a change indicates whether the change has been committed to the master copy or whether it only exists in a working copy – in which case the value would be <code class="code docutils literal notranslate"><span class="pre">teamwork:Uncommitted</span></code>.</p>
+</section>
+<section id="working-copies-tags">
+<h2>Working copies (tags)<a class="headerlink" href="#working-copies-tags" title="Permalink to this headline"></a></h2>
+<p>A working copy (internally often called <em>tag</em>) is a specific collection of changes that have been made to the master graph, but have not been saved in the master graph.
+Since all these changes are stored only in the TCH graphs, the working copy is a virtual construct that is computed on demand only.
+TopBraid has a mechanism that can temporarily apply a set of changes to an RDF graph (without modifying the underlying graph).
+All changes that are part of a working copy are associated with the working copy via the property <code class="code docutils literal notranslate"><span class="pre">teamwork:tag</span></code>.</p>
+<p>In order to access a specific working copy for a given graph (with id “XY”), and tag “myTag”) use a graph URI such as <code class="code docutils literal notranslate"><span class="pre">urn:x-evn-tag:XY:myTag:Administrator</span></code>.
+In general, although it is possible to create such URIs “manually”, the preferred mechanism is through the SPARQL functions <code class="code docutils literal notranslate"><span class="pre">teamwork:getQueryGraph</span></code> or <code class="code docutils literal notranslate"><span class="pre">teamwork:queryGraph</span></code> as in the following example:</p>
+<div class="highlight-sparql notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">SELECT</span> <span class="nv">?concept</span>
+<span class="linenos">2</span><span class="k">WHERE</span> <span class="p">{</span>
+<span class="linenos">3</span>    <span class="k">BIND</span> <span class="p">(</span><span class="nn">teamwork</span><span class="p">:</span><span class="nt">queryGraph</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="s">&quot;XY&quot;</span><span class="p">,</span> <span class="s">&quot;myTag&quot;</span><span class="p">,</span> <span class="s">&quot;Administrator&quot;</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?graph</span><span class="p">)</span> <span class="p">.</span>
+<span class="linenos">4</span>    <span class="k">GRAPH</span> <span class="nv">?graph</span> <span class="p">{</span>
+<span class="linenos">5</span>        <span class="nv">?concept</span> <span class="k">a</span> <span class="nn">skos</span><span class="p">:</span><span class="nt">Concept</span> <span class="p">.</span>
+<span class="linenos">6</span>    <span class="p">}</span>
+<span class="linenos">7</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="comments-and-tasks">
+<h2>Comments and Tasks<a class="headerlink" href="#comments-and-tasks" title="Permalink to this headline"></a></h2>
+<p>EDG has features to add a comment and/or task to the currently selected resource.
+These items are stored in the TCH graph, as instances of <code class="code docutils literal notranslate"><span class="pre">sioc:Post</span></code> where the <code class="code docutils literal notranslate"><span class="pre">sioc:about</span></code> property points at the resource.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can explore details of the specific RDF triples by looking at the TCH graphs.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="process.html" class="btn btn-neutral float-left" title="General Extension Development Process" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="points.html" class="btn btn-neutral float-right" title="Selected Extension Points" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

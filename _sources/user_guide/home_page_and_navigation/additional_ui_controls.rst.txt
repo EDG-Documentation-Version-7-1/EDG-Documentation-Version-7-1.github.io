@@ -1,0 +1,32 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: UI Controls
+
+.. _additional_ui_controls_target:
+
+Additional UI Controls
+======================
+
+The TopBraid EDG user interface includes a few additional controls.
+
+.. figure:: _images/edg_additional_ui_controls.jpeg
+  :alt: TopBraid EDG Additional UI Controls
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Additional UI Controls**
+
+1. *“Hamburger menu”*: The header’s three-bar “hamburger” icon drops down a quick-navigation menu for direct access to any asset collection you have access to.
+
+2. *Toggle left-nav labels*: The left/right arrow atop the left-navigation menu toggles the text labels off/on, trading them for screen real estate.
+
+3. *Special links*: The right-header has links to the user’s page, and help documentation.

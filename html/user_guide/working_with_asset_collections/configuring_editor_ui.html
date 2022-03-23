@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuring the Editor UI &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Configuring the Editor UI</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="configuring-the-editor-ui">
+<h1>Configuring the Editor UI<a class="headerlink" href="#configuring-the-editor-ui" title="Permalink to this headline"></a></h1>
+<section id="custom-icons-for-assets">
+<span id="custom-icons-target"></span><h2>Custom Icons for Assets<a class="headerlink" href="#custom-icons-for-assets" title="Permalink to this headline"></a></h2>
+<p>EDG includes support for custom icons to be displayed in hierarchies and on forms.</p>
+<p>A custom icon can be declared to be the same for all members of a class (e.g., the same icon for all countries) or it can be declared as a value of a property resulting in different icons for assets of the same type.
+The following figure shows an example.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Custom Icon" class="edg-figure-l" src="../../_images/edg_custom_icons.jpg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Custom Icon</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>These are set up by using the ‘dash:IconRole’ setting on a Property Shape.</p>
+<p>See <a class="reference external" href="https://datashapes.org/propertyroles.html#IconRole">DASH Icon Role</a> for details.</p>
+</section>
+<section id="configuring-editor-ui">
+<span id="index-0"></span><h2>Configuring Editor UI<a class="headerlink" href="#configuring-editor-ui" title="Permalink to this headline"></a></h2>
+<section id="editor-layout-view">
+<h3>Editor Layout View<a class="headerlink" href="#editor-layout-view" title="Permalink to this headline"></a></h3>
+<p>Editor applications are composed of panels that are combined to form layouts.
+Multiple layouts are available.
+Each collection type has its own default layout.
+Users can change these defaults.</p>
+<p>For example, the default layout for business glossaries will have two panels – Search and Form, looking as follows:</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG SEC Glossary - Appendix C Page" class="edg-figure" src="../../_images/edg_sec_glossary_appendix_c.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG SEC Glossary - Appendix C Page</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>While for an ontology (asset collection that defines schema for other collections), the default editor layout will have panels looking as follows:</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Examples GEO Ontology Page" class="edg-figure" src="../../_images/edg_examples_geo_ontology.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Examples GEO Ontology Page</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<section id="selecting-and-arranging-panels">
+<h4>Selecting and Arranging Panels<a class="headerlink" href="#selecting-and-arranging-panels" title="Permalink to this headline"></a></h4>
+<p>Each panel can be displayed in the entire with of the screen by closing all other panels.
+This is useful when you need more screen real estate for working.
+To reset the layout, just select a layout from the menu and your panels will come back.
+Or you can drag them back into view from the panels menu.
+The next image shows how the Glossary Editor Application would look if the Form panel was stand-alone.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Advisory Affiliate Page" class="edg-figure" src="../../_images/edg_advisory_affiliate.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Advisory Affiliate Page</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Panels can also be rearranged by dragging and dropping.
+Panels can be stacked behind each other in the same screen area.
+In the image below, the Change History panel is stacked behind the Form panel.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Advisory Affiliate Change History Page" class="edg-figure" src="../../_images/edg_advisory_affiliate_change_history.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Advisory Affiliate Change History Page</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Panels can be closed by clicking on the ‘x’ button in the panel’s header.
+This action removes a panel from a page.</p>
+<p>Clicking on the Panels button displays additional selection of panels to add to a page.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Panels List Dropdown" class="edg-figure-m" src="../../_images/edg_panels_list.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Panels List Dropdown</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>All available panels are described below, organized into categories:</p>
+<p><strong>Asset Information Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="working_with_document_attachments.html#attachments-panel"><span class="std std-ref">Attachments Panel</span></a> (available when S3 is configured)</p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#form-panel"><span class="std std-ref">Editing Assets using Form Panel</span></a></p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#source-code-panel"><span class="std std-ref">Source Code Panel</span></a></p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#hierarchy-of-selected-asset-panel"><span class="std std-ref">Hierarchy of Selected Asset Panel</span></a></p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#references-panel"><span class="std std-ref">References Panel</span></a></p></li>
+</ul>
+<p><strong>Search and Query Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#instances-panel"><span class="std std-ref">Instances Panel</span></a></p></li>
+<li><p><a class="reference internal" href="../searching/index.html#search-panel"><span class="std std-ref">Search Panel</span></a></p></li>
+<li><p><a class="reference internal" href="../searching/index.html#search-library-panel"><span class="std std-ref">Search Library Panel</span></a></p></li>
+<li><p><a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-query-panel"><span class="std std-ref">SPARQL Query Panel</span></a></p></li>
+<li><p><a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-results-panel"><span class="std std-ref">SPARQL Results Panel</span></a></p></li>
+<li><p><a class="reference internal" href="using_sparql_to_query_and_modify_data.html#sparql-library-panel"><span class="std std-ref">SPARQL Library Panel</span></a></p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#asset-list-panel"><span class="std std-ref">Creating and Using Asset Lists</span></a></p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#available-crosswalks-panel"><span class="std std-ref">Available Crosswalks Panel</span></a></p></li>
+</ul>
+<p><strong>Explore Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#assets-hierarchy-panel"><span class="std std-ref">Assets Hierarchy Panel</span></a></p></li>
+<li><p><a class="reference internal" href="working_with_geo_spatial_data.html#map-explorer-panel"><span class="std std-ref">Map Explorer Panel</span></a> (available when Google API key is enabled)</p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#local-assets-panel"><span class="std std-ref">Local Assets Panel</span></a></p></li>
+<li><p>Show EDG Diagram (see <a class="reference internal" href="using_edg_diagrams.html#using-edg-diagrams-target"><span class="std std-ref">Using EDG Diagrams</span></a>)</p></li>
+</ul>
+<p><strong>Schema Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#class-hierarchy-panel"><span class="std std-ref">Class Hierarchy Panel</span></a></p></li>
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#node-shapes-panel"><span class="std std-ref">Node Shapes Panel</span></a> (only Ontology Editor)</p></li>
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#property-groups-panel"><span class="std std-ref">Property Groups Panel</span></a> (only Ontology Editor)</p></li>
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#rdfowl-properties-list-panel"><span class="std std-ref">RDF/OWL Properties List Panel</span></a>  (only Ontology Editor)</p></li>
+<li><p><span class="xref std std-ref">shape_scripts_panel</span> (only Ontology Editor if scripts are enabled)</p></li>
+</ul>
+<p><strong>Taxonomy Panels</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_taxonomies/taxonomy_concepts_panel.html#concepts-panel-in-taxonomies-target"><span class="std std-ref">Taxonomy Concepts Panel</span></a></p></li>
+</ul>
+<p><strong>Reports Panels</strong></p>
+<ul class="simple">
+<li><p><span class="xref std std-ref">problems_and_suggestions_panel</span></p></li>
+<li><p><a class="reference internal" href="viewing_and_editing_asset_information.html#change-history-panel"><span class="std std-ref">Change History Panel</span></a></p></li>
+<li><p><span class="xref std std-ref">inferences_panel</span></p></li>
+</ul>
+<p><strong>Scripts Panels (available if scripts are enabled)</strong></p>
+<ul class="simple">
+<li><p><span class="xref std std-ref">script_editor_panel_target</span></p></li>
+<li><p><span class="xref std std-ref">script_results_panel</span></p></li>
+<li><p><span class="xref std std-ref">script_api_viewer_panel</span></p></li>
+</ul>
+<p>Some panels can be placed on a page more than once and remain in the menu even if they already exist on a page.
+Other panels make sense only once per page and, when already shown on a page, they no longer appear in the menu.</p>
+<p>Some panels may have a pin icon – for example, if two forms are open.
+Pining a panel down will ensure that its content will not change if another panel is clicked.</p>
+<p>Once a panel is added or removed from a page, that choice is remembered for the user in their next session.</p>
+</section>
+<section id="using-layouts">
+<span id="id1"></span><h4>Using Layouts<a class="headerlink" href="#using-layouts" title="Permalink to this headline"></a></h4>
+<p>The <em>Layouts</em> button save arrangements of panels as a layout.
+Users can also switch to one of the existing layouts.</p>
+<p>A saved layout can be made available to other users or kept private.
+It could also be declared as a new default only for the user who created it or for others as well.</p>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG Save Layout Dialog Box" class="edg-figure" src="../../_images/edg_save_layout.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Save Layout Dialog Box</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Pre-built layouts are:</p>
+<ul class="simple">
+<li><p>Default layout for the selected collection type</p></li>
+<li><p>Single Form Layout – displays only the form for the selected resource</p></li>
+<li><p>SPARQL Layout – provides a way to run SPARQL queries as an alternative to clicking on the Export tab &gt; SPARQL Endpoint.
+Unlike the option on the Export tab, it is fully integrated with the editor.</p></li>
+<li><p>Classes and Instance Layout – useful for Enumerated values.</p></li>
+<li><p>Search Layout – a convenient page layout for Search operations, combines Search, Search Library and Form panels</p></li>
+<li><p>Problems and Suggestions Layout – provides a way to execute Problems and Suggestions checking</p></li>
+</ul>
+<p>The <strong>Layouts</strong> menu also lets you manage existing layouts by selecting “Available Layouts”.</p>
+</section>
+<section id="using-editor-wide-configuration-settings">
+<h4>Using Editor-wide Configuration Settings<a class="headerlink" href="#using-editor-wide-configuration-settings" title="Permalink to this headline"></a></h4>
+<p><strong>More</strong> icon in the header provides access to application settings and additional navigation options for user UX personalization. These settings are locally stored per user and won’t effect other users.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Editor-wide Configuration Settings Dropdown" class="edg-figure-m" src="../../_images/edg_editor_wide_config_settings.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Editor-wide Configuration Settings Dropdown</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Display Edit Actions as Icons</strong> button turns various menu options into icons and vice versa.
+By default, <strong>Display Actions as icons</strong> is checked.
+Unchecking it will impact all panels that have <strong>Create New</strong> actions and there is more than one action in a panel.
+Currently, these are <strong>Property Groups</strong> and <strong>Taxonomy Concepts</strong> panels.
+Instead of the icons, we will see Add menu with dropdowns.
+For example:</p>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Create Concept Methods" class="edg-figure-m" src="../../_images/edg_create_concept.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Concept Methods</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Checking the option to <strong>Display Settings as icons</strong> will impact every panel that has a Settings menu (gear icorn).
+Instead of the menu, we will see icons for each option.</p>
+<p>Checking <strong>Display Panels palette</strong> option, will place in the header an icon for each panel – as shown in the screenshot below.</p>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG Panels Palette View" class="edg-figure" src="../../_images/edg_panels_palette.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Panels Palette View</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p><strong>Clear locally stored Settings</strong> button will clear out any personalization of the UI with the exception of the Layouts as those are stored in the system, not the browser.
+Any check box, Asset List, or other personalization you have made will be reset.</p>
+<p>Checking <strong>Hide values in non-preferred languages</strong> option will hide property values tagged with languages that are not set in your browser as one of your preferred language.</p>
+<p><strong>Manage default settings for all users …</strong> button will appear only if you have Manager profile for a collection.
+It will display a page where you can pre-set panel Settings for all users of a collection.
+For example, you can use it to ensure that for all users, when they look at the content of the current asset collection, the Form will show properties even if they don’t have any values.</p>
+<p>The remainder of the menu is navigation/search options.</p>
+</section>
+</section>
+<section id="local-search-options">
+<h3>Local Search Options<a class="headerlink" href="#local-search-options" title="Permalink to this headline"></a></h3>
+<p>This option is available only if the asset collection editor offers <a class="reference internal" href="../searching/index.html#search-panel"><span class="std std-ref">Search Panel</span></a>.</p>
+<p>When using <a class="reference internal" href="../searching/index.html#search-panel"><span class="std std-ref">Search Panel</span></a>, there is an option, <strong>Return local results only</strong>, which excludes results that come from included asset collections.
+(A local search only delivers resources having their <em>rdf:type</em> triple in the base graph.)</p>
+<p>By default, users can choose for themselves whether to enable or disable this <em>local results</em> option on any particular search.
+However, managers can permanently set this option as either <em>always local or always global</em> for all users.
+If set by a manager, then users will still see the setting value on their search panes, but they will not be able to change it.</p>
+</section>
+<section id="main-class-of-search-panel">
+<h3>Main Class of Search Panel<a class="headerlink" href="#main-class-of-search-panel" title="Permalink to this headline"></a></h3>
+<p>This option is available only if the asset collection editor offers <a class="reference internal" href="../searching/index.html#search-panel"><span class="std std-ref">Search Panel</span></a>.</p>
+<p>It impacts the Type Selector in the Search panel, determining what will be shown in its drop-down list and what will be the root of the browsable hierarchical navigator listing available asset types.
+Each asset collection has a default main class.
+This option lets you modify the default.</p>
+</section>
+<section id="root-of-class-hierarchy-panel">
+<h3>Root of Class Hierarchy Panel<a class="headerlink" href="#root-of-class-hierarchy-panel" title="Permalink to this headline"></a></h3>
+<p>This option lets you reset which class will be shown as the root in the <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/ontology_editor_panels.html#class-hierarchy-panel"><span class="std std-ref">Class Hierarchy Panel</span></a>.</p>
+<p>The default root is Thing.
+However, you can use this option to limit the class tree to one of the subclasses of the owl:Thing class.
+You can also use this option to go “up the tree” by setting the root to rdfs:Resource class or any of its subclasses that are different from owl:Thing.</p>
+</section>
+<section id="root-shape-of-asset-hierarchy-panel">
+<h3>Root Shape of Asset Hierarchy Panel<a class="headerlink" href="#root-shape-of-asset-hierarchy-panel" title="Permalink to this headline"></a></h3>
+<p>When using <a class="reference internal" href="viewing_and_editing_asset_information.html#assets-hierarchy-panel"><span class="std std-ref">Assets Hierarchy Panel</span></a>, users can select a shape of resources to be displayed as roots in this panel.</p>
+<p>If you select a shape here, it will be used as default for the panel.
+Users can still switch to another shape.</p>
+<p>If nothing is selected here, the panel will be empty until a user explicitly selects a root shape.</p>
+</section>
+<section id="also-create-global-owl-properties">
+<h3>Also Create Global OWL Properties<a class="headerlink" href="#also-create-global-owl-properties" title="Permalink to this headline"></a></h3>
+<p>If activated, EDG will produce an owl:DatatypeProperty or owl:ObjectProperty type statement for a property when a new SHACL property shape is created.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

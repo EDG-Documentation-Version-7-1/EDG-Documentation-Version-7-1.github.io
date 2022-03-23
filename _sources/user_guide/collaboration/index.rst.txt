@@ -1,0 +1,46 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: Collaboration
+
+.. _collaboration_target:
+
+Collaboration in EDG
+====================
+
+EDG offers several features that support collaborative Data Governance and related processes.
+Each of these features is described in detail in specific sections of this user guide, and that is not repeated here.
+
+The key collaborative features of EDG are as follows:
+
+* users can make their changes within the context of *workflows* as described in :ref:`understanding_and_using_workflows_target`
+
+* organizations can use the Data Govermance Model and related roles, etc. as described in :ref:`operationalizing_data_governance`
+
+* users can assign and manage *tasks* to be performed as described in :ref:`tasks_page_target`
+
+* users can create and manage *comments* about assets as described in :ref:`viewing_and_creating_comments_target`
+
+* users can create, save and share EDG diagrams as described in :ref:`using_edg_diagrams_target`
+
+* users can create, save and share SPARQL queries as described in :ref:`using_sparql_to_query_and_modify_data_target`
+
+* users can save new user interface layouts as described in :ref:`using_layouts`
+
+* users can create and save Searches making them shared and usable by other users as described in :ref:`search_panel`
+
+* users can create shared asset lists, to review for example, as described in :ref:`asset_list_panel`
+
+* administrator uses can set up EDG notifications as described in :ref:`configure_notifications` to inform specific users or roles when specific events occur
+
+* EDG can be configured with an integration with Jira so that users can manage tasks as described in :ref:`using_Jira_tasks_target`
+
+* EDG can be configured with an integration with Git so that users can manage data as described in :ref:`synchronizing_data_with_git_target`

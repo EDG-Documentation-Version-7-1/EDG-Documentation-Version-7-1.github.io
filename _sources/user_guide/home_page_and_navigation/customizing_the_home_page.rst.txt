@@ -1,0 +1,43 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Customization; Home Page
+
+.. _customizing_the_home_page_target:
+
+Customizing the EDG home page
+=============================
+
+The landing page for EDG can be customized per EDG instances by an administrator or per user.
+
+Administrators can turn off or on widgets through Server Admininstration -> EDG Configuration page.
+These settings apply to all users.
+
+.. figure:: _images/edg_landing_page_settings.jpeg
+  :alt: TopBraid EDG Landing Page Settings
+  :align: center
+  :class: edg-figure-s
+
+  **TopBraid EDG Landing Page Settings**
+
+Users can apply the same settings through their user page.
+
+.. note:: Anything turned off by an administrator cannot be turned on by a user.
+
+.. figure:: _images/edg_user_settings_page.jpeg
+  :alt: TopBraid EDG User Settings Page
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG User Settings Page**
+
+
+.. seealso:: To customize the EDG logo and other personalization see the :ref:`developer_guide`.

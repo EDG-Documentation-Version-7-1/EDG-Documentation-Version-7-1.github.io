@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Access Control &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EDG Permissions Management" href="edg_permissions_management.html" />
+    <link rel="prev" title="Default Namespace and Prefixes" href="default_namespace_and_prefixes.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_installation_and_authentication/index.html">EDG Installation and Authentication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Administration and Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#setup">Setup</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#access-control">Access control</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Access Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rights-management">Rights Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="edg_permissions_management.html">EDG Permissions Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="password_management.html">Password Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="external_systems_integration.html">External Systems Integration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#deployment-and-export">Deployment and Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#user-data">User Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#system-monitoring">System Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#component-monitoring">Component Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#development-and-qa">Development and QA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Administration and Configuration</a> &raquo;</li>
+      <li>Access Control</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="access-control">
+<span id="id1"></span><h1>Access Control<a class="headerlink" href="#access-control" title="Permalink to this headline"></a></h1>
+</section>
+<section id="rights-management">
+<h1>Rights Management<a class="headerlink" href="#rights-management" title="Permalink to this headline"></a></h1>
+<p>Rights (group) management is the basic access control subsystem for a few items in EDG:</p>
+<ul class="simple">
+<li><p>Changing “Any_Role (all users) are administrators” to a specified tomcat role having administrator rights.</p></li>
+<li><p>Selecting the security role(s) that can create new asset collections by checking the Create box for that tomcat role.</p></li>
+<li><p>Making selected graphs OTHER THAN EDG asset collections publicly readable.
+This option is typically applied to files uploaded from TBC to the server.</p></li>
+</ul>
+<p>This page DOES NOT control the read/write access for any asset collections created in EDG.</p>
+<p>Rights management consists of two kinds of activities:</p>
+<ul class="simple">
+<li><p>defining <em>rights groups</em>, and</p></li>
+<li><p>assigning user <em>security roles</em> to various rights groups.</p></li>
+</ul>
+<p>Each rights group represents specific access rights (i.e., <strong>C</strong> reate, <strong>R</strong> ead, <strong>U</strong> pdate, <strong>D</strong> elete and <strong>E</strong> xecute) on the group’s selected workspace resources (or their generic “wildcard” types).
+For example, a file can be specified with CRUD access, whereas a SPARQLMotion script should have CRUD+E, and an exposed web service should only have E access.
+Users are then assigned to rights groups according to their <em>security roles</em>.</p>
+<section id="prerequisite-users-security-roles">
+<h2>Prerequisite: Users’ Security Roles<a class="headerlink" href="#prerequisite-users-security-roles" title="Permalink to this headline"></a></h2>
+<p>The users’ side of rights management consists of knowing their security roles, which are configured during EDG’s installation and initial setup.
+A user security role must:</p>
+<ol class="arabic simple">
+<li><p>be defined in a Tomcat/Realm, such as LDAP or <code class="docutils literal notranslate"><span class="pre">tomcat-users.xml</span></code>, and</p></li>
+<li><p>it must appear in the permitted security roles setup of the TopBraid (which define entries for security-constraint tags in the application’s web.xml).</p></li>
+</ol>
+<p>See <a class="reference internal" href="../edg_installation_and_authentication/index.html#edg-installation-and-authentication"><span class="std std-ref">EDG Installation and Authentication</span></a> for details.</p>
+<p>EDG also has one special, pre-defined (pseudo-) security role: <em>ANY_ROLE</em>, which automatically represents every user.
+This role can be used to assign access rights universally.</p>
+</section>
+<section id="defining-rights-groups">
+<h2>Defining Rights Groups<a class="headerlink" href="#defining-rights-groups" title="Permalink to this headline"></a></h2>
+<section id="administratorgroup">
+<h3>AdministratorGroup<a class="headerlink" href="#administratorgroup" title="Permalink to this headline"></a></h3>
+<p>EDG has a special, pre-defined rights group: <em>AdministratorGroup</em>, which conveys full access to all EDG resources (including asset collections in EDG).</p>
+<p>The AdministratorGroup must always be assigned to at least one users security role that has at least one accessible login.</p>
+<p>On initial EDG installation, the AdministratorGroup is assigned to ANY_ROLE.
+<strong>This assignment should be moved</strong> to one or more proper security roles as part of the initial application setup (by first assigning the AdministratorGroup to a proper role, then deleting it from ANY_ROLE).</p>
+</section>
+<section id="defining-new-groups">
+<h3>Defining new groups<a class="headerlink" href="#defining-new-groups" title="Permalink to this headline"></a></h3>
+<p>To define a new rights group: select an existing role &gt; click <strong>Add Group</strong> &gt; choose the <strong>–New Group–</strong> option &gt; enter a name for the new group &gt; click <strong>Create Group</strong>.</p>
+<p>Rights groups cover one or more resources in the EDG’s workspace, including projects (directories/folders) and various types of files.
+The selected group’s workspace resources are listed in the Resource Rights section.
+Resources can be added or deleted, and each resource’s access rights can be enabled or disabled.
+To add <em>particular</em> workspace resources, click the <strong>Add Resources</strong> button.
+To add <em>generic</em> resource types, click the <strong>Add Wildcard</strong> button.
+The defined <em>ANY_</em> resource types are as follows.</p>
+<ul class="simple">
+<li><p><strong>ANY_RESOURCE</strong>: Any resource defined by TopBraid.</p></li>
+<li><p><strong>ANY_SDB_RESOURCE</strong>: Any SDB data connector (.sdb file).</p></li>
+<li><p><strong>ANY_TDB_RESOURCE</strong>: Any TDB data connector (.tdb file).</p></li>
+<li><p><strong>ANY_GRAPH_RESOURCE</strong>: Any named graph in the TopBraid workspace.
+This is a superset of ANY_SDB_RESOURCE and ANY_TDB_RESOURCE.</p></li>
+<li><p><strong>ANY_FOLDER_RESOURCE</strong>: Any folder in the TopBraid workspace.</p></li>
+<li><p><strong>ANY_FILE_RESOURCE</strong>: Any file that is not a graph, such a text, Excel, XML, etc.</p></li>
+<li><p><strong>ANY_PROJECT_RESOURCE</strong>: Any project in the TopBraid workspace.
+This differs from the PROJECT resource type in that this refers to all Eclipse/Equinox project in the workspace.</p></li>
+</ul>
+<p>Then for each resource item, select which specific CRUD+E access rights are enabled or disabled for the group.
+The access types are as follows:</p>
+<ul class="simple">
+<li><p><strong>Create</strong>: Group members can create new resources.</p></li>
+<li><p><strong>Read</strong>: Group members can read resources.</p></li>
+<li><p><strong>Update</strong>: Group members can update/modify resources.</p></li>
+<li><p><strong>Delete</strong>: Group members can delete resources.</p></li>
+<li><p><strong>Execute</strong>: Group members can execute server-side scripts.</p></li>
+</ul>
+<p><strong>IMPORTANT:</strong></p>
+<p><em>When you want to ‘remove’ a group from a particular role – use the</em> <strong>X</strong> <em>icon next to the group name</em>.</p>
+<p><em>When you want to ‘delete’ a group completely – use the</em> <strong>trashcan</strong> <em>icon</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will remove the group from all roles that were associated with it.</p>
+</div>
+<p><em>Project names should contain</em> <strong>no</strong> <em>spaces – if they do, you will get an error trying to expand them.
+Please correct the source Project name and re-upload it with no spaces</em>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="default_namespace_and_prefixes.html" class="btn btn-neutral float-left" title="Default Namespace and Prefixes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="edg_permissions_management.html" class="btn btn-neutral float-right" title="EDG Permissions Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

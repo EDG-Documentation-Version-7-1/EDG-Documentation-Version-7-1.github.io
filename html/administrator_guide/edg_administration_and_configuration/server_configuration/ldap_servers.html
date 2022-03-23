@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LDAP Servers (Service Providers) &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Mail Settings" href="mail_settings.html" />
+    <link rel="prev" title="OAuth Parameters" href="oauth_parameters.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../edg_installation_and_authentication/index.html">EDG Installation and Authentication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">EDG Administration and Configuration</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#setup">Setup</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">Server Configuration Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../edg_configuration_parameters.html">EDG Configuration Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../review_update_installation.html">Review/Update installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../product_registration.html">Product Registration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../default_namespace_and_prefixes.html">Default Namespace and Prefixes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#access-control">Access control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#deployment-and-export">Deployment and Export</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#user-data">User Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#system-monitoring">System Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#component-monitoring">Component Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#development-and-qa">Development and QA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="../index.html">EDG Administration and Configuration</a> &raquo;</li>
+          <li><a href="index.html">Server Configuration Parameters</a> &raquo;</li>
+      <li>LDAP Servers (Service Providers)</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ldap-servers-service-providers">
+<span id="ldap-servers"></span><span id="index-0"></span><h1>LDAP Servers (Service Providers)<a class="headerlink" href="#ldap-servers-service-providers" title="Permalink to this headline"></a></h1>
+<p>EDG can support multiple LDAP service providers (e.g., multiple Active Directory domains or LDAP servers).
+For each one, click the plus sign “+” to create a new LDAP stanza (parameter group).</p>
+<p>Before applying any LDAP changes, please double-check all settings for accuracy.
+Inconsistencies with remote LDAP systems could result in the loss of EDG permissions, which could be especially problematic for administrators (i.e., users having roles with <code class="docutils literal notranslate"><span class="pre">AdministratorGrp</span></code> group privileges; see Rights Management).
+<em>Please verify before proceeding.</em>
+Losing administrator permissions would block access to Administration pages, including this one, thereby requiring external access to the EDG system environment to modify the configuration files directly.</p>
+<section id="configuration-parameters">
+<h2>Configuration parameters<a class="headerlink" href="#configuration-parameters" title="Permalink to this headline"></a></h2>
+<p>For each LDAP server, open <strong>Server Configuration &gt; Edit &gt; Configuration parameters &gt; “+”</strong> and enter the following server parameters.
+To delete an LDAP server configuration, open <strong>Edit</strong> and click its <strong>“x”</strong>.</p>
+<table class="colwidths-given tight-table docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>Connection URL</em></p></td>
+<td></td>
+<td><p>LDAP service provider’s connection URL</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Username for server connection</em></p></td>
+<td></td>
+<td><p>Username for connection login</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Password for server connection</em></p></td>
+<td></td>
+<td><p>This appears only if other LDAP parameters are set, and it is set <em>after</em> <strong>Save Changes</strong> has completed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>User pattern string</em></p></td>
+<td></td>
+<td><p>Based on the <em>Tomcat JNDIRealm</em> (for LDAP), this is the <strong>userSearch</strong> and <strong>userBase</strong> <em>(e.g., “sAMAccountName={0},CN=Users,DC=sharepoint,DC=tqinc,DC=info”)</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Role definition base</em></p></td>
+<td></td>
+<td><p><strong>roleBase</strong>: The base DN for role searches <em>(e.g., “OU=Roles,DC=sharepoint,DC=tqinc,DC=info”)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Role name identifier</em></p></td>
+<td></td>
+<td><p><strong>roleName</strong>: The name of the attribute that has the role-entry’s name <em>(e.g., “cn”)</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Role search string</em></p></td>
+<td></td>
+<td><p><strong>roleSearch</strong>: The LDAP search filter for selecting role entries <em>(e.g., “(member={0})”)</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Membership search string</em> (OPTIONAL, Recommended)</p></td>
+<td></td>
+<td><p>For certain LDAPs <em>(e.g., Active Directory)</em>, this is the reverse of roleSearch, used to find role memberships for a given user <em>(e.g., “(memberOf={0})”)</em>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oauth_parameters.html" class="btn btn-neutral float-left" title="OAuth Parameters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mail_settings.html" class="btn btn-neutral float-right" title="Mail Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Using ADS from Node.js &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using ADS from Web Applications and React" href="web.html" />
+    <link rel="prev" title="Using ADS with SHACL" href="shacl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">The Scripting User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">Working with Relational Databases via SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Resource Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="services.html">ADS-based Web Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shacl.html">Using ADS with SHACL</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using ADS from Node.js</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-this-work">How does this work?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-considerations">Performance Considerations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#network-proximity">Network Proximity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#use-sparql-and-graphql">Use SPARQL and GraphQL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#property-value-rules">Property value rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#installed-functions">Installed Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#write-operations">Write Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ads-features-not-available-on-node-js">ADS Features not available on Node.js</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="web.html">Using ADS from Web Applications and React</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>Using ADS from Node.js</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="using-ads-from-node-js">
+<span id="scripting-nodejs"></span><h1>Using ADS from Node.js<a class="headerlink" href="#using-ads-from-node-js" title="Permalink to this headline"></a></h1>
+<p>This chapter explains how Active Data Shapes (ADS) can be used in Node.js applications.
+While ADS scripts typically execute on the TopBraid server (using the GraalVM engine), TopBraid makes it possible to generate a JavaScript/TypeScript file that can be used by apps running in Node.js.
+Such apps will under the hood communicate with TopBraid to answer queries and handle modifications.
+The use of ADS on Node.js combines the convenience of automatically generated ontology-specific APIs with the flexibility of the Node.js ecosystem.
+A major benefit of this architecture is that both the TopBraid server and the Node.js applications share the same APIs which allows applications to select whether an algorithm should execute on the client or on the server.
+To do so, Node.js applications can define JavaScript functions and dynamically install them on the server for execution, significantly reducing the required network traffic.</p>
+<p>Active Data Shapes (ADS) technology defines a core JavaScript API (with classes such as <code class="code docutils literal notranslate"><span class="pre">NamedNode</span></code>) and an API generator that takes SHACL shape definitions and generates additional ontology-specific classes such as <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code>.
+TopBraid users can develop ADS scripts within EDG and store them as part of ontologies, e.g. to define additional actions and web services on resources in their models.
+For example, ADS Web Services can be called from the outside and will execute on the TopBraid server.</p>
+<p>From TopBraid 7.1 onwards, there is another way of using ADS scripts: executing them on a Node.js engine, as a so-called External Script.
+Such scripts have access to almost all features of ADS yet run separately, for example as microservice in a SaaS deployment.
+External Node.js scripts may access all features of the Node.js platform, and you may use any external tool to develop, test and deploy them.
+The following diagram illustrates the basic idea:</p>
+<figure class="align-center">
+<img alt="Component diagram showing how Node.js interacts with TopBraid" class="edg-figure" src="../_images/Architecture-TopBraid-and-Node-js.png" />
+</figure>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline"></a></h2>
+<p>If you want to use this capability, you need Node.js version 12.3 or above.
+At the time of writing, it has been tested against version 14.17.
+It is recommended to use TypeScript to benefit from compile-time errors based on the type annotations in the ADS API, yet plain JavaScript will also work.</p>
+<p>Assuming you want to write an ADS script for Node.js you first need to pick a target Ontology from EDG.
+On the Export tab of that Ontology, find the <em>Generate JavaScript API for Node.js</em> link and download the generated JavaScript file into your Node.js project.</p>
+<p>For example, for the TopBraid Geography Example ontology, the resulting file would be called geography_ontology_ADS_generated_node.js.
+This file contains the whole ADS Core API and the domain-specific generated API as well as some glue code.
+External build systems may also periodically fetch this generated code through a web service, e.g. using <code class="code docutils literal notranslate"><span class="pre">tbl/generateScriptAPI/geography_ontology/node</span></code>.</p>
+<p>If you only need standard features supplied by EDG, such as just the SHACL or SKOS vocabularies, you can download one of the APIs for the system-provided standard shapes graphs by following the corresponding link from the Export section of any Ontology.</p>
+<p>With this API file in your Node.js project, you can then create a .ts file and write code such as the following:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">import</span> <span class="p">{</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">graph</span><span class="p">,</span> <span class="nx">TopBraid</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;./geography_ontology_ADS_generated_node&#39;</span><span class="p">;</span>
+
+<span class="c1">// Tell this script which TopBraid server to use</span>
+<span class="nx">TopBraid</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+    <span class="nx">serverURL</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8083/tbl&#39;</span><span class="p">,</span> 
+    <span class="nx">dataGraphId</span><span class="o">:</span> <span class="s1">&#39;geo&#39;</span><span class="p">,</span>
+    <span class="nx">langs</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">],</span>
+    <span class="nx">requestConfig</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// Optional, here for basic authentication</span>
+        <span class="nx">auth</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">username</span> <span class="o">:</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+            <span class="nx">password</span> <span class="o">:</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}});</span>
+
+<span class="k">try</span> <span class="p">{</span>
+
+	<span class="c1">// Create a new g:City instance</span>
+	<span class="kd">let</span> <span class="nx">munich</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">createCity</span><span class="p">({</span>
+	    <span class="nx">uri</span><span class="o">:</span> <span class="s1">&#39;http://example.org/Munich&#39;</span><span class="p">,</span>
+	    <span class="nx">prefLabel</span><span class="o">:</span> <span class="p">[</span>
+	        <span class="s1">&#39;Munich&#39;</span><span class="p">,</span>
+	        <span class="nx">graph</span><span class="p">.</span><span class="nx">langString</span><span class="p">(</span><span class="s1">&#39;München&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">)</span>
+	    <span class="p">],</span>
+	    <span class="nx">areaKM</span><span class="o">:</span> <span class="mf">100</span>
+	<span class="p">});</span>
+	
+	<span class="c1">// Print all cities</span>
+	<span class="nx">g</span><span class="p">.</span><span class="nx">everyCity</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">city</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`- </span><span class="si">${</span><span class="nx">city</span><span class="si">}</span><span class="sb">`</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="k">finally</span> <span class="p">{</span>
+	<span class="c1">// Finish this TopBraid session with a message for the change history</span>
+	<span class="nx">TopBraid</span><span class="p">.</span><span class="nx">terminate</span><span class="p">(</span><span class="s1">&#39;Added a city&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>An IDE may be used for developing and debugging:</p>
+<figure class="align-center" id="id1">
+<img alt="Screenshot of VS Code for editing an ADS script for Node.js" class="edg-figure" src="../_images/Node-js-VSCode.png" />
+<figcaption>
+<p><span class="caption-text"><strong>An IDE such as VS Code can be used to edit ADS scripts that execute on Node.js</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="how-does-this-work">
+<h2>How does this work?<a class="headerlink" href="#how-does-this-work" title="Permalink to this headline"></a></h2>
+<p>ADS is plain JavaScript, which of course also works on Node.js.
+However, most API calls of the ADS API interact with the graphs stored in TopBraid.
+When executing within EDG, ADS scripts have direct access to those graphs via the GraalVM engine’s ability to call Java functions from JavaScript code.
+The generated API contains calls to a special ADS Session object (currently called <code class="code docutils literal notranslate"><span class="pre">__jenaData</span></code>) for this bridge.
+In order to make the same APIs work on Node.js, we merely had to implement this ADS Session object differently, so that it makes calls to a dedicated TopBraid servlet which then makes corresponding calls against the ADS Session object on the server.</p>
+<p>In the following software component diagram, JavaScript code is in orange, and Java code (on TopBraid) in blue.
+You can ignore the left part which is about <a class="reference internal" href="web.html#scripting-web"><span class="std std-ref">Using ADS from Web Applications and React</span></a>.</p>
+<figure class="align-center">
+<img alt="ADS architecture diagram" class="edg-figure" src="../_images/ADS-Architecture-Tree.png" />
+</figure>
+<p>This design means that the same code will behave identically across the two platforms, yet both platforms have individual strengths and weaknesses.
+Most notably, the Node.js calls will create additional network traffic.
+Some strategies on how to avoid the performance impact of this traffic are covered in <a class="reference internal" href="#scripting-nodejs-performance"><span class="std std-ref">Performance Considerations</span></a>.
+On the plus side though, Node.js code will likely run faster than corresponding GraalVM code, and you have more alternatives to exploit your hardware, for example through Node.js Worker threads.</p>
+</section>
+<section id="performance-considerations">
+<span id="scripting-nodejs-performance"></span><h2>Performance Considerations<a class="headerlink" href="#performance-considerations" title="Permalink to this headline"></a></h2>
+<p>ADS scripts executing on Node.js rely on network requests to fetch data from TopBraid.
+For example, if your code is calling <code class="code docutils literal notranslate"><span class="pre">g.everyCity()</span></code> it will under the covers make a servlet request against TopBraid to return a JSON array of cities.
+Likewise even harmless-looking calls like <code class="code docutils literal notranslate"><span class="pre">console.log(&quot;&quot;</span> <span class="pre">+</span> <span class="pre">city)</span></code> will create network traffic because there is a hidden <code class="code docutils literal notranslate"><span class="pre">city.toString()</span></code> in the code, which goes against the server to fetch the display label of the RDF resource.
+Also all property accessors such as <code class="code docutils literal notranslate"><span class="pre">city.areaKM</span></code> will cause small network requests.</p>
+<p>As a running example, let’s assume we need to implement an algorithm that counts the total number of children of a <code class="code docutils literal notranslate"><span class="pre">skos:Concept</span></code>, by recursively counting the narrower concepts.
+A typical implementation of this in TypeScript against the ADS API would look at follows:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">const</span> <span class="nx">countChildren</span> <span class="o">=</span> <span class="p">(</span><span class="nx">concept</span>: <span class="kt">skos_Concept</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nx">concept</span><span class="p">.</span><span class="nx">narrower</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">child</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 4</span>        <span class="nx">count</span> <span class="o">+=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1</span>
+<span class="linenos"> 5</span>    <span class="p">})</span>
+<span class="linenos"> 6</span>    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="p">}</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Counting all children...&#39;</span><span class="p">);</span>
+<span class="linenos">10</span><span class="nx">skos</span><span class="p">.</span><span class="nx">everyConceptScheme</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">scheme</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">11</span>    <span class="nx">scheme</span><span class="p">.</span><span class="nx">hasTopConcept</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">root</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">12</span>        <span class="kd">let</span> <span class="nx">childCount</span> <span class="o">=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span>
+<span class="linenos">13</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`- </span><span class="si">${</span><span class="nx">root</span><span class="si">}</span><span class="sb"> has </span><span class="si">${</span><span class="nx">childCount</span><span class="si">}</span><span class="sb"> narrower concepts`</span><span class="p">);</span>
+<span class="linenos">14</span>    <span class="p">})</span>
+<span class="linenos">15</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>With the example loop above and TopBraid’s Geography example, this takes around 3 seconds to execute on Node.js, which is too slow for most real-world scenarios:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Counting all children...
+- Asia has 141 narrower concepts
+- Global has 19 narrower concepts
+- Europe has 139 narrower concepts
+- Atlantic Ocean has 11 narrower concepts
+- Antarctica has 1 narrower concepts
+- Africa has 102 narrower concepts
+- West Indies has 43 narrower concepts
+- North America has 411 narrower concepts
+- Pacific Ocean has 53 narrower concepts
+- Indian Ocean has 13 narrower concepts
+- Latin America has 58 narrower concepts
+Duration: 2957 ms
+</pre></div>
+</div>
+<p>The reason why it’s slow is illustrated in the following swimlanes diagram.
+There is simply too much network traffic between the Node.js app and the TopBraid server, and this includes not just the network latency but also the overhead of JSON serialization.</p>
+<figure class="align-center">
+<img alt="Swimlanes diagram of network traffic between Node.js and TopBraid then Jena" class="edg-figure" src="../_images/Node-js-Swimlanes-orig.png" />
+</figure>
+<p>The following subsections outline some strategies on how to minimize the impact of those network requests.</p>
+<section id="network-proximity">
+<h3>Network Proximity<a class="headerlink" href="#network-proximity" title="Permalink to this headline"></a></h3>
+<p>In order to avoid network latency you will (obviously) want to run your Node.js engine as close to the TopBraid server as possible, for example on the same SaaS environment.
+To give you some idea, with TopBraid running on localhost, typical calls between Node.js and TopBraid take around 2-3 milliseconds, mostly due to the network and JSON serialization overhead.</p>
+</section>
+<section id="use-sparql-and-graphql">
+<h3>Use SPARQL and GraphQL<a class="headerlink" href="#use-sparql-and-graphql" title="Permalink to this headline"></a></h3>
+<p>The next strategy is to minimize the number of server round-trips.
+In the most extreme case, simply use large SPARQL or GraphQL queries to fetch all data that you need from TopBraid at once, then do the processing on the result sets.</p>
+<p>In the example of counting narrower concepts, we could write a SELECT query with a COUNT and then traverse the bindings of the result set:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Counting all children...&#39;</span><span class="p">);</span>
+<span class="linenos"> 2</span><span class="kd">let</span> <span class="nx">rs</span> <span class="o">=</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="sb">`</span>
+<span class="linenos"> 3</span><span class="sb">    SELECT ?label (COUNT(?child) AS ?childCount)</span>
+<span class="linenos"> 4</span><span class="sb">    WHERE {</span>
+<span class="linenos"> 5</span><span class="sb">  	    ?scheme a skos:ConceptScheme .</span>
+<span class="linenos"> 6</span><span class="sb">  	    ?scheme skos:hasTopConcept ?root .</span>
+<span class="linenos"> 7</span><span class="sb">        BIND (ui:label(?root) AS ?label)</span>
+<span class="linenos"> 8</span><span class="sb">  	    ?child skos:broader+ ?root .</span>
+<span class="linenos"> 9</span><span class="sb">    } GROUP BY ?label</span>
+<span class="linenos">10</span><span class="sb">`</span><span class="p">)</span>
+<span class="linenos">11</span><span class="nx">rs</span><span class="p">.</span><span class="nx">bindings</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">b</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">12</span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`- </span><span class="si">${</span><span class="nx">b</span><span class="p">.</span><span class="nx">label</span><span class="si">}</span><span class="sb"> has </span><span class="si">${</span><span class="nx">b</span><span class="p">.</span><span class="nx">childCount</span><span class="si">}</span><span class="sb"> narrower concepts`</span><span class="p">)</span>
+<span class="linenos">13</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>This approach works reasonably well if your problem space can be expressed in SPARQL (as in this example).
+Execution takes around 254 milliseconds.
+The downside however is that SPARQL isn’t as expressive as JavaScript, and relying on a query string is rather fragile.</p>
+<p>Going through GraphQL is a similar alternative as it can produce large JSON objects in a single transaction.
+However, the expressiveness of GraphQL is even worse than SPARQL because you can basically only ask the queries that the GraphQL schema (based on SHACL shapes) is prepared to handle.</p>
+</section>
+<section id="property-value-rules">
+<h3>Property value rules<a class="headerlink" href="#property-value-rules" title="Permalink to this headline"></a></h3>
+<p>In some cases you could also define an inferred property using <code class="code docutils literal notranslate"><span class="pre">sh:values</span></code> which you can then query with a single transaction such as <code class="code docutils literal notranslate"><span class="pre">concept.childCount</span></code>.
+This is often elegant if the new property is of general use.
+However, it requires changes to the ontology itself, which is not always possible or desirable.</p>
+</section>
+<section id="installed-functions">
+<h3>Installed Functions<a class="headerlink" href="#installed-functions" title="Permalink to this headline"></a></h3>
+<p>The most powerful option by far is to use so-called <em>installed functions</em>.
+This is a new feature that exists for ADS on Node.js only.
+The basic idea is that you can define any ADS function in your Node.js application but let it execute on the TopBraid server.
+Here is how it works, and this program takes less than 200 ms to execute:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">var</span> <span class="nx">countChildren</span> <span class="o">=</span> <span class="p">(</span><span class="nx">concept</span>: <span class="kt">skos_Concept</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="nx">concept</span><span class="p">.</span><span class="nx">narrower</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">child</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 4</span>        <span class="nx">count</span> <span class="o">+=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1</span>
+<span class="linenos"> 5</span>    <span class="p">})</span>
+<span class="linenos"> 6</span>    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="linenos"> 7</span><span class="p">}</span>
+<span class="hll"><span class="linenos"> 8</span><span class="nx">countChildren</span> <span class="o">=</span> <span class="nx">TopBraid</span><span class="p">.</span><span class="nx">installFunction</span><span class="p">(</span><span class="nx">countChildren</span><span class="p">);</span>
+</span><span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Counting all children...&#39;</span><span class="p">);</span>
+<span class="linenos">11</span><span class="nx">skos</span><span class="p">.</span><span class="nx">everyConceptScheme</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">scheme</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">12</span>    <span class="nx">scheme</span><span class="p">.</span><span class="nx">hasTopConcept</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">root</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">13</span>        <span class="kd">let</span> <span class="nx">childCount</span> <span class="o">=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span>
+<span class="linenos">14</span>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`- </span><span class="si">${</span><span class="nx">root</span><span class="si">}</span><span class="sb"> has </span><span class="si">${</span><span class="nx">childCount</span><span class="si">}</span><span class="sb"> narrower concepts`</span><span class="p">);</span>
+<span class="linenos">15</span>    <span class="p">})</span>
+<span class="linenos">16</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The only difference between this code and the code in the beginning of the section is the call to <code class="code docutils literal notranslate"><span class="pre">TopBraid.installFunction()</span></code>.
+This will send the function declaration to the TopBraid server and return a proxy function that has exactly the same signature as the original function, yet executes the function server-side.
+This magic is working because both the TopBraid server and the Node.js side are using the same generated API, and therefore almost all code written in installed functions will work unchanged.</p>
+<p>In this case, we overwrote the <code class="code docutils literal notranslate"><span class="pre">countChildren</span></code> function.
+To make this happen, we declared <code class="code docutils literal notranslate"><span class="pre">var</span> <span class="pre">countChildren</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">const</span> <span class="pre">countChildren</span></code>.</p>
+<p>Needless to say, such installed functions execute in a different scope than the script on Node.js, so they can not access any variables other than those that have been passed in as arguments.
+Installed functions may however call other installed functions.</p>
+<p>Since such installed functions are executing directly on the server’s virtual machine, they can perform arbitrary queries at maximum speed.
+You could define a function that collects all relevant data as a JSON object so that the Node.js application doesn’t ever need to query the server again.
+In the following variation, a single server call to <code class="code docutils literal notranslate"><span class="pre">getChildInfo</span></code> is made, and the script completes in 80 ms:</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// These functions will execute on the TopBraid server when called</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kd">var</span> <span class="nx">countChildren</span> <span class="o">=</span> <span class="p">(</span><span class="nx">concept</span>: <span class="kt">skos_Concept</span><span class="p">)</span><span class="o">:</span> <span class="kt">number</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 4</span>    <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span>
+<span class="linenos"> 5</span>    <span class="nx">concept</span><span class="p">.</span><span class="nx">narrower</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">child</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 6</span>        <span class="nx">count</span> <span class="o">+=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="o">+</span> <span class="mf">1</span>
+<span class="linenos"> 7</span>    <span class="p">})</span>
+<span class="linenos"> 8</span>    <span class="k">return</span> <span class="nx">count</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="nx">countChildren</span> <span class="o">=</span> <span class="nx">TopBraid</span><span class="p">.</span><span class="nx">installFunction</span><span class="p">(</span><span class="nx">countChildren</span><span class="p">);</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="kd">var</span> <span class="nx">getChildInfo</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">13</span>    <span class="kd">let</span> <span class="nx">results</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="linenos">14</span>    <span class="nx">skos</span><span class="p">.</span><span class="nx">everyConceptScheme</span><span class="p">().</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">scheme</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">15</span>        <span class="nx">scheme</span><span class="p">.</span><span class="nx">hasTopConcept</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">root</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">16</span>            <span class="kd">let</span> <span class="nx">childCount</span> <span class="o">=</span> <span class="nx">countChildren</span><span class="p">(</span><span class="nx">root</span><span class="p">);</span>
+<span class="linenos">17</span>            <span class="nx">results</span><span class="p">[</span><span class="nx">root</span><span class="p">.</span><span class="nx">toString</span><span class="p">()]</span> <span class="o">=</span> <span class="nx">childCount</span><span class="p">;</span>
+<span class="linenos">18</span>        <span class="p">});</span>
+<span class="linenos">19</span>    <span class="p">});</span>
+<span class="linenos">20</span>    <span class="k">return</span> <span class="nx">results</span><span class="p">;</span>
+<span class="linenos">21</span><span class="p">}</span>
+<span class="linenos">22</span><span class="nx">getChildInfo</span> <span class="o">=</span> <span class="nx">TopBraid</span><span class="p">.</span><span class="nx">installFunction</span><span class="p">(</span><span class="nx">getChildInfo</span><span class="p">);</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span><span class="c1">// This code executes on Node.js only</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Counting all children...&#39;</span><span class="p">);</span>
+<span class="linenos">28</span><span class="kd">let</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">getChildInfo</span><span class="p">();</span>
+<span class="linenos">29</span><span class="k">for</span><span class="p">(</span><span class="kd">let</span> <span class="nx">label</span> <span class="ow">in</span> <span class="nx">info</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos">30</span>    <span class="kd">let</span> <span class="nx">childCount</span> <span class="o">=</span> <span class="nx">info</span><span class="p">[</span><span class="nx">label</span><span class="p">];</span>
+<span class="linenos">31</span>    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`- </span><span class="si">${</span><span class="nx">label</span><span class="si">}</span><span class="sb"> has </span><span class="si">${</span><span class="nx">childCount</span><span class="si">}</span><span class="sb"> narrower concepts`</span><span class="p">);</span>
+<span class="linenos">32</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This is much much faster than the original implementation because it requires just two network requests.
+The implementation of the query logic was shifted to the server:</p>
+<figure class="align-center">
+<img alt="Swimlanes diagram of network traffic between Node.js and TopBraid then Jena" class="edg-figure" src="../_images/Node-js-Swimlanes-getChildInfo.png" />
+</figure>
+<p>Note that the engine will automatically preserve the object types of the input and output objects.
+For example, the input argument concept will be automatically turned back into its original JavaScript class <code class="code docutils literal notranslate"><span class="pre">skos_Concept</span></code> when it executes on the server, and resulting objects would again have the same type as the original function returned.
+This mechanism is supported for all subclasses of <code class="code docutils literal notranslate"><span class="pre">GraphNode</span></code>, and nested object or array structures.</p>
+<p>In the current implementation, take care to not rename the generated API file, e.g. leave it as in <code class="code docutils literal notranslate"><span class="pre">geography_ontology_ads.js</span></code>.
+This is because the mechanism to installed functions relies on the function’s source code (via <code class="code docutils literal notranslate"><span class="pre">.toString()</span></code>), and it needs to remove the module name from certain calls as the ADS server doesn’t have modules.
+Another thing to make sure is of course that ontology changes are also updating the generated API files because otherwise the two APIs would diverge and installed functions may no longer work.
+But this problem of course applies to any approach that lets client applications run queries.</p>
+</section>
+</section>
+<section id="write-operations">
+<h2>Write Operations<a class="headerlink" href="#write-operations" title="Permalink to this headline"></a></h2>
+<p>The generated ADS APIs for Node.js have write access to the graphs, assuming that the authenticated user has the right permissions.
+Use Administrator to bypass the permission system.</p>
+<p>When <code class="code docutils literal notranslate"><span class="pre">TopBraid.init()</span></code> is called, the server will create a session object that uses a so-called DiffGraph to capture any incoming changes before they get written to the database.
+This makes it possible, among others, to validate the changes before committing them.</p>
+<p>As a performance optimization, the Node.js API will cache all write operations (such as <code class="code docutils literal notranslate"><span class="pre">graph.add()</span></code>) and send them to the server in batches of 100 each.
+This removes network latency issues.
+However, this cache is flushed whenever a read operation against the graph happens.
+You may switch this behavior off if you set <code class="code docutils literal notranslate"><span class="pre">readsDoNotDependOnWrites:</span> <span class="pre">true</span></code> in the parameter to <code class="code docutils literal notranslate"><span class="pre">TopBraid.init()</span></code>.
+This is suitable for cases such as where the script is producing new triples but none of the queries in the loop depends on them.</p>
+<p>When write operations are received on the server, the DiffGraph will collect them in memory for the duration of the session.
+By default they will then be bundled into a single change when <code class="code docutils literal notranslate"><span class="pre">TopBraid.terminate()</span></code> is called.
+However, if the option <code class="code docutils literal notranslate"><span class="pre">streaming:</span> <span class="pre">true</span></code> has been set in the <code class="code docutils literal notranslate"><span class="pre">TopBraid.init()</span></code> call, changes will be collected and flushed into the database after the cache overflows (at 100k triples).
+This is recommended for very large bulk imports such as spredsheet loaders.</p>
+<p>In practice this means that you can freely use calls like <code class="code docutils literal notranslate"><span class="pre">g.createCity(...)</span></code> without having to worry about write performance or how to send the edits to the server in batches.</p>
+</section>
+<section id="ads-features-not-available-on-node-js">
+<h2>ADS Features not available on Node.js<a class="headerlink" href="#ads-features-not-available-on-node-js" title="Permalink to this headline"></a></h2>
+<p>The following features are limited to scripts running on the TopBraid server and not directly available on Node.js.
+You may use some of them via installed functions though.</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">IO</span></code> and <code class="code docutils literal notranslate"><span class="pre">UploadedFile</span></code> - this is best handled by Node.js anyway, and there is a huge number of 3rd party libraries available, for example for processing Excel files and connecting to external systems.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">SQL</span></code> - there are plenty of alternatives for Node.js.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="shacl.html" class="btn btn-neutral float-left" title="Using ADS with SHACL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="web.html" class="btn btn-neutral float-right" title="Using ADS from Web Applications and React" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

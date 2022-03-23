@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADS-based Web Services &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using ADS with SHACL" href="shacl.html" />
+    <link rel="prev" title="Resource Actions" href="actions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Scripting with JavaScript and ADS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction to ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">The Scripting User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="importing.html">Importing Data with ADS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql.html">Working with Relational Databases via SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html">Resource Actions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADS-based Web Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-retrieving-data-on-a-instance-data">Example: Retrieving data on a instance data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example-creating-a-data-importer">Example: Creating a Data Importer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="shacl.html">Using ADS with SHACL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nodejs.html">Using ADS from Node.js</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web.html">Using ADS from Web Applications and React</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Scripting with JavaScript and ADS</a> &raquo;</li>
+      <li>ADS-based Web Services</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="ads-based-web-services">
+<span id="scripting-services"></span><h1>ADS-based Web Services<a class="headerlink" href="#ads-based-web-services" title="Permalink to this headline"></a></h1>
+<p>ADS provides a novel way of implementing web services for downstream systems to access EDG asset collections.
+These web services are defined in an ontology and are exposed via the <code class="code docutils literal notranslate"><span class="pre">tbl/service</span></code> framework.
+Web services are mainly defined in ontologies, meaning that they will be automatically available to the asset collections that include ontologies with such services.</p>
+<p>Defined web services are exposed through the <code class="code docutils literal notranslate"><span class="pre">/tbl/service/</span></code> servlet.
+Each web service can be invoked as follows: <code class="code docutils literal notranslate"><span class="pre">/tbl/service/{dataGraphId}/{servicePrefix}/{serviceLocalName}</span></code>.</p>
+<p>EDG will automatically create Swagger documentation in asset collections which displays what web services can be executed for that particular collection, this can be found in the Reports tab.
+The Swagger documentation allows you to test the defined web services as well, whilst providing the exact URI and parameters that are required.</p>
+<figure class="align-center" id="id1">
+<img alt="EDG Swagger Link" class="edg-figure" src="../_images/edg_swagger_link.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The Swagger link in the reports tab that would display the web services documentation for the asset collection</strong></span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id2">
+<img alt="EDG Swagger Documentation" class="edg-figure-l" src="../_images/edg_swagger_doc.png" />
+<figcaption>
+<p><span class="caption-text"><strong>A typical web service description in Swagger. Click the *Try it out* button to use and test the web service locally</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>There are two types of web services one can create:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">dash:GraphService</span></code>: Web services that can be executed over the whole graph (for example when creating importers)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">dash:ResourceService</span></code>: Web services that can be executed on particular instances, thus a resource is given as an input and used as the focus node</p></li>
+</ol>
+</div></blockquote>
+<p>In both types of web services, the following properties can be defined:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>parameters</strong> - A number of parameters can be defined as input to the web service. These parameters can be accessed in the JavaScript code using a name derived from the local name of the <code class="code docutils literal notranslate"><span class="pre">sh:path</span></code>.</p></li>
+<li><p><strong>deactivated</strong> - Activates or deactivates a web service. By default a defined web service is activated, if a value is not defined for the predicate, or the value is <em>false</em>.</p></li>
+<li><p><strong>can write</strong> - Indicates whether the web service has permission to write to the asset collection.</p></li>
+<li><p><strong>response content type</strong> - By default the response’s content type is <code class="code docutils literal notranslate"><span class="pre">application/json</span></code>, however, this can be overridden by defining the content type in this field, for example: <code class="code docutils literal notranslate"><span class="pre">text/turtle</span></code>, <code class="code docutils literal notranslate"><span class="pre">text/csv</span></code>, and <code class="code docutils literal notranslate"><span class="pre">application/zip</span></code> amongst others.</p></li>
+<li><p><strong>javascript code</strong> - The business logic for the web service is defined in this predicate.</p></li>
+</ul>
+</div></blockquote>
+<p>The following subsections include examples of such web services.
+Further examples can be found in the Extension Development guide at <a class="reference internal" href="../ext/points.html#ext-services"><span class="std std-ref">Web Services</span></a>.</p>
+<section id="example-retrieving-data-on-a-instance-data">
+<span id="index-0"></span><h2>Example: Retrieving data on a instance data<a class="headerlink" href="#example-retrieving-data-on-a-instance-data" title="Permalink to this headline"></a></h2>
+<p>Web services can be defined to retrieve or modify a particular instance.
+These are done by defining a web service as a type of <code class="code docutils literal notranslate"><span class="pre">dash:ResourceService</span></code> and attaching it to a node shape in an ontology via the <code class="code docutils literal notranslate"><span class="pre">dash:resourceService</span></code> predicate.</p>
+<figure class="align-center" id="id3">
+<img alt="EDG Resource Service" class="edg-figure-l" src="../_images/edg_resource_service.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Defining a resource service in EDG via the ontologies asset collection</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="Node Shape Resource Service" class="edg-figure-l" src="../_images/node_shape_resource_service.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Attaching the web service *Continent Information* to the Continent node shape</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This example depicts the definition of a web service that is attached to the Continent node shape.
+The code logic retrieves all countries in a selected continent (<code class="code docutils literal notranslate"><span class="pre">focusNode</span></code>) and returns the JSON representation of each country using the defined <code class="code docutils literal notranslate"><span class="pre">.toJSON(...)</span></code> method.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nx">focusNode</span><span class="p">.</span><span class="nx">narrower</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">country</span> <span class="p">=&gt;</span> <span class="nx">g</span><span class="p">.</span><span class="nx">asCountry</span><span class="p">(</span><span class="nx">country</span><span class="p">).</span><span class="nx">toJSON</span><span class="p">(</span><span class="nx">lang</span><span class="p">))</span>
+<span class="linenos">2</span><span class="nx">arr</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is no need to implement error handling in the business logic to ensure that the <code class="code docutils literal notranslate"><span class="pre">focusNode</span></code> has the correct type.
+EDG handles all checks in resource services, therefore, if the API is given an instance with a different node shape type, EDG will prompt an error.</p>
+</div>
+<p>As soon as the web service instance is saved, EDG automatically creates the following web service: <code class="code docutils literal notranslate"><span class="pre">/tbl/service/geo/g/ContinentInformation/{namePart1}/{namePart2}</span></code>, where <code class="code docutils literal notranslate"><span class="pre">{namePart1}</span></code> is replaced by the instance prefix, and <code class="code docutils literal notranslate"><span class="pre">{namePart2}</span></code> is replaced by the local name.
+For example <code class="code docutils literal notranslate"><span class="pre">/tbl/service/geo/g/ContinentInformation/g/Asia</span></code></p>
+</section>
+<section id="example-creating-a-data-importer">
+<span id="index-1"></span><h2>Example: Creating a Data Importer<a class="headerlink" href="#example-creating-a-data-importer" title="Permalink to this headline"></a></h2>
+<p>Graph services <code class="code docutils literal notranslate"><span class="pre">dash:GraphService</span></code> are used to define asset-wide web services, for example, to create importers and exporters.
+Unlike resource services, these are not attached to any node shape, but are simply defined in the ontology (or file) that is subsequently included in the asset collection.</p>
+<p>The self-described code below defines the logic for importing a spreadsheet into EDG using ADS.
+The system handles all file operations such as importing and loading (line 15).
+Above these operations, ADS provides convenience functions to convert the imported data to more usuable JavaScript objects.
+In this example, the uploaded file is converted to an object using the spreadsheet mapper, using the first row as the header and thus keys for the objects’ values.
+The assignment <code class="code docutils literal notranslate"><span class="pre">let</span> <span class="pre">countryConcept</span> <span class="pre">=</span> <span class="pre">g.asCountry(countryURI)</span></code> ensures that the variable <code class="code docutils literal notranslate"><span class="pre">countryConcept</span></code> can access all <em>getters</em> and <em>setters</em> for the Country node shape, whilst the snippets in lines 36 to 41, demonstrates ADS ability to create instances with values extracted from the spreadsheet.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cm">/**</span>
+<span class="linenos"> 2</span><span class="cm"> * This converts the spreadsheet file into the appropriate object.</span>
+<span class="linenos"> 3</span><span class="cm"> * This function assumes that the first row is the header row, therefore</span>
+<span class="linenos"> 4</span><span class="cm"> * each row is converted to an object:</span>
+<span class="linenos"> 5</span><span class="cm"> * [</span>
+<span class="linenos"> 6</span><span class="cm"> *  { </span>
+<span class="linenos"> 7</span><span class="cm"> *      Country: &quot;Malta&quot;,</span>
+<span class="linenos"> 8</span><span class="cm"> *      City: &quot;Birkirkara&quot;,</span>
+<span class="linenos"> 9</span><span class="cm"> *      Population: &quot;24,356&quot;</span>
+<span class="linenos">10</span><span class="cm"> *  },</span>
+<span class="linenos">11</span><span class="cm"> *  { ... }, </span>
+<span class="linenos">12</span><span class="cm"> *  ...</span>
+<span class="linenos">13</span><span class="cm"> * ]</span>
+<span class="linenos">14</span><span class="cm"> */</span>
+<span class="hll"><span class="linenos">15</span><span class="kd">let</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">IO</span><span class="p">.</span><span class="nx">uploadedFile</span><span class="p">(</span><span class="nx">file</span><span class="p">).</span><span class="nx">asSpreadsheet</span><span class="p">()</span>
+</span><span class="linenos">16</span>
+<span class="linenos">17</span><span class="c1">// Loop through all values/rows in array s, using the first sheet (rows(0))</span>
+<span class="linenos">18</span><span class="nx">s</span><span class="p">.</span><span class="nx">rows</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">row</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">19</span>    <span class="c1">// Get all variables for the current row</span>
+<span class="linenos">20</span>    <span class="kd">let</span> <span class="nx">country</span> <span class="o">=</span> <span class="nx">row</span><span class="p">.</span><span class="nx">Country</span><span class="p">;</span>
+<span class="linenos">21</span>    <span class="kd">let</span> <span class="nx">city</span> <span class="o">=</span> <span class="nx">row</span><span class="p">.</span><span class="nx">City</span><span class="p">;</span>
+<span class="linenos">22</span>    <span class="kd">let</span> <span class="nx">population</span> <span class="o">=</span> <span class="nx">row</span><span class="p">.</span><span class="nx">Population</span> <span class="p">;</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span>    <span class="c1">// This will create the URI for the country and city</span>
+<span class="linenos">25</span>    <span class="kd">let</span> <span class="nx">countryURI</span> <span class="o">=</span> <span class="s2">&quot;http://topquadrant.com/ns/examples/geography#&quot;</span><span class="o">+</span><span class="nx">country</span><span class="p">;</span>
+<span class="linenos">26</span>    <span class="kd">let</span> <span class="nx">cityURI</span> <span class="o">=</span> <span class="s2">&quot;http://topquadrant.com/ns/examples/geography#&quot;</span><span class="o">+</span><span class="nx">city</span><span class="p">;</span>
+<span class="linenos">27</span>
+<span class="linenos">28</span>    <span class="c1">// This will get the country concept thus the country&#39;s methods can be accessed.</span>
+<span class="linenos">29</span>    <span class="c1">// This example assumes that the country exists.</span>
+<span class="hll"><span class="linenos">30</span>    <span class="kd">let</span> <span class="nx">countryConcept</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">asCountry</span><span class="p">(</span><span class="nx">countryURI</span><span class="p">)</span>
+</span><span class="linenos">31</span>
+<span class="linenos">32</span>    <span class="kd">let</span> <span class="nx">cityConcept</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>    <span class="c1">// if city does not exists then create it</span>
+<span class="linenos">35</span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="nx">graph</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">cityURI</span><span class="p">,</span> <span class="nx">rdf</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span> <span class="nx">g</span><span class="p">.</span><span class="nx">City</span><span class="p">))){</span>
+<span class="hll"><span class="linenos">36</span>        <span class="nx">cityConcept</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">createCity</span><span class="p">({</span>
+</span><span class="hll"><span class="linenos">37</span>            <span class="nx">uri</span><span class="o">:</span> <span class="nx">cityURI</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">38</span>            <span class="nx">prefLabel</span><span class="o">:</span> <span class="nx">city</span><span class="p">,</span>
+</span><span class="hll"><span class="linenos">39</span>            <span class="nx">population</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">population</span><span class="p">),</span>
+</span><span class="hll"><span class="linenos">40</span>            <span class="nx">broader</span><span class="o">:</span> <span class="nx">countryConcept</span> <span class="c1">// this will connect the city to the country</span>
+</span><span class="hll"><span class="linenos">41</span>        <span class="p">})</span>
+</span><span class="linenos">42</span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos">43</span>        <span class="nx">cityConcept</span> <span class="o">=</span> <span class="nx">g</span><span class="p">.</span><span class="nx">asCity</span><span class="p">(</span><span class="nx">cityURI</span><span class="p">);</span>
+<span class="linenos">44</span>
+<span class="linenos">45</span>        <span class="c1">// since the city already exists, then the population value can be assigned</span>
+<span class="linenos">46</span>        <span class="nx">cityConcept</span><span class="p">.</span><span class="nx">population</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">population</span><span class="p">)</span>
+<span class="linenos">47</span>    <span class="p">}</span>
+<span class="linenos">48</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>The only parameter required for this importer is the <code class="code docutils literal notranslate"><span class="pre">file</span></code>.
+This figure below shows how the parameter is defined within the form editor:</p>
+<figure class="align-center" id="id5">
+<img alt="EDG File Parameter" class="edg-figure-l" src="../_images/edg_file_parameter.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Defining a file parameter with acceptable content type</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Finally, the web service should be able to write to the asset collection, therefore, the predicate <code class="code docutils literal notranslate"><span class="pre">can</span> <span class="pre">write</span></code> must have a value of true.
+This figure below shows the graph service instance in the ontology.</p>
+<figure class="align-center" id="id6">
+<img alt="ADS Graph Service" class="edg-figure-l" src="../_images/ads_graph_service_instance.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Defining the Graph Service in an ontology</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This creates the following web service: <code class="code docutils literal notranslate"><span class="pre">/tbl/service/geo/g/SpreadsheetImporter</span></code>.
+Using Swagger or any data transfer application, when the following spreadsheet is imported via the API:</p>
+<table class="colwidths-given docutils align-default" id="id7">
+<caption><span class="caption-text">Example Spreadsheet File to be Imported</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Country</p></th>
+<th class="head"><p>City</p></th>
+<th class="head"><p>Population</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Malta</p></td>
+<td><p>Birkirkara</p></td>
+<td><p>24,356</p></td>
+</tr>
+<tr class="row-odd"><td><p>Malta</p></td>
+<td><p>Qormi</p></td>
+<td><p>16,324</p></td>
+</tr>
+<tr class="row-even"><td><p>Malta</p></td>
+<td><p>Mosta</p></td>
+<td><p>20,988</p></td>
+</tr>
+<tr class="row-odd"><td><p>Malta</p></td>
+<td><p>Victoria</p></td>
+<td><p>6,901</p></td>
+</tr>
+<tr class="row-even"><td><p>Malta</p></td>
+<td><p>Sliema</p></td>
+<td><p>22,591</p></td>
+</tr>
+<tr class="row-odd"><td><p>Malta</p></td>
+<td><p>Valletta</p></td>
+<td><p>5,827</p></td>
+</tr>
+</tbody>
+</table>
+<p>these concepts are created:</p>
+<figure class="align-center" id="id8">
+<img alt="ADS Taxonomy Import Result" class="edg-figure-l" src="../_images/ads_taxonomy_import_result.png" />
+<figcaption>
+<p><span class="caption-text"><strong>The resulting concepts in the taxonomy and the concept information</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="actions.html" class="btn btn-neutral float-left" title="Resource Actions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shacl.html" class="btn btn-neutral float-right" title="Using ADS with SHACL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EDG Business Glossaries &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="EDG Reference Data Management" href="../edg_reference_data_management/index.html" />
+    <link rel="prev" title="EDG Vocabulary Management" href="../edg_vocabulary_management/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Quick Start Guides</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../edg_vocabulary_management/index.html">EDG Vocabulary Management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">EDG Business Glossaries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about-this-guide">About This Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-navigation-and-editing-features">General Navigation and Editing Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#working-with-business-glossaries">Working with Business Glossaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workflows-collaboration-and-audit-trail">Workflows, Collaboration and Audit Trail</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-import">Data Import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#setting-up-information-governance-framework">Setting up Information Governance Framework</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#about-business-glossaries-in-topbraid-edg">About Business Glossaries in TopBraid EDG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-the-edg-application">Access the EDG Application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#topbraid-edg-user-interface">TopBraid EDG User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#glossary-management">Glossary Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#setup-governance-areas-and-roles">Setup Governance Areas and Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started-for-the-steward">Getting Started for the Steward</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#creating-populating-and-changing-a-business-glossary">Creating, Populating and Changing a Business Glossary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#customizing-glossary-terms-metadata">Customizing Glossary Terms Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#export-collaboration-and-other-activities">Export, Collaboration, and Other Activities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-started-for-the-business-analyst">Getting Started for the Business Analyst</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#finding-a-term">Finding a Term</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#finding-your-workflows">Finding your Workflows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#next-steps">Next Steps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#appendix-glossary-sample-spreadsheet">Appendix: Glossary sample spreadsheet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_reference_data_management/index.html">EDG Reference Data Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer/index.html">TopBraid Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_geo_spatial_capabilities/index.html">Geo-spatial capabilities in TopBraid EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Quick Start Guides</a> &raquo;</li>
+      <li>EDG Business Glossaries</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="edg-business-glossaries">
+<span id="id1"></span><h1>EDG Business Glossaries<a class="headerlink" href="#edg-business-glossaries" title="Permalink to this headline"></a></h1>
+<section id="about-this-guide">
+<h2>About This Guide<a class="headerlink" href="#about-this-guide" title="Permalink to this headline"></a></h2>
+<p>This guide provides a hands-on tutorial for working with the <em>TopBraid EDG Business Glossaries</em> module.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>You may have this module “stand-alone” or in a combination with a Metadata Management package or another TopBraid EDG package.
+If this is the case, please also see Getting Started guides for your other packages.</p>
+</div>
+<p>The guide walks you through a series of day to day tasks you may perform using TopBraid EDG.
+Throughout this journey, the guide offers background information and instructions on each topic.</p>
+<p>This document is organized by roles showing how:</p>
+<ul class="simple">
+<li><p>Data Stewards, Business Stewards or Subject Matter Experts can create and modify glossaries, import and organize glossary content and manage information about a glossary.
+We also describe how fields available for describing glossary terms can be configured by using <a class="reference external" href="https://doc.topquadrant.com/7.0/ontologies/">ontologies</a>.</p></li>
+<li><p>Business Analysts and other users can consult EDG to learn more about terms important to their work and how they connect to data.</p></li>
+</ul>
+<p>In addition to following this guide, you may also want to watch a set of complimentary videos.
+You can watch some of these videos before doing the hands-on exercises described in the tutorial and/or come back to them at any point.</p>
+<p>We have assembled the following list of short videos for you, organizing them into topics.
+The duration of the videos varies depending on a topic, but, on average, it takes between 5 and 20 minutes to watch a video.</p>
+<section id="general-navigation-and-editing-features">
+<h3>General Navigation and Editing Features<a class="headerlink" href="#general-navigation-and-editing-features" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/navigating_in_edg/">Home Page and Navigation</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/resource_form_options/">Asset Menus and Settings</a> (uses a Reference Dataset, but Taxonomies offer the same options)</p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/panels-and-layouts-in-topbraid-edg/">Panels and Layouts</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/resource_forms_edg/">Editing Asset Information</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/data_validation_edg/">Data Validation</a></p>
+</section>
+<section id="working-with-business-glossaries">
+<h3>Working with Business Glossaries<a class="headerlink" href="#working-with-business-glossaries" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/creating_glossary_edg/">Creating a Glossary</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/configure_asset_information/">Configuring Asset Information</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/searching_asset_collections/">Searching within a Business Glossary</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/search_the_edg/">Using Search the EDG</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/creating_crosswalk_in_topbraid_edg/">Creating a Crosswalk</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/sparql-queries-in-topbraid-edg/">Building and Using SPARQL Queries and Reports</a></p>
+</section>
+<section id="workflows-collaboration-and-audit-trail">
+<h3>Workflows, Collaboration and Audit Trail<a class="headerlink" href="#workflows-collaboration-and-audit-trail" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/change_management_workflows/">Introduction to Workflows</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/using_tasks_edg/">Working with Tasks</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/asset-lists-in-topbraid-edg/">Asset Lists</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/change-history-in-topbraid-edg/">Change History</a></p>
+</section>
+<section id="data-import">
+<h3>Data Import<a class="headerlink" href="#data-import" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/import_tab_data_sheets/">Importing Tabular Spreadsheets</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/importing_hierarchies/">Importing Hierarchical Spreadsheets</a></p>
+</section>
+<section id="setting-up-information-governance-framework">
+<h3>Setting up Information Governance Framework<a class="headerlink" href="#setting-up-information-governance-framework" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.topquadrant.com/project/governance-areas-in-topbraid-edg/">Governance Areas</a></p>
+<p><a class="reference external" href="https://www.topquadrant.com/project/stewardship-as-part-of-the-governance-model-in-topbraid-edg/">Governance Roles and Stewardship</a></p>
+</section>
+</section>
+<section id="about-business-glossaries-in-topbraid-edg">
+<h2>About Business Glossaries in TopBraid EDG<a class="headerlink" href="#about-business-glossaries-in-topbraid-edg" title="Permalink to this headline"></a></h2>
+<p>A glossary is a collection of terms in a particular domain (i.e., field or subject) of knowledge with the test definitions for those terms.
+Unlike dictionaries, which are more general collections of words, glossaries only concern themselves with terms that will enhance one’s comprehension of a certain topic.
+Glossary terms are often highly specific to a particular business subject or area of operation.
+They could be thought of as a ‘jargon’.
+Just about any business activity and organization you can think of has its own jargon to go with it – from professional disciplines to operational activities.</p>
+<p>A business glossary goes beyond just a list of terms.
+Linking terms to IT assets establishes a connection between business and IT and enhances organizational collaboration.
+Glossary lets you create and manage a common vocabulary of terms important to your organization to ensure clear communication and improve productivity.
+These terms can be categorized in a way that is relevant to your organization.
+Multiple glossaries can be developed, interlinked, searched and explored.
+Valid definitions of values and business rules can then be managed and made available across the organization.</p>
+<p>Glossary terms can be a ‘flat’ alphabetical list or they can be organized into hierarchies.
+In TopBraid EDG, the primary user interface (UI) for viewing and editing glossary terms looks like a spreadsheet.
+TopBraid EDG also supports a category of vocabularies that are called <em>Taxonomies</em>.
+Depending on your licensing, you may see this category of asset collections in your installation of EDG and, as a result, may wonder about the difference between Glossaries and Taxonomies and when to use each – especially, if your terms are organized hierarchically:</p>
+<ul class="simple">
+<li><p>Unlike <em>Glossaries</em>, <em>Taxonomies</em> always assume that terms are organized and presented as hierarchies and that the hierarchical relationship between them is “broader concept” which is defined by the <a class="reference external" href="https://www.w3.org/TR/skos-reference/">SKOS</a> standard.
+SKOS doesn’t use the word “term” that is common to business glossaries.
+Instead, it uses the word “concept”. Further, each <em>Taxonomy</em> defines at least one <em>concept scheme</em>.
+A concept scheme points to its top concepts.
+The primary user interface for viewing taxonomies is hierarchical.</p></li>
+<li><p>Even more importantly, <em>Glossaries</em> are designed to improve understanding of data’s context and usage.
+Glossary terms not only have descriptions of their meaning, but they also define business context of use and can be linked to the underlying technical metadata to provide a direct association between business terms and data sources and data elements.
+The underlying model or ontology for taxonomy concepts is SKOS.
+The underlying model for glossary terms is EDG-provided glossary model.
+It re-uses some of SKOS properties as appropriate.
+For example, a property for alternative labels of synonyms and properties for various notes.</p></li>
+</ul>
+<p>In TopBraid EDG, glossary terms include description of business rules and permissible values – both, in plain English as well as in structured, executable rules that are used to automate connections between data elements and business terms.
+They may also connect to reference datasets and enumerations that hold lists of values specific to a given term such as “customer status”.
+Taxonomies, on the other hand, describe some domain of knowledge in general.
+They are often focused on providing a rich set of synonyms that are used in search, text mining and document classification.</p>
+</section>
+<section id="access-the-edg-application">
+<h2>Access the EDG Application<a class="headerlink" href="#access-the-edg-application" title="Permalink to this headline"></a></h2>
+<p>To work through this guide, use a browser to access the EDG web-application running in one of the following environments.</p>
+<ol class="arabic simple">
+<li><p>Create an EDG trial evaluation at TopQuadrant, and run EDG from the TopQuadrant servers.
+Submit an <a class="reference external" href="https://www.topquadrant.com/products/topbraid-enterprise-data-governance/request-edg-evaluation-account/">EDG evaluation request</a> or <a class="reference external" href="https://www.topquadrant.com/get-started-data-governance/">contact TopQuadrant</a>.</p></li>
+<li><p>Use TopBraid Composer – Maestro Edition (TBC-ME), and run its demonstration version of EDG.
+<a class="reference external" href="https://www.topquadrant.com/topbraid-composer-install/">Download</a> and install TBC-ME.
+If using sample data, you will need to download and install EDG samples project.</p></li>
+<li><p>Install EDG on a server accessible to your network (which could also be a local Tomcat server, via localhost).
+For a custom install, contact TopQuadrant and see EDG Server Installation and Integration.
+If using sample data, this will also require separate installation of the EDG samples project.</p></li>
+</ol>
+<p>For the TBC-ME option, launch TBC-ME and then start the demo version of EDG via the top menu: TopBraid Applications &gt; Open TopBraid EDG.
+Browse to <a class="reference external" href="http://localhost:8083/tbl">http://localhost:8083/tbl</a>.
+Logging in as Administrator requires no password for the demo version.
+All asset collection types are available in the demo version.</p>
+<p>For the other two options, the system administrator or TopQuadrant will provide you with a URL, a username, and a password.
+Browse to the URL and log in.
+Server licensing will determine the availability of the various asset collection types.</p>
+<section id="topbraid-edg-user-interface">
+<h3>TopBraid EDG User Interface<a class="headerlink" href="#topbraid-edg-user-interface" title="Permalink to this headline"></a></h3>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For a basic orientation to the user interface, see <a class="reference external" href="https://doc.topquadrant.com/7.0/user-interface/">EDG User Guide - UI Overview</a>.</p>
+</div>
+<p>You will always see the collapsable left hand side Navigator that will help you navigate between asset collections and pages of interest.
+Menu sections in the Navigator are also collapsable and expandable.
+A “hamburger” menu button in the header offer an alternative approach to quick navigation between different glossaries.</p>
+</section>
+</section>
+<section id="glossary-management">
+<h2>Glossary Management<a class="headerlink" href="#glossary-management" title="Permalink to this headline"></a></h2>
+<section id="setup-governance-areas-and-roles">
+<h3>Setup Governance Areas and Roles<a class="headerlink" href="#setup-governance-areas-and-roles" title="Permalink to this headline"></a></h3>
+<p>Governance areas organize glossaries (and other EDG asset collections) according to either business-oriented or data-oriented concerns.
+The areas can have associated governance roles, which help business teams to coordinate their management of the area’s collections via defined workflows.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For additional details, see the <a class="reference external" href="https://doc.topquadrant.com/7.0/governance-model/">Governance Model Overview</a>.</p>
+</div>
+<p>We will first create a data subject area and assign a goverance role to it.
+Click GOVERNANCE MODEL &gt; <strong>Governance Areas &gt; Create Data Subject Area</strong>.
+Create the Customer Data Domain subject area and click <strong>OK</strong>.</p>
+<figure class="align-center" id="id2">
+<img alt="TopBraid EDG Create Business Area" class="edg-figure" src="../../_images/edg_create_business_area.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Business Area</strong></span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Once you added Customer Data Domain subject area add Data Steward governance role from a drop-down menu.</p>
+<figure class="align-center" id="id3">
+<img alt="TopBraid EDG Add Data Steward" class="edg-figure" src="../../_images/edg_add_data_steward.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Add Data Steward</strong></span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Assign Administrator a Data Steward role.</p>
+<figure class="align-center" id="id4">
+<img alt="TopBraid EDG Assign Data Steward Role to Admin" class="edg-figure" src="../../_images/edg_assign_admin_data_steward.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Assign Data Steward Role to Admin</strong></span><a class="headerlink" href="#id4" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>From now on, a logged in Administrator (user ID) carries a governance role of Data Steward for the Customer Data Domain area.
+The scope of this role is any asset collection in the area.
+Governance roles can also be defined at the level of an individual glossary and even individual asset.
+They not only document responsibilities, but also determine what users can do as part of the workflows that are defined using governance roles.</p>
+</section>
+</section>
+<section id="getting-started-for-the-steward">
+<h2>Getting Started for the Steward<a class="headerlink" href="#getting-started-for-the-steward" title="Permalink to this headline"></a></h2>
+<p>As a steward you need to be able to create and maintain glossary datasets.
+This part of the document will briefly explain you how to do that.</p>
+<section id="creating-populating-and-changing-a-business-glossary">
+<h3>Creating, Populating and Changing a Business Glossary<a class="headerlink" href="#creating-populating-and-changing-a-business-glossary" title="Permalink to this headline"></a></h3>
+<section id="creating-a-new-glossary">
+<h4>Creating a New Glossary<a class="headerlink" href="#creating-a-new-glossary" title="Permalink to this headline"></a></h4>
+<p>You can create a new glossary:</p>
+<ul class="simple">
+<li><p>Directly from the <strong>Governance Areas</strong> page by clicking on the area your new glossary should belong to and then choosing Glossary in the <strong>Choose Type</strong> drop down.
+Your newly created glossary will be automatically connected to the subject area.</p></li>
+<li><p>You can also click on the + icon in the header and the select Glossary from the drop down of asset collection types</p></li>
+<li><p>Alternatively, you can click on the <strong>Glossary</strong> asset collection in the left menu and click on the “Create New Glossary” in the top of the screen.</p></li>
+</ul>
+<p>In either case, the Create dialog will ask you for the glossary name (label).
+You can also add a description and specify a “default namespace”.</p>
+<p>The default namespace is used to formulate URIs for the glossary terms.
+Every asset managed by TopBraid EDG has a globally unique web identifier – a URI.
+People and applications can link and refer to this URI in a similar way to how web pages can link and refer to each other.
+URIs can be dereferenced by people and applications.
+This means that submitting a URI will return either a web page with its information or a data object representing it.</p>
+<p>You can also select the preference for your instance data URI settings at the collection level.
+This will override the default set by and Administrator.</p>
+<p>TopBraid EDG will pre-populate the default namespace field with a default that you can change.
+Let’s name our glossary “Customer Data Glossary” and add the following description: “A multi division effort to consolidate all customer related terminology.”
+Click on <strong>Create Glossary</strong> button.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Create New Glossary" class="edg-figure" src="../../_images/edg_create_new_glossary.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create New Glossary</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>After creation, you will be sent to an <strong>Import</strong> tab, where you can choose one of the ways of importing your data to a newly created glossary.</p>
+<figure class="align-center" id="id6">
+<img alt="TopBraid EDG Import Glossary" class="edg-figure" src="../../_images/edg_import_glossary.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Import Glossary</strong></span><a class="headerlink" href="#id6" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="viewing-and-changing-information-about-a-glossary">
+<h4>Viewing and Changing Information about a Glossary<a class="headerlink" href="#viewing-and-changing-information-about-a-glossary" title="Permalink to this headline"></a></h4>
+<p>If you used the second method of creation, you may want to add more metadata about your new glossary such as the governance area it belongs to.</p>
+<p>You can do this either prior to importing data into our glossary or at any point after importing.
+To update glossary metadata, go to the home icon in the editor to refresh the form panel for the collection itself, add a Customer Data Domain to a subject area in the form. Save changes.</p>
+<p>Here, you will also see other information about the Glossary – such as its URI, what other asset collections include it, etc.
+Just like terms in the glossary will have a unique URI, each glossary will also be identified by a URI which is auto-generated by EDG.</p>
+</section>
+<section id="importing-data-into-a-new-glossary">
+<h4>Importing Data into a New Glossary<a class="headerlink" href="#importing-data-into-a-new-glossary" title="Permalink to this headline"></a></h4>
+<p>If you are not already on the <strong>Import</strong> tab, click on it and select <strong>Import Spreadsheet using Pattern</strong>.
+Then, click the <strong>Browse</strong> button to select the spreadsheet.
+(Download the Sample Customer Data Glossary.xlsx in the appendix) spreadsheet to get a local copy to import).
+Choose a Glossary term as an entity type and click <strong>Next</strong> button.</p>
+<p>In the next page choose the spreadsheet type from the selection menu.
+Based on the sample of the first 6 rows in your spreadsheet, notice that data from the spreadsheet doesn’t follow any hierarchy.
+Thus, choose “No Hierarchy” from the menu.
+Click <strong>Next</strong> button.
+In the next screen specify how the columns from the spreadsheet will be mapped.
+In this example a <em>description</em> column will be mapped to a definition and make label column as unique ID.
+Click <strong>Finish</strong> to import the data.</p>
+<figure class="align-center" id="id7">
+<img alt="TopBraid EDG Import Spreadsheet" class="edg-figure" src="../../_images/edg_import_spreadsheet.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Import Spreadsheet</strong></span><a class="headerlink" href="#id7" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You should see “Completed Spreadsheet Import” screen.
+Click on the <strong>Terms</strong> tab to see the imported data.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can collapse the left hand side Navigator to get more space.</p>
+</div>
+<figure class="align-center" id="id8">
+<img alt="TopBraid EDG Customer Data Glossary" class="edg-figure" src="../../_images/edg_customer_data_glossary.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Customer Data Glossary</strong></span><a class="headerlink" href="#id8" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>You can change the columns of the displayed table by clicking on the <strong>Select Visible Columns</strong> icon.
+It lets you control what fields to display in the table.
+Our spreadsheet only contained term names and descriptions.
+You can capture a lot more information now that your glossary is managed by TopBraid EDG.
+For example, you can add business rules about the term and link it to other enterprise information such as business activities.
+You can also connect terms to each other and organize them into hierarchies.</p>
+<p>Buttons on top of the table let you create a new term, delete selected term or a group of terms, edit information about a group of selected terms, export data in the table and more.
+To change information about a single term, single click on it.</p>
+<figure class="align-center" id="id9">
+<img alt="TopBraid EDG Glossary Term Information" class="edg-figure" src="../../_images/edg_glossary_term_info.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary Term Information</strong></span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>An <strong>Asset</strong> form with information about the term will be shown in a panel on the right.
+If the form is not on the page, click the <img alt="panels" src="../../_images/panels.png" /> dropdown located on the right upper corner of the page and drag <strong>Form</strong> somewhere to the page</p>
+<p>You can click on <strong>Edit</strong> to make changes.
+Alternatively to clicking on the <strong>Edit</strong> button, you can use inline editing.
+Hover to the left of the field’s value to see a pencil icon.
+Click on it to start in-line editing.
+If a field you want to enter information in does not currently have any information, it may not show up.
+To get all fields to show up, click on the Settings menu (gear icon) at the top right of the form and check <strong>Also show properties that have no values</strong>.</p>
+<p>For example, you could create a new acronym for a term.</p>
+<p>Other assets can be linked or mapped to a glossary term. For example, catalogs of data sources can map database columns and tables to a term.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>To see any assets that are not part of this glossary, but are using and referring to terms in a glossary, click <strong>Explore&gt;Find Usages in Other Asset Collections…</strong> option.</p>
+</div>
+</section>
+<section id="creating-a-new-term">
+<h4>Creating a New Term<a class="headerlink" href="#creating-a-new-term" title="Permalink to this headline"></a></h4>
+<p>Select <strong>New</strong> at the top of the table.</p>
+<figure class="align-center" id="id10">
+<img alt="TopBraid EDG Create Business Term" class="edg-figure" src="../../_images/edg_create_business_term.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Create Business Term</strong></span><a class="headerlink" href="#id10" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The Create dialog will require you to enter a name (label) of the new term.
+You will be able to see the auto-generated term URI and modify it if necessary.
+You will also be able to select a sub category of a Glossary term, if desired.
+EDG’s pre-built glossary model distinguishes between glossary term, business term, technical term, industry term and a PII term.
+Your organization may decide to create your own sub types of terms and/or to disable the sub types included in EDG.</p>
+<p>Type “Customer ID” as the new term label.
+Select Business Term from the drop down by clicking on the Glossary Term.
+Click <strong>Confirm</strong>.</p>
+<p>Your new term is created.
+You will see a form where you can enter more information about the term.</p>
+</section>
+<section id="editing-glossary-terms-via-workflows">
+<h4>Editing Glossary Terms via Workflows<a class="headerlink" href="#editing-glossary-terms-via-workflows" title="Permalink to this headline"></a></h4>
+<p>Select the <strong>Customer ID</strong> term.
+Notice that it doesn’t have a description.</p>
+<figure class="align-center" id="id11">
+<img alt="TopBraid EDG Glossary - Customer ID" class="edg-figure" src="../../_images/edg_glossary_term_customer_id.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary - Customer ID</strong></span><a class="headerlink" href="#id11" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>This could be fixed directly in the glossary or can be done in a context of a workflow (with an associated working copy) that would store the information about changes to the glossary term.
+This way, all changes go through a workflow process enabling collaboration and better control over data.
+EDG uses the following terminology:</p>
+<ul class="simple">
+<li><p>The <strong>production copy</strong> is the master version of the glossary.</p></li>
+<li><p>A <strong>working copy</strong> is a virtual copy of the glossary created for editing purposes.
+A working copy gets created when a new workflow starts and is associated with that workflow.
+Changes you make in the working copy will go through a workflow approval process described in the workflow template.
+At the end of the process changes typically get published to the production vocabulary.</p></li>
+</ul>
+<p>Several workflows, each with its own associated working copy, may be in progress at the same time as users in various roles make and review changes in those working copies.
+All working copies can be accessed from glossary’s Workflows tab that displays workflows in progress.
+TopBraid EDG offers a built-in workflow template (called Basic workflow).
+You can also add custom workflows to EDG.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>More information about it can be found in the <a class="reference external" href="https://doc.topquadrant.com/7.0/workflows/">Workflows</a> section</p>
+</div>
+<p>When you make changes directly in the glossary, your changes will be immediately visible to everyone using the glossary.
+They will also show up in any working copy created for the glossary.
+When you make changes in a context of a workflow, they are kept in the workflow’s working copy.
+Thus, changes will only be visible in that workflow.</p>
+<p>EDG users with the appropriate permissions can choose between making changes directly to a glossary and using workflows to make and review changes.
+You can start a workflow for a glossary as a whole or for a particular term in a glossary.
+We will do the latter.</p>
+<p>Single click on the <strong>Customer ID</strong> term to have its form open in the right panel.
+Click on the <strong>Available actions for this</strong> button and select <strong>Start Workflow</strong> from the menu.</p>
+<figure class="align-center" id="id12">
+<img alt="TopBraid EDG Glossary - Start Workflow" class="edg-figure" src="../../_images/edg_glossary_start_workflow.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary - Start Workflow</strong></span><a class="headerlink" href="#id12" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the dialog that appears, name the workflow “Customer ID description” and click on <strong>Submit</strong> button.
+If your installation has more than one workflow template that is applicable to glossaries, you will get a chance to select the type of workflow.
+After the workflow is created you will see <strong>Workflow Status and Transitions</strong> page.
+You can always come back to this page by clicking in the gear icon in the header (located to the left of the <strong>Terms</strong> tab).</p>
+<p>You know that you are now in the context of a workflow because the color of the header menu changed to yellow.
+Click on the <strong>Customer ID</strong> link in the header.</p>
+<p>This will open a form for <strong>Customer ID</strong> term.
+Click on an <strong>Edit</strong> button in the right top menu of the right pane.
+Add the following definition: “Customer ID is a 5 character alphanumeric field exactly identifying a customer” and click <strong>Save Changes</strong>.</p>
+<p>Click the <img alt="panels" src="../../_images/panels.png" /> dropdown located in the header of the page, drag <strong>Change History</strong> panel (under Reports) and drop it into the page.
+Click on the Refresh icon in the panel to see the log of changes.
+Click <strong>On selected</strong> button to only see edits that were made to the currently displayed term.</p>
+<p>Clicking on the gear button to the left of the <strong>Terms</strong> tab will return you to the Workflow Status page.
+Now that you made some changes, you will see more actions available to transition the workflow to a next state.
+You can <strong>Freeze for review</strong> and you can also directly <strong>Commit changes to production</strong>.
+The former action will put the workflow in the state where no more changes can be made.
+It is designed to let responsible parties review the content and either approve or reject it.
+They could also unfreeze the workflow opening it to further changes.
+The latter action will complete the workflow and write all changes to the Glossary.</p>
+<p>To exit the workflow in progress and come back to the current (AKA production) version of the Glossary, click on the <strong>x</strong> button to the right of the <strong>Customer ID description</strong> in the header at the top of the page.</p>
+</section>
+</section>
+<section id="customizing-glossary-terms-metadata">
+<h3>Customizing Glossary Terms Metadata<a class="headerlink" href="#customizing-glossary-terms-metadata" title="Permalink to this headline"></a></h3>
+<section id="creating-and-including-ontologies">
+<h4>Creating and Including Ontologies<a class="headerlink" href="#creating-and-including-ontologies" title="Permalink to this headline"></a></h4>
+<p>Metadata available for each glossary term in EDG is defined in an ontology.
+If you are satisfied with properties that are provided for glossary terms, then you don’t need to modify the glossary ontology.
+However, you may want to add new fields (properties) or remove existing fields.
+You can address this by creating an extension to the pre-built TopBraid EDG glossary ontology.</p>
+<p>To do so, click on the + icon in the header and <strong>Create New Ontology</strong>.
+You can name it <em>Glossary Ontology Extensions</em> or select another name of your choice.</p>
+<p>Include the TopBraid EDG Glossary model in the new ontology.
+Go to <strong>Settings</strong> tab and click on an <strong>Includes</strong> to see the pop-up window.
+In a pop-up window filter our <em>EDG SHAPES – Glossary (Other)</em> and add it to the includes.</p>
+<figure class="align-center" id="id13">
+<img alt="TopBraid EDG Glossary Ontology Extenstions" class="edg-figure" src="quick_start_guides/edg_business_glossaries/_images/edg_glossary_ontology_ext.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary Ontology Extenstions</strong></span><a class="headerlink" href="#id13" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Go to <strong>Manage</strong> tab and type <em>Glossary Term</em> in the <strong>Root of Class Hierarchy Panel</strong>.
+This will set the root of the ontology class tree to the Glossary Term and will make it easier for you to focus on your changes.</p>
+</section>
+<section id="creating-a-new-property">
+<h4>Creating a New Property<a class="headerlink" href="#creating-a-new-property" title="Permalink to this headline"></a></h4>
+<p>Let’s add a new property for the glossary terms.
+We will add a new property origin code that doesn’t exist in a current model.
+Click on the <strong>Ontology</strong> tab, then click to select the Glossary Term in the Classes tree panel.</p>
+<p>In the panel below the terms (Property Groups), choose a green icon to create a new attribute.</p>
+<figure class="align-center" id="id14">
+<img alt="TopBraid EDG Glossary - Create Attribute" class="edg-figure" src="../../_images/edg_create_attribute_datatype.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary - Create Attribute</strong></span><a class="headerlink" href="#id14" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the Create Attribute dialog name the new attribute <em>origin code</em>.</p>
+<figure class="align-center" id="id15">
+<img alt="TopBraid EDG Glossary - Create Attribute Dialog" class="edg-figure" src="../../_images/edg_create_attribute_datatype_dialog.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary - Create Attribute Dialog</strong></span><a class="headerlink" href="#id15" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the Description field enter: “A 3 character code for the origin of the term”.
+Select <em>Optional</em> for Cardinality.
+Select <em>string</em> for Datatypes.
+Click OK.</p>
+<p>After creation of the new attribute we can edit its information.
+We can for example add a constraint about the length of values for this property.
+Click on the <strong>Edit</strong> button and in the <strong>String Constraints</strong> section enter 3 in the min and max length field.
+If you do not see this section, click on the <strong>Settings</strong> (gear) icon at the top right of the form and check <strong>Also show properties that have no values</strong>.</p>
+<figure class="align-center" id="id16">
+<img alt="TopBraid EDG Glossary - Add a Constraint" class="edg-figure" src="../../_images/edg_add_constraints.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary - Add a Constraint</strong></span><a class="headerlink" href="#id16" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="disabling-a-property">
+<h4>Disabling a Property<a class="headerlink" href="#disabling-a-property" title="Permalink to this headline"></a></h4>
+<p>If you do not want to use some of the predefined properties and want to remove them from the user interface, click on the property you want to remove, then set “deactivated” (in the <strong>Definition</strong> section) to true.</p>
+</section>
+<section id="making-ontology-customization-available-to-a-glossary">
+<h4>Making Ontology Customization Available to a Glossary<a class="headerlink" href="#making-ontology-customization-available-to-a-glossary" title="Permalink to this headline"></a></h4>
+<p>Once we created custom modifications we need to make them available to our glossary.
+Go back to the Customer Data Glossary and select <strong>Settings</strong> tab.
+Click on <strong>Includes</strong> link, search for <em>Glossary Ontology Extensions</em> and add it to the glossary.
+After closing a screen you should be able to see the following:</p>
+<figure class="align-center" id="id17">
+<img alt="TopBraid EDG Glossary Includes Section" class="edg-figure" src="../../_images/edg_glossary_includes.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary Includes Section</strong></span><a class="headerlink" href="#id17" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The new attribute can now be used to describe terms contained in the Customer Data Glossary.
+You will need to make similar includes for each Glossary that you want to use the new attribute.</p>
+<p>Your organization can also decide that these customizations should be automatically available to all glossaries.
+There is a setting in the Administration console <strong>EDG Configuration Parameters</strong> page that lets administrators specify that a customization ontology should be included in any newly created glossary.</p>
+<p>Click on the <strong>Terms</strong> tab and select one of the glossary terms.
+You will now see the new property appear among the available fields.</p>
+<figure class="align-center" id="id18">
+<img alt="TopBraid EDG Glossary Term Metadata" class="edg-figure" src="../../_images/edg_glossary_term_metadata.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary Term Metadata</strong></span><a class="headerlink" href="#id18" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>As an exercise, add a value to the <em>origin code</em> and save it.</p>
+</section>
+</section>
+<section id="export-collaboration-and-other-activities">
+<h3>Export, Collaboration, and Other Activities<a class="headerlink" href="#export-collaboration-and-other-activities" title="Permalink to this headline"></a></h3>
+<p>Some of data stewards’ tasks overlap with the tasks of other users.
+For example, data stewards may build glossary data, but so do subject matter experts, who could be responsible for adding descriptions to the glossary terms.
+These overlapping activities, including collaboration between users working with glossary data, are covered in the <a class="reference external" href="https://doc.topquadrant.com/7.0/getting-started-edg-vocabulary-management/">Getting Started Guides for Vocabulary Management package</a> and <a class="reference external" href="https://doc.topquadrant.com/7.0/getting-started-edg-reference-data-management/">Reference Data Management package</a>.</p>
+<section id="saving-and-reusing-searches">
+<h4>Saving and Reusing Searches<a class="headerlink" href="#saving-and-reusing-searches" title="Permalink to this headline"></a></h4>
+<p>You may want to reuse your search results in the future.
+You can save the search criteria by clicking on <strong>Save</strong> icon in the search panel.</p>
+<figure class="align-center" id="id19">
+<img alt="TopBraid EDG Glossary Save Search" class="edg-figure" src="../../_images/edg_glossary_save_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Glossary Save Search</strong></span><a class="headerlink" href="#id19" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>A pop-up window will request you to give a name to your search.
+Click <strong>OK</strong> to save your search.</p>
+<p>To view saved searches, you can click the <img alt="panels" src="../../_images/panels.png" /> dropdown located in the page header and drag <strong>Search Library</strong> panel to some location on the page.
+Alternatively, use the <strong>Layouts</strong> dropdown to switch to the Search Layout.
+It already contains this panel.
+Select a search of your choice and click <strong>Select search</strong>.
+This will recreate the saved search criteria on the page.</p>
+</section>
+<section id="data-export">
+<h4>Data Export<a class="headerlink" href="#data-export" title="Permalink to this headline"></a></h4>
+<p>Glossary data can be exported directly from the table by clicking on <strong>Export Actions</strong> button.
+It will let you export results in Excel, CSV, TSV and JSON formats.
+Everything in the table will be exported unless you select specific rows.
+Then, only selected rows will be exported.</p>
+<p>You can also use <strong>SPARQL Query</strong> layout to run queries if your search criteria is more complex than what is possible with the <strong>Search</strong> panel.
+You can save queries to re-run them in the future and access queries saved by others.
+Saved queries are shown in the <strong>SPARQL Library</strong> panel.</p>
+<p>You can also save search criteria.
+Saved searches appear <strong>Search Library</strong> panel.
+<strong>Export Saved Search</strong> option in the Search Library panel will provide your results in JSON format.
+The URL of the saved search is displayed in the Service URL field, including a unique id for the saved search.
+This URL can be copied as-is and included in any third-party application needing to extract the codes in the saved search.
+The format will be JSON.</p>
+<p>Some additional export options are available on the <strong>Export</strong> tab.
+This tab includes an option to export all information available in a dataset.</p>
+</section>
+<section id="deleting-saved-searches">
+<h4>Deleting Saved Searches<a class="headerlink" href="#deleting-saved-searches" title="Permalink to this headline"></a></h4>
+<p>Saved searches can be deleted in the <strong>Search Library</strong> panel.
+Open the <strong>Search Library</strong> panel, select the search to remove and click <strong>Delete</strong>.</p>
+</section>
+<section id="using-glossary-terms-to-provide-context-for-other-assets">
+<h4>Using Glossary Terms to Provide Context for Other Assets<a class="headerlink" href="#using-glossary-terms-to-provide-context-for-other-assets" title="Permalink to this headline"></a></h4>
+<p>If you are using TopBraid EDG for Metadata Management you will want to link other assets (for example, data elements) with glossary terms to provide business context to the assets you are responsible for.
+TopBraid EDG can auto-generate such connections based on the rules declared for glossary terms and other available information such as the information obtained from the data source profiling.
+You can also manually link other assets to glossary terms by updating their <strong>maps to term</strong> property.
+See relevant User Guides for more details.</p>
+</section>
+</section>
+</section>
+<section id="getting-started-for-the-business-analyst">
+<h2>Getting Started for the Business Analyst<a class="headerlink" href="#getting-started-for-the-business-analyst" title="Permalink to this headline"></a></h2>
+<section id="finding-a-term">
+<h3>Finding a Term<a class="headerlink" href="#finding-a-term" title="Permalink to this headline"></a></h3>
+<p>On the Home page, in the <strong>Search the EDG box</strong>, type your search keyword – for example, Customer.
+Be sure to check the box for including this collection in Search the EDG from the Manage tab of the collection.</p>
+<p>In the search results page, you will see search facets on the left that will help you further filter out the search results.</p>
+<p>Next to each search result, you will see:</p>
+<ul class="simple">
+<li><p>Comments link that will let you enter comments for the stewardship team and see comments entered by other users</p></li>
+<li><p>Icons that will take you diagrams and views for visually exploring information.
+Depending on the TopBraid EDG packages installed in your environment, you will see different interactive views such as NeighborGram for navigating the connected graph of information associated with a business term, Data Lineage and Data Impact.</p></li>
+</ul>
+<figure class="align-center" id="id20">
+<img alt="TopBraid EDG Search" class="edg-figure" src="../../_images/edg_search.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Search</strong></span><a class="headerlink" href="#id20" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="finding-your-workflows">
+<h3>Finding your Workflows<a class="headerlink" href="#finding-your-workflows" title="Permalink to this headline"></a></h3>
+<p>If you are involved in some workflows, you will see a list of workflows for which you have pending actions by clicking on <strong>My Workflows</strong> in a Dashboard section.</p>
+<figure class="align-center" id="id21">
+<img alt="TopBraid EDG My Workflows Page" class="edg-figure" src="../../_images/edg_my_workflows.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG My Workflows Page</strong></span><a class="headerlink" href="#id21" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="next-steps">
+<h3>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h3>
+<p>You are now ready to explore the <a class="reference external" href="https://doc.topquadrant.com/7.0/asset-collection-guides/">Asset Collection Guide</a> to learn more about the many capabilities of TopBraid EDG, including workflows for team collaboration, importing more complex spreadsheets, and more.</p>
+</section>
+<section id="appendix-glossary-sample-spreadsheet">
+<h3>Appendix: Glossary sample spreadsheet<a class="headerlink" href="#appendix-glossary-sample-spreadsheet" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://doc.topquadrant.com/wp-content/uploads/2019/09/glossarysample.xlsx">glossarysample</a></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../edg_vocabulary_management/index.html" class="btn btn-neutral float-left" title="EDG Vocabulary Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../edg_reference_data_management/index.html" class="btn btn-neutral float-right" title="EDG Reference Data Management" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

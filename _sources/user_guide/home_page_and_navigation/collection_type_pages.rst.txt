@@ -1,0 +1,30 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: Collection Types
+
+.. _collection_type_pages_target:
+
+Collection Type Pages
+=====================
+
+Clicking on a type of collection in the left navigation will bring you to the page listing all the asset collections of that type.
+The table here can be sorted and filtered.
+
+.. figure:: _images/edg_collection_type_page.jpeg
+  :alt: TopBraid EDG Collection Type Page
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Collection Type Page**
+
+This page can also be accessed from the Asset Collection Home pages by clicking in the header on the icon located
+directly to the left of the name of a collection.

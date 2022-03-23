@@ -1,0 +1,24 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+
+.. _quick_start_guides:
+
+******************
+Quick Start Guides
+******************
+
+TBD
+
+Getting Started – EDG Business Glossaries
+=========================================
+
+This section was created as a placeholder link referenced from User Guide working_with_ontologies.rst

@@ -1,0 +1,1246 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+   * for H5
+   + for H6
+
+.. index:: pair: Asset; Edit
+
+.. index:: pair: Asset; View
+
+.. _viewing_and_editing_asset_information_target:
+
+Viewing and Editing Asset Information
+-------------------------------------
+
+Configuring Editor UI
+^^^^^^^^^^^^^^^^^^^^^
+
+Editor Layout View
+""""""""""""""""""
+
+Editor applications are composed of panels that are combined to form layouts.
+Multiple layouts are available.
+Each collection type has its own default layout.
+Users can change these defaults.
+
+For example, the default layout for business glossaries will have two panels – Search and Form, looking as follows:
+
+.. figure:: _images/edg_sec_glossary_appendix_c.jpeg
+  :alt: TopBraid EDG SEC Glossary - Appendix C Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG SEC Glossary - Appendix C Page**
+
+While for an ontology (asset collection that defines schema for other collections), the default editor layout will have panels looking as follows:
+
+.. figure:: _images/edg_examples_geo_ontology.jpeg
+  :alt: TopBraid EDG Examples GEO Ontology Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Examples GEO Ontology Page**
+
+
+
+Selecting and Arranging Panels
+******************************
+
+Each panel can be displayed in the entire with of the screen by closing all other panels.
+This is useful when you need more screen real estate for working.
+To reset the layout, just select a layout from the menu and your panels will come back.
+Or you can drag them back into view from the panels menu.
+The next image shows how the Glossary Editor Application would look if the Form panel was stand-alone.
+
+.. figure:: _images/edg_advisory_affiliate.jpeg
+  :alt: TopBraid EDG Advisory Affiliate Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Advisory Affiliate Page**
+
+Panels can also be rearranged by dragging and dropping.
+Panels can be stacked behind each other in the same screen area.
+In the image below, the Change History panel is stacked behind the Form panel.
+
+.. figure:: _images/edg_advisory_affiliate_change_history.jpeg
+  :alt: TopBraid EDG Advisory Affiliate Change History Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Advisory Affiliate Change History Page**
+
+Panels can be closed by clicking on the ‘x’ button in the panel’s header.
+This action removes a panel from a page.
+
+Clicking on the Panels button displays additional selection of panels to add to a page.
+
+.. figure:: _images/edg_panels_list.png
+  :alt: TopBraid EDG Panels List Dropdown
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Panels List Dropdown**
+
+All available panels are described below, organized into categories:
+
+**Asset Information Panels**
+
+* :ref:`attachments_panel` (available when S3 is configured)
+* :ref:`form_panel`
+* :ref:`source_code_panel`
+* :ref:`hierarchy_of_selected_asset_panel`
+* :ref:`references_panel`
+
+**Search and Query Panels**
+
+* :ref:`instances_panel`
+* :ref:`search_panel`
+* :ref:`search_library_panel`
+* :ref:`sparql_query_panel`
+* :ref:`sparql_results_panel`
+* :ref:`sparql_library_panel`
+* :ref:`asset_list_panel`
+* :ref:`available_crosswalks_panel`
+
+**Explore Panels**
+
+* :ref:`assets_hierarchy_panel`
+* :ref:`map_explorer_panel` (available when Google API key is enabled)
+* :ref:`local_assets_panel`
+* Show EDG Diagram (see :ref:`using_edg_diagrams_target`)
+
+**Schema Panels**
+
+* :ref:`class_hierarchy_panel`
+* :ref:`node_shapes_panel` (only Ontology Editor)
+* :ref:`property_groups_panel` (only Ontology Editor)
+* :ref:`rdfowl_properties_list_panel`  (only Ontology Editor)
+* :ref:`shape_scripts_panel` (only Ontology Editor if scripts are enabled)
+
+**Taxonomy Panels**
+
+* :ref:`concepts_panel_in_taxonomies_target`
+
+**Reports Panels**
+
+* :ref:`problems_and_suggestions_panel`
+* :ref:`change_history_panel`
+* :ref:`inferences_panel`
+
+**Scripts Panels (available if scripts are enabled)**
+
+* :ref:`script_editor_panel_target`
+* :ref:`script_results_panel`
+* :ref:`script_api_viewer_panel`
+
+Some panels can be placed on a page more than once and remain in the menu even if they already exist on a page.
+Other panels make sense only once per page and, when already shown on a page, they no longer appear in the menu.
+
+Some panels may have a pin icon – for example, if two forms are open.
+Pining a panel down will ensure that its content will not change if another panel is clicked.
+
+Once a panel is added or removed from a page, that choice is remembered for the user in their next session.
+
+.. _using_layouts:
+
+Using Layouts
+*************
+
+The *Layouts* button save arrangements of panels as a layout.
+Users can also switch to one of the existing layouts.
+
+A saved layout can be made available to other users or kept private.
+It could also be declared as a new default only for the user who created it or for others as well.
+
+.. figure:: _images/edg_save_layout.jpeg
+  :alt: TopBraid EDG Save Layout Dialog Box
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Save Layout Dialog Box**
+
+Pre-built layouts are:
+
+* Default layout for the selected collection type
+
+* Single Form Layout – displays only the form for the selected resource
+
+* SPARQL Layout – provides a way to run SPARQL queries as an alternative to clicking on the Export tab > SPARQL Endpoint.
+  Unlike the option on the Export tab, it is fully integrated with the editor.
+
+* Classes and Instance Layout – useful for Enumerated values.
+
+* Search Layout – a convenient page layout for Search operations, combines Search, Search Library and Form panels
+
+* Problems and Suggestions Layout – provides a way to execute Problems and Suggestions checking
+
+The **Layouts** menu also lets you manage existing layouts by selecting “Available Layouts”.
+
+Using Editor-wide Configuration Settings
+****************************************
+
+**More** icon in the header provides access to application settings and additional navigation options for user UX personalization. These settings are locally stored per user and won’t effect other users.
+
+.. figure:: _images/edg_editor_wide_config_settings.png
+  :alt: TopBraid EDG Editor-wide Configuration Settings Dropdown
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Editor-wide Configuration Settings Dropdown**
+
+**Display Edit Actions as Icons** button turns various menu options into icons and vice versa.
+By default, **Display Actions as icons** is checked.
+Unchecking it will impact all panels that have **Create New** actions and there is more than one action in a panel.
+Currently, these are **Property Groups** and **Taxonomy Concepts** panels.
+Instead of the icons, we will see Add menu with dropdowns.
+For example:
+
+.. figure:: _images/edg_create_concept.jpeg
+  :alt: TopBraid EDG Create Concept Methods
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Create Concept Methods**
+
+Checking the option to **Display Settings as icons** will impact every panel that has a Settings menu (gear icorn).
+Instead of the menu, we will see icons for each option.
+
+Checking **Display Panels palette** option, will place in the header an icon for each panel – as shown in the screenshot below.
+
+.. figure:: _images/edg_panels_palette.jpeg
+  :alt: TopBraid EDG Panels Palette View
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Panels Palette View**
+
+**Clear locally stored Settings** button will clear out any personalization of the UI with the exception of the Layouts as those are stored in the system, not the browser.
+Any check box, Asset List, or other personalization you have made will be reset.
+
+Checking **Hide values in non-preferred languages** option will hide property values tagged with languages that are not set in your browser as one of your preferred language.
+
+**Manage default settings for all users …** button will appear only if you have Manager profile for a collection.
+It will display a page where you can pre-set panel Settings for all users of a collection.
+For example, you can use it to ensure that for all users, when they look at the content of the current asset collection, the Form will show properties even if they don’t have any values.
+
+The remainder of the menu is navigation/search options.
+
+Local Search Options
+""""""""""""""""""""
+
+This option is available only if the asset collection editor offers :ref:`search_panel`.
+
+When using :ref:`search_panel`, there is an option, **Return local results only**, which excludes results that come from included asset collections.
+(A local search only delivers resources having their *rdf:type* triple in the base graph.)
+
+By default, users can choose for themselves whether to enable or disable this *local results* option on any particular search.
+However, managers can permanently set this option as either *always local or always global* for all users.
+If set by a manager, then users will still see the setting value on their search panes, but they will not be able to change it.
+
+Main Class of Search Panel
+""""""""""""""""""""""""""
+This option is available only if the asset collection editor offers :ref:`search_panel`.
+
+It impacts the Type Selector in the Search panel, determining what will be shown in its drop-down list and what will be the root of the browsable hierarchical navigator listing available asset types.
+Each asset collection has a default main class.
+This option lets you modify the default.
+
+Root of Class Hierarchy Panel
+"""""""""""""""""""""""""""""
+
+This option lets you reset which class will be shown as the root in the :ref:`class_hierarchy_panel`.
+
+The default root is Thing.
+However, you can use this option to limit the class tree to one of the subclasses of the owl:Thing class.
+You can also use this option to go “up the tree” by setting the root to rdfs:Resource class or any of its subclasses that are different from owl:Thing.
+
+Root Shape of Asset Hierarchy Panel
+"""""""""""""""""""""""""""""""""""
+
+When using :ref:`assets_hierarchy_panel`, users can select a shape of resources to be displayed as roots in this panel.
+
+If you select a shape here, it will be used as default for the panel.
+Users can still switch to another shape.
+
+If nothing is selected here, the panel will be empty until a user explicitly selects a root shape.
+
+Also Create Global OWL Properties
+"""""""""""""""""""""""""""""""""
+If activated, EDG will produce an owl:DatatypeProperty or owl:ObjectProperty type statement for a property when a new SHACL property shape is created.
+
+
+Editor Panels
+^^^^^^^^^^^^^
+
+
+.. _asset_list_panel:
+
+Asset List Panel
+""""""""""""""""
+
+.. figure:: _images/edg_asset_list_options.jpeg
+  :alt: TopBraid EDG Asset List Options
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Asset List Options**
+
+You can add any asset or group of assets to an asset list through the :ref:`search_panel`.
+
+The asset list is a way of bulk editing or sharing groups of assets. The “batch actions menu” is in the top right.
+
+.. figure:: _images/edg_asset_list_more_options.jpeg
+  :alt: TopBraid EDG Asset List More Options
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Asset List More Options**
+
+Pencil icon lets you name an asset list.
+The above asset list has been named “customer”.
+To create another asset list, drag the asset list panel from the panel selection to your window.
+Now when you choose to add to an asset list, you will choose which of your two asset lists.
+
+Asset lists are private until shared.
+Cloud icon opens a menu that lets you open an existing asset list and share an asset list you create with colleagues who have permissions to this collection.
+They will be able to go to “Open an existing Asset List” and find all of the shared asset lists along with their own.
+
+The settings menu lets you configure how information about assets in a list is displayed e.g., whether a person who added it to a list is displayed as a column.
+
+.. _search_panel:
+
+Search Panel
+""""""""""""
+
+The Search panel lists assets of the selected type in a sortable table.
+From here, users can further filter displayed assets, export information, save searches and perform other operations.
+
+.. note:: This panel is not available for ontologies, please see ontology specific documentation in :ref:`working_with_ontologies_target`.
+
+By default, this panel will display up to 1,000 result rows.
+This default can be changed by your EDG Administrator.
+
+.. figure:: _images/edg_search_panel.jpeg
+  :alt: TopBraid EDG Search Panel Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Search Panel Page**
+
+Selecting Asset Type in the Search Panel
+****************************************
+
+The Type Selector shown at the top of the Search panel lets you to select the type of assets to show in the table.
+You can select an asset type either from the **Type** drop-down list (it supports autocomplete so to select you can start typing the name of an asset type you are interested in) or you could click on the button next to the drop-down list to open a browsable hierarchical navigator listing available asset types.
+
+Table in the Search panel shows only assets of the selected type including any of its sub types.
+
+Selecting Search Results Columns
+********************************
+
+The **Columns** icon to the right of the **Filter** icon lets you add columns to the search results table.
+Properties available for selection depend on the type of the asset.
+For example, Database Column is selected as the asset type in the image below.
+You will be able to select any properties defined for the Database Column asset type.
+
+.. figure:: _images/edg_search_results_column_selection.png
+  :alt: TopBraid EDG Search Results Column Selection Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Search Results Column Selection Page**
+
+You can scroll through the list of properties available for selection or quickly find a property by typing in the **Search** field at the top of the dropdown.
+Clicking on a property will select it as column.
+Currently selected columns will be shown at the top of the drop down list.
+To remove a selected column, click on the “x” icon next to it.
+
+For properties that are relationships, you will see “>” to the right of the property name – as shown in the screenshot above.
+If you click on it, EDG will present a list of properties for the related asset.
+This way, you can add as columns not only properties of assets you are looking at, but also properties of related resources – these are called nested columns.
+
+The screenshot below shows a results table that we will get after selecting as columns 1) “record count” property that belongs to related assets – namely, Database Tables that assets of the selected type, Database Columns, are associated with via “column of” property – this is an example of a nested column and 2) “physical datatype” property that belongs directly to the Database Columns.
+
+.. figure:: _images/edg_database_column_search.png
+  :alt: TopBraid EDG Database Column Search Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Database Column Search Page**
+
+If a column is a nested column, the header row will display the connecting relationship name in the square brackets.
+Cell values for such columns will display the related assets before displaying the value of the selected property.
+You can select more than one level of nesting.
+
+Searching for Assets
+********************
+
+You can search among the assets of selected type by using:
+
+* **Free text** (any property). This matches your string against any property with textual values e.g., label, description, note, etc.
+  This query is wildcard.
+  For example, searching for “rock” will be interpreted as *rock* and return results for “rocket”.
+  Multiple word free text searches will be AND not OR.
+
+   * A B means an implicit AND
+   * “A B” matches the full term (in exactly that order)
+   * A OR B means an ‘or’ – infinite chains are supported such as A OR B OR C OR D
+
+ .. figure:: _images/edg_search_free_text.jpeg
+   :alt: TopBraid EDG Searching for Assets using Free Text
+   :align: center
+   :class: edg-figure-m
+
+   **TopBraid EDG Searching for Assets using Free Text**
+
+* **Filter** on specific property values.
+  The filter icon will open a drop down listing available properties and letting you select one or more.
+  This works similar to **Columns** drop down, including ability to select properties of related assets.
+  For each property selected using **Filters** drop down, you will be able to enter a search criteria and specify the type of match.
+  Type of match determines how EDG will use the value you enter in that field to search for matching data.
+  Different properties can use different match types.
+  Search criteria specified for each property are combined together to produce an overall search result.
+
+ .. figure:: _images/edg_search_filter.jpeg
+   :alt: TopBraid EDG Searching for Assets using Filter
+   :align: center
+   :class: edg-figure-m
+
+   **TopBraid EDG Searching for Assets using Filter**
+
+.. list-table::
+   :header-rows: 1
+
+   * - **Type of Match**
+     - **How a search value matches instance property-values**
+   * - contains
+     - DEFAULT for text properties: Finds resources that contain the entered search string (case-insensitive) in the property value.
+       Example: Search text “lis” on a city-name property would match instances having city-name values such as “Lisbon”, “Lisboa”, and “Minneapolis”.
+   * - equals
+     - DEFAULT for relationships: For attributes, this will match the entered string exactly to the property value (case-sensitive).
+       For relationships, this becomes an auto-complete field for selecting a related asset.
+       As you start typing a value in a relationship field, you will get a list of autocomplete options that match the text you’ve typed so far—a list of the names (labels) of any resources that begin with the typed letters.
+   * - regular expression
+     - For text properties, searches text using a regular expression that matches a property-value (case-insensitive).
+       Example: Search text “^lis” as a regular expression matches city-name values that begin with “lis”, e.g., “Lisbon” and “Lisboa” but not “Minneapolis”. Conversely, “lis$” would match only at the name’s end.
+       For relationships, does similar matching, but on the labels of related resources.
+   * - any value
+     - At least one value exists for the selected property (count >= 1).
+       Example: See how extensively a property is used.
+   * - min/max number of values
+     - Finds resources whose number of values for selected property fall in the range specified by the one or two numbers you enter.
+       Example: If most resources in a Data Assets Collection have labels in three languages, entering a label search with values-range 0 to 2 would return those instances with fewer.
+       Leaving min range empty and just using 2 in the max field will return the same results.
+   * - no value
+     - No values exist for the search property (count = 0).
+       Example: Use to clean up a Data Assets Collection and check for remaining work.
+   * - boolean
+     - DEFAULT for Boolean properties: Search values restricted to true/false instead of free-text
+   * - nested form
+     - Available only for relationships: Adds an embedded search form for properties whose type is another class
+   * - min/max (inclusive)
+     - DEFAULT for numeric properties: Finds resources that are within the range of entered search criteria, inclusively.
+   * - min/max (exclusive)
+     - Finds resources that are within the range of entered search criteria, exclusively.
+
+* **Refine** field is displayed at the top of each column under the column name.
+  Entering a value in this field refines the results displayed in the table.
+  The **Refine** is similar to **Filter** except that it only affects the *visibility* of assets that are already in the results table, without affecting which assets are loaded into results table, i.e., the underlying search scope is unchanged and refine only narrows data already in the table.
+
+ .. figure:: _images/edg_search_refine.jpeg
+   :alt: TopBraid EDG Searching for Assets using Refine
+   :align: center
+   :class: edg-figure-m
+
+   **TopBraid EDG Searching for Assets using Refine**
+
+If you have incomplete search results, over 1000 if you have the default settings, you can still search the entire collection as well as export all the search results:
+
+ .. figure:: _images/edg_search_labelled.png
+   :alt: TopBraid EDG Labelled Image for Search
+   :align: center
+   :class: edg-figure
+
+   **TopBraid EDG Labelled Image for Search**
+
+Actions in the Search Panel
+***************************
+
+The Search panel has **New** button.
+Clicking on it, will let you create a new asset of the currently selected type.
+
+The Search panel also offers several other actions that can be performed on the search query or on the search results.
+These actions and the corresponding menus and buttons are shown in the next screenshot and explained in the text below it.
+
+.. figure:: _images/edg_numbered_concept_search.jpeg
+   :alt: TopBraid EDG Numbered Concept Search Page
+   :align: center
+   :class: edg-figure
+
+   **TopBraid EDG Numbered Concept Search Page**
+
+1. **Save Search** button.
+   Will bring up the dialog to save searches.
+   Saved searches are public and can be seen and used by any other users of this collection.
+   To run or delete previously saved searches use the **Search Library** panel.
+
+   .. figure:: _images/edg_save_query.jpeg
+     :alt: TopBraid EDG Save Query
+     :align: center
+     :class: edg-figure
+
+     **TopBraid EDG Save Query**
+
+2. **Settings** menu for Search Panel.
+   Lets you personalize the behavior of this panel.
+
+   * **Hide Quick Asset Type Selector** – will hide the type selector menu but leave the type selector menu in place.
+
+   * **Disable auto-searching** – this will change the behavior of the free text search box.
+     You will need to hit enter when ready to submit instead of the results auto populating as you type.
+
+   * **Add a column for each filter** – checking this box will add a column to the results table each time you add a property as a filter for the search.
+
+   * **Return local results only** – this will filter out included collections.
+
+
+   .. figure:: _images/edg_search_panel_settings.jpeg
+     :alt: TopBraid EDG Settings for Search Panel
+     :align: center
+     :class: edg-figure-s
+
+     **TopBraid EDG Settings for Search Panel**
+
+3. **Export**. Provides access to the various export options for search results.
+   The entire search results are exported unless you check certain results rows, then export will be limited to those rows.
+
+   .. figure:: _images/edg_search_export.jpeg
+     :alt: TopBraid EDG Search Results Export Options
+     :align: center
+     :class: edg-figure-s
+
+     **TopBraid EDG Search Results Export Options**
+
+
+4. **More**. Provides access to several actions that can be performed on selected results.
+   Check the row boxes for the items you want to perform these actions on.
+
+   * **Delete**
+   * **Add to Asset List** – which is another panel in the editor used for bulk functions or bookmarks
+   * **Add to Basket** – which is the basket for all of EDG located in the left navigation menu
+   * **Edit assets** – will launch a :ref:`batch_edit` wizard tool
+   * **Show on Map Results Panel** – this option will be available only if :ref:`map_explorer_panel` is enabled.
+     Clicking on it will display selected items on the map – provided that they have geo coordinates.
+
+
+   .. figure:: _images/edg_search_result_actions.jpeg
+     :alt: TopBraid EDG Search Result Actions
+     :align: center
+     :class: edg-figure-s
+
+     **TopBraid EDG Search Result Actions**
+
+Changing to Lucene WhitespaceAnalyzer
++++++++++++++++++++++++++++++++++++++
+
+The EDG editor search panel uses a Lucene index.
+The default StandardAnalyzer for our Lucene implementation drops characters such as / and – while the WhitespaceAnalyzer preserves them.
+To search over special characters (such as / ? and -) enable the WhitespaceAnalyzer option in the :ref:`edg_configuration_parameters` page.
+You will need to rebuild the search index after making the switch. This can be done on the Text Indicies page. Changing this configuration parameter will also apply to the Search the EDG and a rebuild of Search the EDG index will need to be done.
+
+
+.. _search_library_panel:
+
+Search Library Panel
+""""""""""""""""""""
+This panel will show the list of searches saved using the Search panel. What it shows is determined by the asset collection you are currently in.
+
+You will be able to select and execute a search. You will also be able to delete saved searches.
+
+The settings menu lets you configure how much information about a search should be displayed.
+
+.. figure:: _images/edg_search_library_panel.jpeg
+  :alt: TopBraid EDG Search Library Panel
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Search Library Panel**
+
+
+  .. _form_panel:
+
+Form Panel
+""""""""""
+You can modify asset information directly by editing it in an asset collection or you can use :ref:`workflows_target` and edit information in the working copy of the collection that is managed by the workflow.
+Irrespective of the choice, editing options are the same.
+
+Asset information is modified primarily using the form panel.
+Clicking on the Edit button on top of the form opens all fields for editing.
+Alternatively, to clicking on the Edit button, users can do inline editing.
+Mouse over the area between the field name (e.g., definition) and the field itself.
+You will see a pencil icon.
+Click on it to start editing one property at the time.
+
+TopBraid EDG supports modular management of information.
+You can create resources in one asset collection, then include this collection into another one and add more information about these resources.
+
+.. seealso:: See :ref:'combining_asset_collections_target' on how to combine asset collections through includes.
+
+The hue of the icon at the top of the form will indicate if that resource is from the selected collection or is included from another collection.
+If *included* from another collection, the icon will be a lighter color.
+Further, you will see at the top of the form information about a collection where this resource is defined in.
+
+.. figure:: _images/edg_actuality_tab.png
+  :alt: TopBraid EDG Actuality Tab
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Actuality Tab**
+
+You will be able to click through to that “defining” collection and modify the resource there.
+
+If you do not go to the defining asset collection and decide to edit an *included* (or referenced) resource in your current collection:
+
+* You will only be able to add information and will not be able to remove or modify any of the information from the included collection.
+* The changes you make are added to the collection you are currently in, not the collection this resource has come from.
+
+Similarly if you choose to delete an included resource, only the changes you made in that collection will be deleted, not the original resource.
+If you want to make changes to the statements that are included, use Explore -> Open in Defining Asset Collection.
+This will open the asset in the collection where it was originally created.
+
+.. figure:: _images/edg_asset_info_us.jpeg
+  :alt: TopBraid EDG Asset Information - United States
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Asset Information - United States**
+
+
+Click on the + (plus) sign to the left of the editable field to get a slot for a new value.
+Plus sign will appear only if the property could have more than one value. Click on the – (minus) sign to the right of the editable field to remove a value.
+
+For *attribute* values, you can just type the value.
+A convenient picker may appear depending on the datatype e.g., a date.
+EDG will protect you from making mistakes.
+For example, if a value is supposed to be an integer, you will not be able to enter letters.
+
+.. note:: A language tag for a string can be selected from the dropdown to the right of the field – if a value is defined as a language tagged string.
+
+The dropdown icon to the left of the delete icon lets you switch to a different edit widget – If multiple types are defined for an attribute e.g., a string or a language string or HTML.
+For string values, you will be able to switch between a “text field” (a single line entry field) and a “text area” (a larger text box).
+Options shown are determined by the schema (ontology) that defines the asset type.
+
+.. figure:: _images/edg_switch_edit_widget_dropdown.jpeg
+  :alt: TopBraid EDG Switch Widget Dropdown
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Switch Widget Dropdown**
+
+For *relationship* values, you can:
+
+* Start typing the name of the existing resource and pick it from the auto-complete.
+
+* Enter the URI of the related asset. The dropdown menu available by clicking on the “v” sign to the right of the field will let you switch between using autocomplete (default) and entering a URI.
+
+* Use search to **find** the resource you want to connect to by clicking on the button directly to the right of the field – as shown below.
+
+* **Create** a new resource by clicking on the button directly to the right of the field – as shown below.
+
+* **Drag and drop** assets from other panels directly into a form.
+
+.. figure:: _images/edg_find_create_city.jpeg
+  :alt: TopBraid EDG Find or Create City Dropdown
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Find or Create City Dropdown**
+
+After at least one change is made, Save Changes button becomes clickable.
+If any of the edits presents an issue, the page will display them.
+You will have a choice to correct issues prior to saving, cancel edits or save them as-is.
+
+.. figure:: _images/edg_save_changes_anyway_us.jpeg
+  :alt: TopBraid EDG Save Changes Anyway Example
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Save Changes Anyway Example**
+
+Preview button will display added and deleted statements as well as any issues.
+
+.. figure:: _images/edg_preview_form_edits_us.jpeg
+  :alt: TopBraid EDG Preview of Form Edits for United States
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Preview of Form Edits for United States**
+
+Sometimes, to the left of a field open for editing you will see a + icon surrounded by a square shape.
+Clicking on it will open a subform that lets you make statements about property’s value.
+For example, you may want to say that a value of a country code or a status has an effective start and an effective end date.
+
+When information shown on the form is a relationship, you can:
+
+* Right click to see and use menu options for the related resource.
+* Click on the dropdown to switch the display to show URI of the related asset instead of its label (in view not in edit mode).
+  You can also click on Show Details to see the embedded form for the related asset.
+
+.. figure:: _images/edg_data_element_properties.jpeg
+  :alt: TopBraid EDG Data Element Properties View
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Data Element Properties View**
+
+Further, if you mouse over the related asset, you will see an info box with its description (aka Wikipedia) if a description is available.
+
+.. figure:: _images/edg_location_info_box.jpeg
+  :alt: TopBraid EDG Information Box in Location
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Information Box in Location**
+
+Sometimes, a form may display information in tables and/or display generated diagrams.
+What to display as a table is defined in the associated ontology models and can be configured.
+For example, in the form below for a database table from Northwind you see two tables: one containing data sample (not editable) and one containing records of data quality runs (editable).
+
+.. figure:: _images/edg_data_sample_quality_records_tables.jpeg
+  :alt: TopBraid EDG Data Sample & Data Quality Records Tables
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Data Sample & Data Quality Records Tables**
+
+Values That Can’t Be Edited
+***************************
+If a value of a property is displayed, but not editable, it means that one of the following is true:
+
+* Values for this property are automatically calculated (inferred) by EDG.
+  Rules for inferring values are defined in the underlying ontologies.
+  Some values may also be inferred by default, but still editable.
+  In this case, any user edit overrides system inferences.
+
+Or
+
+* Value has been entered in an asset collection that is included in the currently selected collection.
+  In this case, you will not be able to remove or change the value.
+  To edit it, you must navigate to the defining asset collection.
+  If, however, the property can have multiple values, you will able to create additional values for such properties.
+
+Or
+
+* Property has been set as “read only” in the underlying ontology.
+  This may happen if your organization wants to control addition and edits of values for certain properties in the UI e.g., to make such edits possible only through import or APIs or to make them possible only in certain asset collections or to protect users in certain roles from incidentally modifying these values.
+
+Alternate Form Views
+********************
+
+An asset may have more than one type.
+It may also be of a single type, but have multiple views defined.
+
+.. seealso:: For information on defining alternative views, see :ref:`working_with_ontologies_target` view shapes.
+
+The view you will see by default will depend on your role and selections made in the relevant ontology.
+
+If an asset shown on a form has multiple types or different role-based views, it can be viewed and edited using any of these perspectives.
+In such cases, you will see a dropdown box at the top right of the form next to the settings menu.
+
+.. figure:: _images/edg_alternate_form_views_dropdown.jpeg
+  :alt: TopBraid EDG Alternate Form Views Dropdown
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Alternate Form Views Dropdown**
+
+You will also be able to select a Merged view that, for assets that have multiple types, will combine properties of all types.
+To do this, select *Settings>Merge properties from all suitable view shapes*.
+
+Additional Options for Viewing and Modifying Data
+*************************************************
+
+Additional options for modifying data in other editors panels are as follows:
+
+*  :ref:`source_code_panel`: This is a low-level technical operation and should be only used by users who are well versed in RDF, the underlying data model behind EDG. Your EDG Administrator can disable access to this panel for some of the users.
+
+* ref:`sparql_query_panel` Update access must be enabled on the server to modify through SPARQL queries.
+
+You can also modify data through GraphQL in EDG accessible from each collection’s Export tab.
+
+The Forms for classes, SKOS concepts and concept schemes have a section called “Display” where you will find the “hidden” property.
+Setting it to “true” will hide these resources from the panels that display tree views – Class Hierarchy panel (in case of classes) and Taxonomy Concepts panel (in case of concepts and concept schemes).
+When a parent is hidden in the tree, all its children also disappear from the tree – unless they have another parent.
+The Class and Taxonomy Concepts panels have a “ghost” setting to show hidden items.
+To do this, select *Settings> Also show assets marked as hidden*.
+
+.. _batch_edit:
+
+Batch Edit
+**********
+
+Batch Edit is available from the Asset List Panel, Instances Panel and Search Panel.
+Where you see the following menu item once you select multiple assets:
+
+.. figure:: _images/edg_edit_selected_assets.jpeg
+  :alt: TopBraid EDG Edit Selected Assets Option
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Edit Selected Assets Option**
+
+The batch edit wizard tool will then be launched.
+
+.. note::
+
+ * You can only modify resources of the same type.
+ * If you have selected resources with multiple types, you will be asked to choose one.
+
+
+.. figure:: _images/edg_batch_edit_view.jpeg
+  :alt: TopBraid EDG Batch Edit View
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Batch Edit View**
+
+The wizard will then let you select properties you want to change and walk you through modifying data using features similar to those of the   :ref:`form_panel`.
+
+.. index:: Jira
+
+Jira Launch-in-Context
+**********************
+
+
+If the Jira feature has been configured for the EDG server, then a *manager* can set an associated project-key string for each asset collection.
+**Jira Project Key** is available under the *Manage* tab.
+See :ref:`using_Jira_tasks_target` for more details.
+
+Once set, if a user is *logged into Jira*, they can launch from editor resources into related Jira searches and create new issues in the collection’s corresponding Jira project.
+
+On a selected resource in the form panel, use the modify menu select any of the following:
+**Create Jira Issue, Search Jira issues by label**, or **Search Jira issues by URI**.
+The two searches will open (as new browser tabs) JIRA pages that search on the indicated resource string (URI or label).
+The create option will open the start of a new Jira item.
+
+.. figure:: _images/edg_create_search_jira_issues.jpeg
+  :alt: TopBraid EDG Create and Search Jira Issue Dropdown
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Create and Search Jira Issue Dropdown**
+
+.. note:: If the browser is not logged into Jira (or if the administered JIRA settings fail), then the launches can result in a Server Interaction Error message dialog.
+ Please check the server logs for details in that case.
+
+
+ .. _source_code_panel:
+
+Source Code Panel
+"""""""""""""""""
+
+The Source Code panel allows users to view and edit asset data in the Turtle serialization format.
+Editing source code is a low level operation for expert users and care should be taken.
+IT is possible to cause damage to the EDG workspace making it unavailable.
+An administrator can configure the EDG server to block all edits to source code, which is recommended for organizations without expert users knowledgable about editing Turtle serialization.
+
+The Source Code panel can also be hidden from users in certain roles.
+
+.. figure:: _images/edg_source_code_panel_view.jpeg
+  :alt: TopBraid EDG Source Code Panel View
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Source Code Panel View**
+
+Depending on the situation, you may see two windows: upper window will show content of the current graph (asset collection) and lower window may show content from included graphs, if any.
+The latter is not editable.
+The upper window lets you edit.
+You can make changes and click on the Save Changes button.
+
+If there are any syntax errors, Save Changes will not be available.
+
+Prefix declarations can be expanded and collapsed. Do not make changes to prefixes here.
+Change them as described in :ref:`controlling_namespaces_and_prefixes` .
+
+Settings menu option will let you hide statements from the included graph (if any).
+With it on, the window with statements from the included graph will be hidden.
+
+
+.. _assets_hierarchy_panel:
+
+Assets Hierarchy Panel
+""""""""""""""""""""""
+
+These panels show tree views of resources based on any relationships.
+Select the root resource type to start the tree.
+Use the gold circle icon to the right of the setting icon to make the selection.
+This can also be pre-set in the **Manage** tab.
+
+.. figure:: _images/edg_assets_hierarchy_panel_page.jpeg
+  :alt: TopBraid EDG Assets Hierarchy Panel Page
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Assets Hierarchy Panel Page**
+
+
+.. _hierarchy_of_selected_asset_panel:
+
+Hierarchy of Selected Asset Panel
+"""""""""""""""""""""""""""""""""
+
+This panel shows a tree view starting with the currently selected resource, letting you to expand its relationship values as children in the hierarchy.
+These children can then be similarly expanded and so on.
+
+.. _problems_and_suggestions_panel:
+
+
+Problems and Suggestions Panel
+""""""""""""""""""""""""""""""
+
+This panel checks the content of the asset collection against all of applicable quality rules (i.e., applicable shapes and validity constraints they define).
+It also runs enrichment rules to suggest mappings.
+
+Problems and Suggestions panel will raise validation results if values of properties do not comply with the constraints defined in the ontology your data is based on.
+
+.. note:: RDF, as a flexible graph data model, lets you make statements that were not anticipated e.g., to say something about Person’s eye color even if no property “eye color” is defined for a Person.
+
+Creating such values is not supported by the form-based editing in TopBraid EDG – the forms are entirely driven by what is defined in ontology models.
+Yet, it is possible to add values for undefined properties e.g., if you have appropriate permissions, you could use the Source Code panel to add any triple directly in Turtle or you could import RDF containing any kind of triples.
+The fact that these triples may be using properties not explicitly defined in the ontology is not a violation of the model.
+It will not be flagged by the Problems and Suggestions unless you explicitly say that no values except for the defined properties are allowed.
+
+
+.. _change_history_panel:
+
+Change History Panel
+""""""""""""""""""""
+
+The **Change History Panel** will show all captured changes – additions and deletions.
+
+Each change can be expanded to show details.
+Added statements are shown in green.
+Removed statements are shown in pink.
+
+You can filter displayed changes by selecting a user who made a change, the time period when changes were made, and/or the property (predicate) which values were changed.
+
+To see only changes made to the currently selected asset, click on the “on selected” button.
+
+.. figure:: _images/edg_change_history_panel.jpeg
+  :alt: TopBraid EDG Change History Panel
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Change History Panel**
+
+Changes can also be reverted from the change history panel.
+Click to select changes you want to revert and then click on the Undo icon – the first icon in the panel.
+
+.. note:: This will create an audit trail entry for the revert operation.
+
+Workflows will have a button “from workflow only” to narrow down to only changes made specifically in the current workflow.
+
+.. _inferences_panel:
+
+Inferences Panel
+""""""""""""""""
+
+Inferences panel lets you run rules.
+It will display all triples generated by the rules using a table with 3 columns: subject, predicate and object.
+
+.. figure:: _images/edg_inferences_panel.png
+  :alt: TopBraid EDG Inferences Panel
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Inferences Panel**
+
+In addition to the button that runs rules, the panel provides:
+
+* A button to assert all inferred triples.
+  It will be displayed only once you execute rules and they generate some statements that will be shown in the panel.
+  Clicking on this button will write the inferred statements into the asset collection.
+  Until you take this action, generated statements are not stored permanently.
+
+* A button that will display all available rules and let you activate and deactivate them for the run.
+
+ .. note:: Rules defined using sh:values are evaluated dynamically and will NOT be shown or executed by the panel.
+
+ The screenshot below shows the dialog that will appear when you click on this button.
+
+ .. figure:: _images/edg_shacl_inference_rules.png
+   :alt: TopBraid EDG SHACL Inference Rules Dialog
+   :align: center
+   :class: edg-figure
+
+   **TopBraid EDG SHACL Inference Rules Dialog**
+
+* Settings button. It lets you switch between the display of labels and URIs and between the tabular display of the inferred statements and display in the Turtle format (source code).
+  It also lets you control the number of iterations.
+
+
+If you expect your rules to produce a large number of triple statements, we recommend that you run them by using the option available in the Transform tab.
+The role of Inferences panel is primarily to help you with testing rules as you develop them.
+
+.. _instances_panel:
+
+Instances Panel
+"""""""""""""""
+
+This panel will show a table of instances of a selected class i.e., resources with the type corresponding to the selected class.
+The free text search field at the top of the panel lets you filter the list.
+The panel also has New button for creation of new assets of selected type.
+Settings menu has further options governing what and how is shown.
+The first column of the table is a check box.
+If you select multiple assets, you will be able to use the “batch actions menu” at the top right to perform the same bulk operations as those available in the Assets List panel.
+
+.. _references_panel:
+
+References Panel
+""""""""""""""""
+
+References panel displays all assets that refer to the currently selected asset (in the form or one of the other panels).
+For each referring asset, you will see its label and the referring relationship.
+
+If you click on one of the referring assets, it gets selected on the form, in the hierarchical panels, etc.
+Then, in turn, what is shown in the References panel will change.
+If you want to avoid this from happening, select the “pin” option under the Settings (gear) menu.
+This will prevent the contents of the Reference panel from changing as you click around.
+
+Panels for Working with Schemas
+"""""""""""""""""""""""""""""""
+
+Class Hierarchy Panel
+*********************
+
+In EDG, every asset is a member of at least one class.
+This panel displays hierarchy of classes starting with a selected root.
+Hierarchical relationship between classes is rdfs:subClassOf.
+Class information is only editable if you are in an Ontology.
+In other collection types you will only be able to view class information.
+
+.. seealso:: For more information about this panel see :ref:`class_hierarchy_panel` .
+
+Node Shapes
+***********
+
+While EDG will declare all new Classes also as Node Shapes.
+It also also supports creation of Node Shapes that are not Classes which may be useful when creating an alternative view of class members or when creating a shape that will be used in other shapes, for example, as part of logical expressions.
+
+The :ref:`node_shapes_panel` displays ONLY node shapes that are not Classes and supports creation of such shapes.
+
+.. seealso:: For more information about this panel see :ref:`node_shapes_panel` .
+
+Property Groups
+***************
+
+The :ref:`property_groups_panel` displays properties associated with a selected class or a node shape.
+Properties are displayed organized into groups, reflecting how they would be shown on a form.
+
+.. seealso:: For more information about this panel see :ref:`property_groups_panel` .
+
+RDF/OWL Property List
+*********************
+
+The :ref:`rdfowl_properties_list_panel` is a table showing instances of rdf:Property class and its subclasses.
+**New** button lets you create new properties.
+
+
+
+.. _local_assets_panel:
+
+Local Assets Panel
+""""""""""""""""""
+
+This panel will display only assets that are defined in the current asset collection.
+Assets from included collections will not be shown.
+There is a Search field to filter results and check boxes for selection.
+You can then use the “More” button in the upper left of the panel to execute operations on selected assets.
+
+.. _available_crosswalks_panel:
+
+
+Available Crosswalks Panel
+""""""""""""""""""""""""""
+
+This panel will list any crosswalks that map the current asset collection to another collection. Y
+ou will be able to access crosswalk mappings from this panel.
+You will also be able to create new crosswalks.
+
+.. seealso:: For more information see :ref:`working_with_crosswalks_target` .
+
+Taxonomy Concepts
+"""""""""""""""""
+
+**Taxonomies** collections include a :ref:`concepts_panel_in_taxonomies_target` which displays taxonomy concepts organized into concept schemes.
+It also lets you create new concepts and schemes.
+
+.. seealso:: For more information, see description of this panel in :ref:`working_with_taxonomies_target` guide.
+
+Other Panels
+""""""""""""
+
+TBD
+
+Asset Menus
+^^^^^^^^^^^
+
+.. _explore:
+
+Explore
+"""""""
+
+With asset information displayed on a form click on Explore button to select one of the available menu options.
+The explore menu may differ based on collection type.
+
+.. seealso:: See :ref:`working_with_ontologies_target` or :ref:`working_with_taxonomies_target` for additional features available in these collections.
+
+For all assets, you will be able to:
+
+* Find similar assets
+
+* Show any workflows that contain changes to the selected asset
+
+* See and enter comments about the asset
+
+* See and create tasks for the asset
+
+* Select a number of diagrams and visualizations – available options depend on the type of the asset
+
+* Add and view endorsements.
+  Endorsements will be recorded as activity in the what’s happening section of EDG home page, viewable in the form panel and in Search the EDG.
+
+.. figure:: _images/edg_modify_menu_dropdown.jpeg
+  :alt: TopBraid EDG Modify Dropdown
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Modify Dropdown**
+
+Modify
+""""""
+
+The modify menu may differ based on collection type.
+
+.. seealso:: See :ref:`working_with_ontologies_target` or :ref:`working_with_taxonomies_target` for additional features available in these collections.
+
+.. _cloning_and_replacing_assets:
+
+Cloning and Replacing Assets
+****************************
+
+Clone and Replace operations are available under Modify menu.
+
+Clone creates a copy of the selected Asset.
+The label of the clone (preferred label in case of SKOS Concepts) will be set as the label of original asset with “ Copy” post-pended to it.
+
+Replace, creates a clone of the selected asset using URI that you will provide and then deletes selected asset.
+One difference with the clone operation above is that the label will be the same as the label of the original asset, “ Copy” will not be post-pended.
+You can use this operation if you decide that you need to modify URI identity of a resource.
+EDG will automatically adjust all incoming and outgoing references.
+However, it will do so only for the currently selected asset collection.
+Other asset collections will not be updated.
+If they contain references to the asset you are replacing, you will see broken links.
+To understand possible impacts of delete operations see Deleting Assets section.
+
+.. _deleting_assets:
+
+Deleting Assets
+***************
+
+You can delete assets directly in an asset collection or you can start a workflow and delete in the working copy of the collection that is managed by :ref:`workflows_target`.
+Irrespective of the choice, delete options are the same.
+
+With asset information displayed on a form, click on Modify button and select Delete.
+
+Since asset collections in EDG can include each other by reference, some care needs to be taken when deleting assets.
+Delete operation only deletes references to the deleted asset that exist in your current asset collection.
+Consider the following scenario:
+
+* Taxonomy 1 defines Concept A
+* Taxonomy 1 also defines Concept B making it a child of Concept A
+* Taxonomy 2 includes Taxonomy 1
+* Taxonomy 2 defines Concept C making it a child of Concept A
+* You go to Taxonomy 1 and delete Concept A.
+  Concept B’s reference to A will be removed, but Concept C’s reference to A will stay.
+  Now concept C has a broader relationship to an undefined concept
+
+Running Problems and Suggestions check on Taxonomy 2 will report the issue and assist you in removing such references.
+
+Similarly, deleting a class (asset type) from an ontology will not remove class instances (assets of a given type) that may be stored in another asset collection.
+It will make them members of undefined class.
+Deleting a property does not delete property values that are held in another asset collection.
+
+Running Problems and Suggestion check will help you identify and fix these issues.
+Further, by going to the Settings>Included By you will see all asset collections that include your selected collection.
+You can then go to them and use References panel to identify what may be referring to a resource you are planning to delete.
+
+More
+""""
+
+TBD
+
+Cross Panel Operations
+^^^^^^^^^^^^^^^^^^^^^^
+
+Some features and options work the same across different panels.
+These are described below.
+
+Undoing Changes
+"""""""""""""""
+
+**Undo** button in the header lets you reverse the most recent Save operation.
+
+.. figure:: _images/edg_undo_cross_panel_operations.jpeg
+  :alt: TopBraid EDG Undo Cross Panel Operations
+  :align: center
+  :class: edg-figure-m
+
+  **TopBraid EDG Undo Cross Panel Operations**
+
+You can also reverse one or more changes made in the past by using :ref:`change_history_panel`.
+
+Resource (right click) Menus
+""""""""""""""""""""""""""""
+
+Right click menu’s are available in most panels.
+You can right click to access a menu anywhere a link to an EDG resource is present or in a tree.
+In the descriptions of the panels below, you will find details for the resource (right click) menus.
+
+For example:
+
+.. figure:: _images/edg_cross_panel_operations_resource_menus.jpeg
+  :alt: TopBraid EDG Cross Panel Operations Resource Menus
+  :align: center
+  :class: edg-figure
+
+  **TopBraid EDG Cross Panel Operations Resource Menus**
+
+Drag and Drop Operations
+""""""""""""""""""""""""
+Several panels support drag and drop:
+
+* You can drag and drop items displayed in the hierarchical panels e.g., Taxonomy Concepts, Class Hierarchy and Property Groups
+
+* You can also drag and drop from other panels into fields on the Form panel
+
+* In an ordered list (indexed property) on a Form, list values can be re-arranged by dragging and dropping
+
+.. note:: by default, drag and drop in the hierarchical panels in order to re-arrange a tree structure performs “delete and add” as a resource gets moved. This, for example, means that if a taxonomy concept had two different parents – A and B, moving it from its position under parent A to a position under parent C will give it a brand new parent and remove the previous two parents. In other words, it will no longer be under both, A and B. It will only be under C.
+
+If you want to simply add a new parent instead of replacing previously existing parents, press CTRL key when dragging.
+This will add a new parent without removing existing parents.
+Alternatively, you can select a resource for which you want to add a new parent and edit its information in a form by adding a new value to already existing values for the hierarchical property.
+
+When you drag and drop into a form, TopBraid EDG will check that a resource you are dragging has a suitable type for the field (property) you are dragging it into.
+Otherwise, you will not be able to drop it.

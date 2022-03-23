@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Working with Data Lineage &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Working with Files" href="../../files/index.html" />
+    <link rel="prev" title="Working with Enumerations" href="../working_with_enumerations/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html">
+            <img src="../../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">User Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../home_page_and_navigation/index.html">EDG Home Page and Navigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../working_with_asset_collections/index.html">Working with Asset Collections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../workflows/index.html">Understanding and Using Workflows</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Guidance Specific to an Asset Collection Type</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../working_with_ontologies/index.html">Working with Ontologies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_taxonomies/index.html">Working with Taxonomies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_crosswalks/index.html">Working with Crosswalks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_corpora/index.html">Working with Corpora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_data_graphs/index.html">Working with Data Graphs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../working_with_enumerations/index.html">Working with Enumerations</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Working with Data Lineage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#licensing-and-enablement">Licensing and Enablement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lineage-for-edg">Lineage for EDG</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../files/index.html">Working with Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching/index.html">Searching in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../collaboration/index.html">Collaboration in EDG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_governance/index.html">Operationalizing Data Governance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../metrics_dashboards/index.html">Viewing Metrics Dashboards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../server_side_scripting/index.html">Customizing EDG Using Server-side Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../content_classification/index.html">Content Classification in EDG</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">User Guide</a> &raquo;</li>
+          <li><a href="../index.html">Guidance Specific to an Asset Collection Type</a> &raquo;</li>
+      <li>Working with Data Lineage</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="working-with-data-lineage">
+<span id="working-with-data-lineage-target"></span><h1>Working with Data Lineage<a class="headerlink" href="#working-with-data-lineage" title="Permalink to this headline"></a></h1>
+<section id="licensing-and-enablement">
+<span id="licensing-and-enablement-target"></span><h2>Licensing and Enablement<a class="headerlink" href="#licensing-and-enablement" title="Permalink to this headline"></a></h2>
+<p>The availability of any asset collection is determined by what is (a) licensed and (b) configured under <em>Server Administration</em>.
+To install a license or to view the currently licensed features, see Administrator Guide section on Product Registration` .
+To configure which licensed collection types are currently enabled or disabled, see Administrator Guide section on EDG Configuration Parameters.</p>
+<p>For general licensing information and available asset collections and packages, see the TopQuadrant website.</p>
+<p><a class="reference external" href="https://www.topquadrant.com/products/topbraid-edg-gov-packs/">TopQuadrant Data Governance Packages</a></p>
+</section>
+<section id="lineage-for-edg">
+<span id="lineage-for-edg-target"></span><h2>Lineage for EDG<a class="headerlink" href="#lineage-for-edg" title="Permalink to this headline"></a></h2>
+<section id="introduction-to-lineage">
+<h3>Introduction to Lineage<a class="headerlink" href="#introduction-to-lineage" title="Permalink to this headline"></a></h3>
+<p>Business needs that motivate the interest in Lineage range over policy and regulatory compliance, operational efficiencies and analytics.</p>
+<p>The scope of the data lineage information is usually determined by data governance – based on:</p>
+<ul class="simple">
+<li><p>Regulatory compliance needs</p></li>
+<li><p>Enterprise data management strategy</p></li>
+<li><p>Data impact and reporting needs</p></li>
+<li><p>Critical data elements of the organization</p></li>
+</ul>
+<p>The scope then determines the nature and volume of metadata required to represent lineage.</p>
+<p>Data lineage includes the data’s origins, what happens to it and where it moves over time.
+Enriched data lineage information may include:</p>
+<ol class="arabic simple">
+<li><p>data models</p></li>
+<li><p>business glossary terms</p></li>
+<li><p>enterprise information systems</p></li>
+<li><p>software executables that use data assets</p></li>
+<li><p>software functions that perform transformations</p></li>
+<li><p>provenance of data assets</p></li>
+<li><p>data usage</p></li>
+<li><p>logical and physical flows</p></li>
+<li><p>parties, roles and stakeholder groups</p></li>
+</ol>
+<p>A number of visualizations of lineage and impact are possible ranging over different asset types from the enterprise level to the data asset level.
+Lineage diagrams are generated by invoking the “Show Lineage” menu action on the menu called “Explore”
+Availability of this menu option is dependent on the asset type.
+It will be active for the following asset types:</p>
+<section id="data-asset">
+<h4>Data Asset<a class="headerlink" href="#data-asset" title="Permalink to this headline"></a></h4>
+<p>A <strong>Data Asset</strong> is any data item that is of value to the enterprise.
+It can be a database, a dataset or a data element.</p>
+</section>
+<section id="information-asset">
+<h4>Information Asset<a class="headerlink" href="#information-asset" title="Permalink to this headline"></a></h4>
+<p>An <strong>Information Asset</strong> is an artefact that is managed by an organizational entity.
+These include documents, forms, schedules, and any other work-product that is constructed from data assets and used both within and across organizational boundaries.</p>
+</section>
+<section id="provenance-type">
+<h4>Provenance Type<a class="headerlink" href="#provenance-type" title="Permalink to this headline"></a></h4>
+<p><strong>Provenance Type</strong> is a category of asset types whose existence was derived from, or was influenced by, some other entity, or were originated by some party.</p>
+</section>
+<section id="technical-asset">
+<h4>Technical Asset<a class="headerlink" href="#technical-asset" title="Permalink to this headline"></a></h4>
+<p>A <strong>Technical Asset</strong> can be a software asset or a hardware asset.
+Software assets further partition into a number of sub-classes such as applications, systems, software modules and software executables.</p>
+</section>
+<section id="lineage-model">
+<h4>Lineage Model<a class="headerlink" href="#lineage-model" title="Permalink to this headline"></a></h4>
+<p>A <strong>Lineage Model</strong> establishes a context for determining how enterprise capabilities, business functions and information assets are dependent on data flows, applications, software executables and data transformations across data sources and sinks.</p>
+<p>With this categorization of asset types that support lineage, further details are provided for each type.
+For most types the description will be from the context of a lineage model.</p>
+</section>
+</section>
+<section id="application-lineage">
+<h3>Application Lineage<a class="headerlink" href="#application-lineage" title="Permalink to this headline"></a></h3>
+<p>Applications can depend on other applications in a number of ways:</p>
+<ol class="arabic simple">
+<li><p>A direct dependency can be expressed using the property <code class="docutils literal notranslate"><span class="pre">edg:dependsOnDataFrom</span></code>.</p></li>
+<li><p>An inferred dependency from the need for data from programs and functions that an application uses. The properties involved are <code class="docutils literal notranslate"><span class="pre">edg:usesSoftwareProgram</span></code>, <code class="docutils literal notranslate"><span class="pre">edg:usesSoftwareFunction</span></code>, <code class="docutils literal notranslate"><span class="pre">edg:input</span></code> and <code class="docutils literal notranslate"><span class="pre">edg:output</span></code>.</p></li>
+<li><p>An inferred dependency based on information assets that are required as specified by <code class="docutils literal notranslate"><span class="pre">edg:requiresInformationAsset</span></code> and <code class="docutils literal notranslate"><span class="pre">edg:producesInformationAsset</span></code>.</p></li>
+<li><p>Application can also have service endpoints that specify source and target nodes.</p></li>
+<li><p>Another kind of dependency is a Logical Flow, whose purpose is to depict what is happening (from a business perspective) as opposed to how it is happening (from a technical perspective). This will be described in more detail in a later section.</p></li>
+</ol>
+<p>The image below shows an example of a lineage model for FRY-9C lineage.
+On the far right is the activity called FRY9C SECURITIZATION.
+Immediately to the left is the lineage model that supports the activity.
+Moving further to the left (upstream) is the application <code class="docutils literal notranslate"><span class="pre">Securitizatiion</span> <span class="pre">Application</span></code>.
+Clicking on the link will reveal that this dependency is based on an <code class="docutils literal notranslate"><span class="pre">edg:usesSoftwareExecutable</span></code> property.
+Continuing upstream there are dependencies based on applications and databases.
+Orange links depict inferred dependencies based on software program inputs and outputs.</p>
+<figure class="align-center" id="id59">
+<img alt="TopBraid EDG Example of a Lineage Model for FRY-9C" class="edg-figure" src="../../../_images/edg_lineage_model_for_fry_9c.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Example of a Lineage Model for FRY-9C</strong></span><a class="headerlink" href="#id59" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Clicking on the link between <code class="docutils literal notranslate"><span class="pre">TOPBANKCORP</span></code> and <code class="docutils literal notranslate"><span class="pre">AFS</span> <span class="pre">Securitizatiion</span> <span class="pre">Application</span></code> shows a detailed view of the dependencies.</p>
+<figure class="align-center" id="id60">
+<img alt="TopBraid EDG Detailed View of the Dependencies" class="edg-figure" src="../../../_images/edg_dependencies_detailed_view.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Detailed View of the Dependencies</strong></span><a class="headerlink" href="#id60" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The derivation map is shown enlarged below:</p>
+<figure class="align-center" id="id61">
+<img alt="TopBraid EDG Derivation Map" class="edg-figure" src="../../../_images/edg_derivation_map.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Derivation Map</strong></span><a class="headerlink" href="#id61" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Clicking on the link between <code class="docutils literal notranslate"><span class="pre">AFS</span> <span class="pre">Securitizatiion</span> <span class="pre">Application</span></code> and <code class="docutils literal notranslate"><span class="pre">Securitizatiion</span> <span class="pre">Application</span></code> shows a detailed view of an example of program input/output dependencies.</p>
+<figure class="align-center" id="id62">
+<img alt="TopBraid EDG Program Input/Output Dependencies" class="edg-figure" src="../../../_images/edg_program_input_output_dependencies.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Program Input/Output Dependencies</strong></span><a class="headerlink" href="#id62" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="business-activity-lineage">
+<h3>Business Activity Lineage<a class="headerlink" href="#business-activity-lineage" title="Permalink to this headline"></a></h3>
+<p>A <strong>Business Activity</strong> is work performed in an enterprise in support of a <strong>Business Function</strong>.
+Business functions may involve a number of business activities.
+A business activity may also be needed to support another business activity.
+Activities can be ordered using ‘next’ as a linking property.
+A <strong>Business Activity</strong> can require a process for a more detailed specification of how it is performed.</p>
+<p><strong>Business Functions</strong> are the activities carried out by an enterprise; they can be divided into core functions and support functions.
+Core business functions are activities that either (a) generate revenue such as the production of final goods or services intended for the market or for third parties; (b) provide value to external parties in accordance with the reason-for-being for the enterprise.
+Support business functions are ancillary (supporting) activities carried out by the enterprise in order to permit or to facilitate the core business functions.
+A business function can be thought of as a “Functional Area”, as such it is also an alternative term for a business unit.</p>
+<p>An example of the lineage of a Business Activity is shown below.</p>
+<figure class="align-center" id="id63">
+<img alt="TopBraid EDG Business Activity Lineage Example" class="edg-figure" src="../../../_images/edg_lineage_of_business_activity.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Business Activity Lineage Example</strong></span><a class="headerlink" href="#id63" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="business-area-lineage">
+<h3>Business Area Lineage<a class="headerlink" href="#business-area-lineage" title="Permalink to this headline"></a></h3>
+<p>A <strong>Business Area</strong> is a particular operational organizational unit such as Finance, Materials Management, and Customer Service. Granularity of the business areas can vary – business areas can have sub-areas.
+A business area can also be referred to as a ‘Line of Business’.</p>
+<p>The image below shows an example of a lineage model for a business area for <em>Product Design</em> for Computer-Aided-Design (CAD) in the engineering domain.
+This shows dependencies on activities and their first level of applications.</p>
+<figure class="align-center" id="id64">
+<img alt="TopBraid EDG Business Area Lineage Example" class="edg-figure" src="../../../_images/edg_business_area_lineage.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Business Area Lineage Example</strong></span><a class="headerlink" href="#id64" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="information-assets">
+<h3>Information Assets<a class="headerlink" href="#information-assets" title="Permalink to this headline"></a></h3>
+<p>An ‘Information Asset’ is an artefact that is managed by an organizational entity.
+These include documents, forms, schedules, and any other work-product that is constructed from data assets and used both within and across organizational boundaries.</p>
+<p>The image below shows an example of a lineage model that is using applications that import form items.</p>
+<figure class="align-center" id="id65">
+<img alt="TopBraid EDG Example of Lineage Model" class="edg-figure" src="../../../_images/edg_lineage_model_example.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Example of Lineage Model</strong></span><a class="headerlink" href="#id65" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="derivation-maps">
+<h3>Derivation Maps<a class="headerlink" href="#derivation-maps" title="Permalink to this headline"></a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">Derivation</span> <span class="pre">Map</span></code> is a diagram that shows the details for a specific link in a LineageGram.
+A number of derivation maps where shown in the section for Lineage Models.
+This section describes more details about derivation maps.</p>
+<p>The image below shows how a derivation map can include aspects about a <em>Data Asset</em>.
+What is shown are policy compliance and protected data aspects.</p>
+<figure class="align-center" id="id66">
+<img alt="TopBraid EDG Derivation Maps Example" class="edg-figure" src="../../../_images/edg_derivation_map_example.png" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Derivation Maps Example</strong></span><a class="headerlink" href="#id66" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>An example Lineage Model can be built in a local copy of <a class="reference external" href="https://www.topquadrant.com/tools/IDE-topbraid-composer-maestro-edition/">TopBraid EDG ME (Maestro Edition)</a>, that is, running in TopBraid Composer, by following these steps:</p>
+<ol class="arabic simple">
+<li><p>Create a new Lineage Model Asset Collection;</p></li>
+<li><p>Select Import RDF;</p></li>
+<li><p>Choose the file lineage-model_topbankcorp-fry9c.ttl from the folder in your workspace at edg.topbraidlive.org/1.0/samples/lineagemodels and complete the import;</p></li>
+<li><p>The assets table should appear with the focus on assetts of type Lineage Model;</p></li>
+<li><p>Go to the single Lineage Model called FRY9C-SECURITIZATION;</p></li>
+<li><p>From the Explore menu choose Show Lneage.</p></li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../working_with_enumerations/index.html" class="btn btn-neutral float-left" title="Working with Enumerations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../files/index.html" class="btn btn-neutral float-right" title="Working with Files" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

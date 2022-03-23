@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deployment and Export &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="User Data" href="user_data.html" />
+    <link rel="prev" title="External Systems Integration" href="external_systems_integration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Administrator Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../installation_checklist/index.html">Installation Checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_installation_and_authentication/index.html">EDG Installation and Authentication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">EDG Administration and Configuration</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="index.html#setup">Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#access-control">Access control</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html#deployment-and-export">Deployment and Export</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Deployment and Export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base-uri-management">Base URI Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#upload-project">Upload Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#delete-project">Delete Project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#send-project-to-another-server">Send Project to Another Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-trig-file-of-all-edg-production-graphs">Create TriG file of all EDG production graphs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-trig-file">Import TriG File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#refresh-workspace">Refresh Workspace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#backup-restore">Backup/Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#user-data">User Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#system-monitoring">System Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#component-monitoring">Component Monitoring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#development-and-qa">Development and QA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_data_platform/index.html">TopBraid Data Platform</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../auto_classifier_installation/index.html">Auto Classifier Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../topbraid_explorer_setup/index.html">TopBraid Explorer Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../edg_backup_and_restore/index.html">EDG Backup and Restore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../index.html">Administrator Guide</a> &raquo;</li>
+          <li><a href="index.html">EDG Administration and Configuration</a> &raquo;</li>
+      <li>Deployment and Export</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="deployment-and-export">
+<span id="id1"></span><h1>Deployment and Export<a class="headerlink" href="#deployment-and-export" title="Permalink to this headline"></a></h1>
+</section>
+<section id="base-uri-management">
+<span id="id2"></span><h1>Base URI Management<a class="headerlink" href="#base-uri-management" title="Permalink to this headline"></a></h1>
+<p>Displays all projects and all registered graphs in the TopBraid workspace.
+Each graph will have a base URI (the graph name) and the file name in the project’s workspace.
+If there is more than one file with the same graph name (base URI) a Warning icon will be displayed.
+Information icons indicate projects and graphs that import missing ontologies not registered in the workspace.
+These warnings normally need to be resolved.</p>
+</section>
+<section id="upload-project">
+<span id="id3"></span><h1>Upload Project<a class="headerlink" href="#upload-project" title="Permalink to this headline"></a></h1>
+<p>This menu choice lets you add a project developed elsewhere (for example, a local copy of TopBraid Composer Maestro Edition) to run on this server.
+The Project Upload page gives you a field to identify the zip file of the project you’re uploading.
+To create the zip file, zip up the project folder within the development machine’s workspace, including the .project file created by Eclipse.</p>
+<p>After uploading a project that contains any collection data, refresh the text indices to enable search.</p>
+</section>
+<section id="delete-project">
+<span id="id4"></span><h1>Delete Project<a class="headerlink" href="#delete-project" title="Permalink to this headline"></a></h1>
+<p>This menu choice lets you delete projects from the server.
+Selecting it lists projects on your server, with Show buttons for each and Delete buttons for projects that are not part of the default installation of your server.</p>
+<p>The Show button lists User Applications and User Sessions for that project, and Delete deletes the project.</p>
+</section>
+<section id="send-project-to-another-server">
+<span id="send-project"></span><h1>Send Project to Another Server<a class="headerlink" href="#send-project-to-another-server" title="Permalink to this headline"></a></h1>
+<p>This sends an EDG project, or its selected contents, from the current server to another EDG server.
+From the listed projects, an administrator can either send an entire project or its selected contents, such as an asset collection’s graph-pair (data and teamwork, .tch).</p>
+<p>If the source is using a relational database (RDBMS), then the receiving server must have a compatible RDBMS configured, presumably to an independent location (optionally in the same database server).
+If the <em>Also send database triples</em> option is selected, the transfer will also copy the triples from the source data to the destination data.
+If it is not selected, the database connection files will be transferred but without the triples.
+This could cause the asset collection(s) to be empty, in which case they might not appear in the users’ listing of the corresponding asset collection type(s) (although an administrator could verify their presence via Base URI Management page). Keep in mind that the database type of the source files will remain the same and not be converted, regardless of the destination servers’ configured database.</p>
+<p>If the <em>Send UI configurations (etc.)</em> option is selected, then it will send the UI configurations file from server.topbraid.org/dynamic/uiconfig; otherwise, the default uiconfig file will be used at that location.</p>
+<p>For details of other methods to deploy project to server, please refer to <a class="reference external" href="https://doc.topquadrant.com/7.0/deploy-methods">Methods to Deploy Projects to Server</a>.</p>
+<figure class="align-center" id="id5">
+<img alt="TopBraid EDG Projects to Send Page" class="edg-figure" src="../../_images/edg_projects_to_send.jpeg" />
+<figcaption>
+<p><span class="caption-text"><strong>TopBraid EDG Projects to Send Page</strong></span><a class="headerlink" href="#id5" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="create-trig-file-of-all-edg-production-graphs">
+<h1>Create TriG file of all EDG production graphs<a class="headerlink" href="#create-trig-file-of-all-edg-production-graphs" title="Permalink to this headline"></a></h1>
+<p>Clicking this link will download a TriG file of the collections, not including working copies, in this EDG workspace.
+This file will be very large and include triples from EDG system graphs.
+The main purpose of this feature is to replicate an EDG workspace for testing/debugging.
+History (tch) and metadata such as permissions will not be retained.</p>
+</section>
+<section id="import-trig-file">
+<h1>Import TriG File<a class="headerlink" href="#import-trig-file" title="Permalink to this headline"></a></h1>
+<p>This page lets you create multiple asset collections at once by uploading a TriG file with multiple asset collections.
+This functions the same as the + (plus) button in the header of EDG.</p>
+</section>
+<section id="refresh-workspace">
+<h1>Refresh Workspace<a class="headerlink" href="#refresh-workspace" title="Permalink to this headline"></a></h1>
+<p>Refresh workspace rereads the workspace directory an re-registers SPARQLMotion scripts, SPIN functions and templates, and SWP views.
+If modifications to a file are made outside of TopBraid, i.e. on a file system instead of <strong>Export… Deploy</strong> on Composer or <strong>ProjectUpload</strong> on the server then Refresh Workspace will add the file to file registry and register any scripts, templates, and views defined in the file.</p>
+</section>
+<section id="backup-restore">
+<h1>Backup/Restore<a class="headerlink" href="#backup-restore" title="Permalink to this headline"></a></h1>
+<p>Starting in EDG version 6.4.2, a new feature has been added for Administrators of EDG to take backups of the collections in the workspace and restore from a backup if needed.
+Restores should be reserved for disaster recovery purposes.
+Please test it in a development environment to get familiar with the process.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is memory intensive.
+If your server is low on memory, the restore could fail.
+We recommend manually running garbage collection prior to a restore through the memory management page.
+This feature should not replace any existing backup strategy you have for your organization, only supplement and enhance it.</p>
+</div>
+<p>Important details prior to using this feature:</p>
+<ul class="simple">
+<li><p>Backups can be downloaded to local machine of user or stored in AWS S3 bucket.
+They are also stored in Tomcatwebappsedgconfigrestore folder upon doing a restore.
+This is in case of rollback.
+If you are doing frequent restores, please clear this folder out periodically to save disk space.</p></li>
+<li><p>Everything in the workspace will be backed up/restored besides EDG system files and configurations.
+During the restore process, if there are any TDB databases (including new collections you have created) in the system that do not exist in the backup you are restoring, they will be cleared.
+Any other files in custom projects will remain, regardless of if they were in the backup or not.</p></li>
+<li><p>This feature is only available for TDB backed data, not RDBMS or Data Platform.
+Data Platform backup and restore will be coming soon.</p></li>
+<li><p>Once a restore is in progress do not navigate away from the page or shutdown the server.
+It may take time to do the restore, so please let it finish.
+If you get an error then you may have to restart Tomcat.</p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="external_systems_integration.html" class="btn btn-neutral float-left" title="External Systems Integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="user_data.html" class="btn btn-neutral float-right" title="User Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

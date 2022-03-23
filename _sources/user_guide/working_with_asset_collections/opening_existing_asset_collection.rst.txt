@@ -1,0 +1,76 @@
+.. include:: /includes.rst.txt
+
+.. comments - headings
+
+   # with overline, for parts
+   * with overline, for chapters
+   = for sections
+   - for subsections
+   ^ for subsubsections
+   " for paragraphs
+
+.. index:: pair: Asset Collection ; Access
+
+.. _opening_existing_asset_collection_target:
+
+
+Opening an Existing Asset Collection
+------------------------------------
+
+Edit or View a Collection
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The main ways to open an asset collection and have its content presented in the EDG Editor application are:
+
+* selecting it from the *hamburger* menu at the top of all EDG pages,
+* clicking on an asset collection label in any EDG page,
+* clicking on the first tab in the horizontal panel of tabs at the top of the asset collection page (e.g. *Taxonomy* in a Taxonomies collection),
+* select it after selecting the asset collection type from the left navigation page.
+
+The Editor application may open in the edit mode or view mode depending on the user permissions:
+
+* The user that creates an asset collection is assigned **manager** profile for it and, thus, can edit its content.
+* If an asset collection is associated with a governance area, then every user with a governance role for the area will be able to view the collection (at least).
+  If a governance role is set up to have **editor** or **manage** profiles, then people with this role will be able to edit collection’s content.
+* Governance roles and direct permissions can also be specified at the asset collection level by users with the **manager** profile via the Users tab (see :ref:`assigning_users_to_asset_collection_target`).
+
+Instead of making changes directly to an asset collection, a :ref:`workflows_target` can be started.
+If a workflow is started, the user starting the workflow is its manager and will always be able to edit content of the asset collection in the context of that workflow.
+
+Edits made directly in an asset collection are visible to all other collections that include it and to any workflows.
+In contrast, edits made as part of a workflow are only visible within the working copy managed by the workflow until and unless workflow changes are committed to the production copy.
+
+
+.. _asset_collection_home:
+
+Asset Collection Home
+^^^^^^^^^^^^^^^^^^^^^
+
+Once an asset collection (e.g. *Geography Taxonomy*) is in edit mode the horizontal menu bar on top of the page provids access to various operations and configurations applicable to the collection as a whole.
+
+.. figure:: _images/horizontal_menu_bar_editor.png
+  :alt: Horizontal Menu Bar of the Editor
+  :align: center
+  :class: edg-figure-l
+
+  **Horizontal Menu Bar of the Editor**
+
+The name of the first tab varies depending on the type of selected collection (e.g. *Taxonomy* for a Taxonomies collection or *Codes* for a Reference Dataset collection or *Mappings* for a Crosswalk).
+That tab starts edit mode for the collection.
+
+The other tab names are uniform across all collection types, however, the visible tabs may vary.
+For example, only users with Manager permissions for a collection will see the Manage tab.
+
+The following screenshot shows edit mode when a concept in a Taxonomies collection is selected.
+
+.. figure:: _images/edg_taxonomy_page.jpeg
+  :alt: TopBraid EDG Taxonomy Page
+  :align: center
+  :class: edg-figure-l
+
+  **TopBraid EDG Taxonomy Page**
+
+The label of an asset collection (e.g., *Geography Taxonomy*) is editable depending on user permissions on the collection.
+
+The :ref:`asset_collections` section of the user guide explains the functions available under each tab in the horizontal menu.
+In most cases the features are the same across collection types, providing a consistent user experience. Exceptions are also explained in the related documentation.

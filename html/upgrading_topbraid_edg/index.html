@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upgrades and Migrations &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Installing Sample Data" href="../installing_sample_data/index.html" />
+    <link rel="prev" title="Content Classification in EDG" href="../user_guide/content_classification/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html">
+            <img src="../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Upgrades and Migrations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#migration-instructions">Migration Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#migrations">7.0 Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upgrade-steps-from-edg-7-0">Upgrade Steps from EDG 7.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Upgrades and Migrations</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <blockquote>
+<div></div></blockquote>
+<section id="upgrades-and-migrations">
+<span id="upgrading-topbraid-edg"></span><span id="index-0"></span><h1>Upgrades and Migrations<a class="headerlink" href="#upgrades-and-migrations" title="Permalink to this headline"></a></h1>
+<p>Before upgrading from an older version of EDG, consult this documentation for migration tasks that might apply to your upgrade.
+The migration documentation keeps your data and the EDG application functioning correctly after an upgrade, please pay close attention to those details.
+You can upgrade from any previous release straight to the current release, but you’ll need to use the migration documentation starting at the version you’re currently on and following along to current release.
+For example, if you upgrade from version 6.4 to 7.1 you’ll need to follow the migration notes for 6.4 to 7.0 and 7.0 to 7.1.</p>
+<section id="migration-instructions">
+<h2>Migration Instructions<a class="headerlink" href="#migration-instructions" title="Permalink to this headline"></a></h2>
+<ul class="simple">
+<li><p>Please make sure to take backups of everything (workspace, database, tomcat installation, etc.) first.</p></li>
+<li><p>Workspaces cannot be downgraded once you upgrade. If you need to revert versions of EDG, you will have to use the backed up workspace.</p></li>
+<li><p>If you need to, take screenshots of your setting on the Rights Management page.</p></li>
+<li><p>Have your credentials and connections strings/URLs handy for Explorer, RDBMS and S3 connections.</p></li>
+<li><p>Upgrade on your test/development environment successfully before the production environment gets upgraded. This is important when testing customizations to the UI or models especially.</p></li>
+</ul>
+</section>
+<section id="migrations">
+<h2>7.0 Migrations<a class="headerlink" href="#migrations" title="Permalink to this headline"></a></h2>
+<p><strong>Unknown panels</strong></p>
+<ul class="simple">
+<li><p>Users may have saved layouts with the NeighborGram panel. If so, this will come up as unknown panel. Please close the panel and re-save the layouts. Crosswalks may also get unknown panels. If so, select the default layout again and refresh your browser.</p></li>
+</ul>
+<p><strong>Sorted Turtle writer</strong></p>
+<ul class="simple">
+<li><p>Due to changes to the Sorted Turtle writer (also affecting .ttlx and ttlp) some files will look slightly different when you save them with the new version. You may see extra diffs, such as <code class="code docutils literal notranslate"><span class="pre">\”</span></code> replaced with <code class="code docutils literal notranslate"><span class="pre">“</span></code> in multi-line literals.</p></li>
+</ul>
+<p><strong>Trace logging for license</strong></p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">&lt;Logger</span> <span class="pre">name=&quot;org.topbraid.core.license.FormsAuthConcurrentUsers&quot;</span> <span class="pre">level=&quot;trace&quot;</span></code> /&gt; is deprecated.</p></li>
+</ul>
+<p><strong>Property shape changes</strong></p>
+<ul class="simple">
+<li><p>There is a change related to how property shapes based on a complex path expression will show up on forms. Prior to 7.1, such properties would only show up when the ontology included a graphql:name for them. From 7.1 onwards they will show up even without a <code class="code docutils literal notranslate"><span class="pre">graphql:name</span></code>. If these additional fields are undesirable, the property shape should be annotated with <code class="code docutils literal notranslate"><span class="pre">dash:hidden</span> <span class="pre">true</span></code>.</p></li>
+</ul>
+<p><strong>ExportToRDF</strong></p>
+<ul class="simple">
+<li><p>The Export RDF File web services are now at <code class="code docutils literal notranslate"><span class="pre">/tbl/service/${graphId}/!/exportToRDF/${format}</span></code>. Please update any API or scripts using this service.</p></li>
+</ul>
+<p><strong>ADS</strong></p>
+<ul class="simple">
+<li><p>There is a breaking change for those who have written ADS scripts that operate on ontologyspecific API classes (e.g. <code class="code docutils literal notranslate"><span class="pre">g_City</span></code> for the <code class="code docutils literal notranslate"><span class="pre">g:</span> <span class="pre">namespace</span></code>). Basically until now, the default was that those classes were always automatically generated. But that caused scalability problems for ontologies with many many classes. As of 7.1, we have reversed the logic so that ontology developers need to explicitly enumerate the prefixes for which those classes and constants should be generated.</p></li>
+</ul>
+<dl class="simple">
+<dt>To do that:</dt><dd><ol class="arabic simple">
+<li><p>Go to the “home” resource of your Ontology</p></li>
+<li><p>Add the triple <code class="code docutils literal notranslate"><span class="pre">?ontology</span> <span class="pre">dash:generatePrefixClasses</span> <span class="pre">&quot;g&quot;</span></code> if your code needs to use the ontology -specific JavaScript classes, e.g. <code class="code docutils literal notranslate"><span class="pre">g_City</span></code></p></li>
+<li><p>Add the triple <code class="code docutils literal notranslate"><span class="pre">?ontology</span> <span class="pre">dash:generatePrefixConstants</span> <span class="pre">&quot;g&quot;</span></code> if your code needs to use the ontology-specific constants, e.g. <code class="code docutils literal notranslate"><span class="pre">g.City</span></code></p></li>
+</ol>
+</dd>
+</dl>
+<p>If you add those two triples, it should behave as before. But please make sure to not over-use these flags. In some cases it may be more prudent to only generate individual classes using <code class="code docutils literal notranslate"><span class="pre">dash:generateClass</span></code>.</p>
+<p><strong>TBC-ME</strong></p>
+<ul class="simple">
+<li><p>When upgrading to TBC-ME 7.1 with existing workspaces, start TBC-ME, remove <code class="code docutils literal notranslate"><span class="pre">edg.topbraidlive.org</span></code>, <code class="code docutils literal notranslate"><span class="pre">Repositories</span></code> and <code class="code docutils literal notranslate"><span class="pre">teamwork.topbraidlive.org</span></code> projects in TBC-ME, select <code class="code docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">&gt;</span> <span class="pre">Perspective</span> <span class="pre">&gt;</span> <span class="pre">Reset</span> <span class="pre">Perspective</span></code> and restart TBC-ME.Note, this does not apply to EDG customers using TBC-ME to test customizations. EDG customers, please migrate your workspace to EDG studio (contact TopQuadrant support for any assistance needed)</p></li>
+</ul>
+</section>
+<section id="upgrade-steps-from-edg-7-0">
+<h2>Upgrade Steps from EDG 7.0<a class="headerlink" href="#upgrade-steps-from-edg-7-0" title="Permalink to this headline"></a></h2>
+<p>REQUIRED : TAKE A BACKUP OF THE WORKSPACE (You cannot revert a workspace). Read all the instructions prior to beginning.</p>
+<ol class="arabic simple">
+<li><p>Stop Tomcat, make sure the process is fully stopped</p></li>
+<li><p>Backup and remove the <code class="code docutils literal notranslate"><span class="pre">/edg</span></code> directory and <code class="code docutils literal notranslate"><span class="pre">edg.war</span></code> file located in <code class="code docutils literal notranslate"><span class="pre">[Tomcat</span> <span class="pre">Root]/webapps/</span></code>.</p></li>
+<li><p>Clear work and temp directories.</p></li>
+<li><p>Place the current releases’ edg.war found in the download package into the webapps directory</p></li>
+<li><p>Backup and remove Tomcat <code class="code docutils literal notranslate"><span class="pre">lib</span></code> directory. Extract TopBraid-Auth.zip from current releases’ download package into new lib directory.
+Add any additional custom (non-TopQuadrant) jars from previous <code class="code docutils literal notranslate"><span class="pre">lib</span></code> directory specific to your organizaion.</p></li>
+<li><p>Backup and clear the logs directory (optional)</p></li>
+<li><p>Start Tomcat (the current war creates a new /edg/ directory)</p></li>
+<li><p>If your installation used the Interactive setup method, this will need to be redone upon EDG startup.
+Please refer to backup copy of your previous EDG directory at <code class="code docutils literal notranslate"><span class="pre">edg/WEB-INF/setupdata/edg-setup.properties</span></code> for previous values.
+Alternatively prior to upgrade, navigate to <code class="code docutils literal notranslate"><span class="pre">/edg/tbl/setup</span></code> in the EDG UI and find these values at the bottom of the page.</p></li>
+</ol>
+<ol class="arabic simple" start="8">
+<li><p>Perform migration steps applicable to your installation</p></li>
+<li><p>Regression test before upgrading production</p></li>
+</ol>
+<p>Note: If your license has expired, you will need to install your new license before upgrading.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../user_guide/content_classification/index.html" class="btn btn-neutral float-left" title="Content Classification in EDG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../installing_sample_data/index.html" class="btn btn-neutral float-right" title="Installing Sample Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

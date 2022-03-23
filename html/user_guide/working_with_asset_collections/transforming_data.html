@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transforming Data &mdash; edg-documentation 7.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/./_css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html">
+            <img src="../../_static/EDG-logo.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Introduction to EDG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quick_start_guides/index.html">Quick Start Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading_topbraid_edg/index.html">Upgrades and Migrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installing_sample_data/index.html">Installing Sample Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../administrator_guide/index.html">Administrator Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topbraid_edg_studio/index.html">TopBraid EDG Studio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../graphql/index.html">GraphQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripting/index.html">Scripting with JavaScript and ADS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ext/index.html">Extension Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../faqs/index.html">FAQs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../support/index.html">TopQuadrant EDG Support</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">edg-documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Transforming Data</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="transforming-data">
+<span id="transforming-data-target"></span><h1>Transforming Data<a class="headerlink" href="#transforming-data" title="Permalink to this headline"></a></h1>
+<p>The <strong>Transform Tab</strong> lets users run various transformation operations that will modify an asset collection they are working with.
+This view and its operations are only available to users with editor or manager privileges for the collection.</p>
+<section id="execute-inference-rules">
+<h2>Execute Inference Rules<a class="headerlink" href="#execute-inference-rules" title="Permalink to this headline"></a></h2>
+<p>Executes SHACL and/or SPIN rules that are defined for the current collection and asserts the resulting statements.
+Also, one has the option to revisit all previous rules executions to remove results that are no longer valid and bypass change history.</p>
+</section>
+<section id="copy-or-move-instances-from-other-asset-collection">
+<h2>Copy or Move Instances from Other Asset Collection<a class="headerlink" href="#copy-or-move-instances-from-other-asset-collection" title="Permalink to this headline"></a></h2>
+<p>Copies or moves assets from other asset collections.
+“Copy” adds instances of selected classes from another asset collection into this Taxonomy.
+“Move” will also update the source asset collection by removing the instances from it.
+Executing “Move” requires editing permissions for the source asset collection.
+This option is useful for separating your instance data from schema.</p>
+</section>
+<section id="delete-sample-data-for-data-assets">
+<h2>Delete Sample Data for Data Assets<a class="headerlink" href="#delete-sample-data-for-data-assets" title="Permalink to this headline"></a></h2>
+<p>For Data Asset collections that have sample data imported from data sources, this allows collection editors to remove or reduce the sample rows currently retained by the collection.
+This does not effect future imports.</p>
+<span class="target" id="convert-owl-axioms-to-shacl"></span></section>
+<section id="convert-owl-axioms-to-shacl-constraints-for-ontologies">
+<span id="index-0"></span><h2>Convert OWL Axioms to SHACL Constraints for Ontologies<a class="headerlink" href="#convert-owl-axioms-to-shacl-constraints-for-ontologies" title="Permalink to this headline"></a></h2>
+<p>This scans the ontology, either replacing any OWL restrictions or RDFS domain/range axioms with their corresponding SHACL shapes or simply adding SHACL shapes.
+This provides a starting point for the full use of SHACL as described in <a class="reference internal" href="../guidance_specific_to_asset_collection_type/working_with_ontologies/index.html#working-with-ontologies-target"><span class="std std-ref">Working with Ontologies</span></a>.
+It is recommended to create a workflow for this operation to verify its results before committing them.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>For an explanation of the OWL-to-SHACL mapping, see <a class="reference external" href="https://www.topquadrant.com/2018/05/01/from-owl-to-shacl-in-an-automated-way/">From OWL to SHACL in an Automated Way</a>.</p></li>
+<li><p>For even more exact and up-to-date details, see the <code class="docutils literal notranslate"><span class="pre">rdfs:comment</span></code> items in the <code class="docutils literal notranslate"><span class="pre">owl2shacl.ttl</span></code> workspace file (path: <code class="docutils literal notranslate"><span class="pre">&lt;EDG-WORKSPACE&gt;\projects\TopBraid\SHACL\</span></code>).</p></li>
+</ul>
+</div>
+</section>
+<section id="convert-skos-xl-labels-to-reified-values-for-taxonomies">
+<h2>Convert SKOS-XL Labels to Reified Values for Taxonomies<a class="headerlink" href="#convert-skos-xl-labels-to-reified-values-for-taxonomies" title="Permalink to this headline"></a></h2>
+<p>This feature will convert any instances of <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> to values of their corresponding <em>direct</em> SKOS properties:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:prefLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:altLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:altLabel</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skosxl:hiddenLabel</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">skos:hiddenLabel</span></code></p></li>
+</ul>
+<p>If the <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> has other properties than <code class="docutils literal notranslate"><span class="pre">skosxl:literalForm</span></code> and <code class="docutils literal notranslate"><span class="pre">rdf:type</span></code> then these values will be converted into reified statements.
+For example, if your <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances have values for <code class="docutils literal notranslate"><span class="pre">ex:isAbbreviation</span></code> and <code class="docutils literal notranslate"><span class="pre">skosxl:prefLabel</span></code> was used to point to the label, then there will be a reified triple attached to the <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code> statement to store these additional values.
+The ontology should define suitable node shapes that define the properties such as <code class="docutils literal notranslate"><span class="pre">ex:isAbbreviation</span></code> for display and editing purposes, and attach them to the property shapes of properties such as <code class="docutils literal notranslate"><span class="pre">skos:prefLabel</span></code> using <code class="docutils literal notranslate"><span class="pre">dash:reifiableBy</span></code></p>
+<p>Optionally, the original URIs of the <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances will be stored as reified triples and the property <code class="docutils literal notranslate"><span class="pre">dash:uri</span></code> which can then be used to restore the original <code class="docutils literal notranslate"><span class="pre">skosxl:Label</span></code> instances as part of an exporter.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, TopQuadrant, Inc.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
